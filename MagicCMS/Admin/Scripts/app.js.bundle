@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bundle minify="true" runOnBuild="true" output="app.js">
+	<!--The order of the <file> elements determines the order of them when bundled.-->
+	<file>/Admin/Scripts/admin/magiccms.js</file>
+	<file>/Admin/Scripts/admin/application.js</file>
+	<file>/Admin/Scripts/admin/filebrowser.js</file>
+	<file>/Admin/Scripts/admin/ResetPassword.js</file>
+	<file>/Admin/Scripts/admin/ChangePassword.js</file>
+	<file>/Admin/Scripts/admin/checkSession.js</file>
+	<file>/Admin/Scripts/admin/light-box.js</file>
+	<file>/Admin/Scripts/admin/geolocation.js</file>
+	<file>/Admin/Scripts/admin/jstree.mb.selectnode.js</file>
+	<file>/Admin/Scripts/admin/checkboxed-types.js</file>
+	<file>/Admin/Scripts/admin/filebrowser_win.js</file>
+	<file>/Admin/Scripts/admin/PupulateMagicIndex.js</file>
+</bundle>

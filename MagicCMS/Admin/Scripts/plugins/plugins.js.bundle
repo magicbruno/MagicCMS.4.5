@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bundle minify="true" runOnBuild="true" output="plugins.js">
+	<!--The order of the <file> elements determines the order of them when bundled.-->
+	<file>/Admin/Scripts/plugins/bootbox/bootbox.js</file>
+	<file>/Admin/Scripts/plugins/bootstrap/alert.js</file>
+	<file>/Admin/Scripts/plugins/bootstrap/button.js</file>
+	<file>/Admin/Scripts/plugins/bootstrap/collapse.js</file>
+	<file>/Admin/Scripts/plugins/bootstrap/dropdown.js</file>
+	<file>/Admin/Scripts/plugins/bootstrap/modal.js</file>
+	<file>/Admin/Scripts/plugins/bootstrap/tab.js</file>
+	<file>/Admin/Scripts/plugins/bootstrap/tooltip.js</file>
+	<file>/Admin/Scripts/plugins/bootstrap/transition.js</file>
+	<file>/Admin/Scripts/plugins/bootstrap/popover.js</file>
+	<file>/Admin/Scripts/plugins/datatable/jquery.dataTables.js</file>
+	<file>/Admin/Scripts/plugins/datatable/dataTables.bootstrap.js</file>
+	<file>/Admin/Scripts/plugins/datepicker/bootstrap-datepicker.js</file>
+	<file>/Admin/Scripts/plugins/gmap3/gmap3.js</file>
+	<file>/Admin/Scripts/plugins/iCheck/icheck.js</file>
+	<file>/Admin/Scripts/plugins/jsTree/jstree.js</file>
+	<file>/Admin/Scripts/plugins/spin/spin.js</file>
+	<file>/Admin/Scripts/plugins/spin/jquery.spin.js</file>
+	<file>/Admin/Scripts/plugins/spin/jquery.mb-waitspinner.js</file>
+	<file>/Admin/Scripts/plugins/custom/jquery.sidebar.tree.js</file>
+	<file>/Admin/Scripts/plugins/slimScroll/jquery.slimscroll.js</file>
+	<file>/Admin/Scripts/plugins/select2/select2.js</file>
+	<file>/Admin/Scripts/plugins/select2/select2_locale_it.js</file>
+	<file>/Admin/Scripts/plugins/mb/jquery.mb-submit.js</file>
+	<file>/Admin/Scripts/plugins/mb/mb-history.js</file>
+	<file>/Admin/Scripts/plugins/numeric/jquery.numeric.js</file>
+	<file>/Admin/Scripts/plugins/bootstrap-growl/bootstrap-growl.js</file>
+</bundle>

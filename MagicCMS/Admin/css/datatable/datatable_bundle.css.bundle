@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bundle minify="true" runOnBuild="true" output="datatable_bundle.css">
+  <!--The order of the <file> elements determines the order of them when bundled.-->
+  <file>/Admin/css/datatable/jquery.dataTables.css</file>
+  <file>/Admin/css/datatable/font-awesome/dataTables.fontAwesome.css</file>
+  <file>/Admin/css/datatable/bootstrap/3/dataTables.bootstrap.css</file>
+</bundle>

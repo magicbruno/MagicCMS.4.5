@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+	<title>CodeMirror: CSS mode</title>
+	<meta charset="utf-8" />
+	<!--<link rel=stylesheet href="../../doc/docs.css">-->
+	<link href="../../css-edit/code-mirror-css-bundle.min.css" rel="stylesheet" />
+
+	<!--<script src="css.js"></script>
+	<script src="../../addon/hint/show-hint.js"></script>
+	<script src="../../addon/hint/css-hint.js"></script>
+	<script src="../../addon/lint/lint.js"></script>
+	<script src="../../addon/lint/css-lint.js"></script>-->
+	<style>
+		.CodeMirror {
+			background: #f8f8f8;
+			position: absolute;
+			top: 100px;
+			right: 0;
+			bottom:0;
+			width: 100%;
+		}
+		.code {
+			position: relative;
+			bottom:0;
+		}
+	</style>
+	<link href="../../theme/abcdef.css" rel="stylesheet" />
+</head>
+<body>
+	<article>
+		<h2>CSS mode</h2> 
+		<button id="theme-btn">Toggle theme</button>
+		<form>
+			<textarea id="code" name="code">
+/* Some example CSS */
+
+@import url("something.css");
+
+body {
+  margin: 0;
+  padding: 3em 6em;
+  font-family: tahoma, arial, sans-serif;
+  color: #000;
+}
+
+#navigation a {
+  font-weight: bold;
+  text-decoration: none !important;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 1.7em;
+}
+
+h1:before, h2:before {
+  content: "::";
+}
+
+code {
+  font-family: courier, monospace;
+  font-size: 80%;
+  color: #418A8A;
+}
+</textarea>
+		</form>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<script src="../../css-edit/code-mirror-css-bundle.min.js"></script>
+		<script>
+			var editor;
+			$(function () {
+				$('#theme-btn').on('click', function () {
+					$('.CodeMirror').toggleClass('cm-s-abcdef');
+				});
+				editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+					extraKeys: { "Ctrl-Space": "autocomplete" },
+					lineNumbers: true,
+					theme: "default",
+					gutters: ["CodeMirror-lint-markers"],
+					lint: CodeMirror.lint.css
+				});
+			});
+		</script>
+
+		<p><strong>MIME types defined:</strong> <code>text/css</code>, <code>text/x-scss</code> (<a href="scss.html">demo</a>), <code>text/x-less</code> (<a href="less.html">demo</a>).</p>
+
+	</article>
+
+</body>
+
+</html>

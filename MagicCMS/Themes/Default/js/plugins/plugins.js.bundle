@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bundle minify="true" runOnBuild="true" output="plugins.js">
+	<!--The order of the <file> elements determines the order of them when bundled.-->
+	<file>/Themes/Default/js/plugins/spin/spin.js</file>
+	<file>/Themes/Default/js/plugins/spin/jquery.spin.js</file>
+	<file>/Themes/Default/js/plugins/bootstrap/affix.js</file>
+	<file>/Themes/Default/js/plugins/bootstrap/collapse.js</file>
+	<file>/Themes/Default/js/plugins/bootstrap/dropdown.js</file>
+	<file>/Themes/Default/js/plugins/bootstrap/modal.js</file>
+	<file>/Themes/Default/js/plugins/bootstrap/tooltip.js</file>
+	<file>/Themes/Default/js/plugins/bootstrap/popover.js</file>
+	<file>/Themes/Default/js/plugins/bootstrap/scrollspy.js</file>
+	<file>/Themes/Default/js/plugins/bootstrap/tab.js</file>
+	<file>/Themes/Default/js/plugins/bootstrap/transition.js</file>
+	<file>/Themes/Default/js/plugins/bootstrap/carousel.js</file>
+	<file>/Themes/Default/js/plugins/slick/slick.js</file>
+	<file>/Themes/Default/js/plugins/bootbox.js</file>
+	<file>/Themes/Default/js/plugins/jquery.prettySocial.js</file>
+	<file>/Themes/Default/js/plugins/gmap3/gmap3.js</file>
+	<file>/Themes/Default/js/plugins/jquery.mb-waitspinner.js</file>
+	<file>/Themes/Default/js/plugins/SmoothAnchors.js</file>
+</bundle>

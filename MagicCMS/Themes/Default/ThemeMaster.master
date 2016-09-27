@@ -1,0 +1,136 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/SiteMaster.Master" AutoEventWireup="true" CodeBehind="ThemeMaster.master.cs" Inherits="MagicCMS.Themes.Default.ThemeMaster" %>
+
+<asp:Content ID="Content_head" ContentPlaceHolderID="head" runat="server">
+
+    <link href="/Themes/Default/css/metro-bootstrap.css" rel="stylesheet" />
+    <link href="/Themes/Default/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/Themes/Default/css/animate-mb.css" rel="stylesheet" />
+    <link href="/Themes/Default/js/plugins/slick/slick.css" rel="stylesheet" />
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js"
+        type="text/javascript"></script>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css" type="text/css" />
+    <style>
+        body {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+    </style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content_body" ContentPlaceHolderID="Main" runat="server">
+    <!-- begin accesibility skip to nav skip content -->
+    <ul class="sr-only" id="top">
+        <li><a href="#nav" title="Skip to navigation" accesskey="n" class="sr-only-focusable">Skip to navigation</a>
+        </li>
+        <li><a href="#page" title="Skip to content" accesskey="c" class="sr-only-focusable">Skip to content</a></li>
+    </ul>
+
+    <!-- end /.visuallyhidden accesibility-->
+    <header class="navbar navbar-default navbar-fixed-top navbar-inverse" id="nav">
+        <!-- mobile navigation trigger-->
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">
+                    <img src="/Themes/Default/img/LogoRossoBianco_s.svg" alt="Magic CMS" onerror="this.onerror=null;this.src='/Themes/Default/img/LogoRossoBianco.png'" />
+                </a>
+            </div>
+            <nav class="navbar-collapse collapse" id="navbar-main">
+                <asp:Panel ID="Menu" runat="server">
+                </asp:Panel>
+                <asp:Repeater ID="RepeaterMenu" runat="server" OnItemDataBound="RepeaterMenu_ItemDataBound">
+                    <HeaderTemplate>
+                        <ul class="nav navbar-nav navbar-right">
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <li class="<%# DataBinder.Eval(Container, "DataItem.ActiveClass") %>">
+                            <%# DataBinder.Eval(Container, "DataItem.LinkString") %>
+                            <asp:Repeater ID="RepeaterSubmenu" runat="server">
+                                <HeaderTemplate>
+                                    <ul class="dropdown-menu">
+                                </HeaderTemplate>
+                                <ItemTemplate>
+                                    <li class="<%# DataBinder.Eval(Container, "DataItem.ActiveClass") %>">
+                                        <%# DataBinder.Eval(Container, "DataItem.LinkString") %>
+
+                                    </li>
+                                </ItemTemplate>
+                                <FooterTemplate>
+                                    </ul>
+                                </FooterTemplate>
+                            </asp:Repeater>
+                        </li>
+                    </ItemTemplate>
+                    <FooterTemplate>
+                        </ul>
+                    </FooterTemplate>
+                </asp:Repeater>
+            </nav>
+        </div>
+    </header>
+    <asp:Panel ID="Menu_speciale" runat="server" Visible="false">
+    </asp:Panel>
+
+    <div id="page" class="clearfix">
+        <asp:ContentPlaceHolder ID="PageHeader" runat="server">
+
+        </asp:ContentPlaceHolder>
+        <div class="container" id="main-contant">
+            <asp:ContentPlaceHolder ID="Main_Content" runat="server"></asp:ContentPlaceHolder>
+        </div>
+    </div>
+    <footer>
+        <div class="navbar navbar-fixed-bottom navbar-inverse">
+            <div class="container">
+                <div class="navbar-brand">
+                    <div class="btn-group-xs share">
+                        <small>share: </small>
+                        <button type="button" class="btn btn-xs btn-primary" data-type="facebook" data-url="http://magiccms.sisteminterattivi.org"
+                            data-description="An open source Content Management System for Visual Studio and ASP.NET."
+                            data-media="http://magiccms.sisteminterattivi.org/fb.png" data-title="MagicCMS">
+                            &nbsp;<i class="fa fa-facebook"></i>&nbsp;
+                        </button>
+                        <button type="button" class="btn btn-xs btn-icon btn-warning" data-type="twitter"
+                            data-url="http://magiccms.sisteminterattivi.org" data-description="MagicCMS"
+                            data-media="http://magiccms.sisteminterattivi.org/fb.png" data-via="BrunoMiglia">
+                            <i class="fa fa-twitter"></i>
+                        </button>
+                        <button type="button" class="btn btn-xs btn-icon btn-danger" data-url="http://magiccms.sisteminterattivi.org"
+                            data-type="googleplus" data-description="An open source Content Management System for Visual Studio "
+                            data-media="http://magiccms.sisteminterattivi.org/fb.png" data-title="MagicCMS">
+                            <i class="fa fa-google-plus"></i>
+                        </button>
+                        <button type="button" class="btn btn-xs btn-icon btn-primary" data-url="http://magiccms.sisteminterattivi.org"
+                            data-type="linkedin" data-description="An open source file browser for ASP.NET 3.5 which intagrates with most popular HTML editors. - Un file browser open source per .NET 3.5 utilizzabili con i più comuni editor."
+                            data-media="http://magiccms.sisteminterattivi.org/fb.png" data-title="File Browser for .NET 3.5">
+                            <i class="fa fa-linkedin"></i>
+                        </button>
+                    </div>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="http://www.sisteminterattivi.org">&copy; Bruno Migliaretti</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!--close section .footer-credits-->
+    <span class="backToTop"><a href="#top"><i class="e-icon-up-open-big"></i></a></span>
+
+</asp:Content>
+<asp:Content ID="Content_prescripts" runat="server" ContentPlaceHolderID="PreScripts">
+    <asp:ContentPlaceHolder ID="PreScripts" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content_scripts" ContentPlaceHolderID="Scripts" runat="server">
+    <script src="/Themes/Default/js/plugins/plugins.js"></script>
+    <asp:ContentPlaceHolder runat="server" ID="Scripts"></asp:ContentPlaceHolder>
+    <script src="/Themes/Default/js/main.js"></script>
+</asp:Content>
+

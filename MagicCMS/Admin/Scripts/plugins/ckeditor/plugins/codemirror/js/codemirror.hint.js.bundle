@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bundle minify="true" runOnBuild="true" output="codemirror.hint.js">
+  <!--The order of the <file> elements determines the order of them when bundled.-->
+  <file>/Admin/Scripts/plugins/ckeditor/plugins/codemirror/js/show-hint.js</file>
+  <file>/Admin/Scripts/plugins/ckeditor/plugins/codemirror/js/xml-hint.js</file>
+  <file>/Admin/Scripts/plugins/ckeditor/plugins/codemirror/js/html-hint.js</file>
+</bundle>

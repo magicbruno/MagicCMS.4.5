@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+	<metadata>
+		<id>MB.MagicCMS.4.5</id>
+		<version>0.9.0</version>
+		<authors>Bruno Migliaretti</authors>
+		<owners>Bruno Migliaretti</owners>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>Content Management System for Visual studio</description>
+		<releaseNotes>First release for .NET 4.5</releaseNotes>
+		<copyright>Copyright 2016</copyright>
+		<dependencies>
+			<dependency id="Facebook" version="7.0.6" />
+			<dependency id="MB.FileBrowser" version="1.1.8" />
+		</dependencies>
+	</metadata>
+</package>
