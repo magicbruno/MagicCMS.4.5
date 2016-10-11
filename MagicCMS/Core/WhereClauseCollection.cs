@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using System.Collections;
 using System.Linq;
-using System.Web;
+using System.Web;  
 
 namespace MagicCMS.Core
 {
+	/// <summary>
+	/// Class WhereClauseCollection. Group of clause that construct a not injectable SQL query
+	/// </summary>
+	/// <seealso cref="System.Collections.CollectionBase" />
     public class WhereClauseCollection : System.Collections.CollectionBase
     {
 
@@ -74,7 +78,7 @@ namespace MagicCMS.Core
                     }
 
 
-                    whereClause += wc.FieldName + " " + wc.Operator + " " + wc.QuotedtValue + " ";
+                    whereClause += wc.FieldName + " " + wc.Operator + " " + wc.QuotedValue + " ";
                     if (addParen)
                         whereClause = "(" + whereClause + ")";
                     

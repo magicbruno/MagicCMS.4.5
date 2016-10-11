@@ -9,6 +9,9 @@
 namespace System
 {
 
+	/// <summary>
+	/// Class HtmlRemoval. Collection of utilities to remove tags from HTML and return plain text.
+	/// </summary>
     public static class HtmlRemoval
     {
 

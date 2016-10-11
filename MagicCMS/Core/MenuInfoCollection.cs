@@ -6,19 +6,38 @@ using System.Web;
 
 namespace MagicCMS.Core
 {
+	/// <summary>
+	/// Class MenuInfoCollection. Represents a collection of menu items (a main menu or a sub menu).
+	/// </summary>
+	/// <seealso cref="System.Collections.CollectionBase" />
+	/// <seealso cref="MagicCMS.Core.MenuInfo"/>
 	public class MenuInfoCollection: CollectionBase
 	{
 		#region Constructor
+		/// <summary>
+		/// Initializes a new empty instance of the <see cref="MenuInfoCollection"/> class.
+		/// </summary>
 		public MenuInfoCollection()
 		{
 
 		}
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="MenuInfoCollection"/> class creating it from a parent menu.
+		/// </summary>
+		/// <param name="parent">The parent.</param>
+		/// <param name="currentPageId">The current page identifier.</param>
 		public MenuInfoCollection(MagicPost parent, int currentPageId)
 		{
 			Init(parent, currentPageId, true);
 		}
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="MenuInfoCollection"/> class.
+		/// </summary>
+		/// <param name="parent">The parent.</param>
+		/// <param name="currentPageId">The current page identifier.</param>
+		/// <param name="checkLangButtons">if set to <c>true</c> language buttons are shown only if site is multilanguage and current language is not language of button.</param>
 		public MenuInfoCollection(MagicPost parent, int currentPageId, bool checkLangButtons )
 		{
 			Init(parent, currentPageId, checkLangButtons);
@@ -40,36 +59,70 @@ namespace MagicCMS.Core
 
 		#region Public Methods
 
+		/// <summary>
+		/// Adds the specified item.
+		/// </summary>
+		/// <param name="item">The item.</param>
+		/// <returns>System.Int32.</returns>
 		public int Add(MenuInfo item)
 		{
 			return List.Add(item);
 		}
 
+		/// <summary>
+		/// Inserts the specified index.
+		/// </summary>
+		/// <param name="index">The index.</param>
+		/// <param name="item">The item.</param>
 		public void Insert(int index, MenuInfo item)
 		{
 			List.Insert(index, item);
 		}
 
+		/// <summary>
+		/// Removes the specified item.
+		/// </summary>
+		/// <param name="item">The item.</param>
 		public void Remove(MenuInfo item)
 		{
 			List.Remove(item);
 		}
 
+		/// <summary>
+		/// Determines whether [contains] [the specified item].
+		/// </summary>
+		/// <param name="item">The item.</param>
+		/// <returns><c>true</c> if [contains] [the specified item]; otherwise, <c>false</c>.</returns>
 		public bool Contains(MenuInfo item)
 		{
 			return List.Contains(item);
 		}
 
+		/// <summary>
+		/// Indexes the of.
+		/// </summary>
+		/// <param name="item">The item.</param>
+		/// <returns>System.Int32.</returns>
 		public int IndexOf(MenuInfo item)
 		{
 			return List.IndexOf(item);
 		}
 
+		/// <summary>
+		/// Copies to.
+		/// </summary>
+		/// <param name="array">The array.</param>
+		/// <param name="index">The index.</param>
 		public void CopyTo(MenuInfo[] array, int index)
 		{
 			List.CopyTo(array, index);
 		}
 
+		/// <summary>
+		/// Gets or sets the element at the specified index.
+		/// </summary>
+		/// <param name="index">The index.</param>
+		/// <returns>MenuInfo.</returns>
 		public MenuInfo this[int index]
 		{
 			get { return (MenuInfo)List[index]; }

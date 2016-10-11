@@ -8,6 +8,12 @@ using System.Web;
 
 namespace MagicCMS.Core
 {
+	/// <summary>
+	/// Class CMS_Config. Wrapper class for MagicCMS application configuration setting. 
+	/// </summary>
+	/// <remarks>
+	/// Most initial value are fetched by Web.config file. All settings are stored in the MagicCMS database.
+	/// </remarks>
     public class CMS_Config
     {
         #region Public Properties
@@ -24,19 +30,48 @@ namespace MagicCMS.Core
             }
         }
 
-        // Google Analitycs
+        // Google Analytics
+		/// <summary>
+		/// Gets or sets the Google Analytics ID for the web site. 
+		/// </summary>
+		/// <value>Google Analytics ID.</value>
+		/// <remarks>
+		/// If no ID is provided the Google Analytics Java script interface will be not inserted in Web Pages. 
+		/// </remarks>
         public string GaProperty_ID { get; set; }
 
-        // Sigle Multipage
+		/// <summary>
+		/// Single page flag.
+		/// </summary>
+		/// <value>The single page.</value>
+		/// <remarks>
+		/// If this flag is set MagicCMS will check il menu links point to external pages or to local links in the home pages. Set this flag if your application 
+		/// has a landing home page with menu items that points to sections on the same page.
+		/// </remarks>
         public Boolean SinglePage { get; set; }
+		/// <exclude />
         public Boolean MultiPage { get; set; }
 
         //Site Name
 
+		/// <summary>
+		/// Gets or sets the name of the site. Used in titles and in facebook meta data.
+		/// </summary>
+		/// <value>The name of the site.</value>
         public string SiteName { get; set; }
 
         private string _smtpServer;
 
+		/// <summary>
+		/// Gets or sets the SMTP server name.
+		/// </summary>
+		/// <value>The SMTP server name.</value>
+		/// <remarks>
+		/// SMTP server used by MagicCMS to send or resend passwords to user. Initial value is the value inserted in web.config. 
+		/// IMPORTANT! Is very important define SMTP server and password in web.config file. 
+		/// MagicCMS passwords are encrypted and, at the moment, the only way to receive the administrator password is to insert 
+		/// Admin email address, smtp server, smtp user name and smtp password in the web.config file.
+		/// </remarks> 
         public string SmtpServer
         {
             get
@@ -51,7 +86,15 @@ namespace MagicCMS.Core
 
         private string _smtpUsername;
 
-        public string SmtpUsername
+		/// <summary>
+		/// Gets or sets the SMTP user name.
+		/// </summary>
+		/// <value>The SMTP user name.</value>
+		/// <remarks>SMTP server used by MagicCMS to send or resend passwords to user. Initial value is the value inserted in web.config.
+		/// IMPORTANT! Is very important define SMTP server and password in web.config file.
+		/// MagicCMS passwords are encrypted and, at the moment, the only way to receive the administrator password is to insert
+		/// Admin email address, smtp server, smtp user name and smtp password in the web.config file.</remarks>
+		public string SmtpUsername
         {
             get
             {
@@ -65,7 +108,15 @@ namespace MagicCMS.Core
 
         private string _smtpPassword;
 
-        public string SmtpPassword
+		/// <summary>
+		/// Gets or sets the SMTP user password.
+		/// </summary>
+		/// <value>The SMTP user password.</value>
+		/// <remarks>SMTP server used by MagicCMS to send or resend passwords to user. Initial value is the value inserted in web.config.
+		/// IMPORTANT! Is very important define SMTP server and password in web.config file.
+		/// MagicCMS passwords are encrypted and, at the moment, the only way to receive the administrator password is to insert
+		/// Admin email address, smtp server, smtp user name and smtp password in the web.config file.</remarks>
+		public string SmtpPassword
         {
             get
             {
@@ -79,6 +130,10 @@ namespace MagicCMS.Core
 
         private string _smtpDefaultFromMail;
 
+		/// <summary>
+		/// Gets or sets the SMTP default from mail.
+		/// </summary>
+		/// <value>The SMTP default from mail.</value>
         public string SmtpDefaultFromMail
         {
             get
@@ -93,7 +148,15 @@ namespace MagicCMS.Core
 
         private string _smtpAdminMail;
 
-        public string SmtpAdminMail
+		/// <summary>
+		/// Gets or sets the SMTP Admin mail.
+		/// </summary>
+		/// <value>The SMTP Admin email address.</value>
+		/// <remarks>SMTP server used by MagicCMS to send or resend passwords to user. Initial value is the value inserted in web.config.
+		/// IMPORTANT! Is very important define SMTP server and password in web.config file.
+		/// MagicCMS passwords are encrypted and, at the moment, the only way to receive the administrator password is to insert
+		/// Admin email address, smtp server, smtp user name and smtp password in the web.config file.</remarks>
+		public string SmtpAdminMail
         {
             get
             {
@@ -106,6 +169,12 @@ namespace MagicCMS.Core
 
 
         private Boolean _transAuto = true;
+		/// <summary>
+		/// Gets or sets the Bing Translation flag.
+		/// </summary>
+		/// <value>The Bing Translation flag.</value>
+		/// <remarks>If activate you can call Bing Translation engine to translate post and then correct translations manually. You will need also to set 
+		/// <see cref="TransClientId"/> and <see cref="TransSecretKey"/>. You can get this ids subscribing to Microsoft DataMarket Developers for free. </remarks>
         public Boolean TransAuto
         {
             get
@@ -120,6 +189,10 @@ namespace MagicCMS.Core
 
         private string _defaultContentMaster;
 
+		/// <summary>
+		/// Gets or sets the default Master Page File.
+		/// </summary>
+		/// <value>The default Master Page File.</value>
         public string DefaultContentMaster
         {
             get { return (_defaultContentMaster == null) ? Defaults.DefaultContentMaster : _defaultContentMaster; }
@@ -129,6 +202,11 @@ namespace MagicCMS.Core
 
         private string _themePath;
 
+		/// <summary>
+		/// Gets or sets the theme path.
+		/// </summary>
+		/// <value>The theme path.</value>
+		/// <remarks>This is the directory of MagicCMS will find all theme files.</remarks>
         public string ThemePath
         {
             get
@@ -141,7 +219,12 @@ namespace MagicCMS.Core
         }
 
         private string _imagePath;
-        public string ImagesPath
+		/// <summary>
+		/// Gets or sets the images path.
+		/// </summary>
+		/// <value>The images path.</value>
+		/// <remarks>This is the directory of MagicCMS will find all global images. (Favorites ico, Apple icons, Default Facebook image).</remarks>
+		public string ImagesPath
         {
             get
             {
@@ -153,6 +236,11 @@ namespace MagicCMS.Core
         }
 
         private string _defaultImage;
+		/// <summary>
+		/// Gets or sets the default image url.
+		/// </summary>
+		/// <value>The default image url.</value>
+		/// <remarks>Image used when non image is available for a post.</remarks>
         public string DefaultImage
         {
             get
@@ -164,16 +252,54 @@ namespace MagicCMS.Core
             set { _defaultImage = value; }
         }
 
+		/// <summary>
+		/// Gets or sets the registered application client ID for Bing Translator engine access.. 
+		/// </summary>
+		/// <value>The application client ID.</value>
         public String TransClientId { get; set; }
+		/// <summary>
+		/// Gets or sets the application secret key for Bing Translator engine access.
+		/// </summary>
+		/// <value>The application secret key.</value>
         public String TransSecretKey { get; set; }
+		/// <summary>
+		/// Gets or sets the default language ID (example: "it").
+		/// </summary>
+		/// <value>The trans source language ID.</value>
         public string TransSourceLangId { get; set; }
+		/// <summary>
+		/// Gets or sets the name of the default language. (example: "italiano").
+		/// </summary>
+		/// <value>The name of the trans source language.</value>
         public string TransSourceLangName { get; set; }
+		/// <summary>
+		/// Gets or sets the start page ID (<see cref="MagicCMS.Core.MagicPost.Pk"/>).
+		/// </summary>
+		/// <value>The start page ID .</value>
+		/// <remarks>The MagicCMS application will stat showing this page.</remarks>
         public int StartPage { get; set; }
+		/// <summary>
+		/// Gets or sets the main menu ID (<see cref="MagicCMS.Core.MagicPost.Pk"/>).
+		/// </summary>
+		/// <value>The main menu ID.</value>
         public int MainMenu { get; set; }
+		/// <summary>
+		/// Gets or sets the secondary menu ID (<see cref="MagicCMS.Core.MagicPost.Pk"/>).
+		/// </summary>
+		/// <value>The secondary menu ID.</value>
         public int SecondaryMenu { get; set; }
+		/// <summary>
+		/// Gets or sets the footer menu ID (<see cref="MagicCMS.Core.MagicPost.Pk"/>).
+		/// </summary>
+		/// <value>The footer menu ID.</value>
         public int FooterMenu { get; set; }
 
 
+		/// <summary>
+		/// Gets or sets the specified property by property name.
+		/// </summary>
+		/// <param name="propertyName">Name of the property.</param>
+		/// <returns>Property value</returns>
         public object this[string propertyName]
         {
             get
@@ -193,6 +319,9 @@ namespace MagicCMS.Core
 
         #region Constructor
 
+		/// <summary>
+		/// An instance of the <see cref="CMS_Config"/> class is automatically created by the application
+		/// </summary>
         public CMS_Config()
         {
             Init();
@@ -308,6 +437,10 @@ namespace MagicCMS.Core
 
         #region Public Methods
 
+		/// <summary>
+		/// Saves this instance.
+		/// </summary>
+		/// <returns>Boolean.</returns>
         public Boolean Save()
         {
             // Se il record di log è già esistente non lo inserisco
@@ -438,6 +571,7 @@ namespace MagicCMS.Core
             return res;
         }
 
+		/// <exclude />
         public Boolean MergeContext(HttpContext context, string[] propertyList, out string msg)
         {
             Boolean result = true;

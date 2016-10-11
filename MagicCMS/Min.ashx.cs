@@ -7,11 +7,13 @@ using MagicCMS.Core;
 namespace MagicCMS
 {
     /// <summary>
-    /// Descrizione di riepilogo per Min
+	/// Min.ashx Handler that display thumbnails (<see cref="MagicCMS.Core.Miniatura"/> objects) stored in MagicCMS database. On query string you must define a pk parameter corresponding to Miniatura <see cref="MagicCMS.Core.Miniatura.Pk"/>. Return images data (ContentType = "image/jpeg"). 
     /// </summary>
+	/// <remarks>If the value provided doesn't corresponds to any existing thumbnails a 404 error status is returned.  </remarks>
     public class Min : IHttpHandler
     {
 
+		/// <exclude />
         public void ProcessRequest(HttpContext context)
         {
             context.Response.ContentType = "image/jpeg";
@@ -28,6 +30,7 @@ namespace MagicCMS
             }
         }
 
+		/// <exclude />
         public bool IsReusable
         {
             get

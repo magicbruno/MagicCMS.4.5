@@ -7,13 +7,19 @@ using MagicCMS.Core;
 using MagicCMS.BingTranslator;
 using MagicCMS.AccessToken;
 using System.ServiceModel.Channels;
+using System.ServiceModel;
 
-using System.ServiceModel;namespace MagicCMS.Admin.Ajax
+/// <exclude />
+namespace MagicCMS.Admin.Ajax
 {
-    /// <summary>
-    /// Descrizione di riepilogo per BingTranslation
-    /// </summary>
-    public class BingTranslation : IHttpHandler, IRequiresSessionState
+	/// <summary>
+	/// Class BingTranslation. 
+	/// </summary>
+	/// <remarks>Translate a post via AJAX call using Bing Translation. Return a <see cref="MagicCMS.Core.AjaxJsonResponse"/> with data containing a 
+	/// <see cref="MagicCMS.Core.MagicTranslation"/> object</remarks>
+	/// <seealso cref="System.Web.IHttpHandler" />
+	/// <seealso cref="System.Web.SessionState.IRequiresSessionState" />
+	public class BingTranslation : IHttpHandler, IRequiresSessionState
     {
 
         public void ProcessRequest(HttpContext context)

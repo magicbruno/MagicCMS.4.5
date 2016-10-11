@@ -4,56 +4,49 @@
 /// </summary>
 namespace System
 {
-	////////////////////////////////////////////////////////////////////////////////////////////////////
 	/// <summary>
-	/// CheckUrl: Verifica della correttezza del formato di un url.
-	/// Verify url format
+	/// Class CheckUrl.
 	/// </summary>
-	/// <remarks>
-	/// Bruno, 14/01/2013.
-	/// </remarks>
-	////////////////////////////////////////////////////////////////////////////////////////////////////
 	public static class CheckUrl
 	{
 
-		////////////////////////////////////////////////////////////////////////////////////////////////////
 		/// <summary>
-		/// Definisce i tipi di protocollo autorizzati. Define legal protocols
+		/// Enum Protocol. Difines protocol types
 		/// </summary>
-		/// <remarks>
-		/// Bruno, 14/01/2013.
-		/// </remarks>
-		////////////////////////////////////////////////////////////////////////////////////////////////////
 		public enum Protocol
 		{
-			///< An enum constant representing the HTTP option
+			/// <summary>
+			/// HTTP - An enum constant representing the HTTP option
+			/// </summary>
 			Http,
-			///< An enum constant representing the HTTPS option
+			/// <summary>
+			/// HTTPS - An enum constant representing the HTTPS option
+			/// </summary>
 			Https,
-			///< An enum constant representing the FTP option
+			/// <summary>
+			/// FTP - An enum constant representing the FTP option
+			/// </summary>
 			Ftp,
-			///< An enum constant representing the SMTP option
+			/// <summary>
+			/// SMTP - An enum constant representing the SMTP option
+			/// </summary>
 			Smtp,
-			///< An enum constant representing the POP option
+			/// <summary>
+			/// POP - An enum constant representing the POP option
+			/// </summary>
 			Pop,
-			///< An enum constant representing the mail option
+			/// <summary>
+			/// The mail - An enum constant representing the mail option
+			/// </summary>
 			Mail
 		}
 
-		////////////////////////////////////////////////////////////////////////////////////////////////////
 		/// <summary>
-		/// Se l'url inizia con uno dei controlli autorizzati non viene modificata altrimenti viene
-		/// aggiunto il protocollo di default.
+		/// If url doesn't have a protocol, add default protocol.
 		/// </summary>
-		/// <param name="url">URL of the document.</param>
+		/// <param name="url">The URL.</param>
 		/// <param name="defaultProtocol">The default protocol.</param>
-		/// <returns>
-		/// Modified url.
-		/// </returns>
-		/// <remarks>
-		/// Bruno, 14/01/2013.
-		/// </remarks>
-		////////////////////////////////////////////////////////////////////////////////////////////////////
+		/// <returns>System.String.</returns>
 		public static string EnsureProtocolDef(string url, Protocol defaultProtocol)
 		{
 			if (hasProtocol(url))
@@ -63,19 +56,13 @@ namespace System
 			return EnsureProtocol(url, defaultProtocol);
 		}
 
-		////////////////////////////////////////////////////////////////////////////////////////////////////
+
 		/// <summary>
-		/// Controlla se l'url inizia con il protocollo specificato in caso contrario lo aggiunge.
+		/// Check if the URL begins with the specified protocol otherwise, it adds.
 		/// </summary>
 		/// <param name="url">URL of the document.</param>
 		/// <param name="protocol">The protocol.</param>
-		/// <returns>
-		/// .
-		/// </returns>
-		/// <remarks>
-		/// Bruno, 14/01/2013.
-		/// </remarks>
-		////////////////////////////////////////////////////////////////////////////////////////////////////
+		/// <returns>System.String. Url</returns>
 		public static string EnsureProtocol(string url, Protocol protocol)
 		{
 			string output = url;
@@ -86,18 +73,13 @@ namespace System
 			return output;
 		}
 
-		////////////////////////////////////////////////////////////////////////////////////////////////////
 		/// <summary>
-		/// Ritorna vero se l'url inizia con la definizione di un protocollo
+		/// Returns true if the url starts with the definition of a protocol
 		/// </summary>
 		/// <param name="url">URL of the document.</param>
 		/// <returns>
 		/// true if protocol, false if not.
 		/// </returns>
-		/// <remarks>
-		/// Bruno, 14/01/2013.
-		/// </remarks>
-		////////////////////////////////////////////////////////////////////////////////////////////////////
 		public static bool hasProtocol(string url)
 		{
 			string prot;

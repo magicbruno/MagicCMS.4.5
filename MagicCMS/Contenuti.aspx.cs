@@ -5,13 +5,14 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace IngegneriRiunitiNew
+namespace MagicCMS
 {
-    public partial class Contenuti : MagicCMS.PageBase.MagicPage
-    {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            
-        }
-    }
+	/// <exclude />
+	public partial class Contenuti : MagicCMS.PageBase.MagicPage
+	{
+		protected void Page_Load(object sender, EventArgs e)
+		{
+			
+		}
+	}
 }

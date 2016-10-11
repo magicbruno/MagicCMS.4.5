@@ -6,8 +6,15 @@ using System.Web.Routing;
 
 namespace MagicCMS.Routing
 {
+	/// <summary>
+	/// Class Register. Register routing rules
+	/// </summary>
 	public static class Register
 	{
+		/// <summary>
+		/// Registers the routes.
+		/// </summary>
+		/// <param name="routes">The routes.</param>
 		public static void RegisterRoutes(RouteCollection routes)
 		{
 			RouteValueDictionary defaults = new RouteValueDictionary {

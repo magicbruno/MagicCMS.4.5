@@ -8,11 +8,27 @@ using System.Web.UI.WebControls;
 
 namespace MagicCMS.PageBase
 {
+	/// <summary>
+	/// Class MasterTheme. Descendant of <see cref="MagicCMS.PageBase.SiteMasterBase"/> 
+	/// </summary>
+	/// <seealso cref="MagicCMS.PageBase.SiteMasterBase" />
     public abstract partial class MasterTheme : SiteMasterBase
     {
 
+		/// <summary>
+		/// Gets or sets the error title.
+		/// </summary>
+		/// <value>The error title.</value>
         public string ErrorTitle { get; set; }
+		/// <summary>
+		/// Gets or sets the error message.
+		/// </summary>
+		/// <value>The error message.</value>
         public string ErrorMessage { get; set; }
+		/// <summary>
+		/// Gets or sets the start page identifier. Unique ID of the first page of MagicCMS application.
+		/// </summary>
+		/// <value>The start page identifier.</value>
         public int StartPageId { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -38,18 +54,7 @@ namespace MagicCMS.PageBase
             MyMaster.PageImage = this.PageImage;
         }
 
-        /// <summary>
-        /// Crea un oggetto ul con le appropriate class i per creare un menù con drpdown
-        /// </summary>
-        /// <param name="menuId">Id del menù da rappresentare</param>
-        /// <param name="mainClass">La classe della ul principale</param>
-        /// <param name="dropdownClass">La classe che indica un ul di tipo drop down</param>
-        /// <param name="dropDownParentClass">La classe che contrassegna un elemento li che contiene un drop down nella barra menù</param>
-        /// <param name="submenuParentClass">La classe che contrassegna un elemento li contenuto in una drop down che contiene un submenu drop down</param>
-        /// <param name="activeClass">La classe she indica se l'elemento li è attivo (se indica la pagina corrente)</param>
-        /// <param name="level">Deve essere sempre 0 nello sviluppo ricorsivo indica se si tratta di menu bar o submenu</param>
-        /// <param name="defaultToLocal">Se false viene utilizzato il salto all'anchor solo per per i figli di una HomePage Section</param>
-        /// <returns>Elemento ul contenente il menu</returns>
+		/// <exclude />
         protected HtmlGenericControl AggiungiVoci(int menuId, string mainClass, string dropdownClass, string dropDownParentClass,
                                                   string submenuParentClass, string activeClass, int level, Boolean defaultToLocal)
         {
@@ -193,11 +198,19 @@ namespace MagicCMS.PageBase
         }
 
 
+		/// <exclude />
         protected HtmlGenericControl AggiungiVoci(int menuId, string cssClass)
         {
             return AggiungiVoci(menuId, cssClass, "submenu", "", "", "", 0, true);
         }
 
+		/// <summary>
+		/// Bootstraps menu. Create a Bootstrap compatible menu extracting definition from MagicCMS database.
+		/// </summary>
+		/// <param name="menuId">The menu <see cref="MagicCMS.MagicPost.Pk"/>. </param>
+		/// <param name="cssClass">The CSS class assigned to the menu (ul html element).</param>
+		/// <param name="currentPagePk">The current page pk.</param>
+		/// <returns>HtmlGenericControl.</returns>
 		protected HtmlGenericControl BootstrapMenu(int menuId, string cssClass, int currentPagePk)
 		{
 			MenuInfoCollection myMenu = new MenuInfoCollection(new MagicPost(menuId), currentPagePk);

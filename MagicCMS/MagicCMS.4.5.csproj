@@ -1239,9 +1239,6 @@
     <None Include="Properties\PublishProfiles\IngegneriRiuniti.pubxml" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\jquery-1.11.1.js" />
-    <Content Include="Scripts\jquery-1.11.1.min.js" />
-    <Content Include="Scripts\jquery-1.11.1.min.map" />
     <None Include="Scripts\jquery-1.12.3.intellisense.js" />
     <None Include="Scripts\google-maps-3-vs-1-0-vsdoc.js" />
     <Content Include="Scripts\google-maps-3-vs-1-0.js" />
@@ -1249,8 +1246,6 @@
     <Content Include="Scripts\jquery-1.12.3.min.js" />
     <Content Include="Scripts\jquery-1.12.3.min.map" />
     <None Include="Scripts\jquery-2.2.4.intellisense.js" />
-    <Content Include="Scripts\jquery-1.7.1.js" />
-    <Content Include="Scripts\jquery-1.7.1.min.js" />
     <Content Include="Scripts\jquery-2.2.4.js" />
     <Content Include="Scripts\jquery-2.2.4.min.js" />
     <Content Include="Scripts\json2.js" />
@@ -1306,7 +1301,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
-    <Content Include="Test\Default.aspx" />
     <Content Include="Themes\Default\ckeditor\config.js" />
     <Content Include="Themes\Default\ckeditor\contents.css" />
     <Content Include="Themes\Default\css\animate-mb.css" />
@@ -1431,6 +1425,8 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccessToken\AdmAccessToken.cs" />
+    <Compile Include="AccessToken\AdmAuthentication.cs" />
     <Compile Include="Admin\Ajax\EditUserProfile.ashx.cs">
       <DependentUpon>EditUserProfile.ashx</DependentUpon>
     </Compile>
@@ -1605,8 +1601,6 @@
       <DependentUpon>Temp.aspx</DependentUpon>
     </Compile>
     <Compile Include="Utils\HttpInternals.cs" />
-    <Compile Include="_CreateNewNuGetPackage\AccessToken\AdmAccessToken.cs" />
-    <Compile Include="_CreateNewNuGetPackage\AccessToken\AdmAuthentication.cs" />
     <Compile Include="Admin\Ajax\BingTranslation.ashx.cs">
       <DependentUpon>BingTranslation.ashx</DependentUpon>
     </Compile>
@@ -1860,13 +1854,6 @@
     </Compile>
     <Compile Include="SiteMaster.Master.designer.cs">
       <DependentUpon>SiteMaster.Master</DependentUpon>
-    </Compile>
-    <Compile Include="Test\Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Test\Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Themes\Default\ThemeMaster.master.cs">
       <DependentUpon>ThemeMaster.master</DependentUpon>

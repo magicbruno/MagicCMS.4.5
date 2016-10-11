@@ -8,9 +8,21 @@ using MagicCMS.Routing;
 
 namespace MagicCMS.PageBase
 {
+	/// <summary>
+	/// Class MagicPage. MagicCMS content pages must inherit from this class.
+	/// </summary>
+	/// <seealso cref="System.Web.UI.Page" />
     public partial class MagicPage : System.Web.UI.Page
     {
+		/// <summary>
+		/// Gets or sets the <see cref="MagicCMS.Core.MagicPost"/> to be rendered in the page.
+		/// </summary>
+		/// <value>The post.</value>
         public MagicPost ThePost { get; set; }
+		/// <summary>
+		/// Gets the  configuration settings.
+		/// </summary>
+		/// <value>The configuration.</value>
         public CMS_Config Config { get; set; }
 
         /// <summary>

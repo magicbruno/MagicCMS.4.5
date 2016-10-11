@@ -8,6 +8,7 @@ using System.Web.Routing;
 
 namespace MagicCMS
 {
+	/// <exclude />
 	public class Global : System.Web.HttpApplication
 	{
 

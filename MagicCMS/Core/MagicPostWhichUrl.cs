@@ -5,6 +5,9 @@ using System.Web;
 
 namespace MagicCMS.Core
 {
+	/// <summary>
+	/// Enum MagicPostWhichUrl
+	/// </summary>
     public enum MagicPostWhichUrl
     {
         UrlMain, UrlSEcondary

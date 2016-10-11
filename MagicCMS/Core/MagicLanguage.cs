@@ -7,12 +7,20 @@ using System.Web;
 
 namespace MagicCMS.Core
 {
+	/// <summary>
+	/// Class MagicLanguage.
+	/// </summary>
+	/// <remarks>Define languages</remarks>
 	public class MagicLanguage
 	{
 
 		#region Properties
 
 		private static Dictionary<string, string> _languages = null;
+		/// <summary>
+		/// Static dictionary that return all defined languages.
+		/// </summary>
+		/// <value>The languages.</value>
 		public static Dictionary<string, string> Languages
 		{
 			get
@@ -25,20 +33,42 @@ namespace MagicCMS.Core
 			}
 
 		}
+		/// <summary>
+		/// Gets or sets the language identifier.
+		/// </summary>
+		/// <value>The language ID.</value>
 		public string LangId { get; set; }
+		/// <summary>
+		/// Gets or sets the name of the language.
+		/// </summary>
+		/// <value>The name of the language.</value>
 		public string LangName { get; set; }
+		/// <summary>
+		/// Gets or sets the active flag.
+		/// </summary>
+		/// <value>The active flag.</value>
 		public Boolean Active { get; set; }
+		/// <summary>
+		/// Gets or sets Auto hide flag.
+		/// </summary>
+		/// <value>The Auto hide flag.</value>
+		/// <remarks>If true when a language is chosen only post with translation in that language are shown, otherwise antrnslated post are show in the default language.</remarks>
 		public Boolean AutoHide { get; set; }
 		
 		#endregion
 
 		#region Constructor
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="MagicLanguage"/> class fetching it from the database.
+		/// </summary>
+		/// <param name="langId">The language identifier.</param>
 		public MagicLanguage(string langId)
 		{
 			Init(langId);
 		}
 
+		/// <exclude />
 		public MagicLanguage(SqlDataReader record)
 		{
 			Init(record);
@@ -94,6 +124,11 @@ namespace MagicCMS.Core
 		#endregion
 
 		#region Public Methods
+		/// <summary>
+		/// Saves the language definition.
+		/// </summary>
+		/// <param name="message">Returned message.</param>
+		/// <returns>Boolean.</returns>
 		public Boolean Save(out string  message)
 		{
 			// Se il record di log è già esistente non lo inserisco
@@ -193,6 +228,9 @@ namespace MagicCMS.Core
 
 		#region Static Methods
 
+		/// <summary>
+		/// Resets and populate language definitions dictionary.
+		/// </summary>
 		public static void Reset()
 		{
 			if (_languages == null)
@@ -239,6 +277,11 @@ namespace MagicCMS.Core
 			}
 		}
 
+		/// <summary>
+		/// Gets language name by language id.
+		/// </summary>
+		/// <param name="value">The value.</param>
+		/// <returns>System.String.</returns>
 		public static string GetKey(string value)
 		{
 			string key = "";
@@ -250,6 +293,10 @@ namespace MagicCMS.Core
 			return key;
 		}
 
+		/// <summary>
+		/// Determines whether this application is multilanguage.
+		/// </summary>
+		/// <returns><c>true</c> if this instance is multilanguage; otherwise, <c>false</c>.</returns>
 		public static bool IsMultilanguage()
 		{
 			return (Languages.Count > 0);

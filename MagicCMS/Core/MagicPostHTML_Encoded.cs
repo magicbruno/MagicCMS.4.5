@@ -7,7 +7,7 @@ using System.Web;
 namespace MagicCMS.Core
 {
     /// <summary>
-    /// Wrapper of MagicPost classe. Returns HTML encoded version of MagicPost string properties
+    /// Wrapper of MagicPost class. Returns HTML encoded version of MagicPost HTML properties
     /// </summary>
     public class MagicPostHTML_Encoded
     {
@@ -23,23 +23,30 @@ namespace MagicCMS.Core
         }
 
         #region Constructor
+		/// <summary>
+		/// Initializes a new empty instance of the <see cref="MagicPostHTML_Encoded"/> class.
+		/// </summary>
         public MagicPostHTML_Encoded()
         {
             _mp = new MagicPost();
         }
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="MagicPostHTML_Encoded"/> class deriving it from a <see cref="MagicCMS.Core.MagicPost"/> istance.
+		/// </summary>
+		/// <param name="mp">The mp.</param>
         public MagicPostHTML_Encoded(MagicPost mp)
         {
             _mp = mp;
         }
 
         /// <summary>
-        /// Initializes a new empty instance of the <see cref="MagicPostTypeInfo" /> class of a choosen type.
+		/// Initializes a new empty instance of the <see cref="MagicPostHTML_Encoded" /> class of a chosen type.
         /// </summary>
-        /// <param name="mpti">The type.</param>
-        public MagicPostHTML_Encoded(MagicPostTypeInfo mpti)
+        /// <param name="postType">The type.</param>
+        public MagicPostHTML_Encoded(MagicPostTypeInfo postType)
         {
-            _mp = new MagicPost(mpti);
+            _mp = new MagicPost(postType);
         }
 
         /// <summary>
@@ -325,6 +332,10 @@ namespace MagicCMS.Core
             }
         }
 
+		/// <summary>
+		/// Gets the HtmlEncoded version of testo breve.
+		/// </summary>
+		/// <value>The testo breve.</value>
         public string TestoBreve
         {
             get
@@ -333,6 +344,10 @@ namespace MagicCMS.Core
             }
         }
 
+		/// <summary>
+		/// Gets the HtmlEncoded version of testo lungo.
+		/// </summary>
+		/// <value>The testo lungo.</value>
         public string TestoLungo
         {
             get

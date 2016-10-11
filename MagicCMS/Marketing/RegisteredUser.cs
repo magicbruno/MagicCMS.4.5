@@ -44,7 +44,7 @@ namespace MagicCMS.Marketing
 
         /// <summary>
         /// Initializes a new instance of the <see cref="RegisteredUser"/> class 
-        /// retriving it frm database
+        /// retrieving it frm database
         /// </summary>
         /// <param name="pk">The pk.</param>
         public RegisteredUser(int pk)

@@ -9,18 +9,47 @@ using System.Web;
 
 namespace MagicCMS.Core
 {
+	/// <summary>
+	/// Class MagicTranslation.
+	/// </summary>
+	/// <remarks>Wrapper class for MagicCMS database table containing post translations</remarks>
 	public class MagicTranslation
 	{
 		#region Public Properties
 
+		/// <summary>
+		/// Gets or sets the pk. (Unique ID of translation)
+		/// </summary>
+		/// <value>The pk.</value>
 		public int Pk { get; set; }
+		/// <summary>
+		/// Gets or sets the language identifier of the language to which translation belong.
+		/// </summary>
+		/// <value>The language identifier.</value>
 		public string LangId { get; set; }
+		/// <summary>
+		/// Gets or sets the name of the language to which translation belong..
+		/// </summary>
+		/// <value>The name of the language.</value>
 		public string LangName {get; set;}
+		/// <summary>
+		/// Gets or sets the post pk. Unique ID of the post that owns the translation.
+		/// </summary>
+		/// <value>The post pk.</value>
 		public int PostPk { get; set; }
+		/// <summary>
+		/// Gets or sets the translated title. Translation of the post pretty title rendered as <see cref="MagicCMS.Core.MagicPost.Title_RT"/>.
+		/// </summary>
+		/// <value>The translated title.</value>
 		public string TranslatedTitle { get; set; }
 
 		private string _translatedTestoBreve;
 
+		/// <summary>
+		/// Gets or sets the translated testo breve. Translation of <see cref="MagicCMS.Core.MagicPost.TestoBreve"/> 
+		/// rendered as <see cref="MagicCMS.Core.MagicPost.TestoBreve_RT"/>.
+		/// </summary>
+		/// <value>The translated testo breve.</value>
 		public string TranslatedTestoBreve {
 			get
 			{
@@ -36,6 +65,11 @@ namespace MagicCMS.Core
 
 		private string _translatedTestoLungo;
 
+		/// <summary>
+		/// Gets or sets the translated testo lungo. Translation of <see cref="MagicCMS.Core.MagicPost.TestoLungo" />
+		/// rendered as <see cref="MagicCMS.Core.MagicPost.TestoLungo_RT" />.
+		/// </summary>
+		/// <value>The translated testo lungo.</value>
 		public string TranslatedTestoLungo
 		{
 			get
@@ -48,8 +82,17 @@ namespace MagicCMS.Core
 			}
 		}
 
+		/// <summary>
+		/// Gets or sets the translated tags. Translation of <see cref="MagicCMS.Core.MagicPost.Tags"/>.
+		/// </summary>
+		/// <value>The translated tags.</value>
 		public string TranslatedTags { get; set; }
 
+		/// <summary>
+		/// Gets or sets the property with the specified property name.
+		/// </summary>
+		/// <param name="propertyName">Name of the property.</param>
+		/// <returns>The value of property with provided property name</returns>
 		public object this[string propertyName]
 		{
 			get
@@ -73,17 +116,14 @@ namespace MagicCMS.Core
 		/// <summary>
 		/// Initializes a new instance of the <see cref="MagicTranslation"/> class.
 		/// </summary>
-		/// <param name="postPk">The post translated primary Key.</param>
+		/// <param name="postPk">The translated post primary Key.</param>
 		/// <param name="langId">The language id of translation.</param>
 		public MagicTranslation(int postPk, string langId)
 		{
 			Init(postPk, langId);
 		}
 
-		/// <summary>
-		/// Initializes a new instance of the <see cref="MagicTranslation"/> class.
-		/// </summary>
-		/// <param name="record">The record read by SqlDataReader reader.</param>
+		/// <exclude />
 		public MagicTranslation(SqlDataReader record)
 		{
 			Init(record);
@@ -174,6 +214,10 @@ namespace MagicCMS.Core
 
 		#region Public Methods
 
+		/// <summary>
+		/// Saves this translation in MagicCMS database.
+		/// </summary>
+		/// <returns>Boolean.</returns>
 		public Boolean Save()
 		{
 			// Se il record di log è già esistente non lo inserisco
@@ -285,6 +329,7 @@ namespace MagicCMS.Core
 			return res;
 		}
 
+		/// <exclude />
 		public Boolean MergeContext(HttpContext context, string[] propertyList, out string msg)
 		{
 			Boolean result = true;

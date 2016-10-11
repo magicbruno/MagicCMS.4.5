@@ -26,7 +26,7 @@ namespace MagicCMS.Core
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MagicPostTypeInfoCollection"/> class. Using 
-        /// parameters passed by jquery.DataTable
+        /// parameters passed by jQuery.DataTable
         /// </summary>
         /// <param name="pagination">The pagination.</param>
         public MagicPostTypeInfoCollection(InputParams_dt pagination)
@@ -36,7 +36,7 @@ namespace MagicCMS.Core
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MagicPostTypeInfoCollection"/> class. Using 
-        /// parameters passed by jquery.DataTable 
+        /// parameters passed by jQuery.DataTable 
         /// </summary>
         /// <param name="pagination">The pagination.</param>
         /// <param name="basket">Show basket (deleted elements).</param>
@@ -54,27 +54,57 @@ namespace MagicCMS.Core
             Init(onlyActive, false, MagicPostTypeInfoOrder.None, "");
         }
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="MagicPostTypeInfoCollection"/> class.
+		/// </summary>
+		/// <param name="onlyActive">Active flag.</param>
+		/// <param name="deleted">Deleted flag</param>
+		/// <param name="order">The order.</param>
         public MagicPostTypeInfoCollection(Boolean onlyActive, Boolean deleted, MagicPostTypeInfoOrder order)
         {
             Init(onlyActive, deleted, order, "");
         }
 
-        public MagicPostTypeInfoCollection(Boolean onlyActive, MagicPostTypeInfoOrder order)
+		/// <summary>
+		/// Initializes a new instance of the <see cref="MagicPostTypeInfoCollection" /> class.
+		/// </summary>
+		/// <param name="onlyActive">Active flag.</param>
+		/// <param name="order">The order.</param>
+		public MagicPostTypeInfoCollection(Boolean onlyActive, MagicPostTypeInfoOrder order)
         {
             Init(onlyActive, false, order, "");
         }
 
-        public MagicPostTypeInfoCollection(Boolean onlyActive, Boolean deleted)
+		/// Initializes a new instance of the <see cref="MagicPostTypeInfoCollection"/> class.
+		/// </summary>
+		/// <param name="onlyActive">Active flag.</param>
+		/// <param name="deleted">Deleted Flag.</param>
+		/// <param name="whereClause">The where clause.</param>
+		/// <param name="order">The order.</param>
+		public MagicPostTypeInfoCollection(Boolean onlyActive, Boolean deleted)
         {
             Init(onlyActive, deleted, MagicPostTypeInfoOrder.None, "");
         }
 
-        public MagicPostTypeInfoCollection(Boolean onlyActive, Boolean deleted, string whereClause)
+		/// <summary>
+		/// Initializes a new instance of the <see cref="MagicPostTypeInfoCollection"/> class.
+		/// </summary>
+		/// <param name="onlyActive">The only active.</param>
+		/// <param name="deleted">The deleted.</param>
+		/// <param name="whereClause">The where clause.</param>
+		public MagicPostTypeInfoCollection(Boolean onlyActive, Boolean deleted, string whereClause)
         {
             Init(onlyActive, deleted, MagicPostTypeInfoOrder.None, whereClause);
         }
 
-        public MagicPostTypeInfoCollection(Boolean onlyActive, Boolean deleted, MagicPostTypeInfoOrder order, string whereClause)
+		/// <summary>
+		/// Initializes a new instance of the <see cref="MagicPostTypeInfoCollection"/> class.
+		/// </summary>
+		/// <param name="onlyActive">The only active.</param>
+		/// <param name="deleted">The deleted.</param>
+		/// <param name="order">The order.</param>
+		/// <param name="whereClause">The where clause.</param>
+		public MagicPostTypeInfoCollection(Boolean onlyActive, Boolean deleted, MagicPostTypeInfoOrder order, string whereClause)
         {
             Init(onlyActive, deleted, order, whereClause);
         }

@@ -6,7 +6,7 @@ using System.Web.UI;
 namespace System
 {
     /// <summary>
-    /// Truncate text to a maximum number of chars with varous options
+    /// Truncate text to a maximum number of chars with various options
     /// </summary>
     public static class StringHtmlExtensions
     {
@@ -40,7 +40,7 @@ namespace System
         /// <param name="text">The text.</param>
         /// <param name="maxCharacters">The maximum characters.</param>
         /// <param name="trailingText">The trailing text.</param>
-        /// <returns>Rresulting text.</returns>
+        /// <returns>Resulting text.</returns>
         public static string Truncate(this string text, int maxCharacters, string trailingText)
         {
             if (string.IsNullOrEmpty(text) || maxCharacters <= 0 || text.Length <= maxCharacters)
@@ -56,7 +56,7 @@ namespace System
         /// <param name="html">The HTML string.</param>
         /// <param name="maxCharacters">The maximum characters.</param>
         /// <param name="trailingText">The trailing text.</param>
-        /// <returns>Rresulting text.</returns>
+        /// <returns>Resulting text.</returns>
         public static string TruncateHtml(this string html, int maxCharacters, string trailingText)
         {
             if (string.IsNullOrEmpty(html))
@@ -135,7 +135,7 @@ namespace System
         /// </summary>
         /// <param name="html">The HTML.</param>
         /// <param name="maxCharacters">The maximum characters.</param>
-        /// <returns>Rresulting text.</returns>
+        /// <returns>Resulting text.</returns>
         public static string TruncateHtml(this string html, int maxCharacters)
         {
             return html.TruncateHtml(maxCharacters, null);
@@ -146,7 +146,7 @@ namespace System
         /// </summary>
         /// <param name="text">The text.</param>
         /// <param name="maxCharacters">The maximum characters.</param>
-        /// <returns>Rresulting text.</returns>
+        /// <returns>Resulting text.</returns>
         public static string TruncateWords(this string text, int maxCharacters)
         {
             return text.TruncateWords(maxCharacters, null);
@@ -158,17 +158,22 @@ namespace System
         /// <param name="text">The text.</param>
         /// <param name="maxCharacters">The maximum characters.</param>
         /// <param name="trailingText">The trailing text.</param>
-        /// <returns>Rresulting text</returns>
+        /// <returns>Resulting text</returns>
         public static string TruncateWords(this string text, int maxCharacters, string trailingText)
         {
             if (string.IsNullOrEmpty(text) || maxCharacters <= 0 || text.Length <= maxCharacters)
                 return text;
 
-            // trunctate the text, then remove the partial word at the end
+            // truncate the text, then remove the partial word at the end
             return Regex.Replace(text.Truncate(maxCharacters),
                 @"\s+[^\s]+$", string.Empty, RegexOptions.IgnoreCase | RegexOptions.Compiled) + trailingText;
         }
 
+		/// <summary>
+		/// Renders a control to HTML string.
+		/// </summary>
+		/// <param name="ControlToRender">The control to render.</param>
+		/// <returns>HTML formatted string</returns>
         public static string RenderControlToHtml(Control ControlToRender)
         {
             System.Text.StringBuilder sb = new System.Text.StringBuilder();

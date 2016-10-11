@@ -6,9 +6,20 @@ using System.Web;
 
 namespace MagicCMS.Core
 {
+	/// <summary>
+	/// Class MagicGmap3MarkerOptions.
+	/// </summary>
     public class MagicGmap3MarkerOptions
     {
+		/// <summary>
+		/// Gets or sets the icon.
+		/// </summary>
+		/// <value>The icon.</value>
         public string icon { get; set; }
+		/// <summary>
+		/// Initializes a new instance of the <see cref="MagicGmap3MarkerOptions"/> class.
+		/// </summary>
+		/// <param name="iconUrl">The icon URL.</param>
         public MagicGmap3MarkerOptions ( string iconUrl)
         {
             if (!String.IsNullOrEmpty(iconUrl))
@@ -16,10 +27,17 @@ namespace MagicCMS.Core
         }
     }
 
+	/// <summary>
+	/// Class MagicGmap3Marker. Used tu simplify handling of <see cref="MagicCMS.MagicPost"/> with <see cref="MagicCMS.MagicPost.Tipo"/> = <see cref="MagicCMS.MagicPostTypeInfo.Geolocazione"/>
+	/// </summary>
     public class MagicGmap3Marker
     {
         private MagicPost _mp;
 
+		/// <summary>
+		/// Gets the lat LNG.
+		/// </summary>
+		/// <value>The lat LNG.</value>
         public List<Double> latLng
         {
             get
@@ -41,7 +59,11 @@ namespace MagicCMS.Core
             }
         }
 
-        public string addres
+		/// <summary>
+		/// Gets the address.
+		/// </summary>
+		/// <value>The address.</value>
+        public string address
         {
             get
             {
@@ -49,6 +71,10 @@ namespace MagicCMS.Core
             }
         }
 
+		/// <summary>
+		/// Gets the data.
+		/// </summary>
+		/// <value>The data.</value>
         public string data
         {
             get
@@ -65,6 +91,10 @@ namespace MagicCMS.Core
             }
         }
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="MagicGmap3Marker"/> class.
+		/// </summary>
+		/// <param name="post">The post.</param>
         public MagicGmap3Marker(MagicPost post)
         {
             _mp = post;

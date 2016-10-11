@@ -6,27 +6,47 @@ using System.Web;
 namespace MagicCMS.Core
 {
     /// <summary>
-    /// Where clause value types.
+	/// Where clause value types.  Clause value type of a query clause.
     /// </summary>
-    public enum ClauseValueType
+	/// <seealso cref="MagicCMS.Core.ClauseValue"/>
+	/// <seealso cref="MagicCMS.Core.WhereClause"/>
+	public enum ClauseValueType
     {
         Function, Number, String, Fulltext
     }
 
     /// <summary>
-    /// Where clause value
+    /// Where clause value. Clause value of a query clause
     /// </summary>
-    public class ClauseValue
+	/// <seealso cref="MagicCMS.Core.WhereClause"/>
+	public class ClauseValue
     {
+		/// <summary>
+		/// Gets or sets the type (Function, Number, String, Fulltext).
+		/// </summary>
+		/// <value>The type. </value>
         public ClauseValueType Type { get; set; }
+		/// <summary>
+		/// Gets or sets the value (depending on ClauseValueType).
+		/// </summary>
+		/// <value>The value.</value>
         public object Value { get; set; }
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="ClauseValue"/> class.
+		/// </summary>
+		/// <param name="value">The value.</param>
+		/// <param name="type">The type.</param>
         public ClauseValue(object value, ClauseValueType type)
         {
             Value = value;
             Type = type;
         }
 
+		/// <summary>
+		/// Returns a <see cref="System.String" /> that represents this instance.
+		/// </summary>
+		/// <returns>A <see cref="System.String" /> that represents this instance.</returns>
         public override string ToString()
         {
             return this.Value.ToString();
@@ -34,7 +54,7 @@ namespace MagicCMS.Core
     }
 
     /// <summary>
-    /// Where clause class.
+    /// Where clause class. Create and handle not injectable sql queries .
     /// </summary>
     public class WhereClause
     {
@@ -70,13 +90,25 @@ namespace MagicCMS.Core
         #endregion
 
 
+		/// <summary>
+		/// Gets or sets the name of the field to filter.
+		/// </summary>
+		/// <value>The name of the field.</value>
         public string FieldName { get; set; }
+		/// <summary>
+		/// Gets or sets the logical conjunction to previous query clause.
+		/// </summary>
+		/// <value>The logical operator.</value>
         public string LogicalOperator
         {
             get { return _logicalOperator; }
             set { _logicalOperator = value.ToUpper(); }
         }
 
+		/// <summary>
+		/// Gets or sets the operator of the query clause.
+		/// </summary>
+		/// <value>The operator.</value>
         public string Operator
         {
             get
@@ -90,13 +122,21 @@ namespace MagicCMS.Core
             set { _operator = value.ToUpper(); }
         }
 
+		/// <summary>
+		/// Gets or sets the value of the clause.
+		/// </summary>
+		/// <value>The value.</value>
         public ClauseValue Value
         {
             get;
             set;
         }
 
-        public string QuotedtValue
+		/// <summary>
+		/// Gets the quoted value of the clause.
+		/// </summary>
+		/// <value>The quoted value.</value>
+        public string QuotedValue
         {
             get
             {

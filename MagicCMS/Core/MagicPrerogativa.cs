@@ -7,9 +7,16 @@ using System.Web;
 
 namespace MagicCMS.Core
 {
+	/// <summary>
+	/// Class MagicPrerogativa.
+	/// </summary>
     public class MagicPrerogativa
     {
         private static Dictionary<int, string> _prerogative = null;
+		/// <summary>
+		/// Gets the prerogative Dictionary.
+		/// </summary>
+		/// <value>The prerogative.</value>
         public static Dictionary<int, string> Prerogative 
         {
             get
@@ -23,6 +30,9 @@ namespace MagicCMS.Core
  
         }
 
+		/// <summary>
+		/// Resets and populate prerogative dictionary.
+		/// </summary>
         public static void Reset()
         {
             if (_prerogative == null)
@@ -69,6 +79,12 @@ namespace MagicCMS.Core
             }
         }
 
+		/// <summary>
+		/// Gets prerogative by dictionary.
+		/// </summary>
+		/// <param name="value">The value.</param>
+		/// <returns>System.Int32.</returns>
+		/// <exception cref="Exception">La tabella prerogative non contiene dat.</exception>
         public static int GetKey(string value)
         {
             if (Prerogative.Count == 0)

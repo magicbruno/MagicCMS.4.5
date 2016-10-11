@@ -30,6 +30,9 @@ namespace MagicCMS.Utils
             }
         }
 
+		/// <summary>
+		/// Stops the file change monitoring.
+		/// </summary>
         public static void StopFileMonitoring()
         {
             s_FileChangesMonitorStop.Invoke(FileChangesMonitor, null);

@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace MagicCMS
 {
+	/// <exclude />
 	public partial class error : System.Web.UI.Page
 	{
 		public string ShortMessage { get; set; }

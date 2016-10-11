@@ -13,12 +13,7 @@ using System.Web;
 
 namespace MagicCMS.Core
 {
-    /// <summary>
-    /// Magic tag. Classe che gestisce nome e primarikey di un contenitore generico.
-    /// </summary>
-    /// <remarks>
-    /// Bruno, 15/01/2013.
-    /// </remarks>
+	/// <exclude />
     public class MagicTag
     {
         #region Private Fields

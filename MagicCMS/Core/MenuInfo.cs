@@ -10,6 +10,10 @@ using System.Web.UI.HtmlControls;
 
 namespace MagicCMS.Core
 {
+	/// <summary>
+	/// Class MenuInfo.
+	/// </summary>
+	/// <remarks>Define a subset of <see cref="MagicCMS.Core.MagicPost"/></remarks> the define a menu item. Suitable for use in menus management.
     public class MenuInfo
     {
         #region Private fields
@@ -31,6 +35,10 @@ namespace MagicCMS.Core
         #endregion
 
         #region Public properties
+		/// <summary>
+		/// Gets the MagicPost.Pk. 
+		/// </summary>
+		/// <value>The pk.</value>
         public int Pk
         {
             get
@@ -39,6 +47,10 @@ namespace MagicCMS.Core
             }
         }
 
+		/// <summary>
+		/// Gets the MagicPost.Titolo.
+		/// </summary>
+		/// <value>The titolo.</value>
         public string Titolo
         {
             get
@@ -47,6 +59,10 @@ namespace MagicCMS.Core
             }
         }
 
+		/// <summary>
+		/// Gets the MagicPost.Title_RT.
+		/// </summary>
+		/// <value>The title rt.</value>
         public string Title_RT
         {
             get
@@ -55,6 +71,10 @@ namespace MagicCMS.Core
             }
         }
 
+		/// <summary>
+		/// Gets the MagicPost.TestoBreve_RT.
+		/// </summary>
+		/// <value>The testo breve rt.</value>
         public string TestoBreve_RT
         {
             get
@@ -63,6 +83,10 @@ namespace MagicCMS.Core
             }
         }
 
+		/// <summary>
+		/// Gets the MagicPost.Tipo.
+		/// </summary>
+		/// <value>The tipo.</value>
         public int Tipo
         {
             get
@@ -71,6 +95,10 @@ namespace MagicCMS.Core
             }
         }
 
+		/// <summary>
+		/// Gets the target. Target attribute in anchor HTML element.
+		/// </summary>
+		/// <value>The target.</value>
         public string Target
         {
             get
@@ -89,6 +117,10 @@ namespace MagicCMS.Core
             }
         }
 
+		/// <summary>
+		/// Gets the MagicPost.Url.
+		/// </summary>
+		/// <value>The URL.</value>
         public string Url
         {
             get
@@ -97,6 +129,10 @@ namespace MagicCMS.Core
             }
         }
 
+		/// <summary>
+		/// Gets the MagicPost.Url2.
+		/// </summary>
+		/// <value>The url2.</value>
         public string Url2
         {
             get
@@ -105,6 +141,10 @@ namespace MagicCMS.Core
             }
         }
 
+		/// <summary>
+		/// Gets the MagicPost.IconClass.
+		/// </summary>
+		/// <value>The icon class.</value>
         public string IconClass
         {
             get
@@ -113,6 +153,10 @@ namespace MagicCMS.Core
             }
         }
 
+		/// <summary>
+		/// Gets the MagicPost.CustomClass.
+		/// </summary>
+		/// <value>The custom class.</value>
         public string CustomClass
         {
             get
@@ -123,6 +167,10 @@ namespace MagicCMS.Core
 
         private MenuIcon _icon;
 
+		/// <summary>
+		/// Gets the href attribute of the anchor HTML element.
+		/// </summary>
+		/// <value>The href.</value>
         public string Href
         {
             get
@@ -136,6 +184,7 @@ namespace MagicCMS.Core
                 switch (Tipo)
                 {
                     case MagicPostTypeInfo.PopUp:
+					case MagicPostTypeInfo.CollegamentoInternet:
                         href = _mp.Url;
                         break;
                     case MagicPostTypeInfo.Menu:
@@ -172,6 +221,10 @@ namespace MagicCMS.Core
             }
         }
 
+		/// <summary>
+		/// Gets the whole HTML anchor element as <see cref="System.Web.UI.HtmlControls.HtmlGenericControl"/>
+		/// </summary>
+		/// <value>The link element.</value>
         public HtmlGenericControl LinkElement
         {
             get
@@ -261,6 +314,10 @@ namespace MagicCMS.Core
             }
         }
 
+		/// <summary>
+		/// Gets the whole HTML anchor element as string.
+		/// </summary>
+		/// <value>The link string.</value>
         public string LinkString
         {
             get
@@ -272,6 +329,10 @@ namespace MagicCMS.Core
             }
         }
 
+		/// <summary>
+		/// Gets the active class. Mark menu item as active if the page to which it points is the current page.
+		/// </summary>
+		/// <value>"active" or ""</value>
         public string ActiveClass
         {
             get
@@ -282,6 +343,10 @@ namespace MagicCMS.Core
             }
         }
 
+		/// <summary>
+		/// Gets the menu item icon in string version.
+		/// </summary>
+		/// <value>The icon string.</value>
         public string IconString
         {
             get
@@ -310,6 +375,10 @@ namespace MagicCMS.Core
         }
 
         private MenuInfoCollection _submenu;
+		/// <summary>
+		/// Gets the submenu.
+		/// </summary>
+		/// <value>The submenu.</value>
         public MenuInfoCollection Submenu
         {
             get
@@ -332,6 +401,12 @@ namespace MagicCMS.Core
         #endregion
 
         #region Constructor
+		/// <summary>
+		/// Initializes a new instance of the <see cref="MenuInfo"/> class extracting definition by a MagicPost element. If element post type is "Menu" the menu item is a sub menu 
+		/// otherwise is a link to a page or to a section of home page or to an external url, ecc.
+		/// </summary>
+		/// <param name="mp">The mp.</param>
+		/// <param name="pageId">Current page identifier.</param>
         public MenuInfo (MagicPost mp, int pageId)
         {
             currentPageId = pageId;

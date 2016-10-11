@@ -6,6 +6,10 @@ using System.Web;
 
 namespace MagicCMS.Core 
 {
+	/// <summary>
+	/// Class MagicKeywordCollection.
+	/// </summary>
+	/// <seealso cref="System.Collections.CollectionBase" />
     public class MagicKeywordCollection : CollectionBase
     {
         #region Costructor

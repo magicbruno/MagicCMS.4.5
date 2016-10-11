@@ -7,12 +7,35 @@ using System.Web;
 
 namespace MagicCMS.Core
 {
+	/// <summary>
+	/// Class MagicVoto.
+	/// </summary>
     public class MagicVoto
     {
+		/// <summary>
+		/// Gets or sets the pk.
+		/// </summary>
+		/// <value>The pk.</value>
         public int Pk { get; set; }
+		/// <summary>
+		/// Gets or sets the user.
+		/// </summary>
+		/// <value>The user.</value>
         public string User { get; set; }
+		/// <summary>
+		/// Gets or sets the voted post pk.
+		/// </summary>
+		/// <value>The post pk.</value>
         public int Post_PK { get; set; }
+		/// <summary>
+		/// Gets or sets the voto (rating amount).
+		/// </summary>
+		/// <value>The voto.</value>
         public int Voto { get; set; }
+		/// <summary>
+		/// Gets or sets the last modify.
+		/// </summary>
+		/// <value>The last modify.</value>
         public DateTime LastModify { get; set; }
 
         private void Init()
@@ -74,16 +97,28 @@ namespace MagicCMS.Core
                 LastModify = Convert.ToDateTime(record.GetValue(4));
         }
 
+		/// <summary>
+		/// Initializes a empty new instance of the <see cref="MagicVoto"/> class.
+		/// </summary>
         public MagicVoto()
         {
             Init();
         }
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="MagicVoto"/> class fletching from database.
+		/// </summary>
+		/// <param name="pk">The pk.</param>
         public MagicVoto(int pk)
         {
             Init(pk);
         }
 
+		/// <summary>
+		/// Inserts the instance in MagicCMS database.
+		/// </summary>
+		/// <param name="message">Returned message.</param>
+		/// <returns>Boolean.</returns>
         public Boolean Insert(out string message)
         {
             Boolean result = true;
@@ -149,6 +184,10 @@ namespace MagicCMS.Core
             return result;
         }
 
+		/// <summary>
+		/// Remove this instance from the database.
+		/// </summary>
+		/// <returns>Boolean.</returns>
         public Boolean Delete()
         {
             Boolean result = true;

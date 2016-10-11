@@ -8,14 +8,16 @@ using System.Web;
 namespace MagicCMS.DataTable
 {
     /// <summary>
-    /// Parametri passati da DataTable al server
+	/// Parameters passed to the server by DataTable
     /// </summary>
-
     public class InputParams_dt
     {
+		/// <summary>
+		/// The searchparam
+		/// </summary>
         public const string SEARCHPARAM = "@searchpar";
         /// <summary>
-        /// Gets or sets the draw. Parametro usato internamente da DataTable
+		/// Gets or sets the draw. Parameter used internally by DataTable.
         /// </summary>
         /// <value>
         /// The draw.
@@ -26,36 +28,42 @@ namespace MagicCMS.DataTable
         /// Gets or sets the columns.
         /// </summary>
         /// <value>
-        /// The columns. Lista di oggetti Column_dt che contengono informazioni sulle colonne
+		/// The columns. <see cref="MagiCMS.DataTable.Column_dt"/>  list containing information about columns.
         /// </value>
         public List<Column_dt> columns { get; set; }
+
+		/// <summary>
+		/// Gets or sets the order.
+		/// </summary>
+		/// <value>The order. <see cref="MagiCMS.DataTable.Order_dt"/>  list containing information about ordering by columns.</value>
         public List<Order_dt> order { get; set; }
         /// <summary>
         /// Gets or sets the start.
         /// </summary>
         /// <value>
-        /// The start. Record di partenza della pagina
+        /// The start.  First row displayed.
         /// </value>
         public int start { get; set; }
+
         /// <summary>
         /// Gets or sets the length.
         /// </summary>
         /// <value>
-        /// The length. Numero dei recod da rstituire
+        /// The length. Page length.
         /// </value>
         public int length { get; set; }
         /// <summary>
         /// Gets or sets the search.
         /// </summary>
         /// <value>
-        /// The search. DEfinizione del filtro
+        /// The search. Filter.
         /// </value>
         public Search_dt search { get; set; }
         /// <summary>
         /// Gets or sets the name of the table.
         /// </summary>
         /// <value>
-        /// The name of the table. Tabella a cui viene applicata la ricerca
+        /// The name of the table. Table on which query is applied.
         /// </value>
         public string TableName { get; set; }
 
@@ -63,20 +71,24 @@ namespace MagicCMS.DataTable
         /// Gets or sets the name of the pk.
         /// </summary>
         /// <value>
-        /// The name of the pk. Chiave primaria della tabella TableName
+        /// The name of the pk. Name of primary key field.
         /// </value>
         public string PkName { get; set; }
 
+		/// <summary>
+		/// Gets or sets the join tables.
+		/// </summary>
+		/// <value>The join tables.</value>
         public string JoinTables { get; set; }
 
 
         /// <summary>
         /// Initializes a new instance of the <see cref="InputParams_dt"/> class.
         /// </summary>
-        /// <param name="draw_dt">The draw_dt. Parametro usato internamente da DataTable</param>
-        /// <param name="tableName">Name of the table. Nome della tabella su cui applicare i parametri</param>
-        /// <param name="pkname">The pkname. Nome della campo chiave oprimaria della tamlla</param> 
-        public InputParams_dt(int draw_dt, string tableName, string pkname)
+        /// <param name="draw_dt">The draw_dt. </param>
+        /// <param name="tableName">Name of the table. </param>
+		/// <param name="pkName">The pkName. Name of primary key field.</param> 
+        public InputParams_dt(int draw_dt, string tableName, string pkName)
         {
             draw = draw_dt;
             columns = new List<Column_dt>();
@@ -85,10 +97,17 @@ namespace MagicCMS.DataTable
             length = 10;
             search = new Search_dt();
             TableName = tableName;
-            PkName = pkname;
+            PkName = pkName;
         }
 
-        public InputParams_dt(int draw_dt, string tableName, string pkname, string joints)
+		/// <summary>
+		/// Initializes a new instance of the <see cref="InputParams_dt"/> class.
+		/// </summary>
+		/// <param name="draw_dt">The draw_dt. </param>
+		/// <param name="tableName">Name of the table. </param>
+		/// <param name="pkName">The pkName. Name of primary key field.</param> 
+		/// <param name="joints">The joints.</param>
+		public InputParams_dt(int draw_dt, string tableName, string pkName, string joints)
         {
             draw = draw_dt;
             columns = new List<Column_dt>();
@@ -97,32 +116,32 @@ namespace MagicCMS.DataTable
             length = 10;
             search = new Search_dt();
             TableName = tableName;
-            PkName = pkname;
+            PkName = pkName;
             JoinTables = joints;
         }
 
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="InputParams_dt"/> class. Ricavandola dai parametri passati da jQuery.DataTable
+		/// Initializes a new instance of the <see cref="InputParams_dt"/> class. Deriving it from the parameters passed from jQuery.DataTable.
         /// </summary>
         /// <param name="context">The context.</param>
         /// <param name="tableName">Name of the table.</param>
-        /// <param name="pkname">The pkname.</param>
-        public InputParams_dt(HttpContext context, string tableName, string pkname)
+        /// <param name="pkName">The pkName.</param>
+        public InputParams_dt(HttpContext context, string tableName, string pkName)
         {
-            Init(context, tableName, pkname, "");
+            Init(context, tableName, pkName, "");
         }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InputParams_dt" /> class. Ricavandola dai parametri passati da jQuery.DataTable
-        /// </summary>
-        /// <param name="context">The context.</param>
-        /// <param name="tableName">Name of the table.</param>
-        /// <param name="pkname">The pkname.</param>
-        /// <param name="joins">Join clause.</param>
-        public InputParams_dt(HttpContext context, string tableName, string pkname, string joins)
+		/// <summary>
+		/// Initializes a new instance of the <see cref="InputParams_dt"/> class. Deriving it from the parameters passed from jQuery.DataTable.
+		/// </summary>
+		/// <param name="context">The context.</param>
+		/// <param name="tableName">Name of the table.</param>
+		/// <param name="pkName">The pkName.</param>
+		/// <param name="joins">Join clause.</param>
+        public InputParams_dt(HttpContext context, string tableName, string pkName, string joins)
         {
-            Init(context, tableName, pkname, joins);
+            Init(context, tableName, pkName, joins);
         }
 
 
@@ -185,14 +204,14 @@ namespace MagicCMS.DataTable
         }
 
         /// <summary>
-        /// Builds the query. Prende la query originale e la trasforma in una
-        /// subquery da cui estrae i primi length record a partire dal record start.
+		/// Builds the query. It takes the original query and transforms it into a sub query 
+		/// from which extracts the first length records from start record.
         /// </summary>
         /// <param name="originalSelectCmd">The original select command.</param>
         /// <param name="originalWhereClause">The original where clause.</param>
         /// <returns>SQL Command String</returns>
         /// <remarks>
-        /// La query originale deve essere una istruzione SELECT TOP...
+		/// The original query must be a "SELECT TOP..." statement.
         /// </remarks>
         public string BuildQuery(string originalSelectCmd, string originalWhereClause)
         {
@@ -263,7 +282,7 @@ namespace MagicCMS.DataTable
         }
 
         /// <summary>
-        /// Restiruisce il parametro di ritorno pe DataTable senza dati per una ricerca semplice senza subquery.
+		/// Returns the return parameter for Data Table no data for a simple search without sub query.
         /// </summary>
         /// <returns></returns>
         public OutputParams_dt GetOutpuSimpleQuery(string whereClause)
@@ -275,6 +294,10 @@ namespace MagicCMS.DataTable
             return outPar;
         }
 
+		/// <summary>
+		/// Returns the return parameter for Data Table no data for a simple search without sub query.
+		/// </summary>
+		/// <returns>OutputParams_dt.</returns>
         public OutputParams_dt GetOutpuSimpleQuery()
         {
             OutputParams_dt outPar = new OutputParams_dt();
@@ -348,42 +371,88 @@ namespace MagicCMS.DataTable
 
     }
 
+	/// <summary>
+	/// Class Search_dt. Object used for instant search on jQuery.DataTable
+	/// </summary>
     public class Search_dt
     {
+		/// <summary>
+		/// Gets or sets the value.
+		/// </summary>
+		/// <value>The value.</value>
         public string value { get; set; }
+		/// <summary>
+		/// Gets or sets the regex flag.
+		/// </summary>
+		/// <value>The regex flag.</value>
         public Boolean regex { get; set; }
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="Search_dt"/> class.
+		/// </summary>
+		/// <param name="v">The value.</param>
+		/// <param name="r">The regex flag.</param>
         public Search_dt(string v, Boolean r)
         {
             value = v;
             regex = r;
         }
+		/// <summary>
+		/// Initializes a new instance of the <see cref="Search_dt"/> class.
+		/// </summary>
+		/// <param name="v">The value.</param>
         public Search_dt(string v)
         {
             value = v;
             regex = false;
         }
+		/// <summary>
+		/// Initializes a new empty instance of the <see cref="Search_dt"/> class.
+		/// </summary>
         public Search_dt()
         {
             value = "";
             regex = false;
         }
     }
+	/// <summary>
+	/// Class Order_dt.
+	/// </summary>
     public class Order_dt
     {
+		/// <summary>
+		/// Gets or sets the column.
+		/// </summary>
+		/// <value>The column on which perform ordering</value>
         public int column { get; set; }
+		/// <summary>
+		/// Gets or sets the direction.
+		/// </summary>
+		/// <value>The direction. (ascending or descending)</value>
         public string dir { get; set; }
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="Order_dt"/> class.
+		/// </summary>
+		/// <param name="c">The column.</param>
+		/// <param name="d">The direction.</param>
         public Order_dt(int c, string d)
         {
             column = c;
             dir = d;
         }
+		/// <summary>
+		/// Initializes a new instance of the <see cref="Order_dt"/> class.
+		/// </summary>
+		/// <param name="c">The column.</param>
         public Order_dt(int c)
         {
             column = c;
             dir = "asc";
         }
+		/// <summary>
+		/// Initializes a new empty instance of the <see cref="Order_dt"/> class.
+		/// </summary>
         public Order_dt()
         {
             column = 0;
@@ -391,38 +460,54 @@ namespace MagicCMS.DataTable
         }
 
     }
+	/// <summary>
+	/// Class Column_dt. jQuery.DataTable column definition.
+	/// </summary>
     public class Column_dt
     {
         /// <summary>
         /// Gets or sets the data.
         /// </summary>
         /// <value>
-        /// The data. Nome del campo che la colonna espone.
+		/// The data. Field name that the column displays.
         /// </value>
         public string data { get; set; }
         /// <summary>
         /// Gets or sets the name.
         /// </summary>
         /// <value>
-        /// The name. Nome custom assegnato alla colonna (opzionale)
+        /// The name. Custom column name (optional)
         /// </value>
         public string name { get; set; }
         /// <summary>
-        /// Gets or sets a value indicating whether this <see cref="Column_dt"/> is searchable. Riporta al server quanto definito nelle opzioni.
+        /// Gets or sets a value indicating whether this <see cref="Column_dt"/> is searchable. 
         /// </summary>
         /// <value>
         ///   <c>true</c> if searchable; otherwise, <c>false</c>.
         /// </value>
         public Boolean searchable { get; set; }
         /// <summary>
-        /// Gets or sets a value indicating whether this <see cref="Column_dt"/> is orderable. Riporta al server quanto definito nelle opzioni.
+        /// Gets or sets a value indicating whether this <see cref="Column_dt"/> is orderable. 
         /// </summary>
         /// <value>
         ///   <c>true</c> if orderable; otherwise, <c>false</c>.
         /// </value>
         public Boolean orderable { get; set; }
+		/// <summary>
+		/// Gets or sets the search. Value searched.
+		/// </summary>
+		/// <value>The search.</value>
         public Search_dt search { get; set; }
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="Column_dt"/> class.
+		/// </summary>
+		/// <param name="d">The data.</param>
+		/// <param name="n">The name.</param>
+		/// <param name="s">The searchable.</param>
+		/// <param name="o">The orderable.</param>
+		/// <param name="searchStr">The search string.</param>
+		/// <param name="regex">The regex.</param>
         public Column_dt(string d, string n, Boolean s, Boolean o, string searchStr, Boolean regex)
         {
             data = d;
@@ -431,6 +516,11 @@ namespace MagicCMS.DataTable
             orderable = o;
             search = new Search_dt(searchStr, regex);
         }
+		/// <summary>
+		/// Initializes a new instance of the <see cref="Column_dt"/> class.
+		/// </summary>
+		/// <param name="d">The data.</param>
+		/// <param name="searchStr">The search string.</param>
         public Column_dt(string d, string searchStr)
         {
             data = d;

@@ -8,9 +8,6 @@ using System.Web.SessionState;
 
 namespace MagicCMS.Admin.Ajax
 {
-    /// <summary>
-    /// Descrizione di riepilogo per ContentsPaginated
-    /// </summary>
     public class ContentsPaginated : IHttpHandler, IRequiresSessionState
     {
 

@@ -6,16 +6,37 @@ using System.Web;
 
 namespace MagicCMS.Core
 {
+	/// <summary>
+	/// Class MagicKeyword. Wrapper class for storing and indexing <see cref="MagicCMS.MagicPost.Tags"/> assigned to a <see cref="MagicCMS.MagicPost"/>.
+	/// </summary>
     public class MagicKeyword
     {
         #region Public Properties
+		/// <summary>
+		/// Gets or sets unique id of related post (<see cref="MagicCMS.Core.MagicPost.Pk"/>).
+		/// </summary>
+		/// <value>The id of related post.</value>
         public int ContentPk { get; set; }
+		/// <summary>
+		/// Gets or sets the keyword (tag).
+		/// </summary>
+		/// <value>The keyword.</value>
         public string Keyword { get; set; }
+		/// <summary>
+		/// Gets or sets the language identifier. Tags are language dependant. Every stored tag belong to a language.
+		/// </summary>
+		/// <value>The language identifier.</value>
+		/// <remarks>Keyword (tag) language.</remarks>
         public string LangId { get; set; }
         #endregion
 
         #region Costructor
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="MagicKeyword"/> class containing a specific tag for the default language.
+		/// </summary>
+		/// <param name="contentPk">The id of related post.</param>
+		/// <param name="keyword">The keyword.</param>
         public MagicKeyword(int contentPk, string keyword)
         {
             ContentPk = contentPk;
@@ -23,6 +44,12 @@ namespace MagicCMS.Core
             LangId = new CMS_Config().TransSourceLangId;
         }
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="MagicKeyword"/> class containing a specific tag for the a specific language.
+		/// </summary>
+		/// <param name="contentPk">The id of related post.</param>
+		/// <param name="keyword">The keyword.</param>
+		/// <param name="langId">The language identifier.</param>
         public MagicKeyword(int contentPk, string keyword, string langId)
         {
             ContentPk = contentPk;
@@ -33,6 +60,9 @@ namespace MagicCMS.Core
         #endregion
 
         #region Public Methods
+		/// <summary>
+		/// Inserts this keyword in the database.
+		/// </summary>
         public void Insert()
         {
             SqlConnection conn = null;
@@ -98,6 +128,10 @@ namespace MagicCMS.Core
 
 
         #region Static Mathods
+		/// <summary>
+		/// Keywords count.
+		/// </summary>
+		/// <returns>System.Int32.</returns>
         public static int RecordCount()
         {
             int c = 0;
@@ -127,12 +161,25 @@ namespace MagicCMS.Core
             }
             return c;
         }
+		/// <summary>
+		/// Updates the specified Post keywords.
+		/// </summary>
+		/// <param name="contentPk">The id of related post.</param>
+		/// <param name="keywords">Comma separated list of keywords.</param>
+		/// <returns>Boolean.</returns>
         public static Boolean Update(int contentPk, string keywords)
         {
             return Update(contentPk, keywords, new CMS_Config().TransSourceLangId);
         }
 
-        public static Boolean Update(int contentPk, string keywords, string langId)
+		/// <summary>
+		/// Updates the specified Post keywords.
+		/// </summary>
+		/// <param name="contentPk">The id of related post.</param>
+		/// <param name="keywords">Comma separated list of keywords.</param>
+		/// <param name="langId">The language identifier.</param>
+		/// <returns>Boolean.</returns>
+		public static Boolean Update(int contentPk, string keywords, string langId)
         {
             var result = true;
             SqlConnection conn = null;
@@ -211,6 +258,10 @@ namespace MagicCMS.Core
             return result;
         }
 
+		/// <summary>
+		/// Populates tags table.
+		/// </summary>
+		/// <returns>Boolean.</returns>
         public static Boolean Populate()
         {
             var result = true;
@@ -238,7 +289,7 @@ namespace MagicCMS.Core
                 {
                     while (reader.Read())
                     {
-                        // Tags nella lingua di default
+                        // Tags in default language
                         int pk = reader.GetInt32(0);
                         string tagsField = reader.GetString(1);
                         string tagsTranslated = reader.GetString(2);
@@ -253,7 +304,7 @@ namespace MagicCMS.Core
                                 key.Insert();
                             }
                         }
-                        // Tags tradotti
+                        // Translated tags
                         if (!(String.IsNullOrEmpty(tagsTranslated) || String.IsNullOrEmpty(langId)))
                         {
                             string[] trKeywords = tagsTranslated.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
@@ -285,18 +336,33 @@ namespace MagicCMS.Core
             return result;
         }
 
+		/// <summary>
+		/// Gets the keywords.
+		/// </summary>
+		/// <returns>List&lt;System.String&gt;.</returns>
         public static List<string> GetKeywords()
         {
             return GetKeywords("", new CMS_Config().TransSourceLangId);
         }
 
+		/// <summary>
+		/// Gets the keywords filtered by partial match.
+		/// </summary>
+		/// <param name="key">Partial match.</param>
+		/// <returns>List&lt;System.String&gt;.</returns>
         public static List<string> GetKeywords(string key)
         {
             return GetKeywords(key, new CMS_Config().TransSourceLangId);
         }
 
 
-        public static List<string> GetKeywords(string key, string langId)
+		/// <summary>
+		/// Gets the keywords filtered by partial match and language.
+		/// </summary>
+		/// <param name="key">Partial match.</param>
+		/// <param name="langId">The language identifier.</param>
+		/// <returns>List&lt;System.String&gt;.</returns>
+		public static List<string> GetKeywords(string key, string langId)
         {
             List<string> lista = new List<string>();
             if (RecordCount() == 0)

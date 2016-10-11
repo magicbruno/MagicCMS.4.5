@@ -448,7 +448,7 @@ namespace MagicCMS.Admin
                 Pk = pk;
                 ThePost = new MagicPost(pk);
                 TypeInfo = ThePost.TypeInfo;
-                PostEditTitle = ThePost.Nome + " (" + TypeInfo.Nome + ")";
+                PostEditTitle = ThePost.Name + " (" + TypeInfo.Nome + ")";
             }
             // New typed post
             else if (pk == 0 && type > 0 && parent == 0)

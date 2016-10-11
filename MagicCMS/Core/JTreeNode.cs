@@ -5,6 +5,7 @@ using System.Web;
 
 namespace MagicCMS.Core
 {
+	/// <exclude />
     public class JTreeNode
     {
         public string id { get; set; }
@@ -16,6 +17,7 @@ namespace MagicCMS.Core
         public Dictionary<string, string> a_attr { get; set; }
     }
 
+	/// <exclude />
     public class JTreeNodeState
     {
         public Boolean opened { get; set; }

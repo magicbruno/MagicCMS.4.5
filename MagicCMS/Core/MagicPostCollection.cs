@@ -11,22 +11,50 @@ namespace MagicCMS.Core
     {
 
         #region Constructor
-        public MagicPostCollection(WhereClauseCollection query, string order, int maxNum, Boolean allowUnsafe)
+		/// <summary>
+		/// Initializes a new instance of the <see cref="MagicPostCollection" /> class populating it with the result of a query applied to the database table.
+		/// </summary>
+		/// <param name="query">The query (<see cref="MagicCMS.Core.WhereClauseCollection" />).</param>
+		/// <param name="order">The order.</param>
+		/// <param name="maxNum">Maximum number of posts returned.</param>
+		/// <param name="allowUnsafe">Allow unsafe query.</param>
+		public MagicPostCollection(WhereClauseCollection query, string order, int maxNum, Boolean allowUnsafe)
         {
             Init(query, order, maxNum, allowUnsafe, false, false);
         }
 
-        public MagicPostCollection(WhereClauseCollection query, string order, int maxNum, Boolean allowUnsafe, Boolean inbasket)
+		/// <summary>
+		/// Initializes a new instance of the <see cref="MagicPostCollection" /> class populating it with the result of a query applied to the database table.
+		/// </summary>
+		/// <param name="query">The query (<see cref="MagicCMS.Core.WhereClauseCollection" />).</param>
+		/// <param name="order">The order.</param>
+		/// <param name="maxNum">Maximum number of posts returned.</param>
+		/// <param name="allowUnsafe">Allow unsafe query.</param>
+		/// <param name="inBasket">Posts in trash can.</param>
+		public MagicPostCollection(WhereClauseCollection query, string order, int maxNum, Boolean allowUnsafe, Boolean inBasket)
         {
-            Init(query, order, maxNum, allowUnsafe, inbasket, false);
+            Init(query, order, maxNum, allowUnsafe, inBasket, false);
         }
 
-        public MagicPostCollection(WhereClauseCollection query, string order, int maxNum, Boolean allowUnsafe, Boolean inbasket, Boolean onlyIfTranslated)
+		/// <summary>
+		/// Initializes a new instance of the <see cref="MagicPostCollection" /> class populating it with the result of a query applied to the database table.
+		/// </summary>
+		/// <param name="query">The query (<see cref="MagicCMS.Core.WhereClauseCollection"/>).</param>
+		/// <param name="order">The order.</param>
+		/// <param name="maxNum">Maximum number of posts returned.</param>
+		/// <param name="allowUnsafe">Allow unsafe query.</param>
+		/// <param name="inBasket">Posts in trash can.</param>
+		/// <param name="onlyIfTranslated">If current language is not default language and is <c>true</c> 
+		/// posts are returned only if a translated version is present, otherwise default language version is returned.</param>
+        public MagicPostCollection(WhereClauseCollection query, string order, int maxNum, Boolean allowUnsafe, Boolean inBasket, Boolean onlyIfTranslated)
         {
-            Init(query, order, maxNum, allowUnsafe, inbasket, onlyIfTranslated);
+            Init(query, order, maxNum, allowUnsafe, inBasket, onlyIfTranslated);
         }
 
-        public MagicPostCollection()
+		/// <summary>
+		/// Initializes a new empty instance of the <see cref="MagicPostCollection" /> class.
+		/// </summary>
+		public MagicPostCollection()
         {
             Init();
         }
@@ -36,16 +64,16 @@ namespace MagicCMS.Core
 
         }
 
-        private void Init(WhereClauseCollection query, string order, int maxNum, Boolean allowUnsafe, Boolean inbasket, Boolean onlyIfTranslated)
+        private void Init(WhereClauseCollection query, string order, int maxNum, Boolean allowUnsafe, Boolean inBasket, Boolean onlyIfTranslated)
         {
             SqlConnection conn = new SqlConnection(MagicUtils.MagicConnectionString);
             SqlCommand cmd = new SqlCommand();
-            string basketfilter = inbasket ? " vmca.Flag_Cancellazione = 1 " : " vmca.Flag_Cancellazione = 0 ";
+            string basketFilter = inBasket ? " vmca.Flag_Cancellazione = 1 " : " vmca.Flag_Cancellazione = 0 ";
             string filter = query.ToString(allowUnsafe);
             if (!String.IsNullOrEmpty(filter))
-                filter = " WHERE (" + basketfilter + ") AND " + filter;
+                filter = " WHERE (" + basketFilter + ") AND " + filter;
             else
-                filter = " WHERE (" + basketfilter + ") ";
+                filter = " WHERE (" + basketFilter + ") ";
 
             if (onlyIfTranslated && MagicSession.Current.CurrentLanguage != "default")
             {

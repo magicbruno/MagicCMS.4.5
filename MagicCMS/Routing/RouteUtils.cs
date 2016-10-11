@@ -6,18 +6,39 @@ using System.Web;
 
 namespace MagicCMS.Routing
 {
+	/// <summary>
+	/// Class RouteUtils. Collection of method to handle routing.
+	/// </summary>
 	public static class RouteUtils
 	{
+		/// <summary>
+		/// Gets the routing path for a <see cref="MagicCms.Core.Magicpost"/>
+		/// </summary>
+		/// <param name="postPk">The post pk.</param>
+		/// <returns>If application is multilanguage "/lang/routing-title/" otherwise "/routing-title/"</returns>
 		public static string GetVirtualPath(int postPk)
 		{
 			return GetVirtualPath(postPk, 0);
 		}
 
+		/// <summary>
+		/// Gets the routing path for a <see cref="MagicCms.Core.Magicpost"/>
+		/// </summary>
+		/// <param name="postPk">The post pk.</param>
+		/// <param name="parent">The parent pk.</param>
+		/// <returns>If application is multilanguage "/lang/parent-name/routing-title/" otherwise "/parent-name/routing-title/"</returns>
 		public static string GetVirtualPath(int postPk, int parent)
 		{
 			return GetVirtualPath(postPk, parent, 0);
 		}
 
+		/// <summary>
+		/// Gets the routing path for a <see cref="MagicCms.Core.Magicpost"/>
+		/// </summary>
+		/// <param name="postPk">The post pk.</param>
+		/// <param name="parent">The parent pk.</param>
+		/// <param name="granParent">The gran parent pk.</param>
+		/// <returns>If application is multilanguage "/lang/gran-parent-name/parent-name/routing-title/" otherwise "/gran-parent-name/parent-name/routing-title/"</returns>
 		public static string GetVirtualPath(int postPk, int parent, int granParent)
 		{
 			//string vp = "";
@@ -52,11 +73,24 @@ namespace MagicCMS.Routing
 			else return GetVirtualPath(postPk, new int[] { });
 		}
 
+		/// <summary>
+		/// Gets the routing path for a <see cref="MagicCms.Core.Magicpost"/>. Add automatically a parent name
+		/// </summary>
+		/// <param name="postPk">The post pk.</param>
+		/// <param name="parentTypes">Array of post types with which filter parents. If empty non filter is applied.</param>
+		/// <returns>If application is multilanguage "/lang/parent-name/routing-title/" otherwise "/parent-name/routing-title/"</returns>
 		public static string GetVirtualPath(int postPk, int[] parentTypes)
 		{
 			return GetVirtualPath(postPk, parentTypes, 0);
 		}
 
+		/// <summary>
+		/// Gets the routing path for a <see cref="MagicCms.Core.Magicpost"/>. Add automatically a parent name
+		/// </summary>
+		/// <param name="postPk">The post pk.</param>
+		/// <param name="parentTypes">Array of post types with which filter parents. If empty non filter is applied.</param>
+		/// <param name="granParent">The gran parent pk.</param>
+		/// <returns>If application is multilanguage "/lang/gran-parent-name/parent-name/routing-title/" otherwise "/gran-parent-name/parent-name/routing-title/"</returns>
 		public static string GetVirtualPath(int postPk, int[] parentTypes, int granParent)
 		{
 			//string vp = "";
@@ -99,6 +133,12 @@ namespace MagicCMS.Routing
 			return ComposePath(title, parentName, granParentName);
 		}
 
+		/// <summary>
+		/// Gets the routing path for a <see cref="MagicCms.Core.Magicpost"/>
+		/// </summary>
+		/// <param name="postPk">The post pk.</param>
+		/// <param name="parentName">Name of the parent.</param>
+		/// <returns>If application is multilanguage "/lang/parent-name/routing-title/" otherwise "/parent-name/routing-title/"</returns>
 		public static string GetVirtualPath(int postPk, string parentName)
 		{
 			string lang = "";
@@ -107,6 +147,13 @@ namespace MagicCMS.Routing
 			return GetVirtualPath(postPk, parentName, lang);
 		}
 
+		/// <summary>
+		/// Gets the routing path for a <see cref="MagicCms.Core.Magicpost"/>
+		/// </summary>
+		/// <param name="postPk">The post pk.</param>
+		/// <param name="parentName">Name of the parent.</param>
+		/// <param name="lang">The language.</param>
+		/// <returns>If application is multilanguage "/lang/parent-name/routing-title/" otherwise "/parent-name/routing-title/"</returns>
 		public static string GetVirtualPath(int postPk, string parentName, string lang)
 		{
 			if (!string.IsNullOrEmpty(lang))
@@ -119,6 +166,13 @@ namespace MagicCMS.Routing
 			return vp;
 		}
 
+		/// <summary>
+		/// Composes the path. 
+		/// </summary>
+		/// <param name="title">The title.</param>
+		/// <param name="parentName">Name of the parent.</param>
+		/// <param name="granParentName">Name of the gran parent.</param>
+		/// <returns>System.String.</returns>
 		public static string ComposePath(string title, string parentName, string granParentName)
 		{
 			string url = "";
@@ -130,6 +184,9 @@ namespace MagicCMS.Routing
 			return url;
 		}
 
+		/// <summary>
+		/// Initializes the routing titles table.
+		/// </summary>
 		public static void InitMagicIndex()
 		{
 			if (!MagicIndex.ExistsMagicIndex())

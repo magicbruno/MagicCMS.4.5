@@ -13,12 +13,7 @@ namespace MagicCMS.Core
         Container, NonContainer, Both
     }
 
-    /// <summary>
-    /// Collection of magic tags.
-    /// </summary>
-    /// <remarks>
-    /// Bruno, 15/01/2013.
-    /// </remarks>
+	/// <exclude />
     public class MagicTagCollection : CollectionBase
     {
 

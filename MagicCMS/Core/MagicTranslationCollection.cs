@@ -13,26 +13,26 @@ namespace MagicCMS.Core
         #region Constructor
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MagicTranslationCollection"/> class.
+        /// Initializes a new empty instance of the <see cref="MagicTranslationCollection"/> class.
         /// </summary>
         public MagicTranslationCollection() : base()
         {
            
         }
         /// <summary>
-        /// Initializes a new instance of the <see cref="MagicTranslationCollection"/> class.
+        /// Initializes a new instance of the <see cref="MagicTranslationCollection"/> class containing the translations of a specified post.
         /// </summary>
-        /// <param name="postPk">Primary key (Id) of the post to whch apply translations.</param>
+        /// <param name="postPk">Primary key (Id) of the post to which apply translations.</param>
         public MagicTranslationCollection(int postPk)
         {
             Init(postPk, false);
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MagicTranslationCollection" /> class.
+		/// Initializes a new instance of the <see cref="MagicTranslationCollection" /> class containing the translations of a specified post.
         /// </summary>
-        /// <param name="postPk">Primary key (Id) of the post to whch apply translations.</param>
-        /// <param name="createBlankRecords">if set to <c>true</c> create brank records if translations don't exists.</param>
+        /// <param name="postPk">Primary key (Id) of the post to which apply translations.</param>
+        /// <param name="createBlankRecords">if set to <c>true</c> create empty records if translations don't exists.</param>
         public MagicTranslationCollection(int postPk, Boolean createBlankRecords)
         {
             Init(postPk, createBlankRecords);
@@ -107,36 +107,70 @@ namespace MagicCMS.Core
 
         #region Public Methods
 
+		/// <summary>
+		/// Adds the specified item.
+		/// </summary>
+		/// <param name="item">The item.</param>
+		/// <returns>System.Int32.</returns>
         public int Add(MagicTranslation item)
         {
             return List.Add(item);
         }
 
+		/// <summary>
+		/// Inserts the specified index.
+		/// </summary>
+		/// <param name="index">The index.</param>
+		/// <param name="item">The item.</param>
         public void Insert(int index, MagicTranslation item)
         {
             List.Insert(index, item);
         }
 
+		/// <summary>
+		/// Removes the specified item.
+		/// </summary>
+		/// <param name="item">The item.</param>
         public void Remove(MagicTranslation item)
         {
             List.Remove(item);
         }
 
+		/// <summary>
+		/// Determines whether [contains] [the specified item].
+		/// </summary>
+		/// <param name="item">The item.</param>
+		/// <returns><c>true</c> if [contains] [the specified item]; otherwise, <c>false</c>.</returns>
         public bool Contains(MagicTranslation item)
         {
             return List.Contains(item);
         }
 
+		/// <summary>
+		/// Indexes the of.
+		/// </summary>
+		/// <param name="item">The item.</param>
+		/// <returns>System.Int32.</returns>
         public int IndexOf(MagicTranslation item)
         {
             return List.IndexOf(item);
         }
 
+		/// <summary>
+		/// Copies to.
+		/// </summary>
+		/// <param name="array">The array.</param>
+		/// <param name="index">The index.</param>
         public void CopyTo(MagicTranslation[] array, int index)
         {
             List.CopyTo(array, index);
         }
 
+		/// <summary>
+		/// Gets or sets the element at the specified index.
+		/// </summary>
+		/// <param name="index">The index.</param>
+		/// <returns>MagicTranslation.</returns>
         public MagicTranslation this[int index]
         {
             get { return (MagicTranslation)List[index]; }

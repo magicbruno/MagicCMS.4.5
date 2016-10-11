@@ -9,11 +9,15 @@ using System.Web;
 
 namespace MagicCMS.Core
 {
+	/// <summary>
+	/// Class Miniatura. Wrapper class for MagicCMS image miniatures management.
+	/// </summary>
+	/// <seealso cref="System.IDisposable" />
     public class Miniatura : IDisposable
     {
-        /// <summary>
-        /// Crea un oggetto Miniatura vuoto
-        /// </summary>
+		/// <summary>
+		/// Initializes a new empty instance of the <see cref="Miniatura"/> class.
+		/// </summary>
         public Miniatura()
         {
             Pk = 0;
@@ -25,35 +29,35 @@ namespace MagicCMS.Core
         }
 
         /// <summary>
-        /// Recupera un'ogetto miniatura dal database.
+		/// Retrieve a miniature object from the database.
         /// </summary>
-        /// <param name="pk">Id dell'oggetto memorizzato</param>
+        /// <param name="pk">Unique id of Miniatura instance</param>
         public Miniatura(int pk)
         {
             Init(pk);
         }
 
         /// <summary>
-        /// Cerca un'oggetto Miniatura nel database. Se non esiste lo crea.
+		/// Search an item Miniatura in the database. If it does not exist create it.
         /// </summary>
-        /// <param name="url">Url dell'immagine</param>
-        /// <param name="width">Larghezza della miniatura.</param>
-        /// <param name="height">Altezza della miniatura.</param>
+        /// <param name="url">Image Url</param>
+		/// <param name="width">Width of the thumbnail.</param>
+		/// <param name="height">Height of the thumbnail. If the height is 0, it is automatically calculated and it is proportionally.</param>
         public Miniatura(string url, int width, int height)
         {
             Init(url, width, height);
         }
 
-        /// <summary>
-        /// Cerca un'oggetto Miniatura nel database. Se non esiste lo crea.
-        /// </summary>
-        /// <param name="fisicalpath">Path fisico del file.</param>
-        /// <param name="width">Larghezza della miniatura.</param>
-        /// <param name="height">Altezza della miniatura.</param>
-        /// <param name="fileDate">Data ultima modifica del file.</param>
-        public Miniatura(string fisicalpath, int width, int height, DateTime fileDate)
+		/// <summary>
+		/// Search a Miniatura in the database. If it does not exist create it.
+		/// </summary>
+		/// <param name="physicalPath">The physical path.</param>
+		/// <param name="width">Width of the thumbnail.</param>
+		/// <param name="height">Height of the thumbnail. If the height is 0, it is automatically calculated and it is proportionally.</param>
+		/// <param name="fileDate">The file date.</param>
+        public Miniatura(string physicalPath, int width, int height, DateTime fileDate)
         {
-            Init(fisicalpath, width, height, fileDate);
+            Init(physicalPath, width, height, fileDate);
         }
 
         ~Miniatura()
@@ -61,11 +65,18 @@ namespace MagicCMS.Core
             Dispose(false);
         }
 
+		/// <summary>
+		/// It performs activities in the application, such as freedom, releases or resets unmanaged resources.
+		/// </summary>
         public void Dispose()
         {
             Dispose(true);
         }
 
+		/// <summary>
+		/// Inserts this instance in Miniature database.
+		/// </summary>
+		/// <returns>System.Int32. Unique ID of inserted Miniatura</returns>
         public int Insert()
         {
 
@@ -221,8 +232,16 @@ namespace MagicCMS.Core
                 }
                 else
                 {
-                    BmpData = CreateThumbnail(path, width, height, out autoHeight);
-                    Pk = 0;
+					try
+					{
+						BmpData = CreateThumbnail(path, width, height, out autoHeight);
+					}
+					catch 
+					{
+						BmpData = null;
+						autoHeight = 0;
+					} 
+					Pk = 0;
                     Width = width;
                     Height = autoHeight;
                     Opath = path;
@@ -325,14 +344,14 @@ namespace MagicCMS.Core
         }
 
 
-        /// <summary>
-        /// Proprietà
-        /// </summary>
-        /// 
         private Boolean disposed = false;
 
         private int _pk;
 
+		/// <summary>
+		/// Gets or sets the pk. Unique ID.
+		/// </summary>
+		/// <value>The pk.</value>
         public int Pk
         {
             get { return _pk; }
@@ -341,6 +360,10 @@ namespace MagicCMS.Core
 
         private string _opath;
 
+		/// <summary>
+		/// Gets or sets the opath. Complete Path of image.
+		/// </summary>
+		/// <value>The opath.</value>
         public string Opath
         {
             get { return _opath; }
@@ -349,6 +372,10 @@ namespace MagicCMS.Core
 
         private Bitmap _bmpData;
 
+		/// <summary>
+		/// Gets or sets the BMP data.
+		/// </summary>
+		/// <value>The BMP data.</value>
         public Bitmap BmpData
         {
             get { return _bmpData; }
@@ -357,6 +384,10 @@ namespace MagicCMS.Core
 
         private int _width;
 
+		/// <summary>
+		/// Gets or sets the width.
+		/// </summary>
+		/// <value>The width.</value>
         public int Width
         {
             get { return _width; }
@@ -365,14 +396,26 @@ namespace MagicCMS.Core
 
         private int _height;
 
+		/// <summary>
+		/// Gets or sets the height.
+		/// </summary>
+		/// <value>The height.</value>
         public int Height
         {
             get { return _height; }
             set { _height = value; }
         }
 
+		/// <summary>
+		/// Gets or sets the odate ticks. File date.
+		/// </summary>
+		/// <value>The odate ticks.</value>
         public Int64 OdateTicks { get; set; }
 
+		/// <summary>
+		/// Gets the original URL.
+		/// </summary>
+		/// <value>The original URL.</value>
         public string OriginalUrl
         {
             get
@@ -391,6 +434,13 @@ namespace MagicCMS.Core
             }
         }
 
+		/// <summary>
+		/// Gets the gallery from path. Create a list of Miniatura.Pk from the images of a directory.
+		/// </summary>
+		/// <param name="url">The URL.</param>
+		/// <param name="width">The width.</param>
+		/// <param name="height">The height.</param>
+		/// <returns>List of miniature pk (unique IDs)</returns>
         public static List<int> GetGalleryFromPath(string url, int width, int height)
         {
             List<int> pkList = new List<int>();
@@ -424,7 +474,14 @@ namespace MagicCMS.Core
             return pkList;
         }
 
-        public static List<MiniaturaInfo> GetMiniaturesInfoFromPath(string url, int width, int height)
+		/// <summary>
+		/// Create a list of <see cref="MagicCMS.Core.MiniatuaInfo"/> from the images of a directory.
+		/// </summary>
+		/// <param name="url">The URL.</param>
+		/// <param name="width">The width.</param>
+		/// <param name="height">The height.</param>
+		/// <returns>List of  <see cref="MagicCMS.Core.MiniatuaInfo"/>.</returns>
+		public static List<MiniaturaInfo> GetMiniaturesInfoFromPath(string url, int width, int height)
         {
             List<MiniaturaInfo> minList = new List<MiniaturaInfo>();
             List<string> extensions = new List<string>() { ".gif", ".jpeg", ".jpg", ".png" };

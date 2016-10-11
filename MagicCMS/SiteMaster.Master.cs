@@ -13,6 +13,11 @@ using MagicCMS.CustomCss;
 
 namespace MagicCMS
 {
+	/// <summary>
+	/// Class SiteMaster. MasterPage descendant from  <see cref="MagicCMS.PageBase.SiteMasterBase" /> loaded by all pages in a MagicCMS application. 
+	/// Contains basic setting for all MagicCMS Web applications.
+	/// </summary>
+	/// <seealso cref="MagicCMS.PageBase.SiteMasterBase" />
 	public partial class SiteMaster : MagicCMS.PageBase.SiteMasterBase
 	{
 		public string jQueryVersion { get; set; }
@@ -76,7 +81,7 @@ namespace MagicCMS
 			/**
 			 * Adding proper META tags
 			 * */
-			//Genarator
+			//Generator
 			HtmlMeta version = new HtmlMeta();
 			version.Name = "generator";
 			AssemblyName assembly = Assembly.GetExecutingAssembly().GetName();

@@ -28,7 +28,7 @@ namespace MagicCMS.Blogger
         }
 
         /// <summary>
-        /// Ottiene o imposta l'elemento in corrispondenza dell'indice specificato.
+		/// Gets or sets the element at the specified index.
         /// </summary>
         /// <param name="index">The index.</param>
         /// <returns></returns>

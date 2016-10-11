@@ -6,21 +6,68 @@ using Facebook;
 
 namespace MagicCMS.Facebook
 {
+	/// <summary>
+	/// Class FacebookPost. Manage a Facebook Post received by a Facebook API Ajax query using Facebook.dll
+	/// </summary>
 	public class FacebookPost
 	{
 		// Originals
+		/// <summary>
+		/// Gets the post identifier.
+		/// </summary>
+		/// <value>The identifier.</value>
 		public string Id { get; set; }
+		/// <summary>
+		/// Gets author pf the post from as <see cref="MagicCMS.Facebook.FbFrom"/>.
+		/// </summary>
+		/// <value>From.</value>
 		public FbFrom From { get; set; }
+		/// <summary>
+		/// Gets the name of the post.
+		/// </summary>
+		/// <value>The name.</value>
 		public string Name { get; set; }
+		/// <summary>
+		/// Gets the message text.
+		/// </summary>
+		/// <value>The message.</value>
 		public string Message { get; set; }
+		/// <summary>
+		/// Gets the creation time.
+		/// </summary>
+		/// <value>The creation time.</value>
 		public DateTime Created_Time { get; set; }
+		/// <summary>
+		/// Gets or sets the permalink URL of the post.
+		/// </summary>
+		/// <value>The permalink URL.</value>
 		public string Permalink_Url { get; set; }
+		/// <summary>
+		/// Gets the link associated with the post.
+		/// </summary>
+		/// <value>The link.</value>
 		public string Link { get; set; }
+		/// <summary>
+		/// Gets the picture associated with the post.
+		/// </summary>
+		/// <value>The picture.</value>
 		public string Picture { get; set; }
+		/// <summary>
+		/// Gets or sets the object identifier.
+		/// </summary>
+		/// <value>The object identifier.</value>
 		public string Object_id { get; set; }
+		/// <summary>
+		/// Gets the attached image.
+		/// </summary>
+		/// <value>The attached image.</value>
 		public FbImage AttachedImage { get; set; }
 
 		// Calculated
+		/// <summary>
+		/// Gets the attachment.
+		/// </summary>
+		/// <value>The attachment.</value>
 		public string Attachment { 
 			get 
 			{
@@ -30,6 +77,7 @@ namespace MagicCMS.Facebook
 			} 
 		}
 
+		/// <exclude />
 		public string AutorPicture
 		{
 			get
@@ -38,6 +86,31 @@ namespace MagicCMS.Facebook
 			}
 		}
 
+		/// <summary>
+		/// Gets the author picture.
+		/// </summary>
+		/// <value>The author picture.</value>
+		public string AuthorPicture
+		{
+			get
+			{
+				return "https://graph.facebook.com/" + From.Id + "/picture";
+			}
+		}
+
+		/// <summary>
+		/// Gets the author link.
+		/// </summary>
+		/// <value>The author link.</value>
+		public string AuthorLink
+		{
+			get
+			{
+				return "http://facebook.com/" + From.Id;
+			}
+
+		}
+		/// <exclude />
 		public string AuhorLink
 		{
 			get
@@ -47,6 +120,10 @@ namespace MagicCMS.Facebook
 
 		}
 
+		/// <summary>
+		/// Gets the time elapsed form in a pretty format. 
+		/// </summary>
+		/// <value>The time ago.</value>
 		public string Time_ago
 		{
 			get
@@ -92,18 +169,22 @@ namespace MagicCMS.Facebook
 			 return result;            }
 		}
 
-		public FacebookPost (JsonObject fbpost)
+		/// <summary>
+		/// Initializes a new instance of the <see cref="FacebookPost"/> class.
+		/// </summary>
+		/// <param name="fbPost">The fbPost in Facebook.JsonObject form/>.</param>
+		public FacebookPost (JsonObject fbPost)
 		{
 			AttachedImage = new FbImage();
-			foreach (string  key in fbpost.Keys)
+			foreach (string  key in fbPost.Keys)
 			{
 				switch (key)
 				{
 					case "id":
-						Id = fbpost[key].ToString();
+						Id = fbPost[key].ToString();
 						break;
 					case "from": 
-						JsonObject from = fbpost[key] as JsonObject;
+						JsonObject from = fbPost[key] as JsonObject;
 						string name = "";
 						string id = "";
 						if (from.ContainsKey("name"))
@@ -117,28 +198,28 @@ namespace MagicCMS.Facebook
 						};
 						break;
 					case "name":
-						Name = fbpost[key].ToString();
+						Name = fbPost[key].ToString();
 						break;
 					case "message":
-						Message = fbpost[key].ToString();
+						Message = fbPost[key].ToString();
 						break;
 					case "created_time":
-						Created_Time = DateTimeConvertor.FromIso8601FormattedDateTime(fbpost[key].ToString());
+						Created_Time = DateTimeConvertor.FromIso8601FormattedDateTime(fbPost[key].ToString());
 						break;
 					case "link":
-						Link = fbpost[key].ToString();
+						Link = fbPost[key].ToString();
 						break;
 					case "permalink_url":
-						Permalink_Url = fbpost[key].ToString();
+						Permalink_Url = fbPost[key].ToString();
 						break;
 					case "picture":
-						Picture = fbpost[key].ToString();
+						Picture = fbPost[key].ToString();
 						break;
 					case "object_id":
-						Object_id = fbpost[key].ToString();
+						Object_id = fbPost[key].ToString();
 						break;
 					case "attachments":
-						JsonObject attachments = fbpost[key] as JsonObject;
+						JsonObject attachments = fbPost[key] as JsonObject;
 						if (attachments.ContainsKey("data"))
 						{
 							JsonArray data = attachments["data"] as JsonArray;

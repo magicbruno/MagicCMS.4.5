@@ -7,6 +7,10 @@ using System.Web.UI.WebControls;
 
 namespace MagicCMS.PageBase
 {
+	/// <summary>
+	/// Class Monopage. <see cref="MagicCMS.PageBase.MasterTheme" /> descendant that define properties and methods for home monopage.  
+	/// </summary>
+	/// <seealso cref="MagicCMS.PageBase.MasterTheme" />
     public class Monopage: MasterTheme
     {
         public string ColClass { get; set; }

@@ -12,8 +12,6 @@ namespace MagicCMS.Admin.Ajax
     /// </summary>
     public class Edit : IHttpHandler, IRequiresSessionState
     {
-
-
         public void ProcessRequest(HttpContext context)
         {
             //Verifico prerogative minime (amministratore per gli utenti Editor per le altre tabelle)

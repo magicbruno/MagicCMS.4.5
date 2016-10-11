@@ -9,7 +9,11 @@ namespace MagicCMS.Core
     public class MenuIcon
     {
         static readonly string[] IMAGE_EXTENSIONS = { ".jpeg", ".jpg", ".png", ".gif", ".svg", ".bmp" };
-       
+
+		/// <summary>
+		/// Gets or sets the icon value.
+		/// </summary>
+		/// <value>The icon value.</value>
         public string Value { get; set; }
         public MenuIconType Type 
         {
@@ -21,6 +25,11 @@ namespace MagicCMS.Core
             }
         }
 
+		/// <summary>
+		/// Gets the type.
+		/// </summary>
+		/// <param name="value">The value.</param>
+		/// <returns>MenuIconType.</returns>
         public static MenuIconType GetType(string value)
         {
            MenuIconType _type = MenuIconType.None;
@@ -44,6 +53,9 @@ namespace MagicCMS.Core
         }
     }
 
+	/// <summary>
+	/// Enum MenuIconType
+	/// </summary>
     public enum MenuIconType
     {
         Image, ClassIcon, None

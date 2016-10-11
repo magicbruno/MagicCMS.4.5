@@ -17,21 +17,16 @@ using System.Web.UI.HtmlControls;
 
 namespace MagicCMS.Core
 {
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
-    /// <summary>
-    /// Magic utilities. Libreria di metodi statici per la gestione di MagicCMS.
-    /// </summary>
-    /// <remarks>
-    /// Bruno, 15/01/2013.
-    /// </remarks>
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
+	/// <summary>
+	/// Class MagicUtils.
+	/// </summary>
     public static class MagicUtils
     {
         /// <summary>
-        /// Gets the allowed filetypes from Web.config.
+        /// Gets the allowed file types from Web.config.
         /// </summary>
         /// <value>
-        /// The allowed filetypes array.
+        /// The allowed file types extensions array.
         /// </value>
         public static string[] MagicAllowedFiletypes
         {
@@ -61,7 +56,7 @@ namespace MagicCMS.Core
         /// </summary>
         /// <param name="cssClass">Class of element</param>
         /// <param name="href">Href of element</param>
-        /// <param name="innerHTML">Inner hatml or text of element</param>
+        /// <param name="innerHTML">Inner html or text of element</param>
         /// <returns></returns>
         public static HtmlAnchor AnchorElement(string cssClass, string href, string innerHTML)
         {
@@ -73,26 +68,26 @@ namespace MagicCMS.Core
         }
 
         /// <summary>
-        /// Caps and trunc astring.
+        /// Caps and trunk a string.
         /// </summary>
         /// <param name="str">The string.</param>
-        /// <param name="maxlength">The maxlength.</param>
+        /// <param name="maxLength">The maxLength.</param>
         /// <param name="onlyAllUpper">if set to <c>true</c> [only all upper].</param>
         /// <returns></returns>
-        public static string capAndTrunc(string str, int maxlength, Boolean onlyAllUpper)
+        public static string capAndTrunc(string str, int maxLength, Boolean onlyAllUpper)
         {
             if (str != str.ToUpper() && onlyAllUpper)
-                return StringHtmlExtensions.TruncateWords(str, maxlength, "...");
+                return StringHtmlExtensions.TruncateWords(str, maxLength, "...");
             str = str.ToLower();
             str = Char.ToUpper(str[0]).ToString() + str.Substring(1);
-            return StringHtmlExtensions.TruncateWords(str, maxlength, "...");
+            return StringHtmlExtensions.TruncateWords(str, maxLength, "...");
         }
 
-        /// <summary>
-        /// Lighten color.
-        /// </summary>
-        /// <param name="inputColor">Color of the input.</param>
-        /// <returns></returns>
+		/// <summary>
+		/// Lighten color.
+		/// </summary>
+		/// <param name="inputColor">Input color.</param>
+		/// <returns>System.String. New color</returns>
         public static string ColorLighten(string inputColor)
         {
             System.Drawing.Color c = System.Drawing.ColorTranslator.FromHtml(inputColor);
@@ -100,11 +95,11 @@ namespace MagicCMS.Core
             return System.Drawing.ColorTranslator.ToHtml(c);
         }
 
-        /// <summary>
-        /// Creates a random password.
-        /// </summary>
-        /// <param name="passwordLength">Length of the password.</param>
-        /// <returns></returns>
+		/// <summary>
+		/// Creates a random password.
+		/// </summary>
+		/// <param name="passwordLength">Length of the password.</param>
+		/// <returns>System.String. Created password</returns>
         public static string CreateRandomPassword(int passwordLength)
         {
             string allowedChars = "abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNOPQRSTUVWXYZ0123456789";
@@ -120,63 +115,63 @@ namespace MagicCMS.Core
         }
 
         /// <summary>
-        /// Creates the name of a unique file.
+        /// Creates an unique file name.
         /// </summary>
         /// <param name="path">The path.</param>
         /// <param name="extension">The extension.</param>
         /// <returns>Corresponding url</returns>
         public static string CreateUniqueFileName(string path, string extension)
         {
-            string fname = CreateRandomPassword(12);
-            string url = path + fname + extension;
+            string fName = CreateRandomPassword(12);
+            string url = path + fName + extension;
             while (File.Exists(HttpContext.Current.Server.MapPath(url)))
             {
-                fname = MagicUtils.CreateRandomPassword(12);
-                url = path + fname + extension;
+                fName = MagicUtils.CreateRandomPassword(12);
+                url = path + fName + extension;
             }
-            return fname + extension;
+            return fName + extension;
         }
 
-        /// <summary>
-        /// Files size pretty formatted to string.
-        /// </summary>
-        /// <param name="fi">File Fileinfo.</param>
-        /// <returns></returns>
+		/// <summary>
+		/// Files size pretty formatted to string.
+		/// </summary>
+		/// <param name="fi">File <see cref="System.IO.FileInfo" />.</param>
+		/// <returns>System.String. The size</returns>
         public static string FileSizeToStr(FileInfo fi)
         {
             string theSize = "";
             if (fi.Exists)
             {
                 string misura = "byte";
-                double fsize = fi.Length;
-                if (fsize > 1024)
+                double fSize = fi.Length;
+                if (fSize > 1024)
                 {
-                    fsize = Math.Round(fsize / 1024, 0);
+                    fSize = Math.Round(fSize / 1024, 0);
                     misura = "Kb";
                 }
-                if (fsize > 1024)
+                if (fSize > 1024)
                 {
-                    fsize = Math.Round(fsize / 1024, 2);
+                    fSize = Math.Round(fSize / 1024, 2);
                     misura = "Mb";
                 }
-                if (fsize > 1024)
+                if (fSize > 1024)
                 {
-                    fsize = Math.Round(fsize / 1024, 2);
+                    fSize = Math.Round(fSize / 1024, 2);
                     misura = "Gb";
                 }
-                theSize = fsize.ToString(new System.Globalization.CultureInfo("it-IT")) + " " + misura;
+                theSize = fSize.ToString(new System.Globalization.CultureInfo("it-IT")) + " " + misura;
             }
             return theSize;
         }
 
-        /// <summary>
-        /// Create an HTML element.
-        /// </summary>
-        /// <param name="tagName">Name of the tag.</param>
-        /// <param name="cssClass">The CSS class.</param>
-        /// <param name="innerHTML">The inner HTML.</param>
-        /// <param name="id">The id.</param>
-        /// <returns></returns>
+		/// <summary>
+		/// Create an HTML element.
+		/// </summary>
+		/// <param name="tagName">Name of the tag.</param>
+		/// <param name="cssClass">The CSS class.</param>
+		/// <param name="innerHTML">The inner HTML.</param>
+		/// <param name="id">The id.</param>
+		/// <returns>HtmlGenericControl.</returns>
         public static HtmlGenericControl HTMLElement(string tagName, string cssClass, string innerHTML, string id)
         {
             HtmlGenericControl el = new HtmlGenericControl(tagName);
@@ -190,19 +185,25 @@ namespace MagicCMS.Core
             return el;
         }
 
-        /// <summary>
-        /// Restituisce un elemento HTML
-        /// </summary>
-        /// <param name="tagName">Tagname dell'elemento</param>
-        /// <param name="cssClass">Classe</param>
-        /// <param name="innerHTML">(Opzionale) Testo HTML contenuto nell'elemento</param>
-        /// <returns></returns>
-        public static HtmlGenericControl HTMLElement(string tagName, string cssClass, string innerHTML)
+		/// <summary>
+		/// Create an HTML element.
+		/// </summary>
+		/// <param name="tagName">Name of the tag.</param>
+		/// <param name="cssClass">The CSS class.</param>
+		/// <param name="innerHTML">The inner HTML.</param>
+		/// <returns>HtmlGenericControl.</returns>
+		public static HtmlGenericControl HTMLElement(string tagName, string cssClass, string innerHTML)
         {
             return HTMLElement(tagName, cssClass, innerHTML, "");
         }
 
-        public static HtmlGenericControl HTMLElement(string tagName, string cssClass)
+		/// <summary>
+		/// Create an HTML element.
+		/// </summary>
+		/// <param name="tagName">Name of the tag.</param>
+		/// <param name="cssClass">The CSS class.</param>
+		/// <returns>HtmlGenericControl.</returns>
+		public static HtmlGenericControl HTMLElement(string tagName, string cssClass)
         {
             return HTMLElement(tagName, cssClass, "", "");
         }
@@ -210,7 +211,7 @@ namespace MagicCMS.Core
         /// <summary>
         /// Determines whether is mobile browser.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>True if mobile browser</returns>
         public static Boolean isMobileBrowser()
         {
             string u = HttpContext.Current.Request.ServerVariables["HTTP_USER_AGENT"];
@@ -237,32 +238,32 @@ namespace MagicCMS.Core
             }
         }
 
-        /// <summary>
-        /// Convert null string to empty string.
-        /// </summary>
-        /// <param name="str">The string.</param>
-        /// <returns></returns>
+		/// <summary>
+		/// Convert null string to empty string.
+		/// </summary>
+		/// <param name="str">The string.</param>
+		/// <returns>System.String.</returns>
         public static string nullToStr(string str)
         {
             return (String.IsNullOrEmpty(str)) ? "" : str;
         }
 
-        /// <summary>
-        /// Convert null string to string.
-        /// </summary>
-        /// <param name="str">The string.</param>
-        /// <param name="def">Default value.</param>
-        /// <returns></returns>
+		/// <summary>
+		/// Convert null string to string.
+		/// </summary>
+		/// <param name="str">The string.</param>
+		/// <param name="def">Default value.</param>
+		/// <returns>System.String.</returns>
         public static string nullToStr(string str, string def)
         {
             return (String.IsNullOrEmpty(str)) ? def : str;
         }
 
-        /// <summary>
-        /// Convert a Web Control or HTML Control to string
-        /// </summary>
-        /// <param name="control">The contro to render</param>
-        /// <returns>Redered string</returns>
+		/// <summary>
+		/// Convert a Web Control or HTML Control to string
+		/// </summary>
+		/// <param name="control">The control to render</param>
+		/// <returns>Rendered string</returns>
         public static string RenderControlToString(Control control)
         {
             string renderedControl = null;
@@ -282,18 +283,11 @@ namespace MagicCMS.Core
             return renderedControl;
         }
 
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>
-        /// Converte una stringa in una stringa compatibile con il formato JSON.
-        /// </summary>
-        /// <param name="o">The o.</param>
-        /// <returns>
-        /// Il risultato della conversione (string).
-        /// </returns>
-        /// <remarks>
-        /// Bruno, 15/01/2013.
-        /// </remarks>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
+		/// <summary>
+		/// Strings to json.
+		/// </summary>
+		/// <param name="o">Any type.</param>
+		/// <returns>System.String.</returns>
         public static string strToJSON(object o)
         {
             if (o == null)
@@ -373,12 +367,12 @@ namespace MagicCMS.Core
                 CultureInfo.InvariantCulture, DateTimeStyles.None).ToLocalTime();
         }
 
-        /// <summary>
-        /// Gets the image list from folder.
-        /// </summary>
-        /// <param name="url">The URL. (Image or forlder)</param>
-        /// <param name="isPath">if set to <c>true</c> url is a path othrwise is an image. Default is false</param>
-        /// <returns>List of images urls.</returns>
+		/// <summary>
+		/// Gets the image list from folder.
+		/// </summary>
+		/// <param name="url">The URL. (Image path or folder path)</param>
+		/// <param name="isPath">if set to <c>true</c> url is a path otherwise is an image. Default is false</param>
+		/// <returns>List of images urls.</returns>
         public static List<string> getImageList(string url, Boolean isPath)
         {
             List<string> theList = new List<string>();
@@ -402,7 +396,12 @@ namespace MagicCMS.Core
             return theList;
         }
 
-        public static List<string> getImageList(string url)
+		/// <summary>
+		/// Gets the image list from folder.
+		/// </summary>
+		/// <param name="url">The URL. (Image path or folder path)</param>
+		/// <returns>List of images urls.</returns>
+		public static List<string> getImageList(string url)
         {
             return getImageList(url, false);
         }

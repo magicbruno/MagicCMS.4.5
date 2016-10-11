@@ -7,12 +7,9 @@ using System.Web;
 
 namespace MagicCMS
 {
-    /// <summary>
-    /// Descrizione di riepilogo per AjaxSendMail_JSON
-    /// </summary>
+	/// <exclude />
     public class AjaxSendMail_JSON : IHttpHandler
     {
-
         public void ProcessRequest(HttpContext context)
         {
 
@@ -32,7 +29,7 @@ namespace MagicCMS
                 CMS_Config config = new CMS_Config();
 
                 MailMessage notificaAdmin = new MailMessage();
-                MailMessage notificaUtente = new MailMessage();
+                MailMessage notificaUser = new MailMessage();
                 SmtpClient smtp = new SmtpClient(config.SmtpServer, 25);
 
                 string header = "<p>Hai ricevuto una richiesta di informazioni dal sito " + config.SiteName + ":</p>";
@@ -65,15 +62,15 @@ namespace MagicCMS
                         smtp.Send(notificaAdmin);
                         if (!String.IsNullOrEmpty(context.Request.Form["email"]))
                         {
-                            notificaUtente.From = new MailAddress(config.SmtpDefaultFromMail);
-                            notificaUtente.To.Add(context.Request.Form["email"]);
-                            notificaUtente.Subject = "R: Richiesta di informazioni";
-                            notificaUtente.IsBodyHtml = true;
-                            notificaUtente.Body = "<p>Egr. signora/signor, <br />" +
+                            notificaUser.From = new MailAddress(config.SmtpDefaultFromMail);
+                            notificaUser.To.Add(context.Request.Form["email"]);
+                            notificaUser.Subject = "R: Richiesta di informazioni";
+                            notificaUser.IsBodyHtml = true;
+                            notificaUser.Body = "<p>Egr. signora/signor, <br />" +
                                             "La sua richiesta di infromazioni è arrivata allo staff di " + config.SiteName + ".</p>" +
                                             "<p>Verrà contattata/o al più presto.</p>" +
                                             "<p>Cordiali Saluti</p>";
-                            smtp.Send(notificaUtente);
+                            smtp.Send(notificaUser);
 
                         }
 
@@ -88,8 +85,8 @@ namespace MagicCMS
                     {
                         if (notificaAdmin != null)
                             notificaAdmin.Dispose();
-                        if (notificaUtente != null)
-                            notificaUtente.Dispose();
+                        if (notificaUser != null)
+                            notificaUser.Dispose();
                     }
                 }
                 else

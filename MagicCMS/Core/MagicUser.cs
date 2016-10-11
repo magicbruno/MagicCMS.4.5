@@ -16,6 +16,7 @@ namespace MagicCMS.Core
 	/// <summary>
 	/// Enumeration: User login states
 	/// </summary>
+	/// <remarks>Values: Success, WrongUserName, WrongPassword, WrongUserNameOrPassword, PasswordResend, NotActivated, NotLogged, CheckError, PwdFormatError, GenericError, Activated</remarks>
 	public enum MbUserLoginResult
 	{
 		Success, WrongUserName, WrongPassword, WrongUserNameOrPassword, PasswordResend, NotActivated, NotLogged, CheckError, PwdFormatError, GenericError, Activated
@@ -24,12 +25,38 @@ namespace MagicCMS.Core
 	public class MagicUser
 	{
         #region PublicProperties
+		/// <summary>
+		/// Gets or sets the pk. Unique ID
+		/// </summary>
+		/// <value>The pk.</value>
         public int Pk { get; set; }
+		/// <summary>
+		/// Gets or sets the email. 
+		/// </summary>
+		/// <value>The email.</value>
+		/// <remarks>Email is also the login username.</remarks>
         public string Email { get; set; }
+		/// <summary>
+		/// Gets or sets the password.
+		/// </summary>
+		/// <value>The password.</value>
+		/// <remarks>Passwords are encrypted. The only way to have your password the first time is receiving it by email </remarks>
         public string Password { get; set; }
+		/// <summary>
+		/// Gets or sets the complete name of the user.
+		/// </summary>
+		/// <value>The name.</value>
         public string Name { get; set; }
+		/// <summary>
+		/// Gets or sets the prerogative level <see cref="MagicCMS.Core.MagicPrerogativa.Prerogative"/>,
+		/// </summary>
+		/// <value>The level.</value>
         public int Level { get; set; }
 
+		/// <summary>
+		/// Gets prerogative description.
+		/// </summary>
+		/// <value>The level description.</value>
         public string LevelDescription
         {
             get
@@ -42,11 +69,28 @@ namespace MagicCMS.Core
 
         }
 
+		/// <summary>
+		/// Gets or sets the last modify date.
+		/// </summary>
+		/// <value>The last modify date.</value>
         public DateTime LastModify { get; set; }
+		/// <summary>
+		/// Gets or sets the <see cref="MagicCMS.Core.MbUserLoginResult"/>. Login status of the user.
+		/// </summary>
+		/// <value>The login result.</value>
         public MbUserLoginResult LoginResult { get; set; }
-        //public Boolean Activated { get { return !String.IsNullOrEmpty(Password); } }
+		/// <summary>
+		/// Gets or sets the profile pk.
+		/// </summary>
+		/// <value>The profile pk.</value>
+		/// <remarks>Reserved for future extensions</remarks>
         public int Profile_PK { get; set; }
-        public Boolean Active { get; set; }
+		/// <summary>
+		/// Gets or sets the active.
+		/// </summary>
+		/// <value>The active.</value>
+		/// <remarks>Reserved for future extensions</remarks>
+		public Boolean Active { get; set; }
 
         #endregion
 
@@ -181,7 +225,7 @@ namespace MagicCMS.Core
 
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MagicUser"/> class.
+        /// Initializes a new empty instance of the <see cref="MagicUser"/> class.
         /// </summary>
         public MagicUser()
         {
@@ -192,9 +236,9 @@ namespace MagicCMS.Core
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MagicUser"/> class.
+        /// Initializes a new instance of the <see cref="MagicUser"/> class fletching it from MagicCMS database.
         /// </summary>
-        /// <param name="pk">The istance primary key.</param>
+        /// <param name="pk">The instance primary key.</param>
         public MagicUser(int pk)
         {
             Init(pk);
@@ -202,7 +246,7 @@ namespace MagicCMS.Core
 
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MagicUser"/> class.
+        /// Initializes a new instance of the <see cref="MagicUser"/> class on user login, checking username (email) and password.
         /// </summary>
         /// <param name="username">The username.</param>
         /// <param name="pwd">The password.</param>
@@ -213,11 +257,7 @@ namespace MagicCMS.Core
         #endregion
 
         #region Public Methods
-        /// <summary>
-        /// Merges the context Request object into MagicUser.
-        /// </summary>
-        /// <param name="context">The context.</param>
-        /// <returns></returns>
+		/// <exclude />
         public Boolean MergeContext(HttpContext context)
         {
             Boolean result = true;
@@ -252,13 +292,13 @@ namespace MagicCMS.Core
         /// Change the password.
         /// </summary>
         /// <param name="newPassword">The new password.</param>
-        /// <returns>True se l'operazione ha successo</returns>
+        /// <returns>True on success otherwise false</returns>
         public Boolean ChangePassword(string newPassword)
         {
              Boolean result = true;
             SqlConnection conn = null;
             SqlCommand cmd = null;
-            String retvalue;
+            String retValue;
             try
             {
                 conn = new SqlConnection(MagicUtils.MagicConnectionString);
@@ -283,9 +323,9 @@ namespace MagicCMS.Core
                 cmd.Parameters.AddWithValue("@pwd", Encrypt(newPassword));
                 cmd.Parameters.AddWithValue("@pk", Pk);
 
-                retvalue = Convert.ToString(cmd.ExecuteScalar());
+                retValue = Convert.ToString(cmd.ExecuteScalar());
                 int r;
-                if (int.TryParse(retvalue, out r))
+                if (int.TryParse(retValue, out r))
                 {
                     Init(Pk);
                     MagicLog log = new MagicLog("ANA_USR", Pk, LogAction.Update, "", "");
@@ -295,7 +335,7 @@ namespace MagicCMS.Core
                 else
                 {
                     MagicLog log = new MagicLog("ANA_USR", Pk, LogAction.Update, "", "");
-                    log.Error = retvalue;
+                    log.Error = retValue;
                     log.Insert();
                     result = false;
                 }
@@ -316,11 +356,11 @@ namespace MagicCMS.Core
             return result;
         }
 
-        /// <summary>
-        /// Resets the password.
-        /// </summary>
-        /// <param name="username">The username.</param>
-        /// <returns>Nessuno</returns>
+		/// <summary>
+		/// Resets the password.
+		/// </summary>
+		/// <param name="username">The username.</param>
+		/// <returns>MbUserLoginResult.</returns>
         public static MbUserLoginResult ResetPassword(string username)
         {
             if (String.IsNullOrEmpty(username))
@@ -374,11 +414,11 @@ namespace MagicCMS.Core
             return MbUserLoginResult.Success;
         }
 
-        /// <summary>
-        /// Verifica ae lo username (indirizzo e-mail) esiste già nel database.
-        /// </summary>
-        /// <param name="username">Indirizzo di posta dell'utente.</param>
-        /// <returns></returns>
+		/// <summary>
+		/// Verifies if the username exists in users database.
+		/// </summary>
+		/// <param name="username">The username.</param>
+		/// <returns>Boolean. True is exists</returns>
         public static Boolean UsernameExists(string username)
         {
               Boolean result = true;
@@ -419,35 +459,35 @@ namespace MagicCMS.Core
 
 
 
-        /// <summary>
-        /// Invia la nuova password all'utente.
-        /// </summary>
-        /// <param name="msg">The MSG.</param>
-        /// <returns>True se l'operazione è andata a buof fine</returns>
+		/// <summary>
+		/// Sends the password to user email address adding a message.
+		/// </summary>
+		/// <param name="msg">The message.</param>
+		/// <returns>Boolean. True on success</returns>
         public Boolean SendPwdMail(string msg)
         {
             CMS_Config config = new CMS_Config();
-            MailMessage notificaUtente = new MailMessage();
-            notificaUtente.Priority = MailPriority.High;
+            MailMessage notifyUser = new MailMessage();
+            notifyUser.Priority = MailPriority.High;
             SmtpClient smtp = new SmtpClient(config.SmtpServer, 25);
             try
             {
-                string sitename = HttpContext.Current.Request.Url.Host;
+                string siteName = HttpContext.Current.Request.Url.Host;
                 smtp.UseDefaultCredentials = false;
                 smtp.Credentials = new System.Net.NetworkCredential(config.SmtpUsername, config.SmtpPassword);
-                notificaUtente.From = new MailAddress(config.SmtpDefaultFromMail);
-                notificaUtente.To.Add(Email);
-                notificaUtente.Subject = "Invio credenziali di accesso per il sito " + sitename;
-                notificaUtente.IsBodyHtml = true;
-                notificaUtente.Body = "<p>Egr. Sig./ Gent.le Sig.ra " + Name + ", <br />" +
+                notifyUser.From = new MailAddress(config.SmtpDefaultFromMail);
+                notifyUser.To.Add(Email);
+                notifyUser.Subject = "Invio credenziali di accesso per il sito " + siteName;
+                notifyUser.IsBodyHtml = true;
+                notifyUser.Body = "<p>Egr. Sig./ Gent.le Sig.ra " + Name + ", <br />" +
                                 "<p>" + msg + "</p>" +
                                 "<p>Per accedere all'area riservata dovrà usare come username il Suo indirizzo di posta " +
                                 " e come password questa serie di caratteri generata automaticamente: <br />" +
                                 "<b>" + Password + "</b><br /></p>" +
                                 "<p>Una volta effettutato l'accesso potrà sostituire la password generata dal sistema con una di Suo gusto.</p>" +
                                 "<p>Cordiali Saluti</p>" +
-                                "<p>Il team di " + sitename + "</p>";
-                smtp.Send(notificaUtente);
+                                "<p>Il team di " + siteName + "</p>";
+                smtp.Send(notifyUser);
             }
             catch
             {
@@ -455,15 +495,15 @@ namespace MagicCMS.Core
             }
             finally
             {
-                notificaUtente.Dispose();
+                notifyUser.Dispose();
             }
             return true;
         }
 
-        /// <summary>
-        /// Inserisce l'utente nel database.
-        /// </summary>
-        /// <returns></returns>
+		/// <summary>
+		/// Inserts this instance in user table.
+		/// </summary>
+		/// <returns>System.Int32. Unique ID of the user</returns>
         public int Insert()
         {
             int pk = 0;
@@ -529,18 +569,17 @@ namespace MagicCMS.Core
             return pk;
         }
 
-        /// <summary>
-        /// Aggiorna le modifica apporte ad un utente.
-        /// </summary>
-        /// <returns></returns>
+		/// <summary>
+		/// Save this modified instance updating MagicCMS database.
+		/// </summary>
+		/// <returns>Boolean.</returns>
         public Boolean Update()
         {
-            // Non posso aggoirnare un record senza Pk !
             if (Pk == 0) return false;
             Boolean result = true;
             SqlConnection conn = null;
             SqlCommand cmd = null;
-            string retvalue = "";
+            string retValue = "";
 
             try
             {
@@ -574,9 +613,9 @@ namespace MagicCMS.Core
                 cmd.Parameters.AddWithValue("@pk", Pk);
 
                 int r = 0;
-                retvalue = Convert.ToString(cmd.ExecuteScalar());
+                retValue = Convert.ToString(cmd.ExecuteScalar());
 
-                if (int.TryParse(retvalue, out r))
+                if (int.TryParse(retValue, out r))
                 {
                     MagicLog log = new MagicLog("ANA_USR", Pk, LogAction.Update, "", "");
                     log.Error = "SUCCESS";
@@ -585,7 +624,7 @@ namespace MagicCMS.Core
                 else
                 {
                     MagicLog log = new MagicLog("ANA_USR", Pk, LogAction.Update, "", "");
-                    log.Error = retvalue;
+                    log.Error = retValue;
                     log.Insert();
                 }
                 result = (r > 0);
@@ -612,6 +651,10 @@ namespace MagicCMS.Core
 
         #region Static methods
 
+		/// <summary>
+		/// Count the record.
+		/// </summary>
+		/// <returns>System.Int32. The count</returns>
         public static int RecordCount()
         {
             SqlConnection conn = null;
@@ -639,12 +682,6 @@ namespace MagicCMS.Core
 
                 string result = cmd.ExecuteScalar().ToString();
                 if (!int.TryParse(result, out count))
-                //{
-                //    MagicLog log = new MagicLog("ANA_USR", 0, LogAction.Read, "", "");
-                //    log.Error = "Success";
-                //    log.Insert();
-                //}
-                //else
                 {
                     MagicLog log = new MagicLog("ANA_USR", 0, LogAction.Read, "", "");
                     log.Error = result;
@@ -670,11 +707,6 @@ namespace MagicCMS.Core
         #endregion
 
         #region Utility
-        /// <summary>
-        /// Encrypts the password.
-        /// </summary>
-        /// <param name="clearText">The clear text.</param>
-        /// <returns></returns>
         static private string Encrypt(string clearText)
         {
             string EncryptionKey = "MAKV2SPBNI99212";
@@ -697,11 +729,6 @@ namespace MagicCMS.Core
             return clearText;
         }
 
-        /// <summary>
-        /// Decrypts the eìencrypted passwordt.
-        /// </summary>
-        /// <param name="cipherText">The cipher text.</param>
-        /// <returns></returns>
         static private string Decrypt(string cipherText)
         {
             string EncryptionKey = "MAKV2SPBNI99212";

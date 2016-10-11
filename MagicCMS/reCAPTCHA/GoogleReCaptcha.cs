@@ -11,11 +11,26 @@ using System.Web.Script.Serialization;
 
 namespace MagicCMS.reCAPTCHA
 {
+	/// <summary>
+	/// Class GoogleReCaptcha. This class handles Google recaptcha2 check.
+	/// </summary>
     public class GoogleReCaptcha
     {
+		/// <summary>
+		/// Gets or sets the secret key.
+		/// </summary>
+		/// <value>The secret key.</value>
         public string SecretKey { get; set; }
+		/// <summary>
+		/// Gets or sets the site key.
+		/// </summary>
+		/// <value>The site key.</value>
         public string SiteKey { get; set; }
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="GoogleReCaptcha"/> class.
+		/// </summary>
+		/// <param name="secretKey">The secret key.</param>
         public GoogleReCaptcha(string secretKey)
         {
             System.Net.ServicePointManager.ServerCertificateValidationCallback = CheckValidationResult;
@@ -23,6 +38,11 @@ namespace MagicCMS.reCAPTCHA
             SecretKey = secretKey;
         }
 
+		/// <summary>
+		/// Validates the response.
+		/// </summary>
+		/// <param name="CaptchaResponse">The captcha response.</param>
+		/// <returns>CaptchaResponse.</returns>
         public CaptchaResponse ValidateResponse(string CaptchaResponse)
         {
             string remoteIp = HttpContext.Current.Request.UserHostAddress;

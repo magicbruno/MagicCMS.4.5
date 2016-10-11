@@ -3,6 +3,7 @@ using System.Web;
 
 namespace MagicCMS.Core
 {
+	/// <exclude />
     public class ColorPalette
     {
         private string[] _colorPalette;
@@ -34,6 +35,9 @@ namespace MagicCMS.Core
         }
     }
 
+	/// <summary>
+	/// Class MagicSession. Hamdles typed session variables.
+	/// </summary>
     public class MagicSession
     {
         private MagicUser _LoggedUser;
@@ -57,7 +61,10 @@ namespace MagicCMS.Core
             ShowInactiveTypes = false;
         }
 
-        // Gets the current session.
+		/// <summary>
+		/// Gets the current. This is a static instance of MagicSession created automatically. 
+		/// </summary>
+		/// <value>The current.</value>
         public static MagicSession Current
         {
             get
@@ -74,6 +81,7 @@ namespace MagicCMS.Core
         }
 
         // -------- CMS Authoring access ------------------------------------------------------
+		/// <exclude />
         public int Admin_id
         {
             get
@@ -92,6 +100,7 @@ namespace MagicCMS.Core
             }
         }
 
+		/// <exclude />
         public int Admin_level
         {
             get
@@ -111,15 +120,28 @@ namespace MagicCMS.Core
         }
 
         // **** add your session properties here, e.g like this:
+		/// <exclude />
         public int AdminLoginId { get; set; }
+		/// <summary>
+		/// Gets or sets the color palette.
+		/// </summary>
+		/// <value>The color palette.</value>
         public ColorPalette ColorPalette
         {
             get { return _palette; }
             set { _palette = value; }
         }
 
+		/// <summary>
+		/// Gets or sets the last access try.
+		/// </summary>
+		/// <value>The last access try.</value>
         public string LastAccessTry { get; set; }
 
+		/// <summary>
+		/// Gets or sets the logged user.
+		/// </summary>
+		/// <value>The logged user.</value>
         public MagicUser LoggedUser
         {
             get
@@ -137,6 +159,10 @@ namespace MagicCMS.Core
             }
         }
 
+		/// <summary>
+		/// Gets or sets the preview flag.
+		/// </summary>
+		/// <value>The preview.</value>
         public Boolean Preview
         {
             get
@@ -156,6 +182,10 @@ namespace MagicCMS.Core
 
         private CMS_Config _config;
 
+		/// <summary>
+		/// Gets the configuration. Copies in session the <see cref="MagicCMS.Core.CMS_Config"/> object.
+		/// </summary>
+		/// <value>The configuration.</value>
         public CMS_Config Config
         {
             get
@@ -166,8 +196,12 @@ namespace MagicCMS.Core
             }
         }
 
-        //private string _currentlanguage;
+        
         private MagicLanguage _currentTranslation;
+		/// <summary>
+		/// Gets or sets the current language in Multilanguage application. Otherwise always return default.
+		/// </summary>
+		/// <value>The current language.</value>
         public string CurrentLanguage
         {
             get
@@ -192,6 +226,10 @@ namespace MagicCMS.Core
             }
         }
 
+		/// <summary>
+		/// Gets the name of the current language.
+		/// </summary>
+		/// <value>The name of the current language.</value>
         public string CurrentLanguageName
         {
             get
@@ -204,6 +242,10 @@ namespace MagicCMS.Core
             }
         }
 
+		/// <summary>
+		/// Gets the trans automatic hide. Return the value of <see cref="MagicCMS.Core.MagicLanguage.AutoHide"/> property for the current language.
+		/// </summary>
+		/// <value>The trans automatic hide.</value>
         public Boolean TransAutoHide
         {
             get
@@ -216,10 +258,22 @@ namespace MagicCMS.Core
             }
         }
 
+		/// <summary>
+		/// Gets or sets the session start. Used by custom management of session expires.
+		/// </summary>
+		/// <value>The session start.</value>
         public DateTime SessionStart { get; set; }
 
+		/// <summary>
+		/// Gets or sets a value indicating whether [show splash].
+		/// </summary>
+		/// <value><c>true</c> if [show splash]; otherwise, <c>false</c>.</value>
         public bool ShowSplash { get; set; }
 
+		/// <summary>
+		/// Gets or sets the show inactive types.
+		/// </summary>
+		/// <value>The show inactive types.</value>
         public Boolean ShowInactiveTypes { get; set; }
 
     }

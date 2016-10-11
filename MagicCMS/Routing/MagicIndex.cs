@@ -6,18 +6,36 @@ using System.Text.RegularExpressions;
 using System.Data.SqlClient;
 using MagicCMS.Core;
 
+/// <summary>
+/// The Routing namespace.
+/// </summary>
 namespace MagicCMS.Routing
 {
-	/**
-	 * MagicIndex entries wrapper class. Used to mantain table of post title used in routing.
-	 * 
-	 * **/
+	/// <summary>
+	/// Class MagicIndex. MagicIndex entries wrapper class. Used to maintain table of post title used in routing
+	/// </summary>
 	public class MagicIndex
 	{
 		#region Properties
+		/// <summary>
+		/// Gets or sets the pk. Unique ID of routing name.
+		/// </summary>
+		/// <value>The pk.</value>
 		public int Pk { get; set; }
+		/// <summary>
+		/// Gets or sets the magic post pk. Unique ID of the <see cref="MagicCMS.Core.MagicPost"/> to which routing name is assigned.
+		/// </summary>
+		/// <value>The magic post pk.</value>
 		public int MagicPost_Pk { get; set; }
+		/// <summary>
+		/// Gets or sets the title. The assigned routing name
+		/// </summary>
+		/// <value>The title.</value>
 		public string Title { get; set; }
+		/// <summary>
+		/// Language identifier to wich this routing name belong.
+		/// </summary>
+		/// <value>The language identifier.</value>
 		public string LangId { get; set; }
 		#endregion
 
@@ -264,12 +282,6 @@ namespace MagicCMS.Routing
 			return GetRecord("rmt.RMT_Contenuti_Id = " + PostId.ToString() + " ");
 		}
 
-		/// <summary>
-		/// Gets the record.
-		/// </summary>
-		/// <param name="whereClause">The where clause.</param>
-		/// <param name="reader">The reader.</param>
-		/// <returns></returns>
 		private static List<MagicIndex> GetRecord(string whereClause)
 		{
 			string cmdString =	" SELECT " +
@@ -298,13 +310,6 @@ namespace MagicCMS.Routing
 				MagicLog log = new MagicLog("REL_MagicTitle", 0, LogAction.Read, e);
 				log.Insert();
 			}
-			finally
-			{
-				//if (conn != null)
-				//	conn.Dispose();
-				//if (cmd != null)
-				//	cmd.Dispose();
-			}
 			return titles;
 		}
 
@@ -315,7 +320,7 @@ namespace MagicCMS.Routing
 		/// </summary>
 		/// <param name="postId">The post identifier.</param>
 		/// <param name="langId">The language identifier.</param>
-		/// <returns>The indexe title</returns>
+		/// <returns>The indexed routing title</returns>
 		public static string GetTitle(int postId, string langId)
 		{
 			if (langId == "default")
@@ -356,7 +361,7 @@ namespace MagicCMS.Routing
 		}
 
 		/// <summary>
-		/// Does existses the title index?
+		/// Does exists the title table?
 		/// </summary>
 		/// <returns>True if table exists otherwise false.</returns>
 		public static bool ExistsMagicIndex()
@@ -400,7 +405,7 @@ namespace MagicCMS.Routing
 		}
 
 		/// <summary>
-		/// Creates the title index.
+		/// Creates the title table.
 		/// </summary>
 		/// <returns>True if table exists or if it was succesfully created, false on fail.</returns>
 		public static bool CreateMagicIndex(out string errorMessage)
@@ -481,7 +486,7 @@ namespace MagicCMS.Routing
 		}
 
 		/// <summary>
-		/// Empties the title index.
+		/// Empties the title table.
 		/// </summary>
 		/// <returns>Number of deleted rows or a number less the 0 if some error occurred.</returns>
 		static public int Empty(out string errorMessage)
@@ -549,7 +554,7 @@ namespace MagicCMS.Routing
 
 
 		/// <summary>
-		/// Populates Title index.
+		/// Populates Title table.
 		/// </summary>
 		/// <returns>True if succesfully populated.</returns>
 		static public bool Populate(out int processed, out string errorMessage)

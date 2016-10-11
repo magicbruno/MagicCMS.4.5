@@ -6,14 +6,12 @@ using System.Linq;
 using System.Web;
 using System.Web.SessionState;
 
+
 namespace MagicCMS.Admin.Ajax
 {
-    /// <summary>
-    /// Cancella un record da una tabella.
-    /// </summary>
+
     public class Delete : IHttpHandler, IRequiresSessionState
     {
-
         public void ProcessRequest(HttpContext context)
         {
             int minlevel = MagicPrerogativa.GetKey("Editor");
