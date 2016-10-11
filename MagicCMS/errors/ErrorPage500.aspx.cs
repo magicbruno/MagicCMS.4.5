@@ -2,6 +2,7 @@
 
 namespace MagicCMS.errors
 	{
+		/// <exclude />
 		public partial class errors_ErrorPage500 : System.Web.UI.Page 
 	
         {

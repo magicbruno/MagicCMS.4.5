@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace MagicCMS.errors
 {
+	/// <exclude />
     public partial class ErrorPage : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)

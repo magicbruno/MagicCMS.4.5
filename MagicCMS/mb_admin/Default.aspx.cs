@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace MagicCMS.mb_admin
 {
+	/// <exclude />
     public partial class Default : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)

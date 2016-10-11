@@ -17,6 +17,7 @@ using System;
 
 namespace MagicCMS.errors
 {
+	/// <exclude />
     public partial class errors_GenericErrorPage : System.Web.UI.Page
     {
         ////////////////////////////////////////////////////////////////////////////////////////////////////
