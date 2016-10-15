@@ -180,7 +180,7 @@ namespace MagicCMS.Core
 		/// <b>Aliases</b>: PaginaConPannelliPersonalizzati.<br></br>
 		/// <b>Type name</b>: Pagina con Pannelli Personalizzati.<br></br>
 		/// <b>Suggested use</b>: To be rendered as an HTML page using proper MasterPage o as home page section in mono page application. Same that 
-		/// <see cref="MagicPostTypeInfo.Page"/> but if may have children MagicPost instances.
+		/// <see cref="MagicPostTypeInfo.Page"/> but it may have children MagicPost instances.
 		/// </summary>
 		public const int CustomPage = 31;
 
@@ -209,6 +209,13 @@ namespace MagicCMS.Core
 		public const int Category = 37;
 		/// <exclude />
 		public const int Categoria = 37;
+
+		/// <summary>
+		/// <b>Type name</b>: News.<br></br>
+		/// <b>Suggested use</b>: To be rendered as an HTML page using proper MasterPage. Same that 
+		/// <see cref="MagicPostTypeInfo.Page"/> but normally it has an expiration and may have children MagicPost instances.
+		/// </summary>
+		public const int News = 38;
 
 		/// <summary>
 		/// <b>Type name</b>: Home page.<br></br>
@@ -276,7 +283,6 @@ namespace MagicCMS.Core
 		/// <b>Aliases</b>: Galleria.<br></br>
 		/// <b>Type name</b>: Galleria.<br></br>
 		/// <b>Use</b>: Use this container to let editor group MagicPost of type Image and of type Video and implement photo or video gallery. <br></br>
-		/// <b>Important</b>: Folder type is handled by MagicCMS engine in a special way.<br></br>
 		/// </summary>
 		public const int Gallery = 48;
 
@@ -288,13 +294,22 @@ namespace MagicCMS.Core
 		public const int Banner = 50;
 
 		/// <exclude />
-		public const int BuonaPratica = 53;
+		public const int Geolocazione = 53;
 
+		/// <summary>
+		/// <b>Aliases</b>: Geolocazione.<br></br>
+		/// <b>Type name</b>: Locazione sulla mappa.<br></br>
+		/// <b>Use</b>: Use this object to let editor define properties of a map marker over a Google Map. <br></br>
+		/// <b>Important</b>: Folder type is handled by MagicCMS engine in a special way.<br></br>
+		/// </summary>
+		public const int Geolocation = 53;
+		
 
 		/// <exclude />
 		public const int FakeLink = 54;
+		public const int LinkFalso = 54;
 		/// <summary>
-		/// <b>Aliases</b>: FakeLink.<br></br>
+		/// <b>Aliases</b>: FakeLink, LinkFalso.<br></br>
 		/// <b>Type name</b>: FakeLink.<br></br>
 		/// <b>Use</b>: Placeholder Item that you may insert in a Menu during design.<br></br>
 		/// <b>Important</b>: DummyLink type is handled by MagicCMS engine in a special way.<br></br>
