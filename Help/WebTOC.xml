@@ -1,52 +1,52 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <HelpTOC>
 
-  <HelpTOCNode Id="bd598ef9-681e-4361-b9cc-d9b451142d7a" Title="MagicCMS Namespace" Url="html/N-MagicCMS.htm">
+  <HelpTOCNode Id="aea02067-db7f-480a-afe5-b1a14abfdc88" Title="MagicCMS Namespace" Url="html/N-MagicCMS.htm">
     <HelpTOCNode Title="Min Class" Url="html/T-MagicCMS.Min.htm" />
-    <HelpTOCNode Id="9db367d6-90bd-4260-b430-9bd89f139b71" Title="SiteMaster Class" Url="html/T-MagicCMS.SiteMaster.htm">
+    <HelpTOCNode Id="d2b496ab-9b56-49ac-93ae-2ddacc06017c" Title="SiteMaster Class" Url="html/T-MagicCMS.SiteMaster.htm">
       <HelpTOCNode Title="SiteMaster Members" Url="html/AllMembers.T-MagicCMS.SiteMaster.htm" />
-      <HelpTOCNode Id="4863122f-317b-4563-85ef-26d1f00afb6a" Title="SiteMaster Properties" Url="html/Properties.T-MagicCMS.SiteMaster.htm">
+      <HelpTOCNode Id="8658facc-a1c2-4d60-8df3-fe11baea8317" Title="SiteMaster Properties" Url="html/Properties.T-MagicCMS.SiteMaster.htm">
         <HelpTOCNode Title="jQueryVersion Property " Url="html/P-MagicCMS.SiteMaster.jQueryVersion.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
   </HelpTOCNode>
-  <HelpTOCNode Id="85253142-0388-4617-bf71-7cbf492a2a4b" Title="MagicCMS.AccessToken Namespace" Url="html/N-MagicCMS.AccessToken.htm">
-    <HelpTOCNode Id="a87c2076-d218-455f-8f76-62539374f9a9" Title="AdmAccessToken Class" Url="html/T-MagicCMS.AccessToken.AdmAccessToken.htm">
+  <HelpTOCNode Id="80fd79ab-cbfa-4a5d-965d-b55b3ce121c3" Title="MagicCMS.AccessToken Namespace" Url="html/N-MagicCMS.AccessToken.htm">
+    <HelpTOCNode Id="b4af0e04-3bc3-4705-aecd-24add837e595" Title="AdmAccessToken Class" Url="html/T-MagicCMS.AccessToken.AdmAccessToken.htm">
       <HelpTOCNode Title="AdmAccessToken Members" Url="html/AllMembers.T-MagicCMS.AccessToken.AdmAccessToken.htm" />
-      <HelpTOCNode Id="2d146631-4783-4e7e-901e-ba5ce48aa5b9" Title="AdmAccessToken Properties" Url="html/Properties.T-MagicCMS.AccessToken.AdmAccessToken.htm">
+      <HelpTOCNode Id="0a7098b2-ff78-4bb3-b0d2-8c047b35aa45" Title="AdmAccessToken Properties" Url="html/Properties.T-MagicCMS.AccessToken.AdmAccessToken.htm">
         <HelpTOCNode Title="access_token Property " Url="html/P-MagicCMS.AccessToken.AdmAccessToken.access_token.htm" />
         <HelpTOCNode Title="expires_in Property " Url="html/P-MagicCMS.AccessToken.AdmAccessToken.expires_in.htm" />
         <HelpTOCNode Title="scope Property " Url="html/P-MagicCMS.AccessToken.AdmAccessToken.scope.htm" />
         <HelpTOCNode Title="token_type Property " Url="html/P-MagicCMS.AccessToken.AdmAccessToken.token_type.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="23d0b43f-e091-4f6a-bf1d-5ca359c110a2" Title="AdmAuthentication Class" Url="html/T-MagicCMS.AccessToken.AdmAuthentication.htm">
+    <HelpTOCNode Id="dc2b0935-6caf-4d27-88ee-13a7cdffc00f" Title="AdmAuthentication Class" Url="html/T-MagicCMS.AccessToken.AdmAuthentication.htm">
       <HelpTOCNode Title="AdmAuthentication Members" Url="html/AllMembers.T-MagicCMS.AccessToken.AdmAuthentication.htm" />
       <HelpTOCNode Title="AdmAuthentication Constructor " Url="html/M-MagicCMS.AccessToken.AdmAuthentication.-ctor.htm" />
-      <HelpTOCNode Id="366642fb-33d5-4448-9e13-c01b52399157" Title="AdmAuthentication Fields" Url="html/Fields.T-MagicCMS.AccessToken.AdmAuthentication.htm">
+      <HelpTOCNode Id="280b7757-bbc0-41fe-bdc6-eab23e483c7c" Title="AdmAuthentication Fields" Url="html/Fields.T-MagicCMS.AccessToken.AdmAuthentication.htm">
         <HelpTOCNode Title="DatamarketAccessUri Field" Url="html/F-MagicCMS.AccessToken.AdmAuthentication.DatamarketAccessUri.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="232424aa-7502-4cde-9f90-9007f60e46b0" Title="AdmAuthentication Methods" Url="html/Methods.T-MagicCMS.AccessToken.AdmAuthentication.htm">
+      <HelpTOCNode Id="9f087849-062a-446f-8482-10a27f3a03d5" Title="AdmAuthentication Methods" Url="html/Methods.T-MagicCMS.AccessToken.AdmAuthentication.htm">
         <HelpTOCNode Title="GetAccessToken Method " Url="html/M-MagicCMS.AccessToken.AdmAuthentication.GetAccessToken.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
   </HelpTOCNode>
-  <HelpTOCNode Id="023571bc-28e4-4675-98ba-83924d6dd17a" Title="MagicCMS.BingTranslator Namespace" Url="html/N-MagicCMS.BingTranslator.htm">
-    <HelpTOCNode Id="7d01d2f2-61fb-401e-b71b-24e971ed4ac5" Title="GetTranslationsResponse Class" Url="html/T-MagicCMS.BingTranslator.GetTranslationsResponse.htm">
+  <HelpTOCNode Id="b252beb0-ce45-49a1-a228-3804f2a31d20" Title="MagicCMS.BingTranslator Namespace" Url="html/N-MagicCMS.BingTranslator.htm">
+    <HelpTOCNode Id="6b560f0a-6f91-437a-b2f8-73b8bb373d6d" Title="GetTranslationsResponse Class" Url="html/T-MagicCMS.BingTranslator.GetTranslationsResponse.htm">
       <HelpTOCNode Title="GetTranslationsResponse Members" Url="html/AllMembers.T-MagicCMS.BingTranslator.GetTranslationsResponse.htm" />
-      <HelpTOCNode Id="9a962e95-70ea-4b35-ba70-fc3ec861ef01" Title="GetTranslationsResponse Properties" Url="html/Properties.T-MagicCMS.BingTranslator.GetTranslationsResponse.htm">
+      <HelpTOCNode Id="af749238-0613-4e7d-9e9c-03c6886621bf" Title="GetTranslationsResponse Properties" Url="html/Properties.T-MagicCMS.BingTranslator.GetTranslationsResponse.htm">
         <HelpTOCNode Title="ExtensionData Property " Url="html/P-MagicCMS.BingTranslator.GetTranslationsResponse.ExtensionData.htm" />
         <HelpTOCNode Title="From Property " Url="html/P-MagicCMS.BingTranslator.GetTranslationsResponse.From.htm" />
         <HelpTOCNode Title="State Property " Url="html/P-MagicCMS.BingTranslator.GetTranslationsResponse.State.htm" />
         <HelpTOCNode Title="Translations Property " Url="html/P-MagicCMS.BingTranslator.GetTranslationsResponse.Translations.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="ccf8ebbe-0f90-4bbe-b98f-064d54f6e21e" Title="GetTranslationsResponse Events" Url="html/Events.T-MagicCMS.BingTranslator.GetTranslationsResponse.htm">
+      <HelpTOCNode Id="c7888c54-ae84-4a0d-a75c-b754181d7130" Title="GetTranslationsResponse Events" Url="html/Events.T-MagicCMS.BingTranslator.GetTranslationsResponse.htm">
         <HelpTOCNode Title="PropertyChanged Event" Url="html/E-MagicCMS.BingTranslator.GetTranslationsResponse.PropertyChanged.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="3e873bb7-8620-4b58-89a8-bb088bd26684" Title="LanguageService Interface" Url="html/T-MagicCMS.BingTranslator.LanguageService.htm">
+    <HelpTOCNode Id="89f7345b-0c7f-4d6e-a97a-f571e1e437d0" Title="LanguageService Interface" Url="html/T-MagicCMS.BingTranslator.LanguageService.htm">
       <HelpTOCNode Title="LanguageService Members" Url="html/AllMembers.T-MagicCMS.BingTranslator.LanguageService.htm" />
-      <HelpTOCNode Id="c66a470b-b9b8-4865-8eff-95250517c343" Title="LanguageService Methods" Url="html/Methods.T-MagicCMS.BingTranslator.LanguageService.htm">
+      <HelpTOCNode Id="b42fedf6-8e7e-4e6b-876e-c1e480023a1f" Title="LanguageService Methods" Url="html/Methods.T-MagicCMS.BingTranslator.LanguageService.htm">
         <HelpTOCNode Title="AddTranslation Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.AddTranslation.htm" />
         <HelpTOCNode Title="AddTranslationArray Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.AddTranslationArray.htm" />
         <HelpTOCNode Title="AddTranslationArrayAsync Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.AddTranslationArrayAsync.htm" />
@@ -80,16 +80,16 @@
       </HelpTOCNode>
     </HelpTOCNode>
     <HelpTOCNode Title="LanguageServiceChannel Interface" Url="html/T-MagicCMS.BingTranslator.LanguageServiceChannel.htm" />
-    <HelpTOCNode Id="220abb02-d9fc-47ff-a6ff-9634016c79de" Title="LanguageServiceClient Class" Url="html/T-MagicCMS.BingTranslator.LanguageServiceClient.htm">
+    <HelpTOCNode Id="cc6d0660-a6de-4b81-b996-a96d160223c4" Title="LanguageServiceClient Class" Url="html/T-MagicCMS.BingTranslator.LanguageServiceClient.htm">
       <HelpTOCNode Title="LanguageServiceClient Members" Url="html/AllMembers.T-MagicCMS.BingTranslator.LanguageServiceClient.htm" />
-      <HelpTOCNode Id="4db2657d-3c74-4ddf-93ad-2bdc8640434d" Title="LanguageServiceClient Constructor " Url="html/Overload-MagicCMS.BingTranslator.LanguageServiceClient.-ctor.htm">
+      <HelpTOCNode Id="0ab1ae75-5ac9-4fd1-97b7-8e81669781e2" Title="LanguageServiceClient Constructor " Url="html/Overload-MagicCMS.BingTranslator.LanguageServiceClient.-ctor.htm">
         <HelpTOCNode Title="LanguageServiceClient Constructor " Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.-ctor.htm" />
         <HelpTOCNode Title="LanguageServiceClient Constructor (String)" Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.-ctor_1.htm" />
         <HelpTOCNode Title="LanguageServiceClient Constructor (String, String)" Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.-ctor_2.htm" />
         <HelpTOCNode Title="LanguageServiceClient Constructor (String, EndpointAddress)" Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.-ctor_3.htm" />
         <HelpTOCNode Title="LanguageServiceClient Constructor (Binding, EndpointAddress)" Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.-ctor_4.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="b0225d2d-a386-41a9-83f8-e7a7ea94c9a2" Title="LanguageServiceClient Methods" Url="html/Methods.T-MagicCMS.BingTranslator.LanguageServiceClient.htm">
+      <HelpTOCNode Id="52469a7e-301a-490a-a889-554b69558a02" Title="LanguageServiceClient Methods" Url="html/Methods.T-MagicCMS.BingTranslator.LanguageServiceClient.htm">
         <HelpTOCNode Title="AddTranslation Method " Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.AddTranslation.htm" />
         <HelpTOCNode Title="AddTranslationArray Method " Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.AddTranslationArray.htm" />
         <HelpTOCNode Title="AddTranslationArrayAsync Method " Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.AddTranslationArrayAsync.htm" />
@@ -122,9 +122,9 @@
         <HelpTOCNode Title="TranslateAsync Method " Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.TranslateAsync.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="2877c4db-dcc2-4409-97f7-29098a0fa8e8" Title="TranslateArray2Response Class" Url="html/T-MagicCMS.BingTranslator.TranslateArray2Response.htm">
+    <HelpTOCNode Id="0fc2a025-184c-493f-b120-a1236053a31f" Title="TranslateArray2Response Class" Url="html/T-MagicCMS.BingTranslator.TranslateArray2Response.htm">
       <HelpTOCNode Title="TranslateArray2Response Members" Url="html/AllMembers.T-MagicCMS.BingTranslator.TranslateArray2Response.htm" />
-      <HelpTOCNode Id="61b976b5-1484-42bf-af52-f2144bfa92b6" Title="TranslateArray2Response Properties" Url="html/Properties.T-MagicCMS.BingTranslator.TranslateArray2Response.htm">
+      <HelpTOCNode Id="4c2dec8c-10e0-441d-99c9-c625c070b782" Title="TranslateArray2Response Properties" Url="html/Properties.T-MagicCMS.BingTranslator.TranslateArray2Response.htm">
         <HelpTOCNode Title="Alignment Property " Url="html/P-MagicCMS.BingTranslator.TranslateArray2Response.Alignment.htm" />
         <HelpTOCNode Title="Error Property " Url="html/P-MagicCMS.BingTranslator.TranslateArray2Response.Error.htm" />
         <HelpTOCNode Title="ExtensionData Property " Url="html/P-MagicCMS.BingTranslator.TranslateArray2Response.ExtensionData.htm" />
@@ -134,13 +134,13 @@
         <HelpTOCNode Title="TranslatedText Property " Url="html/P-MagicCMS.BingTranslator.TranslateArray2Response.TranslatedText.htm" />
         <HelpTOCNode Title="TranslatedTextSentenceLengths Property " Url="html/P-MagicCMS.BingTranslator.TranslateArray2Response.TranslatedTextSentenceLengths.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="419b850f-f51c-4415-9895-9337fab2b400" Title="TranslateArray2Response Events" Url="html/Events.T-MagicCMS.BingTranslator.TranslateArray2Response.htm">
+      <HelpTOCNode Id="41bbbe7a-0ef0-4f0c-b6df-e06b38e3d77c" Title="TranslateArray2Response Events" Url="html/Events.T-MagicCMS.BingTranslator.TranslateArray2Response.htm">
         <HelpTOCNode Title="PropertyChanged Event" Url="html/E-MagicCMS.BingTranslator.TranslateArray2Response.PropertyChanged.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="441e04ca-6fab-42f0-add1-44a9a4c9f089" Title="TranslateArrayResponse Class" Url="html/T-MagicCMS.BingTranslator.TranslateArrayResponse.htm">
+    <HelpTOCNode Id="bcf071d7-02b8-48f1-850a-4970c2d2d6d4" Title="TranslateArrayResponse Class" Url="html/T-MagicCMS.BingTranslator.TranslateArrayResponse.htm">
       <HelpTOCNode Title="TranslateArrayResponse Members" Url="html/AllMembers.T-MagicCMS.BingTranslator.TranslateArrayResponse.htm" />
-      <HelpTOCNode Id="7739a163-33fd-4603-9a87-995f6001bb80" Title="TranslateArrayResponse Properties" Url="html/Properties.T-MagicCMS.BingTranslator.TranslateArrayResponse.htm">
+      <HelpTOCNode Id="a7c73396-166b-4096-b440-2151b6434fb8" Title="TranslateArrayResponse Properties" Url="html/Properties.T-MagicCMS.BingTranslator.TranslateArrayResponse.htm">
         <HelpTOCNode Title="Error Property " Url="html/P-MagicCMS.BingTranslator.TranslateArrayResponse.Error.htm" />
         <HelpTOCNode Title="ExtensionData Property " Url="html/P-MagicCMS.BingTranslator.TranslateArrayResponse.ExtensionData.htm" />
         <HelpTOCNode Title="From Property " Url="html/P-MagicCMS.BingTranslator.TranslateArrayResponse.From.htm" />
@@ -149,13 +149,13 @@
         <HelpTOCNode Title="TranslatedText Property " Url="html/P-MagicCMS.BingTranslator.TranslateArrayResponse.TranslatedText.htm" />
         <HelpTOCNode Title="TranslatedTextSentenceLengths Property " Url="html/P-MagicCMS.BingTranslator.TranslateArrayResponse.TranslatedTextSentenceLengths.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="86f30c6c-c266-4c02-b4be-7b2c5c950984" Title="TranslateArrayResponse Events" Url="html/Events.T-MagicCMS.BingTranslator.TranslateArrayResponse.htm">
+      <HelpTOCNode Id="93e50daa-addb-4650-953a-f5087a4278c3" Title="TranslateArrayResponse Events" Url="html/Events.T-MagicCMS.BingTranslator.TranslateArrayResponse.htm">
         <HelpTOCNode Title="PropertyChanged Event" Url="html/E-MagicCMS.BingTranslator.TranslateArrayResponse.PropertyChanged.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="2c70cdf8-8d98-4119-b24d-3218cded4d04" Title="TranslateOptions Class" Url="html/T-MagicCMS.BingTranslator.TranslateOptions.htm">
+    <HelpTOCNode Id="41dfcf20-145e-4207-8c31-1339e5e1b603" Title="TranslateOptions Class" Url="html/T-MagicCMS.BingTranslator.TranslateOptions.htm">
       <HelpTOCNode Title="TranslateOptions Members" Url="html/AllMembers.T-MagicCMS.BingTranslator.TranslateOptions.htm" />
-      <HelpTOCNode Id="e5e265db-6a65-453f-bc65-f2f4c2665888" Title="TranslateOptions Properties" Url="html/Properties.T-MagicCMS.BingTranslator.TranslateOptions.htm">
+      <HelpTOCNode Id="6129d43c-91ac-4cfb-956e-6aa8f34e336a" Title="TranslateOptions Properties" Url="html/Properties.T-MagicCMS.BingTranslator.TranslateOptions.htm">
         <HelpTOCNode Title="Category Property " Url="html/P-MagicCMS.BingTranslator.TranslateOptions.Category.htm" />
         <HelpTOCNode Title="ContentType Property " Url="html/P-MagicCMS.BingTranslator.TranslateOptions.ContentType.htm" />
         <HelpTOCNode Title="ExtensionData Property " Url="html/P-MagicCMS.BingTranslator.TranslateOptions.ExtensionData.htm" />
@@ -168,26 +168,26 @@
         <HelpTOCNode Title="Uri Property " Url="html/P-MagicCMS.BingTranslator.TranslateOptions.Uri.htm" />
         <HelpTOCNode Title="User Property " Url="html/P-MagicCMS.BingTranslator.TranslateOptions.User.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="e09fbc22-89dd-44b9-8a32-90582d45a8f1" Title="TranslateOptions Events" Url="html/Events.T-MagicCMS.BingTranslator.TranslateOptions.htm">
+      <HelpTOCNode Id="ca71a739-9fe3-4ff2-81d1-43680739c217" Title="TranslateOptions Events" Url="html/Events.T-MagicCMS.BingTranslator.TranslateOptions.htm">
         <HelpTOCNode Title="PropertyChanged Event" Url="html/E-MagicCMS.BingTranslator.TranslateOptions.PropertyChanged.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="a016ae44-4228-42e3-a3ea-fbe332b2e11b" Title="Translation Class" Url="html/T-MagicCMS.BingTranslator.Translation.htm">
+    <HelpTOCNode Id="442cc4e2-9554-40ea-b6d5-67cc82e6fcac" Title="Translation Class" Url="html/T-MagicCMS.BingTranslator.Translation.htm">
       <HelpTOCNode Title="Translation Members" Url="html/AllMembers.T-MagicCMS.BingTranslator.Translation.htm" />
-      <HelpTOCNode Id="0106c42e-5c5f-4f6b-893d-ac21c099797a" Title="Translation Properties" Url="html/Properties.T-MagicCMS.BingTranslator.Translation.htm">
+      <HelpTOCNode Id="01927b86-c7e6-48a7-a16f-beef009e7299" Title="Translation Properties" Url="html/Properties.T-MagicCMS.BingTranslator.Translation.htm">
         <HelpTOCNode Title="ExtensionData Property " Url="html/P-MagicCMS.BingTranslator.Translation.ExtensionData.htm" />
         <HelpTOCNode Title="OriginalText Property " Url="html/P-MagicCMS.BingTranslator.Translation.OriginalText.htm" />
         <HelpTOCNode Title="Rating Property " Url="html/P-MagicCMS.BingTranslator.Translation.Rating.htm" />
         <HelpTOCNode Title="Sequence Property " Url="html/P-MagicCMS.BingTranslator.Translation.Sequence.htm" />
         <HelpTOCNode Title="TranslatedText Property " Url="html/P-MagicCMS.BingTranslator.Translation.TranslatedText.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="f91f9de7-28c6-44fc-ac14-a6d64ebee4b0" Title="Translation Events" Url="html/Events.T-MagicCMS.BingTranslator.Translation.htm">
+      <HelpTOCNode Id="285fe926-ac01-4c68-9348-3e935242b295" Title="Translation Events" Url="html/Events.T-MagicCMS.BingTranslator.Translation.htm">
         <HelpTOCNode Title="PropertyChanged Event" Url="html/E-MagicCMS.BingTranslator.Translation.PropertyChanged.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="398c67da-38f0-4a7d-b9b0-88f924191641" Title="TranslationMatch Class" Url="html/T-MagicCMS.BingTranslator.TranslationMatch.htm">
+    <HelpTOCNode Id="242ebf8c-b3fe-4529-b70d-e07b7bf43ae7" Title="TranslationMatch Class" Url="html/T-MagicCMS.BingTranslator.TranslationMatch.htm">
       <HelpTOCNode Title="TranslationMatch Members" Url="html/AllMembers.T-MagicCMS.BingTranslator.TranslationMatch.htm" />
-      <HelpTOCNode Id="ea7d204f-a763-47be-a0da-5dbbec0e0573" Title="TranslationMatch Properties" Url="html/Properties.T-MagicCMS.BingTranslator.TranslationMatch.htm">
+      <HelpTOCNode Id="a714a5fa-1b13-42df-b61b-46a5c90d527b" Title="TranslationMatch Properties" Url="html/Properties.T-MagicCMS.BingTranslator.TranslationMatch.htm">
         <HelpTOCNode Title="Count Property " Url="html/P-MagicCMS.BingTranslator.TranslationMatch.Count.htm" />
         <HelpTOCNode Title="Error Property " Url="html/P-MagicCMS.BingTranslator.TranslationMatch.Error.htm" />
         <HelpTOCNode Title="ExtensionData Property " Url="html/P-MagicCMS.BingTranslator.TranslationMatch.ExtensionData.htm" />
@@ -196,15 +196,15 @@
         <HelpTOCNode Title="Rating Property " Url="html/P-MagicCMS.BingTranslator.TranslationMatch.Rating.htm" />
         <HelpTOCNode Title="TranslatedText Property " Url="html/P-MagicCMS.BingTranslator.TranslationMatch.TranslatedText.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="1feccdc5-a91c-4758-ba3b-30e27a759783" Title="TranslationMatch Events" Url="html/Events.T-MagicCMS.BingTranslator.TranslationMatch.htm">
+      <HelpTOCNode Id="1b7b8eeb-b878-454d-bd2b-9fb16af45643" Title="TranslationMatch Events" Url="html/Events.T-MagicCMS.BingTranslator.TranslationMatch.htm">
         <HelpTOCNode Title="PropertyChanged Event" Url="html/E-MagicCMS.BingTranslator.TranslationMatch.PropertyChanged.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
   </HelpTOCNode>
-  <HelpTOCNode Id="a3bd18b9-bfe6-46bc-bc5a-15fcd85b1590" Title="MagicCMS.Blogger Namespace" Url="html/N-MagicCMS.Blogger.htm">
-    <HelpTOCNode Id="62d31acb-9eb2-4058-8f6f-726707ccba76" Title="BloggerPost Class" Url="html/T-MagicCMS.Blogger.BloggerPost.htm">
+  <HelpTOCNode Id="36de3a20-187d-483b-8e2f-52e58f9895c2" Title="MagicCMS.Blogger Namespace" Url="html/N-MagicCMS.Blogger.htm">
+    <HelpTOCNode Id="4644b8b0-e822-45c3-ae02-99ef1ebfed4d" Title="BloggerPost Class" Url="html/T-MagicCMS.Blogger.BloggerPost.htm">
       <HelpTOCNode Title="BloggerPost Members" Url="html/AllMembers.T-MagicCMS.Blogger.BloggerPost.htm" />
-      <HelpTOCNode Id="ee1cb17a-8061-4270-b6e4-99a2e2f0287e" Title="BloggerPost Properties" Url="html/Properties.T-MagicCMS.Blogger.BloggerPost.htm">
+      <HelpTOCNode Id="0c15bcb0-d933-4086-a210-3688a88b454a" Title="BloggerPost Properties" Url="html/Properties.T-MagicCMS.Blogger.BloggerPost.htm">
         <HelpTOCNode Title="Author Property " Url="html/P-MagicCMS.Blogger.BloggerPost.Author.htm" />
         <HelpTOCNode Title="Description Property " Url="html/P-MagicCMS.Blogger.BloggerPost.Description.htm" />
         <HelpTOCNode Title="Guid Property " Url="html/P-MagicCMS.Blogger.BloggerPost.Guid.htm" />
@@ -215,13 +215,13 @@
         <HelpTOCNode Title="Updated Property " Url="html/P-MagicCMS.Blogger.BloggerPost.Updated.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="359c3175-53fc-45dc-819f-cbdad1b0e1e0" Title="BloggerRss Class" Url="html/T-MagicCMS.Blogger.BloggerRss.htm">
+    <HelpTOCNode Id="29e963d8-a543-4170-988e-4b1eadbdf999" Title="BloggerRss Class" Url="html/T-MagicCMS.Blogger.BloggerRss.htm">
       <HelpTOCNode Title="BloggerRss Members" Url="html/AllMembers.T-MagicCMS.Blogger.BloggerRss.htm" />
-      <HelpTOCNode Id="9b0bad97-7bf6-4766-a6ee-24b910b91b2f" Title="BloggerRss Constructor " Url="html/Overload-MagicCMS.Blogger.BloggerRss.-ctor.htm">
+      <HelpTOCNode Id="70ef8e7d-52b6-456d-98f2-53cedba2a0a1" Title="BloggerRss Constructor " Url="html/Overload-MagicCMS.Blogger.BloggerRss.-ctor.htm">
         <HelpTOCNode Title="BloggerRss Constructor (String)" Url="html/M-MagicCMS.Blogger.BloggerRss.-ctor.htm" />
         <HelpTOCNode Title="BloggerRss Constructor (String, Int32)" Url="html/M-MagicCMS.Blogger.BloggerRss.-ctor_1.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="1f1bc737-59d6-4d21-9e89-f71a9aad9bc3" Title="BloggerRss Methods" Url="html/Methods.T-MagicCMS.Blogger.BloggerRss.htm">
+      <HelpTOCNode Id="3db4bd5f-aac3-47b7-8bbd-f9de89a8eac5" Title="BloggerRss Methods" Url="html/Methods.T-MagicCMS.Blogger.BloggerRss.htm">
         <HelpTOCNode Title="Add Method " Url="html/M-MagicCMS.Blogger.BloggerRss.Add.htm" />
         <HelpTOCNode Title="Contains Method " Url="html/M-MagicCMS.Blogger.BloggerRss.Contains.htm" />
         <HelpTOCNode Title="CopyTo Method " Url="html/M-MagicCMS.Blogger.BloggerRss.CopyTo.htm" />
@@ -229,15 +229,15 @@
         <HelpTOCNode Title="Insert Method " Url="html/M-MagicCMS.Blogger.BloggerRss.Insert.htm" />
         <HelpTOCNode Title="Remove Method " Url="html/M-MagicCMS.Blogger.BloggerRss.Remove.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="07436914-ca0d-4880-a194-9e5b7407d9cb" Title="BloggerRss Properties" Url="html/Properties.T-MagicCMS.Blogger.BloggerRss.htm">
+      <HelpTOCNode Id="20e7137d-1ca4-4512-8549-d1e9668264f0" Title="BloggerRss Properties" Url="html/Properties.T-MagicCMS.Blogger.BloggerRss.htm">
         <HelpTOCNode Title="Item Property " Url="html/P-MagicCMS.Blogger.BloggerRss.Item-System.Int32-.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
   </HelpTOCNode>
-  <HelpTOCNode Id="8ed45764-5a42-455a-b885-ba0ce338ecf0" Title="MagicCMS.Core Namespace" Url="html/N-MagicCMS.Core.htm">
-    <HelpTOCNode Id="7ef48de3-043c-42c0-8134-75a130a44fb0" Title="AjaxJsonResponse Class" Url="html/T-MagicCMS.Core.AjaxJsonResponse.htm">
+  <HelpTOCNode Id="8f089ac0-3af5-44ef-8b82-ad91d617cacd" Title="MagicCMS.Core Namespace" Url="html/N-MagicCMS.Core.htm">
+    <HelpTOCNode Id="0e6616c3-6e8f-409e-9484-f0bc6f016ce9" Title="AjaxJsonResponse Class" Url="html/T-MagicCMS.Core.AjaxJsonResponse.htm">
       <HelpTOCNode Title="AjaxJsonResponse Members" Url="html/AllMembers.T-MagicCMS.Core.AjaxJsonResponse.htm" />
-      <HelpTOCNode Id="a1f0c1ff-a6a9-4341-a7c6-6ffd09137609" Title="AjaxJsonResponse Properties" Url="html/Properties.T-MagicCMS.Core.AjaxJsonResponse.htm">
+      <HelpTOCNode Id="e510bc88-6874-4125-825d-37ec2f2bf09a" Title="AjaxJsonResponse Properties" Url="html/Properties.T-MagicCMS.Core.AjaxJsonResponse.htm">
         <HelpTOCNode Title="data Property " Url="html/P-MagicCMS.Core.AjaxJsonResponse.data.htm" />
         <HelpTOCNode Title="exitcode Property " Url="html/P-MagicCMS.Core.AjaxJsonResponse.exitcode.htm" />
         <HelpTOCNode Title="msg Property " Url="html/P-MagicCMS.Core.AjaxJsonResponse.msg.htm" />
@@ -245,25 +245,25 @@
         <HelpTOCNode Title="success Property " Url="html/P-MagicCMS.Core.AjaxJsonResponse.success.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="5e31c5d3-4086-4bae-a385-e74e4d9b7adb" Title="ClauseValue Class" Url="html/T-MagicCMS.Core.ClauseValue.htm">
+    <HelpTOCNode Id="a5f39ef7-befe-45bf-9876-f5b5af1e2f4e" Title="ClauseValue Class" Url="html/T-MagicCMS.Core.ClauseValue.htm">
       <HelpTOCNode Title="ClauseValue Members" Url="html/AllMembers.T-MagicCMS.Core.ClauseValue.htm" />
       <HelpTOCNode Title="ClauseValue Constructor " Url="html/M-MagicCMS.Core.ClauseValue.-ctor.htm" />
-      <HelpTOCNode Id="9b59026b-abe8-4c67-8281-1a7654f5445d" Title="ClauseValue Methods" Url="html/Methods.T-MagicCMS.Core.ClauseValue.htm">
+      <HelpTOCNode Id="f8eee67b-4df1-418a-b224-8e47496057e2" Title="ClauseValue Methods" Url="html/Methods.T-MagicCMS.Core.ClauseValue.htm">
         <HelpTOCNode Title="ToString Method " Url="html/M-MagicCMS.Core.ClauseValue.ToString.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="b3469686-ba23-4ea3-9e96-a6c5a8477ce2" Title="ClauseValue Properties" Url="html/Properties.T-MagicCMS.Core.ClauseValue.htm">
+      <HelpTOCNode Id="cd79b2bd-eb42-4e86-a23b-41463dbe5c5b" Title="ClauseValue Properties" Url="html/Properties.T-MagicCMS.Core.ClauseValue.htm">
         <HelpTOCNode Title="Type Property " Url="html/P-MagicCMS.Core.ClauseValue.Type.htm" />
         <HelpTOCNode Title="Value Property " Url="html/P-MagicCMS.Core.ClauseValue.Value.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
     <HelpTOCNode Title="ClauseValueType Enumeration" Url="html/T-MagicCMS.Core.ClauseValueType.htm" />
-    <HelpTOCNode Id="bc205209-e21c-45b6-93fc-0e16788bc704" Title="CMS_Config Class" Url="html/T-MagicCMS.Core.CMS_Config.htm">
+    <HelpTOCNode Id="beb1087d-07a1-4bde-9f42-261624be189a" Title="CMS_Config Class" Url="html/T-MagicCMS.Core.CMS_Config.htm">
       <HelpTOCNode Title="CMS_Config Members" Url="html/AllMembers.T-MagicCMS.Core.CMS_Config.htm" />
       <HelpTOCNode Title="CMS_Config Constructor " Url="html/M-MagicCMS.Core.CMS_Config.-ctor.htm" />
-      <HelpTOCNode Id="98bdbaca-c8d4-4f62-8a2d-9ae2281f9647" Title="CMS_Config Methods" Url="html/Methods.T-MagicCMS.Core.CMS_Config.htm">
+      <HelpTOCNode Id="bc79d0af-b262-4a95-a7b7-bf759c85ab94" Title="CMS_Config Methods" Url="html/Methods.T-MagicCMS.Core.CMS_Config.htm">
         <HelpTOCNode Title="Save Method " Url="html/M-MagicCMS.Core.CMS_Config.Save.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="5dfb7466-f888-4df8-8545-9ac901a2fc6d" Title="CMS_Config Properties" Url="html/Properties.T-MagicCMS.Core.CMS_Config.htm">
+      <HelpTOCNode Id="5ea80f61-0aa6-46d9-8946-f747649f96fc" Title="CMS_Config Properties" Url="html/Properties.T-MagicCMS.Core.CMS_Config.htm">
         <HelpTOCNode Title="DefaultContentMaster Property " Url="html/P-MagicCMS.Core.CMS_Config.DefaultContentMaster.htm" />
         <HelpTOCNode Title="DefaultImage Property " Url="html/P-MagicCMS.Core.CMS_Config.DefaultImage.htm" />
         <HelpTOCNode Title="FooterMenu Property " Url="html/P-MagicCMS.Core.CMS_Config.FooterMenu.htm" />
@@ -288,19 +288,19 @@
         <HelpTOCNode Title="TransSourceLangName Property " Url="html/P-MagicCMS.Core.CMS_Config.TransSourceLangName.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="ae48c1b5-2738-4344-b445-a6ec9f26ca0a" Title="ControlExtensions Class" Url="html/T-MagicCMS.Core.ControlExtensions.htm">
+    <HelpTOCNode Id="4eb094ea-0a7e-4a67-b695-410fa486e936" Title="ControlExtensions Class" Url="html/T-MagicCMS.Core.ControlExtensions.htm">
       <HelpTOCNode Title="ControlExtensions Members" Url="html/AllMembers.T-MagicCMS.Core.ControlExtensions.htm" />
-      <HelpTOCNode Id="9d8fe64b-4d0d-4ef3-aa1c-3f0eb7140406" Title="ControlExtensions Methods" Url="html/Methods.T-MagicCMS.Core.ControlExtensions.htm">
+      <HelpTOCNode Id="8a0c625b-16b6-4d5e-83e0-db5d60ff5a08" Title="ControlExtensions Methods" Url="html/Methods.T-MagicCMS.Core.ControlExtensions.htm">
         <HelpTOCNode Title="FindControlRecursive Method " Url="html/M-MagicCMS.Core.ControlExtensions.FindControlRecursive.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
     <HelpTOCNode Title="LogAction Enumeration" Url="html/T-MagicCMS.Core.LogAction.htm" />
-    <HelpTOCNode Id="37c9412f-b7b5-436f-bbf6-f0e1c4ba18eb" Title="MagicCMSConfiguration Class" Url="html/T-MagicCMS.Core.MagicCMSConfiguration.htm">
+    <HelpTOCNode Id="03c6a5c6-06b3-43ed-97e6-f2fd3f143b73" Title="MagicCMSConfiguration Class" Url="html/T-MagicCMS.Core.MagicCMSConfiguration.htm">
       <HelpTOCNode Title="MagicCMSConfiguration Members" Url="html/AllMembers.T-MagicCMS.Core.MagicCMSConfiguration.htm" />
-      <HelpTOCNode Id="c07dd78d-6f5a-4e91-9eef-82ac8d3ec1bb" Title="MagicCMSConfiguration Methods" Url="html/Methods.T-MagicCMS.Core.MagicCMSConfiguration.htm">
+      <HelpTOCNode Id="5f040215-3d00-45cf-b6eb-2169142ca022" Title="MagicCMSConfiguration Methods" Url="html/Methods.T-MagicCMS.Core.MagicCMSConfiguration.htm">
         <HelpTOCNode Title="GetConfig Method " Url="html/M-MagicCMS.Core.MagicCMSConfiguration.GetConfig.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="87d02f41-d93a-480a-aab4-3514145cb3d4" Title="MagicCMSConfiguration Properties" Url="html/Properties.T-MagicCMS.Core.MagicCMSConfiguration.htm">
+      <HelpTOCNode Id="c5ae3d81-a1e0-464c-9416-4cb611f2eca1" Title="MagicCMSConfiguration Properties" Url="html/Properties.T-MagicCMS.Core.MagicCMSConfiguration.htm">
         <HelpTOCNode Title="AllowedFileTypes Property " Url="html/P-MagicCMS.Core.MagicCMSConfiguration.AllowedFileTypes.htm" />
         <HelpTOCNode Title="CkeditorCdn Property " Url="html/P-MagicCMS.Core.MagicCMSConfiguration.CkeditorCdn.htm" />
         <HelpTOCNode Title="ConnectionName Property " Url="html/P-MagicCMS.Core.MagicCMSConfiguration.ConnectionName.htm" />
@@ -323,39 +323,39 @@
         <HelpTOCNode Title="ThemePath Property " Url="html/P-MagicCMS.Core.MagicCMSConfiguration.ThemePath.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="160c4e3a-49ee-44c0-a684-b6ece7b28fd8" Title="MagicCmsSelect2 Class" Url="html/T-MagicCMS.Core.MagicCmsSelect2.htm">
+    <HelpTOCNode Id="37dd704d-839d-4935-a3bf-721d061adfd9" Title="MagicCmsSelect2 Class" Url="html/T-MagicCMS.Core.MagicCmsSelect2.htm">
       <HelpTOCNode Title="MagicCmsSelect2 Members" Url="html/AllMembers.T-MagicCMS.Core.MagicCmsSelect2.htm" />
-      <HelpTOCNode Id="58677ac8-29df-4f1f-b45d-ef53d166f074" Title="MagicCmsSelect2 Properties" Url="html/Properties.T-MagicCMS.Core.MagicCmsSelect2.htm">
+      <HelpTOCNode Id="56e2b27b-fbe1-4331-8631-0386490b8890" Title="MagicCmsSelect2 Properties" Url="html/Properties.T-MagicCMS.Core.MagicCmsSelect2.htm">
         <HelpTOCNode Title="id Property " Url="html/P-MagicCMS.Core.MagicCmsSelect2.id.htm" />
         <HelpTOCNode Title="Pk Property " Url="html/P-MagicCMS.Core.MagicCmsSelect2.Pk.htm" />
         <HelpTOCNode Title="text Property " Url="html/P-MagicCMS.Core.MagicCmsSelect2.text.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="0c1c943a-3208-4cfe-9f92-ea865113a944" Title="MagicGmap3Marker Class" Url="html/T-MagicCMS.Core.MagicGmap3Marker.htm">
+    <HelpTOCNode Id="bede0c94-41ff-4254-82d9-b3ef9b0164a9" Title="MagicGmap3Marker Class" Url="html/T-MagicCMS.Core.MagicGmap3Marker.htm">
       <HelpTOCNode Title="MagicGmap3Marker Members" Url="html/AllMembers.T-MagicCMS.Core.MagicGmap3Marker.htm" />
       <HelpTOCNode Title="MagicGmap3Marker Constructor " Url="html/M-MagicCMS.Core.MagicGmap3Marker.-ctor.htm" />
-      <HelpTOCNode Id="8e22f876-d8c6-49d4-bf83-4264daf824ee" Title="MagicGmap3Marker Properties" Url="html/Properties.T-MagicCMS.Core.MagicGmap3Marker.htm">
+      <HelpTOCNode Id="58a0bd4a-d607-44c7-8d96-786b9e5cd215" Title="MagicGmap3Marker Properties" Url="html/Properties.T-MagicCMS.Core.MagicGmap3Marker.htm">
         <HelpTOCNode Title="address Property " Url="html/P-MagicCMS.Core.MagicGmap3Marker.address.htm" />
         <HelpTOCNode Title="data Property " Url="html/P-MagicCMS.Core.MagicGmap3Marker.data.htm" />
         <HelpTOCNode Title="latLng Property " Url="html/P-MagicCMS.Core.MagicGmap3Marker.latLng.htm" />
         <HelpTOCNode Title="options Property " Url="html/P-MagicCMS.Core.MagicGmap3Marker.options.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="4b42acf5-ff12-4feb-b160-17c788435c49" Title="MagicGmap3MarkerOptions Class" Url="html/T-MagicCMS.Core.MagicGmap3MarkerOptions.htm">
+    <HelpTOCNode Id="f8ea4ef4-46da-4dd8-8fe0-c058c4b3679a" Title="MagicGmap3MarkerOptions Class" Url="html/T-MagicCMS.Core.MagicGmap3MarkerOptions.htm">
       <HelpTOCNode Title="MagicGmap3MarkerOptions Members" Url="html/AllMembers.T-MagicCMS.Core.MagicGmap3MarkerOptions.htm" />
       <HelpTOCNode Title="MagicGmap3MarkerOptions Constructor " Url="html/M-MagicCMS.Core.MagicGmap3MarkerOptions.-ctor.htm" />
-      <HelpTOCNode Id="512c8e41-c683-4b71-b15a-b4b6e7a9059d" Title="MagicGmap3MarkerOptions Properties" Url="html/Properties.T-MagicCMS.Core.MagicGmap3MarkerOptions.htm">
+      <HelpTOCNode Id="5504ab02-0712-4bd2-b3ad-718bf6e9e88b" Title="MagicGmap3MarkerOptions Properties" Url="html/Properties.T-MagicCMS.Core.MagicGmap3MarkerOptions.htm">
         <HelpTOCNode Title="icon Property " Url="html/P-MagicCMS.Core.MagicGmap3MarkerOptions.icon.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="24806ed8-7679-4afc-a001-90a777ce1640" Title="MagicKeyword Class" Url="html/T-MagicCMS.Core.MagicKeyword.htm">
+    <HelpTOCNode Id="b915290b-30e7-4080-9333-04a1aed06e2e" Title="MagicKeyword Class" Url="html/T-MagicCMS.Core.MagicKeyword.htm">
       <HelpTOCNode Title="MagicKeyword Members" Url="html/AllMembers.T-MagicCMS.Core.MagicKeyword.htm" />
-      <HelpTOCNode Id="cc5ba170-1ee6-4717-826d-be4ba630225f" Title="MagicKeyword Constructor " Url="html/Overload-MagicCMS.Core.MagicKeyword.-ctor.htm">
+      <HelpTOCNode Id="ad0207c7-5262-43a3-bcfa-c91c06083648" Title="MagicKeyword Constructor " Url="html/Overload-MagicCMS.Core.MagicKeyword.-ctor.htm">
         <HelpTOCNode Title="MagicKeyword Constructor (Int32, String)" Url="html/M-MagicCMS.Core.MagicKeyword.-ctor.htm" />
         <HelpTOCNode Title="MagicKeyword Constructor (Int32, String, String)" Url="html/M-MagicCMS.Core.MagicKeyword.-ctor_1.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="ac8574d2-5937-428a-94f8-c01bd2def1f9" Title="MagicKeyword Methods" Url="html/Methods.T-MagicCMS.Core.MagicKeyword.htm">
-        <HelpTOCNode Id="b3fdb306-3af3-4b75-b884-8d769b0d2766" Title="GetKeywords Method " Url="html/Overload-MagicCMS.Core.MagicKeyword.GetKeywords.htm">
+      <HelpTOCNode Id="308e0a0d-654d-4d76-a693-bf866be53a10" Title="MagicKeyword Methods" Url="html/Methods.T-MagicCMS.Core.MagicKeyword.htm">
+        <HelpTOCNode Id="23d7572d-477a-4aa1-9c66-3511e15691c7" Title="GetKeywords Method " Url="html/Overload-MagicCMS.Core.MagicKeyword.GetKeywords.htm">
           <HelpTOCNode Title="GetKeywords Method " Url="html/M-MagicCMS.Core.MagicKeyword.GetKeywords.htm" />
           <HelpTOCNode Title="GetKeywords Method (String)" Url="html/M-MagicCMS.Core.MagicKeyword.GetKeywords_1.htm" />
           <HelpTOCNode Title="GetKeywords Method (String, String)" Url="html/M-MagicCMS.Core.MagicKeyword.GetKeywords_2.htm" />
@@ -363,20 +363,20 @@
         <HelpTOCNode Title="Insert Method " Url="html/M-MagicCMS.Core.MagicKeyword.Insert.htm" />
         <HelpTOCNode Title="Populate Method " Url="html/M-MagicCMS.Core.MagicKeyword.Populate.htm" />
         <HelpTOCNode Title="RecordCount Method " Url="html/M-MagicCMS.Core.MagicKeyword.RecordCount.htm" />
-        <HelpTOCNode Id="aa74a8ba-6f15-4a8d-bdfc-ebeb2275ac64" Title="Update Method " Url="html/Overload-MagicCMS.Core.MagicKeyword.Update.htm">
+        <HelpTOCNode Id="2edf580d-3587-4264-bbaa-1b6089063bf4" Title="Update Method " Url="html/Overload-MagicCMS.Core.MagicKeyword.Update.htm">
           <HelpTOCNode Title="Update Method (Int32, String)" Url="html/M-MagicCMS.Core.MagicKeyword.Update.htm" />
           <HelpTOCNode Title="Update Method (Int32, String, String)" Url="html/M-MagicCMS.Core.MagicKeyword.Update_1.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="2705039c-0fd1-42db-9b5e-bf45623df207" Title="MagicKeyword Properties" Url="html/Properties.T-MagicCMS.Core.MagicKeyword.htm">
+      <HelpTOCNode Id="ed2010ec-da17-4554-b897-cb72a698c384" Title="MagicKeyword Properties" Url="html/Properties.T-MagicCMS.Core.MagicKeyword.htm">
         <HelpTOCNode Title="ContentPk Property " Url="html/P-MagicCMS.Core.MagicKeyword.ContentPk.htm" />
         <HelpTOCNode Title="Keyword Property " Url="html/P-MagicCMS.Core.MagicKeyword.Keyword.htm" />
         <HelpTOCNode Title="LangId Property " Url="html/P-MagicCMS.Core.MagicKeyword.LangId.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="a580d351-c259-4e1e-a427-65e6ea320bdf" Title="MagicKeywordCollection Class" Url="html/T-MagicCMS.Core.MagicKeywordCollection.htm">
+    <HelpTOCNode Id="0779e3f0-3213-41b2-a666-397b2735dfd2" Title="MagicKeywordCollection Class" Url="html/T-MagicCMS.Core.MagicKeywordCollection.htm">
       <HelpTOCNode Title="MagicKeywordCollection Members" Url="html/AllMembers.T-MagicCMS.Core.MagicKeywordCollection.htm" />
-      <HelpTOCNode Id="3b8f2d2f-2083-45f5-ad06-f332c556411f" Title="MagicKeywordCollection Methods" Url="html/Methods.T-MagicCMS.Core.MagicKeywordCollection.htm">
+      <HelpTOCNode Id="c375e7f3-f2d0-4050-8523-a1a3204aed80" Title="MagicKeywordCollection Methods" Url="html/Methods.T-MagicCMS.Core.MagicKeywordCollection.htm">
         <HelpTOCNode Title="Add Method " Url="html/M-MagicCMS.Core.MagicKeywordCollection.Add.htm" />
         <HelpTOCNode Title="Contains Method " Url="html/M-MagicCMS.Core.MagicKeywordCollection.Contains.htm" />
         <HelpTOCNode Title="CopyTo Method " Url="html/M-MagicCMS.Core.MagicKeywordCollection.CopyTo.htm" />
@@ -384,20 +384,20 @@
         <HelpTOCNode Title="Insert Method " Url="html/M-MagicCMS.Core.MagicKeywordCollection.Insert.htm" />
         <HelpTOCNode Title="Remove Method " Url="html/M-MagicCMS.Core.MagicKeywordCollection.Remove.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="088c2d67-1e4d-4f68-9d77-a5dc73009a41" Title="MagicKeywordCollection Properties" Url="html/Properties.T-MagicCMS.Core.MagicKeywordCollection.htm">
+      <HelpTOCNode Id="3db54f19-860a-4795-a691-8c426ce480dd" Title="MagicKeywordCollection Properties" Url="html/Properties.T-MagicCMS.Core.MagicKeywordCollection.htm">
         <HelpTOCNode Title="Item Property " Url="html/P-MagicCMS.Core.MagicKeywordCollection.Item-System.Int32-.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="a6325d57-96bb-4ce6-a4a9-cf5b0238b4ff" Title="MagicLanguage Class" Url="html/T-MagicCMS.Core.MagicLanguage.htm">
+    <HelpTOCNode Id="d124f2e3-3a4d-434b-a5a7-7ee3c7fb1a82" Title="MagicLanguage Class" Url="html/T-MagicCMS.Core.MagicLanguage.htm">
       <HelpTOCNode Title="MagicLanguage Members" Url="html/AllMembers.T-MagicCMS.Core.MagicLanguage.htm" />
       <HelpTOCNode Title="MagicLanguage Constructor (String)" Url="html/M-MagicCMS.Core.MagicLanguage.-ctor.htm" />
-      <HelpTOCNode Id="a4317645-7f57-4a8a-b39d-3a27e621643b" Title="MagicLanguage Methods" Url="html/Methods.T-MagicCMS.Core.MagicLanguage.htm">
+      <HelpTOCNode Id="c2687f86-b068-45cf-89fa-28f5ba83f425" Title="MagicLanguage Methods" Url="html/Methods.T-MagicCMS.Core.MagicLanguage.htm">
         <HelpTOCNode Title="GetKey Method " Url="html/M-MagicCMS.Core.MagicLanguage.GetKey.htm" />
         <HelpTOCNode Title="IsMultilanguage Method " Url="html/M-MagicCMS.Core.MagicLanguage.IsMultilanguage.htm" />
         <HelpTOCNode Title="Reset Method " Url="html/M-MagicCMS.Core.MagicLanguage.Reset.htm" />
         <HelpTOCNode Title="Save Method " Url="html/M-MagicCMS.Core.MagicLanguage.Save.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="e694953f-a330-4139-9185-3e0556b3552a" Title="MagicLanguage Properties" Url="html/Properties.T-MagicCMS.Core.MagicLanguage.htm">
+      <HelpTOCNode Id="36ef6c19-37db-45a4-84f3-c8ab46decec7" Title="MagicLanguage Properties" Url="html/Properties.T-MagicCMS.Core.MagicLanguage.htm">
         <HelpTOCNode Title="Active Property " Url="html/P-MagicCMS.Core.MagicLanguage.Active.htm" />
         <HelpTOCNode Title="AutoHide Property " Url="html/P-MagicCMS.Core.MagicLanguage.AutoHide.htm" />
         <HelpTOCNode Title="LangId Property " Url="html/P-MagicCMS.Core.MagicLanguage.LangId.htm" />
@@ -405,13 +405,13 @@
         <HelpTOCNode Title="Languages Property " Url="html/P-MagicCMS.Core.MagicLanguage.Languages.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="2341766c-56fd-4e27-8f51-842fc1fad881" Title="MagicLanguageCollection Class" Url="html/T-MagicCMS.Core.MagicLanguageCollection.htm">
+    <HelpTOCNode Id="a497097c-a16d-488c-867a-86cc50ca6be9" Title="MagicLanguageCollection Class" Url="html/T-MagicCMS.Core.MagicLanguageCollection.htm">
       <HelpTOCNode Title="MagicLanguageCollection Members" Url="html/AllMembers.T-MagicCMS.Core.MagicLanguageCollection.htm" />
-      <HelpTOCNode Id="cf1d0db5-4cec-405e-9185-8c815c872030" Title="MagicLanguageCollection Constructor " Url="html/Overload-MagicCMS.Core.MagicLanguageCollection.-ctor.htm">
+      <HelpTOCNode Id="1561970d-afc6-4644-b196-a4740686c28a" Title="MagicLanguageCollection Constructor " Url="html/Overload-MagicCMS.Core.MagicLanguageCollection.-ctor.htm">
         <HelpTOCNode Title="MagicLanguageCollection Constructor " Url="html/M-MagicCMS.Core.MagicLanguageCollection.-ctor.htm" />
         <HelpTOCNode Title="MagicLanguageCollection Constructor (Boolean)" Url="html/M-MagicCMS.Core.MagicLanguageCollection.-ctor_1.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="03f3d167-b01f-470b-ad6e-a3ee50d8969e" Title="MagicLanguageCollection Methods" Url="html/Methods.T-MagicCMS.Core.MagicLanguageCollection.htm">
+      <HelpTOCNode Id="2d68a988-c0f2-4733-8a2a-0f27b0d0c6ef" Title="MagicLanguageCollection Methods" Url="html/Methods.T-MagicCMS.Core.MagicLanguageCollection.htm">
         <HelpTOCNode Title="Add Method " Url="html/M-MagicCMS.Core.MagicLanguageCollection.Add.htm" />
         <HelpTOCNode Title="Contains Method " Url="html/M-MagicCMS.Core.MagicLanguageCollection.Contains.htm" />
         <HelpTOCNode Title="CopyTo Method " Url="html/M-MagicCMS.Core.MagicLanguageCollection.CopyTo.htm" />
@@ -419,13 +419,13 @@
         <HelpTOCNode Title="Insert Method " Url="html/M-MagicCMS.Core.MagicLanguageCollection.Insert.htm" />
         <HelpTOCNode Title="Remove Method " Url="html/M-MagicCMS.Core.MagicLanguageCollection.Remove.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="4f6cac85-a519-4ea4-b213-4b5fdd31baa4" Title="MagicLanguageCollection Properties" Url="html/Properties.T-MagicCMS.Core.MagicLanguageCollection.htm">
+      <HelpTOCNode Id="24137f94-eda3-47f2-92aa-1038972cbcd4" Title="MagicLanguageCollection Properties" Url="html/Properties.T-MagicCMS.Core.MagicLanguageCollection.htm">
         <HelpTOCNode Title="Item Property " Url="html/P-MagicCMS.Core.MagicLanguageCollection.Item-System.Int32-.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="276d3d55-ee8d-4186-9203-16cad8eef95f" Title="MagicLog Class" Url="html/T-MagicCMS.Core.MagicLog.htm">
+    <HelpTOCNode Id="ed2ba0a8-6125-4710-a71f-2998a828706a" Title="MagicLog Class" Url="html/T-MagicCMS.Core.MagicLog.htm">
       <HelpTOCNode Title="MagicLog Members" Url="html/AllMembers.T-MagicCMS.Core.MagicLog.htm" />
-      <HelpTOCNode Id="ef1debd6-9583-411c-bc40-1439c26e90b4" Title="MagicLog Constructor " Url="html/Overload-MagicCMS.Core.MagicLog.-ctor.htm">
+      <HelpTOCNode Id="3f24b21a-3b38-4e29-a089-f2f83bcb9220" Title="MagicLog Constructor " Url="html/Overload-MagicCMS.Core.MagicLog.-ctor.htm">
         <HelpTOCNode Title="MagicLog Constructor (Int32)" Url="html/M-MagicCMS.Core.MagicLog.-ctor.htm" />
         <HelpTOCNode Title="MagicLog Constructor (SqlDataReader)" Url="html/M-MagicCMS.Core.MagicLog.-ctor_1.htm" />
         <HelpTOCNode Title="MagicLog Constructor (String, Int32, LogAction, String, String)" Url="html/M-MagicCMS.Core.MagicLog.-ctor_2.htm" />
@@ -433,10 +433,10 @@
         <HelpTOCNode Title="MagicLog Constructor (String, Int32, LogAction, Int32, DateTime, String, String)" Url="html/M-MagicCMS.Core.MagicLog.-ctor_4.htm" />
         <HelpTOCNode Title="MagicLog Constructor (String, Int32, LogAction, Int32, DateTime, String, String, String)" Url="html/M-MagicCMS.Core.MagicLog.-ctor_5.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="84c4a2c8-357e-4a1f-a298-c375e7e0c400" Title="MagicLog Methods" Url="html/Methods.T-MagicCMS.Core.MagicLog.htm">
+      <HelpTOCNode Id="4bddaa5c-d407-40de-b858-77f7202d4be4" Title="MagicLog Methods" Url="html/Methods.T-MagicCMS.Core.MagicLog.htm">
         <HelpTOCNode Title="Insert Method " Url="html/M-MagicCMS.Core.MagicLog.Insert.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="ad1bfd3a-ea50-41d7-970d-0215ae3c47cf" Title="MagicLog Properties" Url="html/Properties.T-MagicCMS.Core.MagicLog.htm">
+      <HelpTOCNode Id="e1e8c9c1-df33-40f0-a5e9-0ab17e6158b0" Title="MagicLog Properties" Url="html/Properties.T-MagicCMS.Core.MagicLog.htm">
         <HelpTOCNode Title="Action Property " Url="html/P-MagicCMS.Core.MagicLog.Action.htm" />
         <HelpTOCNode Title="ActionString Property " Url="html/P-MagicCMS.Core.MagicLog.ActionString.htm" />
         <HelpTOCNode Title="Error Property " Url="html/P-MagicCMS.Core.MagicLog.Error.htm" />
@@ -451,13 +451,13 @@
         <HelpTOCNode Title="Useremail Property " Url="html/P-MagicCMS.Core.MagicLog.Useremail.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="8ab14526-5f11-4bad-aec5-95e077b9a55f" Title="MagicLogCollection Class" Url="html/T-MagicCMS.Core.MagicLogCollection.htm">
+    <HelpTOCNode Id="578f5d2b-b9af-4841-baca-b456e3ca16a1" Title="MagicLogCollection Class" Url="html/T-MagicCMS.Core.MagicLogCollection.htm">
       <HelpTOCNode Title="MagicLogCollection Members" Url="html/AllMembers.T-MagicCMS.Core.MagicLogCollection.htm" />
-      <HelpTOCNode Id="06ec0fe0-13b3-471c-b5e9-e97257ae5736" Title="MagicLogCollection Constructor " Url="html/Overload-MagicCMS.Core.MagicLogCollection.-ctor.htm">
+      <HelpTOCNode Id="edfd5f37-1f8b-4edf-bd7a-cdff4389a9df" Title="MagicLogCollection Constructor " Url="html/Overload-MagicCMS.Core.MagicLogCollection.-ctor.htm">
         <HelpTOCNode Title="MagicLogCollection Constructor " Url="html/M-MagicCMS.Core.MagicLogCollection.-ctor.htm" />
         <HelpTOCNode Title="MagicLogCollection Constructor (InputParams_dt)" Url="html/M-MagicCMS.Core.MagicLogCollection.-ctor_1.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="6291953d-66dd-458f-81c0-5ead696c11b5" Title="MagicLogCollection Methods" Url="html/Methods.T-MagicCMS.Core.MagicLogCollection.htm">
+      <HelpTOCNode Id="fb62f6bc-b51a-49b8-902d-1fcf2139696c" Title="MagicLogCollection Methods" Url="html/Methods.T-MagicCMS.Core.MagicLogCollection.htm">
         <HelpTOCNode Title="Add Method " Url="html/M-MagicCMS.Core.MagicLogCollection.Add.htm" />
         <HelpTOCNode Title="Contains Method " Url="html/M-MagicCMS.Core.MagicLogCollection.Contains.htm" />
         <HelpTOCNode Title="CopyTo Method " Url="html/M-MagicCMS.Core.MagicLogCollection.CopyTo.htm" />
@@ -465,13 +465,13 @@
         <HelpTOCNode Title="Insert Method " Url="html/M-MagicCMS.Core.MagicLogCollection.Insert.htm" />
         <HelpTOCNode Title="Remove Method " Url="html/M-MagicCMS.Core.MagicLogCollection.Remove.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="bea6858a-b03d-4cc4-9c51-d11eddeada3b" Title="MagicLogCollection Properties" Url="html/Properties.T-MagicCMS.Core.MagicLogCollection.htm">
+      <HelpTOCNode Id="9720e6f7-a881-4420-9ea5-54046654efb9" Title="MagicLogCollection Properties" Url="html/Properties.T-MagicCMS.Core.MagicLogCollection.htm">
         <HelpTOCNode Title="Item Property " Url="html/P-MagicCMS.Core.MagicLogCollection.Item-System.Int32-.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="bbd406fc-f316-4d32-a9d5-ce7da3c054ae" Title="MagicOrdinamento Class" Url="html/T-MagicCMS.Core.MagicOrdinamento.htm">
+    <HelpTOCNode Id="3e084ff3-61b7-446d-a631-991f5fd35024" Title="MagicOrdinamento Class" Url="html/T-MagicCMS.Core.MagicOrdinamento.htm">
       <HelpTOCNode Title="MagicOrdinamento Members" Url="html/AllMembers.T-MagicCMS.Core.MagicOrdinamento.htm" />
-      <HelpTOCNode Id="789a5aa7-4b1e-45df-8529-bcd75367b255" Title="MagicOrdinamento Fields" Url="html/Fields.T-MagicCMS.Core.MagicOrdinamento.htm">
+      <HelpTOCNode Id="ff70439e-c032-46ff-9e78-2899cd734fe5" Title="MagicOrdinamento Fields" Url="html/Fields.T-MagicCMS.Core.MagicOrdinamento.htm">
         <HelpTOCNode Title="AlphaAsc Field" Url="html/F-MagicCMS.Core.MagicOrdinamento.AlphaAsc.htm" />
         <HelpTOCNode Title="AlphaDesc Field" Url="html/F-MagicCMS.Core.MagicOrdinamento.AlphaDesc.htm" />
         <HelpTOCNode Title="Asc Field" Url="html/F-MagicCMS.Core.MagicOrdinamento.Asc.htm" />
@@ -482,31 +482,31 @@
         <HelpTOCNode Title="ModDateDesc Field" Url="html/F-MagicCMS.Core.MagicOrdinamento.ModDateDesc.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="49c9cfe1-1836-49b0-859b-ecf0b89602d3" Title="MagicPost Class" Url="html/T-MagicCMS.Core.MagicPost.htm">
+    <HelpTOCNode Id="6ac7d4d5-7c74-4615-a160-b767d54dc6ac" Title="MagicPost Class" Url="html/T-MagicCMS.Core.MagicPost.htm">
       <HelpTOCNode Title="MagicPost Members" Url="html/AllMembers.T-MagicCMS.Core.MagicPost.htm" />
-      <HelpTOCNode Id="09a083ff-7863-4b45-82af-597e254bc57f" Title="MagicPost Constructor " Url="html/Overload-MagicCMS.Core.MagicPost.-ctor.htm">
+      <HelpTOCNode Id="17390474-f8ae-4d5b-a963-b0098d2e3172" Title="MagicPost Constructor " Url="html/Overload-MagicCMS.Core.MagicPost.-ctor.htm">
         <HelpTOCNode Title="MagicPost Constructor " Url="html/M-MagicCMS.Core.MagicPost.-ctor_1.htm" />
         <HelpTOCNode Title="MagicPost Constructor (MagicPostTypeInfo)" Url="html/M-MagicCMS.Core.MagicPost.-ctor.htm" />
         <HelpTOCNode Title="MagicPost Constructor (Int32)" Url="html/M-MagicCMS.Core.MagicPost.-ctor_2.htm" />
         <HelpTOCNode Title="MagicPost Constructor (SqlDataReader)" Url="html/M-MagicCMS.Core.MagicPost.-ctor_3.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="3d21c78e-13d0-4c1d-92b0-bf11d5fabc13" Title="MagicPost Methods" Url="html/Methods.T-MagicCMS.Core.MagicPost.htm">
+      <HelpTOCNode Id="1dcffd7f-06ed-486e-9c94-eb82e8bb9810" Title="MagicPost Methods" Url="html/Methods.T-MagicCMS.Core.MagicPost.htm">
         <HelpTOCNode Title="AddChild Method " Url="html/M-MagicCMS.Core.MagicPost.AddChild.htm" />
-        <HelpTOCNode Id="eec2a4a9-7e45-48bb-9e07-d81fe273b30b" Title="ConnectTo Method " Url="html/Overload-MagicCMS.Core.MagicPost.ConnectTo.htm">
+        <HelpTOCNode Id="ca815e0e-cc5e-482f-a9c6-c9ca29bf5dfd" Title="ConnectTo Method " Url="html/Overload-MagicCMS.Core.MagicPost.ConnectTo.htm">
           <HelpTOCNode Title="ConnectTo Method (Int32)" Url="html/M-MagicCMS.Core.MagicPost.ConnectTo.htm" />
           <HelpTOCNode Title="ConnectTo Method (Int32[])" Url="html/M-MagicCMS.Core.MagicPost.ConnectTo_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="15ed0f6a-acce-430e-acb7-1c5ac944f830" Title="CountChildren Method " Url="html/Overload-MagicCMS.Core.MagicPost.CountChildren.htm">
+        <HelpTOCNode Id="6149cfde-6991-443b-a5a1-becc33d562da" Title="CountChildren Method " Url="html/Overload-MagicCMS.Core.MagicPost.CountChildren.htm">
           <HelpTOCNode Title="CountChildren Method (Int32)" Url="html/M-MagicCMS.Core.MagicPost.CountChildren.htm" />
           <HelpTOCNode Title="CountChildren Method (Int32[])" Url="html/M-MagicCMS.Core.MagicPost.CountChildren_1.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="Delete Method " Url="html/M-MagicCMS.Core.MagicPost.Delete.htm" />
-        <HelpTOCNode Id="e8e41aae-1a95-4f67-beb4-d7a2a8c657bc" Title="GetAnswers Method " Url="html/Overload-MagicCMS.Core.MagicPost.GetAnswers.htm">
+        <HelpTOCNode Id="6fd2558f-9f6c-45bb-9620-b5472d533f26" Title="GetAnswers Method " Url="html/Overload-MagicCMS.Core.MagicPost.GetAnswers.htm">
           <HelpTOCNode Title="GetAnswers Method (String)" Url="html/M-MagicCMS.Core.MagicPost.GetAnswers.htm" />
           <HelpTOCNode Title="GetAnswers Method " Url="html/M-MagicCMS.Core.MagicPost.GetAnswers_1.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="GetAnswersByType Method " Url="html/M-MagicCMS.Core.MagicPost.GetAnswersByType.htm" />
-        <HelpTOCNode Id="4f0deea6-5259-42dd-b422-0d78a4aa1c4d" Title="GetByType Method " Url="html/Overload-MagicCMS.Core.MagicPost.GetByType.htm">
+        <HelpTOCNode Id="fce3c4ea-eb55-45f9-9b3d-5f80e3587b53" Title="GetByType Method " Url="html/Overload-MagicCMS.Core.MagicPost.GetByType.htm">
           <HelpTOCNode Title="GetByType Method (Int32[], String, Boolean, Int32)" Url="html/M-MagicCMS.Core.MagicPost.GetByType.htm" />
           <HelpTOCNode Title="GetByType Method (Int32[], String[], String, Boolean, Int32)" Url="html/M-MagicCMS.Core.MagicPost.GetByType_1.htm" />
           <HelpTOCNode Title="GetByType Method (Int32[], String, Boolean, Int32, Boolean, MagicSearchActive)" Url="html/M-MagicCMS.Core.MagicPost.GetByType_2.htm" />
@@ -516,13 +516,13 @@
           <HelpTOCNode Title="GetByType Method (Int32)" Url="html/M-MagicCMS.Core.MagicPost.GetByType_6.htm" />
           <HelpTOCNode Title="GetByType Method (Int32[])" Url="html/M-MagicCMS.Core.MagicPost.GetByType_7.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="59169bdc-7b47-4557-96ba-9f1988816c51" Title="GetChildren Method " Url="html/Overload-MagicCMS.Core.MagicPost.GetChildren.htm">
+        <HelpTOCNode Id="deb00a6d-3671-4a22-ac65-9eff4ea5c7ed" Title="GetChildren Method " Url="html/Overload-MagicCMS.Core.MagicPost.GetChildren.htm">
           <HelpTOCNode Title="GetChildren Method " Url="html/M-MagicCMS.Core.MagicPost.GetChildren.htm" />
           <HelpTOCNode Title="GetChildren Method (String, Int32)" Url="html/M-MagicCMS.Core.MagicPost.GetChildren_1.htm" />
           <HelpTOCNode Title="GetChildren Method (String, Int32, Boolean)" Url="html/M-MagicCMS.Core.MagicPost.GetChildren_2.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="GetChildrenByDate Method " Url="html/M-MagicCMS.Core.MagicPost.GetChildrenByDate.htm" />
-        <HelpTOCNode Id="17746785-1445-4584-ba8f-c93927e98ae6" Title="GetChildrenByType Method " Url="html/Overload-MagicCMS.Core.MagicPost.GetChildrenByType.htm">
+        <HelpTOCNode Id="e3c997e8-4698-46d0-ae90-a9c7481b3b00" Title="GetChildrenByType Method " Url="html/Overload-MagicCMS.Core.MagicPost.GetChildrenByType.htm">
           <HelpTOCNode Title="GetChildrenByType Method (Int32[], String, Boolean, Int32)" Url="html/M-MagicCMS.Core.MagicPost.GetChildrenByType.htm" />
           <HelpTOCNode Title="GetChildrenByType Method (Int32[], String, Boolean, Int32, Boolean, MagicSearchActive)" Url="html/M-MagicCMS.Core.MagicPost.GetChildrenByType_1.htm" />
           <HelpTOCNode Title="GetChildrenByType Method (Int32[], String, Boolean, Int32, Boolean, MagicSearchActive, Boolean)" Url="html/M-MagicCMS.Core.MagicPost.GetChildrenByType_2.htm" />
@@ -531,28 +531,28 @@
           <HelpTOCNode Title="GetChildrenByType Method (Int32)" Url="html/M-MagicCMS.Core.MagicPost.GetChildrenByType_5.htm" />
           <HelpTOCNode Title="GetChildrenByType Method (Int32[])" Url="html/M-MagicCMS.Core.MagicPost.GetChildrenByType_6.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="63f8e6b4-5084-415f-a182-d545d0883100" Title="GetGrandSons Method " Url="html/Overload-MagicCMS.Core.MagicPost.GetGrandSons.htm">
+        <HelpTOCNode Id="a0e48712-e26d-4edf-8084-cdf2f9b2bd32" Title="GetGrandSons Method " Url="html/Overload-MagicCMS.Core.MagicPost.GetGrandSons.htm">
           <HelpTOCNode Title="GetGrandSons Method (String, Int32)" Url="html/M-MagicCMS.Core.MagicPost.GetGrandSons.htm" />
           <HelpTOCNode Title="GetGrandSons Method (String, Int32, Boolean)" Url="html/M-MagicCMS.Core.MagicPost.GetGrandSons_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="66a4f331-e097-4177-9741-0187b7f3231e" Title="GetGrandSonsByType Method " Url="html/Overload-MagicCMS.Core.MagicPost.GetGrandSonsByType.htm">
+        <HelpTOCNode Id="63c59dcf-44e7-4eaa-a654-21a9452d1c23" Title="GetGrandSonsByType Method " Url="html/Overload-MagicCMS.Core.MagicPost.GetGrandSonsByType.htm">
           <HelpTOCNode Title="GetGrandSonsByType Method (Int32[], String, Boolean, Int32, Boolean)" Url="html/M-MagicCMS.Core.MagicPost.GetGrandSonsByType.htm" />
           <HelpTOCNode Title="GetGrandSonsByType Method (Int32[], String, Boolean, Int32)" Url="html/M-MagicCMS.Core.MagicPost.GetGrandSonsByType_1.htm" />
           <HelpTOCNode Title="GetGrandSonsByType Method (Int32)" Url="html/M-MagicCMS.Core.MagicPost.GetGrandSonsByType_2.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="GetMediatVoti Method " Url="html/M-MagicCMS.Core.MagicPost.GetMediatVoti.htm" />
-        <HelpTOCNode Id="6886deaf-5097-484f-a64c-7234346fadf6" Title="GetMiniaturePk Method " Url="html/Overload-MagicCMS.Core.MagicPost.GetMiniaturePk.htm">
+        <HelpTOCNode Id="0aa853e6-38b2-4366-bf50-4871910a33f3" Title="GetMiniaturePk Method " Url="html/Overload-MagicCMS.Core.MagicPost.GetMiniaturePk.htm">
           <HelpTOCNode Title="GetMiniaturePk Method (Int32, Int32, MagicPostWhichUrl)" Url="html/M-MagicCMS.Core.MagicPost.GetMiniaturePk.htm" />
           <HelpTOCNode Title="GetMiniaturePk Method (Int32, Int32)" Url="html/M-MagicCMS.Core.MagicPost.GetMiniaturePk_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="4f89f5ba-6d76-4035-a56a-b6ca1b9d575f" Title="GetParents Method " Url="html/Overload-MagicCMS.Core.MagicPost.GetParents.htm">
+        <HelpTOCNode Id="b6d3af02-3345-49ab-8129-97d952a664c6" Title="GetParents Method " Url="html/Overload-MagicCMS.Core.MagicPost.GetParents.htm">
           <HelpTOCNode Title="GetParents Method " Url="html/M-MagicCMS.Core.MagicPost.GetParents.htm" />
           <HelpTOCNode Title="GetParents Method (Int32[])" Url="html/M-MagicCMS.Core.MagicPost.GetParents_1.htm" />
           <HelpTOCNode Title="GetParents Method (Int32[], String)" Url="html/M-MagicCMS.Core.MagicPost.GetParents_2.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="GetPostByParentType Method " Url="html/M-MagicCMS.Core.MagicPost.GetPostByParentType.htm" />
         <HelpTOCNode Title="GetRandomChild Method " Url="html/M-MagicCMS.Core.MagicPost.GetRandomChild.htm" />
-        <HelpTOCNode Id="86f76a0e-bb45-495d-b553-76ecb4bee822" Title="GetSiblings Method " Url="html/Overload-MagicCMS.Core.MagicPost.GetSiblings.htm">
+        <HelpTOCNode Id="a181a17e-d6bb-48ed-b826-d3a5a88eeba8" Title="GetSiblings Method " Url="html/Overload-MagicCMS.Core.MagicPost.GetSiblings.htm">
           <HelpTOCNode Title="GetSiblings Method (String, Int32[])" Url="html/M-MagicCMS.Core.MagicPost.GetSiblings.htm" />
           <HelpTOCNode Title="GetSiblings Method " Url="html/M-MagicCMS.Core.MagicPost.GetSiblings_1.htm" />
           <HelpTOCNode Title="GetSiblings Method (String)" Url="html/M-MagicCMS.Core.MagicPost.GetSiblings_2.htm" />
@@ -563,7 +563,7 @@
         <HelpTOCNode Title="Insert Method " Url="html/M-MagicCMS.Core.MagicPost.Insert.htm" />
         <HelpTOCNode Title="IsLocalLink Method " Url="html/M-MagicCMS.Core.MagicPost.IsLocalLink.htm" />
         <HelpTOCNode Title="MergeContext Method " Url="html/M-MagicCMS.Core.MagicPost.MergeContext.htm" />
-        <HelpTOCNode Id="d284265b-9732-4ea1-aaef-d4894b4056dc" Title="SearchByKeyword Method " Url="html/Overload-MagicCMS.Core.MagicPost.SearchByKeyword.htm">
+        <HelpTOCNode Id="22606c6c-9328-46ba-8554-acd360f8c5de" Title="SearchByKeyword Method " Url="html/Overload-MagicCMS.Core.MagicPost.SearchByKeyword.htm">
           <HelpTOCNode Title="SearchByKeyword Method (String, String)" Url="html/M-MagicCMS.Core.MagicPost.SearchByKeyword.htm" />
           <HelpTOCNode Title="SearchByKeyword Method (String[], String, Int32, Boolean, WhereClauseCollection)" Url="html/M-MagicCMS.Core.MagicPost.SearchByKeyword_1.htm" />
         </HelpTOCNode>
@@ -571,7 +571,7 @@
         <HelpTOCNode Title="UnDelete Method " Url="html/M-MagicCMS.Core.MagicPost.UnDelete.htm" />
         <HelpTOCNode Title="Update Method " Url="html/M-MagicCMS.Core.MagicPost.Update.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="2212020a-8420-4f56-be0b-9b19f8d17b66" Title="MagicPost Properties" Url="html/Properties.T-MagicCMS.Core.MagicPost.htm">
+      <HelpTOCNode Id="54115e7d-7be5-44e4-902c-de03ae22e404" Title="MagicPost Properties" Url="html/Properties.T-MagicCMS.Core.MagicPost.htm">
         <HelpTOCNode Title="Active Property " Url="html/P-MagicCMS.Core.MagicPost.Active.htm" />
         <HelpTOCNode Title="Altezza Property " Url="html/P-MagicCMS.Core.MagicPost.Altezza.htm" />
         <HelpTOCNode Title="AutoMiniaturePk Property " Url="html/P-MagicCMS.Core.MagicPost.AutoMiniaturePk.htm" />
@@ -641,15 +641,15 @@
         <HelpTOCNode Title="Url2 Property " Url="html/P-MagicCMS.Core.MagicPost.Url2.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="30d8143c-8364-4ad0-8418-fc3ccc8e7c03" Title="MagicPostCollection Class" Url="html/T-MagicCMS.Core.MagicPostCollection.htm">
+    <HelpTOCNode Id="9c842c2b-b871-4590-99de-910f71aee03a" Title="MagicPostCollection Class" Url="html/T-MagicCMS.Core.MagicPostCollection.htm">
       <HelpTOCNode Title="MagicPostCollection Members" Url="html/AllMembers.T-MagicCMS.Core.MagicPostCollection.htm" />
-      <HelpTOCNode Id="735e53a5-3b46-41a2-8058-1aa546cb7ec0" Title="MagicPostCollection Constructor " Url="html/Overload-MagicCMS.Core.MagicPostCollection.-ctor.htm">
+      <HelpTOCNode Id="f2115b84-8ad9-481c-bf00-250ab543535f" Title="MagicPostCollection Constructor " Url="html/Overload-MagicCMS.Core.MagicPostCollection.-ctor.htm">
         <HelpTOCNode Title="MagicPostCollection Constructor (WhereClauseCollection, String, Int32, Boolean)" Url="html/M-MagicCMS.Core.MagicPostCollection.-ctor_3.htm" />
         <HelpTOCNode Title="MagicPostCollection Constructor (WhereClauseCollection, String, Int32, Boolean, Boolean)" Url="html/M-MagicCMS.Core.MagicPostCollection.-ctor_2.htm" />
         <HelpTOCNode Title="MagicPostCollection Constructor (WhereClauseCollection, String, Int32, Boolean, Boolean, Boolean)" Url="html/M-MagicCMS.Core.MagicPostCollection.-ctor_1.htm" />
         <HelpTOCNode Title="MagicPostCollection Constructor " Url="html/M-MagicCMS.Core.MagicPostCollection.-ctor.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="25813b8d-d792-4a9c-b89d-d4bb404f6d3c" Title="MagicPostCollection Methods" Url="html/Methods.T-MagicCMS.Core.MagicPostCollection.htm">
+      <HelpTOCNode Id="66fe5cb4-6737-49ed-a661-5d134b9e6d90" Title="MagicPostCollection Methods" Url="html/Methods.T-MagicCMS.Core.MagicPostCollection.htm">
         <HelpTOCNode Title="Add Method " Url="html/M-MagicCMS.Core.MagicPostCollection.Add.htm" />
         <HelpTOCNode Title="Contains Method " Url="html/M-MagicCMS.Core.MagicPostCollection.Contains.htm" />
         <HelpTOCNode Title="CopyTo Method " Url="html/M-MagicCMS.Core.MagicPostCollection.CopyTo.htm" />
@@ -657,19 +657,19 @@
         <HelpTOCNode Title="Insert Method " Url="html/M-MagicCMS.Core.MagicPostCollection.Insert.htm" />
         <HelpTOCNode Title="Remove Method " Url="html/M-MagicCMS.Core.MagicPostCollection.Remove.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="7383cc69-389b-41f4-8266-36bb654c0260" Title="MagicPostCollection Properties" Url="html/Properties.T-MagicCMS.Core.MagicPostCollection.htm">
+      <HelpTOCNode Id="556dfd46-2cb8-4588-bfd2-e6ae3c127b90" Title="MagicPostCollection Properties" Url="html/Properties.T-MagicCMS.Core.MagicPostCollection.htm">
         <HelpTOCNode Title="Item Property " Url="html/P-MagicCMS.Core.MagicPostCollection.Item-System.Int32-.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="970c786c-90b4-41d5-a6aa-fd4b80f36e12" Title="MagicPostHTML_Encoded Class" Url="html/T-MagicCMS.Core.MagicPostHTML_Encoded.htm">
+    <HelpTOCNode Id="48214433-36bd-4d68-a769-6a1e9d25a690" Title="MagicPostHTML_Encoded Class" Url="html/T-MagicCMS.Core.MagicPostHTML_Encoded.htm">
       <HelpTOCNode Title="MagicPostHTML_Encoded Members" Url="html/AllMembers.T-MagicCMS.Core.MagicPostHTML_Encoded.htm" />
-      <HelpTOCNode Id="e36c0575-5a34-4bfc-9cae-367e1f3e0073" Title="MagicPostHTML_Encoded Constructor " Url="html/Overload-MagicCMS.Core.MagicPostHTML_Encoded.-ctor.htm">
+      <HelpTOCNode Id="ed9989b1-7b66-4943-9dc1-5352c72d6c7d" Title="MagicPostHTML_Encoded Constructor " Url="html/Overload-MagicCMS.Core.MagicPostHTML_Encoded.-ctor.htm">
         <HelpTOCNode Title="MagicPostHTML_Encoded Constructor " Url="html/M-MagicCMS.Core.MagicPostHTML_Encoded.-ctor.htm" />
         <HelpTOCNode Title="MagicPostHTML_Encoded Constructor (MagicPost)" Url="html/M-MagicCMS.Core.MagicPostHTML_Encoded.-ctor_1.htm" />
         <HelpTOCNode Title="MagicPostHTML_Encoded Constructor (MagicPostTypeInfo)" Url="html/M-MagicCMS.Core.MagicPostHTML_Encoded.-ctor_2.htm" />
         <HelpTOCNode Title="MagicPostHTML_Encoded Constructor (Int32)" Url="html/M-MagicCMS.Core.MagicPostHTML_Encoded.-ctor_3.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="ee881b89-2123-40a3-98cf-6f338275e6ee" Title="MagicPostHTML_Encoded Properties" Url="html/Properties.T-MagicCMS.Core.MagicPostHTML_Encoded.htm">
+      <HelpTOCNode Id="f0eb841d-3fa3-489b-ab51-ffb6b742fa13" Title="MagicPostHTML_Encoded Properties" Url="html/Properties.T-MagicCMS.Core.MagicPostHTML_Encoded.htm">
         <HelpTOCNode Title="Active Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.Active.htm" />
         <HelpTOCNode Title="Altezza Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.Altezza.htm" />
         <HelpTOCNode Title="Contenitore Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.Contenitore.htm" />
@@ -711,10 +711,10 @@
         <HelpTOCNode Title="Url2 Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.Url2.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="2fae8b04-5ecc-409e-a1a5-546f73fbf742" Title="MagicPostTypeInfo Class" Url="html/T-MagicCMS.Core.MagicPostTypeInfo.htm">
+    <HelpTOCNode Id="e1d9eb1a-8f18-4b5a-8fa0-19110752bcb6" Title="MagicPostTypeInfo Class" Url="html/T-MagicCMS.Core.MagicPostTypeInfo.htm">
       <HelpTOCNode Title="MagicPostTypeInfo Members" Url="html/AllMembers.T-MagicCMS.Core.MagicPostTypeInfo.htm" />
       <HelpTOCNode Title="MagicPostTypeInfo Constructor (Int32)" Url="html/M-MagicCMS.Core.MagicPostTypeInfo.-ctor.htm" />
-      <HelpTOCNode Id="5b23e415-e418-4125-aec0-a8b4f58fa596" Title="MagicPostTypeInfo Fields" Url="html/Fields.T-MagicCMS.Core.MagicPostTypeInfo.htm">
+      <HelpTOCNode Id="00f4988b-ea62-48bb-a72a-ea8e1689cdfd" Title="MagicPostTypeInfo Fields" Url="html/Fields.T-MagicCMS.Core.MagicPostTypeInfo.htm">
         <HelpTOCNode Title="Answer Field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.Answer.htm" />
         <HelpTOCNode Title="AutoImageGallery Field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.AutoImageGallery.htm" />
         <HelpTOCNode Title="Blog Field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.Blog.htm" />
@@ -730,12 +730,15 @@
         <HelpTOCNode Title="ExternalLink Field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.ExternalLink.htm" />
         <HelpTOCNode Title="Folder Field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.Folder.htm" />
         <HelpTOCNode Title="Gallery Field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.Gallery.htm" />
+        <HelpTOCNode Title="Geolocation Field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.Geolocation.htm" />
         <HelpTOCNode Title="HomePage Field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.HomePage.htm" />
         <HelpTOCNode Title="Image Field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.Image.htm" />
         <HelpTOCNode Title="InternalLink Field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.InternalLink.htm" />
+        <HelpTOCNode Title="LinkFalso Field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.LinkFalso.htm" />
         <HelpTOCNode Title="Map Field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.Map.htm" />
         <HelpTOCNode Title="Menu Field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.Menu.htm" />
         <HelpTOCNode Title="Message Field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.Message.htm" />
+        <HelpTOCNode Title="News Field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.News.htm" />
         <HelpTOCNode Title="Page Field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.Page.htm" />
         <HelpTOCNode Title="PageWithVideo Field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.PageWithVideo.htm" />
         <HelpTOCNode Title="Product Field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.Product.htm" />
@@ -749,8 +752,8 @@
         <HelpTOCNode Title="User Field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.User.htm" />
         <HelpTOCNode Title="Video Field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.Video.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="6a89a4a0-2edf-49bf-a68d-eef7791f3938" Title="MagicPostTypeInfo Methods" Url="html/Methods.T-MagicCMS.Core.MagicPostTypeInfo.htm">
-        <HelpTOCNode Id="20256e64-a400-46bf-86a1-edce369d6768" Title="Delete Method " Url="html/Overload-MagicCMS.Core.MagicPostTypeInfo.Delete.htm">
+      <HelpTOCNode Id="b9483f9f-9f1c-4165-b411-dd5a75f2c75b" Title="MagicPostTypeInfo Methods" Url="html/Methods.T-MagicCMS.Core.MagicPostTypeInfo.htm">
+        <HelpTOCNode Id="e57f6f41-d4c8-43c7-bada-526b87c2eca8" Title="Delete Method " Url="html/Overload-MagicCMS.Core.MagicPostTypeInfo.Delete.htm">
           <HelpTOCNode Title="Delete Method " Url="html/M-MagicCMS.Core.MagicPostTypeInfo.Delete.htm" />
           <HelpTOCNode Title="Delete Method (String)" Url="html/M-MagicCMS.Core.MagicPostTypeInfo.Delete_1.htm" />
         </HelpTOCNode>
@@ -759,7 +762,7 @@
         <HelpTOCNode Title="UnDelete Method " Url="html/M-MagicCMS.Core.MagicPostTypeInfo.UnDelete.htm" />
         <HelpTOCNode Title="Update Method " Url="html/M-MagicCMS.Core.MagicPostTypeInfo.Update.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="6110b42d-21cb-4731-9cc0-4bd69eb37625" Title="MagicPostTypeInfo Properties" Url="html/Properties.T-MagicCMS.Core.MagicPostTypeInfo.htm">
+      <HelpTOCNode Id="8c8b2383-3f8a-4025-b949-b4ada1caa8f2" Title="MagicPostTypeInfo Properties" Url="html/Properties.T-MagicCMS.Core.MagicPostTypeInfo.htm">
         <HelpTOCNode Title="ContenutiPreferiti Property " Url="html/P-MagicCMS.Core.MagicPostTypeInfo.ContenutiPreferiti.htm" />
         <HelpTOCNode Title="DataCancellazione Property " Url="html/P-MagicCMS.Core.MagicPostTypeInfo.DataCancellazione.htm" />
         <HelpTOCNode Title="DataUltimaModifica Property " Url="html/P-MagicCMS.Core.MagicPostTypeInfo.DataUltimaModifica.htm" />
@@ -818,9 +821,9 @@
         <HelpTOCNode Title="Pk Property " Url="html/P-MagicCMS.Core.MagicPostTypeInfo.Pk.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="14302949-0885-4075-978d-1c3babd67fe3" Title="MagicPostTypeInfoCollection Class" Url="html/T-MagicCMS.Core.MagicPostTypeInfoCollection.htm">
+    <HelpTOCNode Id="fe06218a-0920-4598-88cb-018281424066" Title="MagicPostTypeInfoCollection Class" Url="html/T-MagicCMS.Core.MagicPostTypeInfoCollection.htm">
       <HelpTOCNode Title="MagicPostTypeInfoCollection Members" Url="html/AllMembers.T-MagicCMS.Core.MagicPostTypeInfoCollection.htm" />
-      <HelpTOCNode Id="f08a3e57-7724-40c7-8e81-e283cb18e4aa" Title="MagicPostTypeInfoCollection Constructor " Url="html/Overload-MagicCMS.Core.MagicPostTypeInfoCollection.-ctor.htm">
+      <HelpTOCNode Id="daac3f93-e84b-496d-93e9-ae3d3e8551b9" Title="MagicPostTypeInfoCollection Constructor " Url="html/Overload-MagicCMS.Core.MagicPostTypeInfoCollection.-ctor.htm">
         <HelpTOCNode Title="MagicPostTypeInfoCollection Constructor " Url="html/M-MagicCMS.Core.MagicPostTypeInfoCollection.-ctor_8.htm" />
         <HelpTOCNode Title="MagicPostTypeInfoCollection Constructor (InputParams_dt)" Url="html/M-MagicCMS.Core.MagicPostTypeInfoCollection.-ctor_7.htm" />
         <HelpTOCNode Title="MagicPostTypeInfoCollection Constructor (InputParams_dt, Boolean)" Url="html/M-MagicCMS.Core.MagicPostTypeInfoCollection.-ctor_6.htm" />
@@ -831,7 +834,7 @@
         <HelpTOCNode Title="MagicPostTypeInfoCollection Constructor (Boolean, Boolean, String)" Url="html/M-MagicCMS.Core.MagicPostTypeInfoCollection.-ctor_1.htm" />
         <HelpTOCNode Title="MagicPostTypeInfoCollection Constructor (Boolean, Boolean, MagicPostTypeInfoOrder, String)" Url="html/M-MagicCMS.Core.MagicPostTypeInfoCollection.-ctor.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="016865a6-3317-4a01-8751-ec81768fa95a" Title="MagicPostTypeInfoCollection Methods" Url="html/Methods.T-MagicCMS.Core.MagicPostTypeInfoCollection.htm">
+      <HelpTOCNode Id="4241cd5c-3ebb-47d6-b2d3-a164ee53f249" Title="MagicPostTypeInfoCollection Methods" Url="html/Methods.T-MagicCMS.Core.MagicPostTypeInfoCollection.htm">
         <HelpTOCNode Title="Add Method " Url="html/M-MagicCMS.Core.MagicPostTypeInfoCollection.Add.htm" />
         <HelpTOCNode Title="Contains Method " Url="html/M-MagicCMS.Core.MagicPostTypeInfoCollection.Contains.htm" />
         <HelpTOCNode Title="CopyTo Method " Url="html/M-MagicCMS.Core.MagicPostTypeInfoCollection.CopyTo.htm" />
@@ -840,26 +843,26 @@
         <HelpTOCNode Title="Insert Method " Url="html/M-MagicCMS.Core.MagicPostTypeInfoCollection.Insert.htm" />
         <HelpTOCNode Title="Remove Method " Url="html/M-MagicCMS.Core.MagicPostTypeInfoCollection.Remove.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="841f0fae-8848-4e32-bb73-5425e7446833" Title="MagicPostTypeInfoCollection Properties" Url="html/Properties.T-MagicCMS.Core.MagicPostTypeInfoCollection.htm">
+      <HelpTOCNode Id="755971c2-c5dc-4945-b843-b42047af280a" Title="MagicPostTypeInfoCollection Properties" Url="html/Properties.T-MagicCMS.Core.MagicPostTypeInfoCollection.htm">
         <HelpTOCNode Title="Item Property " Url="html/P-MagicCMS.Core.MagicPostTypeInfoCollection.Item-System.Int32-.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
     <HelpTOCNode Title="MagicPostTypeInfoOrder Enumeration" Url="html/T-MagicCMS.Core.MagicPostTypeInfoOrder.htm" />
     <HelpTOCNode Title="MagicPostWhichUrl Enumeration" Url="html/T-MagicCMS.Core.MagicPostWhichUrl.htm" />
-    <HelpTOCNode Id="d94fc62a-7044-4ce1-ad47-25a492afa00e" Title="MagicPrerogativa Class" Url="html/T-MagicCMS.Core.MagicPrerogativa.htm">
+    <HelpTOCNode Id="7401983f-1b39-465e-ba35-145e54532036" Title="MagicPrerogativa Class" Url="html/T-MagicCMS.Core.MagicPrerogativa.htm">
       <HelpTOCNode Title="MagicPrerogativa Members" Url="html/AllMembers.T-MagicCMS.Core.MagicPrerogativa.htm" />
-      <HelpTOCNode Id="383b8348-8660-452b-a627-ed3df2cecc6c" Title="MagicPrerogativa Methods" Url="html/Methods.T-MagicCMS.Core.MagicPrerogativa.htm">
+      <HelpTOCNode Id="f5924b0e-49a9-46b6-bf57-5fc636836d1c" Title="MagicPrerogativa Methods" Url="html/Methods.T-MagicCMS.Core.MagicPrerogativa.htm">
         <HelpTOCNode Title="GetKey Method " Url="html/M-MagicCMS.Core.MagicPrerogativa.GetKey.htm" />
         <HelpTOCNode Title="Reset Method " Url="html/M-MagicCMS.Core.MagicPrerogativa.Reset.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="3e29b956-aeed-499d-934d-80fcbda922dc" Title="MagicPrerogativa Properties" Url="html/Properties.T-MagicCMS.Core.MagicPrerogativa.htm">
+      <HelpTOCNode Id="5fbe4a41-e829-432a-8c33-6adbc0b22bf5" Title="MagicPrerogativa Properties" Url="html/Properties.T-MagicCMS.Core.MagicPrerogativa.htm">
         <HelpTOCNode Title="Prerogative Property " Url="html/P-MagicCMS.Core.MagicPrerogativa.Prerogative.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
     <HelpTOCNode Title="MagicSearchActive Enumeration" Url="html/T-MagicCMS.Core.MagicSearchActive.htm" />
-    <HelpTOCNode Id="30f97145-956c-47d3-b712-89bd87340ca7" Title="MagicSession Class" Url="html/T-MagicCMS.Core.MagicSession.htm">
+    <HelpTOCNode Id="a97e6072-a0e3-4f15-bd32-180a32e21bd2" Title="MagicSession Class" Url="html/T-MagicCMS.Core.MagicSession.htm">
       <HelpTOCNode Title="MagicSession Members" Url="html/AllMembers.T-MagicCMS.Core.MagicSession.htm" />
-      <HelpTOCNode Id="6854a4cf-845b-4acc-9e57-4768d35a80ee" Title="MagicSession Properties" Url="html/Properties.T-MagicCMS.Core.MagicSession.htm">
+      <HelpTOCNode Id="4649ddf3-87c9-40f6-ac2f-a85f2f0cf673" Title="MagicSession Properties" Url="html/Properties.T-MagicCMS.Core.MagicSession.htm">
         <HelpTOCNode Title="ColorPalette Property " Url="html/P-MagicCMS.Core.MagicSession.ColorPalette.htm" />
         <HelpTOCNode Title="Config Property " Url="html/P-MagicCMS.Core.MagicSession.Config.htm" />
         <HelpTOCNode Title="Current Property " Url="html/P-MagicCMS.Core.MagicSession.Current.htm" />
@@ -875,34 +878,34 @@
       </HelpTOCNode>
     </HelpTOCNode>
     <HelpTOCNode Title="MagicTagContainer Enumeration" Url="html/T-MagicCMS.Core.MagicTagContainer.htm" />
-    <HelpTOCNode Id="ad50f2a0-6c23-4013-a9dc-3571fcd3b1ce" Title="MagicTransDictionary Class" Url="html/T-MagicCMS.Core.MagicTransDictionary.htm">
+    <HelpTOCNode Id="c2b6b208-fa95-43ea-a965-6e6461c65387" Title="MagicTransDictionary Class" Url="html/T-MagicCMS.Core.MagicTransDictionary.htm">
       <HelpTOCNode Title="MagicTransDictionary Members" Url="html/AllMembers.T-MagicCMS.Core.MagicTransDictionary.htm" />
-      <HelpTOCNode Id="5eede04b-89b9-4ecf-b88b-2e45bf631822" Title="MagicTransDictionary Constructor " Url="html/Overload-MagicCMS.Core.MagicTransDictionary.-ctor.htm">
+      <HelpTOCNode Id="a752ddf6-d867-4382-bda7-674fd6c6c018" Title="MagicTransDictionary Constructor " Url="html/Overload-MagicCMS.Core.MagicTransDictionary.-ctor.htm">
         <HelpTOCNode Title="MagicTransDictionary Constructor " Url="html/M-MagicCMS.Core.MagicTransDictionary.-ctor.htm" />
         <HelpTOCNode Title="MagicTransDictionary Constructor (Int32)" Url="html/M-MagicCMS.Core.MagicTransDictionary.-ctor_1.htm" />
         <HelpTOCNode Title="MagicTransDictionary Constructor (String, String)" Url="html/M-MagicCMS.Core.MagicTransDictionary.-ctor_2.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="979005c5-2b35-4c9b-937e-74cedd9f8d89" Title="MagicTransDictionary Methods" Url="html/Methods.T-MagicCMS.Core.MagicTransDictionary.htm">
+      <HelpTOCNode Id="db71e441-3ca8-447e-98b5-7fbb3bbd0c9a" Title="MagicTransDictionary Methods" Url="html/Methods.T-MagicCMS.Core.MagicTransDictionary.htm">
         <HelpTOCNode Title="Save Method " Url="html/M-MagicCMS.Core.MagicTransDictionary.Save.htm" />
-        <HelpTOCNode Id="53faa2ee-07d3-4c4a-b512-7d8b6f7beb3e" Title="Translate Method " Url="html/Overload-MagicCMS.Core.MagicTransDictionary.Translate.htm">
+        <HelpTOCNode Id="5d09ee42-ab98-4363-98b5-75a9a4451eef" Title="Translate Method " Url="html/Overload-MagicCMS.Core.MagicTransDictionary.Translate.htm">
           <HelpTOCNode Title="Translate Method (String, String)" Url="html/M-MagicCMS.Core.MagicTransDictionary.Translate.htm" />
           <HelpTOCNode Title="Translate Method (String)" Url="html/M-MagicCMS.Core.MagicTransDictionary.Translate_1.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="f3bf672a-7d19-49a7-8898-c1e7231d98da" Title="MagicTransDictionary Properties" Url="html/Properties.T-MagicCMS.Core.MagicTransDictionary.htm">
+      <HelpTOCNode Id="89e1ee5b-a5d2-43fd-93a2-c5211e20e302" Title="MagicTransDictionary Properties" Url="html/Properties.T-MagicCMS.Core.MagicTransDictionary.htm">
         <HelpTOCNode Title="LangId Property " Url="html/P-MagicCMS.Core.MagicTransDictionary.LangId.htm" />
         <HelpTOCNode Title="Pk Property " Url="html/P-MagicCMS.Core.MagicTransDictionary.Pk.htm" />
         <HelpTOCNode Title="Source Property " Url="html/P-MagicCMS.Core.MagicTransDictionary.Source.htm" />
         <HelpTOCNode Title="Translation Property " Url="html/P-MagicCMS.Core.MagicTransDictionary.Translation.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="4e3d2538-5e40-400c-be93-174bc1c99b0b" Title="MagicTransDictionaryCollection Class" Url="html/T-MagicCMS.Core.MagicTransDictionaryCollection.htm">
+    <HelpTOCNode Id="d9229c39-9ab0-43ed-8e3c-0707b8cba7bc" Title="MagicTransDictionaryCollection Class" Url="html/T-MagicCMS.Core.MagicTransDictionaryCollection.htm">
       <HelpTOCNode Title="MagicTransDictionaryCollection Members" Url="html/AllMembers.T-MagicCMS.Core.MagicTransDictionaryCollection.htm" />
-      <HelpTOCNode Id="7d02df6e-4da9-4903-8a7a-d802790db0c4" Title="MagicTransDictionaryCollection Constructor " Url="html/Overload-MagicCMS.Core.MagicTransDictionaryCollection.-ctor.htm">
+      <HelpTOCNode Id="94465e8f-f8ad-4391-a787-a1706f758068" Title="MagicTransDictionaryCollection Constructor " Url="html/Overload-MagicCMS.Core.MagicTransDictionaryCollection.-ctor.htm">
         <HelpTOCNode Title="MagicTransDictionaryCollection Constructor " Url="html/M-MagicCMS.Core.MagicTransDictionaryCollection.-ctor.htm" />
         <HelpTOCNode Title="MagicTransDictionaryCollection Constructor (InputParams_dt)" Url="html/M-MagicCMS.Core.MagicTransDictionaryCollection.-ctor_1.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="4983d980-9dc9-431e-9537-97c3effe08aa" Title="MagicTransDictionaryCollection Methods" Url="html/Methods.T-MagicCMS.Core.MagicTransDictionaryCollection.htm">
+      <HelpTOCNode Id="36c2a0a7-7cd8-402c-9e72-5a6ad55310a5" Title="MagicTransDictionaryCollection Methods" Url="html/Methods.T-MagicCMS.Core.MagicTransDictionaryCollection.htm">
         <HelpTOCNode Title="Add Method " Url="html/M-MagicCMS.Core.MagicTransDictionaryCollection.Add.htm" />
         <HelpTOCNode Title="Contains Method " Url="html/M-MagicCMS.Core.MagicTransDictionaryCollection.Contains.htm" />
         <HelpTOCNode Title="CopyTo Method " Url="html/M-MagicCMS.Core.MagicTransDictionaryCollection.CopyTo.htm" />
@@ -910,17 +913,17 @@
         <HelpTOCNode Title="Insert Method " Url="html/M-MagicCMS.Core.MagicTransDictionaryCollection.Insert.htm" />
         <HelpTOCNode Title="Remove Method " Url="html/M-MagicCMS.Core.MagicTransDictionaryCollection.Remove.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="3f3c2c97-171c-4988-9c0a-1204e1df85b5" Title="MagicTransDictionaryCollection Properties" Url="html/Properties.T-MagicCMS.Core.MagicTransDictionaryCollection.htm">
+      <HelpTOCNode Id="765cb2bf-aa57-4239-a7c4-ffe76a126726" Title="MagicTransDictionaryCollection Properties" Url="html/Properties.T-MagicCMS.Core.MagicTransDictionaryCollection.htm">
         <HelpTOCNode Title="Item Property " Url="html/P-MagicCMS.Core.MagicTransDictionaryCollection.Item-System.Int32-.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="2622580a-e437-488a-bce4-db1389035305" Title="MagicTranslation Class" Url="html/T-MagicCMS.Core.MagicTranslation.htm">
+    <HelpTOCNode Id="01473c11-1200-4be6-8a18-8a89654ad191" Title="MagicTranslation Class" Url="html/T-MagicCMS.Core.MagicTranslation.htm">
       <HelpTOCNode Title="MagicTranslation Members" Url="html/AllMembers.T-MagicCMS.Core.MagicTranslation.htm" />
       <HelpTOCNode Title="MagicTranslation Constructor (Int32, String)" Url="html/M-MagicCMS.Core.MagicTranslation.-ctor.htm" />
-      <HelpTOCNode Id="ce1546a2-b458-489c-81f8-d0cecace72f2" Title="MagicTranslation Methods" Url="html/Methods.T-MagicCMS.Core.MagicTranslation.htm">
+      <HelpTOCNode Id="c7eabaf9-0937-4a9e-9661-a4ed849128b4" Title="MagicTranslation Methods" Url="html/Methods.T-MagicCMS.Core.MagicTranslation.htm">
         <HelpTOCNode Title="Save Method " Url="html/M-MagicCMS.Core.MagicTranslation.Save.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="3bb049e8-92d2-4fe5-9506-c88c54bf5099" Title="MagicTranslation Properties" Url="html/Properties.T-MagicCMS.Core.MagicTranslation.htm">
+      <HelpTOCNode Id="2cd04923-9658-4f0e-a2e1-be507531c7d1" Title="MagicTranslation Properties" Url="html/Properties.T-MagicCMS.Core.MagicTranslation.htm">
         <HelpTOCNode Title="Item Property " Url="html/P-MagicCMS.Core.MagicTranslation.Item-System.String-.htm" />
         <HelpTOCNode Title="LangId Property " Url="html/P-MagicCMS.Core.MagicTranslation.LangId.htm" />
         <HelpTOCNode Title="LangName Property " Url="html/P-MagicCMS.Core.MagicTranslation.LangName.htm" />
@@ -932,17 +935,17 @@
         <HelpTOCNode Title="TranslatedTitle Property " Url="html/P-MagicCMS.Core.MagicTranslation.TranslatedTitle.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="922788d7-ab8d-4adb-820c-57ee9a6c3e6d" Title="MagicTranslationCollection Class" Url="html/T-MagicCMS.Core.MagicTranslationCollection.htm">
+    <HelpTOCNode Id="02077f7e-d9df-46ea-a77a-58e0b835a639" Title="MagicTranslationCollection Class" Url="html/T-MagicCMS.Core.MagicTranslationCollection.htm">
       <HelpTOCNode Title="MagicTranslationCollection Members" Url="html/AllMembers.T-MagicCMS.Core.MagicTranslationCollection.htm" />
-      <HelpTOCNode Id="088f8757-00ad-4021-827d-a8292a1467a9" Title="MagicTranslationCollection Constructor " Url="html/Overload-MagicCMS.Core.MagicTranslationCollection.-ctor.htm">
+      <HelpTOCNode Id="23f77c82-66cd-492c-8a2e-f1fc772d9e4b" Title="MagicTranslationCollection Constructor " Url="html/Overload-MagicCMS.Core.MagicTranslationCollection.-ctor.htm">
         <HelpTOCNode Title="MagicTranslationCollection Constructor " Url="html/M-MagicCMS.Core.MagicTranslationCollection.-ctor.htm" />
         <HelpTOCNode Title="MagicTranslationCollection Constructor (Int32)" Url="html/M-MagicCMS.Core.MagicTranslationCollection.-ctor_1.htm" />
         <HelpTOCNode Title="MagicTranslationCollection Constructor (Int32, Boolean)" Url="html/M-MagicCMS.Core.MagicTranslationCollection.-ctor_2.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="c14ffc9c-93e7-469a-872c-e3ad1a1279fe" Title="MagicTranslationCollection Fields" Url="html/Fields.T-MagicCMS.Core.MagicTranslationCollection.htm">
+      <HelpTOCNode Id="b1830ff2-b6c3-40f1-be1d-a2853cdd949d" Title="MagicTranslationCollection Fields" Url="html/Fields.T-MagicCMS.Core.MagicTranslationCollection.htm">
         <HelpTOCNode Title="AllRecords Field" Url="html/F-MagicCMS.Core.MagicTranslationCollection.AllRecords.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="ded65d3e-945f-4437-bbbe-d24c9e54b7a3" Title="MagicTranslationCollection Methods" Url="html/Methods.T-MagicCMS.Core.MagicTranslationCollection.htm">
+      <HelpTOCNode Id="33b609eb-db28-4613-90ab-9bfb0b6720b0" Title="MagicTranslationCollection Methods" Url="html/Methods.T-MagicCMS.Core.MagicTranslationCollection.htm">
         <HelpTOCNode Title="Add Method " Url="html/M-MagicCMS.Core.MagicTranslationCollection.Add.htm" />
         <HelpTOCNode Title="Contains Method " Url="html/M-MagicCMS.Core.MagicTranslationCollection.Contains.htm" />
         <HelpTOCNode Title="CopyTo Method " Url="html/M-MagicCMS.Core.MagicTranslationCollection.CopyTo.htm" />
@@ -951,18 +954,18 @@
         <HelpTOCNode Title="Insert Method " Url="html/M-MagicCMS.Core.MagicTranslationCollection.Insert.htm" />
         <HelpTOCNode Title="Remove Method " Url="html/M-MagicCMS.Core.MagicTranslationCollection.Remove.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="616fa6a9-b2d0-4736-a41e-f02a63326305" Title="MagicTranslationCollection Properties" Url="html/Properties.T-MagicCMS.Core.MagicTranslationCollection.htm">
+      <HelpTOCNode Id="69e5c8a1-d068-4952-94f9-95680255ff55" Title="MagicTranslationCollection Properties" Url="html/Properties.T-MagicCMS.Core.MagicTranslationCollection.htm">
         <HelpTOCNode Title="Item Property " Url="html/P-MagicCMS.Core.MagicTranslationCollection.Item-System.Int32-.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="a02533e7-8ca6-4a88-a035-4f637eb66874" Title="MagicUser Class" Url="html/T-MagicCMS.Core.MagicUser.htm">
+    <HelpTOCNode Id="219238f6-09fa-4fc9-bb0b-9c58a5e888b2" Title="MagicUser Class" Url="html/T-MagicCMS.Core.MagicUser.htm">
       <HelpTOCNode Title="MagicUser Members" Url="html/AllMembers.T-MagicCMS.Core.MagicUser.htm" />
-      <HelpTOCNode Id="854a7db3-5b82-4df2-8ac9-5690af687d40" Title="MagicUser Constructor " Url="html/Overload-MagicCMS.Core.MagicUser.-ctor.htm">
+      <HelpTOCNode Id="5de6921a-ab06-4764-99dd-fdda966455e4" Title="MagicUser Constructor " Url="html/Overload-MagicCMS.Core.MagicUser.-ctor.htm">
         <HelpTOCNode Title="MagicUser Constructor " Url="html/M-MagicCMS.Core.MagicUser.-ctor.htm" />
         <HelpTOCNode Title="MagicUser Constructor (Int32)" Url="html/M-MagicCMS.Core.MagicUser.-ctor_1.htm" />
         <HelpTOCNode Title="MagicUser Constructor (String, String)" Url="html/M-MagicCMS.Core.MagicUser.-ctor_2.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="c9c49d70-1983-4c7e-9fab-b73036d511b1" Title="MagicUser Methods" Url="html/Methods.T-MagicCMS.Core.MagicUser.htm">
+      <HelpTOCNode Id="4c2905fa-24e5-42fb-ace4-eb3c2b053728" Title="MagicUser Methods" Url="html/Methods.T-MagicCMS.Core.MagicUser.htm">
         <HelpTOCNode Title="ChangePassword Method " Url="html/M-MagicCMS.Core.MagicUser.ChangePassword.htm" />
         <HelpTOCNode Title="Insert Method " Url="html/M-MagicCMS.Core.MagicUser.Insert.htm" />
         <HelpTOCNode Title="RecordCount Method " Url="html/M-MagicCMS.Core.MagicUser.RecordCount.htm" />
@@ -971,7 +974,7 @@
         <HelpTOCNode Title="Update Method " Url="html/M-MagicCMS.Core.MagicUser.Update.htm" />
         <HelpTOCNode Title="UsernameExists Method " Url="html/M-MagicCMS.Core.MagicUser.UsernameExists.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="468a2d9b-f6ae-4a82-a42b-b45fc74deceb" Title="MagicUser Properties" Url="html/Properties.T-MagicCMS.Core.MagicUser.htm">
+      <HelpTOCNode Id="3791eaff-3524-49b9-b8fe-15dfcad2274c" Title="MagicUser Properties" Url="html/Properties.T-MagicCMS.Core.MagicUser.htm">
         <HelpTOCNode Title="Active Property " Url="html/P-MagicCMS.Core.MagicUser.Active.htm" />
         <HelpTOCNode Title="Email Property " Url="html/P-MagicCMS.Core.MagicUser.Email.htm" />
         <HelpTOCNode Title="LastModify Property " Url="html/P-MagicCMS.Core.MagicUser.LastModify.htm" />
@@ -984,13 +987,13 @@
         <HelpTOCNode Title="Profile_PK Property " Url="html/P-MagicCMS.Core.MagicUser.Profile_PK.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="0b0b8e7b-966e-4b68-9f54-b8cb5eb737b3" Title="MagicUserCollection Class" Url="html/T-MagicCMS.Core.MagicUserCollection.htm">
+    <HelpTOCNode Id="a3d153df-c9b5-44e5-9e98-d27ab63751bc" Title="MagicUserCollection Class" Url="html/T-MagicCMS.Core.MagicUserCollection.htm">
       <HelpTOCNode Title="MagicUserCollection Members" Url="html/AllMembers.T-MagicCMS.Core.MagicUserCollection.htm" />
-      <HelpTOCNode Id="7290bfe6-bcdc-4e61-935c-2a206789ea9c" Title="MagicUserCollection Constructor " Url="html/Overload-MagicCMS.Core.MagicUserCollection.-ctor.htm">
+      <HelpTOCNode Id="61c2e58f-fd03-4e40-a773-e6250568a6da" Title="MagicUserCollection Constructor " Url="html/Overload-MagicCMS.Core.MagicUserCollection.-ctor.htm">
         <HelpTOCNode Title="MagicUserCollection Constructor " Url="html/M-MagicCMS.Core.MagicUserCollection.-ctor.htm" />
         <HelpTOCNode Title="MagicUserCollection Constructor (InputParams_dt)" Url="html/M-MagicCMS.Core.MagicUserCollection.-ctor_1.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="c293cb67-2093-4e23-97e1-4d5c31cb9c84" Title="MagicUserCollection Methods" Url="html/Methods.T-MagicCMS.Core.MagicUserCollection.htm">
+      <HelpTOCNode Id="682aedba-f77e-4cd5-833b-1f450fb49003" Title="MagicUserCollection Methods" Url="html/Methods.T-MagicCMS.Core.MagicUserCollection.htm">
         <HelpTOCNode Title="Add Method " Url="html/M-MagicCMS.Core.MagicUserCollection.Add.htm" />
         <HelpTOCNode Title="Contains Method " Url="html/M-MagicCMS.Core.MagicUserCollection.Contains.htm" />
         <HelpTOCNode Title="CopyTo Method " Url="html/M-MagicCMS.Core.MagicUserCollection.CopyTo.htm" />
@@ -998,57 +1001,57 @@
         <HelpTOCNode Title="Insert Method " Url="html/M-MagicCMS.Core.MagicUserCollection.Insert.htm" />
         <HelpTOCNode Title="Remove Method " Url="html/M-MagicCMS.Core.MagicUserCollection.Remove.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="f089e7b6-77a6-40c0-a074-9e781e4ff01a" Title="MagicUserCollection Properties" Url="html/Properties.T-MagicCMS.Core.MagicUserCollection.htm">
+      <HelpTOCNode Id="88805995-0159-4b4b-b2e4-5b5f3cc41fe4" Title="MagicUserCollection Properties" Url="html/Properties.T-MagicCMS.Core.MagicUserCollection.htm">
         <HelpTOCNode Title="Item Property " Url="html/P-MagicCMS.Core.MagicUserCollection.Item-System.Int32-.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="248a9eb9-9b6d-4da3-b5db-8e4b285abe49" Title="MagicUtils Class" Url="html/T-MagicCMS.Core.MagicUtils.htm">
+    <HelpTOCNode Id="668ba948-aed3-42fb-9dac-072cc2cbbd0b" Title="MagicUtils Class" Url="html/T-MagicCMS.Core.MagicUtils.htm">
       <HelpTOCNode Title="MagicUtils Members" Url="html/AllMembers.T-MagicCMS.Core.MagicUtils.htm" />
-      <HelpTOCNode Id="8825a4d2-5167-40a7-82ee-98f9693394b2" Title="MagicUtils Methods" Url="html/Methods.T-MagicCMS.Core.MagicUtils.htm">
+      <HelpTOCNode Id="84b70080-1a5b-496b-bc2c-37c0bc057516" Title="MagicUtils Methods" Url="html/Methods.T-MagicCMS.Core.MagicUtils.htm">
         <HelpTOCNode Title="AnchorElement Method " Url="html/M-MagicCMS.Core.MagicUtils.AnchorElement.htm" />
         <HelpTOCNode Title="capAndTrunc Method " Url="html/M-MagicCMS.Core.MagicUtils.capAndTrunc.htm" />
         <HelpTOCNode Title="ColorLighten Method " Url="html/M-MagicCMS.Core.MagicUtils.ColorLighten.htm" />
         <HelpTOCNode Title="CreateRandomPassword Method " Url="html/M-MagicCMS.Core.MagicUtils.CreateRandomPassword.htm" />
         <HelpTOCNode Title="CreateUniqueFileName Method " Url="html/M-MagicCMS.Core.MagicUtils.CreateUniqueFileName.htm" />
         <HelpTOCNode Title="FileSizeToStr Method " Url="html/M-MagicCMS.Core.MagicUtils.FileSizeToStr.htm" />
-        <HelpTOCNode Id="74ab2d26-8269-4cf9-abc6-1c97cdfa6b02" Title="getImageList Method " Url="html/Overload-MagicCMS.Core.MagicUtils.getImageList.htm">
+        <HelpTOCNode Id="2f719f66-18c7-4fd6-a176-64466c4875f1" Title="getImageList Method " Url="html/Overload-MagicCMS.Core.MagicUtils.getImageList.htm">
           <HelpTOCNode Title="getImageList Method (String, Boolean)" Url="html/M-MagicCMS.Core.MagicUtils.getImageList.htm" />
           <HelpTOCNode Title="getImageList Method (String)" Url="html/M-MagicCMS.Core.MagicUtils.getImageList_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="3b87d483-311e-4c26-8b3f-88173e13c0a6" Title="HTMLElement Method " Url="html/Overload-MagicCMS.Core.MagicUtils.HTMLElement.htm">
+        <HelpTOCNode Id="a72a0207-bccf-4db9-bc2d-dca159121f60" Title="HTMLElement Method " Url="html/Overload-MagicCMS.Core.MagicUtils.HTMLElement.htm">
           <HelpTOCNode Title="HTMLElement Method (String, String, String, String)" Url="html/M-MagicCMS.Core.MagicUtils.HTMLElement.htm" />
           <HelpTOCNode Title="HTMLElement Method (String, String, String)" Url="html/M-MagicCMS.Core.MagicUtils.HTMLElement_1.htm" />
           <HelpTOCNode Title="HTMLElement Method (String, String)" Url="html/M-MagicCMS.Core.MagicUtils.HTMLElement_2.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="isMobileBrowser Method " Url="html/M-MagicCMS.Core.MagicUtils.isMobileBrowser.htm" />
         <HelpTOCNode Title="LoadScript Method " Url="html/M-MagicCMS.Core.MagicUtils.LoadScript.htm" />
-        <HelpTOCNode Id="58ccd848-1453-4902-be85-90cf285452d1" Title="nullToStr Method " Url="html/Overload-MagicCMS.Core.MagicUtils.nullToStr.htm">
+        <HelpTOCNode Id="4b27e3c2-17ad-4117-a1d0-c4b04bc73984" Title="nullToStr Method " Url="html/Overload-MagicCMS.Core.MagicUtils.nullToStr.htm">
           <HelpTOCNode Title="nullToStr Method (String)" Url="html/M-MagicCMS.Core.MagicUtils.nullToStr.htm" />
           <HelpTOCNode Title="nullToStr Method (String, String)" Url="html/M-MagicCMS.Core.MagicUtils.nullToStr_1.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="ParseISO8601String Method " Url="html/M-MagicCMS.Core.MagicUtils.ParseISO8601String.htm" />
         <HelpTOCNode Title="RenderControlToString Method " Url="html/M-MagicCMS.Core.MagicUtils.RenderControlToString.htm" />
-        <HelpTOCNode Id="efeb1517-3307-4f99-9ac3-c599bf45ba9c" Title="strToJSON Method " Url="html/Overload-MagicCMS.Core.MagicUtils.strToJSON.htm">
+        <HelpTOCNode Id="7918f8a5-a0fd-481a-8640-41767fa48282" Title="strToJSON Method " Url="html/Overload-MagicCMS.Core.MagicUtils.strToJSON.htm">
           <HelpTOCNode Title="strToJSON Method (Object)" Url="html/M-MagicCMS.Core.MagicUtils.strToJSON.htm" />
           <HelpTOCNode Title="strToJSON Method (String)" Url="html/M-MagicCMS.Core.MagicUtils.strToJSON_1.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="33618870-84f8-4193-a7f2-419904c982ea" Title="MagicUtils Properties" Url="html/Properties.T-MagicCMS.Core.MagicUtils.htm">
+      <HelpTOCNode Id="fa3923df-0655-4f8a-a92b-5b34149e1145" Title="MagicUtils Properties" Url="html/Properties.T-MagicCMS.Core.MagicUtils.htm">
         <HelpTOCNode Title="MagicAllowedFiletypes Property " Url="html/P-MagicCMS.Core.MagicUtils.MagicAllowedFiletypes.htm" />
         <HelpTOCNode Title="MagicConnectionString Property " Url="html/P-MagicCMS.Core.MagicUtils.MagicConnectionString.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="6cdfb4e4-51de-4d1a-b6d1-f487fb5f93d0" Title="MagicVoto Class" Url="html/T-MagicCMS.Core.MagicVoto.htm">
+    <HelpTOCNode Id="e1b75097-0286-4bae-8774-3b389d1b088e" Title="MagicVoto Class" Url="html/T-MagicCMS.Core.MagicVoto.htm">
       <HelpTOCNode Title="MagicVoto Members" Url="html/AllMembers.T-MagicCMS.Core.MagicVoto.htm" />
-      <HelpTOCNode Id="add0c704-9510-4cb4-a1b7-dd1ee31e2e9e" Title="MagicVoto Constructor " Url="html/Overload-MagicCMS.Core.MagicVoto.-ctor.htm">
+      <HelpTOCNode Id="ee84f516-de8a-4900-9c5a-b76d9979bef3" Title="MagicVoto Constructor " Url="html/Overload-MagicCMS.Core.MagicVoto.-ctor.htm">
         <HelpTOCNode Title="MagicVoto Constructor " Url="html/M-MagicCMS.Core.MagicVoto.-ctor.htm" />
         <HelpTOCNode Title="MagicVoto Constructor (Int32)" Url="html/M-MagicCMS.Core.MagicVoto.-ctor_1.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="d150b56c-fba4-4a5a-9ed4-e8fe3c14f011" Title="MagicVoto Methods" Url="html/Methods.T-MagicCMS.Core.MagicVoto.htm">
+      <HelpTOCNode Id="b3f682b7-83df-4c8e-97ea-3b4c9b9e6bcf" Title="MagicVoto Methods" Url="html/Methods.T-MagicCMS.Core.MagicVoto.htm">
         <HelpTOCNode Title="Delete Method " Url="html/M-MagicCMS.Core.MagicVoto.Delete.htm" />
         <HelpTOCNode Title="Insert Method " Url="html/M-MagicCMS.Core.MagicVoto.Insert.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="ebba3a62-602f-40fa-8adf-d21728e9e34a" Title="MagicVoto Properties" Url="html/Properties.T-MagicCMS.Core.MagicVoto.htm">
+      <HelpTOCNode Id="365ad9da-f553-4eff-9be5-7cd6065eaa9d" Title="MagicVoto Properties" Url="html/Properties.T-MagicCMS.Core.MagicVoto.htm">
         <HelpTOCNode Title="LastModify Property " Url="html/P-MagicCMS.Core.MagicVoto.LastModify.htm" />
         <HelpTOCNode Title="Pk Property " Url="html/P-MagicCMS.Core.MagicVoto.Pk.htm" />
         <HelpTOCNode Title="Post_PK Property " Url="html/P-MagicCMS.Core.MagicVoto.Post_PK.htm" />
@@ -1057,21 +1060,21 @@
       </HelpTOCNode>
     </HelpTOCNode>
     <HelpTOCNode Title="MbUserLoginResult Enumeration" Url="html/T-MagicCMS.Core.MbUserLoginResult.htm" />
-    <HelpTOCNode Id="d18ffdf9-8477-466e-bdd9-42f58103e0e7" Title="MenuIcon Class" Url="html/T-MagicCMS.Core.MenuIcon.htm">
+    <HelpTOCNode Id="5a4b8ab7-3809-4f8e-bd13-e1eb65d62e8f" Title="MenuIcon Class" Url="html/T-MagicCMS.Core.MenuIcon.htm">
       <HelpTOCNode Title="MenuIcon Members" Url="html/AllMembers.T-MagicCMS.Core.MenuIcon.htm" />
-      <HelpTOCNode Id="02ca14ab-2b83-49b7-b1c5-0f9f891b696f" Title="MenuIcon Methods" Url="html/Methods.T-MagicCMS.Core.MenuIcon.htm">
+      <HelpTOCNode Id="2474bcd7-478e-45b5-9d79-0581b2e880f6" Title="MenuIcon Methods" Url="html/Methods.T-MagicCMS.Core.MenuIcon.htm">
         <HelpTOCNode Title="GetType Method " Url="html/M-MagicCMS.Core.MenuIcon.GetType.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="a4b4191a-ae41-4f70-97b9-1dbf702ee8a5" Title="MenuIcon Properties" Url="html/Properties.T-MagicCMS.Core.MenuIcon.htm">
+      <HelpTOCNode Id="a33b2f45-da54-4fa3-bd4d-188f7a7fad93" Title="MenuIcon Properties" Url="html/Properties.T-MagicCMS.Core.MenuIcon.htm">
         <HelpTOCNode Title="Type Property " Url="html/P-MagicCMS.Core.MenuIcon.Type.htm" />
         <HelpTOCNode Title="Value Property " Url="html/P-MagicCMS.Core.MenuIcon.Value.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
     <HelpTOCNode Title="MenuIconType Enumeration" Url="html/T-MagicCMS.Core.MenuIconType.htm" />
-    <HelpTOCNode Id="eadf3e4b-a936-4343-9f03-1b60410a1022" Title="MenuInfo Class" Url="html/T-MagicCMS.Core.MenuInfo.htm">
+    <HelpTOCNode Id="2007f181-c922-471f-9694-074b818e1a99" Title="MenuInfo Class" Url="html/T-MagicCMS.Core.MenuInfo.htm">
       <HelpTOCNode Title="MenuInfo Members" Url="html/AllMembers.T-MagicCMS.Core.MenuInfo.htm" />
       <HelpTOCNode Title="MenuInfo Constructor " Url="html/M-MagicCMS.Core.MenuInfo.-ctor.htm" />
-      <HelpTOCNode Id="5f62c1c8-c800-4258-8b3f-1d1dd2b32678" Title="MenuInfo Properties" Url="html/Properties.T-MagicCMS.Core.MenuInfo.htm">
+      <HelpTOCNode Id="956b760e-9820-4ca1-a8fa-4a1d28ee40f4" Title="MenuInfo Properties" Url="html/Properties.T-MagicCMS.Core.MenuInfo.htm">
         <HelpTOCNode Title="ActiveClass Property " Url="html/P-MagicCMS.Core.MenuInfo.ActiveClass.htm" />
         <HelpTOCNode Title="CustomClass Property " Url="html/P-MagicCMS.Core.MenuInfo.CustomClass.htm" />
         <HelpTOCNode Title="Href Property " Url="html/P-MagicCMS.Core.MenuInfo.Href.htm" />
@@ -1090,14 +1093,14 @@
         <HelpTOCNode Title="Url2 Property " Url="html/P-MagicCMS.Core.MenuInfo.Url2.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="f5267a1e-c152-448a-9318-eb1713a57563" Title="MenuInfoCollection Class" Url="html/T-MagicCMS.Core.MenuInfoCollection.htm">
+    <HelpTOCNode Id="b5b28b31-211a-4e96-95c4-390afe0e3469" Title="MenuInfoCollection Class" Url="html/T-MagicCMS.Core.MenuInfoCollection.htm">
       <HelpTOCNode Title="MenuInfoCollection Members" Url="html/AllMembers.T-MagicCMS.Core.MenuInfoCollection.htm" />
-      <HelpTOCNode Id="ec3aeb3d-bc34-4f5d-9072-492a4b133310" Title="MenuInfoCollection Constructor " Url="html/Overload-MagicCMS.Core.MenuInfoCollection.-ctor.htm">
+      <HelpTOCNode Id="d75360a5-5585-4b92-8e14-4e3c30b089ee" Title="MenuInfoCollection Constructor " Url="html/Overload-MagicCMS.Core.MenuInfoCollection.-ctor.htm">
         <HelpTOCNode Title="MenuInfoCollection Constructor " Url="html/M-MagicCMS.Core.MenuInfoCollection.-ctor.htm" />
         <HelpTOCNode Title="MenuInfoCollection Constructor (MagicPost, Int32)" Url="html/M-MagicCMS.Core.MenuInfoCollection.-ctor_1.htm" />
         <HelpTOCNode Title="MenuInfoCollection Constructor (MagicPost, Int32, Boolean)" Url="html/M-MagicCMS.Core.MenuInfoCollection.-ctor_2.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="14fdea71-2ab8-4f39-8384-c628adbbca42" Title="MenuInfoCollection Methods" Url="html/Methods.T-MagicCMS.Core.MenuInfoCollection.htm">
+      <HelpTOCNode Id="af9b9efd-835e-4309-ae38-8bbbb7533e99" Title="MenuInfoCollection Methods" Url="html/Methods.T-MagicCMS.Core.MenuInfoCollection.htm">
         <HelpTOCNode Title="Add Method " Url="html/M-MagicCMS.Core.MenuInfoCollection.Add.htm" />
         <HelpTOCNode Title="Contains Method " Url="html/M-MagicCMS.Core.MenuInfoCollection.Contains.htm" />
         <HelpTOCNode Title="CopyTo Method " Url="html/M-MagicCMS.Core.MenuInfoCollection.CopyTo.htm" />
@@ -1105,25 +1108,25 @@
         <HelpTOCNode Title="Insert Method " Url="html/M-MagicCMS.Core.MenuInfoCollection.Insert.htm" />
         <HelpTOCNode Title="Remove Method " Url="html/M-MagicCMS.Core.MenuInfoCollection.Remove.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="efb86be1-aa72-42dd-8037-24186faef8ea" Title="MenuInfoCollection Properties" Url="html/Properties.T-MagicCMS.Core.MenuInfoCollection.htm">
+      <HelpTOCNode Id="15be1b0d-9662-4aab-b7e1-3dbf052fc987" Title="MenuInfoCollection Properties" Url="html/Properties.T-MagicCMS.Core.MenuInfoCollection.htm">
         <HelpTOCNode Title="Item Property " Url="html/P-MagicCMS.Core.MenuInfoCollection.Item-System.Int32-.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="105c4b82-cd81-47da-bdeb-cac668cffad7" Title="Miniatura Class" Url="html/T-MagicCMS.Core.Miniatura.htm">
+    <HelpTOCNode Id="a6d19bbc-4038-4ff5-ae15-1514bb9aba23" Title="Miniatura Class" Url="html/T-MagicCMS.Core.Miniatura.htm">
       <HelpTOCNode Title="Miniatura Members" Url="html/AllMembers.T-MagicCMS.Core.Miniatura.htm" />
-      <HelpTOCNode Id="fb0738be-f302-4c98-a695-441267ff91ac" Title="Miniatura Constructor " Url="html/Overload-MagicCMS.Core.Miniatura.-ctor.htm">
+      <HelpTOCNode Id="25de34b1-89f2-4fa3-8bf2-51bfa74f49a0" Title="Miniatura Constructor " Url="html/Overload-MagicCMS.Core.Miniatura.-ctor.htm">
         <HelpTOCNode Title="Miniatura Constructor " Url="html/M-MagicCMS.Core.Miniatura.-ctor.htm" />
         <HelpTOCNode Title="Miniatura Constructor (Int32)" Url="html/M-MagicCMS.Core.Miniatura.-ctor_1.htm" />
         <HelpTOCNode Title="Miniatura Constructor (String, Int32, Int32)" Url="html/M-MagicCMS.Core.Miniatura.-ctor_2.htm" />
         <HelpTOCNode Title="Miniatura Constructor (String, Int32, Int32, DateTime)" Url="html/M-MagicCMS.Core.Miniatura.-ctor_3.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="389b7f2d-950c-41d8-be4f-c0346fdaa899" Title="Miniatura Methods" Url="html/Methods.T-MagicCMS.Core.Miniatura.htm">
+      <HelpTOCNode Id="57e00566-4c34-4367-a7a8-528582b8590a" Title="Miniatura Methods" Url="html/Methods.T-MagicCMS.Core.Miniatura.htm">
         <HelpTOCNode Title="Dispose Method " Url="html/M-MagicCMS.Core.Miniatura.Dispose.htm" />
         <HelpTOCNode Title="GetGalleryFromPath Method " Url="html/M-MagicCMS.Core.Miniatura.GetGalleryFromPath.htm" />
         <HelpTOCNode Title="GetMiniaturesInfoFromPath Method " Url="html/M-MagicCMS.Core.Miniatura.GetMiniaturesInfoFromPath.htm" />
         <HelpTOCNode Title="Insert Method " Url="html/M-MagicCMS.Core.Miniatura.Insert.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="f84a486e-e52e-4f6f-9c1c-d029032a5ac3" Title="Miniatura Properties" Url="html/Properties.T-MagicCMS.Core.Miniatura.htm">
+      <HelpTOCNode Id="f6d05f24-4d4b-4ced-9676-0336348ec6de" Title="Miniatura Properties" Url="html/Properties.T-MagicCMS.Core.Miniatura.htm">
         <HelpTOCNode Title="BmpData Property " Url="html/P-MagicCMS.Core.Miniatura.BmpData.htm" />
         <HelpTOCNode Title="Height Property " Url="html/P-MagicCMS.Core.Miniatura.Height.htm" />
         <HelpTOCNode Title="OdateTicks Property " Url="html/P-MagicCMS.Core.Miniatura.OdateTicks.htm" />
@@ -1133,19 +1136,19 @@
         <HelpTOCNode Title="Width Property " Url="html/P-MagicCMS.Core.Miniatura.Width.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="f03973f7-d569-46b2-b5d1-87b189c7ec74" Title="MiniaturaInfo Class" Url="html/T-MagicCMS.Core.MiniaturaInfo.htm">
+    <HelpTOCNode Id="90e011e2-7c59-4bdf-97c0-6e5e8ac7f7af" Title="MiniaturaInfo Class" Url="html/T-MagicCMS.Core.MiniaturaInfo.htm">
       <HelpTOCNode Title="MiniaturaInfo Members" Url="html/AllMembers.T-MagicCMS.Core.MiniaturaInfo.htm" />
       <HelpTOCNode Title="MiniaturaInfo Constructor " Url="html/M-MagicCMS.Core.MiniaturaInfo.-ctor.htm" />
-      <HelpTOCNode Id="15cb9f8d-f3cc-4f21-9715-2c7acad5d944" Title="MiniaturaInfo Properties" Url="html/Properties.T-MagicCMS.Core.MiniaturaInfo.htm">
+      <HelpTOCNode Id="4fb0b4cc-3f4b-490d-b892-e0cd1045893a" Title="MiniaturaInfo Properties" Url="html/Properties.T-MagicCMS.Core.MiniaturaInfo.htm">
         <HelpTOCNode Title="Height Property " Url="html/P-MagicCMS.Core.MiniaturaInfo.Height.htm" />
         <HelpTOCNode Title="OriginalUrl Property " Url="html/P-MagicCMS.Core.MiniaturaInfo.OriginalUrl.htm" />
         <HelpTOCNode Title="Pk Property " Url="html/P-MagicCMS.Core.MiniaturaInfo.Pk.htm" />
         <HelpTOCNode Title="Width Property " Url="html/P-MagicCMS.Core.MiniaturaInfo.Width.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="77e25c11-da5a-4c0d-972d-d5d4356c740d" Title="WhereClause Class" Url="html/T-MagicCMS.Core.WhereClause.htm">
+    <HelpTOCNode Id="5517ed09-7596-4d69-a890-fcb1af472ea6" Title="WhereClause Class" Url="html/T-MagicCMS.Core.WhereClause.htm">
       <HelpTOCNode Title="WhereClause Members" Url="html/AllMembers.T-MagicCMS.Core.WhereClause.htm" />
-      <HelpTOCNode Id="56fb5e67-73a9-4d9e-b2ea-08677fac397d" Title="WhereClause Fields" Url="html/Fields.T-MagicCMS.Core.WhereClause.htm">
+      <HelpTOCNode Id="b02b473c-eced-444c-ad2b-c4e393a7221f" Title="WhereClause Fields" Url="html/Fields.T-MagicCMS.Core.WhereClause.htm">
         <HelpTOCNode Title="AND Field" Url="html/F-MagicCMS.Core.WhereClause.AND.htm" />
         <HelpTOCNode Title="AND_NOT Field" Url="html/F-MagicCMS.Core.WhereClause.AND_NOT.htm" />
         <HelpTOCNode Title="EQUAL Field" Url="html/F-MagicCMS.Core.WhereClause.EQUAL.htm" />
@@ -1162,7 +1165,7 @@
         <HelpTOCNode Title="OR Field" Url="html/F-MagicCMS.Core.WhereClause.OR.htm" />
         <HelpTOCNode Title="OR_NOT Field" Url="html/F-MagicCMS.Core.WhereClause.OR_NOT.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="74a05072-fa95-4025-b1ff-767c60338a7a" Title="WhereClause Properties" Url="html/Properties.T-MagicCMS.Core.WhereClause.htm">
+      <HelpTOCNode Id="6ee397c3-f249-4ddd-ba41-073a22d85415" Title="WhereClause Properties" Url="html/Properties.T-MagicCMS.Core.WhereClause.htm">
         <HelpTOCNode Title="FieldName Property " Url="html/P-MagicCMS.Core.WhereClause.FieldName.htm" />
         <HelpTOCNode Title="LogicalOperator Property " Url="html/P-MagicCMS.Core.WhereClause.LogicalOperator.htm" />
         <HelpTOCNode Title="Operator Property " Url="html/P-MagicCMS.Core.WhereClause.Operator.htm" />
@@ -1170,40 +1173,40 @@
         <HelpTOCNode Title="Value Property " Url="html/P-MagicCMS.Core.WhereClause.Value.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="bb65c5d2-b31b-4ce1-a417-20ad2d622751" Title="WhereClauseCollection Class" Url="html/T-MagicCMS.Core.WhereClauseCollection.htm">
+    <HelpTOCNode Id="e4ef5364-0515-4bd3-80bf-91c68f560125" Title="WhereClauseCollection Class" Url="html/T-MagicCMS.Core.WhereClauseCollection.htm">
       <HelpTOCNode Title="WhereClauseCollection Members" Url="html/AllMembers.T-MagicCMS.Core.WhereClauseCollection.htm" />
-      <HelpTOCNode Id="6a4b5e9e-937f-410d-9694-56aed2984ed2" Title="WhereClauseCollection Methods" Url="html/Methods.T-MagicCMS.Core.WhereClauseCollection.htm">
+      <HelpTOCNode Id="e9037ca5-e01c-4cb5-bf9e-dbb0c80a7e1e" Title="WhereClauseCollection Methods" Url="html/Methods.T-MagicCMS.Core.WhereClauseCollection.htm">
         <HelpTOCNode Title="Add Method " Url="html/M-MagicCMS.Core.WhereClauseCollection.Add.htm" />
         <HelpTOCNode Title="Contains Method " Url="html/M-MagicCMS.Core.WhereClauseCollection.Contains.htm" />
         <HelpTOCNode Title="CopyTo Method " Url="html/M-MagicCMS.Core.WhereClauseCollection.CopyTo.htm" />
         <HelpTOCNode Title="IndexOf Method " Url="html/M-MagicCMS.Core.WhereClauseCollection.IndexOf.htm" />
         <HelpTOCNode Title="Insert Method " Url="html/M-MagicCMS.Core.WhereClauseCollection.Insert.htm" />
         <HelpTOCNode Title="Remove Method " Url="html/M-MagicCMS.Core.WhereClauseCollection.Remove.htm" />
-        <HelpTOCNode Id="3410b112-2e45-4449-b2ca-347fe0ba7ad7" Title="ToString Method " Url="html/Overload-MagicCMS.Core.WhereClauseCollection.ToString.htm">
+        <HelpTOCNode Id="79951b03-53fb-4b44-adc4-4dd82bb9b28a" Title="ToString Method " Url="html/Overload-MagicCMS.Core.WhereClauseCollection.ToString.htm">
           <HelpTOCNode Title="ToString Method (Boolean)" Url="html/M-MagicCMS.Core.WhereClauseCollection.ToString.htm" />
           <HelpTOCNode Title="ToString Method " Url="html/M-MagicCMS.Core.WhereClauseCollection.ToString_1.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="c1ed42eb-0108-4991-977e-814cfa9baef3" Title="WhereClauseCollection Properties" Url="html/Properties.T-MagicCMS.Core.WhereClauseCollection.htm">
+      <HelpTOCNode Id="076b2230-785a-463e-8422-6f63169d547d" Title="WhereClauseCollection Properties" Url="html/Properties.T-MagicCMS.Core.WhereClauseCollection.htm">
         <HelpTOCNode Title="Item Property " Url="html/P-MagicCMS.Core.WhereClauseCollection.Item-System.Int32-.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
   </HelpTOCNode>
-  <HelpTOCNode Id="2c1ef9f9-adf0-482a-9cfd-c54eaff761c3" Title="MagicCMS.CustomCss Namespace" Url="html/N-MagicCMS.CustomCss.htm">
-    <HelpTOCNode Id="f448ddd4-27ae-42ea-a529-54fee3d292de" Title="MagicCss Class" Url="html/T-MagicCMS.CustomCss.MagicCss.htm">
+  <HelpTOCNode Id="64d3fcc1-813e-46f4-b4c0-fbdede58c646" Title="MagicCMS.CustomCss Namespace" Url="html/N-MagicCMS.CustomCss.htm">
+    <HelpTOCNode Id="c631afca-ac69-4627-aefa-8cdcd85b6d3d" Title="MagicCss Class" Url="html/T-MagicCMS.CustomCss.MagicCss.htm">
       <HelpTOCNode Title="MagicCss Members" Url="html/AllMembers.T-MagicCMS.CustomCss.MagicCss.htm" />
-      <HelpTOCNode Id="e5ebed23-7a1c-4911-b966-cb4ea947334b" Title="MagicCss Constructor " Url="html/Overload-MagicCMS.CustomCss.MagicCss.-ctor.htm">
+      <HelpTOCNode Id="fd370074-35bb-453d-8655-55261c3f5934" Title="MagicCss Constructor " Url="html/Overload-MagicCMS.CustomCss.MagicCss.-ctor.htm">
         <HelpTOCNode Title="MagicCss Constructor (String)" Url="html/M-MagicCMS.CustomCss.MagicCss.-ctor.htm" />
         <HelpTOCNode Title="MagicCss Constructor (Int32)" Url="html/M-MagicCMS.CustomCss.MagicCss.-ctor_1.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="be00777e-a8f8-4012-bb29-3f6b970a235d" Title="MagicCss Methods" Url="html/Methods.T-MagicCMS.CustomCss.MagicCss.htm">
+      <HelpTOCNode Id="fb6b7dbf-b990-4f33-8d6e-4980cc4a4717" Title="MagicCss Methods" Url="html/Methods.T-MagicCMS.CustomCss.MagicCss.htm">
         <HelpTOCNode Title="CreateIfNotExists Method " Url="html/M-MagicCMS.CustomCss.MagicCss.CreateIfNotExists.htm" />
         <HelpTOCNode Title="GetCurrent Method " Url="html/M-MagicCMS.CustomCss.MagicCss.GetCurrent.htm" />
         <HelpTOCNode Title="GetVersions Method " Url="html/M-MagicCMS.CustomCss.MagicCss.GetVersions.htm" />
         <HelpTOCNode Title="Insert Method " Url="html/M-MagicCMS.CustomCss.MagicCss.Insert.htm" />
         <HelpTOCNode Title="Save Method " Url="html/M-MagicCMS.CustomCss.MagicCss.Save.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="d04b68dd-f6b9-46bf-9934-b36881069567" Title="MagicCss Properties" Url="html/Properties.T-MagicCMS.CustomCss.MagicCss.htm">
+      <HelpTOCNode Id="911bd8e7-13c5-4ad0-83ce-550a55eb53ff" Title="MagicCss Properties" Url="html/Properties.T-MagicCMS.CustomCss.MagicCss.htm">
         <HelpTOCNode Title="CssText Property " Url="html/P-MagicCMS.CustomCss.MagicCss.CssText.htm" />
         <HelpTOCNode Title="LastModified Property " Url="html/P-MagicCMS.CustomCss.MagicCss.LastModified.htm" />
         <HelpTOCNode Title="Pk Property " Url="html/P-MagicCMS.CustomCss.MagicCss.Pk.htm" />
@@ -1211,14 +1214,14 @@
       </HelpTOCNode>
     </HelpTOCNode>
   </HelpTOCNode>
-  <HelpTOCNode Id="c68f3381-5b06-463e-81f9-2f8a7a25df41" Title="MagicCMS.DataTable Namespace" Url="html/N-MagicCMS.DataTable.htm">
-    <HelpTOCNode Id="11eac487-c8a3-4c33-bd2c-30bbe870fcf2" Title="Column_dt Class" Url="html/T-MagicCMS.DataTable.Column_dt.htm">
+  <HelpTOCNode Id="9511d7d2-987f-4fb5-9b00-5ccbb2c99162" Title="MagicCMS.DataTable Namespace" Url="html/N-MagicCMS.DataTable.htm">
+    <HelpTOCNode Id="2e43a06d-1a7d-4a31-bb23-489912e9506c" Title="Column_dt Class" Url="html/T-MagicCMS.DataTable.Column_dt.htm">
       <HelpTOCNode Title="Column_dt Members" Url="html/AllMembers.T-MagicCMS.DataTable.Column_dt.htm" />
-      <HelpTOCNode Id="eca68b32-d37e-4d3e-8351-609ac2886b81" Title="Column_dt Constructor " Url="html/Overload-MagicCMS.DataTable.Column_dt.-ctor.htm">
+      <HelpTOCNode Id="34078606-c6f3-44d4-8b86-6b1b8057045f" Title="Column_dt Constructor " Url="html/Overload-MagicCMS.DataTable.Column_dt.-ctor.htm">
         <HelpTOCNode Title="Column_dt Constructor (String, String, Boolean, Boolean, String, Boolean)" Url="html/M-MagicCMS.DataTable.Column_dt.-ctor.htm" />
         <HelpTOCNode Title="Column_dt Constructor (String, String)" Url="html/M-MagicCMS.DataTable.Column_dt.-ctor_1.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="36aacf36-a4ca-4936-af77-848b6987a9b3" Title="Column_dt Properties" Url="html/Properties.T-MagicCMS.DataTable.Column_dt.htm">
+      <HelpTOCNode Id="fc15c7da-c0e3-4dfb-a991-bdafa9e2d233" Title="Column_dt Properties" Url="html/Properties.T-MagicCMS.DataTable.Column_dt.htm">
         <HelpTOCNode Title="data Property " Url="html/P-MagicCMS.DataTable.Column_dt.data.htm" />
         <HelpTOCNode Title="name Property " Url="html/P-MagicCMS.DataTable.Column_dt.name.htm" />
         <HelpTOCNode Title="orderable Property " Url="html/P-MagicCMS.DataTable.Column_dt.orderable.htm" />
@@ -1226,28 +1229,28 @@
         <HelpTOCNode Title="searchable Property " Url="html/P-MagicCMS.DataTable.Column_dt.searchable.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="83dec8eb-f30b-4c68-85c4-4b46ca95b8fd" Title="InputParams_dt Class" Url="html/T-MagicCMS.DataTable.InputParams_dt.htm">
+    <HelpTOCNode Id="003f1071-3fe1-4922-9dba-58b84c725bd5" Title="InputParams_dt Class" Url="html/T-MagicCMS.DataTable.InputParams_dt.htm">
       <HelpTOCNode Title="InputParams_dt Members" Url="html/AllMembers.T-MagicCMS.DataTable.InputParams_dt.htm" />
-      <HelpTOCNode Id="b6b2e265-caa1-488f-974f-06a2269babb0" Title="InputParams_dt Constructor " Url="html/Overload-MagicCMS.DataTable.InputParams_dt.-ctor.htm">
+      <HelpTOCNode Id="d59ea9aa-f843-4f72-9557-a6c0cba87c62" Title="InputParams_dt Constructor " Url="html/Overload-MagicCMS.DataTable.InputParams_dt.-ctor.htm">
         <HelpTOCNode Title="InputParams_dt Constructor (Int32, String, String)" Url="html/M-MagicCMS.DataTable.InputParams_dt.-ctor.htm" />
         <HelpTOCNode Title="InputParams_dt Constructor (Int32, String, String, String)" Url="html/M-MagicCMS.DataTable.InputParams_dt.-ctor_1.htm" />
         <HelpTOCNode Title="InputParams_dt Constructor (HttpContext, String, String)" Url="html/M-MagicCMS.DataTable.InputParams_dt.-ctor_2.htm" />
         <HelpTOCNode Title="InputParams_dt Constructor (HttpContext, String, String, String)" Url="html/M-MagicCMS.DataTable.InputParams_dt.-ctor_3.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="9835e9b3-9c96-4eb3-a6b9-a345061f2acc" Title="InputParams_dt Fields" Url="html/Fields.T-MagicCMS.DataTable.InputParams_dt.htm">
+      <HelpTOCNode Id="5d723e34-80f2-45cb-970f-07fbad241487" Title="InputParams_dt Fields" Url="html/Fields.T-MagicCMS.DataTable.InputParams_dt.htm">
         <HelpTOCNode Title="SEARCHPARAM Field" Url="html/F-MagicCMS.DataTable.InputParams_dt.SEARCHPARAM.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="aa795613-d145-4378-96da-b6f3313e8668" Title="InputParams_dt Methods" Url="html/Methods.T-MagicCMS.DataTable.InputParams_dt.htm">
-        <HelpTOCNode Id="1b80464b-c2cf-44c6-8931-c9cb11497373" Title="BuildQuery Method " Url="html/Overload-MagicCMS.DataTable.InputParams_dt.BuildQuery.htm">
+      <HelpTOCNode Id="38487145-2df3-48fc-b14a-6628a551b201" Title="InputParams_dt Methods" Url="html/Methods.T-MagicCMS.DataTable.InputParams_dt.htm">
+        <HelpTOCNode Id="549b31f6-8af7-4ae0-a828-f4b5bd66242a" Title="BuildQuery Method " Url="html/Overload-MagicCMS.DataTable.InputParams_dt.BuildQuery.htm">
           <HelpTOCNode Title="BuildQuery Method (String, String)" Url="html/M-MagicCMS.DataTable.InputParams_dt.BuildQuery.htm" />
           <HelpTOCNode Title="BuildQuery Method (String)" Url="html/M-MagicCMS.DataTable.InputParams_dt.BuildQuery_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="50c06999-1a46-4c9e-a792-81339ffb54f3" Title="GetOutpuSimpleQuery Method " Url="html/Overload-MagicCMS.DataTable.InputParams_dt.GetOutpuSimpleQuery.htm">
+        <HelpTOCNode Id="9a053ddc-ba60-42b8-a06d-0503fb9f3ae3" Title="GetOutpuSimpleQuery Method " Url="html/Overload-MagicCMS.DataTable.InputParams_dt.GetOutpuSimpleQuery.htm">
           <HelpTOCNode Title="GetOutpuSimpleQuery Method (String)" Url="html/M-MagicCMS.DataTable.InputParams_dt.GetOutpuSimpleQuery.htm" />
           <HelpTOCNode Title="GetOutpuSimpleQuery Method " Url="html/M-MagicCMS.DataTable.InputParams_dt.GetOutpuSimpleQuery_1.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="8204be50-84c4-42f1-a513-6557d99e4f8a" Title="InputParams_dt Properties" Url="html/Properties.T-MagicCMS.DataTable.InputParams_dt.htm">
+      <HelpTOCNode Id="9d9b76ac-08a8-4e13-9db2-dddd68875e7b" Title="InputParams_dt Properties" Url="html/Properties.T-MagicCMS.DataTable.InputParams_dt.htm">
         <HelpTOCNode Title="columns Property " Url="html/P-MagicCMS.DataTable.InputParams_dt.columns.htm" />
         <HelpTOCNode Title="draw Property " Url="html/P-MagicCMS.DataTable.InputParams_dt.draw.htm" />
         <HelpTOCNode Title="JoinTables Property " Url="html/P-MagicCMS.DataTable.InputParams_dt.JoinTables.htm" />
@@ -1259,45 +1262,45 @@
         <HelpTOCNode Title="TableName Property " Url="html/P-MagicCMS.DataTable.InputParams_dt.TableName.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="3312e21c-4804-41cd-81bb-767091bbd08f" Title="Order_dt Class" Url="html/T-MagicCMS.DataTable.Order_dt.htm">
+    <HelpTOCNode Id="22676d1d-75ec-4911-a4c4-836074156816" Title="Order_dt Class" Url="html/T-MagicCMS.DataTable.Order_dt.htm">
       <HelpTOCNode Title="Order_dt Members" Url="html/AllMembers.T-MagicCMS.DataTable.Order_dt.htm" />
-      <HelpTOCNode Id="059036d9-cb2d-4f23-9497-18a9ea43ac78" Title="Order_dt Constructor " Url="html/Overload-MagicCMS.DataTable.Order_dt.-ctor.htm">
+      <HelpTOCNode Id="106de501-a4e6-4fdc-a945-27453b267bbd" Title="Order_dt Constructor " Url="html/Overload-MagicCMS.DataTable.Order_dt.-ctor.htm">
         <HelpTOCNode Title="Order_dt Constructor (Int32, String)" Url="html/M-MagicCMS.DataTable.Order_dt.-ctor.htm" />
         <HelpTOCNode Title="Order_dt Constructor (Int32)" Url="html/M-MagicCMS.DataTable.Order_dt.-ctor_1.htm" />
         <HelpTOCNode Title="Order_dt Constructor " Url="html/M-MagicCMS.DataTable.Order_dt.-ctor_2.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="c4b7c4e4-1634-4086-9e3e-82e75a2f65b2" Title="Order_dt Properties" Url="html/Properties.T-MagicCMS.DataTable.Order_dt.htm">
+      <HelpTOCNode Id="26558fad-67a6-493c-88af-c2d3c2837afa" Title="Order_dt Properties" Url="html/Properties.T-MagicCMS.DataTable.Order_dt.htm">
         <HelpTOCNode Title="column Property " Url="html/P-MagicCMS.DataTable.Order_dt.column.htm" />
         <HelpTOCNode Title="dir Property " Url="html/P-MagicCMS.DataTable.Order_dt.dir.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="5033416b-c2ca-4b53-860f-7d0f71d7995f" Title="OutputParams_dt Class" Url="html/T-MagicCMS.DataTable.OutputParams_dt.htm">
+    <HelpTOCNode Id="1fc5a886-f11f-4bed-b85c-5f1357c6da84" Title="OutputParams_dt Class" Url="html/T-MagicCMS.DataTable.OutputParams_dt.htm">
       <HelpTOCNode Title="OutputParams_dt Members" Url="html/AllMembers.T-MagicCMS.DataTable.OutputParams_dt.htm" />
-      <HelpTOCNode Id="0b70cd0f-752c-478f-8d3f-6a9c3a0b5a20" Title="OutputParams_dt Properties" Url="html/Properties.T-MagicCMS.DataTable.OutputParams_dt.htm">
+      <HelpTOCNode Id="bd4d5268-5068-489b-b51c-729714e89ced" Title="OutputParams_dt Properties" Url="html/Properties.T-MagicCMS.DataTable.OutputParams_dt.htm">
         <HelpTOCNode Title="data Property " Url="html/P-MagicCMS.DataTable.OutputParams_dt.data.htm" />
         <HelpTOCNode Title="draw Property " Url="html/P-MagicCMS.DataTable.OutputParams_dt.draw.htm" />
         <HelpTOCNode Title="recordsFiltered Property " Url="html/P-MagicCMS.DataTable.OutputParams_dt.recordsFiltered.htm" />
         <HelpTOCNode Title="recordsTotal Property " Url="html/P-MagicCMS.DataTable.OutputParams_dt.recordsTotal.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="bfd7b25e-f874-4041-9b58-d13e2e42489e" Title="Search_dt Class" Url="html/T-MagicCMS.DataTable.Search_dt.htm">
+    <HelpTOCNode Id="cae374df-ba90-409b-9d1f-7dcdf731bed5" Title="Search_dt Class" Url="html/T-MagicCMS.DataTable.Search_dt.htm">
       <HelpTOCNode Title="Search_dt Members" Url="html/AllMembers.T-MagicCMS.DataTable.Search_dt.htm" />
-      <HelpTOCNode Id="f6c8f438-5878-4d45-a1a6-d975f5a4db6a" Title="Search_dt Constructor " Url="html/Overload-MagicCMS.DataTable.Search_dt.-ctor.htm">
+      <HelpTOCNode Id="43081f2b-7c09-4fea-9de6-7d74f8ed5258" Title="Search_dt Constructor " Url="html/Overload-MagicCMS.DataTable.Search_dt.-ctor.htm">
         <HelpTOCNode Title="Search_dt Constructor (String, Boolean)" Url="html/M-MagicCMS.DataTable.Search_dt.-ctor.htm" />
         <HelpTOCNode Title="Search_dt Constructor (String)" Url="html/M-MagicCMS.DataTable.Search_dt.-ctor_1.htm" />
         <HelpTOCNode Title="Search_dt Constructor " Url="html/M-MagicCMS.DataTable.Search_dt.-ctor_2.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="66d38929-6195-44ef-89d3-756ac903b12c" Title="Search_dt Properties" Url="html/Properties.T-MagicCMS.DataTable.Search_dt.htm">
+      <HelpTOCNode Id="cfc880a0-c63d-4442-86fc-8c80d99aff15" Title="Search_dt Properties" Url="html/Properties.T-MagicCMS.DataTable.Search_dt.htm">
         <HelpTOCNode Title="regex Property " Url="html/P-MagicCMS.DataTable.Search_dt.regex.htm" />
         <HelpTOCNode Title="value Property " Url="html/P-MagicCMS.DataTable.Search_dt.value.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
   </HelpTOCNode>
-  <HelpTOCNode Id="3e7af5ec-791e-472b-a66a-665f1f5af264" Title="MagicCMS.Facebook Namespace" Url="html/N-MagicCMS.Facebook.htm">
-    <HelpTOCNode Id="88bfc094-9f04-417f-9c30-7277febb20e5" Title="FacebookPost Class" Url="html/T-MagicCMS.Facebook.FacebookPost.htm">
+  <HelpTOCNode Id="e4ff0961-1ef5-4493-a601-e597021e1767" Title="MagicCMS.Facebook Namespace" Url="html/N-MagicCMS.Facebook.htm">
+    <HelpTOCNode Id="b2286af6-cf54-49f9-9b65-e772ab3cf014" Title="FacebookPost Class" Url="html/T-MagicCMS.Facebook.FacebookPost.htm">
       <HelpTOCNode Title="FacebookPost Members" Url="html/AllMembers.T-MagicCMS.Facebook.FacebookPost.htm" />
       <HelpTOCNode Title="FacebookPost Constructor " Url="html/M-MagicCMS.Facebook.FacebookPost.-ctor.htm" />
-      <HelpTOCNode Id="2e240c1f-6a11-4a0f-b9b5-bce9eaea73d8" Title="FacebookPost Properties" Url="html/Properties.T-MagicCMS.Facebook.FacebookPost.htm">
+      <HelpTOCNode Id="334b134c-6992-4c2e-9087-065b4332fe0e" Title="FacebookPost Properties" Url="html/Properties.T-MagicCMS.Facebook.FacebookPost.htm">
         <HelpTOCNode Title="AttachedImage Property " Url="html/P-MagicCMS.Facebook.FacebookPost.AttachedImage.htm" />
         <HelpTOCNode Title="Attachment Property " Url="html/P-MagicCMS.Facebook.FacebookPost.Attachment.htm" />
         <HelpTOCNode Title="AuthorLink Property " Url="html/P-MagicCMS.Facebook.FacebookPost.AuthorLink.htm" />
@@ -1314,9 +1317,9 @@
         <HelpTOCNode Title="Time_ago Property " Url="html/P-MagicCMS.Facebook.FacebookPost.Time_ago.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="903801fa-0eb4-4c35-9f10-f509bfdf0936" Title="FacebookPostCollection Class" Url="html/T-MagicCMS.Facebook.FacebookPostCollection.htm">
+    <HelpTOCNode Id="77839bfd-e08b-45ef-9be0-a77713b771bd" Title="FacebookPostCollection Class" Url="html/T-MagicCMS.Facebook.FacebookPostCollection.htm">
       <HelpTOCNode Title="FacebookPostCollection Members" Url="html/AllMembers.T-MagicCMS.Facebook.FacebookPostCollection.htm" />
-      <HelpTOCNode Id="7f47bf42-501d-40ef-a39b-e08df0da202d" Title="FacebookPostCollection Methods" Url="html/Methods.T-MagicCMS.Facebook.FacebookPostCollection.htm">
+      <HelpTOCNode Id="e04b96d2-d3ac-4960-9ff7-3245d16d84ee" Title="FacebookPostCollection Methods" Url="html/Methods.T-MagicCMS.Facebook.FacebookPostCollection.htm">
         <HelpTOCNode Title="Add Method " Url="html/M-MagicCMS.Facebook.FacebookPostCollection.Add.htm" />
         <HelpTOCNode Title="Contains Method " Url="html/M-MagicCMS.Facebook.FacebookPostCollection.Contains.htm" />
         <HelpTOCNode Title="CopyTo Method " Url="html/M-MagicCMS.Facebook.FacebookPostCollection.CopyTo.htm" />
@@ -1324,20 +1327,20 @@
         <HelpTOCNode Title="Insert Method " Url="html/M-MagicCMS.Facebook.FacebookPostCollection.Insert.htm" />
         <HelpTOCNode Title="Remove Method " Url="html/M-MagicCMS.Facebook.FacebookPostCollection.Remove.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="2b0bb4ad-66ea-45e6-b2f5-9b3a84066af6" Title="FacebookPostCollection Properties" Url="html/Properties.T-MagicCMS.Facebook.FacebookPostCollection.htm">
+      <HelpTOCNode Id="9d2b1788-0046-4fbe-aca3-fc3f68e2affd" Title="FacebookPostCollection Properties" Url="html/Properties.T-MagicCMS.Facebook.FacebookPostCollection.htm">
         <HelpTOCNode Title="Item Property " Url="html/P-MagicCMS.Facebook.FacebookPostCollection.Item-System.Int32-.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="cea57bb3-6be4-42b7-a758-dc2813043cee" Title="FbFrom Class" Url="html/T-MagicCMS.Facebook.FbFrom.htm">
+    <HelpTOCNode Id="9814c9d0-1962-422f-bdc0-91c011767d4f" Title="FbFrom Class" Url="html/T-MagicCMS.Facebook.FbFrom.htm">
       <HelpTOCNode Title="FbFrom Members" Url="html/AllMembers.T-MagicCMS.Facebook.FbFrom.htm" />
-      <HelpTOCNode Id="68c09783-b4f7-4e15-a147-db96c652482f" Title="FbFrom Properties" Url="html/Properties.T-MagicCMS.Facebook.FbFrom.htm">
+      <HelpTOCNode Id="e2de0dd9-732a-487e-bf12-4e169cc5970d" Title="FbFrom Properties" Url="html/Properties.T-MagicCMS.Facebook.FbFrom.htm">
         <HelpTOCNode Title="Id Property " Url="html/P-MagicCMS.Facebook.FbFrom.Id.htm" />
         <HelpTOCNode Title="Name Property " Url="html/P-MagicCMS.Facebook.FbFrom.Name.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="952c17ca-93e4-4b35-bdfb-77f5fffc91e5" Title="FbImage Class" Url="html/T-MagicCMS.Facebook.FbImage.htm">
+    <HelpTOCNode Id="5066b4fa-77e9-423c-924e-45e9b0a4b7f6" Title="FbImage Class" Url="html/T-MagicCMS.Facebook.FbImage.htm">
       <HelpTOCNode Title="FbImage Members" Url="html/AllMembers.T-MagicCMS.Facebook.FbImage.htm" />
-      <HelpTOCNode Id="24a94573-a9a9-48d6-a0a7-f047fa20130f" Title="FbImage Properties" Url="html/Properties.T-MagicCMS.Facebook.FbImage.htm">
+      <HelpTOCNode Id="10d2912b-b973-426d-b443-23d30a560681" Title="FbImage Properties" Url="html/Properties.T-MagicCMS.Facebook.FbImage.htm">
         <HelpTOCNode Title="Height Property " Url="html/P-MagicCMS.Facebook.FbImage.Height.htm" />
         <HelpTOCNode Title="Src Property " Url="html/P-MagicCMS.Facebook.FbImage.Src.htm" />
         <HelpTOCNode Title="Type Property " Url="html/P-MagicCMS.Facebook.FbImage.Type.htm" />
@@ -1346,23 +1349,23 @@
       </HelpTOCNode>
     </HelpTOCNode>
   </HelpTOCNode>
-  <HelpTOCNode Id="ae09837b-debe-46d5-9346-91f7f26b7b28" Title="MagicCMS.Marketing Namespace" Url="html/N-MagicCMS.Marketing.htm">
-    <HelpTOCNode Id="14a2dbec-060c-476f-bc29-e277497dd6fe" Title="RegisteredUser Class" Url="html/T-MagicCMS.Marketing.RegisteredUser.htm">
+  <HelpTOCNode Id="6590149c-0d99-4cf8-9819-de422bdd4e49" Title="MagicCMS.Marketing Namespace" Url="html/N-MagicCMS.Marketing.htm">
+    <HelpTOCNode Id="4a7a88ec-7177-4edd-a826-fa09581e14bf" Title="RegisteredUser Class" Url="html/T-MagicCMS.Marketing.RegisteredUser.htm">
       <HelpTOCNode Title="RegisteredUser Members" Url="html/AllMembers.T-MagicCMS.Marketing.RegisteredUser.htm" />
-      <HelpTOCNode Id="ac482b64-fc56-4ff4-88c0-0beafc736749" Title="RegisteredUser Constructor " Url="html/Overload-MagicCMS.Marketing.RegisteredUser.-ctor.htm">
+      <HelpTOCNode Id="a92dda97-1736-448b-87d0-663b2182a5dc" Title="RegisteredUser Constructor " Url="html/Overload-MagicCMS.Marketing.RegisteredUser.-ctor.htm">
         <HelpTOCNode Title="RegisteredUser Constructor " Url="html/M-MagicCMS.Marketing.RegisteredUser.-ctor.htm" />
         <HelpTOCNode Title="RegisteredUser Constructor (Boolean)" Url="html/M-MagicCMS.Marketing.RegisteredUser.-ctor_1.htm" />
         <HelpTOCNode Title="RegisteredUser Constructor (Int32)" Url="html/M-MagicCMS.Marketing.RegisteredUser.-ctor_2.htm" />
         <HelpTOCNode Title="RegisteredUser Constructor (MagicPost)" Url="html/M-MagicCMS.Marketing.RegisteredUser.-ctor_3.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="6b12f602-51fc-4c20-b4f1-07044176311e" Title="RegisteredUser Methods" Url="html/Methods.T-MagicCMS.Marketing.RegisteredUser.htm">
+      <HelpTOCNode Id="0a3a4894-0c49-416a-87b0-50c10ee5bc24" Title="RegisteredUser Methods" Url="html/Methods.T-MagicCMS.Marketing.RegisteredUser.htm">
         <HelpTOCNode Title="Delete Method " Url="html/M-MagicCMS.Marketing.RegisteredUser.Delete.htm" />
         <HelpTOCNode Title="Insert Method " Url="html/M-MagicCMS.Marketing.RegisteredUser.Insert.htm" />
         <HelpTOCNode Title="TryActivate Method " Url="html/M-MagicCMS.Marketing.RegisteredUser.TryActivate.htm" />
         <HelpTOCNode Title="Update Method " Url="html/M-MagicCMS.Marketing.RegisteredUser.Update.htm" />
         <HelpTOCNode Title="UserExists Method " Url="html/M-MagicCMS.Marketing.RegisteredUser.UserExists.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="787f7f4f-f09b-4812-8d7b-ca6243470ce2" Title="RegisteredUser Properties" Url="html/Properties.T-MagicCMS.Marketing.RegisteredUser.htm">
+      <HelpTOCNode Id="c9ca9ed4-d327-401d-b056-67a76980cafb" Title="RegisteredUser Properties" Url="html/Properties.T-MagicCMS.Marketing.RegisteredUser.htm">
         <HelpTOCNode Title="Active Property " Url="html/P-MagicCMS.Marketing.RegisteredUser.Active.htm" />
         <HelpTOCNode Title="Address Property " Url="html/P-MagicCMS.Marketing.RegisteredUser.Address.htm" />
         <HelpTOCNode Title="City Property " Url="html/P-MagicCMS.Marketing.RegisteredUser.City.htm" />
@@ -1383,15 +1386,15 @@
         <HelpTOCNode Title="Tipo Property " Url="html/P-MagicCMS.Marketing.RegisteredUser.Tipo.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="a3ba9593-7694-435d-b40f-66251ffa7bc1" Title="RegisteredUserCollection Class" Url="html/T-MagicCMS.Marketing.RegisteredUserCollection.htm">
+    <HelpTOCNode Id="0ad83c96-f0f5-4036-9855-c7fd5f5167d7" Title="RegisteredUserCollection Class" Url="html/T-MagicCMS.Marketing.RegisteredUserCollection.htm">
       <HelpTOCNode Title="RegisteredUserCollection Members" Url="html/AllMembers.T-MagicCMS.Marketing.RegisteredUserCollection.htm" />
-      <HelpTOCNode Id="f0fd6604-4b20-4838-8bbc-24070dfadd4a" Title="RegisteredUserCollection Constructor " Url="html/Overload-MagicCMS.Marketing.RegisteredUserCollection.-ctor.htm">
+      <HelpTOCNode Id="e2d4a962-5fc3-4ce6-b20e-8aea13ecf1da" Title="RegisteredUserCollection Constructor " Url="html/Overload-MagicCMS.Marketing.RegisteredUserCollection.-ctor.htm">
         <HelpTOCNode Title="RegisteredUserCollection Constructor (String, Boolean, Int32, MagicSearchActive)" Url="html/M-MagicCMS.Marketing.RegisteredUserCollection.-ctor.htm" />
         <HelpTOCNode Title="RegisteredUserCollection Constructor (MagicSearchActive)" Url="html/M-MagicCMS.Marketing.RegisteredUserCollection.-ctor_1.htm" />
         <HelpTOCNode Title="RegisteredUserCollection Constructor (MagicPostCollection)" Url="html/M-MagicCMS.Marketing.RegisteredUserCollection.-ctor_2.htm" />
         <HelpTOCNode Title="RegisteredUserCollection Constructor " Url="html/M-MagicCMS.Marketing.RegisteredUserCollection.-ctor_3.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="07b668f6-396b-43f3-9368-d350528296fd" Title="RegisteredUserCollection Methods" Url="html/Methods.T-MagicCMS.Marketing.RegisteredUserCollection.htm">
+      <HelpTOCNode Id="2325b02e-19cb-4380-bd8a-e6fbd30a2017" Title="RegisteredUserCollection Methods" Url="html/Methods.T-MagicCMS.Marketing.RegisteredUserCollection.htm">
         <HelpTOCNode Title="Add Method " Url="html/M-MagicCMS.Marketing.RegisteredUserCollection.Add.htm" />
         <HelpTOCNode Title="Contains Method " Url="html/M-MagicCMS.Marketing.RegisteredUserCollection.Contains.htm" />
         <HelpTOCNode Title="CopyTo Method " Url="html/M-MagicCMS.Marketing.RegisteredUserCollection.CopyTo.htm" />
@@ -1399,37 +1402,37 @@
         <HelpTOCNode Title="Insert Method " Url="html/M-MagicCMS.Marketing.RegisteredUserCollection.Insert.htm" />
         <HelpTOCNode Title="Remove Method " Url="html/M-MagicCMS.Marketing.RegisteredUserCollection.Remove.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="b4ac086c-c37a-4fdc-a913-95e5d3d3ddb8" Title="RegisteredUserCollection Properties" Url="html/Properties.T-MagicCMS.Marketing.RegisteredUserCollection.htm">
+      <HelpTOCNode Id="63ac1b67-892c-41b7-b3d3-4db1446bf7ed" Title="RegisteredUserCollection Properties" Url="html/Properties.T-MagicCMS.Marketing.RegisteredUserCollection.htm">
         <HelpTOCNode Title="Item Property " Url="html/P-MagicCMS.Marketing.RegisteredUserCollection.Item-System.Int32-.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
     <HelpTOCNode Title="RegisteredUserStatus Enumeration" Url="html/T-MagicCMS.Marketing.RegisteredUserStatus.htm" />
   </HelpTOCNode>
-  <HelpTOCNode Id="4183437a-ab84-4cfb-9599-1ecf39e4695d" Title="MagicCMS.PageBase Namespace" Url="html/N-MagicCMS.PageBase.htm">
-    <HelpTOCNode Id="9841debc-cbf0-4011-91f9-63aaf54d47f6" Title="MagicPage Class" Url="html/T-MagicCMS.PageBase.MagicPage.htm">
+  <HelpTOCNode Id="1ae8f399-76f4-41a1-83f6-c80667d4f622" Title="MagicCMS.PageBase Namespace" Url="html/N-MagicCMS.PageBase.htm">
+    <HelpTOCNode Id="aa507ad5-75d9-49ef-accb-a89a9da14179" Title="MagicPage Class" Url="html/T-MagicCMS.PageBase.MagicPage.htm">
       <HelpTOCNode Title="MagicPage Members" Url="html/AllMembers.T-MagicCMS.PageBase.MagicPage.htm" />
-      <HelpTOCNode Id="8dd3236a-7dc6-431e-8166-3d37878db8e8" Title="MagicPage Properties" Url="html/Properties.T-MagicCMS.PageBase.MagicPage.htm">
+      <HelpTOCNode Id="289c8d25-b1b8-493b-9a04-2c3192202998" Title="MagicPage Properties" Url="html/Properties.T-MagicCMS.PageBase.MagicPage.htm">
         <HelpTOCNode Title="Config Property " Url="html/P-MagicCMS.PageBase.MagicPage.Config.htm" />
         <HelpTOCNode Title="ThePost Property " Url="html/P-MagicCMS.PageBase.MagicPage.ThePost.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="dea94dfb-8fe3-4878-9747-44b233a4f9b5" Title="MasterTheme Class" Url="html/T-MagicCMS.PageBase.MasterTheme.htm">
+    <HelpTOCNode Id="5dd96f6a-b3e4-4adc-b8e5-589f3597d556" Title="MasterTheme Class" Url="html/T-MagicCMS.PageBase.MasterTheme.htm">
       <HelpTOCNode Title="MasterTheme Members" Url="html/AllMembers.T-MagicCMS.PageBase.MasterTheme.htm" />
-      <HelpTOCNode Id="c062921d-23a1-4f89-ac84-0a48d43bed71" Title="MasterTheme Properties" Url="html/Properties.T-MagicCMS.PageBase.MasterTheme.htm">
+      <HelpTOCNode Id="1e0e6961-cc29-483e-a547-5a85b47499fc" Title="MasterTheme Properties" Url="html/Properties.T-MagicCMS.PageBase.MasterTheme.htm">
         <HelpTOCNode Title="ErrorMessage Property " Url="html/P-MagicCMS.PageBase.MasterTheme.ErrorMessage.htm" />
         <HelpTOCNode Title="ErrorTitle Property " Url="html/P-MagicCMS.PageBase.MasterTheme.ErrorTitle.htm" />
         <HelpTOCNode Title="StartPageId Property " Url="html/P-MagicCMS.PageBase.MasterTheme.StartPageId.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="6c44e266-99bc-4ecc-9e99-bf6d5c492596" Title="Monopage Class" Url="html/T-MagicCMS.PageBase.Monopage.htm">
+    <HelpTOCNode Id="bdea5e4b-f53c-465a-98dd-3beb7f64bc6e" Title="Monopage Class" Url="html/T-MagicCMS.PageBase.Monopage.htm">
       <HelpTOCNode Title="Monopage Members" Url="html/AllMembers.T-MagicCMS.PageBase.Monopage.htm" />
-      <HelpTOCNode Id="963b7861-199b-4fb9-937e-dae0100d81bc" Title="Monopage Properties" Url="html/Properties.T-MagicCMS.PageBase.Monopage.htm">
+      <HelpTOCNode Id="1a3f9121-612d-4531-ba0e-58aa503b92ad" Title="Monopage Properties" Url="html/Properties.T-MagicCMS.PageBase.Monopage.htm">
         <HelpTOCNode Title="ColClass Property " Url="html/P-MagicCMS.PageBase.Monopage.ColClass.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="20c66ef3-3fd3-4ceb-8afb-3f3801aae68b" Title="SiteMasterBase Class" Url="html/T-MagicCMS.PageBase.SiteMasterBase.htm">
+    <HelpTOCNode Id="c6baa508-17e4-4e66-9b66-e1ef759901cc" Title="SiteMasterBase Class" Url="html/T-MagicCMS.PageBase.SiteMasterBase.htm">
       <HelpTOCNode Title="SiteMasterBase Members" Url="html/AllMembers.T-MagicCMS.PageBase.SiteMasterBase.htm" />
-      <HelpTOCNode Id="d41bf364-e711-4b68-be24-87fdb0e6f0d4" Title="SiteMasterBase Properties" Url="html/Properties.T-MagicCMS.PageBase.SiteMasterBase.htm">
+      <HelpTOCNode Id="99a8cd54-cb62-4b13-9a4e-046e6e51c647" Title="SiteMasterBase Properties" Url="html/Properties.T-MagicCMS.PageBase.SiteMasterBase.htm">
         <HelpTOCNode Title="CmsConfig Property " Url="html/P-MagicCMS.PageBase.SiteMasterBase.CmsConfig.htm" />
         <HelpTOCNode Title="ConnectionString Property " Url="html/P-MagicCMS.PageBase.SiteMasterBase.ConnectionString.htm" />
         <HelpTOCNode Title="Description Property " Url="html/P-MagicCMS.PageBase.SiteMasterBase.Description.htm" />
@@ -1440,43 +1443,43 @@
       </HelpTOCNode>
     </HelpTOCNode>
   </HelpTOCNode>
-  <HelpTOCNode Id="fb011d14-0994-49d8-9fe8-d8791304fd13" Title="MagicCMS.reCAPTCHA Namespace" Url="html/N-MagicCMS.reCAPTCHA.htm">
-    <HelpTOCNode Id="1c971365-4fb4-4032-80bb-6acedd028115" Title="CaptchaResponse Class" Url="html/T-MagicCMS.reCAPTCHA.CaptchaResponse.htm">
+  <HelpTOCNode Id="f4c5dad5-b86c-4d88-a781-1dffa45ef836" Title="MagicCMS.reCAPTCHA Namespace" Url="html/N-MagicCMS.reCAPTCHA.htm">
+    <HelpTOCNode Id="c9fb6488-13a7-400c-86d6-971127c81413" Title="CaptchaResponse Class" Url="html/T-MagicCMS.reCAPTCHA.CaptchaResponse.htm">
       <HelpTOCNode Title="CaptchaResponse Members" Url="html/AllMembers.T-MagicCMS.reCAPTCHA.CaptchaResponse.htm" />
-      <HelpTOCNode Id="50bc443a-45d8-4865-9e75-a25382c5eab3" Title="CaptchaResponse Properties" Url="html/Properties.T-MagicCMS.reCAPTCHA.CaptchaResponse.htm">
+      <HelpTOCNode Id="490548b5-9917-41f9-bb9d-1a61fbae97ac" Title="CaptchaResponse Properties" Url="html/Properties.T-MagicCMS.reCAPTCHA.CaptchaResponse.htm">
         <HelpTOCNode Title="errorCodes Property " Url="html/P-MagicCMS.reCAPTCHA.CaptchaResponse.errorCodes.htm" />
         <HelpTOCNode Title="success Property " Url="html/P-MagicCMS.reCAPTCHA.CaptchaResponse.success.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="13d2e361-c689-48e5-b537-dd6047c5876f" Title="GoogleReCaptcha Class" Url="html/T-MagicCMS.reCAPTCHA.GoogleReCaptcha.htm">
+    <HelpTOCNode Id="57bdc5ea-2dd5-4be7-baa7-a76ab609ecf1" Title="GoogleReCaptcha Class" Url="html/T-MagicCMS.reCAPTCHA.GoogleReCaptcha.htm">
       <HelpTOCNode Title="GoogleReCaptcha Members" Url="html/AllMembers.T-MagicCMS.reCAPTCHA.GoogleReCaptcha.htm" />
       <HelpTOCNode Title="GoogleReCaptcha Constructor " Url="html/M-MagicCMS.reCAPTCHA.GoogleReCaptcha.-ctor.htm" />
-      <HelpTOCNode Id="a1fe597e-d49a-4b23-8fe9-b41e276f4bd8" Title="GoogleReCaptcha Methods" Url="html/Methods.T-MagicCMS.reCAPTCHA.GoogleReCaptcha.htm">
+      <HelpTOCNode Id="1d5119f2-6abb-4844-8c58-9169f704227a" Title="GoogleReCaptcha Methods" Url="html/Methods.T-MagicCMS.reCAPTCHA.GoogleReCaptcha.htm">
         <HelpTOCNode Title="ValidateResponse Method " Url="html/M-MagicCMS.reCAPTCHA.GoogleReCaptcha.ValidateResponse.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="c645587c-39cf-4674-a2cc-f792c791a20e" Title="GoogleReCaptcha Properties" Url="html/Properties.T-MagicCMS.reCAPTCHA.GoogleReCaptcha.htm">
+      <HelpTOCNode Id="4a874768-493f-4f02-9583-8be78038aff2" Title="GoogleReCaptcha Properties" Url="html/Properties.T-MagicCMS.reCAPTCHA.GoogleReCaptcha.htm">
         <HelpTOCNode Title="SecretKey Property " Url="html/P-MagicCMS.reCAPTCHA.GoogleReCaptcha.SecretKey.htm" />
         <HelpTOCNode Title="SiteKey Property " Url="html/P-MagicCMS.reCAPTCHA.GoogleReCaptcha.SiteKey.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="d68ca601-5877-4930-bd8d-db3294bce26d" Title="NoCheckPolicy Class" Url="html/T-MagicCMS.reCAPTCHA.NoCheckPolicy.htm">
+    <HelpTOCNode Id="f81fc1f6-515d-45bf-9131-0e469585c30d" Title="NoCheckPolicy Class" Url="html/T-MagicCMS.reCAPTCHA.NoCheckPolicy.htm">
       <HelpTOCNode Title="NoCheckPolicy Members" Url="html/AllMembers.T-MagicCMS.reCAPTCHA.NoCheckPolicy.htm" />
-      <HelpTOCNode Id="6eeaba6e-03cc-4844-8e5b-af9b76ca14b8" Title="NoCheckPolicy Methods" Url="html/Methods.T-MagicCMS.reCAPTCHA.NoCheckPolicy.htm">
+      <HelpTOCNode Id="c75db30c-65bf-43fd-ae16-094e92616bd4" Title="NoCheckPolicy Methods" Url="html/Methods.T-MagicCMS.reCAPTCHA.NoCheckPolicy.htm">
         <HelpTOCNode Title="CheckValidationResult Method " Url="html/M-MagicCMS.reCAPTCHA.NoCheckPolicy.CheckValidationResult.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
   </HelpTOCNode>
-  <HelpTOCNode Id="f24a186e-49e7-4363-9a90-f7fbaeb0e857" Title="MagicCMS.Routing Namespace" Url="html/N-MagicCMS.Routing.htm">
-    <HelpTOCNode Id="1b267233-600d-45d2-8126-48e4bc4c3b71" Title="MagicIndex Class" Url="html/T-MagicCMS.Routing.MagicIndex.htm">
+  <HelpTOCNode Id="bd8fa842-ea65-4dd9-996d-0cc0b9c8d29b" Title="MagicCMS.Routing Namespace" Url="html/N-MagicCMS.Routing.htm">
+    <HelpTOCNode Id="c6d904bb-b542-4d9b-a26f-0ee36f153aa5" Title="MagicIndex Class" Url="html/T-MagicCMS.Routing.MagicIndex.htm">
       <HelpTOCNode Title="MagicIndex Members" Url="html/AllMembers.T-MagicCMS.Routing.MagicIndex.htm" />
-      <HelpTOCNode Id="d0daf52e-3456-4274-a50b-9f464832e4f8" Title="MagicIndex Constructor " Url="html/Overload-MagicCMS.Routing.MagicIndex.-ctor.htm">
+      <HelpTOCNode Id="7709ff6a-ca6d-4ff1-8fd1-efa29964c5f2" Title="MagicIndex Constructor " Url="html/Overload-MagicCMS.Routing.MagicIndex.-ctor.htm">
         <HelpTOCNode Title="MagicIndex Constructor (SqlDataReader)" Url="html/M-MagicCMS.Routing.MagicIndex.-ctor.htm" />
         <HelpTOCNode Title="MagicIndex Constructor (Int32)" Url="html/M-MagicCMS.Routing.MagicIndex.-ctor_1.htm" />
         <HelpTOCNode Title="MagicIndex Constructor (Int32, String, String)" Url="html/M-MagicCMS.Routing.MagicIndex.-ctor_2.htm" />
         <HelpTOCNode Title="MagicIndex Constructor (Int32, String)" Url="html/M-MagicCMS.Routing.MagicIndex.-ctor_3.htm" />
         <HelpTOCNode Title="MagicIndex Constructor (MagicPost)" Url="html/M-MagicCMS.Routing.MagicIndex.-ctor_4.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="6f4b951d-7daa-4938-a524-a1742c068e0b" Title="MagicIndex Methods" Url="html/Methods.T-MagicCMS.Routing.MagicIndex.htm">
+      <HelpTOCNode Id="52bcba94-908f-4c30-84df-e23b879b7172" Title="MagicIndex Methods" Url="html/Methods.T-MagicCMS.Routing.MagicIndex.htm">
         <HelpTOCNode Title="CreateMagicIndex Method " Url="html/M-MagicCMS.Routing.MagicIndex.CreateMagicIndex.htm" />
         <HelpTOCNode Title="Empty Method " Url="html/M-MagicCMS.Routing.MagicIndex.Empty.htm" />
         <HelpTOCNode Title="EncodeTitle Method " Url="html/M-MagicCMS.Routing.MagicIndex.EncodeTitle.htm" />
@@ -1487,24 +1490,24 @@
         <HelpTOCNode Title="Populate Method " Url="html/M-MagicCMS.Routing.MagicIndex.Populate.htm" />
         <HelpTOCNode Title="Save Method " Url="html/M-MagicCMS.Routing.MagicIndex.Save.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="efaf663e-0cc4-43e9-8b74-e3100228dc27" Title="MagicIndex Properties" Url="html/Properties.T-MagicCMS.Routing.MagicIndex.htm">
+      <HelpTOCNode Id="b053b89d-34cf-4080-91fe-e5b827d25ef3" Title="MagicIndex Properties" Url="html/Properties.T-MagicCMS.Routing.MagicIndex.htm">
         <HelpTOCNode Title="LangId Property " Url="html/P-MagicCMS.Routing.MagicIndex.LangId.htm" />
         <HelpTOCNode Title="MagicPost_Pk Property " Url="html/P-MagicCMS.Routing.MagicIndex.MagicPost_Pk.htm" />
         <HelpTOCNode Title="Pk Property " Url="html/P-MagicCMS.Routing.MagicIndex.Pk.htm" />
         <HelpTOCNode Title="Title Property " Url="html/P-MagicCMS.Routing.MagicIndex.Title.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="d860f04f-f73f-47c7-9d34-4780f79f5ef6" Title="Register Class" Url="html/T-MagicCMS.Routing.Register.htm">
+    <HelpTOCNode Id="2c9679b2-38fc-452d-a95c-f75f10a367bc" Title="Register Class" Url="html/T-MagicCMS.Routing.Register.htm">
       <HelpTOCNode Title="Register Members" Url="html/AllMembers.T-MagicCMS.Routing.Register.htm" />
-      <HelpTOCNode Id="568cc323-0cc3-49f9-8657-3b1a800f84f0" Title="Register Methods" Url="html/Methods.T-MagicCMS.Routing.Register.htm">
+      <HelpTOCNode Id="5e403a5f-7328-4424-9013-7fa4e0d98693" Title="Register Methods" Url="html/Methods.T-MagicCMS.Routing.Register.htm">
         <HelpTOCNode Title="RegisterRoutes Method " Url="html/M-MagicCMS.Routing.Register.RegisterRoutes.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="7f38df5b-f444-4821-bb0f-a159ae3ba7a4" Title="RouteUtils Class" Url="html/T-MagicCMS.Routing.RouteUtils.htm">
+    <HelpTOCNode Id="6ffadbfb-b9d9-43e1-a2de-fb602f032172" Title="RouteUtils Class" Url="html/T-MagicCMS.Routing.RouteUtils.htm">
       <HelpTOCNode Title="RouteUtils Members" Url="html/AllMembers.T-MagicCMS.Routing.RouteUtils.htm" />
-      <HelpTOCNode Id="8222b00d-ae17-411a-9d0e-ca0a07735696" Title="RouteUtils Methods" Url="html/Methods.T-MagicCMS.Routing.RouteUtils.htm">
+      <HelpTOCNode Id="c44722aa-01e7-4d21-b602-33baacd1719c" Title="RouteUtils Methods" Url="html/Methods.T-MagicCMS.Routing.RouteUtils.htm">
         <HelpTOCNode Title="ComposePath Method " Url="html/M-MagicCMS.Routing.RouteUtils.ComposePath.htm" />
-        <HelpTOCNode Id="e52aa10f-60cc-4393-807c-56a3d6ee4d78" Title="GetVirtualPath Method " Url="html/Overload-MagicCMS.Routing.RouteUtils.GetVirtualPath.htm">
+        <HelpTOCNode Id="56507708-4cce-47de-b4df-069515ab7130" Title="GetVirtualPath Method " Url="html/Overload-MagicCMS.Routing.RouteUtils.GetVirtualPath.htm">
           <HelpTOCNode Title="GetVirtualPath Method (Int32)" Url="html/M-MagicCMS.Routing.RouteUtils.GetVirtualPath.htm" />
           <HelpTOCNode Title="GetVirtualPath Method (Int32, Int32)" Url="html/M-MagicCMS.Routing.RouteUtils.GetVirtualPath_1.htm" />
           <HelpTOCNode Title="GetVirtualPath Method (Int32, Int32, Int32)" Url="html/M-MagicCMS.Routing.RouteUtils.GetVirtualPath_2.htm" />
@@ -1517,55 +1520,55 @@
       </HelpTOCNode>
     </HelpTOCNode>
   </HelpTOCNode>
-  <HelpTOCNode Id="1fa5e0dc-89fb-4d05-9f9d-14a7aa489ad3" Title="MagicCMS.Utils Namespace" Url="html/N-MagicCMS.Utils.htm">
-    <HelpTOCNode Id="d6d971e6-a216-43c6-acca-8859fd3a508f" Title="HttpInternals Class" Url="html/T-MagicCMS.Utils.HttpInternals.htm">
+  <HelpTOCNode Id="b7ddfff9-07a7-4138-aa18-47b869db828d" Title="MagicCMS.Utils Namespace" Url="html/N-MagicCMS.Utils.htm">
+    <HelpTOCNode Id="cb9b1af4-9a54-481d-8f81-94db27343aab" Title="HttpInternals Class" Url="html/T-MagicCMS.Utils.HttpInternals.htm">
       <HelpTOCNode Title="HttpInternals Members" Url="html/AllMembers.T-MagicCMS.Utils.HttpInternals.htm" />
-      <HelpTOCNode Id="c5a66d8c-fc5f-4ee3-b7ad-d36eb030b03e" Title="HttpInternals Methods" Url="html/Methods.T-MagicCMS.Utils.HttpInternals.htm">
+      <HelpTOCNode Id="a9e5f632-3a0a-4dde-9709-af74b58a57ee" Title="HttpInternals Methods" Url="html/Methods.T-MagicCMS.Utils.HttpInternals.htm">
         <HelpTOCNode Title="StopFileMonitoring Method " Url="html/M-MagicCMS.Utils.HttpInternals.StopFileMonitoring.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
   </HelpTOCNode>
-  <HelpTOCNode Id="e2b51bdf-68be-4dde-baae-9a8230e51e0f" Title="System Namespace" Url="html/N-System.htm">
-    <HelpTOCNode Id="93552ef5-e6d4-4fb1-945f-1add5a671ac0" Title="CheckUrl Class" Url="html/T-System.CheckUrl.htm">
+  <HelpTOCNode Id="f7917d0f-9c32-47ff-91eb-a6ae6b78e128" Title="System Namespace" Url="html/N-System.htm">
+    <HelpTOCNode Id="8077c740-d188-419a-b72f-e742cc1dcad4" Title="CheckUrl Class" Url="html/T-System.CheckUrl.htm">
       <HelpTOCNode Title="CheckUrl Members" Url="html/AllMembers.T-System.CheckUrl.htm" />
-      <HelpTOCNode Id="584eba4e-6724-4838-9d05-837b5ca7ae01" Title="CheckUrl Methods" Url="html/Methods.T-System.CheckUrl.htm">
+      <HelpTOCNode Id="d2603706-31aa-477d-be88-22e2aa67ea1a" Title="CheckUrl Methods" Url="html/Methods.T-System.CheckUrl.htm">
         <HelpTOCNode Title="EnsureProtocol Method " Url="html/M-System.CheckUrl.EnsureProtocol.htm" />
         <HelpTOCNode Title="EnsureProtocolDef Method " Url="html/M-System.CheckUrl.EnsureProtocolDef.htm" />
         <HelpTOCNode Title="hasProtocol Method " Url="html/M-System.CheckUrl.hasProtocol.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
     <HelpTOCNode Title="CheckUrl.Protocol Enumeration" Url="html/T-System.CheckUrl.Protocol.htm" />
-    <HelpTOCNode Id="ac8fc2d4-c6ac-4839-830f-a3a891b970c5" Title="HtmlRemoval Class" Url="html/T-System.HtmlRemoval.htm">
+    <HelpTOCNode Id="e8b8616f-302d-489f-9c2d-e173abbd65b9" Title="HtmlRemoval Class" Url="html/T-System.HtmlRemoval.htm">
       <HelpTOCNode Title="HtmlRemoval Members" Url="html/AllMembers.T-System.HtmlRemoval.htm" />
-      <HelpTOCNode Id="f733f089-5b56-4045-8c71-a4bb3543c8ec" Title="HtmlRemoval Methods" Url="html/Methods.T-System.HtmlRemoval.htm">
+      <HelpTOCNode Id="507ffc6f-5176-4064-a8e8-43d21ffdce52" Title="HtmlRemoval Methods" Url="html/Methods.T-System.HtmlRemoval.htm">
         <HelpTOCNode Title="StripTagsCharArray Method " Url="html/M-System.HtmlRemoval.StripTagsCharArray.htm" />
         <HelpTOCNode Title="StripTagsRegex Method " Url="html/M-System.HtmlRemoval.StripTagsRegex.htm" />
         <HelpTOCNode Title="StripTagsRegexCompiled Method " Url="html/M-System.HtmlRemoval.StripTagsRegexCompiled.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="878c2069-2a07-4e5e-8fb9-1b3fe4408e1e" Title="MagicExt Class" Url="html/T-System.MagicExt.htm">
+    <HelpTOCNode Id="21f54448-a600-45c0-9a5d-eea533e4e79a" Title="MagicExt Class" Url="html/T-System.MagicExt.htm">
       <HelpTOCNode Title="MagicExt Members" Url="html/AllMembers.T-System.MagicExt.htm" />
-      <HelpTOCNode Id="77ffdef6-228d-458b-84f8-a0acbbcf5495" Title="MagicExt Methods" Url="html/Methods.T-System.MagicExt.htm">
-        <HelpTOCNode Id="847eb9e2-5bb1-4334-8115-8d6656058e73" Title="GetRandomUrl Method " Url="html/Overload-System.MagicExt.GetRandomUrl.htm">
+      <HelpTOCNode Id="f6b90551-acfd-4802-b954-2242c3768856" Title="MagicExt Methods" Url="html/Methods.T-System.MagicExt.htm">
+        <HelpTOCNode Id="b440160c-dea5-4c47-ab88-4ad6b43bbff6" Title="GetRandomUrl Method " Url="html/Overload-System.MagicExt.GetRandomUrl.htm">
           <HelpTOCNode Title="GetRandomUrl Method (Uri, String)" Url="html/M-System.MagicExt.GetRandomUrl.htm" />
           <HelpTOCNode Title="GetRandomUrl Method (Uri)" Url="html/M-System.MagicExt.GetRandomUrl_1.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="ae39b442-311e-4c92-b5a1-74489c601337" Title="StringHtmlExtensions Class" Url="html/T-System.StringHtmlExtensions.htm">
+    <HelpTOCNode Id="08db8088-8730-4d64-8a74-19efea1cb6b7" Title="StringHtmlExtensions Class" Url="html/T-System.StringHtmlExtensions.htm">
       <HelpTOCNode Title="StringHtmlExtensions Members" Url="html/AllMembers.T-System.StringHtmlExtensions.htm" />
-      <HelpTOCNode Id="cacf734a-42c4-482a-a30f-6eea4f686c8d" Title="StringHtmlExtensions Methods" Url="html/Methods.T-System.StringHtmlExtensions.htm">
+      <HelpTOCNode Id="c3f45efe-4166-4dc6-a762-6b8d2c42557a" Title="StringHtmlExtensions Methods" Url="html/Methods.T-System.StringHtmlExtensions.htm">
         <HelpTOCNode Title="RenderControlToHtml Method " Url="html/M-System.StringHtmlExtensions.RenderControlToHtml.htm" />
         <HelpTOCNode Title="StripHtml Method " Url="html/M-System.StringHtmlExtensions.StripHtml.htm" />
-        <HelpTOCNode Id="ba29dbd7-366e-4307-8c44-577fdcb7d980" Title="Truncate Method " Url="html/Overload-System.StringHtmlExtensions.Truncate.htm">
+        <HelpTOCNode Id="e4a36f67-32ce-4841-aa72-de7b22467a64" Title="Truncate Method " Url="html/Overload-System.StringHtmlExtensions.Truncate.htm">
           <HelpTOCNode Title="Truncate Method (String, Int32)" Url="html/M-System.StringHtmlExtensions.Truncate.htm" />
           <HelpTOCNode Title="Truncate Method (String, Int32, String)" Url="html/M-System.StringHtmlExtensions.Truncate_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="f9e04f74-1eea-4158-ad75-59135f72addf" Title="TruncateHtml Method " Url="html/Overload-System.StringHtmlExtensions.TruncateHtml.htm">
+        <HelpTOCNode Id="642ddbe2-6175-4aec-ac3a-52074b36e45f" Title="TruncateHtml Method " Url="html/Overload-System.StringHtmlExtensions.TruncateHtml.htm">
           <HelpTOCNode Title="TruncateHtml Method (String, Int32, String)" Url="html/M-System.StringHtmlExtensions.TruncateHtml.htm" />
           <HelpTOCNode Title="TruncateHtml Method (String, Int32)" Url="html/M-System.StringHtmlExtensions.TruncateHtml_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="2db40145-ba5d-4337-a434-792ddef6adde" Title="TruncateWords Method " Url="html/Overload-System.StringHtmlExtensions.TruncateWords.htm">
+        <HelpTOCNode Id="86e868cf-3722-46bb-81b0-9daeb3827496" Title="TruncateWords Method " Url="html/Overload-System.StringHtmlExtensions.TruncateWords.htm">
           <HelpTOCNode Title="TruncateWords Method (String, Int32)" Url="html/M-System.StringHtmlExtensions.TruncateWords.htm" />
           <HelpTOCNode Title="TruncateWords Method (String, Int32, String)" Url="html/M-System.StringHtmlExtensions.TruncateWords_1.htm" />
         </HelpTOCNode>
