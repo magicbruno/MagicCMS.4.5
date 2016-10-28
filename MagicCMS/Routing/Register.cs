@@ -33,10 +33,12 @@ namespace MagicCMS.Routing
 			routes.MapPageRoute("home", "{pageId}", "~/Contenuti.aspx", true, new RouteValueDictionary {}, new RouteValueDictionary { 
 				{"pageId", "home"}
 			});
-			routes.MapPageRoute("locale_full", "{locale}/{type}/{pageId}", "~/Contenuti.aspx", true, defaults, constraints);
-			routes.MapPageRoute("locale_short", "{locale}/{pageId}", "~/Contenuti.aspx", true, new RouteValueDictionary { {"locale", ""}}, constraints);
-			routes.MapPageRoute("short", "{type}/{pageId}", "~/Contenuti.aspx", true, new RouteValueDictionary { { "type", "" } });
+			routes.MapPageRoute("locale_full", "{locale}/{type}/{subType}/{pageId}", "~/Contenuti.aspx", true, defaults, constraints);
+			routes.MapPageRoute("locale_short", "{locale}/{type}/{pageId}", "~/Contenuti.aspx", true, defaults, constraints);
+			routes.MapPageRoute("locale_xs", "{locale}/{pageId}", "~/Contenuti.aspx", true, new RouteValueDictionary { { "locale", "" } }, constraints);
 			routes.MapPageRoute("full", "{type}/[subType]/{pageId}", "~/Contenuti.aspx", true, new RouteValueDictionary { { "type", "" } });
+			routes.MapPageRoute("short", "{type}/{pageId}", "~/Contenuti.aspx", true, new RouteValueDictionary { { "type", "" } });
+			//routes.MapPageRoute("xs", "{pageId}", "~/Contenuti.aspx", true);
 		}
 
 	}

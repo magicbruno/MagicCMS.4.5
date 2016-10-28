@@ -70,7 +70,7 @@ namespace MagicCMS.Routing
 				}
 				return ComposePath(title, parentName, granParentName);
 			}
-			else return GetVirtualPath(postPk, new int[] { });
+			else return GetVirtualPath(postPk, new int[] { }, granParent);
 		}
 
 		/// <summary>

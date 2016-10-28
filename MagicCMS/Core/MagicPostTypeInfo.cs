@@ -104,6 +104,13 @@ namespace MagicCMS.Core
 		public const int Topic = 13;
 
 		/// <summary>
+		/// <b>Type name</b>: Custom Page 2.<br></br>
+		/// <b>Suggested use</b>: To be rendered as an HTML page using proper MasterPage. You may use to handle custom <see cref="MagicCMS.Core.MagicPost"/> type.
+		/// </summary>
+		public const int CustomPage2 = 14;
+
+
+		/// <summary>
 		/// <b>Type name</b>: Menu.<br></br>
 		/// <b>Use</b>: Use Menu type to create menus and submenus. Children MagicPost in a Menu are rendered as menu item, children menus as submenu.<br></br>
 		/// <b>Important</b>: Menu type is handled by MagicCMS engine in a special way.<br></br>
@@ -209,6 +216,8 @@ namespace MagicCMS.Core
 		public const int Category = 37;
 		/// <exclude />
 		public const int Categoria = 37;
+		/// <exclude />
+		public const int Tag = 37;
 
 		/// <summary>
 		/// <b>Type name</b>: News.<br></br>
@@ -292,6 +301,8 @@ namespace MagicCMS.Core
 
 		/// <exclude />
 		public const int Banner = 50;
+		/// <exclude />
+		public const int PaginaAccordion = 51;
 
 		/// <exclude />
 		public const int Geolocazione = 53;

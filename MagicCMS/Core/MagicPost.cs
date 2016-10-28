@@ -1431,6 +1431,7 @@ namespace MagicCMS.Core
 					if (mi.Save(out errorMessage) == 0)
 					{
 						MagicLog log = new MagicLog("MB_Contenuti", Pk, LogAction.Insert, MagicSession.Current.LoggedUser.Pk, DateTime.Now, "MagicPost", "Insert - MagicIndex", errorMessage);
+						log.Insert();
 					}
 				}
 			}
@@ -1563,6 +1564,13 @@ namespace MagicCMS.Core
 					//Updating links with parent elements an tags/keyword table
 					ConnectTo(Parents.ToArray());
 					MagicKeyword.Update(Pk, Tags);
+					MagicIndex mi = new MagicIndex(this);
+					string errorMessage;
+					if (mi.Save(out errorMessage) == 0)
+					{
+						MagicLog log1 = new MagicLog("MB_Contenuti", Pk, LogAction.Insert, MagicSession.Current.LoggedUser.Pk, DateTime.Now, "MagicPost", "Update - MagicIndex", errorMessage);
+						log1.Insert();
+					}
 				}
 				else
 				{
@@ -3114,6 +3122,91 @@ namespace MagicCMS.Core
 			return (parents.Count > 0);
 		}
 
+
+		/// <summary>
+		/// Returns a formatted panel (div) with an image and links to the post.
+		/// </summary>
+		/// <param name="imgWidth">Width of the thumbnail.</param>
+		/// <param name="imgHeight">Height of the thumbnail.</param>
+		/// <param name="cssClass">The <code>DIV</code> CSS class.</param>
+		/// <param name="maxLen">Maximum length of the description.</param>
+		/// <param name="maxTitleLen">Maximum length of the title.</param>
+		/// <returns>HtmlGenericControl.</returns>
+		public HtmlGenericControl HomePanel(int imgWidth, int imgHeight, string cssClass, int maxLen, int maxTitleLen)
+		{
+			HtmlGenericControl panel = MagicUtils.HTMLElement("div", cssClass);
+
+			//Link al post
+			string permalink = RouteUtils.GetVirtualPath(Pk, new int[] {MagicPostTypeInfo.Category});
+			//Cerca l'immagine da usare come link 
+			string imgPath = System.Web.HttpContext.Current.Server.MapPath(Url2);
+			if (!File.Exists(imgPath))
+			{
+				MagicPostCollection linkedImages = GetChildrenByType(new int[] { MagicPostTypeInfo.ImmagineInGalleria },
+																	 MagicOrdinamento.Asc, true, 1, false, MagicSearchActive.Both,
+																	 false);
+				if (linkedImages.Count > 0)
+					imgPath = System.Web.HttpContext.Current.Server.MapPath(linkedImages[0].Url);
+				else
+					imgPath = System.Web.HttpContext.Current.Server.MapPath(new CMS_Config().DefaultImage);
+				if (String.IsNullOrEmpty(imgPath))
+					imgPath = MagicCMSConfiguration.GetConfig().DefaultImage;
+			}
+
+			// Se esiste la inserisco nel pannello
+			if (File.Exists(imgPath))
+			{
+				Miniatura min = null;
+				try
+				{
+					FileInfo fi = new FileInfo(imgPath);
+					min = new Miniatura(imgPath, imgWidth, imgHeight, fi.LastWriteTime);
+					if (min.Pk > 0)
+					{
+						HtmlAnchor a_img = new HtmlAnchor();
+						a_img.Attributes["class"] = "innershadow";
+						a_img.HRef = permalink;
+						HtmlImage img = new HtmlImage();
+						img.Src = "/Min.ashx?pk=" + min.Pk.ToString();
+						img.Attributes["class"] = "banner-img";
+						img.Alt = this.Titolo;
+						a_img.Controls.Add(img);
+						panel.Controls.Add(a_img);
+					}
+				}
+				finally
+				{
+					if (min != null)
+						min.Dispose();
+				}
+
+			}
+
+			//Aggiungo il testo
+
+			//Titolo alternativa
+			string ilTitolo = this.Title_RT;
+			//if (!(String.IsNullOrEmpty(ExtraInfo1) || this.Tipo == MagicPostTypeInfo.Progetto))
+			//    ilTitolo = ExtraInfo1;
+
+			if (maxTitleLen > 0)
+				ilTitolo = MagicUtils.capAndTrunc(ilTitolo, maxTitleLen, true);
+
+			//Testo alternativo
+			string panel_HTMLcontent = TestoBreve_RT;
+			//if (String.IsNullOrEmpty(panel_HTMLcontent))
+			//    panel_HTMLcontent = TestoLungo_RT;
+			panel_HTMLcontent = StringHtmlExtensions.TruncateHtml(panel_HTMLcontent, maxLen, "...");
+
+			//Contenuto
+			HtmlGenericControl content = MagicUtils.HTMLElement("div", "content");
+			content.Controls.Add(MagicUtils.HTMLElement("h3", "primary-color", ilTitolo));
+			content.Controls.Add(MagicUtils.HTMLElement("div", "", panel_HTMLcontent));
+			content.Controls.Add(MagicUtils.HTMLElement("p", "text-right last", "<a href=\"" + permalink + "\" class=\"btn custom-btn btn-small btn-very-subtle\">" +
+				MagicTransDictionary.Translate("Per saperne di più") + "... </a>"));
+			panel.Controls.Add(content);
+			return panel;
+		}
 		/// <summary>
 		/// Set the post as un answer or a comment to an other post.
 		/// </summary>

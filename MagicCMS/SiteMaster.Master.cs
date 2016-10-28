@@ -73,7 +73,7 @@ namespace MagicCMS
 				{
 					jQueryVersion = MagicCMSConfiguration.GetConfig().jQueryLow;
 					LiteralLoadRespond.Visible = true;
-					LiteralLoadRespond.Text = "<script src=\"/ Scripts/respond.min.js\" ></script>";
+					LiteralLoadRespond.Text = "<script src=\"/Scripts/respond.min.js\" ></script>";
 				}
 
 			}

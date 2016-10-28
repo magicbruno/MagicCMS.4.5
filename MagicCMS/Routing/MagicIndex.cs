@@ -16,6 +16,8 @@ namespace MagicCMS.Routing
 	/// </summary>
 	public class MagicIndex
 	{
+		private MagicTranslation magicTranslation;
+
 		#region Properties
 		/// <summary>
 		/// Gets or sets the pk. Unique ID of routing name.
@@ -102,6 +104,12 @@ namespace MagicCMS.Routing
 		protected MagicIndex(string whereClause)
 		{
 			Init(whereClause);
+		}
+
+		public MagicIndex(MagicTranslation magicTranslation)
+		{
+			// TODO: Complete member initialization
+			this.magicTranslation = magicTranslation;
 		}
 
 		private void Init(string whereClause)
@@ -196,30 +204,37 @@ namespace MagicCMS.Routing
 				return Pk;
 
 			// Save record. If Post Pk and Language exists Update else Insert.
-			string cmdString =	" BEGIN TRY " +
+			string cmdString =	" DECLARE @TheTitle NVARCHAR(1000) " +
+								" SET @TheTitle = @RMT_Title " +
+								" BEGIN TRY " +
 								" 	IF EXISTS (SELECT " +
 								" 			1 " +
 								" 		FROM REL_MagicTitle " +
-								" 		WHERE RMT_Title = @RMT_Title AND RMT_LangId = @RMT_LangId AND @RMT_Contenuti_Id <> RMT_Contenuti_Id) " +
+								" 		WHERE RMT_Title = @RMT_Title " +
+								" 		AND RMT_LangId = @RMT_LangId " +
+								" 		AND @RMT_Contenuti_Id <> RMT_Contenuti_Id) " +
 								" 	BEGIN " +
-								" 		SET @RMT_Title = CONVERT(NVARCHAR(1000), @RMT_Contenuti_Id) + '/' + @RMT_Title " +
+								" 		SET @TheTitle = @RMT_AltTitle " +
 								" 	END " +
 								" 	BEGIN TRANSACTION " +
 								" 		UPDATE REL_MagicTitle " +
-								" 		SET RMT_Title = @RMT_Title " +
+								" 		SET RMT_Title = @TheTitle, " +
+								" 		@RMT_PK = RMT_PK " +
 								" 		WHERE RMT_Contenuti_Id = @RMT_Contenuti_Id " +
 								" 		AND RMT_LangId = @RMT_LangId; " +
 								" 		IF @@rowcount = 0 " +
 								" 		BEGIN " +
 								" 			INSERT REL_MagicTitle (RMT_Contenuti_Id, RMT_Title, RMT_LangId) " +
-								" 				VALUES (@RMT_Contenuti_Id, @RMT_Title, @RMT_LangId); " +
+								" 				VALUES (@RMT_Contenuti_Id, @TheTitle, @RMT_LangId); " +
 								" 			SET @RMT_PK = SCOPE_IDENTITY() " +
 								" 		END " +
 								" 	COMMIT TRANSACTION " +
-								" 	SELECT @RMT_PK " +
+								" 	SELECT " +
+								" 		@RMT_PK  " +
 								" END TRY " +
 								" BEGIN CATCH " +
-								" 	SELECT ERROR_MESSAGE() " +
+								" 	SELECT " +
+								" 		ERROR_MESSAGE() " +
 								" 	IF XACT_STATE() <> 0 " +
 								" 	BEGIN " +
 								" 		ROLLBACK TRANSACTION " +
@@ -236,6 +251,7 @@ namespace MagicCMS.Routing
 				cmd = new SqlCommand(cmdText, conn);
 				cmd.Parameters.AddWithValue("@RMT_Contenuti_Id", MagicPost_Pk);
 				cmd.Parameters.AddWithValue("@RMT_Title", Title);
+				cmd.Parameters.AddWithValue("@RMT_AltTitle", Title + "-" + MagicPost_Pk.ToString());
 				cmd.Parameters.AddWithValue("@RMT_LangId", LangId);
 				cmd.Parameters.AddWithValue("@RMT_PK", Pk);
 				string temp = cmd.ExecuteScalar().ToString();

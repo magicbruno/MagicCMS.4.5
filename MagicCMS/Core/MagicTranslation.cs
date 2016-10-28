@@ -285,6 +285,13 @@ namespace MagicCMS.Core
 						log.Insert();
 						if (!MagicKeyword.Update(PostPk, TranslatedTags, LangId))
 							res = false;
+						MagicIndex mi = new MagicIndex(PostPk, TranslatedTitle,LangId);
+						string errorMessage;
+						if (mi.Save(out errorMessage) == 0)
+						{
+							MagicLog log1 = new MagicLog("MB_Translations", Pk, LogAction.Insert, MagicSession.Current.LoggedUser.Pk, DateTime.Now, "MagicTranslation", "Insert - MagicIndex", errorMessage);
+							log1.Insert();
+						}
 					}
 					else
 					{

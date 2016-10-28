@@ -374,6 +374,14 @@ namespace MagicCMS.Core
             }
         }
 
+		public string ShortTitle
+		{
+			get
+			{
+				return MagicTransDictionary.Translate(_mp.ExtraInfo6);
+			}
+		}
+
         private MenuInfoCollection _submenu;
 		/// <summary>
 		/// Gets the submenu.
