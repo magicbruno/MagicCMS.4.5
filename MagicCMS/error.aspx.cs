@@ -13,6 +13,7 @@ namespace MagicCMS
 		public string ShortMessage { get; set; }
 		public string LongMessage { get; set; }
 		public string ErrorNo { get; set; }
+		public string Brand { get; set; }
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
@@ -30,6 +31,8 @@ namespace MagicCMS
 				}
 			}
 			errorNo += !String.IsNullOrEmpty(subErrorNo) ? "." + subErrorNo : "";
+			System.Reflection.AssemblyName assembly = System.Reflection.Assembly.GetExecutingAssembly().GetName();
+			Brand = String.Format("MagicCMS.4.5 v.{0}.{1}.{2}", assembly.Version.Major, assembly.Version.Minor, assembly.Version.Build);
 			switch (errorNo)
 			{
 				case "400":

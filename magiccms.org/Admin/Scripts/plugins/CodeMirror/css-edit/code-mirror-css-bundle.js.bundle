@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bundle minify="true" runOnBuild="true" output="code-mirror-css-bundle.js">
+	<!--The order of the <file> elements determines the order of them when bundled.-->
+	<file>/Admin/Scripts/plugins/CodeMirror/lib/codemirror.js</file>
+	<file>/Admin/Scripts/plugins/CodeMirror/mode/css/css.js</file>
+	<file>/Admin/Scripts/plugins/CodeMirror/addon/hint/show-hint.js</file>
+	<file>/Admin/Scripts/plugins/CodeMirror/addon/hint/css-hint.js</file>
+	<file>/Admin/Scripts/plugins/CodeMirror/addon/lint/lint.js</file>
+	<file>/Admin/Scripts/plugins/CodeMirror/addon/lint/css-lint.js</file>
+	<file>/Admin/Scripts/plugins/CodeMirror/addon/display/fullscreen.js</file>
+	<file>/Admin/Scripts/plugins/CodeMirror/CSSLint/csslint.js</file>
+</bundle>

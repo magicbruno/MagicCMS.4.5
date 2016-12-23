@@ -4,31 +4,28 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="HeaderContent" runat="server">
-    <h1><i class="fa fa-cogs"></i>Configurazione</h1>
+    <h1><i class="fa fa-cogs"></i><%= Master.Translate("Configurazione Sito") %></h1>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <div class="row">
         <div class="col-md-12">
             <div class="box box-primary">
                 <div class="box-header">
-                    <h3 class="box-title">Lingue disponibili per le traduzioni</h3>
+                    <h3 class="box-title"><%= Master.Translate("Lingue disponibili per le traduzioni") %></h3>
                     <div class="box-tools pull-right">
-                        <%--                        <a href="#modal-edit-user" data-toggle="modal" data-rowpk="0" class="btn btn-sm bg-olive">
-                            <i class="fa fa-user"></i>nuovo utente</a>--%>
                         <button type="button" class="btn btn-primary btn-sm" data-widget="collapse">
                             <i class="fa fa-minus"></i>
                         </button>
                     </div>
                 </div>
                 <div class="box-body">
-                    <table id="table-lang" class="table table-striped table-bordered" cellspacing="0"
-                        width="100%">
+                    <table id="table-lang" class="table table-striped table-bordered">
                         <thead>
                             <tr>
                                 <th>Id</th>
-                                <th>Lingua</th>
+                                <th><%= Master.Translate("Lingua") %></th>
                                 <th><i class="fa fa-check"></i></th>
-                                <th title="Nascondi elementi non tradotti">Autohide</th>
+                                <th title="<%= Master.Translate("Nascondi pagine non tradotte") %>">Autohide</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -40,7 +37,7 @@
         <div class="col-md-12">
             <div class="box box-primary" id="edit-record">
                 <div class="box-header">
-                    <h3 class="box-title">Configurazione</h3>
+                    <h3 class="box-title"><i class="fa fa-cogs"></i><%= Master.Translate("Configurazione Sito") %></h3>
                     <div class="box-tools pull-right">
                         <button type="button" class="btn btn-primary btn-sm" data-widget="collapse">
                             <i class="fa fa-minus"></i>
@@ -54,13 +51,13 @@
                             <input type="hidden" id="Pk" name="Pk" value="0" />
                             <input type="hidden" id="table" name="table" value="CONFIG" />
                             <div class="form-group" id="fg_SiteName">
-                                <label for="SiteName" class="col-sm-2 control-label">Nome sito</label>
+                                <label for="SiteName" class="col-sm-2 control-label"><%= Master.Translate("Nome sito") %></label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="SiteName" value="<% = CMS_config.SiteName %>" />
                                 </div>
                             </div>
                             <div class="form-group" id="fg-start">
-                                <label for="" class="col-sm-2 control-label">Pagina iniziale</label>
+                                <label for="" class="col-sm-2 control-label"><%= Master.Translate("Pagina iniziale") %></label>
                                 <div class="col-sm-10">
                                     <input type="hidden" value="<% = (CMS_config.StartPage > 0 ? CMS_config.StartPage.ToString() : "") %>"
                                         id="StartPage" class="form-control"
@@ -68,7 +65,7 @@
                                 </div>
                             </div>
                             <div class="form-group" id="fg-nav">
-                                <label for="" class="col-sm-2 control-label">Menù</label>
+                                <label for="" class="col-sm-2 control-label"><%= Master.Translate("Menù") %></label>
                                 <div class="col-sm-10">
                                     <div class="row">
                                         <div class="col-sm-4">
@@ -91,74 +88,74 @@
                                 </div>
                             </div>
                             <div class="form-group" id="fg-flags">
-                                <label for="" class="col-sm-2 control-label">flags</label>
+                                <label for="" class="col-sm-2 control-label"><%= Master.Translate("Flags") %></label>
                                 <div class="col-sm-10">
                                     <div class="row">
                                         <div class="col-sm-3">
                                             <label>
                                                 <input type="checkbox" value="true" class="minimal" id="SinglePage" <% = CMS_config.SinglePage ? "checked" : "" %> />
-                                                Pagina Singola
+                                                <%= Master.Translate("Pagina singola") %>
                                             </label>
                                         </div>
                                         <div class="col-sm-3">
-                                            <label title="Contenitore">
+                                            <label>
                                                 <input type="checkbox" value="true" class="minimal" id="MultiPage" <% = CMS_config.MultiPage ? "checked" : "" %> />
-                                                Pagina Multipla
+                                                <%= Master.Translate("Pagine Multiple") %>
                                             </label>
                                         </div>
                                         <div class="col-sm-3">
-                                            <label title="Bottone cerca sul server...">
+                                            <label>
                                                 <input type="checkbox" value="true" class="minimal" id="TransAuto" <% = CMS_config.TransAuto ? "checked" : "" %> />
-                                                Traduttore auto
+                                                <%= Master.Translate("Abilita Bing translator") %>
                                             </label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group" id="fg-testo-breve">
-                                <label for="TransClientId" class="col-sm-2 control-label">ClientId per Bing Translator</label>
+                                <label for="TransClientId" class="col-sm-2 control-label"><%= Master.Translate("Client Id per Bing Translator") %></label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="TransClientId" value="<% = CMS_config.TransClientId %>" />
                                 </div>
                             </div>
                             <div class="form-group" id="fg-LabelTestoBreve">
-                                <label for="TransSecretKey" class="col-sm-2 control-label">Secret Key per Bing Translator</label>
+                                <label for="TransSecretKey" class="col-sm-2 control-label"><%= Master.Translate("Secret Key per Bing Translator") %></label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="TransSecretKey" value="<% = CMS_config.TransSecretKey %>" />
                                 </div>
                             </div>
                             <div class="form-group" id="fg-TransSourceLangId">
-                                <label for="TransSourceLangId" class="col-sm-2 control-label">Lingua di origine</label>
+                                <label for="TransSourceLangId" class="col-sm-2 control-label"><%= Master.Translate("Id lingua di origine") %></label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="TransSourceLangId" value="<% = CMS_config.TransSourceLangId %>" />
                                 </div>
                             </div>
                             <div class="form-group" id="fg-TransSourceLangName">
-                                <label for="TransSourceLangName" class="col-sm-2 control-label">Nome lingua di origine</label>
+                                <label for="TransSourceLangName" class="col-sm-2 control-label"><%= Master.Translate("Nome lingua di origine") %></label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="TransSourceLangName" value="<% = CMS_config.TransSourceLangName %>" />
                                 </div>
                             </div>
                             <div class="form-group" id="fg-ThemePath">
-                                <label for="ThemePath" class="col-sm-2 control-label">Cartella del tema</label>
+                                <label for="ThemePath" class="col-sm-2 control-label"><%= Master.Translate("Cartella del tema") %></label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="ThemePath" value="<% = CMS_config.ThemePath %>" />
                                 </div>
                             </div>
                             <div class="form-group" id="fg-DefaultContentMaster">
-                                <label for="DefaultContentMaster" class="col-sm-2 control-label">Pagina master di default</label>
+                                <label for="DefaultContentMaster" class="col-sm-2 control-label"><%= Master.Translate("Pagina master di default") %></label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="DefaultContentMaster" value="<% = CMS_config.DefaultContentMaster %>" />
                                 </div>
                             </div>
                             <div class="form-group" id="fg-ImagesPath">
-                                <label for="ImagesPath" class="col-sm-2 control-label">Cartella delle icone</label>
+                                <label for="ImagesPath" class="col-sm-2 control-label"><%= Master.Translate("Cartella delle icone") %></label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="ImagesPath" value="<% = CMS_config.ImagesPath %>" />
                                 </div>
                             </div>
                             <div class="form-group" id="fg-DefaultImage">
-                                <label for="DefaultImage" class="col-sm-2 control-label">Immagine di default</label>
+                                <label for="DefaultImage" class="col-sm-2 control-label"><%= Master.Translate("Immagine di default") %></label>
                                 <div class="col-sm-10">
                                     <div class="input-group">
                                         <input type="text" class="form-control" id="DefaultImage" value="<% = CMS_config.DefaultImage  %>" />
@@ -166,9 +163,9 @@
                                             <button class="btn btn-primary btn-flat " type="button" data-callback="getImageUrl"
                                                 title="Sfoglia il server"
                                                 data-target="#FileBrowserModal" data-toggle="fb-window">
-                                                <i class="fa fa-search"></i>Sfoglia...</button>
+                                                <i class="fa fa-search"></i><%= Master.Translate("Sfoglia") %>...</button>
                                             <button class="btn btn-info btn-flat btn-icon" type="button" data-source="#DefaultImage"
-                                                title="Guarda il file"
+                                                title="<%= Master.Translate("Mostra") %>"
                                                 data-target="#LightBox" data-toggle="modal">
                                                 <i class="fa fa-search-plus"></i>
                                             </button>
@@ -177,37 +174,37 @@
                                 </div>
                             </div>
                             <div class="form-group" id="fg-SmtpServer">
-                                <label for="SmtpServer" class="col-sm-2 control-label">Server SMTP</label>
+                                <label for="SmtpServer" class="col-sm-2 control-label"><%= Master.Translate("Server SMTP") %></label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="SmtpServer" value="<% = CMS_config.SmtpServer %>" />
                                 </div>
                             </div>
                             <div class="form-group" id="fg-SmtpUsername">
-                                <label for="SmtpUsername" class="col-sm-2 control-label">Username SMTP</label>
+                                <label for="SmtpUsername" class="col-sm-2 control-label"><%= Master.Translate("Utente SMTP") %></label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="SmtpUsername" value="<% = CMS_config.SmtpUsername %>" />
                                 </div>
                             </div>
                             <div class="form-group" id="fg-SmtpPassword">
-                                <label for="SmtpPassword" class="col-sm-2 control-label">Password SMTP</label>
+                                <label for="SmtpPassword" class="col-sm-2 control-label"><%= Master.Translate("Password SMTP") %></label>
                                 <div class="col-sm-10">
                                     <input type="password" class="form-control" id="SmtpPassword" value="<% = CMS_config.SmtpPassword %>" />
                                 </div>
                             </div>
                             <div class="form-group" id="fg-SmtpDefaultFromMail">
-                                <label for="SmtpDefaultFromMail" class="col-sm-2 control-label">Mittente di default</label>
+                                <label for="SmtpDefaultFromMail" class="col-sm-2 control-label"><%= Master.Translate("Mittente di default") %></label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="SmtpDefaultFromMail" value="<% = CMS_config.SmtpDefaultFromMail %>" />
                                 </div>
                             </div>
                             <div class="form-group" id="fg-SmtpAdminMail">
-                                <label for="SmtpAdminMail" class="col-sm-2 control-label">Indirizzo Admin</label>
+                                <label for="SmtpAdminMail" class="col-sm-2 control-label"><%= Master.Translate("Email Web Master") %></label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="SmtpAdminMail" value="<% = CMS_config.SmtpAdminMail %>" />
                                 </div>
                             </div>
                             <div class="form-group" id="fg-GaProperty_ID">
-                                <label for="GaProperty_ID" class="col-sm-2 control-label">Id Google Analytics</label>
+                                <label for="GaProperty_ID" class="col-sm-2 control-label"><%= Master.Translate("Id Google Analytics") %></label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="GaProperty_ID" value="<% = CMS_config.GaProperty_ID %>"
                                         placeholder="formato: UA-xxxxxxxxx-x" />
@@ -217,7 +214,7 @@
                                 <div class="col-xs-12">
                                     <div class="center-block text-center">
                                         <button type="button" class="btn btn-primary" data-action="submit">
-                                            Salva configurazione</button>
+                                            <%= Master.Translate("Salva configurazione") %></button>
                                         <%-- <button type="button" class="btn btn-danger btn-sm" data-dismiss="record">Elimina</button>--%>
                                     </div>
                                 </div>

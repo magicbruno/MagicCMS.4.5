@@ -15,15 +15,22 @@ namespace MagicCMS.PageBase
     public partial class MagicPage : System.Web.UI.Page
     {
 		/// <summary>
-		/// Gets or sets the <see cref="MagicCMS.Core.MagicPost"/> to be rendered in the page.
+		/// Store <see cref="MagicCMS.Core.MagicPost"/> to be rendered in the page.
 		/// </summary>
 		/// <value>The post.</value>
         public MagicPost ThePost { get; set; }
+
 		/// <summary>
-		/// Gets the  configuration settings.
+		/// Store the  configuration settings.
 		/// </summary>
 		/// <value>The configuration.</value>
         public CMS_Config Config { get; set; }
+
+		/// <summary>
+		/// If MagicPage is used for previewing a post, store the temporary id of the previewed page.
+		/// </summary>
+		/// <value>The preview identifier.</value>
+		public int PreviewPk { get; set; } 
 
         /// <summary>
         /// Handles the PreInit event of the Page control.
@@ -33,7 +40,7 @@ namespace MagicCMS.PageBase
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         protected void Page_PreInit(object sender, EventArgs e)
         {
-            int p;
+            int p = 0;
 			// Route data
 			string rd_locale = "",
 					rd_type = "",
@@ -96,23 +103,38 @@ namespace MagicCMS.PageBase
 			{
 				p = (Config.StartPage > 0 ? Config.StartPage : MagicPost.GetSpecialItem(MagicPostTypeInfo.HomePage));
 			}
+			else if (rd_pageId == "preview" || rd_type == "preview")
+			{
+				if (MagicSession.Current.PreviewPost != null)
+				{
+					ThePost = MagicSession.Current.PreviewPost;
+					int originalPk = ThePost.Pk;
+					ThePost.Pk = 0;
+					p = ThePost.Insert();
+					PreviewPk = p;
+					if (p > 0 && originalPk > 0)
+						ThePost.CloneChildrenFrom(originalPk);
+				}
+					
+			}
 			else if (!int.TryParse(pageId, out p))
 			{
 				p = MagicIndex.GetPostId(rd_pageId);
 			}
 
             // If main page is called with no par load home page
-            if (p == 0)
+            if (p <= 0)
             {
 				//if (Path.GetFileName(Request.Url.LocalPath) == "Contenuti.aspx" || Path.GetFileName(Request.Url.LocalPath) == "")
 				//	p = (Config.StartPage > 0 ? Config.StartPage : MagicPost.GetSpecialItem(MagicPostTypeInfo.HomePage));
 				Response.Redirect("/error/404");
             }
-            // Create post object
-            ThePost = new MagicPost(p);
+			else
+				// Create post object
+				ThePost = new MagicPost(p);
 
 
-            if (ThePost.Pk > 0) {
+            if (ThePost.Pk != 0) {
                 //Current language
                 string currentLang = MagicSession.Current.CurrentLanguage;
 
@@ -193,9 +215,22 @@ namespace MagicCMS.PageBase
 //
         }
 
+		protected void Page_Unload(object sender, EventArgs e)
+		{
+			if (ThePost == null)
+				return;
+
+			if (ThePost.Pk == PreviewPk)
+			{
+				ThePost.FlagCancellazione = true;
+				string message;
+				ThePost.Delete(out message);
+			}
+		}
+
 
         /// <summary>
-        /// Loads the master.
+        /// It try to load the master for page rendering.
         /// </summary>
         /// <param name="MasterFile">The master file.</param>
         /// <returns>True if file was loded, false if it doesn't exist</returns>

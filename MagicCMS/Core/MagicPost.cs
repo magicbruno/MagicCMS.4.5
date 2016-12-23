@@ -1670,10 +1670,16 @@ namespace MagicCMS.Core
 
 				if (int.TryParse(result, out pk))
 				{
+					string e;
+					MagicKeyword.Update(Pk, "");
 					MagicLog log = new MagicLog("MB_contenuti", pk, LogAction.Delete, "", "");
 					log.Error = "Success";
+					if (!MagicIndex.DeletePostTitle(this, out e))
+					{
+						log.Error = e;
+					}
 					log.Insert();
-					MagicKeyword.Update(Pk, "");
+
 				}
 				else
 				{
@@ -1737,9 +1743,16 @@ namespace MagicCMS.Core
 
 				if (int.TryParse(result, out pk))
 				{
-					MagicLog log = new MagicLog("MB_contenuti", pk, LogAction.Undelete, "", "");
-					log.Error = "Success";
-					log.Insert();
+					MagicKeyword.Update(Pk, Tags);
+					string errorMessage;
+					if (!MagicIndex.UpdatePostTitle(this, out errorMessage))
+					{
+						MagicLog log = new MagicLog("MB_Contenuti", Pk, LogAction.Undelete, MagicSession.Current.LoggedUser.Pk, DateTime.Now, "MagicPost", "Undelete - MagicIndex", errorMessage);
+						log.Insert();
+					}
+					MagicLog log1 = new MagicLog("MB_contenuti", pk, LogAction.Undelete, "", "");
+					log1.Error = "Success";
+					log1.Insert();
 				}
 				else
 				{
@@ -1854,6 +1867,78 @@ namespace MagicCMS.Core
 				cmd.Dispose();
 			}
 			return (pk > 0);
+		}
+
+		/// <summary>
+		/// Clones the children from another post.
+		/// </summary>
+		/// <param name="magicPost_Id">The magic post identifier from which the children are cloned   .</param>
+		/// <returns>Boolean.</returns>
+		public Boolean CloneChildrenFrom(int magicPost_Id)
+		{
+			Boolean result = true;
+			string cmdstring =	" DECLARE	@child_PK INT; " +
+								" DELETE FROM REL_contenuti_Argomenti " +
+								" WHERE Id_Argomenti = @parentTo_PK; " +
+								"  " +
+								" DECLARE children CURSOR FAST_FORWARD READ_ONLY LOCAL FOR " +
+								" SELECT " +
+								" 	rca.Id_Contenuti " +
+								" FROM REL_contenuti_Argomenti rca " +
+								" WHERE rca.Id_Argomenti = @parentFrom_Pk; " +
+								"  " +
+								" OPEN children; " +
+								"  " +
+								" FETCH NEXT FROM children INTO @child_PK; " +
+								" IF @@fetch_status = 0  BEGIN   " +
+								" 	INSERT REL_contenuti_Argomenti (Id_Contenuti, Id_Argomenti) " +
+								" 		VALUES (@child_PK, @parentTo_PK); " +
+								" 	 " +
+								" END " +
+								"  " +
+								"  " +
+								" WHILE @@fetch_status = 0 " +
+								" BEGIN " +
+								" 	PRINT @@fetch_status; " +
+								" 	FETCH NEXT FROM children INTO @child_PK; " +
+								" 	IF @@fetch_status = 0 BEGIN   " +
+								" 		INSERT REL_contenuti_Argomenti (Id_Contenuti, Id_Argomenti) " +
+								" 			VALUES (@child_PK, @parentTo_PK); " +
+								"     END " +
+								"      " +
+								" END; " +
+								"  " +
+								" CLOSE children; " +
+								" DEALLOCATE children; ";
+
+
+			SqlCommand cmd = null;
+			SqlConnection conn = null;
+
+			try
+			{
+				conn = new SqlConnection(MagicUtils.MagicConnectionString);
+				conn.Open();
+				cmd = new SqlCommand(cmdstring, conn);
+				cmd.Parameters.AddWithValue("@parentTo_PK", Pk);
+				cmd.Parameters.AddWithValue("@parentFrom_Pk", magicPost_Id);
+				cmd.ExecuteNonQuery();
+
+
+			}
+			catch (Exception e)
+			{
+				MagicLog log = new MagicLog("REL_contenuti_Argomenti", Pk, LogAction.Insert, MagicSession.Current.LoggedUser.Pk, DateTime.Now, "MagicPost.cs", "CloneChildrenFrom", e.Message);
+				log.Insert();
+				result = false;
+			}
+			finally
+			{
+				conn.Close();
+				//conn.Dispose();
+				cmd.Dispose();
+			}
+			return result;
 		}
 
 		public Boolean MergeContext(HttpContext context, string[] propertyList, out string msg)
@@ -2450,7 +2535,7 @@ namespace MagicCMS.Core
 		/// <returns>Fetched post collection</returns>
 		public MagicPostCollection GetChildrenByType(int[] types, string order, Boolean inclusive, int max, Boolean escludiScaduti)
 		{
-			return GetChildrenByType(types, order, inclusive, max, escludiScaduti, MagicSearchActive.Both);
+			 return GetChildrenByType(types, order, inclusive, max, escludiScaduti, MagicSearchActive.Both);
 		}
 
 		/// <summary>

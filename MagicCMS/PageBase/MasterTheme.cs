@@ -211,9 +211,9 @@ namespace MagicCMS.PageBase
 		/// <param name="cssClass">The CSS class assigned to the menu (ul html element).</param>
 		/// <param name="currentPagePk">The current page pk.</param>
 		/// <returns>HtmlGenericControl.</returns>
-		protected HtmlGenericControl BootstrapMenu(int menuId, string cssClass, int currentPagePk)
+		protected HtmlGenericControl BootstrapMenu(int menuId, string cssClass, int currentPagePk, bool isIconMenu)
 		{
-			MenuInfoCollection myMenu = new MenuInfoCollection(new MagicPost(menuId), currentPagePk);
+			MenuInfoCollection myMenu = new MenuInfoCollection(new MagicPost(menuId), currentPagePk, true, isIconMenu);
 			HtmlGenericControl ul = MagicUtils.HTMLElement("ul", cssClass);
 			foreach (MenuInfo mi in myMenu)
 			{
@@ -223,10 +223,40 @@ namespace MagicCMS.PageBase
 				{
 					li.Controls.Add(BootstrapMenu(mi.Pk, "dropdown-menu", currentPagePk));
 				}
+				else if (mi.Tipo == MagicPostTypeInfo.ShareButton)
+				{
+					HtmlGenericControl a2a_ul = MagicUtils.HTMLElement("ul", "dropdown-menu");
+					HtmlGenericControl a2a_li = MagicUtils.HTMLElement("li", "", "", "a2a_menu_container");
+					li.Controls.Add(a2a_ul);
+					a2a_ul.Controls.Add(a2a_li);
+					
+					HtmlGenericControl a2a_loadScript = new HtmlGenericControl("script");
+					a2a_loadScript.Attributes.Add("async", "async");
+					a2a_loadScript.Attributes.Add("src", "https://static.addtoany.com/menu/page.js");
+					a2a_li.Controls.Add(a2a_loadScript);
+
+					HtmlGenericControl a2a_main = MagicUtils.HTMLElement("script", "",	"var a2a_config = a2a_config || {};"  +
+																						"a2a_config.show_menu = {" +
+																						"	position: 'static' " +
+																						"}");
+					a2a_li.Controls.Add(a2a_main);
+
+					if (!String.IsNullOrEmpty(mi.TestoBreve))
+					{
+						HtmlGenericControl a2a_customize = MagicUtils.HTMLElement("div", "hidden", mi.TestoBreve);
+						a2a_customize.Attributes.Add("hidden", "hidden");
+						a2a_li.Controls.Add(a2a_customize);
+					}
+
+				}
 				ul.Controls.Add(li);
 			}
 			return ul;
 		}
 
+		protected HtmlGenericControl BootstrapMenu(int menuId, string cssClass, int currentPagePk)
+		{
+			return BootstrapMenu(menuId, cssClass, currentPagePk, false);
+		}
     }
 }

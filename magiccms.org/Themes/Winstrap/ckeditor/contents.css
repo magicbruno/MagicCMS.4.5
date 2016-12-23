@@ -1,0 +1,27 @@
+/*
+Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
+For licensing, see LICENSE.md or http://ckeditor.com/license
+*/
+@import url('/Themes/Winstrap/css/animate_custom.css');
+@import url('/Themes/Winstrap/css/font-awesome.min.css');
+@import url('/Themes/Winstrap/css/winstrap-optional.css');
+@import url('/Admin/Scripts/plugins/ckeditor/plugins/fontawesome/font-awesome/css/font-awesome.min.css');
+body
+{
+
+	/* Text color */
+	color: #333;
+
+	/* Remove the background color to make it transparent */
+	background-color: #fff;
+
+	margin: 10px;
+	padding: 0;
+}
+
+.cke_editable .hidden.customize_a2a
+{
+	display: block !important;
+}
+
+

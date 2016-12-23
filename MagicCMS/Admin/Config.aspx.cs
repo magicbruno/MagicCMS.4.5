@@ -29,7 +29,13 @@ namespace MagicCMS.Admin
             StartPageList.Add(MagicPostTypeInfo.Mappa.ToString());
             StartPageList.Add(MagicPostTypeInfo.Calendario.ToString());
             StartPageList.Add(MagicPostTypeInfo.Galleria.ToString());
-            StartPageList.Add(MagicPostTypeInfo.GalleriaAutomatica.ToString());
-        }
+			StartPageList.Add(MagicPostTypeInfo.GalleriaAutomatica.ToString());
+			StartPageList.Add(MagicPostTypeInfo.SlideShow.ToString());
+			StartPageList.Add(MagicPostTypeInfo.Blog.ToString());
+			StartPageList.Add(MagicPostTypeInfo.Category.ToString());
+			StartPageList.Add(MagicPostTypeInfo.Contacts.ToString());
+			StartPageList.Add(MagicPostTypeInfo.ProductCategory.ToString());
+			StartPageList.Add(MagicPostTypeInfo.SearchPage.ToString());
+		}
     }
 }

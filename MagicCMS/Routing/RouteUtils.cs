@@ -156,14 +156,16 @@ namespace MagicCMS.Routing
 		/// <returns>If application is multilanguage "/lang/parent-name/routing-title/" otherwise "/parent-name/routing-title/"</returns>
 		public static string GetVirtualPath(int postPk, string parentName, string lang)
 		{
-			if (!string.IsNullOrEmpty(lang))
-				lang = lang.Substring(0, 1) == "/" ? lang : "/" + lang;
-			string vp = "";
-			if (parentName == "home")
-				vp = lang + "/home";
-			else
-				vp = lang + (String.IsNullOrEmpty(parentName) ? "" : "/" + parentName) + "/" + MagicIndex.GetTitle(postPk, MagicSession.Current.CurrentLanguage);
-			return vp;
+			//if (!string.IsNullOrEmpty(lang))
+			//	lang = lang.Substring(0, 1) == "/" ? lang : "/" + lang;
+			//string vp = "";
+			//if (parentName == "home")
+			//	vp = lang + "/home/";
+			//else
+			//	vp = lang + (String.IsNullOrEmpty(parentName) ? "" : "/" + parentName) + "/" + MagicIndex.GetTitle(postPk, MagicSession.Current.CurrentLanguage);
+			//return vp;
+			string title = MagicIndex.GetTitle(postPk, MagicSession.Current.CurrentLanguage);
+			return ComposePath(title, parentName, "");
 		}
 
 		/// <summary>

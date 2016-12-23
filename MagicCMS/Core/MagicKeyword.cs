@@ -346,9 +346,9 @@ namespace MagicCMS.Core
         }
 
 		/// <summary>
-		/// Gets the keywords filtered by partial match.
+		/// Gets the keywords filtered by a partial match.
 		/// </summary>
-		/// <param name="key">Partial match.</param>
+		/// <param name="key">Partial match. If key is an ampty string all keywords are returned.</param>
 		/// <returns>List&lt;System.String&gt;.</returns>
         public static List<string> GetKeywords(string key)
         {
@@ -357,10 +357,10 @@ namespace MagicCMS.Core
 
 
 		/// <summary>
-		/// Gets the keywords filtered by partial match and language.
+		/// Gets the keywords filtered by a partial match and language.
 		/// </summary>
-		/// <param name="key">Partial match.</param>
-		/// <param name="langId">The language identifier.</param>
+		/// <param name="key">Partial match. If key is an ampty string all keywords are returned.</param>
+		/// <param name="langId">Two or three characters language code.</param>
 		/// <returns>List&lt;System.String&gt;.</returns>
 		public static List<string> GetKeywords(string key, string langId)
         {

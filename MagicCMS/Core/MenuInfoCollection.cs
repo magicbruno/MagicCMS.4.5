@@ -29,7 +29,7 @@ namespace MagicCMS.Core
 		/// <param name="currentPageId">The current page identifier.</param>
 		public MenuInfoCollection(MagicPost parent, int currentPageId)
 		{
-			Init(parent, currentPageId, true);
+			Init(parent, currentPageId, true, false);
 		}
 
 		/// <summary>
@@ -38,11 +38,25 @@ namespace MagicCMS.Core
 		/// <param name="parent">The parent.</param>
 		/// <param name="currentPageId">The current page identifier.</param>
 		/// <param name="checkLangButtons">if set to <c>true</c> language buttons are shown only if site is multilanguage and current language is not language of button.</param>
-		public MenuInfoCollection(MagicPost parent, int currentPageId, bool checkLangButtons )
+		public MenuInfoCollection(MagicPost parent, int currentPageId, bool checkLangButtons)
 		{
-			Init(parent, currentPageId, checkLangButtons);
+			Init(parent, currentPageId, checkLangButtons, false);
 		}
-		private void Init(MagicPost parent, int currentPageId, bool checkLangButtons)
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="MenuInfoCollection" /> class.
+		/// </summary>
+		/// <param name="parent">The parent.</param>
+		/// <param name="currentPageId">The current page identifier.</param>
+		/// <param name="checkLangButtons">if set to <c>true</c> language buttons are shown only if site is multilanguage and current language is not language of button.</param>
+		/// <param name="isIconMenu">if set to <c>true</c> menu items are shown as icon (if available).</param>
+		public MenuInfoCollection(MagicPost parent, int currentPageId, bool checkLangButtons, bool isIconMenu)
+		{
+			Init(parent, currentPageId, checkLangButtons, isIconMenu);
+		}
+
+
+		private void Init(MagicPost parent, int currentPageId, bool checkLangButtons, bool isIconMenu)
 		{
 			if (parent.Tipo != MagicPostTypeInfo.Menu)
 				return;
@@ -50,7 +64,7 @@ namespace MagicCMS.Core
 			foreach (MagicPost mp in menu)
 			{
 				if (CheckLangButton(mp, checkLangButtons))
-					List.Add(new MenuInfo(mp, currentPageId));
+					List.Add(new MenuInfo(mp, currentPageId, isIconMenu));
 			}
 		}
 

@@ -12,6 +12,8 @@ namespace MagicCMS.Admin
     public partial class Login : System.Web.UI.Page
     {
         public Boolean Captcha { get; set; }
+		public string BackEndLang { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             Captcha = !(String.IsNullOrEmpty(MagicCMSConfiguration.GetConfig().GoogleCaptchaSite) || 
@@ -22,6 +24,7 @@ namespace MagicCMS.Admin
             }
             else
                 recaptchaVerify.Visible = false;
+			BackEndLang = MagicCMSConfiguration.GetConfig().BackEndLang;
         }
 
         protected void Button_submit_Click(object sender, EventArgs e)
@@ -49,5 +52,12 @@ namespace MagicCMS.Admin
                 Response.Redirect(Request.Url.AbsoluteUri);
             }
         }
+
+		public string Translate(string term)
+		{
+			if (BackEndLang == "it")
+				return term;
+			return MagicTransDictionary.Translate(term, BackEndLang);
+		}
     }
 }

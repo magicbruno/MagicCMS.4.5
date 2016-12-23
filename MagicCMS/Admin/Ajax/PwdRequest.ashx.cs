@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.SessionState;
 using MagicCMS.Core;
+using MagicCMS.reCAPTCHA;
 
 namespace MagicCMS.Admin.Ajax
 {
@@ -13,16 +14,35 @@ namespace MagicCMS.Admin.Ajax
     public class PwdRequest : IHttpHandler, IRequiresSessionState
     {
 
-        public void ProcessRequest(HttpContext context)
+		public Boolean Captcha { get; set; }
+		public string BackEndLang { get; set; }
+
+		public void ProcessRequest(HttpContext context)
         {
             AjaxJsonResponse response = new AjaxJsonResponse
             {
                 data = "",
                 exitcode = 0,
-                msg = "La nuova password è stata inviata al tuo indirizzo.",
+				msg = Localize.Translate("La nuova password è stata inviata al tuo indirizzo."),
                 pk = 0,
                 success = true
             };
+			Captcha = !(String.IsNullOrEmpty(MagicCMSConfiguration.GetConfig().GoogleCaptchaSite) ||
+				String.IsNullOrEmpty(MagicCMSConfiguration.GetConfig().GoogleCaptchaSecret));
+
+			if (Captcha)
+			{
+				string secret = MagicCMSConfiguration.GetConfig().GoogleCaptchaSecret;
+				GoogleReCaptcha grc = new GoogleReCaptcha(secret);
+				CaptchaResponse result = grc.ValidateResponse(context.Request.Form["g-recaptcha-response"]);
+				if (!result.success)
+				{
+					context.Response.StatusCode = 404;
+					context.Response.StatusDescription = "Not found.";
+					context.Response.ContentType = "text/html";
+					return;
+				}
+			}
 
             string email = context.Request["email"];
 
@@ -33,41 +53,41 @@ namespace MagicCMS.Admin.Ajax
                 case MbUserLoginResult.Success:
                     break;
                 case MbUserLoginResult.WrongUserName:
-                    response.msg = "L'utente non risulta registrato";
+                    response.msg = Localize.Translate("L'utente non risulta registrato");
                     response.exitcode = 1;
                     response.success = false;
                     break;
                 case MbUserLoginResult.WrongPassword:
-                    response.msg = "L'utente non risulta registrato";
+                    response.msg = Localize.Translate("L'utente non risulta registrato");
                     response.exitcode = 1;
                     response.success = false;
                     break;
                 case MbUserLoginResult.WrongUserNameOrPassword:
-                    response.msg = "L'utente non risulta registrato";
+                    response.msg = Localize.Translate("L'utente non risulta registrato");
                     response.exitcode = 1;
                     response.success = false;
                     break;
                 case MbUserLoginResult.PasswordResend:
                     break;
                 case MbUserLoginResult.NotActivated:
-                    response.msg = "L'utente è stato disattivato";
+                    response.msg = Localize.Translate("L'utente è stato disattivato");
                     response.exitcode = 2;
                     response.success = false;
                     break;
                 case MbUserLoginResult.NotLogged:
-                    response.msg = "L'utente non risulta registrato";
+                    response.msg = Localize.Translate("L'utente non risulta registrato");
                     response.exitcode = 1;
                     response.success = false;
                     break;
                 case MbUserLoginResult.CheckError:
-                    response.msg = "Errore di sitema";
+                    response.msg = Localize.Translate("Errore di sitema");
                     response.exitcode = 3;
                     response.success = false;
                     break;
                 case MbUserLoginResult.PwdFormatError:
                     break;
                 case MbUserLoginResult.GenericError:
-                    response.msg = "Errore di sitema. Impossibile copletare l'operazione.";
+					response.msg = Localize.Translate("Errore di sitema. Impossibile copletare l'operazione.");
                     response.exitcode = 3;
                     response.success = false;
                     break;

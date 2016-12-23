@@ -1,0 +1,10 @@
+.bx-wrapper {
+  @include box-shadow (none);
+  background-color: transparent;
+  border-color: transparent;
+}
+.bx-viewport {
+  //height: auto !important;
+  box-sizing: content-box;
+  padding: 20px 0;
+}

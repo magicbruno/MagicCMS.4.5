@@ -11,5 +11,17 @@ namespace MagicCMS.Admin {
     
     
     public partial class CustomCss {
+        
+        /// <summary>
+        /// Proprietà Master.
+        /// </summary>
+        /// <remarks>
+        /// Proprietà generata automaticamente.
+        /// </remarks>
+        public new MagicCMS.Admin.MasterAdmin Master {
+            get {
+                return ((MagicCMS.Admin.MasterAdmin)(base.Master));
+            }
+        }
     }
 }

@@ -86,7 +86,7 @@ namespace MagicCMS
 			version.Name = "generator";
 			AssemblyName assembly = Assembly.GetExecutingAssembly().GetName();
 
-			version.Content = String.Format("Magic CMS {0}.{1}", assembly.Version.Major, assembly.Version.Minor);
+			version.Content = String.Format("MagicCMS.4.5 v.{0}.{1}.{2}, http://www.magiccms.org", assembly.Version.Major, assembly.Version.Minor, assembly.Version.Build);
 			head.Controls.AddAt(0,version);
 
 			// Keywords

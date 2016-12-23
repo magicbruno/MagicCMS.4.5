@@ -37,7 +37,7 @@ namespace MagicCMS.Admin.Ajax
             {
                 data = null,
                 exitcode = 0,
-                msg = "Operazione conclusa con successo.",
+                msg = Localize.Translate("Operazione conclusa con successo."),
                 pk = 0,
                 success = true
             };
@@ -65,7 +65,7 @@ namespace MagicCMS.Admin.Ajax
             {
                 response.exitcode = 1;
                 response.success = false;
-                response.msg = "Necessario configurare una 'Client Secret Key' per utilizzare il motore di traduzione";
+                response.msg =  Localize.Translate("Necessario configurare una 'Client Secret Key' per utilizzare il motore di traduzione");
             }
             else if (!String.IsNullOrEmpty(term))
             {
@@ -88,7 +88,7 @@ namespace MagicCMS.Admin.Ajax
             {
                 response.exitcode = 2;
                 response.success = false;
-                response.msg = "Dati incoerenti. Per creare una traduzione bisogna prima salvare il post originale.";
+                response.msg = Localize.Translate("Dati incoerenti. Per creare una traduzione bisogna prima salvare il post originale.");
             }
             else
             {

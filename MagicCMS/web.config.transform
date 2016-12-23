@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<configSections>
+		<!--
+			In configSections vengono definite le sezioni personalizzate di Web.config.
+			MagicCMSConfigSection organizza alcune impostazioni chiave di MagicCMS ed 
+			è essenziale al suo funzionamento. NON MODIFICARE.	
+		-->
+		<!--
+			In configSections you may define the custom sections of Web.config. 
+			MagicCMSConfigSection organizes some key settings of MagicCMS key and
+			it's essential to its operation. DO NOT CHANGE.
+		-->
+		<!-- NON MODIFICARE - Inizio | DO NOT CHANGE - Start -->
+		<section name="MagicCMSConfigSection" type="MagicCMS.Core.MagicCMSConfiguration"/>
+		<!-- NON MODIFICARE - Fine | DO NOT CHANGE - End -->
+	</configSections>
+
+	<!-- Impostare la stringa di connessione - Setting connection string -->
+	<connectionStrings>
+		<!--
+		La stringa di connessione connette MagicCMS al suo database. Qui di seguito un esempio. 
+		Altri esempi: https://www.connectionstrings.com/sql-server/.
+		Si possono impostare più stringhe di connessione. Viene utilizzata quella il cui valore 
+		dell'attributo name viene assegnato all'attributo ConnectionName dell'elemento MagicCMSConfigSection. 
+		-->
+		<!-- 
+		The Connection string connects MagicCMS to its database. Below an example. 
+		Other examples: https://www.connectionstrings.com/sql-server/,
+		You can set multiple connection strings. It will be used the one whose name attribute's value 
+		is assigned to the MagicCMSConfigSection element ConnectionName attribute. 
+		-->
+		<!-- Esempio di impostazione di stringa di connesione - Inizio -->
+		<!-- Connection string setting example - Start -->
+		<!--
+			<add connectionString="Server=(local);Database=database;User ID=******;Password=******" name="conn"/>
+		-->
+		<!-- Esempio di impostazione di stringa di connesione - Fine -->
+		<!-- Connection string setting example - End -->
+	</connectionStrings>
+
+	<!-- IMPORTANTE: Configurazione di MagicCMS - IMPORTANT: MagicCMS configuration -->
+	<!-- 
+		MagicCMSConfigSection è la sezione di Web.config è riservata alla configurazione di MagicCMS. 
+		Ad ogni impostazione del sito corrisponde un attributo dell'elemento MagicCMSConfigSection. 
+		Qui di seguito un modello di MagicCMSConfigSection con tutti gli attributi impostati. 
+		Rimuovi il commento dal blocco e inserisci i valori appropriati. (Vedi http://www.magiccms.org 
+		per una descrizione dettagliata).
+	-->
+	<!--
+		MagicCMSConfigSection is the Web. config section dedicated to MagicCMS configuration. 
+		Each site setting matches an attribute of the MagicCMSConfigSection element. Here is a 
+		template of MagicCMSConfigSection with all attributes set. Uncomment the block and enter 
+		the appropriate values. (See http://www.magiccms.org for a detailed description).
+	-->
+	<!-- MagicCMSConfigSection template start -->
+	<!--
+	<MagicCMSConfigSection
+	 ConnectionName="conn"
+	 DefaultThemePath="/Themes/Default"
+	 DefaultContentMaster="Standard.master"
+	 ThemePath=""
+	 smtpServerName="smtp.magiccms.org"
+	 smtpUsername="noreplay@magiccms.org"
+	 smtpPassword="*****"
+	 smtpDefaultFromMail="noreplay@magiccms.org"
+	 smtpAdminMail=""
+	 supportMail=""
+	 editorsMail=""
+	 defaultImage="/Themes/Default/ico/fb.png"
+	 imagesPath="/Themes/Default/ico/"
+	 allowedFileTypes="jpg,jpeg,doc,docx,zip,gif,png,pdf,rar,svg,svgz,xls,xlsx,ppt,pps,pptx"
+	 testoBreveDefLength="300"
+	 GoogleCaptchaSecret=""
+	 GoogleCaptchaSite=""
+	 CkeditorCdn="//cdn.ckeditor.com/4.6.0/full/ckeditor.js"
+	 FileChangesMonitorStop="false"
+	 jQueryLow="1.12.3"
+	 jQueryHigh="2.2.4"
+	 GoogleMapApiKey=""
+	 backEndLang="it"
+   />
+	-->
+	<!-- MagicCMSConfigSection template end -->
+
+	<system.web>
+		<!-- Gestione personalizzata errori -->
+		<!-- Custom errors handling. -->
+		<!-- NON MODIFICARE - Inizio | DO NOT CHANGE - Start -->
+		<customErrors mode="RemoteOnly" defaultRedirect="/error/000">
+			<error statusCode="400" redirect="/error/400"/>
+			<error statusCode="401" redirect="/error/401"/>
+			<error statusCode="403" redirect="/error/403"/>
+			<error statusCode="404" redirect="/error/404"/>
+			<error statusCode="405" redirect="/error/405"/>
+			<error statusCode="406" redirect="/error/406"/>
+			<error statusCode="408" redirect="/error/408"/>
+			<error statusCode="412" redirect="/error/412"/>
+			<error statusCode="500" redirect="/error/500"/>
+			<error statusCode="501" redirect="/error/501"/>
+			<error statusCode="502" redirect="/error/502"/>
+		</customErrors>
+		<!-- NON MODIFICARE - Fine | DO NOT CHANGE - End -->
+
+		<!-- MASSIMA DIMENSIONE DI FILE CARICATI - UPLOADED FILES MAXIMUM SIZE -->
+		<!-- 
+			Per impostazione predefinita IIS consente di caricare file di dimensioni 
+			fino a 4 Megabyte. Spesso questa dimensione non è sufficiente nella gestione 
+			di un sito. Si può modificare questo limite assegnando la dimensione massima 
+			caricabile in Kilobyte all'attributo maxRequestLength di system.web/httpRuntime.
+			Con IIS 7.0+ va modificato anche l'attributo maxAllowedContentLength in 
+			system.webServer/security/requestFiltering/requestLimits.
+			Vedi sotto.
+		-->
+		<!--
+			By default IIS allows you to upload files up to 4 Megabytes. Often this 
+			dimension is not sufficient in managing a site. You can change this limit by 
+			setting the system.web/httpRuntime maxRequestLength attribute to the maximum 
+			uploaded files size in Kilobytes. On IIS 7.0+ maxAllowedContentLength attribute 
+			also must be modified in system.webServer/security/requestFiltering/requestLimits.
+			See below.
+		-->
+		<!-- L'impostazione riportata qui consente di caricare file di dimensioni fino a 100 Megabyte. -->
+		<!-- The following setting lets you upload files up to 100 Megabytes.-->
+		<!--
+			<httpRuntime maxRequestLength="102400" />
+		-->
+		<!-- FINE MASSIMA DIMENSIONE DI FILE CARICATI - UPLOADED FILES MAXIMUM SIZE END -->
+
+	</system.web>
+
+	<system.webServer>
+		<!--
+			Qesto blocco di impostazioni è tratto dal progetto server-configs del gruppo HTML5 Boilerplate
+			(https://github.com/h5bp/server-configs-iis). Non dovrebbe essere necessario apportare 
+			modifiche a queste impostazioni. In ogni caso si consiglia di intervenire su questa sezione  
+			con ESTREMA CAUTELA. Quando si effettuano aggiornamenti al pacchetto MB.MagicCMS.4.5 le impostazioni 
+			aggiunte e le impostazioni modificate in Web.config vengono tutte conservate, ma, per quanto riguarda 
+			questa sezione, le impostazioni modificate potrebbero essere duplicate con i vecchi valori. 
+		-->
+		<!--
+			This block of settings is taken from the project "Server Configs" by HTML5 Boilerplate 
+			(https://github.com/h5bp/server-configs-iis). It should not be necessary to make changes 
+			to these settings. In any case you should intervene on this section very carefully. When 
+			installing updates to the package MB.MagicCMS.4.5 the settings you added and changed settings 
+			in Web. config are all preserved, but, regarding this section, changed settings could be 
+			duplicated with the old values.
+		-->
+		<!-- HTML5 Boiler Plate Servers Config start -->
+		<!-- GZip static file content.  Overrides the server default which only compresses static files over 2700 bytes -->
+		<httpCompression directory="%SystemDrive%\websites\_compressed" minFileSizeForComp="1024">
+			<scheme dll="%Windir%\system32\inetsrv\gzip.dll" name="gzip"/>
+			<dynamicTypes>
+				<add enabled="true" mimeType="text/*" />
+				<add enabled="true" mimeType="message/*" />
+				<add enabled="true" mimeType="application/javascript" />
+				<add enabled="true" mimeType="application/json" />
+				<add enabled="true" mimeType="application/json; charset=utf-8" />
+				<add enabled="false" mimeType="*/*" />
+			</dynamicTypes>
+			<staticTypes>
+				<add enabled="true" mimeType="text/*"/>
+				<add enabled="true" mimeType="message/*"/>
+				<add enabled="true" mimeType="application/javascript"/>
+				<add enabled="true" mimeType="application/json"/>
+				<add enabled="true" mimeType="application/json; charset=utf-8" />
+				<add enabled="false" mimeType="*/*"/>
+			</staticTypes>
+		</httpCompression>
+		<urlCompression doDynamicCompression="true" doStaticCompression="true"/>
+		<staticContent>
+			<!-- Set expire headers to 30 days for static content-->
+			<clientCache cacheControlMode="UseMaxAge" cacheControlMaxAge="30.00:00:00"/>
+			<!-- use utf-8 encoding for anything served text/plain or text/html -->
+			<remove fileExtension=".css"/>
+			<mimeMap fileExtension=".css" mimeType="text/css"/>
+			<remove fileExtension=".js"/>
+			<mimeMap fileExtension=".js" mimeType="text/javascript"/>
+			<remove fileExtension=".json"/>
+			<mimeMap fileExtension=".json" mimeType="application/json"/>
+			<remove fileExtension=".rss"/>
+			<mimeMap fileExtension=".rss" mimeType="application/rss+xml; charset=UTF-8"/>
+			<remove fileExtension=".html"/>
+			<mimeMap fileExtension=".html" mimeType="text/html; charset=UTF-8"/>
+			<remove fileExtension=".xml"/>
+			<mimeMap fileExtension=".xml" mimeType="application/xml; charset=UTF-8"/>
+			<!-- HTML5 Audio/Video mime types-->
+			<remove fileExtension=".mp3"/>
+			<mimeMap fileExtension=".mp3" mimeType="audio/mpeg"/>
+			<remove fileExtension=".mp4"/>
+			<mimeMap fileExtension=".mp4" mimeType="video/mp4"/>
+			<remove fileExtension=".ogg"/>
+			<mimeMap fileExtension=".ogg" mimeType="audio/ogg"/>
+			<remove fileExtension=".ogv"/>
+			<mimeMap fileExtension=".ogv" mimeType="video/ogg"/>
+			<remove fileExtension=".webm"/>
+			<mimeMap fileExtension=".webm" mimeType="video/webm"/>
+			<!-- Proper svg serving. Required for svg webfonts on iPad -->
+			<remove fileExtension=".svg"/>
+			<mimeMap fileExtension=".svg" mimeType="image/svg+xml"/>
+			<remove fileExtension=".svgz"/>
+			<mimeMap fileExtension=".svgz" mimeType="image/svg+xml"/>
+			<!-- HTML4 Web font mime types -->
+			<!-- Remove default IIS mime type for .eot which is application/octet-stream -->
+			<remove fileExtension=".eot"/>
+			<mimeMap fileExtension=".eot" mimeType="application/vnd.ms-fontobject"/>
+			<remove fileExtension=".otf"/>
+			<mimeMap fileExtension=".otf" mimeType="font/otf"/>
+			<remove fileExtension=".woff"/>
+			<mimeMap fileExtension=".woff" mimeType="application/x-font-woff"/>
+			<remove fileExtension=".woff2"/>
+			<mimeMap fileExtension=".woff2" mimeType="font/woff2"/>
+			<remove fileExtension=".crx"/>
+			<mimeMap fileExtension=".crx" mimeType="application/x-chrome-extension"/>
+			<remove fileExtension=".xpi"/>
+			<mimeMap fileExtension=".xpi" mimeType="application/x-xpinstall"/>
+			<remove fileExtension=".safariextz"/>
+			<mimeMap fileExtension=".safariextz" mimeType="application/octet-stream"/>
+			<!-- Flash Video mime types-->
+			<remove fileExtension=".flv"/>
+			<mimeMap fileExtension=".flv" mimeType="video/x-flv"/>
+			<remove fileExtension=".f4v"/>
+			<mimeMap fileExtension=".f4v" mimeType="video/mp4"/>
+			<!-- Assorted types -->
+			<remove fileExtension=".ico"/>
+			<mimeMap fileExtension=".ico" mimeType="image/x-icon"/>
+			<remove fileExtension=".webp"/>
+			<mimeMap fileExtension=".webp" mimeType="image/webp"/>
+			<remove fileExtension=".htc"/>
+			<mimeMap fileExtension=".htc" mimeType="text/x-component"/>
+			<remove fileExtension=".vcf"/>
+			<mimeMap fileExtension=".vcf" mimeType="text/x-vcard"/>
+			<remove fileExtension=".torrent"/>
+			<mimeMap fileExtension=".torrent" mimeType="application/x-bittorrent"/>
+			<remove fileExtension=".cur"/>
+			<mimeMap fileExtension=".cur" mimeType="image/x-icon"/>
+			<remove fileExtension=".webapp"/>
+			<mimeMap fileExtension=".webapp" mimeType="application/x-web-app-manifest+json; charset=UTF-8"/>		
+		</staticContent>
+		<httpProtocol>
+			<customHeaders>
+				<!-- 
+			  http://hacks.mozilla.org/2009/07/cross-site-xmlhttprequest-with-cors/
+			  Uncomment to serve cross-domain ajax requests
+		
+			  <add name="Access-Control-Allow-Origin" value="*" />
+			-->
+				<!-- 
+			  Force the latest IE version, in various cases when it may fall back to IE7 mode
+			   github.com/rails/rails/commit/123eb25#commitcomment-118920
+			  Use ChromeFrame if it's installed for a better experience for the poor IE folk
+			  
+			<add name="X-UA-Compatible" value="IE=Edge,chrome=1"/>
+			-->
+			<!-- 
+				Allow cookies to be set from iframes (for IE only)
+				If needed, uncomment and specify a path or regex in the Location directive 
+
+				<add name="P3P" value="policyref=&quot;/w3c/p3p.xml&quot;, CP=&quot;IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT&quot;" />
+			-->
+			</customHeaders>
+		</httpProtocol>
+		<!-- HTML5 Boiler Plate Servers Config start end -->
+
+
+		<security>
+			<requestFiltering>
+				<!-- MASSIMA DIMENSIONE DI FILE CARICATI - UPLOADED FILES MAXIMUM SIZE -->
+				<!-- 
+					Per impostazione predefinita IIS consente di caricare file di dimensioni 
+					fino a 4 Megabyte. Spesso questa dimensione non è sufficiente nella gestione 
+					di un sito. Si può modificare questo limite assegnando la dimensione massima 
+					caricabile in byte all'attributo maxAllowedContentLength di 
+					system.webServer/security/requestFiltering/requestLimits. 
+					Va modificato anche l'attributo maxRequestLength in system.web/httpRuntime.
+					Nota bene: l'unità di misura utilizzate per maxRequestLength è il Kilobyte, 
+					mentre quella usata per maxAllowedContentLength è Byte.
+					Vedi sopra.
+				-->
+				<!--
+					By default IIS allows you to upload files up to 4 Megabytes. Often this 
+					dimension is not sufficient in managing a site. You can change this limit by 
+					setting the system.webServer/security/requestFiltering/requestLimits 
+					maxAllowedContentLength attribute to the maximum uploaded files size in Bytes. 
+					The maxRequestLength attribute in system.web/httpRuntime also must be modified.
+					Please note: the units used for maxRequestLength is Kilobytes, while that used 
+					for maxAllowedContentLength is bytes. 
+					See above.
+				-->
+				<!-- L'impostazione riportata qui consente di caricare file di dimensioni fino a 100 Megabyte. -->
+				<!-- The following setting lets you upload files up to 100 Megabytes.-->
+				<!--
+					<requestLimits maxAllowedContentLength="104857600"/>
+				-->
+				<!-- FINE MASSIMA DIMENSIONE DI FILE CARICATI - UPLOADED FILES MAXIMUM SIZE END -->
+
+			</requestFiltering>
+		</security>
+	</system.webServer>
+	
+	<runtime>
+		<!-- NON MODIFICARE - Inizio | DO NOT CHANGE - Start -->
+		<assemblyBinding appliesTo="v2.0.50727" xmlns="urn:schemas-microsoft-com:asm.v1">
+			<dependentAssembly>
+				<assemblyIdentity name="AjaxMin" publicKeyToken="21ef50ce11b5d80f" culture="neutral"/>
+				<bindingRedirect oldVersion="0.0.0.0-4.78.4724.23863" newVersion="4.78.4724.23863"/>
+			</dependentAssembly>
+		</assemblyBinding>
+		<!-- NON MODIFICARE - Fine | DO NOT CHANGE - End -->
+	</runtime>
+	<system.serviceModel>
+		<bindings>
+			<basicHttpBinding>
+				<!-- NON MODIFICARE - Inizio | DO NOT CHANGE - Start -->
+				<binding name="BasicHttpBinding_LanguageService" />
+				<!-- NON MODIFICARE - Fine | DO NOT CHANGE - End -->
+			</basicHttpBinding>
+		</bindings>
+		<client>
+			<!-- NON MODIFICARE - Inizio | DO NOT CHANGE - Start -->
+			<endpoint address="http://api.microsofttranslator.com/V2/soap.svc"
+			  binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_LanguageService"
+			  contract="BingTranslator.LanguageService" name="BasicHttpBinding_LanguageService" />
+			<!-- NON MODIFICARE - Fine | DO NOT CHANGE - End -->
+		</client>
+	</system.serviceModel>
+</configuration>

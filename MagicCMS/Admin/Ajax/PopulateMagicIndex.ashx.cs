@@ -34,7 +34,7 @@ namespace MagicCMS.Admin.Ajax
 			{
 				data = null,
 				exitcode = 0,
-				msg = "Indice dei titoli creato con successo.",
+				msg = Localize.Translate("Indice delle url parlanti creato con successo."),
 				pk = 0,
 				success = true
 			};
@@ -45,19 +45,20 @@ namespace MagicCMS.Admin.Ajax
 				if (MagicIndex.Populate(out processed, out errorMessage))
 				{
 					response.success = true;
-					response.msg = "Indice dei titoli creato con successo. Inserite " + processed.ToString() + " voci.";
+					response.msg = Localize.Translate("Indice delle url parlanti creato con successo. Inserite") + " " + processed.ToString() + " " + Localize.Translate("voci.");
 				}
 				else
 				{
 					response.success = false;
-					response.msg = "Creazione dell'indice dei titoli fallita o interrotta." + "Errore: " + errorMessage + " Inserite " + processed.ToString() + " voci.";
+					response.msg = Localize.Translate("La creazione dell'indice delle url parlanti è fallita o si è interrotta.") + " " + Localize.Translate("Errore") + ": " + errorMessage + 
+						" " + processed.ToString() + " " + Localize.Translate("voci.");
 				}
 			}
 			else
 			{
 				response.success = false;
 				response.exitcode = 1;
-				response.msg = "Impossibile creare la tabella MagicTitle";
+				response.msg = Localize.Translate("Impossibile creare la tabella MagicTitle.");
 			}
 
 			System.Web.Script.Serialization.JavaScriptSerializer serializer = new System.Web.Script.Serialization.JavaScriptSerializer();

@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set di attributi. Modificare i valori di questi attributi per modificare le informazioni
 // associate a un assembly.
 [assembly: AssemblyTitle("MagicCMS")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("CMS Framework for ASP.NET")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
+[assembly: AssemblyCompany("Magicbus Multimedia")]
 [assembly: AssemblyProduct("MagicCMS")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2014")]
+[assembly: AssemblyCopyright("Copyright © Bruno Migliaretti 2014-2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -31,6 +31,6 @@ using System.Runtime.InteropServices;
 //
 // È possibile specificare tutti i valori oppure impostare valori predefiniti per i numeri relativi alla revisione e alla build 
 // utilizzando l'asterisco (*) come illustrato di seguito:
-[assembly: AssemblyVersion("3.0.0.0")]
-[assembly: AssemblyFileVersion("3.0.0.*")]
-[assembly: AssemblyInformationalVersion("3.0.0.*")]
+[assembly: AssemblyVersion("1.0.26")]
+[assembly: AssemblyFileVersion("1.0.26")]
+[assembly: AssemblyInformationalVersion("1.0.0.*.*")]

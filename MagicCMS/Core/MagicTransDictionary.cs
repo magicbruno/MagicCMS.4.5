@@ -176,7 +176,8 @@ namespace MagicCMS.Core
 
 		#region Public methds
 		/// <summary>
-		/// Saves this instance in MagicCMS database.
+		/// This method inserts the term translation in Dictionary table of MagicCMS database. If translation 
+		/// exists for this languages it updates translation.
 		/// </summary>
 		/// <returns><c>true</c> on success, <c>false</c> otherwise.</returns>
 		public bool Save()

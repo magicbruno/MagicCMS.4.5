@@ -20,27 +20,27 @@ namespace MagicCMS.Core
         }
 
 		/// <summary>
-		/// Get the database connection Name
+		/// Get the name of the Connection String that MagicCMD will use. The Connection String must be defined in connectionStrings section of Web.config.
 		/// </summary>
-		/// <value>The name of the connection.</value>
-        [ConfigurationProperty("ConnectionName", IsRequired = true)]
+		/// <value>The Connection String Name.</value>
+        [ConfigurationProperty("ConnectionName", IsRequired = true, DefaultValue = "")]
         public string ConnectionName
         {
             get { return this["ConnectionName"] as string; }
         }
 
 		/// <summary>
-		/// Default Path of MagicCMS theme
+		/// Default Path of MagicCMS theme.
 		/// </summary>
 		/// <value>The theme path.</value>
-        [ConfigurationProperty("ThemePath", IsRequired = true)]
+        [ConfigurationProperty("ThemePath", IsRequired = true, DefaultValue = "/Themes/Default")]
         public string ThemePath
         {
             get { return this["ThemePath"] as string; }
         }
 
 		/// <exclude />
-        [ConfigurationProperty("DefaultThemePath", IsRequired = true)]
+        [ConfigurationProperty("DefaultThemePath", IsRequired = false)]
         public string DefaultThemePath
         {
             get { return this["DefaultThemePath"] as string; }
@@ -57,33 +57,36 @@ namespace MagicCMS.Core
         }
 
 		/// <summary>
-		/// Gets the name of the default SMTP server.
+		/// Gets the name of the SMTP server that MagicCMS will use.
 		/// </summary>
 		/// <value>The name of the SMTP server.</value>
-		/// <remarks>IMPORTANT: This field is REQUIRED. You must provide smtp data and email address where to receive admin password </remarks>
-		[ConfigurationProperty("smtpServerName", DefaultValue = "smtp.magicbusmultimedia.it", IsRequired = false)]
+		/// <remarks>IMPORTANT: This field is REQUIRED. You must provide smtp data and email address where to receive admin password. You 
+		/// may use smtp.gmail.com with your g-mail credentials.</remarks>
+		[ConfigurationProperty("smtpServerName", DefaultValue = "smtp.gmail.com", IsRequired = true)]
         public string SmtpServerName
         {
             get { return this["smtpServerName"] as string; }
         }
 
 		/// <summary>
-		/// Gets the name of the SMTP user.
+		/// The name that give you access to the SMTP server.
 		/// </summary>
 		/// <value>The name of the SMTP user.</value>
-		/// <remarks>IMPORTANT: This field is REQUIRED. You must provide smtp data and email address where to receive admin password </remarks>
-		[ConfigurationProperty("smtpUsername", DefaultValue = "username", IsRequired = false)]
+		/// <remarks>IMPORTANT: This field is REQUIRED. You must provide smtp data and email address where to receive admin password. You 
+		/// may use smtp.gmail.com with your g-mail credentials.</remarks>
+		[ConfigurationProperty("smtpUsername", DefaultValue = "yourGmailAccount", IsRequired = true)]
         public string SmtpUserName
         {
             get { return this["smtpUsername"] as string; }
         }
 
 		/// <summary>
-		/// Gets the SMTP password.
+		/// The password that give you access to the SMTP server.
 		/// </summary>
 		/// <value>The SMTP password.</value>
-		/// <remarks>IMPORTANT: This field is REQUIRED. You must provide smtp data and email address where to receive admin password </remarks>
-		[ConfigurationProperty("smtpPassword", DefaultValue = "password", IsRequired = false)]
+		/// <remarks>IMPORTANT: This field is REQUIRED. You must provide smtp data and email address where to receive admin password. You 
+		/// may use smtp.gmail.com with your g-mail credentials.</remarks>
+		[ConfigurationProperty("smtpPassword", DefaultValue = "yourGmailPassword", IsRequired = true)]
         public string SmtpPassword
         {
             get { return this["smtpPassword"] as string; }
@@ -93,7 +96,7 @@ namespace MagicCMS.Core
 		/// Gets the SMTP default from mail.
 		/// </summary>
 		/// <value>The SMTP default from mail.</value>
-		/// <remarks>IMPORTANT: This field is REQUIRED. You must provide smtp data and email address where to receive admin password </remarks>
+		/// <remarks>IMPORTANT: If you are using a non-existent mail sender, mail sent from MagicCMS could be classified as spam. </remarks>
 		[ConfigurationProperty("smtpDefaultFromMail", DefaultValue = "", IsRequired = false)]
         public string SmtpDefaultFromMail
         {
@@ -101,10 +104,10 @@ namespace MagicCMS.Core
         }
 
 		/// <summary>
-		/// Gets the SMTP admin mail.
+		/// Gets the Web Master e-mail address.
 		/// </summary>
-		/// <value>The SMTP admin mail.</value>
-		/// <remarks>IMPORTANT: This field is REQUIRED. You must provide smtp data and email address where to receive admin password </remarks>
+		/// <value>The Web Master e-mail.</value>
+		/// <remarks>This is intended to be tha main address of the MagicCMS Site. </remarks>
         [ConfigurationProperty("smtpAdminMail", DefaultValue = "", IsRequired = false)]
         public string SmtpAdminMail
         {
@@ -132,9 +135,10 @@ namespace MagicCMS.Core
         }
 
 		/// <summary>
-		/// Gets the default image.
+		/// Gets the default image path.
 		/// </summary>
-		/// <value>The default image.</value>
+		/// <value>The default image path.</value>
+		/// <remarks>This is intended to be the image used every where a required image is not provided. </remarks>
         [ConfigurationProperty("defaultImage", DefaultValue = "", IsRequired = false)]
         public string DefaultImage
         {
@@ -159,6 +163,9 @@ namespace MagicCMS.Core
 		/// Gets the images path.
 		/// </summary>
 		/// <value>The images path.</value>
+		/// <remarks>MagicCMS will search in this folder png files with conventional names to use as site icons (favicon.png, for favorite icon image, and 
+		/// apple-touch-icon-###x###-precomposed.png for apple icons where ### must be substitute with width an height).
+		/// </remarks>
         [ConfigurationProperty("imagesPath", DefaultValue = "/db_images/", IsRequired = false)]
         public string ImagesPath
         {
@@ -169,7 +176,7 @@ namespace MagicCMS.Core
 		/// Gets the allowed file types.
 		/// </summary>
 		/// <value>The allowed file types.</value>
-		/// <remarks>A comma separates list of allowed file extension the user may transfer to the server</remarks>
+		/// <remarks>A comma separates list of allowed file extension the user may transfer to the server using MagicCMS File Manager</remarks>
         [ConfigurationProperty("allowedFileTypes", DefaultValue = "", IsRequired = false)]
         public string AllowedFileTypes
         {
@@ -274,7 +281,7 @@ namespace MagicCMS.Core
 		/// Gets the google map API key.
 		/// </summary>
 		/// <value>The google map API key.</value>
-		[ConfigurationProperty("GoogleMapApiKey", DefaultValue = "AIzaSyAVZbx9mgbVL3CFyN62HVR0mioD32sW_6Q", IsRequired = true)]
+		[ConfigurationProperty("GoogleMapApiKey", DefaultValue = "AIzaSyAVZbx9mgbVL3CFyN62HVR0mioD32sW_6Q", IsRequired = false)]
 		public string GoogleMapApiKey
 		{
 			get
@@ -282,6 +289,20 @@ namespace MagicCMS.Core
 				return this["GoogleMapApiKey"] as string;
 			}
 		}
+
+		/// <summary>
+		/// Gets language setting for the back end interface.
+		/// </summary>
+		/// <value>The back end language.</value>
+		[ConfigurationProperty("backEndLang", DefaultValue = "it", IsRequired = false)]
+		public string BackEndLang
+		{
+			get
+			{
+				return this["backEndLang"] as string;
+			}
+		}
+
 
 
 		/// <summary>

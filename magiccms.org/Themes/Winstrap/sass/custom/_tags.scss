@@ -1,0 +1,14 @@
+.tags {
+  .list-inline {
+    li {
+      margin-top: 8px;
+      margin-bottom: 8px;
+      a.label.label-info:hover, a.label.label-info:focus{
+        background-color: rgba(0,0,0,0.8)
+      }
+      .label {
+        padding-bottom: 0.5em;
+      }
+    }
+  }
+}

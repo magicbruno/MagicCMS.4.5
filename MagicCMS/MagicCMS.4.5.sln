@@ -23,6 +23,8 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Help", "..\Help\", "{B0B146
 		VWDPort = "60731"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "magiccms.org", "..\magiccms.org\magiccms.org.csproj", "{18A9C99A-ED71-443E-97FD-6143670DA1E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{B0B146FF-8AE5-4D2F-A89B-B87278FB03ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0B146FF-8AE5-4D2F-A89B-B87278FB03ED}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{B0B146FF-8AE5-4D2F-A89B-B87278FB03ED}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{18A9C99A-ED71-443E-97FD-6143670DA1E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18A9C99A-ED71-443E-97FD-6143670DA1E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18A9C99A-ED71-443E-97FD-6143670DA1E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18A9C99A-ED71-443E-97FD-6143670DA1E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

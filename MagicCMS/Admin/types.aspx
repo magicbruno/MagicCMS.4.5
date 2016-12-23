@@ -5,14 +5,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="HeaderContent" runat="server">
-    <h1><i class="fa fa-gears"></i>Configurazione dei tipi di Container e Content</h1>
+    <h1><i class="fa fa-gears"></i><%= Master.Translate("Definizione oggetti Web") %></h1>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <div class="row">
         <div class="col-md-12">
             <div class="box box-primary">
                 <div class="box-header">
-                    <h3 class="box-title">Elenco configurazioni</h3>
+                    <h3 class="box-title"><%= Master.Translate("Elenco configurazioni") %></h3>
                     <div class="box-tools pull-right">
                         <button type="button" data-action="new" data-rowpk="0" class="btn btn-sm btn-success btn-icon"
                             title="Nuova configurazione">
@@ -33,14 +33,14 @@
                             <thead>
                                 <tr>
                                     <th>Id</th>
-                                    <th>Nome</th>
-                                    <th title="Contenitore"><i class="fa fa-folder-open"></i></th>
-                                    <th title="Attivo"><i class="fa fa-thumbs-o-up"></i></th>
-                                    <th title="Testo lungo"><i class="fa fa-file-text"></i></th>
-                                    <th title="Testo breve"><i class="fa fa-file-text-o"></i></th>
-                                    <th title="Url principale"><i class="fa fa-image"></i></th>
-                                    <th title="Url secondaria"><i class="fa fa-link"></i></th>
-                                    <th title="Tags"><i class="fa fa-tags"></i></th>
+                                    <th><%= Master.Translate("Nome") %></th>
+                                    <th title="<%= Master.Translate("Contenitore") %>"><i class="fa fa-folder-open"></i></th>
+                                    <th title="<%= Master.Translate("Attivo") %>"><i class="fa fa-thumbs-o-up"></i></th>
+                                    <th title="<%= Master.Translate("Testo completo") %>"><i class="fa fa-file-text"></i></th>
+                                    <th title="<%= Master.Translate("Descrizione breve") %>"><i class="fa fa-file-text-o"></i></th>
+                                    <th title="<%= Master.Translate("Url principale") %>"><i class="fa fa-image"></i></th>
+                                    <th title="<%= Master.Translate("Url secondaria") %>"><i class="fa fa-link"></i></th>
+                                    <th title="<%= Master.Translate("Parole chiave") %>"><i class="fa fa-tags"></i></th>
                                     <th><i class="fa fa-edit"></i></th>
                                     <th><i class="fa fa-eraser"></i></th>
                                 </tr>
@@ -54,10 +54,10 @@
             </div>
             <div class="box box-primary" id="edit-record">
                 <div class="box-header">
-                    <h3 class="box-title">Nuova configurazione</h3>
+                    <h3 class="box-title"><%= Master.Translate("Nuova configurazione") %></h3>
                     <div class="box-tools pull-right">
                         <button type="button" data-action="new" data-rowpk="0" class="btn btn-sm btn-success">
-                            <i class="fa fa-file-o"></i>nuova configuazione</button>
+                            <i class="fa fa-file-o"></i><%= Master.Translate("Nuova configuazione") %></button>
                         <button type="button" class="btn btn-primary btn-sm" data-widget="collapse">
                             <i class="fa fa-minus"></i>
                         </button>
@@ -70,7 +70,7 @@
                             <input type="hidden" id="Pk" name="Pk" value="0" />
                             <input type="hidden" id="table" name="table" value="ANA_CONT_TYPE" />
                             <div class="form-group" id="fg-item">
-                                <label for="Nome" class="col-sm-2 control-label">Nome</label>
+                                <label for="Nome" class="col-sm-2 control-label"><%= Master.Translate("Nome") %></label>
                                 <div class="col-sm-4">
                                     <input type="text" class="form-control" id="Nome" />
                                 </div>
@@ -82,20 +82,20 @@
                                 </div>
                             </div>
                             <div class="form-group" id="fg-descrizione">
-                                <label for="Help" class="col-sm-2 control-label">Help</label>
+                                <label for="Help" class="col-sm-2 control-label"><%= Master.Translate("Help") %></label>
                                 <div class="col-sm-10">
                                     <textarea class="form-control ckeditor_mcms" id="Help" rows="8"></textarea>
                                 </div>
                             </div>
                             <div class="form-group" id="fg-preferiti">
-                                <label for="ContenutiPreferiti" class="col-sm-2 control-label">Preferiti</label>
+                                <label for="ContenutiPreferiti" class="col-sm-2 control-label"><%= Master.Translate("Preferiti") %></label>
                                 <div class="col-sm-10">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="ContenutiPreferiti" placeholder="Inserire id separati da virgola"
-                                            title="Tipologie di oggetti MagicPost che possono essere inserite nel contenitore." />
+                                        <input type="text" class="form-control" id="ContenutiPreferiti" placeholder="<%= Master.Translate("Inserire id separati da virgola") %>"
+                                            title="<%= Master.Translate("Tipologie di oggetti MagicPost che possono essere inserite nel contenitore") %>." />
 
                                         <span class="input-group-btn">
-                                            <button type="button" data-target="#checkboxed-types-modal" data-toggle="modal" title="Componi lista tipi"
+                                            <button type="button" data-target="#checkboxed-types-modal" data-toggle="modal" title="<%= Master.Translate("Componi lista tipi") %>"
                                                 class="btn btn-flat btn-icon btn-primary" data-selector="#ContenutiPreferiti">
                                                 <i class="fa fa-search"></i>
                                             </button>
@@ -104,289 +104,289 @@
                                 </div>
                             </div>
                             <div class="form-group" id="fg-flags">
-                                <label for="PercNazCorrette" class="col-sm-2 control-label">flags</label>
+                                <label for="PercNazCorrette" class="col-sm-2 control-label"><%= Master.Translate("Flags") %></label>
                                 <div class="col-sm-10">
                                     <div class="row">
                                         <div class="col-sm-3">
-                                            <label title="Se non attivo viene nascosto nel menù crea configurazione">
+                                            <label title="<%= Master.Translate("Se la configurazione non è attiva il tipo di oggetto viene nascosto") %>">
                                                 <input type="checkbox" value="true" class="minimal" id="FlagAttivo" />
-                                                Attivo
+                                                <%= Master.Translate("Attivo") %>
                                             </label>
                                         </div>
                                         <div class="col-sm-3">
-                                            <label title="Contenitore">
+                                            <label title="<%= Master.Translate("Può contenere elementi figli") %>">
                                                 <input type="checkbox" value="true" class="minimal" id="FlagContenitore" />
-                                                Container
+                                                <%= Master.Translate("Contenitore") %>
                                             </label>
                                         </div>
                                         <div class="col-sm-3">
-                                            <label title="Bottone cerca sul server...">
+                                            <label title="<%= Master.Translate("Bottone 'cerca sul server'") %>...">
                                                 <input type="checkbox" value="true" class="minimal" id="FlagCercaServer" />
-                                                Server
+                                                <%= Master.Translate("Server") %>
                                             </label>
                                         </div>
                                         <div class="col-sm-3">
-                                            <label title="Bottone per il calcolo della geolocazione">
+                                            <label title="<%= Master.Translate("Bottone che apre la dialog box per il calcolo della geolocazione") %>">
                                                 <input type="checkbox" value="true" class="minimal" id="FlagBtnGeolog" name="FlagBtnGeolog" />
-                                                Geolocazione
+                                                <%= Master.Translate("Geolocazione") %>
                                             </label>
                                         </div>
                                         <div class="col-sm-3">
-                                            <label title="Il contenuto è associabile a tag">
+                                            <label title="<%= Master.Translate("Viene visualizzato il campo parole chiave") %>">
                                                 <input type="checkbox" value="true" class="minimal" id="FlagTags" />
-                                                Tags
+                                                <%= Master.Translate("Parole chiave") %>
                                             </label>
                                         </div>
                                         <div class="col-sm-3">
-                                            <label title="Visualizza i campi altezza e larghezza">
+                                            <label title="<%= Master.Translate("Vengono visualizzati i campi altezza e larghezza") %>">
                                                 <input type="checkbox" value="true" class="minimal" id="FlagDimensioni" />
-                                                Dimensioni
+                                                <%= Master.Translate("Dimensioni") %>
                                             </label>
                                         </div>
                                         <div class="col-sm-3">
-                                            <label title="Contrassegna il tipo come 'speciale'">
+                                            <label title="<%= Master.Translate("Il campo descrizione viene ricavato automaticamente dal campo testo completo") %>">
                                                 <input type="checkbox" value="true" class="minimal" id="FlagAutoTestoBreve" />
-                                                Auto testo breve
+                                                <%= Master.Translate("Crea descrizione") %>
                                             </label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <h4 class="box-header">Etichette da associare ai campi</h4>
+                            <h4 class="box-header"><%= Master.Translate("Etichette che verranno associate ai campi") %></h4>
                             <div class="form-group" id="fg-testo-breve">
-                                <label for="LabelTitolo" class="col-sm-2 control-label">Titolo</label>
+                                <label for="LabelTitolo" class="col-sm-2 control-label">Titolo<%= Master.Translate("") %></label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="LabelTitolo" title="Etichetta da associare al campo titolo." />
+                                    <input type="text" class="form-control" id="LabelTitolo" title="<%= Master.Translate("Etichetta da associare al campo titolo") %>." />
                                 </div>
                             </div>
                             <div class="form-group" id="fg-LabelTestoBreve">
-                                <label for="LabelTestoBreve" class="col-sm-2 control-label">Testo breve</label>
+                                <label for="LabelTestoBreve" class="col-sm-2 control-label"><%= Master.Translate("Descrizione breve") %></label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="LabelTestoBreve" title="Etichetta da associare al campo testo breve." />
+                                    <input type="text" class="form-control" id="LabelTestoBreve" title="<%= Master.Translate("Etichetta da associare al campo descrizione breve") %>." />
                                 </div>
                                 <div class="col-sm-2">
-                                    <label title="Visualizza il campo testo breve.">
+                                    <label title="<%= Master.Translate("Visualizza il campo descrizione breve") %>.">
                                         <input type="checkbox" value="true" class="minimal" id="FlagBreve" />
-                                        Attivo
+                                        Attivo<%= Master.Translate("") %>
                                     </label>
                                 </div>
                             </div>
                             <div class="form-group" id="fg-LabelTestoLungo">
-                                <label for="LabelTestoLungo" class="col-sm-2 control-label">Testo lungo</label>
+
+                                <label for="LabelTestoLungo" class="col-sm-2 control-label">Testo completo<%= Master.Translate("") %></label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="LabelTestoLungo" title="Etichetta da associare al campo testo lungo." />
+                                    <input type="text" class="form-control" id="LabelTestoLungo" title="Etichetta da associare al campo testo completo<%= Master.Translate("") %>." />
                                 </div>
                                 <div class="col-sm-2">
-                                    <label title="Visualizza il campo testo lungo.">
+                                    <label title="Visualizza il campo testo completo<%= Master.Translate("") %>.">
                                         <input type="checkbox" value="true" class="minimal" id="FlagFull" />
-                                        Attivo
+                                        <%= Master.Translate("Attivo") %>
                                     </label>
                                 </div>
                             </div>
                             <div class="form-group" id="fg-LabelUrl">
-                                <label for="LabelUrl" class="col-sm-2 control-label">Url principale</label>
+                                <label for="LabelUrl" class="col-sm-2 control-label"><%= Master.Translate("Url principale") %></label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="LabelUrl" title="Etichetta da associare al campo url principale." />
+                                    <input type="text" class="form-control" id="LabelUrl" title="<%= Master.Translate("Etichetta da associare al campo url principale") %>." />
                                 </div>
                                 <div class="col-sm-2">
-                                    <label title="Visualizza il campo url principale.">
+                                    <label title="<%= Master.Translate("Visualizza il campo url principale") %>.">
                                         <input type="checkbox" value="true" class="minimal" id="FlagUrl" />
-                                        Attivo
+                                        <%= Master.Translate("Attivo") %>
                                     </label>
                                 </div>
                             </div>
                             <div class="form-group" id="fg-LabelUrlSecondaria">
-                                <label for="LabelUrlSecondaria" class="col-sm-2 control-label">Url secondaria</label>
+                                <label for="LabelUrlSecondaria" class="col-sm-2 control-label"><%= Master.Translate("Url secondaria") %></label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="LabelUrlSecondaria" title="Etichetta da associare al campo url secondaria." />
+                                    <input type="text" class="form-control" id="LabelUrlSecondaria" title="<%= Master.Translate("Etichetta da associare al campo url secondaria") %>." />
                                 </div>
                                 <div class="col-sm-2">
-                                    <label title="Visualizza il campo url principale.">
+                                    <label title="<%= Master.Translate("Visualizza il campo url secondaria") %>.">
                                         <input type="checkbox" value="true" class="minimal" id="FlagUrlSecondaria" />
-                                        Attivo
+                                        <%= Master.Translate("Attivo") %>
                                     </label>
                                 </div>
                             </div>
                             <div class="form-group" id="fg-LabelAltezza">
-                                <label for="LabelAltezza" class="col-sm-2 control-label">Altezza</label>
+                                <label for="LabelAltezza" class="col-sm-2 control-label"><%= Master.Translate("Altezza") %></label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="LabelAltezza" title="Etichetta da associare al campo Altezza." />
+                                    <input type="text" class="form-control" id="LabelAltezza" title="<%= Master.Translate("Etichetta da associare al campo Altezza") %>." />
                                 </div>
                                 <div class="col-sm-2">
-                                    <label title="Visualizza il campo Altezza.">
+                                    <label title="<%= Master.Translate("Visualizza il campo Altezza") %>.">
                                         <input type="checkbox" value="true" class="minimal" id="FlagAltezza" />
-                                        Attivo
+                                        <%= Master.Translate("Attivo") %>
                                     </label>
                                 </div>
                             </div>
                             <div class="form-group" id="fg-LabelLarghezza">
-                                <label for="LabelLarghezza" class="col-sm-2 control-label">Larghezza</label>
+                                <label for="LabelLarghezza" class="col-sm-2 control-label"><%= Master.Translate("Larghezza") %></label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="LabelLarghezza" title="Etichetta da associare al campo Larghezza." />
+                                    <input type="text" class="form-control" id="LabelLarghezza" title="<%= Master.Translate("Etichetta da associare al campo Larghezza") %>." />
                                 </div>
                                 <div class="col-sm-2">
-                                    <label title="Visualizza il campo Larghezza.">
+                                    <label title="<%= Master.Translate("Visualizza il campo Larghezza") %>.">
                                         <input type="checkbox" value="true" class="minimal" id="FlagLarghezza" />
-                                        Attivo
+                                        <%= Master.Translate("Attivo") %>
                                     </label>
                                 </div>
                             </div>
                             <div class="form-group" id="fg-LabelExtraInfo">
-                                <label for="LabelExtraInfo" class="col-sm-2 control-label">Extra Info 0</label>
+                                <label for="LabelExtraInfo" class="col-sm-2 control-label">Extra Info</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="LabelExtraInfo" title="Etichetta da associare al campo ExtraInfo 0." />
+                                    <input type="text" class="form-control" id="LabelExtraInfo" title="<%= Master.Translate("Etichetta da associare al campo") %> 'ExtraInfo 0'." />
                                 </div>
                                 <div class="col-sm-2">
-                                    <label title="Visualizza il campo Extra Info 0.">
+                                    <label title="<%= Master.Translate("Visualizza il campo") %>.">
                                         <input type="checkbox" value="true" class="minimal" id="FlagExtraInfo" />
-                                        Attivo
+                                         <%= Master.Translate("Attivo") %>
                                     </label>
                                 </div>
                             </div>
                             <div class="form-group" id="fg-LabelExtraInfo1">
-                                <label for="LabelExtraInfo1" class="col-sm-2 control-label">Extra Info 1</label>
+                                <label for="LabelExtraInfo1" class="col-sm-2 control-label">ExtraInfo 1 (<%= Master.Translate("Titolo mostrato") %>)</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="LabelExtraInfo1" title="Etichetta da associare al campo ExtraInfo 1." />
+                                    <input type="text" class="form-control" id="LabelExtraInfo1" title="<%= Master.Translate("Etichetta da associare al campo") %> ExtraInfo 1." />
                                 </div>
                                 <div class="col-sm-2">
-                                    <label title="Visualizza il campo Extra Info 1.">
+                                    <label title="<%= Master.Translate("Visualizza il campo") %>.">
                                         <input type="checkbox" value="true" class="minimal" id="FlagExtrInfo1" />
                                         Attivo
                                     </label>
                                 </div>
                             </div>
                             <div class="form-group" id="fg-LabelScadenza">
-                                <label for="LabelScadenza" class="col-sm-2 control-label">Scadenza</label>
+                                <label for="LabelScadenza" class="col-sm-2 control-label"><%= Master.Translate("Scadenza") %></label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="LabelScadenza" title="Etichetta da associare al campo scadenza."
+                                    <input type="text" class="form-control" id="LabelScadenza" title="<%= Master.Translate("Etichetta da associare al campo scadenza") %>."
                                         placeholder="Lasciare vuoto per nascondere il campo" />
                                 </div>
                                 <div class="col-sm-2">
-                                    <label title="Visualizza il campo Scadenza.">
+                                    <label title="<%= Master.Translate("Visualizza il campo") %>.">
                                         <input type="checkbox" value="true" class="minimal" id="FlagScadenza" />
                                         Attivo
                                     </label>
                                 </div>
                             </div>
                             <div class="form-group" id="fg-LabelExtraInfo2">
-                                <label for="LabelExtraInfo2" class="col-sm-2 control-label">Extra Info 2</label>
+                                <label for="LabelExtraInfo2" class="col-sm-2 control-label">ExtraInfo 2</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="LabelExtraInfo2" title="Etichetta da associare al campo ExtraInfo 2."
-                                        placeholder="Lasciare vuoto per nascondere il campo" />
+                                    <input type="text" class="form-control" id="LabelExtraInfo2" title="<%= Master.Translate("Etichetta da associare al campo") %> 'ExtraInfo 2'."
+                                        placeholder="<%= Master.Translate("Lasciare vuoto per nascondere il campo") %>" />
                                 </div>
                             </div>
                             <div class="form-group" id="fg-LabelExtraInfo3">
-                                <label for="LabelExtraInfo3" class="col-sm-2 control-label">Extra Info 3</label>
+                                <label for="LabelExtraInfo3" class="col-sm-2 control-label">ExtraInfo 3</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="LabelExtraInfo3" title="Etichetta da associare al campo ExtraInfo 3."
-                                        placeholder="Lasciare vuoto per nascondere il campo" />
+                                    <input type="text" class="form-control" id="LabelExtraInfo3" title="<%= Master.Translate("Etichetta da associare al campo") %> 'ExtraInfo 3'."
+                                        placeholder="<%= Master.Translate("Lasciare vuoto per nascondere il campo") %>" />
                                 </div>
                             </div>
                             <div class="form-group" id="fg-LabelExtraInfo4">
                                 <label for="LabelExtraInfo4" class="col-sm-2 control-label">Extra Info 4</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="LabelExtraInfo4" title="Etichetta da associare al campo ExtraInfo 4."
-                                        placeholder="Lasciare vuoto per nascondere il campo" />
+                                    <input type="text" class="form-control" id="LabelExtraInfo4" title="<%= Master.Translate("Etichetta da associare al campo") %> 'ExtraInfo 4'."
+                                        placeholder="<%= Master.Translate("Lasciare vuoto per nascondere il campo") %>" />
                                 </div>
                             </div>
                             <div class="form-group" id="fg-LabelExtraInfo_5">
                                 <label for="LabelExtraInfo_5" class="col-sm-2 control-label">Extra Info 5</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="LabelExtraInfo_5" placeholder="Lasciare vuoto per nascondere il campo"
-                                        title="Etichetta da associare al campo ExtraInfo 5." />
+                                    <input type="text" class="form-control" id="LabelExtraInfo_5" placeholder="<%= Master.Translate("Lasciare vuoto per nascondere il campo") %>"
+                                        title="<%= Master.Translate("Etichetta da associare al campo") %> 'ExtraInfo 5'." />
                                 </div>
                             </div>
                             <div class="form-group" id="fg-LabelExtraInfo_6">
                                 <label for="LabelExtraInfo_6" class="col-sm-2 control-label">Extra Info 6</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="LabelExtraInfo_6" placeholder="Lasciare vuoto per nascondere il campo"
-                                        title="Etichetta da associare al campo ExtraInfo 6." />
+                                    <input type="text" class="form-control" id="LabelExtraInfo_6" placeholder="<%= Master.Translate("Lasciare vuoto per nascondere il campo") %>"
+                                        title="<%= Master.Translate("Etichetta da associare al campo") %> 'ExtraInfo 6'." />
                                 </div>
                             </div>
                             <div class="form-group" id="fg-LabelExtraInfo_7">
                                 <label for="LabelExtraInfo_7" class="col-sm-2 control-label">Extra Info 7</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="LabelExtraInfo_7" placeholder="Lasciare vuoto per nascondere il campo"
-                                        title="Etichetta da associare al campo ExtraInfo 7." />
+                                    <input type="text" class="form-control" id="LabelExtraInfo_7" placeholder="<%= Master.Translate("Lasciare vuoto per nascondere il campo") %>"
+                                        title="<%= Master.Translate("Etichetta da associare al campo") %> 'ExtraInfo 7'." />
                                 </div>
                             </div>
                             <div class="form-group" id="fg-LabelExtraInfo_8">
                                 <label for="LabelExtraInfo_8" class="col-sm-2 control-label">Extra Info 8</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="LabelExtraInfo_8" placeholder="Lasciare vuoto per nascondere il campo"
-                                        title="Etichetta da associare al campo ExtraInfo 8." />
+                                    <input type="text" class="form-control" id="LabelExtraInfo_8" placeholder="<%= Master.Translate("Lasciare vuoto per nascondere il campo") %>"
+                                        title="<%= Master.Translate("Etichetta da associare al campo") %> 'ExtraInfo 8'." />
                                 </div>
                             </div>
                             <div class="form-group" id="fg-LabelExtraInfoNumber_1">
-                                <label for="LabelExtraInfoNumber_1" class="col-sm-2 control-label">Campo Numerico 1</label>
+                                <label for="LabelExtraInfoNumber_1" class="col-sm-2 control-label"><%= Master.Translate("Campo Numerico") %> 1</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="LabelExtraInfoNumber_1" placeholder="Lasciare vuoto per nascondere il campo"
-                                        title="Etichetta da associare al campo Numerico 1." />
+                                    <input type="text" class="form-control" id="LabelExtraInfoNumber_1" placeholder="<%= Master.Translate("Lasciare vuoto per nascondere il campo") %>"
+                                        title="Etichetta da associare al <%= Master.Translate("Campo numerico") %> 1." />
                                 </div>
                             </div>
                             <div class="form-group" id="fg-LabelExtraInfoNumber_2">
-                                <label for="LabelExtraInfoNumber_2" class="col-sm-2 control-label">Campo Numerico 2</label>
+                                <label for="LabelExtraInfoNumber_2" class="col-sm-2 control-label"><%= Master.Translate("Campo numerico") %> 2</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="LabelExtraInfoNumber_2" placeholder="Lasciare vuoto per nascondere il campo"
-                                        title="Etichetta da associare al campo Numerico 2." />
+                                    <input type="text" class="form-control" id="LabelExtraInfoNumber_2" placeholder="<%= Master.Translate("Lasciare vuoto per nascondere il campo") %>"
+                                        title="Etichetta da associare al <%= Master.Translate("Campo numerico") %> 2." />
                                 </div>
                             </div>
                             <div class="form-group" id="fg-LabelExtraInfoNumber_3">
-                                <label for="LabelExtraInfoNumber_3" class="col-sm-2 control-label">Campo Numerico 3</label>
+                                <label for="LabelExtraInfoNumber_3" class="col-sm-2 control-label"><%= Master.Translate("Campo numerico") %> 3</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="LabelExtraInfoNumber_3" placeholder="Lasciare vuoto per nascondere il campo"
-                                        title="Etichetta da associare al campo Numerico 3." />
+                                    <input type="text" class="form-control" id="LabelExtraInfoNumber_3" placeholder="<%= Master.Translate("Lasciare vuoto per nascondere il campo") %>"
+                                        title="Etichetta da associare al <%= Master.Translate("Campo numerico") %> 3." />
                                 </div>
                             </div>
                             <div class="form-group" id="fg-LabelExtraInfoNumber_4">
-                                <label for="LabelExtraInfoNumber_4" class="col-sm-2 control-label">Campo Numerico 4</label>
+                                <label for="LabelExtraInfoNumber_4" class="col-sm-2 control-label"><%= Master.Translate("Campo numerico") %> 4</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="LabelExtraInfoNumber_4" placeholder="Lasciare vuoto per nascondere il campo"
-                                        title="Etichetta da associare al campo Numerico 4." />
+                                    <input type="text" class="form-control" id="LabelExtraInfoNumber_4" placeholder="<%= Master.Translate("Lasciare vuoto per nascondere il campo") %>"
+                                        title="Etichetta da associare al <%= Master.Translate("Campo numerico") %> 4." />
                                 </div>
                             </div>
                             <div class="form-group" id="fg-LabelExtraInfoNumber_5">
                                 <label for="LabelExtraInfoNumber_5" class="col-sm-2 control-label">
-                                    Campo Numerico 5
+                                    <%= Master.Translate("Campo numerico") %> 5
                                 </label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="LabelExtraInfoNumber_5" placeholder="Lasciare vuoto per nascondere il campo"
-                                        title="Etichetta da associare al campo Numerico 5." />
+                                    <input type="text" class="form-control" id="LabelExtraInfoNumber_5" placeholder="<%= Master.Translate("Lasciare vuoto per nascondere il campo") %>"
+                                        title="Etichetta da associare al <%= Master.Translate("Campo numerico") %> 5." />
                                 </div>
                             </div>
                             <div class="form-group" id="fg-LabelExtraInfoNumber_6">
                                 <label for="LabelExtraInfoNumber_6" class="col-sm-2 control-label">
-                                    Campo Numerico 6
+                                    <%= Master.Translate("Campo numerico") %> 6
                                 </label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="LabelExtraInfoNumber_6" placeholder="Lasciare vuoto per nascondere il campo"
-                                        title="Etichetta da associare al campo Numerico 6." />
+                                    <input type="text" class="form-control" id="LabelExtraInfoNumber_6" placeholder="<%= Master.Translate("Lasciare vuoto per nascondere il campo") %>"
+                                        title="Etichetta da associare al <%= Master.Translate("Campo numerico") %> 6." />
                                 </div>
                             </div>
                             <div class="form-group" id="fg-LabelExtraInfoNumber_7">
                                 <label for="LabelExtraInfoNumber_7" class="col-sm-2 control-label">
-                                    Campo Numerico 7
+                                    <%= Master.Translate("Campo numerico") %> 7
                                 </label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="LabelExtraInfoNumber_7" placeholder="Lasciare vuoto per nascondere il campo"
-                                        title="Etichetta da associare al campo Numerico 7." />
+                                    <input type="text" class="form-control" id="LabelExtraInfoNumber_7" placeholder="<%= Master.Translate("Lasciare vuoto per nascondere il campo") %>"
+                                        title="Etichetta da associare al <%= Master.Translate("Campo numerico") %> 7." />
                                 </div>
                             </div>
                             <div class="form-group" id="fg-LabelExtraInfoNumber_8">
                                 <label for="LabelExtraInfoNumber_8" class="col-sm-2 control-label">
-                                    Campo Numerico 8
+                                    <%= Master.Translate("Campo numerico") %> 8
                                 </label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="LabelExtraInfoNumber_8" placeholder="Lasciare vuoto per nascondere il campo"
-                                        title="Etichetta da associare al campo Numerico 8." />
+                                    <input type="text" class="form-control" id="LabelExtraInfoNumber_8" placeholder="<%= Master.Translate("Lasciare vuoto per nascondere il campo") %>"
+                                        title="Etichetta da associare al <%= Master.Translate("Campo numerico") %> 8." />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-xs-12">
                                     <div class="center-block text-center">
                                         <button type="button" class="btn btn-primary" data-action="submit">
-                                            Salva modifiche</button>
-                                        <%-- <button type="button" class="btn btn-danger btn-sm" data-dismiss="record">Elimina</button>--%>
+                                            <%= Master.Translate("Salva modifiche") %></button>
                                     </div>
                                 </div>
                             </div>
@@ -430,7 +430,7 @@
                     .on('xhr.dt', function (e, settings, json) {
                         var xhr = settings.jqXHR;
                         if (xhr.status == 403) {
-                            bootbox.alert('Sessione scaduta. È necessario ripetere il login.', function () {
+                        	bootbox.alert('<%= Master.Translate("Sessione scaduta. È necessario ripetere il login") %>.', function () {
                                 window.location.href = "login.aspx";
                             });
                         }
@@ -443,29 +443,29 @@
                             "type": "POST"
                         },
                         "language": {
-                            "sEmptyTable": "Nessun dato presente nella tabella",
-                            "sInfo": "Vista da _START_ a _END_ di _TOTAL_ elementi",
-                            "sInfoEmpty": "Vista da 0 a 0 di 0 elementi",
-                            "sInfoFiltered": "(filtrati da _MAX_ elementi totali)",
-                            "sInfoPostFix": "",
-                            "sInfoThousands": ",",
-                            "sLengthMenu": "Visualizza _MENU_ elementi",
-                            "sLoadingRecords": "Caricamento...",
-                            "sProcessing": "Elaborazione...",
-                            "sSearch": "Cerca:",
-                            "sZeroRecords": "La ricerca non ha portato alcun risultato.",
-                            "oPaginate": {
-                                "sFirst": "Inizio",
-                                "sPrevious": "Precedente",
-                                "sNext": "Successivo",
-                                "sLast": "Fine"
-                            },
-                            "oAria": {
-                                "sSortAscending": ": attiva per ordinare la colonna in ordine crescente",
-                                "sSortDescending": ": attiva per ordinare la colonna in ordine decrescente"
-                            }
+                        	"sEmptyTable": "<%= Master.Translate("Nessun dato presente nella tabella") %>",
+                        	"sInfo": "<%= Master.Translate("Vista da _START_ a _END_ di _TOTAL_ elementi") %>",
+                        	"sInfoEmpty": "<%= Master.Translate("Vista da 0 a 0 di 0 elementi") %>",
+                        	"sInfoFiltered": "<%= Master.Translate("(filtrati da _MAX_ elementi totali)") %>",
+                        	"sInfoPostFix": "",
+                        	"sInfoThousands": ",",
+                        	"sLengthMenu": "<%= Master.Translate("Visualizza _MENU_ elementi") %>",
+                    		"sLoadingRecords": "<%= Master.Translate("Caricamento") %>...",
+                        	"sProcessing": "<%= Master.Translate("Elaborazione") %>...",
+                        	"sSearch": "<%= Master.Translate("Cerca") %>:",
+                        	"sZeroRecords": "<%= Master.Translate("La ricerca non ha portato alcun risultato") %>.",
+                        	"oPaginate": {
+                        		"sFirst": "<%= Master.Translate("Inizio") %>",
+                    			"sPrevious": "<%= Master.Translate("Precedente") %>",
+                    			"sNext": "<%= Master.Translate("Successivo") %>",
+                    			"sLast": "<%= Master.Translate("Fine") %>"
+                    		},
+                        	"oAria": {
+                        		"sSortAscending": ": <%= Master.Translate("attiva per ordinare la colonna in ordine crescente") %>",
+                    			"sSortDescending": ": <%= Master.Translate("attiva per ordinare la colonna in ordine decrescente") %>"
+                    		}
                         },
-                        "columnDefs": [
+                    	"columnDefs": [
                             {
                                 "targets": 0,
                                 "data": "Pk",
@@ -594,7 +594,7 @@
                                                 .attr('data-action', 'undelete')
                                                 .attr('type', 'button')
                                                 .attr('title', 'recupera')
-                                                .html('<i class="fa fa-external-link-square"></i><span class="hidden-sm hidden-xs">recupera</span>');
+                                                .html('<i class="fa fa-external-link-square"></i><span class="hidden-sm hidden-xs">"<%= Master.Translate("recupera") %></span>');
                                     else
                                         btn = $('<button />')
                                                 .addClass('btn btn-primary btn-xs')
@@ -602,7 +602,7 @@
                                                 .attr('data-action', 'edit')
                                                 .attr('type', 'button')
                                                 .attr('title', 'modifica')
-                                                .html('<i class="fa fa-edit"></i><span class="hidden-sm hidden-xs">modifica</span>');
+                                                .html('<i class="fa fa-edit"></i><span class="hidden-sm hidden-xs"><%= Master.Translate("modifica") %></span>');
 
                                     return $('<div />').append(btn).html();
                                 }
@@ -623,11 +623,11 @@
                                     if (!full.FlagCancellazione)
                                         btn
                                         .attr('title', 'cestino')
-                                        .html('<i class="fa fa-trash"></i><span class="hidden-sm hidden-xs">cestino</span>');
+                                        .html('<i class="fa fa-trash"></i><span class="hidden-sm hidden-xs"><%= Master.Translate("cestino") %></span>');
                                     else
                                         btn
                                         .attr('title', 'elimina')
-                                        .html('<i class="fa fa-eraser"></i><span class="hidden-sm hidden-xs">elimina</span>');
+                                        .html('<i class="fa fa-eraser"></i><span class="hidden-sm hidden-xs"><%= Master.Translate("elimina") %></span>');
 
                                     return $('<div />').append(btn).html();
                                 }
@@ -645,7 +645,7 @@
                     case 'edit':
                         e.preventDefault();
                         if ($('#edit-type').mb_submit('pendingChanges')) {
-                            bootbox.confirm('Le modifiche non salvate andranne perse. Vou continuare?', function (result) {
+                        	bootbox.confirm('<%= Master.Translate("Le modifiche non salvate andranno perse. Voui continuare") %>?', function (result) {
                                 if (result)
                                     getRecord($this.attr('data-rowpk'));
                             })
@@ -657,9 +657,9 @@
                         var inbasket = $this.attr('data-inbasket');
                         var msg;
                         if (inbasket == "true")
-                            msg = 'La configurazione verrà eliminata definitivamente. Sei sicuro di voler continuare?';
+                        	msg = '<%= Master.Translate("La configurazione verrà eliminata definitivamente. Sei sicuro di voler continuare") %>?';
                         else
-                            msg = 'Stai spostando la configurazione nel cestino. Ser sicuro di voler continuare?';
+                        	msg = '<%= Master.Translate("Stai spostando la configurazione nel cestino. Ser sicuro di voler continuare") %>?';
 
                         bootbox.confirm(msg, function (result) {
                             if (result) {
@@ -677,7 +677,7 @@
                                     if (data.success) {
                                         $tableTipi.ajax.reload();
                                         $.growl({
-                                            title: 'Info',
+                                        	title: '<%= Master.Translate("Info") %>',
                                             message: data.msg,
                                             icon: "fa fa-info-circle"
                                         },
@@ -686,7 +686,7 @@
                                         })
                                     } else {
                                         $.growl({
-                                            title: 'Errore',
+                                        	title: '<%= Master.Translate("Errore") %>',
                                             message: data.msg,
                                             icon: "fa fa-warning"
                                         },
@@ -696,7 +696,7 @@
                                     }
                                 })
                                 .fail(function (jqxhr, textStatus, error) {
-                                    bootbox.alert('Si è verificaro un errore: ' + textStatus + "," + error);
+                                	bootbox.alert('<%= Master.Translate("Si è verificato un errore") %>: ' + textStatus + "," + error);
                                 })
                                 .always(function () {
                                     $('#tipi').spin(false);
@@ -720,7 +720,7 @@
                             if (data.success) {
                                 $tableTipi.ajax.reload();
                                 $.growl({
-                                    title: 'Info',
+                                	title: '<%= Master.Translate("Info") %>',
                                     message: data.msg,
                                     icon: "fa fa-info-circle"
                                 },
@@ -729,7 +729,7 @@
                                 })
                             } else {
                                 $.growl({
-                                    title: 'Errore',
+                                	title: '<%= Master.Translate("Errore") %>',
                                     message: data.msg,
                                     icon: "fa fa-warning"
                                 },
@@ -739,7 +739,7 @@
                             }
                         })
                         .fail(function (jqxhr, textStatus, error) {
-                            bootbox.alert('Si è verificaro un errore: ' + textStatus + "," + error);
+                        	bootbox.alert('<%= Master.Translate("Si è verificato un errore") %>: ' + textStatus + "," + error);
                         })
                         .always(function () {
                             $('#tipi').spin(false);
@@ -784,7 +784,7 @@
                     initSelection: function (element, callbak) {
                         callbak({ id: element.val(), text: '<i class="fa ' + element.val() + '"></i>' });
                     },
-                    placeholder: 'Icona',
+                    placeholder: '<%= Master.Translate("Icona") %>',
                     allowClear: true
                 });
 
@@ -802,7 +802,7 @@
                     initSelection: function (element, callbak) {
                         callbak({ id: element.val(), text: element.val() });
                     },
-                    placeholder: 'Scegli la master page',
+                    placeholder: '<%= Master.Translate("Scegli la master page") %>',
                     allowClear: true
                 });
             //$('#edit-record').on('change', 'input, textarea', function () {
@@ -823,8 +823,8 @@
                 if (data.success) {
                     $.growl({
                         icon: 'fa fa-thumbs-o-up',
-                        title: 'Info',
-                        message: "Record salvato con successo"
+                        title: '<%= Master.Translate("Info") %>',
+                        message: "<%= Master.Translate("Record salvato con successo") %>"
                     },
                     {
                         type: 'success'
@@ -833,7 +833,7 @@
                 } else {
                     $.growl({
                         icon: 'fa fa-warning',
-                        title: 'Errore',
+                        title: '<%= Master.Translate("Errore") %>',
                         message: data.msg
                     },
                     {
@@ -845,7 +845,7 @@
             $('[data-action="new"]').on('click', function (e) {
                 e.preventDefault();
                 if ($('#edit-type').mb_submit('pendingChanges')) {
-                    bootbox.confirm('Le modifiche non salvate andranne perse. Vou continuare?', function (result) {
+                	bootbox.confirm('<%= Master.Translate("Le modifiche non salvate andranno perse. Voui continuare") %>?', function (result) {
                         if (result)
                             getRecord(0);
                     })
@@ -870,7 +870,7 @@
                     .fail(function (jqxhr, textStatus, error) {
                         $.growl({
                             icon: 'fa fa-warning',
-                            title: 'Errore',
+                            title: '<%= Master.Translate("Errore") %>',
                             message: textStatus
                         },
                         {
@@ -884,7 +884,7 @@
                             $.growl({
                                 icon: 'fa fa-thumbs-o-up',
                                 title: '',
-                                message: record.Nome + " è stoto caricato con successo"
+                                message: record.Nome + " <%= Master.Translate("è stato caricato con successo") %>"
                             },
                             {
                                 type: 'success'
@@ -895,7 +895,7 @@
                         } else {
                             $.growl({
                                 icon: 'fa fa-warning',
-                                title: 'Si è verificato un errore: ',
+                                title: '<%= Master.Translate("Si è verificato un errore") %>: ',
                                 message: data.msg
                             },
                             {
@@ -933,8 +933,8 @@
             $(window).on('beforeunload', function () {
                 var ch = $('#edit-type').mb_submit('pendingChanges');
                 if (ch)
-                    return 'Attenzione sono state rilevate modifiche non salvate.';
+                	return '<%= Master.Translate("Attenzione sono state rilevate modifiche non salvate") %>.';
             });
         })
-    </script>
+	</script>
 </asp:Content>

@@ -1,0 +1,18 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Themes/Default/ThemeMaster.master" AutoEventWireup="true" CodeBehind="StandardPage.master.cs" Inherits="MagicCMS.Themes.Default.StandardPage" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="PageHeader" runat="server">
+	<div class="container">
+		<div class="page-header">
+			<h1><%= ThePost.Title_RT %></h1>
+		</div>
+
+	</div>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="Main_Content" runat="server">
+	<%= ThePost.TestoLungo_RT %>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="PreScripts" runat="server">
+</asp:Content>
+<asp:Content ID="Content5" ContentPlaceHolderID="Scripts" runat="server">
+</asp:Content>

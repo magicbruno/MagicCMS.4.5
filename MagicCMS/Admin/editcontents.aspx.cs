@@ -480,11 +480,14 @@ namespace MagicCMS.Admin
             if (ThePost != null)
                 ThePostEnc = new MagicPostHTML_Encoded(ThePost);
 
-            Languages = new MagicTranslationCollection(Pk, true);
-            RepeaterLanguages.DataSource = Languages;
-            RepeaterLanguages.DataBind();
-            Repeter_Tabs.DataSource = Languages;
-            Repeter_Tabs.DataBind();
+			if (Panel_edit.Visible)
+			{
+				Languages = new MagicTranslationCollection(Pk, true);
+				RepeaterLanguages.DataSource = Languages;
+				RepeaterLanguages.DataBind();
+				Repeter_Tabs.DataSource = Languages;
+				Repeter_Tabs.DataBind();
+			}
         }
     }
 }

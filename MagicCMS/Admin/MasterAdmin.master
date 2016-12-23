@@ -2,6 +2,7 @@
 	CodeBehind="MasterAdmin.master.cs" Inherits="MagicCMS.Admin.MasterAdmin" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+	<% = Captcha ? "<script src='https://www.google.com/recaptcha/api.js'></script>" : "" %>
 	<asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
 </asp:Content>
 <asp:Content ID="TheContent" ContentPlaceHolderID="MainContent" runat="server">
@@ -11,7 +12,7 @@
 			<!-- Add the class icon to your logo image or logo icon to add the margining -->
 			<img src="img/ConteIcona.png" alt="Magic CMS" class="icon" />
 			<div class="sitename">
-				<span class="h3">Magic CMS</span><br />
+				<span class="h3"><%= Brand %></span><br />
 				<span id="sitename" class="sitename" runat="server">www.nomesito.com</span>
 			</div>
 		</a>
@@ -38,11 +39,11 @@
 							</li>
 							<li>
 								<a href="#Modal_change_pwd" data-toggle="modal"><i class="fa fa-key text-orange"></i>
-									Cambia password</a>
+									<%= Translate("Cambia password") %></a>
 							</li>
 							<li>
 								<asp:LinkButton ID="LinkButton_logout" runat="server"
-									OnClick="LinkButton_logout_Click"><i class="fa fa-power-off text-green"></i> Esci</asp:LinkButton>
+									OnClick="LinkButton_logout_Click"><i class="fa fa-power-off text-green"></i> <%= Translate("Esci") %></asp:LinkButton>
 							</li>
 						</ul>
 					</li>
@@ -59,25 +60,26 @@
 				<div class="user-panel">
 					<div class="pull-left info">
 						<h4 class="text-center"><% = UserName %></h4>
-						<small><% = UserRole %></small>
+						<small><% = UserRole %> (<span id="sessionExpiresIn" title="Session expiry">00:00:00</span>)</small>
+						<a href="#RinnovaSessione" data-toggle="modal" title="Refresh session"><i class="fa fa-refresh"></i></a>
 					</div>
 				</div>
 				<!-- sidebar menu: : style can be found in sidebar.less -->
 				<ul class="sidebar-menu">
 					<li class="<% = isActive("/Admin/editcontents.aspx") %>">
 						<a href="/Admin/editcontents.aspx">
-							<i class="fa fa-home"></i><span>Home <small>gestione contenuti</small></span>
+							<i class="fa fa-home"></i><span>Home</span>
 						</a>
 					</li>
 					<li class="<% = isActive("/Admin/Dictionary.aspx") %>">
 						<a href="/Admin/Dictionary.aspx">
-							<i class="fa fa-book"></i><span>Vocabolario globale</span>
+							<i class="fa fa-book"></i><span><%= Translate("Vocabolario globale") %></span>
 						</a>
 					</li>
 					<li class="treeview">
 						<a href="#">
 							<i class="fa fa-files-o"></i>
-							<span>Crea container...</span>
+							<span><%= Translate("Crea contenitore") %>...</span>
 							<i class="fa fa-angle-left pull-right"></i>
 						</a>
 						<ul id="BL_containers" runat="server" class="treeview-menu">
@@ -86,7 +88,7 @@
 					<li class="treeview">
 						<a href="#">
 							<i class="fa fa-file-o"></i>
-							<span>Crea content...</span>
+							<span><%= Translate("Crea contenuto") %>...</span>
 							<i class="fa fa-angle-left pull-right"></i>
 						</a>
 						<ul id="BL_content" runat="server" class="treeview-menu">
@@ -94,39 +96,39 @@
 					</li>
 					<li id="configura" class="<% = hasPrerogative(10) %> <% =isActive("types.aspx") %>">
 						<a href="types.aspx" title="Definisci la configurazione dei i tipi di 'Content' e 'Container' che possono essere inseriti nel sito">
-							<i class="fa fa-cog"></i><span>Configura tipi</span>
+							<i class="fa fa-cog"></i><span><%= Translate("Definizione oggetti Web") %></span>
 							<small class="badge pull-right bg-red"><% = Types.ToString() %></small>
 						</a>
 					</li>
 					<li id="users" class="<% = hasPrerogative(10) %> <% =isActive("users.aspx") %>">
 						<a href="users.aspx">
-							<i class="fa fa-users"></i><span>Utenti</span>
+							<i class="fa fa-users"></i><span><%= Translate("Utenti") %></span>
 							<small class="badge pull-right bg-yellow"><% = Users.ToString() %></small>
 						</a>
 					</li>
 					<li id="Li1" class="<% = hasPrerogative(10) %> <% =isActive("log.aspx") %>">
 						<a href="log.aspx">
-							<i class="fa fa-warning"></i><span>Registro attività</span>
+							<i class="fa fa-warning"></i><span><%= Translate("Registro attività ed errori") %></span>
 						</a>
 					</li>
 					<li id="Li2" class="<% = hasPrerogative(10) %> <% =isActive("Config.aspx") %>">
 						<a href="Config.aspx">
-							<i class="fa fa-cogs"></i><span>Configurazione</span>
+							<i class="fa fa-cogs"></i><span><%= Translate("Configurazione sito") %></span>
 						</a>
 					</li>
 					<li>
 						<a href="CustomCss.aspx" <% =isActive("CustomCss.aspx") %>>
-							<i class="fa fa-css3"></i><span>CSS personalizzato</span>
+							<i class="fa fa-css3"></i><span><%= Translate("CSS personalizzato") %></span>
 						</a>
 					</li>
 					<li>
 						<a href="#" data-toggle="fb-window">
-							<i class="fa fa-cloud-upload"></i><span>Gestione file</span>
+							<i class="fa fa-cloud-upload"></i><span><%= Translate("Gestione file") %></span>
 						</a>
 					</li>
 					<li>
 						<a href="#modal-magicindex" data-toggle="modal">
-							<i class="fa fa-clipboard"></i><span>Indice dei titoli</span>
+							<i class="fa fa-clipboard"></i><span><%= Translate("Ricrea url parlanti") %></span>
 						</a>
 					</li>
 				</ul>
@@ -136,7 +138,6 @@
 
 		<!-- Right side column. Contains the navbar and content of the page -->
 		<aside class="right-side">
-			<div class="loading"></div>
 			<!-- Content Header (Page header) -->
 			<section class="content-header">
 				<asp:ContentPlaceHolder ID="HeaderContent" runat="server"></asp:ContentPlaceHolder>
@@ -147,6 +148,7 @@
 				<asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
 			</section>
 			<!-- /.content -->
+			<div class="loading"></div>
 		</aside>
 		<!-- /.right-side -->
 	</div>
@@ -194,7 +196,7 @@
 					<%--                            <button type="button" class="close" data-dismiss="modal">
 								<span aria-hidden="true">&times;</span><span
 									class="sr-only">Close</span></button>--%>
-					<h4 class="modal-title" id="myModalLabel">Cambia password</h4>
+					<h4 class="modal-title" id="myModalLabel"><%= Translate("Cambia password") %></h4>
 				</div>
 				<div class="modal-body">
 					<div class="form-horizontal" role="form">
@@ -202,7 +204,7 @@
 							<div class="col-md-12">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-key"></i></span>
-									<input type="password" class="form-control" id="oldpwd" placeholder="Vecchia password">
+									<input type="password" class="form-control" id="oldpwd" placeholder="<%= Translate("Vecchia password") %>">
 								</div>
 							</div>
 						</div>
@@ -210,7 +212,7 @@
 							<div class="col-md-12">
 								<div class="input-group">
 									<span class="input-group-addon text-green"><i class="fa fa-key"></i></span>
-									<input type="password" class="form-control" id="pwd" placeholder="Nuova password">
+									<input type="password" class="form-control" id="pwd" placeholder="<%= Translate("New password") %>">
 								</div>
 							</div>
 						</div>
@@ -218,7 +220,7 @@
 							<div class="col-md-12">
 								<div class="input-group">
 									<span class="input-group-addon text-green"><i class="fa fa-key"></i></span>
-									<input type="password" class="form-control" id="checkpwd" placeholder="Ridigita password per controllo">
+									<input type="password" class="form-control" id="checkpwd" placeholder="<%= Translate("Ridigita password per controllo") %>">
 								</div>
 							</div>
 						</div>
@@ -227,14 +229,14 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button id="btn_change_pwd" type="button" class="btn btn-primary" data-loading-text="Attendere...">
-						Invia</button>
+					<button id="btn_change_pwd" type="button" class="btn btn-primary" data-loading-text="Loading...">
+						Ok</button>
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- Google map  -->
-	<div class="modal fade" id="map-dialog" tabindex="-1" role="dialog" aria-labelledby="ChangePassword"
+	<div class="modal fade" id="map-dialog" tabindex="-1" role="dialog" aria-labelledby="MapDialog"
 		aria-hidden="true" data-backdrop="static" data-source="">
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
@@ -242,7 +244,7 @@
 					<button type="button" class="close" data-dismiss="modal">
 						<span aria-hidden="true">&times;</span><span
 							class="sr-only">Close</span></button>
-					<h4 class="modal-title" id="H3">Scegli la posizione</h4>
+					<h4 class="modal-title" id="H3"><%= Translate("Scegli la posizione") %></h4>
 				</div>
 				<div class="modal-body">
 					<div id="map-canvas" class="map-canvas">
@@ -255,11 +257,11 @@
 								<div class="input-group">
 									<input type="hidden" value="" id="geolocLatLng" />
 									<span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
-									<input type="text" class="form-control" id="geolocAddress" placeholder="Inserisci un indirizzo">
+									<input type="text" class="form-control" id="geolocAddress" placeholder="<%= Translate("Inserisci un indirizzo") %>">
 									<span class="input-group-btn">
 										<button type="button" class="btn btn-primary btn-flat"
 											data-action="geo-search" data-source="#geolocAddress">
-											<i class="fa fa-search"></i>Cerca</button>
+											<i class="fa fa-search"></i><%= Translate("Cerca") %></button>
 									</span>
 								</div>
 							</div>
@@ -282,15 +284,15 @@
 					<button type="button" class="close" data-dismiss="modal">
 						<span aria-hidden="true">&times;</span><span
 							class="sr-only">Close</span></button>
-					<h4 class="modal-title">Lista tipi</h4>
+					<h4 class="modal-title"><%= Translate("Lista tipi") %></h4>
 				</div>
 				<div class="modal-body checkbox-list">
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">
-					Cancel</button>
+						Cancel</button>
 					<button type="button" class="btn btn-primary btn-sm" data-action="get-list" data-dismiss="modal">
-					Ok</button>
+						Ok</button>
 				</div>
 			</div>
 		</div>
@@ -301,14 +303,15 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title" id="modal-magicindex-label">Reset indice titoli (MagicIndex)</h4>
+					<h4 class="modal-title" id="modal-magicindex-label"><%= Translate("Ricrea url parlanti") %></h4>
 				</div>
 				<div class="modal-body">
-					<p>Questo procedure ricrea l'indice dei titoli utilizzate per creare le <em>url amichevoli</em> utilizzate da questa versioe di MagicCMS. </p>
+<%--					<p>Questa procedura ricrea l'indice delle <em>url amichevoli</em>. </p>
 					<p class="small">
 						<strong>NB</strong>: Di norma non è 
 						necessario lanciare manualmente questa procedura. L'indice dei titoli viene creato e aggiornato automaticamente da MagicCMS.
-					</p>
+					</p>--%>
+					<%= Translate(	"<p>Questa procedura ricrea l'indice delle <em>url amichevoli</em>. </p> <p class=\"small\">	<strong>NB</strong>: Di norma non è  						necessario lanciare manualmente questa procedura. L'indice dei titoli viene creato e aggiornato automaticamente da MagicCMS. </p>") %>
 					<div class="alert"></div>
 				</div>
 				<div class="modal-footer">
@@ -318,10 +321,62 @@
 			</div>
 		</div>
 	</div>
+	<!-- Session renewal -->
+	<div class="modal fade" id="RinnovaSessione" tabindex="-1" role="dialog" aria-labelledby="RinnovaSessione" aria-hidden="true" data-backdrop="static">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="panel-title">Conferma la tua identità
+					</h3>
+				</div>
+				<div class="modal-body">
+					<p>
+						<%= Translate("Quando effettui il login su MagicCMS hai a disposizione una sessione di lavoro di 90 minuti. Puoi prolungare la sessione confermando la tua identità (inserisci nuovamente nome utente e password). Così manterrai i dati su cui stai lavorando. Se, invece, lascerai scadere la sessione, i dati della pagina corrente andranno perduti.") %>
+						
+					</p>
+					<div class="form-horizontal" role="form">
+						<div class="form-group">
+							<div class="col-md-12">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user"></i></span>
+									<input id="email" type="text" class="form-control" placeholder="Email" />
 
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-md-12">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+									<input type="password" class="form-control" id="password" placeholder="Password">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="g-recaptcha" id="recaptchaVerify" runat="server"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<div class="row">
+						<div class="col-md-6">
+							<button type="button" data-action="sessionRefresh" class="btn btn-primary btn-block">Ok</button>
+						</div>
+						<div class="col-md-6">
+							<button type="button" data-dismiss="modal" class="btn btn-danger btn-block">Cancel</button>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
 </asp:Content>
 <asp:Content ID="Script" ContentPlaceHolderID="Script" runat="server">
-	<script src="Scripts/app.js"></script>
+	<script src="Scripts/app.min.js"></script>
 	<script>
 		// ckeditor config.file /config.js) may be defined by the theme (Page Property CKE_Config contains the url 
 		// of the file
@@ -334,6 +389,7 @@
 		CKEDITOR.plugins.addExternal('onchange', '/Admin/Scripts/plugins/ckeditor/plugins/onchange/');
 		CKEDITOR.plugins.addExternal('fontawesome', '/Admin/Scripts/plugins/ckeditor/plugins/fontawesome/');
 		CKEDITOR.plugins.addExternal('codemirror', '/Admin/Scripts/plugins/ckeditor/plugins/codemirror/');
+		CKEDITOR.plugins.addExternal('codesnippet', '/Admin/Scripts/plugins/ckeditor/plugins/codesnippet/');
 
 		//redirect change evento to relating textarea
 		CKEDITOR.on('instanceCreated', function (e) {
@@ -341,8 +397,8 @@
 				$(ev.editor.element.$).change();
 			});
 		});
-		$(function ( ) { 
-			$(window).on('load', function ( ) { 
+		$(function () {
+			$(window).on('load', function () {
 				$('.loading').fadeOut();
 			});
 			$('.ckeditor_mcms').not('.hidden')
@@ -351,7 +407,8 @@
 					$(textarea).spin(false);
 				}, {
 					customConfig: configPath,
-					extraPlugins: "widget,lineutils,fontawesome,codemirror"
+					extraPlugins: "widget,lineutils,fontawesome,codemirror,codesnippet",
+					language: "<%= MagicCMS.Core.MagicCMSConfiguration.GetConfig().BackEndLang %>"
 				});
 		});
 

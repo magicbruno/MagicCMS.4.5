@@ -47,10 +47,11 @@ $(document).ready(function () {
         })
     ;
 
-
+    var lang = $('html').attr('lang') || 'it';
     bootbox.setDefaults({
-        locale: 'it'
+        locale: lang
     })
+
     //app.init();
     var opensub = localStorage.getItem('openSub');
     if (opensub)

@@ -1,0 +1,11 @@
+
+.article-header {
+  border-bottom: 1px solid $gray-light;
+  .tags {
+    .list-inline li .label {
+      font-size: 70%;
+      padding-top: 0.1em;
+      padding-bottom: 0.25em;
+    }
+  }
+}

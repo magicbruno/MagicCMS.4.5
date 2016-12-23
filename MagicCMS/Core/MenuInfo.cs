@@ -32,6 +32,7 @@ namespace MagicCMS.Core
         }
         private HttpContext context = HttpContext.Current;
         private int currentPageId = 0;
+		private bool _iconMenu = false;
         #endregion
 
         #region Public properties
@@ -70,6 +71,18 @@ namespace MagicCMS.Core
                 return _mp.Title_RT;
             }
         }
+
+		/// <summary>
+		///  Gets the MagicPost.TestoBreve.
+		/// </summary>
+		/// <value>The testo breve.</value>
+		public string TestoBreve
+		{
+			get
+			{
+				return _mp.TestoBreve;
+			}
+		}
 
 		/// <summary>
 		/// Gets the MagicPost.TestoBreve_RT.
@@ -167,6 +180,19 @@ namespace MagicCMS.Core
 
         private MenuIcon _icon;
 
+		public bool IconMenu
+		{
+			get
+			{
+				return _iconMenu;
+			}
+
+			set
+			{
+				_iconMenu = value;
+			}
+		}
+
 		/// <summary>
 		/// Gets the href attribute of the anchor HTML element.
 		/// </summary>
@@ -189,6 +215,7 @@ namespace MagicCMS.Core
                         break;
                     case MagicPostTypeInfo.Menu:
                     case MagicPostTypeInfo.LinkFalso:
+                    case MagicPostTypeInfo.ShareButton:
                         href = "javascript:;";
                         break;
                     case MagicPostTypeInfo.ButtonLanguage:
@@ -203,9 +230,8 @@ namespace MagicCMS.Core
 						}
                         href = RouteUtils.GetVirtualPath(currentPageId, parentName, buttonLang);
                         break;
-                    case MagicPostTypeInfo.ShareButton:
-                        href = "";
-                        break;
+						//href = "";
+						//break;
                     default:
                         if (local)
                         {
@@ -230,26 +256,31 @@ namespace MagicCMS.Core
             get
             {
                 HtmlGenericControl a;
-                if(_mp.Tipo == MagicPostTypeInfo.ShareButton)
-                    return new HtmlGenericControl("share-button");
-                else 
-                    a = new HtmlGenericControl("a");
+				//if(_mp.Tipo == MagicPostTypeInfo.ShareButton)
+				//	return new HtmlGenericControl("share-button");
+				//else 
+                a = new HtmlGenericControl("a");
                 a.Attributes["href"] = Href;
                 a.Attributes["data-pk"] = _mp.Pk.ToString();
                 //titolo e link di default
                 string titolo_val = "",
                         iconClass = _mp.IconClass.Trim();
 
-                if (!String.IsNullOrEmpty(iconClass))
+				if (!String.IsNullOrEmpty(iconClass))
+				{
                     titolo_val = "<i class=\"fa " + iconClass + "\"></i> ";
-
-                titolo_val += _mp.Title_RT;
+					if (!IconMenu)
+						titolo_val += _mp.Title_RT;
+				} 
+				else 
+					titolo_val = _mp.Title_RT;
                 
 
                 switch (_mp.Tipo)
                 {
-                    case MagicPostTypeInfo.Menu:
-                        a.Attributes["class"] = "dropdown-toggle";
+					case MagicPostTypeInfo.Menu:
+					case MagicPostTypeInfo.ShareButton:
+						a.Attributes["class"] = "dropdown-toggle";
                         a.Attributes["data-toggle"] = "dropdown";
                         a.InnerHtml = titolo_val;
                         break;
@@ -409,28 +440,48 @@ namespace MagicCMS.Core
         #endregion
 
         #region Constructor
+		private void Init(MagicPost mp, int pageId, bool isIconMenu)
+		{
+			currentPageId = pageId;
+			_mp = mp;
+			_icon = new MenuIcon();
+			if (MenuIcon.GetType(_mp.IconClass) == MenuIconType.ClassIcon)
+			{
+				_icon.Value = _mp.IconClass;
+			}
+			else if (MenuIcon.GetType(_mp.Url) == MenuIconType.Image)
+			{
+				_icon.Value = _mp.Url;
+			}
+			else
+				_icon.Value = _mp.Url2;
+			IconMenu = isIconMenu;
+		}
 		/// <summary>
-		/// Initializes a new instance of the <see cref="MenuInfo"/> class extracting definition by a MagicPost element. If element post type is "Menu" the menu item is a sub menu 
+		/// Initializes a new instance of the <see cref="MenuInfo"/> class extracting definition by a MagicPost element. 
+		/// If element post type is "Menu" the menu item is a sub menu 
 		/// otherwise is a link to a page or to a section of home page or to an external url, ecc.
 		/// </summary>
 		/// <param name="mp">The mp.</param>
 		/// <param name="pageId">Current page identifier.</param>
         public MenuInfo (MagicPost mp, int pageId)
         {
-            currentPageId = pageId;
-            _mp = mp;
-            _icon = new MenuIcon();
-            if (MenuIcon.GetType(_mp.IconClass) == MenuIconType.ClassIcon)
-            {
-                _icon.Value = _mp.IconClass;
-            }
-            else if (MenuIcon.GetType(_mp.Url) == MenuIconType.Image)
-            {
-                _icon.Value = _mp.Url;
-            }
-            else
-                _icon.Value = _mp.Url2;
+			Init(mp, pageId, false);
         }
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="MenuInfo" /> class extracting definition by a MagicPost element.
+		/// If element post type is "Menu" the menu item is a sub menu
+		/// otherwise is a link to a page or to a section of home page or to an external url, ecc.
+		/// </summary>
+		/// <param name="mp">The mp.</param>
+		/// <param name="pageId">Current page identifier.</param>
+		/// <param name="isIconMenu">if set to <c>true</c> <see cref="MenuInfo.LinkElement"/> is composed only with icon.</param>
+		public MenuInfo(MagicPost mp, int pageId, bool isIconMenu)
+		{
+			Init(mp, pageId, isIconMenu);
+		}
+
         #endregion
     }
 }

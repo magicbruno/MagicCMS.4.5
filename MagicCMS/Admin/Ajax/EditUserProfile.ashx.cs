@@ -30,7 +30,7 @@ namespace MagicCMS.Admin.Ajax
             {
                 data = null,
                 exitcode = 0,
-                msg = "Operazione conclusa con successo.",
+				msg = Localize.Translate("Operazione conclusa con successo."),
                 pk = currentUser.Pk,
                 success = true
             };
@@ -42,7 +42,7 @@ namespace MagicCMS.Admin.Ajax
             {
                 response.exitcode = 1;
                 response.success = false;
-                response.msg = "È necessario inserire al meno il nome o il cognome.";
+                response.msg = Localize.Translate("È necessario inserire al meno il nome o il cognome.");
             }
             else
             {
@@ -53,7 +53,7 @@ namespace MagicCMS.Admin.Ajax
                     {
                         response.exitcode = 2;
                         response.success = false;
-                        response.msg = "Impossibile salvare la modifica.";
+                        response.msg = Localize.Translate("Impossibile salvare la modifica.");
                     }
 		
 	            }
@@ -61,7 +61,7 @@ namespace MagicCMS.Admin.Ajax
 	            {
                     response.exitcode = 100;
                     response.success = false;
-                    response.msg = "Errore del server: " + e.Message;
+                    response.msg = Localize.Translate("Errore del server") + ": " + e.Message;
                 }
             }
 

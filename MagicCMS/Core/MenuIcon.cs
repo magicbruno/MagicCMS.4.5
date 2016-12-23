@@ -34,7 +34,7 @@ namespace MagicCMS.Core
         {
            MenuIconType _type = MenuIconType.None;
 
-           Regex tagRegex = new Regex(@"fa-|glyphicon-");
+		   Regex tagRegex = new Regex(@"fa-|glyphicon-|glyph-");
             if (tagRegex.IsMatch(value))
                 _type = MenuIconType.ClassIcon;
             else 

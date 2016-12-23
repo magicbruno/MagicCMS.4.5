@@ -28,7 +28,7 @@ namespace MagicCMS.Admin.Ajax
 			{
 				data = null,
 				exitcode = 0,
-				msg = "Operazione conclusa con successo.",
+				msg = Localize.Translate("Operazione conclusa con successo."),
 				pk = 0,
 				success = true
 			};
@@ -73,7 +73,7 @@ namespace MagicCMS.Admin.Ajax
 						response.data = new object() ;
 						response.pk = 0;
 						response.exitcode = 2;
-						response.msg = "Errore: la tabella \"" + table + "\" non esiste.";
+						response.msg = Localize.Translate("Errore: la tabella") + " \"" + table + "\" " + Localize.Translate("non esiste.");
 						response.success = false;
 
 						break;
@@ -83,7 +83,7 @@ namespace MagicCMS.Admin.Ajax
 			{
 				response.data = new object();
 				response.exitcode = 1;
-				response.msg = "Dati insuffucienti o non pervenuti.";
+				response.msg = Localize.Translate("Dati insuffucienti o non pervenuti.");
 				response.success = false;
 			}
 			System.Web.Script.Serialization.JavaScriptSerializer serializer = new System.Web.Script.Serialization.JavaScriptSerializer();

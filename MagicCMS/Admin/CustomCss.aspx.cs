@@ -15,8 +15,9 @@ namespace MagicCMS.Admin
 		{
 			System.Web.Script.Serialization.JavaScriptSerializer serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
 			MagicCss customCss = MagicCss.GetCurrent();
+
+			CssText = serializer.Serialize(customCss.CssText);
 			
-			CssText = serializer.Serialize( customCss.CssText);
 		}
 	}
 }

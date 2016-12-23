@@ -1,0 +1,93 @@
+@charset "UTF-8";
+@import "compass/css3";
+//Custom settings
+// Main menu color
+$color-accent: #002050;
+
+// Settings
+//$grid-columns:              12;
+@import "win/resources";
+@import "win/colors";
+@import "win/variables";
+@import "override/variables";
+
+// New mixins and mixins that completely replace
+// bootstrap mixins
+@import "win/mixins/colors";
+@import "win/mixins/animations";
+@import "win/mixins/triangle";
+@import "win/mixins/spacer";
+@import "win/mixins/glyphs";
+@import "override/mixins/tab-focus";
+
+// Base
+@import "win/grid";
+
+//optional bootstrap configuration without grid as example.
+/* when a project includes winstrap, it might want to pick and choose what parts of bootstrap
+to include instead of the default set of bootstrap components winstrap selects automatically.
+This demonstrates how to do this for a project that happens to override the bootstrap grid in
+order to substitute it with another grid. instead of @import "winstrap/src/scss/winstrap", use
+@import "winstrap/src/scss/winstrap-optional" in your project's scss */
+@import "override/bootstrap-optional";
+@import "win/glyphs";
+@import "win/utilities";
+@import "custom/type";
+
+// Mixins that override bootstrap mixins
+@import "override/mixins/buttons";
+
+// Overridden components
+@import "override/grid";
+@import "override/scaffolding";
+@import "override/alerts";
+@import "override/breadcrumb";
+@import "override/buttons";
+@import "override/dropdown";
+@import "override/forms";
+@import "override/jumbotron";
+@import "override/labels";
+@import "override/modal";
+@import "override/navbar";
+@import "override/navs";
+//@import "override/pagination";
+//@import "override/panels";
+@import "override/popover";
+//@import "override/progress-bar";
+@import "override/tables";
+@import "override/tooltip";
+
+// New components
+@import "win/scaffolding";
+@import "win/alerts";
+@import "win/back-to-top";
+@import "win/buttons";
+@import "win/lists";
+//@import "win/media";
+//@import "win/pager";
+//@import "win/pagination";
+//@import "win/panels";
+//@import "win/progress-bar";
+@import "win/progress-ring";
+//@import "win/rating";
+@import "win/section";
+@import "win/side-navigation";
+
+// Layout
+@import "win/main";
+@import "override/page";
+
+// Pages
+//@import "win/doc";
+
+//Custom
+@import "custom/bx-slider";
+@import "custom/facebook";
+@import "custom/iframe";
+@import "custom/navbar";
+@import "custom/scaffolding";
+@import "custom/navs";
+@import "custom/section";
+@import "custom/tags";
+@import "custom/blog";
+@import "custom/code-snippets";

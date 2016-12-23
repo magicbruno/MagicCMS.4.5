@@ -1,0 +1,36 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Themes/Default/ThemeMaster.master" AutoEventWireup="true" CodeBehind="Home.master.cs" Inherits="MagicCMS.Themes.Default.Home" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="PageHeader" ContentPlaceHolderID="PageHeader" runat="server">
+    <div class="jumbotron">
+        <div class="container">
+            <asp:Repeater ID="RepeaterSequenza" runat="server">
+                <HeaderTemplate>
+                    <div class="slick-carousel invisible" data-ride="carousel">
+                </HeaderTemplate>
+                <ItemTemplate>
+                    <div class="out" id="slide_<%# DataBinder.Eval(Container, "DataItem.Pk") %>">
+                        <%# DataBinder.Eval(Container, "DataItem.TestoBreve_RT")%>
+                    </div>
+                </ItemTemplate>
+                <FooterTemplate>
+                    </div>
+                </FooterTemplate>
+            </asp:Repeater>
+        </div>
+    </div>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="Main_Content" runat="server">
+
+    <asp:ContentPlaceHolder ID="Main_Content" runat="server">
+		<%= ThePost.TestoBreve_RT %>
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="PreScripts" runat="server">
+    <asp:ContentPlaceHolder ID="PreScripts" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="Scripts" runat="server">
+    <asp:ContentPlaceHolder ID="Scripts" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+

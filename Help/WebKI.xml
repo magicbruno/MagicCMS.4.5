@@ -2,6 +2,7 @@
 <HelpKI>
   <HelpKINode Title=". constructor" Url="html/M-MagicCMS.Core.ColorPalette.-ctor.htm" />
   <HelpKINode Title=".a_attr property" Url="html/P-MagicCMS.Core.JTreeNode.a_attr.htm" />
+  <HelpKINode Title=".Brand property" Url="html/P-MagicCMS.error.Brand.htm" />
   <HelpKINode Title=".Capability property" Url="html/P-MagicCMS._Default.Capability.htm" />
   <HelpKINode Title=".children property" Url="html/P-MagicCMS.Core.JTreeNode.children.htm" />
   <HelpKINode Title=".DataPubblicazione property" Url="html/P-MagicCMS.Core.MagicTag.DataPubblicazione.htm" />
@@ -13,8 +14,8 @@
   <HelpKINode Title=".FlagCancellazione property" Url="html/P-MagicCMS.Core.MagicTag.FlagCancellazione.htm" />
   <HelpKINode Title=".FlagContainer property" Url="html/P-MagicCMS.Core.MagicTag.FlagContainer.htm" />
   <HelpKINode Title=".GetParents method" Url="html/M-MagicCMS.Core.MagicTag.GetParents.htm" />
-  <HelpKINode Title=".icon property" Url="html/P-MagicCMS.Core.JTreeNode.icon.htm" />
   <HelpKINode Title=".Icon property" Url="html/P-MagicCMS.Core.MagicTag.Icon.htm" />
+  <HelpKINode Title=".icon property" Url="html/P-MagicCMS.Core.JTreeNode.icon.htm" />
   <HelpKINode Title=".id property" Url="html/P-MagicCMS.Core.JTreeNode.id.htm" />
   <HelpKINode Title=".IsReusable property" Url="html/P-MagicCMS.AjaxSendMail_JSON.IsReusable.htm" />
   <HelpKINode Title=".li_attr property" Url="html/P-MagicCMS.Core.JTreeNode.li_attr.htm" />
@@ -51,48 +52,48 @@
     <HelpKINode Title="Activated Field" Url="html/F-MagicCMS.Marketing.RegisteredUserStatus.Activated.htm" />
   </HelpKINode>
   <HelpKINode Title="Active property">
-    <HelpKINode Title="Active Property " Url="html/P-MagicCMS.Core.MagicUser.Active.htm" />
-    <HelpKINode Title="Active Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.Active.htm" />
     <HelpKINode Title="Active Property " Url="html/P-MagicCMS.Core.MagicLanguage.Active.htm" />
-    <HelpKINode Title="Active Property " Url="html/P-MagicCMS.Marketing.RegisteredUser.Active.htm" />
+    <HelpKINode Title="Active Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.Active.htm" />
     <HelpKINode Title="Active Property " Url="html/P-MagicCMS.Core.MagicPost.Active.htm" />
+    <HelpKINode Title="Active Property " Url="html/P-MagicCMS.Core.MagicUser.Active.htm" />
+    <HelpKINode Title="Active Property " Url="html/P-MagicCMS.Marketing.RegisteredUser.Active.htm" />
   </HelpKINode>
   <HelpKINode Title="ActiveClass property" Url="html/P-MagicCMS.Core.MenuInfo.ActiveClass.htm" />
   <HelpKINode Title="ActiveOnly enumeration member" Url="html/T-MagicCMS.Core.MagicSearchActive.htm" />
   <HelpKINode Title="ActiveOnly field" Url="html/F-MagicCMS.Core.MagicSearchActive.ActiveOnly.htm" />
   <HelpKINode Title="Add method">
-    <HelpKINode Title="Add Method " Url="html/M-MagicCMS.Core.MagicLogCollection.Add.htm" />
-    <HelpKINode Title="Add Method " Url="html/M-MagicCMS.Core.MagicUserCollection.Add.htm" />
-    <HelpKINode Title="Add Method " Url="html/M-MagicCMS.Facebook.FacebookPostCollection.Add.htm" />
-    <HelpKINode Title="Add Method " Url="html/M-MagicCMS.Core.MagicPostCollection.Add.htm" />
-    <HelpKINode Title="Add Method " Url="html/M-MagicCMS.Core.WhereClauseCollection.Add.htm" />
-    <HelpKINode Title="Add Method " Url="html/M-MagicCMS.Core.MagicTranslationCollection.Add.htm" />
     <HelpKINode Title="Add Method " Url="html/M-MagicCMS.Core.MagicTransDictionaryCollection.Add.htm" />
+    <HelpKINode Title="Add Method " Url="html/M-MagicCMS.Core.MagicKeywordCollection.Add.htm" />
+    <HelpKINode Title="Add Method " Url="html/M-MagicCMS.Facebook.FacebookPostCollection.Add.htm" />
+    <HelpKINode Title="Add Method " Url="html/M-MagicCMS.Core.MagicTranslationCollection.Add.htm" />
     <HelpKINode Title="Add Method " Url="html/M-MagicCMS.Core.MenuInfoCollection.Add.htm" />
+    <HelpKINode Title="Add Method " Url="html/M-MagicCMS.Core.MagicPostCollection.Add.htm" />
     <HelpKINode Title="Add Method " Url="html/M-MagicCMS.Core.MagicLanguageCollection.Add.htm" />
     <HelpKINode Title="Add Method " Url="html/M-MagicCMS.Core.MagicPostTypeInfoCollection.Add.htm" />
-    <HelpKINode Title="Add Method " Url="html/M-MagicCMS.Blogger.BloggerRss.Add.htm" />
+    <HelpKINode Title="Add Method " Url="html/M-MagicCMS.Core.MagicLogCollection.Add.htm" />
+    <HelpKINode Title="Add Method " Url="html/M-MagicCMS.Core.MagicUserCollection.Add.htm" />
     <HelpKINode Title="Add Method " Url="html/M-MagicCMS.Marketing.RegisteredUserCollection.Add.htm" />
-    <HelpKINode Title="Add Method " Url="html/M-MagicCMS.Core.MagicKeywordCollection.Add.htm" />
+    <HelpKINode Title="Add Method " Url="html/M-MagicCMS.Blogger.BloggerRss.Add.htm" />
+    <HelpKINode Title="Add Method " Url="html/M-MagicCMS.Core.WhereClauseCollection.Add.htm" />
   </HelpKINode>
   <HelpKINode Title="AddChild method" Url="html/M-MagicCMS.Core.MagicPost.AddChild.htm" />
   <HelpKINode Title="Address property" Url="html/P-MagicCMS.Marketing.RegisteredUser.Address.htm" />
   <HelpKINode Title="address property" Url="html/P-MagicCMS.Core.MagicGmap3Marker.address.htm" />
   <HelpKINode Title="AddTranslation method">
-    <HelpKINode Title="AddTranslation Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.AddTranslation.htm" />
     <HelpKINode Title="AddTranslation Method " Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.AddTranslation.htm" />
+    <HelpKINode Title="AddTranslation Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.AddTranslation.htm" />
   </HelpKINode>
   <HelpKINode Title="AddTranslationArray method">
     <HelpKINode Title="AddTranslationArray Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.AddTranslationArray.htm" />
     <HelpKINode Title="AddTranslationArray Method " Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.AddTranslationArray.htm" />
   </HelpKINode>
   <HelpKINode Title="AddTranslationArrayAsync method">
-    <HelpKINode Title="AddTranslationArrayAsync Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.AddTranslationArrayAsync.htm" />
     <HelpKINode Title="AddTranslationArrayAsync Method " Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.AddTranslationArrayAsync.htm" />
+    <HelpKINode Title="AddTranslationArrayAsync Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.AddTranslationArrayAsync.htm" />
   </HelpKINode>
   <HelpKINode Title="AddTranslationAsync method">
-    <HelpKINode Title="AddTranslationAsync Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.AddTranslationAsync.htm" />
     <HelpKINode Title="AddTranslationAsync Method " Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.AddTranslationAsync.htm" />
+    <HelpKINode Title="AddTranslationAsync Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.AddTranslationAsync.htm" />
   </HelpKINode>
   <HelpKINode Title="AdmAccessToken class">
     <HelpKINode Title="AdmAccessToken Class" Url="html/T-MagicCMS.AccessToken.AdmAccessToken.htm" />
@@ -139,8 +140,8 @@
   <HelpKINode Title="AlreadyActivated enumeration member" Url="html/T-MagicCMS.Marketing.RegisteredUserStatus.htm" />
   <HelpKINode Title="AlreadyActivated field" Url="html/F-MagicCMS.Marketing.RegisteredUserStatus.AlreadyActivated.htm" />
   <HelpKINode Title="Altezza property">
-    <HelpKINode Title="Altezza Property " Url="html/P-MagicCMS.Core.MagicPost.Altezza.htm" />
     <HelpKINode Title="Altezza Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.Altezza.htm" />
+    <HelpKINode Title="Altezza Property " Url="html/P-MagicCMS.Core.MagicPost.Altezza.htm" />
   </HelpKINode>
   <HelpKINode Title="AnchorElement method" Url="html/M-MagicCMS.Core.MagicUtils.AnchorElement.htm" />
   <HelpKINode Title="AND field" Url="html/F-MagicCMS.Core.WhereClause.AND.htm" />
@@ -156,6 +157,10 @@
   <HelpKINode Title="AutoImageGallery field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.AutoImageGallery.htm" />
   <HelpKINode Title="AutoMiniaturePk property" Url="html/P-MagicCMS.Core.MagicPost.AutoMiniaturePk.htm" />
   <HelpKINode Title="a_attr property" Url="html/P-MagicCMS.Core.JTreeNode.a_attr.htm" />
+  <HelpKINode Title="BackEndLang property">
+    <HelpKINode Title="BackEndLang Property " Url="html/P-MagicCMS.Core.MagicSession.BackEndLang.htm" />
+    <HelpKINode Title="BackEndLang Property " Url="html/P-MagicCMS.Core.MagicCMSConfiguration.BackEndLang.htm" />
+  </HelpKINode>
   <HelpKINode Title="Blog field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.Blog.htm" />
   <HelpKINode Title="BloggerPost class">
     <HelpKINode Title="BloggerPost Class" Url="html/T-MagicCMS.Blogger.BloggerPost.htm" />
@@ -195,16 +200,17 @@
     <HelpKINode Title="MagicTagContainer Enumeration" Url="html/T-MagicCMS.Core.MagicTagContainer.htm" />
   </HelpKINode>
   <HelpKINode Title="Both field">
-    <HelpKINode Title="Both Field" Url="html/F-MagicCMS.Core.MagicSearchActive.Both.htm" />
     <HelpKINode Title="Both Field" Url="html/F-MagicCMS.Core.MagicTagContainer.Both.htm" />
+    <HelpKINode Title="Both Field" Url="html/F-MagicCMS.Core.MagicSearchActive.Both.htm" />
   </HelpKINode>
+  <HelpKINode Title="Brand property" Url="html/P-MagicCMS.error.Brand.htm" />
   <HelpKINode Title="BreakSentences method">
-    <HelpKINode Title="BreakSentences Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.BreakSentences.htm" />
     <HelpKINode Title="BreakSentences Method " Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.BreakSentences.htm" />
+    <HelpKINode Title="BreakSentences Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.BreakSentences.htm" />
   </HelpKINode>
   <HelpKINode Title="BreakSentencesAsync method">
-    <HelpKINode Title="BreakSentencesAsync Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.BreakSentencesAsync.htm" />
     <HelpKINode Title="BreakSentencesAsync Method " Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.BreakSentencesAsync.htm" />
+    <HelpKINode Title="BreakSentencesAsync Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.BreakSentencesAsync.htm" />
   </HelpKINode>
   <HelpKINode Title="BuildQuery method" Url="html/Overload-MagicCMS.DataTable.InputParams_dt.BuildQuery.htm" />
   <HelpKINode Title="ButtonLanguage field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.ButtonLanguage.htm" />
@@ -260,6 +266,7 @@
   <HelpKINode Title="ClauseValueType.Function field" Url="html/F-MagicCMS.Core.ClauseValueType.Function.htm" />
   <HelpKINode Title="ClauseValueType.Number field" Url="html/F-MagicCMS.Core.ClauseValueType.Number.htm" />
   <HelpKINode Title="ClauseValueType.String field" Url="html/F-MagicCMS.Core.ClauseValueType.String.htm" />
+  <HelpKINode Title="CloneChildrenFrom method" Url="html/M-MagicCMS.Core.MagicPost.CloneChildrenFrom.htm" />
   <HelpKINode Title="CmsConfig property" Url="html/P-MagicCMS.PageBase.SiteMasterBase.CmsConfig.htm" />
   <HelpKINode Title="CMS_Config class">
     <HelpKINode Title="CMS_Config Class" Url="html/T-MagicCMS.Core.CMS_Config.htm" />
@@ -326,19 +333,19 @@
   <HelpKINode Title="Container enumeration member" Url="html/T-MagicCMS.Core.MagicTagContainer.htm" />
   <HelpKINode Title="Container field" Url="html/F-MagicCMS.Core.MagicTagContainer.Container.htm" />
   <HelpKINode Title="Contains method">
-    <HelpKINode Title="Contains Method " Url="html/M-MagicCMS.Facebook.FacebookPostCollection.Contains.htm" />
-    <HelpKINode Title="Contains Method " Url="html/M-MagicCMS.Marketing.RegisteredUserCollection.Contains.htm" />
+    <HelpKINode Title="Contains Method " Url="html/M-MagicCMS.Core.MagicTranslationCollection.Contains.htm" />
+    <HelpKINode Title="Contains Method " Url="html/M-MagicCMS.Core.MagicKeywordCollection.Contains.htm" />
+    <HelpKINode Title="Contains Method " Url="html/M-MagicCMS.Blogger.BloggerRss.Contains.htm" />
     <HelpKINode Title="Contains Method " Url="html/M-MagicCMS.Core.MagicTransDictionaryCollection.Contains.htm" />
     <HelpKINode Title="Contains Method " Url="html/M-MagicCMS.Core.WhereClauseCollection.Contains.htm" />
-    <HelpKINode Title="Contains Method " Url="html/M-MagicCMS.Core.MenuInfoCollection.Contains.htm" />
-    <HelpKINode Title="Contains Method " Url="html/M-MagicCMS.Core.MagicUserCollection.Contains.htm" />
-    <HelpKINode Title="Contains Method " Url="html/M-MagicCMS.Blogger.BloggerRss.Contains.htm" />
+    <HelpKINode Title="Contains Method " Url="html/M-MagicCMS.Marketing.RegisteredUserCollection.Contains.htm" />
     <HelpKINode Title="Contains Method " Url="html/M-MagicCMS.Core.MagicLogCollection.Contains.htm" />
-    <HelpKINode Title="Contains Method " Url="html/M-MagicCMS.Core.MagicLanguageCollection.Contains.htm" />
-    <HelpKINode Title="Contains Method " Url="html/M-MagicCMS.Core.MagicTranslationCollection.Contains.htm" />
     <HelpKINode Title="Contains Method " Url="html/M-MagicCMS.Core.MagicPostTypeInfoCollection.Contains.htm" />
+    <HelpKINode Title="Contains Method " Url="html/M-MagicCMS.Core.MagicUserCollection.Contains.htm" />
+    <HelpKINode Title="Contains Method " Url="html/M-MagicCMS.Core.MagicLanguageCollection.Contains.htm" />
+    <HelpKINode Title="Contains Method " Url="html/M-MagicCMS.Facebook.FacebookPostCollection.Contains.htm" />
+    <HelpKINode Title="Contains Method " Url="html/M-MagicCMS.Core.MenuInfoCollection.Contains.htm" />
     <HelpKINode Title="Contains Method " Url="html/M-MagicCMS.Core.MagicPostCollection.Contains.htm" />
-    <HelpKINode Title="Contains Method " Url="html/M-MagicCMS.Core.MagicKeywordCollection.Contains.htm" />
   </HelpKINode>
   <HelpKINode Title="Contenitore property">
     <HelpKINode Title="Contenitore Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.Contenitore.htm" />
@@ -347,9 +354,9 @@
   <HelpKINode Title="ContentPk property" Url="html/P-MagicCMS.Core.MagicKeyword.ContentPk.htm" />
   <HelpKINode Title="ContentType property" Url="html/P-MagicCMS.BingTranslator.TranslateOptions.ContentType.htm" />
   <HelpKINode Title="ContenutiPreferiti property">
-    <HelpKINode Title="ContenutiPreferiti Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.ContenutiPreferiti.htm" />
-    <HelpKINode Title="ContenutiPreferiti Property " Url="html/P-MagicCMS.Core.MagicPostTypeInfo.ContenutiPreferiti.htm" />
     <HelpKINode Title="ContenutiPreferiti Property " Url="html/P-MagicCMS.Core.MagicPost.ContenutiPreferiti.htm" />
+    <HelpKINode Title="ContenutiPreferiti Property " Url="html/P-MagicCMS.Core.MagicPostTypeInfo.ContenutiPreferiti.htm" />
+    <HelpKINode Title="ContenutiPreferiti Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.ContenutiPreferiti.htm" />
   </HelpKINode>
   <HelpKINode Title="ControlExtensions class">
     <HelpKINode Title="ControlExtensions Class" Url="html/T-MagicCMS.Core.ControlExtensions.htm" />
@@ -360,19 +367,19 @@
   </HelpKINode>
   <HelpKINode Title="ControlExtensions.FindControlRecursive method" Url="html/M-MagicCMS.Core.ControlExtensions.FindControlRecursive.htm" />
   <HelpKINode Title="CopyTo method">
-    <HelpKINode Title="CopyTo Method " Url="html/M-MagicCMS.Blogger.BloggerRss.CopyTo.htm" />
+    <HelpKINode Title="CopyTo Method " Url="html/M-MagicCMS.Core.MagicUserCollection.CopyTo.htm" />
+    <HelpKINode Title="CopyTo Method " Url="html/M-MagicCMS.Core.MagicLogCollection.CopyTo.htm" />
+    <HelpKINode Title="CopyTo Method " Url="html/M-MagicCMS.Core.MenuInfoCollection.CopyTo.htm" />
     <HelpKINode Title="CopyTo Method " Url="html/M-MagicCMS.Core.MagicPostCollection.CopyTo.htm" />
-    <HelpKINode Title="CopyTo Method " Url="html/M-MagicCMS.Core.MagicKeywordCollection.CopyTo.htm" />
     <HelpKINode Title="CopyTo Method " Url="html/M-MagicCMS.Core.MagicPostTypeInfoCollection.CopyTo.htm" />
     <HelpKINode Title="CopyTo Method " Url="html/M-MagicCMS.Marketing.RegisteredUserCollection.CopyTo.htm" />
-    <HelpKINode Title="CopyTo Method " Url="html/M-MagicCMS.Facebook.FacebookPostCollection.CopyTo.htm" />
+    <HelpKINode Title="CopyTo Method " Url="html/M-MagicCMS.Blogger.BloggerRss.CopyTo.htm" />
     <HelpKINode Title="CopyTo Method " Url="html/M-MagicCMS.Core.MagicTranslationCollection.CopyTo.htm" />
-    <HelpKINode Title="CopyTo Method " Url="html/M-MagicCMS.Core.MagicLogCollection.CopyTo.htm" />
-    <HelpKINode Title="CopyTo Method " Url="html/M-MagicCMS.Core.MagicUserCollection.CopyTo.htm" />
-    <HelpKINode Title="CopyTo Method " Url="html/M-MagicCMS.Core.MagicTransDictionaryCollection.CopyTo.htm" />
-    <HelpKINode Title="CopyTo Method " Url="html/M-MagicCMS.Core.MenuInfoCollection.CopyTo.htm" />
     <HelpKINode Title="CopyTo Method " Url="html/M-MagicCMS.Core.MagicLanguageCollection.CopyTo.htm" />
+    <HelpKINode Title="CopyTo Method " Url="html/M-MagicCMS.Core.MagicKeywordCollection.CopyTo.htm" />
     <HelpKINode Title="CopyTo Method " Url="html/M-MagicCMS.Core.WhereClauseCollection.CopyTo.htm" />
+    <HelpKINode Title="CopyTo Method " Url="html/M-MagicCMS.Core.MagicTransDictionaryCollection.CopyTo.htm" />
+    <HelpKINode Title="CopyTo Method " Url="html/M-MagicCMS.Facebook.FacebookPostCollection.CopyTo.htm" />
   </HelpKINode>
   <HelpKINode Title="Count property" Url="html/P-MagicCMS.BingTranslator.TranslationMatch.Count.htm" />
   <HelpKINode Title="CountChildren method" Url="html/Overload-MagicCMS.Core.MagicPost.CountChildren.htm" />
@@ -386,27 +393,28 @@
   <HelpKINode Title="CurrentLanguage property" Url="html/P-MagicCMS.Core.MagicSession.CurrentLanguage.htm" />
   <HelpKINode Title="CurrentLanguageName property" Url="html/P-MagicCMS.Core.MagicSession.CurrentLanguageName.htm" />
   <HelpKINode Title="CustomClass property">
-    <HelpKINode Title="CustomClass Property " Url="html/P-MagicCMS.Core.MagicPost.CustomClass.htm" />
     <HelpKINode Title="CustomClass Property " Url="html/P-MagicCMS.Core.MenuInfo.CustomClass.htm" />
+    <HelpKINode Title="CustomClass Property " Url="html/P-MagicCMS.Core.MagicPost.CustomClass.htm" />
   </HelpKINode>
   <HelpKINode Title="CustomPage field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.CustomPage.htm" />
+  <HelpKINode Title="CustomPage2 field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.CustomPage2.htm" />
   <HelpKINode Title="data property">
     <HelpKINode Title="data Property " Url="html/P-MagicCMS.Core.AjaxJsonResponse.data.htm" />
     <HelpKINode Title="data Property " Url="html/P-MagicCMS.DataTable.OutputParams_dt.data.htm" />
-    <HelpKINode Title="data Property " Url="html/P-MagicCMS.DataTable.Column_dt.data.htm" />
     <HelpKINode Title="data Property " Url="html/P-MagicCMS.Core.MagicGmap3Marker.data.htm" />
+    <HelpKINode Title="data Property " Url="html/P-MagicCMS.DataTable.Column_dt.data.htm" />
   </HelpKINode>
   <HelpKINode Title="DataCancellazione property" Url="html/P-MagicCMS.Core.MagicPostTypeInfo.DataCancellazione.htm" />
   <HelpKINode Title="DatamarketAccessUri field" Url="html/F-MagicCMS.AccessToken.AdmAuthentication.DatamarketAccessUri.htm" />
   <HelpKINode Title="DataPubblicazione property">
+    <HelpKINode Title="DataPubblicazione Property " Url="html/P-MagicCMS.Core.MagicTag.DataPubblicazione.htm" />
     <HelpKINode Title="DataPubblicazione Property " Url="html/P-MagicCMS.Core.MagicPost.DataPubblicazione.htm" />
     <HelpKINode Title="DataPubblicazione Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.DataPubblicazione.htm" />
-    <HelpKINode Title="DataPubblicazione Property " Url="html/P-MagicCMS.Core.MagicTag.DataPubblicazione.htm" />
   </HelpKINode>
   <HelpKINode Title="DataScadenza property">
+    <HelpKINode Title="DataScadenza Property " Url="html/P-MagicCMS.Core.MagicTag.DataScadenza.htm" />
     <HelpKINode Title="DataScadenza Property " Url="html/P-MagicCMS.Core.MagicPost.DataScadenza.htm" />
     <HelpKINode Title="DataScadenza Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.DataScadenza.htm" />
-    <HelpKINode Title="DataScadenza Property " Url="html/P-MagicCMS.Core.MagicTag.DataScadenza.htm" />
   </HelpKINode>
   <HelpKINode Title="DataUltimaModifica property">
     <HelpKINode Title="DataUltimaModifica Property " Url="html/P-MagicCMS.Core.MagicPostTypeInfo.DataUltimaModifica.htm" />
@@ -417,8 +425,8 @@
   <HelpKINode Title="DateAsc field" Url="html/F-MagicCMS.Core.MagicOrdinamento.DateAsc.htm" />
   <HelpKINode Title="DateDesc field" Url="html/F-MagicCMS.Core.MagicOrdinamento.DateDesc.htm" />
   <HelpKINode Title="DefaultContentMaster property">
-    <HelpKINode Title="DefaultContentMaster Property " Url="html/P-MagicCMS.Core.MagicCMSConfiguration.DefaultContentMaster.htm" />
     <HelpKINode Title="DefaultContentMaster Property " Url="html/P-MagicCMS.Core.CMS_Config.DefaultContentMaster.htm" />
+    <HelpKINode Title="DefaultContentMaster Property " Url="html/P-MagicCMS.Core.MagicCMSConfiguration.DefaultContentMaster.htm" />
   </HelpKINode>
   <HelpKINode Title="DefaultImage property">
     <HelpKINode Title="DefaultImage Property " Url="html/P-MagicCMS.Core.MagicCMSConfiguration.DefaultImage.htm" />
@@ -427,33 +435,34 @@
   <HelpKINode Title="Delete enumeration member" Url="html/T-MagicCMS.Core.LogAction.htm" />
   <HelpKINode Title="Delete field" Url="html/F-MagicCMS.Core.LogAction.Delete.htm" />
   <HelpKINode Title="Delete method">
-    <HelpKINode Title="Delete Method " Url="html/Overload-MagicCMS.Core.MagicPostTypeInfo.Delete.htm" />
-    <HelpKINode Title="Delete Method " Url="html/M-MagicCMS.Marketing.RegisteredUser.Delete.htm" />
-    <HelpKINode Title="Delete Method " Url="html/M-MagicCMS.Core.MagicVoto.Delete.htm" />
     <HelpKINode Title="Delete Method " Url="html/M-MagicCMS.Core.MagicPost.Delete.htm" />
+    <HelpKINode Title="Delete Method " Url="html/M-MagicCMS.Marketing.RegisteredUser.Delete.htm" />
+    <HelpKINode Title="Delete Method " Url="html/Overload-MagicCMS.Core.MagicPostTypeInfo.Delete.htm" />
+    <HelpKINode Title="Delete Method " Url="html/M-MagicCMS.Core.MagicVoto.Delete.htm" />
   </HelpKINode>
   <HelpKINode Title="Deleted property" Url="html/P-MagicCMS.Marketing.RegisteredUser.Deleted.htm" />
+  <HelpKINode Title="DeletePostTitle method" Url="html/M-MagicCMS.Routing.MagicIndex.DeletePostTitle.htm" />
   <HelpKINode Title="Desc field" Url="html/F-MagicCMS.Core.MagicOrdinamento.Desc.htm" />
   <HelpKINode Title="Description property">
-    <HelpKINode Title="Description Property " Url="html/P-MagicCMS.Blogger.BloggerPost.Description.htm" />
     <HelpKINode Title="Description Property " Url="html/P-MagicCMS.PageBase.SiteMasterBase.Description.htm" />
+    <HelpKINode Title="Description Property " Url="html/P-MagicCMS.Blogger.BloggerPost.Description.htm" />
   </HelpKINode>
   <HelpKINode Title="Descrizione property" Url="html/P-MagicCMS.Core.MagicPostTypeInfo.Descrizione.htm" />
   <HelpKINode Title="Detect method">
-    <HelpKINode Title="Detect Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.Detect.htm" />
     <HelpKINode Title="Detect Method " Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.Detect.htm" />
+    <HelpKINode Title="Detect Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.Detect.htm" />
   </HelpKINode>
   <HelpKINode Title="DetectArray method">
-    <HelpKINode Title="DetectArray Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.DetectArray.htm" />
     <HelpKINode Title="DetectArray Method " Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.DetectArray.htm" />
+    <HelpKINode Title="DetectArray Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.DetectArray.htm" />
   </HelpKINode>
   <HelpKINode Title="DetectArrayAsync method">
     <HelpKINode Title="DetectArrayAsync Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.DetectArrayAsync.htm" />
     <HelpKINode Title="DetectArrayAsync Method " Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.DetectArrayAsync.htm" />
   </HelpKINode>
   <HelpKINode Title="DetectAsync method">
-    <HelpKINode Title="DetectAsync Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.DetectAsync.htm" />
     <HelpKINode Title="DetectAsync Method " Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.DetectAsync.htm" />
+    <HelpKINode Title="DetectAsync Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.DetectAsync.htm" />
   </HelpKINode>
   <HelpKINode Title="dir property" Url="html/P-MagicCMS.DataTable.Order_dt.dir.htm" />
   <HelpKINode Title="disabled property" Url="html/P-MagicCMS.Core.JTreeNodeState.disabled.htm" />
@@ -461,14 +470,14 @@
   <HelpKINode Title="DocumentDownload field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.DocumentDownload.htm" />
   <HelpKINode Title="DownloadPage field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.DownloadPage.htm" />
   <HelpKINode Title="draw property">
-    <HelpKINode Title="draw Property " Url="html/P-MagicCMS.DataTable.OutputParams_dt.draw.htm" />
     <HelpKINode Title="draw Property " Url="html/P-MagicCMS.DataTable.InputParams_dt.draw.htm" />
+    <HelpKINode Title="draw Property " Url="html/P-MagicCMS.DataTable.OutputParams_dt.draw.htm" />
   </HelpKINode>
   <HelpKINode Title="DummyLink field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.DummyLink.htm" />
   <HelpKINode Title="EditorsMail property" Url="html/P-MagicCMS.Core.MagicCMSConfiguration.EditorsMail.htm" />
   <HelpKINode Title="Email property">
-    <HelpKINode Title="Email Property " Url="html/P-MagicCMS.Marketing.RegisteredUser.Email.htm" />
     <HelpKINode Title="Email Property " Url="html/P-MagicCMS.Core.MagicUser.Email.htm" />
+    <HelpKINode Title="Email Property " Url="html/P-MagicCMS.Marketing.RegisteredUser.Email.htm" />
     <HelpKINode Title="Email Property " Url="html/P-MagicCMS.Core.MagicPost.Email.htm" />
   </HelpKINode>
   <HelpKINode Title="Empty method" Url="html/M-MagicCMS.Routing.MagicIndex.Empty.htm" />
@@ -478,9 +487,9 @@
   <HelpKINode Title="EQUAL field" Url="html/F-MagicCMS.Core.WhereClause.EQUAL.htm" />
   <HelpKINode Title="Error property">
     <HelpKINode Title="Error Property " Url="html/P-MagicCMS.Core.MagicLog.Error.htm" />
-    <HelpKINode Title="Error Property " Url="html/P-MagicCMS.BingTranslator.TranslationMatch.Error.htm" />
-    <HelpKINode Title="Error Property " Url="html/P-MagicCMS.BingTranslator.TranslateArray2Response.Error.htm" />
     <HelpKINode Title="Error Property " Url="html/P-MagicCMS.BingTranslator.TranslateArrayResponse.Error.htm" />
+    <HelpKINode Title="Error Property " Url="html/P-MagicCMS.BingTranslator.TranslateArray2Response.Error.htm" />
+    <HelpKINode Title="Error Property " Url="html/P-MagicCMS.BingTranslator.TranslationMatch.Error.htm" />
   </HelpKINode>
   <HelpKINode Title="errorCodes property" Url="html/P-MagicCMS.reCAPTCHA.CaptchaResponse.errorCodes.htm" />
   <HelpKINode Title="ErrorMessage property" Url="html/P-MagicCMS.PageBase.MasterTheme.ErrorMessage.htm" />
@@ -493,26 +502,26 @@
   <HelpKINode Title="Expired property" Url="html/P-MagicCMS.Marketing.RegisteredUser.Expired.htm" />
   <HelpKINode Title="expires_in property" Url="html/P-MagicCMS.AccessToken.AdmAccessToken.expires_in.htm" />
   <HelpKINode Title="ExtensionData property">
-    <HelpKINode Title="ExtensionData Property " Url="html/P-MagicCMS.BingTranslator.GetTranslationsResponse.ExtensionData.htm" />
-    <HelpKINode Title="ExtensionData Property " Url="html/P-MagicCMS.BingTranslator.Translation.ExtensionData.htm" />
     <HelpKINode Title="ExtensionData Property " Url="html/P-MagicCMS.BingTranslator.TranslateArrayResponse.ExtensionData.htm" />
     <HelpKINode Title="ExtensionData Property " Url="html/P-MagicCMS.BingTranslator.TranslateArray2Response.ExtensionData.htm" />
+    <HelpKINode Title="ExtensionData Property " Url="html/P-MagicCMS.BingTranslator.Translation.ExtensionData.htm" />
     <HelpKINode Title="ExtensionData Property " Url="html/P-MagicCMS.BingTranslator.TranslationMatch.ExtensionData.htm" />
+    <HelpKINode Title="ExtensionData Property " Url="html/P-MagicCMS.BingTranslator.GetTranslationsResponse.ExtensionData.htm" />
     <HelpKINode Title="ExtensionData Property " Url="html/P-MagicCMS.BingTranslator.TranslateOptions.ExtensionData.htm" />
   </HelpKINode>
   <HelpKINode Title="ExternalLink field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.ExternalLink.htm" />
   <HelpKINode Title="ExtraInfo property">
-    <HelpKINode Title="ExtraInfo Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.ExtraInfo.htm" />
     <HelpKINode Title="ExtraInfo Property " Url="html/P-MagicCMS.Core.MagicPost.ExtraInfo.htm" />
+    <HelpKINode Title="ExtraInfo Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.ExtraInfo.htm" />
     <HelpKINode Title="ExtraInfo Property " Url="html/P-MagicCMS.Core.MagicTag.ExtraInfo.htm" />
   </HelpKINode>
   <HelpKINode Title="ExtraInfo1 property">
-    <HelpKINode Title="ExtraInfo1 Property " Url="html/P-MagicCMS.Core.MagicPost.ExtraInfo1.htm" />
     <HelpKINode Title="ExtraInfo1 Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.ExtraInfo1.htm" />
+    <HelpKINode Title="ExtraInfo1 Property " Url="html/P-MagicCMS.Core.MagicPost.ExtraInfo1.htm" />
   </HelpKINode>
   <HelpKINode Title="ExtraInfo2 property">
-    <HelpKINode Title="ExtraInfo2 Property " Url="html/P-MagicCMS.Core.MagicPost.ExtraInfo2.htm" />
     <HelpKINode Title="ExtraInfo2 Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.ExtraInfo2.htm" />
+    <HelpKINode Title="ExtraInfo2 Property " Url="html/P-MagicCMS.Core.MagicPost.ExtraInfo2.htm" />
   </HelpKINode>
   <HelpKINode Title="ExtraInfo3 property">
     <HelpKINode Title="ExtraInfo3 Property " Url="html/P-MagicCMS.Core.MagicPost.ExtraInfo3.htm" />
@@ -527,40 +536,40 @@
     <HelpKINode Title="ExtraInfo5 Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.ExtraInfo5.htm" />
   </HelpKINode>
   <HelpKINode Title="ExtraInfo6 property">
-    <HelpKINode Title="ExtraInfo6 Property " Url="html/P-MagicCMS.Core.MagicPost.ExtraInfo6.htm" />
     <HelpKINode Title="ExtraInfo6 Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.ExtraInfo6.htm" />
+    <HelpKINode Title="ExtraInfo6 Property " Url="html/P-MagicCMS.Core.MagicPost.ExtraInfo6.htm" />
   </HelpKINode>
   <HelpKINode Title="ExtraInfo7 property">
     <HelpKINode Title="ExtraInfo7 Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.ExtraInfo7.htm" />
     <HelpKINode Title="ExtraInfo7 Property " Url="html/P-MagicCMS.Core.MagicPost.ExtraInfo7.htm" />
   </HelpKINode>
   <HelpKINode Title="ExtraInfo8 property">
-    <HelpKINode Title="ExtraInfo8 Property " Url="html/P-MagicCMS.Core.MagicPost.ExtraInfo8.htm" />
     <HelpKINode Title="ExtraInfo8 Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.ExtraInfo8.htm" />
+    <HelpKINode Title="ExtraInfo8 Property " Url="html/P-MagicCMS.Core.MagicPost.ExtraInfo8.htm" />
   </HelpKINode>
   <HelpKINode Title="ExtraInfoNumber1 property">
-    <HelpKINode Title="ExtraInfoNumber1 Property " Url="html/P-MagicCMS.Core.MagicPost.ExtraInfoNumber1.htm" />
     <HelpKINode Title="ExtraInfoNumber1 Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.ExtraInfoNumber1.htm" />
+    <HelpKINode Title="ExtraInfoNumber1 Property " Url="html/P-MagicCMS.Core.MagicPost.ExtraInfoNumber1.htm" />
   </HelpKINode>
   <HelpKINode Title="ExtraInfoNumber2 property">
     <HelpKINode Title="ExtraInfoNumber2 Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.ExtraInfoNumber2.htm" />
     <HelpKINode Title="ExtraInfoNumber2 Property " Url="html/P-MagicCMS.Core.MagicPost.ExtraInfoNumber2.htm" />
   </HelpKINode>
   <HelpKINode Title="ExtraInfoNumber3 property">
-    <HelpKINode Title="ExtraInfoNumber3 Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.ExtraInfoNumber3.htm" />
     <HelpKINode Title="ExtraInfoNumber3 Property " Url="html/P-MagicCMS.Core.MagicPost.ExtraInfoNumber3.htm" />
+    <HelpKINode Title="ExtraInfoNumber3 Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.ExtraInfoNumber3.htm" />
   </HelpKINode>
   <HelpKINode Title="ExtraInfoNumber4 property">
-    <HelpKINode Title="ExtraInfoNumber4 Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.ExtraInfoNumber4.htm" />
     <HelpKINode Title="ExtraInfoNumber4 Property " Url="html/P-MagicCMS.Core.MagicPost.ExtraInfoNumber4.htm" />
+    <HelpKINode Title="ExtraInfoNumber4 Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.ExtraInfoNumber4.htm" />
   </HelpKINode>
   <HelpKINode Title="ExtraInfoNumber5 property">
     <HelpKINode Title="ExtraInfoNumber5 Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.ExtraInfoNumber5.htm" />
     <HelpKINode Title="ExtraInfoNumber5 Property " Url="html/P-MagicCMS.Core.MagicPost.ExtraInfoNumber5.htm" />
   </HelpKINode>
   <HelpKINode Title="ExtraInfoNumber6 property">
-    <HelpKINode Title="ExtraInfoNumber6 Property " Url="html/P-MagicCMS.Core.MagicPost.ExtraInfoNumber6.htm" />
     <HelpKINode Title="ExtraInfoNumber6 Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.ExtraInfoNumber6.htm" />
+    <HelpKINode Title="ExtraInfoNumber6 Property " Url="html/P-MagicCMS.Core.MagicPost.ExtraInfoNumber6.htm" />
   </HelpKINode>
   <HelpKINode Title="ExtraInfoNumber7 property">
     <HelpKINode Title="ExtraInfoNumber7 Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.ExtraInfoNumber7.htm" />
@@ -598,12 +607,14 @@
     <HelpKINode Title="FacebookPostCollection Members" Url="html/AllMembers.T-MagicCMS.Facebook.FacebookPostCollection.htm" />
     <HelpKINode Title="about FacebookPostCollection class" Url="html/T-MagicCMS.Facebook.FacebookPostCollection.htm" />
     <HelpKINode Title="all members" Url="html/AllMembers.T-MagicCMS.Facebook.FacebookPostCollection.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload-MagicCMS.Facebook.FacebookPostCollection.-ctor.htm" />
     <HelpKINode Title="methods" Url="html/Methods.T-MagicCMS.Facebook.FacebookPostCollection.htm" />
     <HelpKINode Title="properties" Url="html/Properties.T-MagicCMS.Facebook.FacebookPostCollection.htm" />
   </HelpKINode>
   <HelpKINode Title="FacebookPostCollection.Add method" Url="html/M-MagicCMS.Facebook.FacebookPostCollection.Add.htm" />
   <HelpKINode Title="FacebookPostCollection.Contains method" Url="html/M-MagicCMS.Facebook.FacebookPostCollection.Contains.htm" />
   <HelpKINode Title="FacebookPostCollection.CopyTo method" Url="html/M-MagicCMS.Facebook.FacebookPostCollection.CopyTo.htm" />
+  <HelpKINode Title="FacebookPostCollection.FacebookPostCollection constructor" Url="html/Overload-MagicCMS.Facebook.FacebookPostCollection.-ctor.htm" />
   <HelpKINode Title="FacebookPostCollection.IndexOf method" Url="html/M-MagicCMS.Facebook.FacebookPostCollection.IndexOf.htm" />
   <HelpKINode Title="FacebookPostCollection.Insert method" Url="html/M-MagicCMS.Facebook.FacebookPostCollection.Insert.htm" />
   <HelpKINode Title="FacebookPostCollection.Item property" Url="html/P-MagicCMS.Facebook.FacebookPostCollection.Item-System.Int32-.htm" />
@@ -640,9 +651,9 @@
   <HelpKINode Title="FlagBreve property" Url="html/P-MagicCMS.Core.MagicPostTypeInfo.FlagBreve.htm" />
   <HelpKINode Title="FlagBtnGeolog property" Url="html/P-MagicCMS.Core.MagicPostTypeInfo.FlagBtnGeolog.htm" />
   <HelpKINode Title="FlagCancellazione property">
-    <HelpKINode Title="FlagCancellazione Property " Url="html/P-MagicCMS.Core.MagicPost.FlagCancellazione.htm" />
-    <HelpKINode Title="FlagCancellazione Property " Url="html/P-MagicCMS.Core.MagicTag.FlagCancellazione.htm" />
     <HelpKINode Title="FlagCancellazione Property " Url="html/P-MagicCMS.Core.MagicPostTypeInfo.FlagCancellazione.htm" />
+    <HelpKINode Title="FlagCancellazione Property " Url="html/P-MagicCMS.Core.MagicTag.FlagCancellazione.htm" />
+    <HelpKINode Title="FlagCancellazione Property " Url="html/P-MagicCMS.Core.MagicPost.FlagCancellazione.htm" />
   </HelpKINode>
   <HelpKINode Title="FlagCercaServer property" Url="html/P-MagicCMS.Core.MagicPostTypeInfo.FlagCercaServer.htm" />
   <HelpKINode Title="FlagContainer property" Url="html/P-MagicCMS.Core.MagicTag.FlagContainer.htm" />
@@ -667,10 +678,10 @@
   <HelpKINode Title="Folder field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.Folder.htm" />
   <HelpKINode Title="FooterMenu property" Url="html/P-MagicCMS.Core.CMS_Config.FooterMenu.htm" />
   <HelpKINode Title="From property">
-    <HelpKINode Title="From Property " Url="html/P-MagicCMS.BingTranslator.TranslateArrayResponse.From.htm" />
-    <HelpKINode Title="From Property " Url="html/P-MagicCMS.Facebook.FacebookPost.From.htm" />
     <HelpKINode Title="From Property " Url="html/P-MagicCMS.BingTranslator.GetTranslationsResponse.From.htm" />
+    <HelpKINode Title="From Property " Url="html/P-MagicCMS.Facebook.FacebookPost.From.htm" />
     <HelpKINode Title="From Property " Url="html/P-MagicCMS.BingTranslator.TranslateArray2Response.From.htm" />
+    <HelpKINode Title="From Property " Url="html/P-MagicCMS.BingTranslator.TranslateArrayResponse.From.htm" />
   </HelpKINode>
   <HelpKINode Title="Ftp enumeration member" Url="html/T-System.CheckUrl.Protocol.htm" />
   <HelpKINode Title="Ftp field" Url="html/F-System.CheckUrl.Protocol.Ftp.htm" />
@@ -695,8 +706,8 @@
     <HelpKINode Title="GetAppIdToken Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.GetAppIdToken.htm" />
   </HelpKINode>
   <HelpKINode Title="GetAppIdTokenAsync method">
-    <HelpKINode Title="GetAppIdTokenAsync Method " Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.GetAppIdTokenAsync.htm" />
     <HelpKINode Title="GetAppIdTokenAsync Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.GetAppIdTokenAsync.htm" />
+    <HelpKINode Title="GetAppIdTokenAsync Method " Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.GetAppIdTokenAsync.htm" />
   </HelpKINode>
   <HelpKINode Title="GetByLangId method" Url="html/M-MagicCMS.Core.MagicTranslationCollection.GetByLangId.htm" />
   <HelpKINode Title="GetByType method" Url="html/Overload-MagicCMS.Core.MagicPost.GetByType.htm" />
@@ -710,25 +721,25 @@
   <HelpKINode Title="GetGrandSonsByType method" Url="html/Overload-MagicCMS.Core.MagicPost.GetGrandSonsByType.htm" />
   <HelpKINode Title="getImageList method" Url="html/Overload-MagicCMS.Core.MagicUtils.getImageList.htm" />
   <HelpKINode Title="GetKey method">
-    <HelpKINode Title="GetKey Method " Url="html/M-MagicCMS.Core.MagicPrerogativa.GetKey.htm" />
     <HelpKINode Title="GetKey Method " Url="html/M-MagicCMS.Core.MagicLanguage.GetKey.htm" />
+    <HelpKINode Title="GetKey Method " Url="html/M-MagicCMS.Core.MagicPrerogativa.GetKey.htm" />
   </HelpKINode>
   <HelpKINode Title="GetKeywords method" Url="html/Overload-MagicCMS.Core.MagicKeyword.GetKeywords.htm" />
   <HelpKINode Title="GetLanguageNames method">
-    <HelpKINode Title="GetLanguageNames Method " Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.GetLanguageNames.htm" />
     <HelpKINode Title="GetLanguageNames Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.GetLanguageNames.htm" />
+    <HelpKINode Title="GetLanguageNames Method " Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.GetLanguageNames.htm" />
   </HelpKINode>
   <HelpKINode Title="GetLanguageNamesAsync method">
     <HelpKINode Title="GetLanguageNamesAsync Method " Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.GetLanguageNamesAsync.htm" />
     <HelpKINode Title="GetLanguageNamesAsync Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.GetLanguageNamesAsync.htm" />
   </HelpKINode>
   <HelpKINode Title="GetLanguagesForSpeak method">
-    <HelpKINode Title="GetLanguagesForSpeak Method " Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.GetLanguagesForSpeak.htm" />
     <HelpKINode Title="GetLanguagesForSpeak Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.GetLanguagesForSpeak.htm" />
+    <HelpKINode Title="GetLanguagesForSpeak Method " Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.GetLanguagesForSpeak.htm" />
   </HelpKINode>
   <HelpKINode Title="GetLanguagesForSpeakAsync method">
-    <HelpKINode Title="GetLanguagesForSpeakAsync Method " Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.GetLanguagesForSpeakAsync.htm" />
     <HelpKINode Title="GetLanguagesForSpeakAsync Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.GetLanguagesForSpeakAsync.htm" />
+    <HelpKINode Title="GetLanguagesForSpeakAsync Method " Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.GetLanguagesForSpeakAsync.htm" />
   </HelpKINode>
   <HelpKINode Title="GetLanguagesForTranslate method">
     <HelpKINode Title="GetLanguagesForTranslate Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.GetLanguagesForTranslate.htm" />
@@ -759,16 +770,16 @@
     <HelpKINode Title="GetTranslations Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.GetTranslations.htm" />
   </HelpKINode>
   <HelpKINode Title="GetTranslationsArray method">
-    <HelpKINode Title="GetTranslationsArray Method " Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.GetTranslationsArray.htm" />
     <HelpKINode Title="GetTranslationsArray Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.GetTranslationsArray.htm" />
+    <HelpKINode Title="GetTranslationsArray Method " Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.GetTranslationsArray.htm" />
   </HelpKINode>
   <HelpKINode Title="GetTranslationsArrayAsync method">
-    <HelpKINode Title="GetTranslationsArrayAsync Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.GetTranslationsArrayAsync.htm" />
     <HelpKINode Title="GetTranslationsArrayAsync Method " Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.GetTranslationsArrayAsync.htm" />
+    <HelpKINode Title="GetTranslationsArrayAsync Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.GetTranslationsArrayAsync.htm" />
   </HelpKINode>
   <HelpKINode Title="GetTranslationsAsync method">
-    <HelpKINode Title="GetTranslationsAsync Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.GetTranslationsAsync.htm" />
     <HelpKINode Title="GetTranslationsAsync Method " Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.GetTranslationsAsync.htm" />
+    <HelpKINode Title="GetTranslationsAsync Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.GetTranslationsAsync.htm" />
   </HelpKINode>
   <HelpKINode Title="GetTranslationsResponse class">
     <HelpKINode Title="GetTranslationsResponse Class" Url="html/T-MagicCMS.BingTranslator.GetTranslationsResponse.htm" />
@@ -806,12 +817,13 @@
   <HelpKINode Title="Guid property" Url="html/P-MagicCMS.Blogger.BloggerPost.Guid.htm" />
   <HelpKINode Title="hasProtocol method" Url="html/M-System.CheckUrl.hasProtocol.htm" />
   <HelpKINode Title="Height property">
-    <HelpKINode Title="Height Property " Url="html/P-MagicCMS.Facebook.FbImage.Height.htm" />
-    <HelpKINode Title="Height Property " Url="html/P-MagicCMS.Core.Miniatura.Height.htm" />
     <HelpKINode Title="Height Property " Url="html/P-MagicCMS.Core.MiniaturaInfo.Height.htm" />
+    <HelpKINode Title="Height Property " Url="html/P-MagicCMS.Core.Miniatura.Height.htm" />
+    <HelpKINode Title="Height Property " Url="html/P-MagicCMS.Facebook.FbImage.Height.htm" />
   </HelpKINode>
   <HelpKINode Title="Help property" Url="html/P-MagicCMS.Core.MagicPostTypeInfo.Help.htm" />
   <HelpKINode Title="HomePage field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.HomePage.htm" />
+  <HelpKINode Title="HomePanel method" Url="html/M-MagicCMS.Core.MagicPost.HomePanel.htm" />
   <HelpKINode Title="Href property" Url="html/P-MagicCMS.Core.MenuInfo.Href.htm" />
   <HelpKINode Title="HTMLElement method" Url="html/Overload-MagicCMS.Core.MagicUtils.HTMLElement.htm" />
   <HelpKINode Title="HtmlRemoval class">
@@ -837,8 +849,8 @@
   <HelpKINode Title="Https enumeration member" Url="html/T-System.CheckUrl.Protocol.htm" />
   <HelpKINode Title="Https field" Url="html/F-System.CheckUrl.Protocol.Https.htm" />
   <HelpKINode Title="Icon property">
-    <HelpKINode Title="Icon Property " Url="html/P-MagicCMS.Core.MagicPostTypeInfo.Icon.htm" />
     <HelpKINode Title="Icon Property " Url="html/P-MagicCMS.Core.MagicTag.Icon.htm" />
+    <HelpKINode Title="Icon Property " Url="html/P-MagicCMS.Core.MagicPostTypeInfo.Icon.htm" />
   </HelpKINode>
   <HelpKINode Title="icon property">
     <HelpKINode Title="icon Property " Url="html/P-MagicCMS.Core.JTreeNode.icon.htm" />
@@ -848,14 +860,15 @@
     <HelpKINode Title="IconClass Property " Url="html/P-MagicCMS.Core.MenuInfo.IconClass.htm" />
     <HelpKINode Title="IconClass Property " Url="html/P-MagicCMS.Core.MagicPost.IconClass.htm" />
   </HelpKINode>
+  <HelpKINode Title="IconMenu property" Url="html/P-MagicCMS.Core.MenuInfo.IconMenu.htm" />
   <HelpKINode Title="IconString property" Url="html/P-MagicCMS.Core.MenuInfo.IconString.htm" />
-  <HelpKINode Title="Id property">
-    <HelpKINode Title="Id Property " Url="html/P-MagicCMS.Facebook.FacebookPost.Id.htm" />
-    <HelpKINode Title="Id Property " Url="html/P-MagicCMS.Facebook.FbFrom.Id.htm" />
-  </HelpKINode>
   <HelpKINode Title="id property">
-    <HelpKINode Title="id Property " Url="html/P-MagicCMS.Core.MagicCmsSelect2.id.htm" />
     <HelpKINode Title="id Property " Url="html/P-MagicCMS.Core.JTreeNode.id.htm" />
+    <HelpKINode Title="id Property " Url="html/P-MagicCMS.Core.MagicCmsSelect2.id.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Id property">
+    <HelpKINode Title="Id Property " Url="html/P-MagicCMS.Facebook.FbFrom.Id.htm" />
+    <HelpKINode Title="Id Property " Url="html/P-MagicCMS.Facebook.FacebookPost.Id.htm" />
   </HelpKINode>
   <HelpKINode Title="Image enumeration member" Url="html/T-MagicCMS.Core.MenuIconType.htm" />
   <HelpKINode Title="Image field">
@@ -870,18 +883,18 @@
   <HelpKINode Title="IncludeMultipleMTAlternatives property" Url="html/P-MagicCMS.BingTranslator.TranslateOptions.IncludeMultipleMTAlternatives.htm" />
   <HelpKINode Title="IndexOf method">
     <HelpKINode Title="IndexOf Method " Url="html/M-MagicCMS.Facebook.FacebookPostCollection.IndexOf.htm" />
-    <HelpKINode Title="IndexOf Method " Url="html/M-MagicCMS.Core.WhereClauseCollection.IndexOf.htm" />
-    <HelpKINode Title="IndexOf Method " Url="html/M-MagicCMS.Marketing.RegisteredUserCollection.IndexOf.htm" />
-    <HelpKINode Title="IndexOf Method " Url="html/M-MagicCMS.Core.MagicUserCollection.IndexOf.htm" />
-    <HelpKINode Title="IndexOf Method " Url="html/M-MagicCMS.Core.MagicPostTypeInfoCollection.IndexOf.htm" />
-    <HelpKINode Title="IndexOf Method " Url="html/M-MagicCMS.Core.MagicPostCollection.IndexOf.htm" />
     <HelpKINode Title="IndexOf Method " Url="html/M-MagicCMS.Core.MagicTransDictionaryCollection.IndexOf.htm" />
-    <HelpKINode Title="IndexOf Method " Url="html/M-MagicCMS.Core.MagicKeywordCollection.IndexOf.htm" />
-    <HelpKINode Title="IndexOf Method " Url="html/M-MagicCMS.Core.MagicLogCollection.IndexOf.htm" />
-    <HelpKINode Title="IndexOf Method " Url="html/M-MagicCMS.Core.MenuInfoCollection.IndexOf.htm" />
+    <HelpKINode Title="IndexOf Method " Url="html/M-MagicCMS.Core.WhereClauseCollection.IndexOf.htm" />
     <HelpKINode Title="IndexOf Method " Url="html/M-MagicCMS.Blogger.BloggerRss.IndexOf.htm" />
-    <HelpKINode Title="IndexOf Method " Url="html/M-MagicCMS.Core.MagicLanguageCollection.IndexOf.htm" />
+    <HelpKINode Title="IndexOf Method " Url="html/M-MagicCMS.Core.MagicKeywordCollection.IndexOf.htm" />
+    <HelpKINode Title="IndexOf Method " Url="html/M-MagicCMS.Marketing.RegisteredUserCollection.IndexOf.htm" />
     <HelpKINode Title="IndexOf Method " Url="html/M-MagicCMS.Core.MagicTranslationCollection.IndexOf.htm" />
+    <HelpKINode Title="IndexOf Method " Url="html/M-MagicCMS.Core.MenuInfoCollection.IndexOf.htm" />
+    <HelpKINode Title="IndexOf Method " Url="html/M-MagicCMS.Core.MagicLogCollection.IndexOf.htm" />
+    <HelpKINode Title="IndexOf Method " Url="html/M-MagicCMS.Core.MagicLanguageCollection.IndexOf.htm" />
+    <HelpKINode Title="IndexOf Method " Url="html/M-MagicCMS.Core.MagicPostTypeInfoCollection.IndexOf.htm" />
+    <HelpKINode Title="IndexOf Method " Url="html/M-MagicCMS.Core.MagicUserCollection.IndexOf.htm" />
+    <HelpKINode Title="IndexOf Method " Url="html/M-MagicCMS.Core.MagicPostCollection.IndexOf.htm" />
   </HelpKINode>
   <HelpKINode Title="InitMagicIndex method" Url="html/M-MagicCMS.Routing.RouteUtils.InitMagicIndex.htm" />
   <HelpKINode Title="InputParams_dt class">
@@ -910,28 +923,28 @@
   <HelpKINode Title="Insert enumeration member" Url="html/T-MagicCMS.Core.LogAction.htm" />
   <HelpKINode Title="Insert field" Url="html/F-MagicCMS.Core.LogAction.Insert.htm" />
   <HelpKINode Title="Insert method">
+    <HelpKINode Title="Insert Method " Url="html/M-MagicCMS.Core.MagicKeywordCollection.Insert.htm" />
+    <HelpKINode Title="Insert Method " Url="html/M-MagicCMS.Core.MagicKeyword.Insert.htm" />
+    <HelpKINode Title="Insert Method " Url="html/M-MagicCMS.Blogger.BloggerRss.Insert.htm" />
+    <HelpKINode Title="Insert Method " Url="html/M-MagicCMS.CustomCss.MagicCss.Insert.htm" />
+    <HelpKINode Title="Insert Method " Url="html/M-MagicCMS.Core.MagicVoto.Insert.htm" />
+    <HelpKINode Title="Insert Method " Url="html/M-MagicCMS.Core.WhereClauseCollection.Insert.htm" />
+    <HelpKINode Title="Insert Method " Url="html/M-MagicCMS.Core.MagicLog.Insert.htm" />
+    <HelpKINode Title="Insert Method " Url="html/M-MagicCMS.Core.MagicUserCollection.Insert.htm" />
+    <HelpKINode Title="Insert Method " Url="html/M-MagicCMS.Core.MagicPost.Insert.htm" />
+    <HelpKINode Title="Insert Method " Url="html/M-MagicCMS.Core.MagicTranslationCollection.Insert.htm" />
+    <HelpKINode Title="Insert Method " Url="html/M-MagicCMS.Core.MagicLanguageCollection.Insert.htm" />
+    <HelpKINode Title="Insert Method " Url="html/M-MagicCMS.Marketing.RegisteredUserCollection.Insert.htm" />
+    <HelpKINode Title="Insert Method " Url="html/M-MagicCMS.Core.MagicPostTypeInfoCollection.Insert.htm" />
     <HelpKINode Title="Insert Method " Url="html/M-MagicCMS.Facebook.FacebookPostCollection.Insert.htm" />
     <HelpKINode Title="Insert Method " Url="html/M-MagicCMS.Core.MagicTransDictionaryCollection.Insert.htm" />
     <HelpKINode Title="Insert Method " Url="html/M-MagicCMS.Core.MagicPostCollection.Insert.htm" />
-    <HelpKINode Title="Insert Method " Url="html/M-MagicCMS.Core.MagicUser.Insert.htm" />
-    <HelpKINode Title="Insert Method " Url="html/M-MagicCMS.Core.MagicTranslationCollection.Insert.htm" />
-    <HelpKINode Title="Insert Method " Url="html/M-MagicCMS.Core.MagicKeyword.Insert.htm" />
-    <HelpKINode Title="Insert Method " Url="html/M-MagicCMS.Core.MagicPost.Insert.htm" />
-    <HelpKINode Title="Insert Method " Url="html/M-MagicCMS.Core.MenuInfoCollection.Insert.htm" />
-    <HelpKINode Title="Insert Method " Url="html/M-MagicCMS.Core.WhereClauseCollection.Insert.htm" />
-    <HelpKINode Title="Insert Method " Url="html/M-MagicCMS.CustomCss.MagicCss.Insert.htm" />
-    <HelpKINode Title="Insert Method " Url="html/M-MagicCMS.Core.MagicLog.Insert.htm" />
-    <HelpKINode Title="Insert Method " Url="html/M-MagicCMS.Core.MagicVoto.Insert.htm" />
-    <HelpKINode Title="Insert Method " Url="html/M-MagicCMS.Marketing.RegisteredUserCollection.Insert.htm" />
-    <HelpKINode Title="Insert Method " Url="html/M-MagicCMS.Core.MagicKeywordCollection.Insert.htm" />
-    <HelpKINode Title="Insert Method " Url="html/M-MagicCMS.Core.Miniatura.Insert.htm" />
-    <HelpKINode Title="Insert Method " Url="html/M-MagicCMS.Core.MagicPostTypeInfo.Insert.htm" />
-    <HelpKINode Title="Insert Method " Url="html/M-MagicCMS.Core.MagicLogCollection.Insert.htm" />
-    <HelpKINode Title="Insert Method " Url="html/M-MagicCMS.Core.MagicPostTypeInfoCollection.Insert.htm" />
     <HelpKINode Title="Insert Method " Url="html/M-MagicCMS.Marketing.RegisteredUser.Insert.htm" />
-    <HelpKINode Title="Insert Method " Url="html/M-MagicCMS.Blogger.BloggerRss.Insert.htm" />
-    <HelpKINode Title="Insert Method " Url="html/M-MagicCMS.Core.MagicLanguageCollection.Insert.htm" />
-    <HelpKINode Title="Insert Method " Url="html/M-MagicCMS.Core.MagicUserCollection.Insert.htm" />
+    <HelpKINode Title="Insert Method " Url="html/M-MagicCMS.Core.MenuInfoCollection.Insert.htm" />
+    <HelpKINode Title="Insert Method " Url="html/M-MagicCMS.Core.MagicLogCollection.Insert.htm" />
+    <HelpKINode Title="Insert Method " Url="html/M-MagicCMS.Core.MagicPostTypeInfo.Insert.htm" />
+    <HelpKINode Title="Insert Method " Url="html/M-MagicCMS.Core.Miniatura.Insert.htm" />
+    <HelpKINode Title="Insert Method " Url="html/M-MagicCMS.Core.MagicUser.Insert.htm" />
   </HelpKINode>
   <HelpKINode Title="InsertDate property" Url="html/P-MagicCMS.Marketing.RegisteredUser.InsertDate.htm" />
   <HelpKINode Title="InsertionOrder enumeration member" Url="html/T-MagicCMS.Core.MagicPostTypeInfoOrder.htm" />
@@ -944,24 +957,24 @@
   <HelpKINode Title="IS_NOT_NULL field" Url="html/F-MagicCMS.Core.WhereClause.IS_NOT_NULL.htm" />
   <HelpKINode Title="IS_NULL field" Url="html/F-MagicCMS.Core.WhereClause.IS_NULL.htm" />
   <HelpKINode Title="Item property">
-    <HelpKINode Title="Item Property " Url="html/P-MagicCMS.Core.MagicTranslation.Item-System.String-.htm" />
-    <HelpKINode Title="Item Property " Url="html/P-MagicCMS.Core.MagicKeywordCollection.Item-System.Int32-.htm" />
-    <HelpKINode Title="Item Property " Url="html/P-MagicCMS.Facebook.FacebookPostCollection.Item-System.Int32-.htm" />
-    <HelpKINode Title="Item Property " Url="html/P-MagicCMS.Core.MagicPostTypeInfo.Item-System.String-.htm" />
-    <HelpKINode Title="Item Property " Url="html/P-MagicCMS.Core.MagicLanguageCollection.Item-System.Int32-.htm" />
-    <HelpKINode Title="Item Property " Url="html/P-MagicCMS.Core.MagicPostCollection.Item-System.Int32-.htm" />
-    <HelpKINode Title="Item Property " Url="html/P-MagicCMS.Core.MagicTranslationCollection.Item-System.Int32-.htm" />
-    <HelpKINode Title="Item Property " Url="html/P-MagicCMS.Core.WhereClauseCollection.Item-System.Int32-.htm" />
-    <HelpKINode Title="Item Property " Url="html/P-MagicCMS.Core.MagicUserCollection.Item-System.Int32-.htm" />
+    <HelpKINode Title="Item Property " Url="html/P-MagicCMS.Core.CMS_Config.Item-System.String-.htm" />
+    <HelpKINode Title="Item Property " Url="html/P-MagicCMS.Marketing.RegisteredUserCollection.Item-System.Int32-.htm" />
     <HelpKINode Title="Item Property " Url="html/P-MagicCMS.Core.MagicPostTypeInfoCollection.Item-System.Int32-.htm" />
-    <HelpKINode Title="Item Property " Url="html/P-MagicCMS.Core.MagicLogCollection.Item-System.Int32-.htm" />
+    <HelpKINode Title="Item Property " Url="html/P-MagicCMS.Core.MagicKeywordCollection.Item-System.Int32-.htm" />
     <HelpKINode Title="Item Property " Url="html/P-MagicCMS.Marketing.RegisteredUser.Item-System.String-.htm" />
     <HelpKINode Title="Item Property " Url="html/P-MagicCMS.Core.MenuInfoCollection.Item-System.Int32-.htm" />
     <HelpKINode Title="Item Property " Url="html/P-MagicCMS.Blogger.BloggerRss.Item-System.Int32-.htm" />
-    <HelpKINode Title="Item Property " Url="html/P-MagicCMS.Core.CMS_Config.Item-System.String-.htm" />
-    <HelpKINode Title="Item Property " Url="html/P-MagicCMS.Marketing.RegisteredUserCollection.Item-System.Int32-.htm" />
-    <HelpKINode Title="Item Property " Url="html/P-MagicCMS.Core.MagicPost.Item-System.String-.htm" />
+    <HelpKINode Title="Item Property " Url="html/P-MagicCMS.Facebook.FacebookPostCollection.Item-System.Int32-.htm" />
+    <HelpKINode Title="Item Property " Url="html/P-MagicCMS.Core.WhereClauseCollection.Item-System.Int32-.htm" />
+    <HelpKINode Title="Item Property " Url="html/P-MagicCMS.Core.MagicPostCollection.Item-System.Int32-.htm" />
     <HelpKINode Title="Item Property " Url="html/P-MagicCMS.Core.MagicTransDictionaryCollection.Item-System.Int32-.htm" />
+    <HelpKINode Title="Item Property " Url="html/P-MagicCMS.Core.MagicLanguageCollection.Item-System.Int32-.htm" />
+    <HelpKINode Title="Item Property " Url="html/P-MagicCMS.Core.MagicUserCollection.Item-System.Int32-.htm" />
+    <HelpKINode Title="Item Property " Url="html/P-MagicCMS.Core.MagicPostTypeInfo.Item-System.String-.htm" />
+    <HelpKINode Title="Item Property " Url="html/P-MagicCMS.Core.MagicTranslation.Item-System.String-.htm" />
+    <HelpKINode Title="Item Property " Url="html/P-MagicCMS.Core.MagicLogCollection.Item-System.Int32-.htm" />
+    <HelpKINode Title="Item Property " Url="html/P-MagicCMS.Core.MagicTranslationCollection.Item-System.Int32-.htm" />
+    <HelpKINode Title="Item Property " Url="html/P-MagicCMS.Core.MagicPost.Item-System.String-.htm" />
   </HelpKINode>
   <HelpKINode Title="JoinTables property" Url="html/P-MagicCMS.DataTable.InputParams_dt.JoinTables.htm" />
   <HelpKINode Title="jQueryHigh property" Url="html/P-MagicCMS.Core.MagicCMSConfiguration.jQueryHigh.htm" />
@@ -976,8 +989,8 @@
     <HelpKINode Title="LabelExtraInfo1 Property " Url="html/P-MagicCMS.Core.MagicPost.LabelExtraInfo1.htm" />
   </HelpKINode>
   <HelpKINode Title="LabelExtraInfo2 property">
-    <HelpKINode Title="LabelExtraInfo2 Property " Url="html/P-MagicCMS.Core.MagicPostTypeInfo.LabelExtraInfo2.htm" />
     <HelpKINode Title="LabelExtraInfo2 Property " Url="html/P-MagicCMS.Core.MagicPost.LabelExtraInfo2.htm" />
+    <HelpKINode Title="LabelExtraInfo2 Property " Url="html/P-MagicCMS.Core.MagicPostTypeInfo.LabelExtraInfo2.htm" />
   </HelpKINode>
   <HelpKINode Title="LabelExtraInfo3 property">
     <HelpKINode Title="LabelExtraInfo3 Property " Url="html/P-MagicCMS.Core.MagicPost.LabelExtraInfo3.htm" />
@@ -1008,10 +1021,10 @@
   <HelpKINode Title="LabelUrlSecondaria property" Url="html/P-MagicCMS.Core.MagicPostTypeInfo.LabelUrlSecondaria.htm" />
   <HelpKINode Title="LangId property">
     <HelpKINode Title="LangId Property " Url="html/P-MagicCMS.Routing.MagicIndex.LangId.htm" />
+    <HelpKINode Title="LangId Property " Url="html/P-MagicCMS.Core.MagicKeyword.LangId.htm" />
     <HelpKINode Title="LangId Property " Url="html/P-MagicCMS.Core.MagicTranslation.LangId.htm" />
     <HelpKINode Title="LangId Property " Url="html/P-MagicCMS.Core.MagicLanguage.LangId.htm" />
     <HelpKINode Title="LangId Property " Url="html/P-MagicCMS.Core.MagicTransDictionary.LangId.htm" />
-    <HelpKINode Title="LangId Property " Url="html/P-MagicCMS.Core.MagicKeyword.LangId.htm" />
   </HelpKINode>
   <HelpKINode Title="LangName property">
     <HelpKINode Title="LangName Property " Url="html/P-MagicCMS.Core.MagicLanguage.LangName.htm" />
@@ -1104,12 +1117,12 @@
   </HelpKINode>
   <HelpKINode Title="LastAccessTry property" Url="html/P-MagicCMS.Core.MagicSession.LastAccessTry.htm" />
   <HelpKINode Title="LastModified property">
-    <HelpKINode Title="LastModified Property " Url="html/P-MagicCMS.Marketing.RegisteredUser.LastModified.htm" />
     <HelpKINode Title="LastModified Property " Url="html/P-MagicCMS.CustomCss.MagicCss.LastModified.htm" />
+    <HelpKINode Title="LastModified Property " Url="html/P-MagicCMS.Marketing.RegisteredUser.LastModified.htm" />
   </HelpKINode>
   <HelpKINode Title="LastModify property">
-    <HelpKINode Title="LastModify Property " Url="html/P-MagicCMS.Core.MagicUser.LastModify.htm" />
     <HelpKINode Title="LastModify Property " Url="html/P-MagicCMS.Core.MagicVoto.LastModify.htm" />
+    <HelpKINode Title="LastModify Property " Url="html/P-MagicCMS.Core.MagicUser.LastModify.htm" />
   </HelpKINode>
   <HelpKINode Title="latLng property" Url="html/P-MagicCMS.Core.MagicGmap3Marker.latLng.htm" />
   <HelpKINode Title="length property" Url="html/P-MagicCMS.DataTable.InputParams_dt.length.htm" />
@@ -1119,8 +1132,8 @@
   <HelpKINode Title="LevelDescription property" Url="html/P-MagicCMS.Core.MagicUser.LevelDescription.htm" />
   <HelpKINode Title="LIKE field" Url="html/F-MagicCMS.Core.WhereClause.LIKE.htm" />
   <HelpKINode Title="Link property">
-    <HelpKINode Title="Link Property " Url="html/P-MagicCMS.Facebook.FacebookPost.Link.htm" />
     <HelpKINode Title="Link Property " Url="html/P-MagicCMS.Blogger.BloggerPost.Link.htm" />
+    <HelpKINode Title="Link Property " Url="html/P-MagicCMS.Facebook.FacebookPost.Link.htm" />
   </HelpKINode>
   <HelpKINode Title="LinkElement property" Url="html/P-MagicCMS.Core.MenuInfo.LinkElement.htm" />
   <HelpKINode Title="LinkFalso field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.LinkFalso.htm" />
@@ -1464,6 +1477,7 @@
     <HelpKINode Title="properties" Url="html/Properties.T-MagicCMS.Core.MagicCMSConfiguration.htm" />
   </HelpKINode>
   <HelpKINode Title="MagicCMSConfiguration.AllowedFileTypes property" Url="html/P-MagicCMS.Core.MagicCMSConfiguration.AllowedFileTypes.htm" />
+  <HelpKINode Title="MagicCMSConfiguration.BackEndLang property" Url="html/P-MagicCMS.Core.MagicCMSConfiguration.BackEndLang.htm" />
   <HelpKINode Title="MagicCMSConfiguration.CkeditorCdn property" Url="html/P-MagicCMS.Core.MagicCMSConfiguration.CkeditorCdn.htm" />
   <HelpKINode Title="MagicCMSConfiguration.ConnectionName property" Url="html/P-MagicCMS.Core.MagicCMSConfiguration.ConnectionName.htm" />
   <HelpKINode Title="MagicCMSConfiguration.DefaultContentMaster property" Url="html/P-MagicCMS.Core.MagicCMSConfiguration.DefaultContentMaster.htm" />
@@ -1555,6 +1569,7 @@
     <HelpKINode Title="properties" Url="html/Properties.T-MagicCMS.Routing.MagicIndex.htm" />
   </HelpKINode>
   <HelpKINode Title="MagicIndex.CreateMagicIndex method" Url="html/M-MagicCMS.Routing.MagicIndex.CreateMagicIndex.htm" />
+  <HelpKINode Title="MagicIndex.DeletePostTitle method" Url="html/M-MagicCMS.Routing.MagicIndex.DeletePostTitle.htm" />
   <HelpKINode Title="MagicIndex.Empty method" Url="html/M-MagicCMS.Routing.MagicIndex.Empty.htm" />
   <HelpKINode Title="MagicIndex.EncodeTitle method" Url="html/M-MagicCMS.Routing.MagicIndex.EncodeTitle.htm" />
   <HelpKINode Title="MagicIndex.ExistsMagicIndex method" Url="html/M-MagicCMS.Routing.MagicIndex.ExistsMagicIndex.htm" />
@@ -1568,6 +1583,7 @@
   <HelpKINode Title="MagicIndex.Populate method" Url="html/M-MagicCMS.Routing.MagicIndex.Populate.htm" />
   <HelpKINode Title="MagicIndex.Save method" Url="html/M-MagicCMS.Routing.MagicIndex.Save.htm" />
   <HelpKINode Title="MagicIndex.Title property" Url="html/P-MagicCMS.Routing.MagicIndex.Title.htm" />
+  <HelpKINode Title="MagicIndex.UpdatePostTitle method" Url="html/M-MagicCMS.Routing.MagicIndex.UpdatePostTitle.htm" />
   <HelpKINode Title="MagicKeyword class">
     <HelpKINode Title="MagicKeyword Class" Url="html/T-MagicCMS.Core.MagicKeyword.htm" />
     <HelpKINode Title="MagicKeyword Members" Url="html/AllMembers.T-MagicCMS.Core.MagicKeyword.htm" />
@@ -1698,6 +1714,7 @@
     <HelpKINode Title="properties" Url="html/Properties.T-MagicCMS.PageBase.MagicPage.htm" />
   </HelpKINode>
   <HelpKINode Title="MagicPage.Config property" Url="html/P-MagicCMS.PageBase.MagicPage.Config.htm" />
+  <HelpKINode Title="MagicPage.PreviewPk property" Url="html/P-MagicCMS.PageBase.MagicPage.PreviewPk.htm" />
   <HelpKINode Title="MagicPage.ThePost property" Url="html/P-MagicCMS.PageBase.MagicPage.ThePost.htm" />
   <HelpKINode Title="MagicPost class">
     <HelpKINode Title="MagicPost Class" Url="html/T-MagicCMS.Core.MagicPost.htm" />
@@ -1712,6 +1729,7 @@
   <HelpKINode Title="MagicPost.AddChild method" Url="html/M-MagicCMS.Core.MagicPost.AddChild.htm" />
   <HelpKINode Title="MagicPost.Altezza property" Url="html/P-MagicCMS.Core.MagicPost.Altezza.htm" />
   <HelpKINode Title="MagicPost.AutoMiniaturePk property" Url="html/P-MagicCMS.Core.MagicPost.AutoMiniaturePk.htm" />
+  <HelpKINode Title="MagicPost.CloneChildrenFrom method" Url="html/M-MagicCMS.Core.MagicPost.CloneChildrenFrom.htm" />
   <HelpKINode Title="MagicPost.ConnectTo method" Url="html/Overload-MagicCMS.Core.MagicPost.ConnectTo.htm" />
   <HelpKINode Title="MagicPost.Contenitore property" Url="html/P-MagicCMS.Core.MagicPost.Contenitore.htm" />
   <HelpKINode Title="MagicPost.ContenutiPreferiti property" Url="html/P-MagicCMS.Core.MagicPost.ContenutiPreferiti.htm" />
@@ -1762,6 +1780,7 @@
   <HelpKINode Title="MagicPost.GetSiblings method" Url="html/Overload-MagicCMS.Core.MagicPost.GetSiblings.htm" />
   <HelpKINode Title="MagicPost.GetTestoBreveCustom method" Url="html/M-MagicCMS.Core.MagicPost.GetTestoBreveCustom.htm" />
   <HelpKINode Title="MagicPost.GetVoti method" Url="html/M-MagicCMS.Core.MagicPost.GetVoti.htm" />
+  <HelpKINode Title="MagicPost.HomePanel method" Url="html/M-MagicCMS.Core.MagicPost.HomePanel.htm" />
   <HelpKINode Title="MagicPost.IconClass property" Url="html/P-MagicCMS.Core.MagicPost.IconClass.htm" />
   <HelpKINode Title="MagicPost.Insert method" Url="html/M-MagicCMS.Core.MagicPost.Insert.htm" />
   <HelpKINode Title="MagicPost.IsLocalLink method" Url="html/M-MagicCMS.Core.MagicPost.IsLocalLink.htm" />
@@ -1887,6 +1906,7 @@
   <HelpKINode Title="MagicPostTypeInfo.Contacts field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.Contacts.htm" />
   <HelpKINode Title="MagicPostTypeInfo.ContenutiPreferiti property" Url="html/P-MagicCMS.Core.MagicPostTypeInfo.ContenutiPreferiti.htm" />
   <HelpKINode Title="MagicPostTypeInfo.CustomPage field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.CustomPage.htm" />
+  <HelpKINode Title="MagicPostTypeInfo.CustomPage2 field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.CustomPage2.htm" />
   <HelpKINode Title="MagicPostTypeInfo.DataCancellazione property" Url="html/P-MagicCMS.Core.MagicPostTypeInfo.DataCancellazione.htm" />
   <HelpKINode Title="MagicPostTypeInfo.DataUltimaModifica property" Url="html/P-MagicCMS.Core.MagicPostTypeInfo.DataUltimaModifica.htm" />
   <HelpKINode Title="MagicPostTypeInfo.Delete method" Url="html/Overload-MagicCMS.Core.MagicPostTypeInfo.Delete.htm" />
@@ -2021,6 +2041,7 @@
     <HelpKINode Title="all members" Url="html/AllMembers.T-MagicCMS.Core.MagicSession.htm" />
     <HelpKINode Title="properties" Url="html/Properties.T-MagicCMS.Core.MagicSession.htm" />
   </HelpKINode>
+  <HelpKINode Title="MagicSession.BackEndLang property" Url="html/P-MagicCMS.Core.MagicSession.BackEndLang.htm" />
   <HelpKINode Title="MagicSession.ColorPalette property" Url="html/P-MagicCMS.Core.MagicSession.ColorPalette.htm" />
   <HelpKINode Title="MagicSession.Config property" Url="html/P-MagicCMS.Core.MagicSession.Config.htm" />
   <HelpKINode Title="MagicSession.Current property" Url="html/P-MagicCMS.Core.MagicSession.Current.htm" />
@@ -2029,6 +2050,7 @@
   <HelpKINode Title="MagicSession.LastAccessTry property" Url="html/P-MagicCMS.Core.MagicSession.LastAccessTry.htm" />
   <HelpKINode Title="MagicSession.LoggedUser property" Url="html/P-MagicCMS.Core.MagicSession.LoggedUser.htm" />
   <HelpKINode Title="MagicSession.Preview property" Url="html/P-MagicCMS.Core.MagicSession.Preview.htm" />
+  <HelpKINode Title="MagicSession.PreviewPost property" Url="html/P-MagicCMS.Core.MagicSession.PreviewPost.htm" />
   <HelpKINode Title="MagicSession.SessionStart property" Url="html/P-MagicCMS.Core.MagicSession.SessionStart.htm" />
   <HelpKINode Title="MagicSession.ShowInactiveTypes property" Url="html/P-MagicCMS.Core.MagicSession.ShowInactiveTypes.htm" />
   <HelpKINode Title="MagicSession.ShowSplash property" Url="html/P-MagicCMS.Core.MagicSession.ShowSplash.htm" />
@@ -2245,20 +2267,23 @@
     <HelpKINode Title="MenuInfo Members" Url="html/AllMembers.T-MagicCMS.Core.MenuInfo.htm" />
     <HelpKINode Title="about MenuInfo class" Url="html/T-MagicCMS.Core.MenuInfo.htm" />
     <HelpKINode Title="all members" Url="html/AllMembers.T-MagicCMS.Core.MenuInfo.htm" />
-    <HelpKINode Title="constructor" Url="html/M-MagicCMS.Core.MenuInfo.-ctor.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload-MagicCMS.Core.MenuInfo.-ctor.htm" />
     <HelpKINode Title="properties" Url="html/Properties.T-MagicCMS.Core.MenuInfo.htm" />
   </HelpKINode>
   <HelpKINode Title="MenuInfo.ActiveClass property" Url="html/P-MagicCMS.Core.MenuInfo.ActiveClass.htm" />
   <HelpKINode Title="MenuInfo.CustomClass property" Url="html/P-MagicCMS.Core.MenuInfo.CustomClass.htm" />
   <HelpKINode Title="MenuInfo.Href property" Url="html/P-MagicCMS.Core.MenuInfo.Href.htm" />
   <HelpKINode Title="MenuInfo.IconClass property" Url="html/P-MagicCMS.Core.MenuInfo.IconClass.htm" />
+  <HelpKINode Title="MenuInfo.IconMenu property" Url="html/P-MagicCMS.Core.MenuInfo.IconMenu.htm" />
   <HelpKINode Title="MenuInfo.IconString property" Url="html/P-MagicCMS.Core.MenuInfo.IconString.htm" />
   <HelpKINode Title="MenuInfo.LinkElement property" Url="html/P-MagicCMS.Core.MenuInfo.LinkElement.htm" />
   <HelpKINode Title="MenuInfo.LinkString property" Url="html/P-MagicCMS.Core.MenuInfo.LinkString.htm" />
-  <HelpKINode Title="MenuInfo.MenuInfo constructor" Url="html/M-MagicCMS.Core.MenuInfo.-ctor.htm" />
+  <HelpKINode Title="MenuInfo.MenuInfo constructor" Url="html/Overload-MagicCMS.Core.MenuInfo.-ctor.htm" />
   <HelpKINode Title="MenuInfo.Pk property" Url="html/P-MagicCMS.Core.MenuInfo.Pk.htm" />
+  <HelpKINode Title="MenuInfo.ShortTitle property" Url="html/P-MagicCMS.Core.MenuInfo.ShortTitle.htm" />
   <HelpKINode Title="MenuInfo.Submenu property" Url="html/P-MagicCMS.Core.MenuInfo.Submenu.htm" />
   <HelpKINode Title="MenuInfo.Target property" Url="html/P-MagicCMS.Core.MenuInfo.Target.htm" />
+  <HelpKINode Title="MenuInfo.TestoBreve property" Url="html/P-MagicCMS.Core.MenuInfo.TestoBreve.htm" />
   <HelpKINode Title="MenuInfo.TestoBreve_RT property" Url="html/P-MagicCMS.Core.MenuInfo.TestoBreve_RT.htm" />
   <HelpKINode Title="MenuInfo.Tipo property" Url="html/P-MagicCMS.Core.MenuInfo.Tipo.htm" />
   <HelpKINode Title="MenuInfo.Title_RT property" Url="html/P-MagicCMS.Core.MenuInfo.Title_RT.htm" />
@@ -2286,8 +2311,8 @@
   <HelpKINode Title="Message field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.Message.htm" />
   <HelpKINode Title="Message property" Url="html/P-MagicCMS.Facebook.FacebookPost.Message.htm" />
   <HelpKINode Title="MetaInfo property">
-    <HelpKINode Title="MetaInfo Property " Url="html/P-MagicCMS.Core.MagicPost.MetaInfo.htm" />
     <HelpKINode Title="MetaInfo Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.MetaInfo.htm" />
+    <HelpKINode Title="MetaInfo Property " Url="html/P-MagicCMS.Core.MagicPost.MetaInfo.htm" />
   </HelpKINode>
   <HelpKINode Title="MethodName property" Url="html/P-MagicCMS.Core.MagicLog.MethodName.htm" />
   <HelpKINode Title="Min class">
@@ -2341,13 +2366,13 @@
   <HelpKINode Title="MORE_OR_EQUAL field" Url="html/F-MagicCMS.Core.WhereClause.MORE_OR_EQUAL.htm" />
   <HelpKINode Title="MORE_THEN field" Url="html/F-MagicCMS.Core.WhereClause.MORE_THEN.htm" />
   <HelpKINode Title="msg property" Url="html/P-MagicCMS.Core.AjaxJsonResponse.msg.htm" />
+  <HelpKINode Title="name property" Url="html/P-MagicCMS.DataTable.Column_dt.name.htm" />
   <HelpKINode Title="Name property">
     <HelpKINode Title="Name Property " Url="html/P-MagicCMS.Facebook.FbFrom.Name.htm" />
-    <HelpKINode Title="Name Property " Url="html/P-MagicCMS.Core.MagicPost.Name.htm" />
-    <HelpKINode Title="Name Property " Url="html/P-MagicCMS.Core.MagicUser.Name.htm" />
     <HelpKINode Title="Name Property " Url="html/P-MagicCMS.Facebook.FacebookPost.Name.htm" />
+    <HelpKINode Title="Name Property " Url="html/P-MagicCMS.Core.MagicUser.Name.htm" />
+    <HelpKINode Title="Name Property " Url="html/P-MagicCMS.Core.MagicPost.Name.htm" />
   </HelpKINode>
-  <HelpKINode Title="name property" Url="html/P-MagicCMS.DataTable.Column_dt.name.htm" />
   <HelpKINode Title="NameSegments property" Url="html/P-MagicCMS.Marketing.RegisteredUser.NameSegments.htm" />
   <HelpKINode Title="News field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.News.htm" />
   <HelpKINode Title="NextColor property" Url="html/P-MagicCMS.Core.ColorPalette.NextColor.htm" />
@@ -2362,9 +2387,9 @@
   <HelpKINode Title="Nome property" Url="html/P-MagicCMS.Core.MagicPostTypeInfo.Nome.htm" />
   <HelpKINode Title="NomeExtraInfo property" Url="html/P-MagicCMS.Core.MagicPost.NomeExtraInfo.htm" />
   <HelpKINode Title="NomeTipo property">
-    <HelpKINode Title="NomeTipo Property " Url="html/P-MagicCMS.Core.MagicPost.NomeTipo.htm" />
-    <HelpKINode Title="NomeTipo Property " Url="html/P-MagicCMS.Core.MagicTag.NomeTipo.htm" />
     <HelpKINode Title="NomeTipo Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.NomeTipo.htm" />
+    <HelpKINode Title="NomeTipo Property " Url="html/P-MagicCMS.Core.MagicTag.NomeTipo.htm" />
+    <HelpKINode Title="NomeTipo Property " Url="html/P-MagicCMS.Core.MagicPost.NomeTipo.htm" />
   </HelpKINode>
   <HelpKINode Title="NonContainer enumeration member" Url="html/T-MagicCMS.Core.MagicTagContainer.htm" />
   <HelpKINode Title="NonContainer field" Url="html/F-MagicCMS.Core.MagicTagContainer.NonContainer.htm" />
@@ -2398,8 +2423,8 @@
   <HelpKINode Title="Operator property" Url="html/P-MagicCMS.Core.WhereClause.Operator.htm" />
   <HelpKINode Title="options property" Url="html/P-MagicCMS.Core.MagicGmap3Marker.options.htm" />
   <HelpKINode Title="OR field" Url="html/F-MagicCMS.Core.WhereClause.OR.htm" />
-  <HelpKINode Title="Order property" Url="html/P-MagicCMS.Core.MagicTag.Order.htm" />
   <HelpKINode Title="order property" Url="html/P-MagicCMS.DataTable.InputParams_dt.order.htm" />
+  <HelpKINode Title="Order property" Url="html/P-MagicCMS.Core.MagicTag.Order.htm" />
   <HelpKINode Title="orderable property" Url="html/P-MagicCMS.DataTable.Column_dt.orderable.htm" />
   <HelpKINode Title="OrderChildrenBy property" Url="html/P-MagicCMS.Core.MagicPost.OrderChildrenBy.htm" />
   <HelpKINode Title="Order_dt class">
@@ -2419,12 +2444,12 @@
   </HelpKINode>
   <HelpKINode Title="OriginalText property" Url="html/P-MagicCMS.BingTranslator.Translation.OriginalText.htm" />
   <HelpKINode Title="OriginalTextSentenceLengths property">
-    <HelpKINode Title="OriginalTextSentenceLengths Property " Url="html/P-MagicCMS.BingTranslator.TranslateArrayResponse.OriginalTextSentenceLengths.htm" />
     <HelpKINode Title="OriginalTextSentenceLengths Property " Url="html/P-MagicCMS.BingTranslator.TranslateArray2Response.OriginalTextSentenceLengths.htm" />
+    <HelpKINode Title="OriginalTextSentenceLengths Property " Url="html/P-MagicCMS.BingTranslator.TranslateArrayResponse.OriginalTextSentenceLengths.htm" />
   </HelpKINode>
   <HelpKINode Title="OriginalUrl property">
-    <HelpKINode Title="OriginalUrl Property " Url="html/P-MagicCMS.Core.Miniatura.OriginalUrl.htm" />
     <HelpKINode Title="OriginalUrl Property " Url="html/P-MagicCMS.Core.MiniaturaInfo.OriginalUrl.htm" />
+    <HelpKINode Title="OriginalUrl Property " Url="html/P-MagicCMS.Core.Miniatura.OriginalUrl.htm" />
   </HelpKINode>
   <HelpKINode Title="OR_NOT field" Url="html/F-MagicCMS.Core.WhereClause.OR_NOT.htm" />
   <HelpKINode Title="OutputParams_dt class">
@@ -2439,16 +2464,16 @@
   <HelpKINode Title="OutputParams_dt.recordsFiltered property" Url="html/P-MagicCMS.DataTable.OutputParams_dt.recordsFiltered.htm" />
   <HelpKINode Title="OutputParams_dt.recordsTotal property" Url="html/P-MagicCMS.DataTable.OutputParams_dt.recordsTotal.htm" />
   <HelpKINode Title="Owner property">
-    <HelpKINode Title="Owner Property " Url="html/P-MagicCMS.Core.MagicPost.Owner.htm" />
     <HelpKINode Title="Owner Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.Owner.htm" />
+    <HelpKINode Title="Owner Property " Url="html/P-MagicCMS.Core.MagicPost.Owner.htm" />
   </HelpKINode>
   <HelpKINode Title="Page field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.Page.htm" />
   <HelpKINode Title="PageImage property" Url="html/P-MagicCMS.PageBase.SiteMasterBase.PageImage.htm" />
   <HelpKINode Title="PageWithVideo field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.PageWithVideo.htm" />
   <HelpKINode Title="PaletteIndex property" Url="html/P-MagicCMS.Core.ColorPalette.PaletteIndex.htm" />
   <HelpKINode Title="Parents property">
-    <HelpKINode Title="Parents Property " Url="html/P-MagicCMS.Marketing.RegisteredUser.Parents.htm" />
     <HelpKINode Title="Parents Property " Url="html/P-MagicCMS.Core.MagicPost.Parents.htm" />
+    <HelpKINode Title="Parents Property " Url="html/P-MagicCMS.Marketing.RegisteredUser.Parents.htm" />
     <HelpKINode Title="Parents Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.Parents.htm" />
   </HelpKINode>
   <HelpKINode Title="ParseISO8601String method" Url="html/M-MagicCMS.Core.MagicUtils.ParseISO8601String.htm" />
@@ -2460,21 +2485,21 @@
   <HelpKINode Title="Picture property" Url="html/P-MagicCMS.Facebook.FacebookPost.Picture.htm" />
   <HelpKINode Title="Pk property">
     <HelpKINode Title="Pk Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.Pk.htm" />
-    <HelpKINode Title="Pk Property " Url="html/P-MagicCMS.Core.MagicPostTypeInfo.Pk.htm" />
-    <HelpKINode Title="Pk Property " Url="html/P-MagicCMS.Core.MagicTransDictionary.Pk.htm" />
-    <HelpKINode Title="Pk Property " Url="html/P-MagicCMS.Core.MagicUser.Pk.htm" />
-    <HelpKINode Title="Pk Property " Url="html/P-MagicCMS.Core.MagicLog.Pk.htm" />
-    <HelpKINode Title="Pk Property " Url="html/P-MagicCMS.Core.MagicTag.Pk.htm" />
-    <HelpKINode Title="Pk Property " Url="html/P-MagicCMS.Core.MiniaturaInfo.Pk.htm" />
+    <HelpKINode Title="Pk Property " Url="html/P-MagicCMS.Core.Miniatura.Pk.htm" />
     <HelpKINode Title="Pk Property " Url="html/P-MagicCMS.CustomCss.MagicCss.Pk.htm" />
+    <HelpKINode Title="Pk Property " Url="html/P-MagicCMS.Core.MagicPostTypeInfo.Pk.htm" />
     <HelpKINode Title="Pk Property " Url="html/P-MagicCMS.Routing.MagicIndex.Pk.htm" />
     <HelpKINode Title="Pk Property " Url="html/P-MagicCMS.Core.MagicVoto.Pk.htm" />
-    <HelpKINode Title="Pk Property " Url="html/P-MagicCMS.Marketing.RegisteredUser.Pk.htm" />
-    <HelpKINode Title="Pk Property " Url="html/P-MagicCMS.Core.Miniatura.Pk.htm" />
-    <HelpKINode Title="Pk Property " Url="html/P-MagicCMS.Core.MagicCmsSelect2.Pk.htm" />
-    <HelpKINode Title="Pk Property " Url="html/P-MagicCMS.Core.MenuInfo.Pk.htm" />
     <HelpKINode Title="Pk Property " Url="html/P-MagicCMS.Core.MagicPost.Pk.htm" />
+    <HelpKINode Title="Pk Property " Url="html/P-MagicCMS.Core.MenuInfo.Pk.htm" />
+    <HelpKINode Title="Pk Property " Url="html/P-MagicCMS.Core.MagicUser.Pk.htm" />
+    <HelpKINode Title="Pk Property " Url="html/P-MagicCMS.Marketing.RegisteredUser.Pk.htm" />
+    <HelpKINode Title="Pk Property " Url="html/P-MagicCMS.Core.MagicCmsSelect2.Pk.htm" />
     <HelpKINode Title="Pk Property " Url="html/P-MagicCMS.Core.MagicTranslation.Pk.htm" />
+    <HelpKINode Title="Pk Property " Url="html/P-MagicCMS.Core.MagicTag.Pk.htm" />
+    <HelpKINode Title="Pk Property " Url="html/P-MagicCMS.Core.MagicTransDictionary.Pk.htm" />
+    <HelpKINode Title="Pk Property " Url="html/P-MagicCMS.Core.MiniaturaInfo.Pk.htm" />
+    <HelpKINode Title="Pk Property " Url="html/P-MagicCMS.Core.MagicLog.Pk.htm" />
   </HelpKINode>
   <HelpKINode Title="pk property" Url="html/P-MagicCMS.Core.AjaxJsonResponse.pk.htm" />
   <HelpKINode Title="PkName property" Url="html/P-MagicCMS.DataTable.InputParams_dt.PkName.htm" />
@@ -2491,18 +2516,20 @@
   <HelpKINode Title="PreferredChildren property" Url="html/P-MagicCMS.Core.MagicPost.PreferredChildren.htm" />
   <HelpKINode Title="Prerogative property" Url="html/P-MagicCMS.Core.MagicPrerogativa.Prerogative.htm" />
   <HelpKINode Title="Preview property" Url="html/P-MagicCMS.Core.MagicSession.Preview.htm" />
+  <HelpKINode Title="PreviewPk property" Url="html/P-MagicCMS.PageBase.MagicPage.PreviewPk.htm" />
+  <HelpKINode Title="PreviewPost property" Url="html/P-MagicCMS.Core.MagicSession.PreviewPost.htm" />
   <HelpKINode Title="ProcessRequest method" Url="html/M-MagicCMS.AjaxSendMail_JSON.ProcessRequest.htm" />
   <HelpKINode Title="Product field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.Product.htm" />
   <HelpKINode Title="ProductCategory field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.ProductCategory.htm" />
   <HelpKINode Title="ProfanityAction property" Url="html/P-MagicCMS.BingTranslator.TranslateOptions.ProfanityAction.htm" />
   <HelpKINode Title="Profile_PK property" Url="html/P-MagicCMS.Core.MagicUser.Profile_PK.htm" />
   <HelpKINode Title="PropertyChanged event">
-    <HelpKINode Title="PropertyChanged Event" Url="html/E-MagicCMS.BingTranslator.GetTranslationsResponse.PropertyChanged.htm" />
-    <HelpKINode Title="PropertyChanged Event" Url="html/E-MagicCMS.BingTranslator.TranslateOptions.PropertyChanged.htm" />
-    <HelpKINode Title="PropertyChanged Event" Url="html/E-MagicCMS.BingTranslator.TranslateArrayResponse.PropertyChanged.htm" />
-    <HelpKINode Title="PropertyChanged Event" Url="html/E-MagicCMS.BingTranslator.Translation.PropertyChanged.htm" />
-    <HelpKINode Title="PropertyChanged Event" Url="html/E-MagicCMS.BingTranslator.TranslationMatch.PropertyChanged.htm" />
     <HelpKINode Title="PropertyChanged Event" Url="html/E-MagicCMS.BingTranslator.TranslateArray2Response.PropertyChanged.htm" />
+    <HelpKINode Title="PropertyChanged Event" Url="html/E-MagicCMS.BingTranslator.TranslateOptions.PropertyChanged.htm" />
+    <HelpKINode Title="PropertyChanged Event" Url="html/E-MagicCMS.BingTranslator.GetTranslationsResponse.PropertyChanged.htm" />
+    <HelpKINode Title="PropertyChanged Event" Url="html/E-MagicCMS.BingTranslator.TranslationMatch.PropertyChanged.htm" />
+    <HelpKINode Title="PropertyChanged Event" Url="html/E-MagicCMS.BingTranslator.Translation.PropertyChanged.htm" />
+    <HelpKINode Title="PropertyChanged Event" Url="html/E-MagicCMS.BingTranslator.TranslateArrayResponse.PropertyChanged.htm" />
   </HelpKINode>
   <HelpKINode Title="Protocol.Ftp field" Url="html/F-System.CheckUrl.Protocol.Ftp.htm" />
   <HelpKINode Title="Protocol.Http field" Url="html/F-System.CheckUrl.Protocol.Http.htm" />
@@ -2598,26 +2625,26 @@
   <HelpKINode Title="RegisteredUserStatus.WrongKey field" Url="html/F-MagicCMS.Marketing.RegisteredUserStatus.WrongKey.htm" />
   <HelpKINode Title="RegisterRoutes method" Url="html/M-MagicCMS.Routing.Register.RegisterRoutes.htm" />
   <HelpKINode Title="Remove method">
-    <HelpKINode Title="Remove Method " Url="html/M-MagicCMS.Core.MagicLogCollection.Remove.htm" />
-    <HelpKINode Title="Remove Method " Url="html/M-MagicCMS.Core.MagicKeywordCollection.Remove.htm" />
-    <HelpKINode Title="Remove Method " Url="html/M-MagicCMS.Core.MagicPostCollection.Remove.htm" />
-    <HelpKINode Title="Remove Method " Url="html/M-MagicCMS.Core.MagicUserCollection.Remove.htm" />
-    <HelpKINode Title="Remove Method " Url="html/M-MagicCMS.Blogger.BloggerRss.Remove.htm" />
-    <HelpKINode Title="Remove Method " Url="html/M-MagicCMS.Marketing.RegisteredUserCollection.Remove.htm" />
-    <HelpKINode Title="Remove Method " Url="html/M-MagicCMS.Facebook.FacebookPostCollection.Remove.htm" />
-    <HelpKINode Title="Remove Method " Url="html/M-MagicCMS.Core.MagicPostTypeInfoCollection.Remove.htm" />
-    <HelpKINode Title="Remove Method " Url="html/M-MagicCMS.Core.MagicTranslationCollection.Remove.htm" />
-    <HelpKINode Title="Remove Method " Url="html/M-MagicCMS.Core.MenuInfoCollection.Remove.htm" />
     <HelpKINode Title="Remove Method " Url="html/M-MagicCMS.Core.WhereClauseCollection.Remove.htm" />
-    <HelpKINode Title="Remove Method " Url="html/M-MagicCMS.Core.MagicLanguageCollection.Remove.htm" />
+    <HelpKINode Title="Remove Method " Url="html/M-MagicCMS.Core.MagicPostCollection.Remove.htm" />
     <HelpKINode Title="Remove Method " Url="html/M-MagicCMS.Core.MagicTransDictionaryCollection.Remove.htm" />
+    <HelpKINode Title="Remove Method " Url="html/M-MagicCMS.Core.MagicLogCollection.Remove.htm" />
+    <HelpKINode Title="Remove Method " Url="html/M-MagicCMS.Core.MagicUserCollection.Remove.htm" />
+    <HelpKINode Title="Remove Method " Url="html/M-MagicCMS.Core.MenuInfoCollection.Remove.htm" />
+    <HelpKINode Title="Remove Method " Url="html/M-MagicCMS.Core.MagicTranslationCollection.Remove.htm" />
+    <HelpKINode Title="Remove Method " Url="html/M-MagicCMS.Core.MagicPostTypeInfoCollection.Remove.htm" />
+    <HelpKINode Title="Remove Method " Url="html/M-MagicCMS.Marketing.RegisteredUserCollection.Remove.htm" />
+    <HelpKINode Title="Remove Method " Url="html/M-MagicCMS.Core.MagicLanguageCollection.Remove.htm" />
+    <HelpKINode Title="Remove Method " Url="html/M-MagicCMS.Core.MagicKeywordCollection.Remove.htm" />
+    <HelpKINode Title="Remove Method " Url="html/M-MagicCMS.Blogger.BloggerRss.Remove.htm" />
+    <HelpKINode Title="Remove Method " Url="html/M-MagicCMS.Facebook.FacebookPostCollection.Remove.htm" />
   </HelpKINode>
   <HelpKINode Title="RenderControlToHtml method" Url="html/M-System.StringHtmlExtensions.RenderControlToHtml.htm" />
   <HelpKINode Title="RenderControlToString method" Url="html/M-MagicCMS.Core.MagicUtils.RenderControlToString.htm" />
   <HelpKINode Title="ReservedFlags property" Url="html/P-MagicCMS.BingTranslator.TranslateOptions.ReservedFlags.htm" />
   <HelpKINode Title="Reset method">
-    <HelpKINode Title="Reset Method " Url="html/M-MagicCMS.Core.MagicLanguage.Reset.htm" />
     <HelpKINode Title="Reset Method " Url="html/M-MagicCMS.Core.MagicPrerogativa.Reset.htm" />
+    <HelpKINode Title="Reset Method " Url="html/M-MagicCMS.Core.MagicLanguage.Reset.htm" />
   </HelpKINode>
   <HelpKINode Title="ResetPassword method" Url="html/M-MagicCMS.Core.MagicUser.ResetPassword.htm" />
   <HelpKINode Title="RouteUtils class">
@@ -2631,12 +2658,12 @@
   <HelpKINode Title="RouteUtils.GetVirtualPath method" Url="html/Overload-MagicCMS.Routing.RouteUtils.GetVirtualPath.htm" />
   <HelpKINode Title="RouteUtils.InitMagicIndex method" Url="html/M-MagicCMS.Routing.RouteUtils.InitMagicIndex.htm" />
   <HelpKINode Title="Save method">
-    <HelpKINode Title="Save Method " Url="html/M-MagicCMS.CustomCss.MagicCss.Save.htm" />
     <HelpKINode Title="Save Method " Url="html/M-MagicCMS.Core.MagicTranslation.Save.htm" />
+    <HelpKINode Title="Save Method " Url="html/M-MagicCMS.Core.MagicTransDictionary.Save.htm" />
+    <HelpKINode Title="Save Method " Url="html/M-MagicCMS.Core.MagicLanguage.Save.htm" />
     <HelpKINode Title="Save Method " Url="html/M-MagicCMS.Core.CMS_Config.Save.htm" />
     <HelpKINode Title="Save Method " Url="html/M-MagicCMS.Routing.MagicIndex.Save.htm" />
-    <HelpKINode Title="Save Method " Url="html/M-MagicCMS.Core.MagicLanguage.Save.htm" />
-    <HelpKINode Title="Save Method " Url="html/M-MagicCMS.Core.MagicTransDictionary.Save.htm" />
+    <HelpKINode Title="Save Method " Url="html/M-MagicCMS.CustomCss.MagicCss.Save.htm" />
   </HelpKINode>
   <HelpKINode Title="SaveError enumeration member" Url="html/T-MagicCMS.Marketing.RegisteredUserStatus.htm" />
   <HelpKINode Title="SaveError field" Url="html/F-MagicCMS.Marketing.RegisteredUserStatus.SaveError.htm" />
@@ -2671,6 +2698,7 @@
   <HelpKINode Title="SessionStart property" Url="html/P-MagicCMS.Core.MagicSession.SessionStart.htm" />
   <HelpKINode Title="SetAnswerTo method" Url="html/M-MagicCMS.Core.MagicPost.SetAnswerTo.htm" />
   <HelpKINode Title="ShortMessage property" Url="html/P-MagicCMS.error.ShortMessage.htm" />
+  <HelpKINode Title="ShortTitle property" Url="html/P-MagicCMS.Core.MenuInfo.ShortTitle.htm" />
   <HelpKINode Title="ShowInactiveTypes property" Url="html/P-MagicCMS.Core.MagicSession.ShowInactiveTypes.htm" />
   <HelpKINode Title="ShowSplash property" Url="html/P-MagicCMS.Core.MagicSession.ShowSplash.htm" />
   <HelpKINode Title="SinglePage property" Url="html/P-MagicCMS.Core.CMS_Config.SinglePage.htm" />
@@ -2703,30 +2731,30 @@
   <HelpKINode Title="Smtp enumeration member" Url="html/T-System.CheckUrl.Protocol.htm" />
   <HelpKINode Title="Smtp field" Url="html/F-System.CheckUrl.Protocol.Smtp.htm" />
   <HelpKINode Title="SmtpAdminMail property">
-    <HelpKINode Title="SmtpAdminMail Property " Url="html/P-MagicCMS.Core.CMS_Config.SmtpAdminMail.htm" />
     <HelpKINode Title="SmtpAdminMail Property " Url="html/P-MagicCMS.Core.MagicCMSConfiguration.SmtpAdminMail.htm" />
+    <HelpKINode Title="SmtpAdminMail Property " Url="html/P-MagicCMS.Core.CMS_Config.SmtpAdminMail.htm" />
   </HelpKINode>
   <HelpKINode Title="SmtpDefaultFromMail property">
-    <HelpKINode Title="SmtpDefaultFromMail Property " Url="html/P-MagicCMS.Core.CMS_Config.SmtpDefaultFromMail.htm" />
     <HelpKINode Title="SmtpDefaultFromMail Property " Url="html/P-MagicCMS.Core.MagicCMSConfiguration.SmtpDefaultFromMail.htm" />
+    <HelpKINode Title="SmtpDefaultFromMail Property " Url="html/P-MagicCMS.Core.CMS_Config.SmtpDefaultFromMail.htm" />
   </HelpKINode>
   <HelpKINode Title="SmtpPassword property">
-    <HelpKINode Title="SmtpPassword Property " Url="html/P-MagicCMS.Core.CMS_Config.SmtpPassword.htm" />
     <HelpKINode Title="SmtpPassword Property " Url="html/P-MagicCMS.Core.MagicCMSConfiguration.SmtpPassword.htm" />
+    <HelpKINode Title="SmtpPassword Property " Url="html/P-MagicCMS.Core.CMS_Config.SmtpPassword.htm" />
   </HelpKINode>
   <HelpKINode Title="SmtpServer property" Url="html/P-MagicCMS.Core.CMS_Config.SmtpServer.htm" />
   <HelpKINode Title="SmtpServerName property" Url="html/P-MagicCMS.Core.MagicCMSConfiguration.SmtpServerName.htm" />
-  <HelpKINode Title="SmtpUsername property" Url="html/P-MagicCMS.Core.CMS_Config.SmtpUsername.htm" />
   <HelpKINode Title="SmtpUserName property" Url="html/P-MagicCMS.Core.MagicCMSConfiguration.SmtpUserName.htm" />
+  <HelpKINode Title="SmtpUsername property" Url="html/P-MagicCMS.Core.CMS_Config.SmtpUsername.htm" />
   <HelpKINode Title="Social field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.Social.htm" />
   <HelpKINode Title="Source property" Url="html/P-MagicCMS.Core.MagicTransDictionary.Source.htm" />
   <HelpKINode Title="Speak method">
-    <HelpKINode Title="Speak Method " Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.Speak.htm" />
     <HelpKINode Title="Speak Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.Speak.htm" />
+    <HelpKINode Title="Speak Method " Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.Speak.htm" />
   </HelpKINode>
   <HelpKINode Title="SpeakAsync method">
-    <HelpKINode Title="SpeakAsync Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.SpeakAsync.htm" />
     <HelpKINode Title="SpeakAsync Method " Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.SpeakAsync.htm" />
+    <HelpKINode Title="SpeakAsync Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.SpeakAsync.htm" />
   </HelpKINode>
   <HelpKINode Title="SpecialTag property" Url="html/P-MagicCMS.Core.MagicTag.SpecialTag.htm" />
   <HelpKINode Title="Src property" Url="html/P-MagicCMS.Facebook.FbImage.Src.htm" />
@@ -2735,9 +2763,9 @@
   <HelpKINode Title="StartPageId property" Url="html/P-MagicCMS.PageBase.MasterTheme.StartPageId.htm" />
   <HelpKINode Title="State property">
     <HelpKINode Title="State Property " Url="html/P-MagicCMS.BingTranslator.TranslateArray2Response.State.htm" />
-    <HelpKINode Title="State Property " Url="html/P-MagicCMS.BingTranslator.TranslateArrayResponse.State.htm" />
     <HelpKINode Title="State Property " Url="html/P-MagicCMS.BingTranslator.GetTranslationsResponse.State.htm" />
     <HelpKINode Title="State Property " Url="html/P-MagicCMS.BingTranslator.TranslateOptions.State.htm" />
+    <HelpKINode Title="State Property " Url="html/P-MagicCMS.BingTranslator.TranslateArrayResponse.State.htm" />
   </HelpKINode>
   <HelpKINode Title="state property" Url="html/P-MagicCMS.Core.JTreeNode.state.htm" />
   <HelpKINode Title="StopFileMonitoring method" Url="html/M-MagicCMS.Utils.HttpInternals.StopFileMonitoring.htm" />
@@ -2764,8 +2792,8 @@
   <HelpKINode Title="Success enumeration member" Url="html/T-MagicCMS.Core.MbUserLoginResult.htm" />
   <HelpKINode Title="Success field" Url="html/F-MagicCMS.Core.MbUserLoginResult.Success.htm" />
   <HelpKINode Title="success property">
-    <HelpKINode Title="success Property " Url="html/P-MagicCMS.reCAPTCHA.CaptchaResponse.success.htm" />
     <HelpKINode Title="success Property " Url="html/P-MagicCMS.Core.AjaxJsonResponse.success.htm" />
+    <HelpKINode Title="success Property " Url="html/P-MagicCMS.reCAPTCHA.CaptchaResponse.success.htm" />
   </HelpKINode>
   <HelpKINode Title="SupportMail property" Url="html/P-MagicCMS.Core.MagicCMSConfiguration.SupportMail.htm" />
   <HelpKINode Title="System namespace" Url="html/N-System.htm" />
@@ -2789,18 +2817,19 @@
   <HelpKINode Title="Tabella property" Url="html/P-MagicCMS.Core.MagicLog.Tabella.htm" />
   <HelpKINode Title="TableName property" Url="html/P-MagicCMS.DataTable.InputParams_dt.TableName.htm" />
   <HelpKINode Title="Tags property">
-    <HelpKINode Title="Tags Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.Tags.htm" />
     <HelpKINode Title="Tags Property " Url="html/P-MagicCMS.Core.MagicPost.Tags.htm" />
+    <HelpKINode Title="Tags Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.Tags.htm" />
   </HelpKINode>
   <HelpKINode Title="Target property" Url="html/P-MagicCMS.Core.MenuInfo.Target.htm" />
   <HelpKINode Title="TestoBreve property">
-    <HelpKINode Title="TestoBreve Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.TestoBreve.htm" />
     <HelpKINode Title="TestoBreve Property " Url="html/P-MagicCMS.Core.MagicPost.TestoBreve.htm" />
+    <HelpKINode Title="TestoBreve Property " Url="html/P-MagicCMS.Core.MenuInfo.TestoBreve.htm" />
+    <HelpKINode Title="TestoBreve Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.TestoBreve.htm" />
   </HelpKINode>
   <HelpKINode Title="TestoBreveDefLength property" Url="html/P-MagicCMS.Core.MagicCMSConfiguration.TestoBreveDefLength.htm" />
   <HelpKINode Title="TestoBreve_RT property">
-    <HelpKINode Title="TestoBreve_RT Property " Url="html/P-MagicCMS.Core.MenuInfo.TestoBreve_RT.htm" />
     <HelpKINode Title="TestoBreve_RT Property " Url="html/P-MagicCMS.Core.MagicPost.TestoBreve_RT.htm" />
+    <HelpKINode Title="TestoBreve_RT Property " Url="html/P-MagicCMS.Core.MenuInfo.TestoBreve_RT.htm" />
   </HelpKINode>
   <HelpKINode Title="TestoLungo property">
     <HelpKINode Title="TestoLungo Property " Url="html/P-MagicCMS.Core.MagicPost.TestoLungo.htm" />
@@ -2818,34 +2847,34 @@
   </HelpKINode>
   <HelpKINode Title="ThePost field" Url="html/F-MagicCMS._Default.ThePost.htm" />
   <HelpKINode Title="ThePost property">
-    <HelpKINode Title="ThePost Property " Url="html/P-MagicCMS.PageBase.SiteMasterBase.ThePost.htm" />
     <HelpKINode Title="ThePost Property " Url="html/P-MagicCMS.PageBase.MagicPage.ThePost.htm" />
+    <HelpKINode Title="ThePost Property " Url="html/P-MagicCMS.PageBase.SiteMasterBase.ThePost.htm" />
   </HelpKINode>
   <HelpKINode Title="TheTitle property" Url="html/P-MagicCMS.PageBase.SiteMasterBase.TheTitle.htm" />
   <HelpKINode Title="Thumbnail property" Url="html/P-MagicCMS.Blogger.BloggerPost.Thumbnail.htm" />
   <HelpKINode Title="Timestamp property" Url="html/P-MagicCMS.Core.MagicLog.Timestamp.htm" />
   <HelpKINode Title="Time_ago property" Url="html/P-MagicCMS.Facebook.FacebookPost.Time_ago.htm" />
   <HelpKINode Title="Tipo property">
-    <HelpKINode Title="Tipo Property " Url="html/P-MagicCMS.Core.MenuInfo.Tipo.htm" />
-    <HelpKINode Title="Tipo Property " Url="html/P-MagicCMS.Core.MagicPost.Tipo.htm" />
     <HelpKINode Title="Tipo Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.Tipo.htm" />
     <HelpKINode Title="Tipo Property " Url="html/P-MagicCMS.Core.MagicTag.Tipo.htm" />
+    <HelpKINode Title="Tipo Property " Url="html/P-MagicCMS.Core.MenuInfo.Tipo.htm" />
     <HelpKINode Title="Tipo Property " Url="html/P-MagicCMS.Marketing.RegisteredUser.Tipo.htm" />
+    <HelpKINode Title="Tipo Property " Url="html/P-MagicCMS.Core.MagicPost.Tipo.htm" />
   </HelpKINode>
   <HelpKINode Title="Title property">
-    <HelpKINode Title="Title Property " Url="html/P-MagicCMS.CustomCss.MagicCss.Title.htm" />
-    <HelpKINode Title="Title Property " Url="html/P-MagicCMS.Blogger.BloggerPost.Title.htm" />
     <HelpKINode Title="Title Property " Url="html/P-MagicCMS.Routing.MagicIndex.Title.htm" />
+    <HelpKINode Title="Title Property " Url="html/P-MagicCMS.Blogger.BloggerPost.Title.htm" />
+    <HelpKINode Title="Title Property " Url="html/P-MagicCMS.CustomCss.MagicCss.Title.htm" />
   </HelpKINode>
   <HelpKINode Title="Title_RT property">
-    <HelpKINode Title="Title_RT Property " Url="html/P-MagicCMS.Core.MagicPost.Title_RT.htm" />
     <HelpKINode Title="Title_RT Property " Url="html/P-MagicCMS.Core.MenuInfo.Title_RT.htm" />
+    <HelpKINode Title="Title_RT Property " Url="html/P-MagicCMS.Core.MagicPost.Title_RT.htm" />
   </HelpKINode>
   <HelpKINode Title="Titolo property">
-    <HelpKINode Title="Titolo Property " Url="html/P-MagicCMS.Core.MenuInfo.Titolo.htm" />
     <HelpKINode Title="Titolo Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.Titolo.htm" />
-    <HelpKINode Title="Titolo Property " Url="html/P-MagicCMS.Core.MagicTag.Titolo.htm" />
     <HelpKINode Title="Titolo Property " Url="html/P-MagicCMS.Core.MagicPost.Titolo.htm" />
+    <HelpKINode Title="Titolo Property " Url="html/P-MagicCMS.Core.MenuInfo.Titolo.htm" />
+    <HelpKINode Title="Titolo Property " Url="html/P-MagicCMS.Core.MagicTag.Titolo.htm" />
   </HelpKINode>
   <HelpKINode Title="token_type property" Url="html/P-MagicCMS.AccessToken.AdmAccessToken.token_type.htm" />
   <HelpKINode Title="Topic field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.Topic.htm" />
@@ -2857,21 +2886,21 @@
   <HelpKINode Title="TransAutoHide property" Url="html/P-MagicCMS.Core.MagicSession.TransAutoHide.htm" />
   <HelpKINode Title="TransClientId property" Url="html/P-MagicCMS.Core.CMS_Config.TransClientId.htm" />
   <HelpKINode Title="Translate method">
+    <HelpKINode Title="Translate Method " Url="html/Overload-MagicCMS.Core.MagicTransDictionary.Translate.htm" />
     <HelpKINode Title="Translate Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.Translate.htm" />
     <HelpKINode Title="Translate Method " Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.Translate.htm" />
-    <HelpKINode Title="Translate Method " Url="html/Overload-MagicCMS.Core.MagicTransDictionary.Translate.htm" />
   </HelpKINode>
   <HelpKINode Title="TranslateArray method">
-    <HelpKINode Title="TranslateArray Method " Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.TranslateArray.htm" />
     <HelpKINode Title="TranslateArray Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.TranslateArray.htm" />
+    <HelpKINode Title="TranslateArray Method " Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.TranslateArray.htm" />
   </HelpKINode>
   <HelpKINode Title="TranslateArray2 method">
     <HelpKINode Title="TranslateArray2 Method " Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.TranslateArray2.htm" />
     <HelpKINode Title="TranslateArray2 Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.TranslateArray2.htm" />
   </HelpKINode>
   <HelpKINode Title="TranslateArray2Async method">
-    <HelpKINode Title="TranslateArray2Async Method " Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.TranslateArray2Async.htm" />
     <HelpKINode Title="TranslateArray2Async Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.TranslateArray2Async.htm" />
+    <HelpKINode Title="TranslateArray2Async Method " Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.TranslateArray2Async.htm" />
   </HelpKINode>
   <HelpKINode Title="TranslateArray2Response class">
     <HelpKINode Title="TranslateArray2Response Class" Url="html/T-MagicCMS.BingTranslator.TranslateArray2Response.htm" />
@@ -2891,8 +2920,8 @@
   <HelpKINode Title="TranslateArray2Response.TranslatedText property" Url="html/P-MagicCMS.BingTranslator.TranslateArray2Response.TranslatedText.htm" />
   <HelpKINode Title="TranslateArray2Response.TranslatedTextSentenceLengths property" Url="html/P-MagicCMS.BingTranslator.TranslateArray2Response.TranslatedTextSentenceLengths.htm" />
   <HelpKINode Title="TranslateArrayAsync method">
-    <HelpKINode Title="TranslateArrayAsync Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.TranslateArrayAsync.htm" />
     <HelpKINode Title="TranslateArrayAsync Method " Url="html/M-MagicCMS.BingTranslator.LanguageServiceClient.TranslateArrayAsync.htm" />
+    <HelpKINode Title="TranslateArrayAsync Method " Url="html/M-MagicCMS.BingTranslator.LanguageService.TranslateArrayAsync.htm" />
   </HelpKINode>
   <HelpKINode Title="TranslateArrayResponse class">
     <HelpKINode Title="TranslateArrayResponse Class" Url="html/T-MagicCMS.BingTranslator.TranslateArrayResponse.htm" />
@@ -2918,10 +2947,10 @@
   <HelpKINode Title="TranslatedTestoBreve property" Url="html/P-MagicCMS.Core.MagicTranslation.TranslatedTestoBreve.htm" />
   <HelpKINode Title="TranslatedTestoLungo property" Url="html/P-MagicCMS.Core.MagicTranslation.TranslatedTestoLungo.htm" />
   <HelpKINode Title="TranslatedText property">
-    <HelpKINode Title="TranslatedText Property " Url="html/P-MagicCMS.BingTranslator.TranslationMatch.TranslatedText.htm" />
-    <HelpKINode Title="TranslatedText Property " Url="html/P-MagicCMS.BingTranslator.TranslateArray2Response.TranslatedText.htm" />
     <HelpKINode Title="TranslatedText Property " Url="html/P-MagicCMS.BingTranslator.Translation.TranslatedText.htm" />
+    <HelpKINode Title="TranslatedText Property " Url="html/P-MagicCMS.BingTranslator.TranslateArray2Response.TranslatedText.htm" />
     <HelpKINode Title="TranslatedText Property " Url="html/P-MagicCMS.BingTranslator.TranslateArrayResponse.TranslatedText.htm" />
+    <HelpKINode Title="TranslatedText Property " Url="html/P-MagicCMS.BingTranslator.TranslationMatch.TranslatedText.htm" />
   </HelpKINode>
   <HelpKINode Title="TranslatedTextSentenceLengths property">
     <HelpKINode Title="TranslatedTextSentenceLengths Property " Url="html/P-MagicCMS.BingTranslator.TranslateArray2Response.TranslatedTextSentenceLengths.htm" />
@@ -2980,8 +3009,8 @@
   <HelpKINode Title="TranslationMatch.Rating property" Url="html/P-MagicCMS.BingTranslator.TranslationMatch.Rating.htm" />
   <HelpKINode Title="TranslationMatch.TranslatedText property" Url="html/P-MagicCMS.BingTranslator.TranslationMatch.TranslatedText.htm" />
   <HelpKINode Title="Translations property">
-    <HelpKINode Title="Translations Property " Url="html/P-MagicCMS.Core.MagicPost.Translations.htm" />
     <HelpKINode Title="Translations Property " Url="html/P-MagicCMS.BingTranslator.GetTranslationsResponse.Translations.htm" />
+    <HelpKINode Title="Translations Property " Url="html/P-MagicCMS.Core.MagicPost.Translations.htm" />
   </HelpKINode>
   <HelpKINode Title="TransSecretKey property" Url="html/P-MagicCMS.Core.CMS_Config.TransSecretKey.htm" />
   <HelpKINode Title="TransSourceLangId property" Url="html/P-MagicCMS.Core.CMS_Config.TransSourceLangId.htm" />
@@ -2991,9 +3020,9 @@
   <HelpKINode Title="TruncateWords method" Url="html/Overload-System.StringHtmlExtensions.TruncateWords.htm" />
   <HelpKINode Title="TryActivate method" Url="html/M-MagicCMS.Marketing.RegisteredUser.TryActivate.htm" />
   <HelpKINode Title="Type property">
+    <HelpKINode Title="Type Property " Url="html/P-MagicCMS.Facebook.FbImage.Type.htm" />
     <HelpKINode Title="Type Property " Url="html/P-MagicCMS.Core.MenuIcon.Type.htm" />
     <HelpKINode Title="Type Property " Url="html/P-MagicCMS.Core.ClauseValue.Type.htm" />
-    <HelpKINode Title="Type Property " Url="html/P-MagicCMS.Facebook.FbImage.Type.htm" />
   </HelpKINode>
   <HelpKINode Title="TypeInfo property">
     <HelpKINode Title="TypeInfo Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.TypeInfo.htm" />
@@ -3010,26 +3039,27 @@
   <HelpKINode Title="Update enumeration member" Url="html/T-MagicCMS.Core.LogAction.htm" />
   <HelpKINode Title="Update field" Url="html/F-MagicCMS.Core.LogAction.Update.htm" />
   <HelpKINode Title="Update method">
+    <HelpKINode Title="Update Method " Url="html/M-MagicCMS.Core.MagicUser.Update.htm" />
+    <HelpKINode Title="Update Method " Url="html/Overload-MagicCMS.Core.MagicKeyword.Update.htm" />
+    <HelpKINode Title="Update Method " Url="html/M-MagicCMS.Marketing.RegisteredUser.Update.htm" />
     <HelpKINode Title="Update Method " Url="html/M-MagicCMS.Core.MagicPost.Update.htm" />
     <HelpKINode Title="Update Method " Url="html/M-MagicCMS.Core.MagicPostTypeInfo.Update.htm" />
-    <HelpKINode Title="Update Method " Url="html/M-MagicCMS.Marketing.RegisteredUser.Update.htm" />
-    <HelpKINode Title="Update Method " Url="html/Overload-MagicCMS.Core.MagicKeyword.Update.htm" />
-    <HelpKINode Title="Update Method " Url="html/M-MagicCMS.Core.MagicUser.Update.htm" />
   </HelpKINode>
   <HelpKINode Title="Updated property" Url="html/P-MagicCMS.Blogger.BloggerPost.Updated.htm" />
+  <HelpKINode Title="UpdatePostTitle method" Url="html/M-MagicCMS.Routing.MagicIndex.UpdatePostTitle.htm" />
   <HelpKINode Title="Uri property" Url="html/P-MagicCMS.BingTranslator.TranslateOptions.Uri.htm" />
   <HelpKINode Title="Url property">
     <HelpKINode Title="Url Property " Url="html/P-MagicCMS.Core.MagicPost.Url.htm" />
-    <HelpKINode Title="Url Property " Url="html/P-MagicCMS.Core.MenuInfo.Url.htm" />
     <HelpKINode Title="Url Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.Url.htm" />
-    <HelpKINode Title="Url Property " Url="html/P-MagicCMS.Facebook.FbImage.Url.htm" />
+    <HelpKINode Title="Url Property " Url="html/P-MagicCMS.Core.MenuInfo.Url.htm" />
     <HelpKINode Title="Url Property " Url="html/P-MagicCMS.Core.MagicTag.Url.htm" />
+    <HelpKINode Title="Url Property " Url="html/P-MagicCMS.Facebook.FbImage.Url.htm" />
   </HelpKINode>
   <HelpKINode Title="Url2 property">
     <HelpKINode Title="Url2 Property " Url="html/P-MagicCMS.Core.MagicPostHTML_Encoded.Url2.htm" />
+    <HelpKINode Title="Url2 Property " Url="html/P-MagicCMS.Core.MenuInfo.Url2.htm" />
     <HelpKINode Title="Url2 Property " Url="html/P-MagicCMS.Core.MagicPost.Url2.htm" />
     <HelpKINode Title="Url2 Property " Url="html/P-MagicCMS.Core.MagicTag.Url2.htm" />
-    <HelpKINode Title="Url2 Property " Url="html/P-MagicCMS.Core.MenuInfo.Url2.htm" />
   </HelpKINode>
   <HelpKINode Title="UrlMain enumeration member" Url="html/T-MagicCMS.Core.MagicPostWhichUrl.htm" />
   <HelpKINode Title="UrlMain field" Url="html/F-MagicCMS.Core.MagicPostWhichUrl.UrlMain.htm" />
@@ -3038,17 +3068,17 @@
   <HelpKINode Title="User field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.User.htm" />
   <HelpKINode Title="User property">
     <HelpKINode Title="User Property " Url="html/P-MagicCMS.Core.MagicLog.User.htm" />
-    <HelpKINode Title="User Property " Url="html/P-MagicCMS.Core.MagicVoto.User.htm" />
     <HelpKINode Title="User Property " Url="html/P-MagicCMS.BingTranslator.TranslateOptions.User.htm" />
+    <HelpKINode Title="User Property " Url="html/P-MagicCMS.Core.MagicVoto.User.htm" />
   </HelpKINode>
   <HelpKINode Title="Useremail property" Url="html/P-MagicCMS.Core.MagicLog.Useremail.htm" />
   <HelpKINode Title="UserExists method" Url="html/M-MagicCMS.Marketing.RegisteredUser.UserExists.htm" />
   <HelpKINode Title="UsernameExists method" Url="html/M-MagicCMS.Core.MagicUser.UsernameExists.htm" />
   <HelpKINode Title="ValidateResponse method" Url="html/M-MagicCMS.reCAPTCHA.GoogleReCaptcha.ValidateResponse.htm" />
   <HelpKINode Title="Value property">
+    <HelpKINode Title="Value Property " Url="html/P-MagicCMS.Core.MenuIcon.Value.htm" />
     <HelpKINode Title="Value Property " Url="html/P-MagicCMS.Core.WhereClause.Value.htm" />
     <HelpKINode Title="Value Property " Url="html/P-MagicCMS.Core.ClauseValue.Value.htm" />
-    <HelpKINode Title="Value Property " Url="html/P-MagicCMS.Core.MenuIcon.Value.htm" />
   </HelpKINode>
   <HelpKINode Title="value property" Url="html/P-MagicCMS.DataTable.Search_dt.value.htm" />
   <HelpKINode Title="Video field" Url="html/F-MagicCMS.Core.MagicPostTypeInfo.Video.htm" />
@@ -3099,9 +3129,9 @@
   <HelpKINode Title="WhereClauseCollection.ToString method" Url="html/Overload-MagicCMS.Core.WhereClauseCollection.ToString.htm" />
   <HelpKINode Title="WhichImage property" Url="html/P-MagicCMS.Core.MagicTag.WhichImage.htm" />
   <HelpKINode Title="Width property">
-    <HelpKINode Title="Width Property " Url="html/P-MagicCMS.Core.Miniatura.Width.htm" />
-    <HelpKINode Title="Width Property " Url="html/P-MagicCMS.Facebook.FbImage.Width.htm" />
     <HelpKINode Title="Width Property " Url="html/P-MagicCMS.Core.MiniaturaInfo.Width.htm" />
+    <HelpKINode Title="Width Property " Url="html/P-MagicCMS.Facebook.FbImage.Width.htm" />
+    <HelpKINode Title="Width Property " Url="html/P-MagicCMS.Core.Miniatura.Width.htm" />
   </HelpKINode>
   <HelpKINode Title="WrongKey enumeration member" Url="html/T-MagicCMS.Marketing.RegisteredUserStatus.htm" />
   <HelpKINode Title="WrongKey field" Url="html/F-MagicCMS.Marketing.RegisteredUserStatus.WrongKey.htm" />

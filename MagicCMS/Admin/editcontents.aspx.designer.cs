@@ -47,5 +47,17 @@ namespace MagicCMS.Admin {
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater RepeaterLanguages;
+        
+        /// <summary>
+        /// Proprietà Master.
+        /// </summary>
+        /// <remarks>
+        /// Proprietà generata automaticamente.
+        /// </remarks>
+        public new MagicCMS.Admin.MasterAdmin Master {
+            get {
+                return ((MagicCMS.Admin.MasterAdmin)(base.Master));
+            }
+        }
     }
 }

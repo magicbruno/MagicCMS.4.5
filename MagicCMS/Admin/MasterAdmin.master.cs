@@ -23,6 +23,9 @@ namespace MagicCMS.Admin
         public int PageParent { get; set; }
         public string Filename { get; set; }
         private int _minLevel = 4;
+		public string Brand { get; set; }
+		public bool Captcha { get; set; }
+		public string BackEndLanguage { get; set; }
 
         public int MinLevel
         {
@@ -30,8 +33,6 @@ namespace MagicCMS.Admin
             set { _minLevel = value; }
         }
         
-
-        // Path del file content.css per CKEDITOR
         public string CKE_Config { get; set; }
 
         protected void LinkButton_allowedTypes_Click(object sender, EventArgs e)
@@ -48,8 +49,24 @@ namespace MagicCMS.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
+			BackEndLanguage = MagicCMSConfiguration.GetConfig().BackEndLang;
 
-            int pk = 0, type = 0, parent = 0;
+			// Check if Google recaptcha Site id and Secret Key are define. If not hide recaptcha field.
+			Captcha = !(String.IsNullOrEmpty(MagicCMSConfiguration.GetConfig().GoogleCaptchaSite) || 
+				String.IsNullOrEmpty(MagicCMSConfiguration.GetConfig().GoogleCaptchaSecret));
+			if (Captcha)
+			{
+				recaptchaVerify.Attributes.Add("data-sitekey", MagicCMSConfiguration.GetConfig().GoogleCaptchaSite);
+			}
+			else
+				recaptchaVerify.Visible = false;
+
+
+			System.Reflection.AssemblyName assembly = System.Reflection.Assembly.GetExecutingAssembly().GetName();
+			Brand = String.Format("MagicCMS.4.5 <small>v.{0}.{1}.{2}</small>", assembly.Version.Major, assembly.Version.Minor, assembly.Version.Build);
+
+			// Path del file content.css per CKEDITOR
+			int pk = 0, type = 0, parent = 0;
             int.TryParse(Request["pk"], out pk);
             int.TryParse(Request["type"], out type);
             int.TryParse(Request["parent"], out parent);
@@ -57,8 +74,14 @@ namespace MagicCMS.Admin
             PageType = type;
             PageParent = parent;
             Filename = Path.GetFileName(Request.Path);
+			string theName = Request.Url.Host;
+			CMS_Config myConfig = new CMS_Config();
 
-            sitename.InnerHtml = Request.Url.Host;
+			if (theName == "localhost" && !String.IsNullOrEmpty(myConfig.SiteName))
+			{
+				theName = myConfig.SiteName;
+			}
+            sitename.InnerHtml = theName;
 
             // Controllo se l'utente è loggato
             if (MagicSession.Current.LoggedUser.Level < MinLevel)
@@ -91,14 +114,15 @@ namespace MagicCMS.Admin
             // FileBrowser prerogatives
             MB.FileBrowser.MagicSession.Current.AllowedFileTypes = MagicCMSConfiguration.GetConfig().AllowedFileTypes;
             MB.FileBrowser.MagicSession.Current.FileBrowserAccessMode = IZ.WebFileManager.AccessMode.Delete;
+			
 
             //CheckPrerogatives(this);
 
             // Insert menu config
             if (MagicSession.Current.ShowInactiveTypes)
-                LinkButton_allowedTypes.Text = "<i class=\"fa fa-minus-circle text-red\"></i>Consenti solo tipi di pagine attivi";
+				LinkButton_allowedTypes.Text = "<i class=\"fa fa-minus-circle text-red\"></i>" + MagicTransDictionary.Translate("Consenti solo tipi di pagine attivi", BackEndLanguage);
             else
-                LinkButton_allowedTypes.Text = "<i class=\"fa fa-unlock text-green\"></i>Consenti tutti i tipi di pagine";
+				LinkButton_allowedTypes.Text = "<i class=\"fa fa-unlock text-green\"></i>" + MagicTransDictionary.Translate("Consenti tutti i tipi di pagine", BackEndLanguage);
 
             // If not administrator menu insert defaults to "Only Predefined Page Types Allowed"
             if (MagicSession.Current.LoggedUser.Level < 10)
@@ -132,6 +156,7 @@ namespace MagicCMS.Admin
 
             if(File.Exists(Server.MapPath(ckeConfigPasth)))
                 CKE_Config = url;
+
 
         }
 
@@ -194,5 +219,12 @@ namespace MagicCMS.Admin
                 }
             }
         }
+
+		public string Translate(string sentence)
+		{
+			if (BackEndLanguage == "it")
+				return sentence;
+			return MagicTransDictionary.Translate(sentence, BackEndLanguage);
+		}
     }
 }

@@ -276,6 +276,32 @@ namespace MagicCMS.Core
 		/// <value>The show inactive types.</value>
         public Boolean ShowInactiveTypes { get; set; }
 
+		private MagicPost _previewPost = null;
+
+		/// <summary>
+		/// Gets or sets the preview post. Here is temporary stored the post to be previewed.
+		/// </summary>
+		/// <value>The preview post.</value>
+		public MagicPost PreviewPost
+		{
+			get { return _previewPost; }
+			set { _previewPost = value; }
+		}
+
+		private string _backEndLang;
+		public string BackEndLang
+		{
+			get
+			{
+				if (String.IsNullOrEmpty(_backEndLang))
+					_backEndLang = MagicCMSConfiguration.GetConfig().BackEndLang;
+				if (String.IsNullOrEmpty(_backEndLang))
+					_backEndLang = "it";
+				return _backEndLang;
+			}
+		}
+
+
     }
 }
 

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+	<metadata>
+		<id>MB.MagicCMS.Winstrap</id>
+		<version>$version$</version>
+		<authors>Bruno Migliaretti</authors>
+		<owners>Bruno Migliaretti</owners>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>Theme for MagicCMS.4.5</description>
+		<releaseNotes>First release</releaseNotes>
+		<copyright>Copyright 2016</copyright>
+		<dependencies>
+			<dependency id="MB.MagicCMS.4.5" version="1.0.25" />
+		</dependencies>
+	</metadata>
+	<files>
+		<file src="Themes\Winstrap\*.*" target="content\Themes\Winstrap\" exclude="Themes\Winstrap\*.master;Themes\Winstrap\*.cs" />
+		<file src="Themes\Winstrap\ckeditor\**" target="content\Themes\Winstrap\ckeditor\" />
+		<file src="Themes\Winstrap\css\**" target="content\Themes\Winstrap\css\" />
+		<file src="Themes\Winstrap\database\**" target="content\Themes\Winstrap\database\" />
+		<file src="Themes\Winstrap\fonts\**" target="content\Themes\Winstrap\fonts\" />
+		<file src="Themes\Winstrap\ico\**" target="content\Themes\Winstrap\ico\" />
+		<file src="Themes\Winstrap\js\**" target="content\Themes\Winstrap\js\" />
+		<file src="Themes\Winstrap\sass\**" target="content\Themes\Winstrap\sass\" />
+		<file src="Themes\Winstrap\pp\**" target="content\Themes\Winstrap\"/>
+	</files>
+</package>

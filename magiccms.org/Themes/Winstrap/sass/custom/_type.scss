@@ -1,0 +1,10 @@
+@import "../win/type";
+p, ul li {
+  @extend .type-p2;
+}
+ul li {
+  margin: 0;
+}
+.page-header h1 {
+  margin-bottom: 20px;
+}

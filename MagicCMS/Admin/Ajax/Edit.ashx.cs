@@ -37,7 +37,7 @@ namespace MagicCMS.Admin.Ajax
             {
                 data = null,
                 exitcode = 0,
-                msg = "Operazione conclusa con successo.",
+                msg = Localize.Translate( "Operazione conclusa con successo."),
                 pk = 0,
                 success = true
             };
@@ -74,14 +74,14 @@ namespace MagicCMS.Admin.Ajax
                         if (String.IsNullOrEmpty(email))
                         {
                             response.exitcode = 1;
-                            response.msg = "Il campo e-mail è obbligatorio.";
+                            response.msg = Localize.Translate("Il campo e-mail è obbligatorio.");
                             response.success = false;
                         }
                         //In caso di nuovo inserimento Controllo se l'utente esiste già
                         else if (pk == 0 && MagicUser.UsernameExists(email))
                         {
                             response.exitcode = 2;
-                            response.msg = "Utente già registrato. L'indirizzo e-mail è già presente nel database.";
+                            response.msg = Localize.Translate("Utente già registrato. L'indirizzo e-mail è già presente nel database.");
                             response.success = false;
                         }
                         else if (pk == 0)
@@ -92,7 +92,7 @@ namespace MagicCMS.Admin.Ajax
                             if (response.pk < 0)
                             {
                                 response.exitcode = 3;
-                                response.msg = "Si è verificato un errore. Contrllare il registro delle attività per maggiori informazioni.";
+                                response.msg = Localize.Translate("Si è verificato un errore. Controlla il registro delle attività per maggiori informazioni.");
                                 response.success = false;
                             }
                             else if (!String.IsNullOrEmpty(context.Request["sendmail"]))
@@ -105,13 +105,13 @@ namespace MagicCMS.Admin.Ajax
                             if (user.LoginResult != MbUserLoginResult.Success)
                             {
                                 response.exitcode = 3;
-                                response.msg = "Si è verificato un errore. Contrllare il registro delle attività per maggiori informazioni.";
+								response.msg = Localize.Translate("Si è verificato un errore. Controlla il registro delle attività per maggiori informazioni.");
                                 response.success = false;
                             }
                             else if (!user.Update())
                             {
                                 response.exitcode = 3;
-                                response.msg = "Si è verificato un errore. Contrllare il registro delle attività per maggiori informazioni.";
+								response.msg = Localize.Translate("Si è verificato un errore. Controlla il registro delle attività per maggiori informazioni.");
                                 response.success = false;
                             }
                         }
@@ -128,7 +128,7 @@ namespace MagicCMS.Admin.Ajax
                                 if (response.pk < 0)
                                 {
                                     response.exitcode = 3;
-                                    response.msg = "Si è verificato un errore. Contrllare il registro delle attività per maggiori informazioni.";
+									response.msg = Localize.Translate("Si è verificato un errore. Controlla il registro delle attività per maggiori informazioni.");
                                     response.success = false;
                                 }
 
@@ -148,7 +148,7 @@ namespace MagicCMS.Admin.Ajax
                                 if (!typeInfo.Update())
                                 {
                                     response.exitcode = 3;
-                                    response.msg = "Si è verificato un errore. Contrllare il registro delle attività per maggiori informazioni.";
+									response.msg = Localize.Translate("Si è verificato un errore. Controlla il registro delle attività per maggiori informazioni.");
                                     response.success = false;
                                 }
 
@@ -173,7 +173,7 @@ namespace MagicCMS.Admin.Ajax
                                 if (response.pk < 0)
                                 {
                                     response.exitcode = 3;
-                                    response.msg = "Si è verificato un errore. Contrllare il registro delle attività per maggiori informazioni.";
+									response.msg = Localize.Translate("Si è verificato un errore. Controlla il registro delle attività per maggiori informazioni.");
                                     response.success = false;
                                 }
 
@@ -193,7 +193,7 @@ namespace MagicCMS.Admin.Ajax
                                 if (post.Update() == 0)
                                 {
                                     response.exitcode = 3;
-                                    response.msg = "Si è verificato un errore. Contrllare il registro delle attività per maggiori informazioni.";
+									response.msg = Localize.Translate("Si è verificato un errore. Controlla il registro delle attività per maggiori informazioni.");
                                     response.success = false;
                                 }
 
@@ -218,7 +218,7 @@ namespace MagicCMS.Admin.Ajax
                                 if (!response.success)
                                 {
                                     response.exitcode = 3;
-                                    response.msg = "Si è verificato un errore. Contrllare il registro delle attività per maggiori informazioni.";
+									response.msg = Localize.Translate("Si è verificato un errore. Controlla il registro delle attività per maggiori informazioni.");
                                 }
 
                             }
@@ -232,7 +232,7 @@ namespace MagicCMS.Admin.Ajax
                         else
                         {
                             response.exitcode = 0;
-                            response.msg = "Non è specificato l'id del post a cui si riferisce la traduzione";
+							response.msg = Localize.Translate("L'id del post a cui la traduzione si riferisce non è specificato.");
                             response.success = false;
                         }
                         break;
@@ -240,7 +240,7 @@ namespace MagicCMS.Admin.Ajax
                         if (String.IsNullOrEmpty(source) || String.IsNullOrEmpty(langid) || String.IsNullOrEmpty(translated))
                         {
                             response.exitcode = 2;
-                            response.msg = "Errore: Tutti i campi devono essere compilati!";
+                            response.msg = Localize.Translate("Errore: Tutti i campi devono essere compilati!");
                             response.success = false;
                         }
                         else
@@ -252,7 +252,7 @@ namespace MagicCMS.Admin.Ajax
                             if (!term.Save())
                             {
                                 response.exitcode = 3;
-                                response.msg = "Si è verificato un errore. Contrllare il registro delle attività per maggiori informazioni.";
+								response.msg = Localize.Translate("Si è verificato un errore. Controlla il registro delle attività per maggiori informazioni.");
                                 response.success = false;
                             }
                         }
@@ -267,7 +267,7 @@ namespace MagicCMS.Admin.Ajax
                             if (!response.success)
                             {
                                 response.exitcode = 3;
-                                response.msg = "Si è verificato un errore. Controllare il registro delle attività per maggiori informazioni.";
+								response.msg = Localize.Translate("Si è verificato un errore. Controlla il registro delle attività per maggiori informazioni.");
                             }
 
                         }
@@ -282,7 +282,7 @@ namespace MagicCMS.Admin.Ajax
                         response.data = new object();
                         response.pk = 0;
                         response.exitcode = 2;
-                        response.msg = "Errore: la tabella \"" + table + "\" non esiste.";
+						response.msg = Localize.Translate("Errore: la tabella") + " \"" + table + "\" " + Localize.Translate("non esiste.");
                         response.success = false;
 
                         break;
@@ -292,7 +292,7 @@ namespace MagicCMS.Admin.Ajax
             {
                 response.data = new object();
                 response.exitcode = 1;
-                response.msg = "Dati insuffucienti o non pervenuti.";
+				response.msg = Localize.Translate("Dati insuffucienti o non pervenuti.");
                 response.success = false;
             }
             System.Web.Script.Serialization.JavaScriptSerializer serializer = new System.Web.Script.Serialization.JavaScriptSerializer();

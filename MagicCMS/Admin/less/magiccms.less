@@ -153,8 +153,11 @@ table
 {
     .modal-xl
     {
-        width: 90%;
-        max-width: @screen-lg;
+        width: 95%;
+        max-width: 1900px;
+		.modal-content {
+			min-height: ~"calc(100vh - 100px)";
+		}
     }
 }
 
@@ -170,17 +173,40 @@ table
 		margin-right: 0 !important;
 	}
 }
+
 .loading {
-	position: absolute;
+	position: fixed;
 	top:0;
 	left: 0;
 	right:0;
-	z-index: 999;
-	height: calc(~"100vh - 50px");
+	bottom: 0;
+	z-index: 3;
+	//height: calc(~"100vh - 50px");
 	background-color: #000;
 	background-image:url(squares.gif);
-	background-position: center;
+	background-position: center 50%;
 	background-repeat: no-repeat;
-	;
 	opacity: 0.7;
+}
+
+.right-side {
+	min-height: ~"calc(100vh - 50px)"; 
+}
+
+.left-side {
+	z-index: 4;
+}
+.tab-pane#parents, 
+.tab-pane#help {
+	border: 1px solid #ccc;
+	padding: 10px 15px;
+}
+.tab-pane#parents {
+	background-color: #eee;
+}
+.g-recaptcha > div {
+	margin: 0 auto;
+}
+.modal-sm {
+	min-width: 334px;
 }

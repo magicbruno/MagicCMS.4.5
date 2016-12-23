@@ -96,6 +96,11 @@
     <Content Include="Admin\Ajax\TransDictionaryPaginated.ashx" />
     <Content Include="Admin\Ajax\EditUserProfile.ashx" />
     <Content Include="Admin\Ajax\PopulateMagicIndex.ashx" />
+    <Content Include="userfiles\image\fb-manifest.png" />
+    <Content Include="web.config.transform">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Admin\Ajax\PreviewPost.ashx" />
     <None Include="Admin\css\datatable\datatable_bundle.css.bundle" />
     <Content Include="Admin\Config.aspx" />
     <None Include="Admin\css\iCheck\all.css" />
@@ -397,6 +402,110 @@
     <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codemirror\theme\xq-light.css" />
     <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codemirror\theme\yeti.css" />
     <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codemirror\theme\zenburn.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\dialogs\codesnippet.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\icons\codesnippet.png" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\icons\hidpi\codesnippet.png" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\ar.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\bg.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\ca.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\cs.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\da.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\de-ch.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\de.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\el.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\en-gb.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\en.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\eo.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\es.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\et.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\eu.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\fa.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\fi.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\fr-ca.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\fr.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\gl.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\he.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\hr.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\hu.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\id.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\it.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\ja.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\km.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\ko.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\ku.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\lt.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\lv.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\nb.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\nl.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\no.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\oc.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\pl.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\pt-br.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\pt.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\ro.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\ru.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\sk.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\sl.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\sq.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\sv.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\th.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\tr.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\tt.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\ug.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\uk.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\vi.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\zh-cn.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lang\zh.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\highlight.pack.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\arta.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\ascetic.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\atelier-dune.dark.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\atelier-dune.light.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\atelier-forest.dark.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\atelier-forest.light.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\atelier-heath.dark.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\atelier-heath.light.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\atelier-lakeside.dark.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\atelier-lakeside.light.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\atelier-seaside.dark.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\atelier-seaside.light.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\brown_paper.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\brown_papersq.png" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\dark.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\default.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\docco.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\far.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\foundation.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\github.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\googlecode.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\idea.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\ir_black.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\magula.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\mono-blue.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\monokai.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\monokai_sublime.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\obsidian.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\paraiso.dark.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\paraiso.light.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\pojoaque.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\pojoaque.jpg" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\railscasts.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\rainbow.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\school_book.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\school_book.png" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\solarized_dark.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\solarized_light.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\sunburst.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\tomorrow-night-blue.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\tomorrow-night-bright.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\tomorrow-night-eighties.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\tomorrow-night.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\tomorrow.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\vs.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\xcode.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\styles\zenburn.css" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\plugin.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\samples\codesnippet.html" />
     <Content Include="Admin\Scripts\plugins\ckeditor\plugins\fontawesome\dialogs\fontawesome.js" />
     <Content Include="Admin\Scripts\plugins\ckeditor\plugins\fontawesome\dialogs\index.html" />
     <Content Include="Admin\Scripts\plugins\ckeditor\plugins\fontawesome\font-awesome\css\font-awesome.min.css" />
@@ -415,10 +524,15 @@
     <Content Include="Admin\Scripts\plugins\ckeditor\plugins\onchange\docs\styles.css" />
     <Content Include="Admin\Scripts\plugins\ckeditor\plugins\onchange\plugin.js" />
     <Content Include="Admin\Scripts\plugins\ckeditor\plugins\templates\default.js" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\templates\images\addtoany-image.png" />
     <Content Include="Admin\Scripts\plugins\ckeditor\plugins\templates\images\bootstrap-framework-seeklogo.com.png" />
     <Content Include="Admin\Scripts\plugins\ckeditor\plugins\templates\images\template1.gif" />
     <Content Include="Admin\Scripts\plugins\ckeditor\plugins\templates\images\template2.gif" />
     <Content Include="Admin\Scripts\plugins\ckeditor\plugins\templates\images\template3.gif" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\templates\images\template_2cols.png" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\templates\images\template_2cols_sideBar_left.png" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\templates\images\template_2cols_sideBar_right.png" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\templates\images\template_3cols.png" />
     <Content Include="Admin\Scripts\plugins\ckeditor\plugins\widget\dev\assets\contents.css" />
     <Content Include="Admin\Scripts\plugins\ckeditor\plugins\widget\dev\assets\sample.jpg" />
     <Content Include="Admin\Scripts\plugins\ckeditor\plugins\widget\dev\assets\simplebox\contents.css" />
@@ -591,6 +705,10 @@
     <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codemirror\js\codemirror.hint.min.js.map">
       <DependentUpon>codemirror.hint.js.bundle</DependentUpon>
     </Content>
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\CHANGES.md" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\LICENSE" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\README.md" />
+    <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\README.ru.md" />
     <None Include="Admin\Scripts\plugins\plugins.js.bundle" />
     <Content Include="Admin\css\datepicker\datepicker3.css" />
     <Content Include="Admin\css\main.css" />
@@ -1056,19 +1174,19 @@
     <Content Include="FileBrowser\img\cmd\_View.png" />
     <Content Include="FileBrowser\js\FileManager.js" />
     <Content Include="FileBrowser\js\FileManager.min.js" />
-    <Content Include="fonts\fontawesome-webfont.svg" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="fonts\weblysleekuil.svg" />
+    <Content Include="Admin\fonts\fontawesome-webfont.svg" />
+    <Content Include="Admin\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Admin\fonts\weblysleekuil.svg" />
     <Content Include="Admin\Session\SessionHandler.ashx" />
-    <Content Include="fonts\weblysleekuisl-webfont.svg" />
+    <Content Include="Admin\fonts\weblysleekuisl-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="less\animate\source\_notes\dwsync.xml" />
     <Content Include="mb_admin\Default.aspx" />
     <Content Include="packages.config" />
     <Content Include="Admin\BaseAdmin.Master" />
-    <Content Include="fonts\fontawesome-webfont.eot" />
-    <Content Include="fonts\fontawesome-webfont.ttf" />
-    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="Admin\fonts\fontawesome-webfont.eot" />
+    <Content Include="Admin\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Admin\fonts\fontawesome-webfont.woff" />
     <Content Include="AjaxSendMail_JSON.ashx" />
     <Content Include="Admin\Scripts\plugins\plugins.min.js.map">
       <DependentUpon>plugins.js.bundle</DependentUpon>
@@ -1077,13 +1195,13 @@
     <Content Include="FileBrowser\js\FileManager.min.js.map" />
     <Content Include="FileBrowser\js\FileManager.js.bundle" />
     <Content Include="FileBrowser\IZWebFileManagerThumbnailHandler.ashx" />
-    <None Include="fonts\FontAwesome.otf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\weblysleekuil.eot" />
-    <Content Include="fonts\weblysleekuil.ttf" />
-    <Content Include="fonts\weblysleekuil.woff" />
+    <None Include="Admin\fonts\FontAwesome.otf" />
+    <Content Include="Admin\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Admin\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Admin\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Admin\fonts\weblysleekuil.eot" />
+    <Content Include="Admin\fonts\weblysleekuil.ttf" />
+    <Content Include="Admin\fonts\weblysleekuil.woff" />
     <Content Include="Min.ashx" />
     <Content Include="less\animate\animate-mb.less" />
     <Content Include="less\animate\animate.less" />
@@ -1231,11 +1349,12 @@
     <Content Include="less\font-awesome\stacked.less" />
     <Content Include="less\font-awesome\variables.less" />
     <Content Include="less\lesshat\lesshat-prefixed.less" />
-    <Content Include="fonts\weblysleekuisl-webfont.eot" />
-    <Content Include="fonts\weblysleekuisl-webfont.ttf" />
-    <Content Include="fonts\weblysleekuisl-webfont.woff" />
-    <Content Include="fonts\weblysleekuisl-webfont.woff2" />
+    <Content Include="Admin\fonts\weblysleekuisl-webfont.eot" />
+    <Content Include="Admin\fonts\weblysleekuisl-webfont.ttf" />
+    <Content Include="Admin\fonts\weblysleekuisl-webfont.woff" />
+    <Content Include="Admin\fonts\weblysleekuisl-webfont.woff2" />
     <Content Include="MagicCMS.4.5.nuspec" />
+    <Content Include="Admin\Session\SessionRefresh.ashx" />
     <None Include="Properties\PublishProfiles\IngegneriRiuniti.pubxml" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -1371,55 +1490,6 @@
     <Content Include="Themes\Default\metro-bootstrap\animate.less-master\source\_notes\dwsync.xml" />
     <Content Include="Themes\Default\metro-bootstrap\animate.less-master\_notes\dwsync.xml" />
     <Content Include="Themes\Default\Temp.aspx" />
-    <Content Include="userfiles\image\a1.jpg" />
-    <Content Include="userfiles\image\Animazione\BootstrapLogo-1.png" />
-    <Content Include="userfiles\image\Animazione\BootstrapShield.png" />
-    <Content Include="userfiles\image\Animazione\BootstrapTwitter.png" />
-    <Content Include="userfiles\image\Animazione\C-Sharp.png" />
-    <Content Include="userfiles\image\Animazione\css3-logo.png" />
-    <Content Include="userfiles\image\Animazione\Google_Maps_Logo.png" />
-    <Content Include="userfiles\image\Animazione\HTML5_logo_.png" />
-    <Content Include="userfiles\image\Animazione\javascript.png" />
-    <Content Include="userfiles\image\Animazione\jquery.png" />
-    <Content Include="userfiles\image\Animazione\jQueryShield.png" />
-    <Content Include="userfiles\image\Animazione\Logo-Google_Analytics.png" />
-    <Content Include="userfiles\image\Animazione\LogoNuget.png" />
-    <Content Include="userfiles\image\Animazione\LogoRossoBianco_s.png" />
-    <Content Include="userfiles\image\Animazione\LogoRossoBianco_s.svg" />
-    <Content Include="userfiles\image\Animazione\NugetShield.png" />
-    <Content Include="userfiles\image\Animazione\VidualStudioShield.png" />
-    <Content Include="userfiles\image\BaseOnBootstrap_1.png" />
-    <Content Include="userfiles\image\BaseOnBootstrap_2.png" />
-    <Content Include="userfiles\image\BluSole_01.png" />
-    <Content Include="userfiles\image\bm.png" />
-    <Content Include="userfiles\image\bn_2.jpg" />
-    <Content Include="userfiles\image\Cesarotti2.jpg" />
-    <Content Include="userfiles\image\Clavino.jpg" />
-    <Content Include="userfiles\image\Copertina.jpg" />
-    <Content Include="userfiles\image\CopertinaDispensa.jpg" />
-    <Content Include="userfiles\image\FaceBook.jpg" />
-    <Content Include="userfiles\image\fbi.png" />
-    <Content Include="userfiles\image\FlashDefault.jpg" />
-    <Content Include="userfiles\image\gb.png" />
-    <Content Include="userfiles\image\gplus.png" />
-    <Content Include="userfiles\image\IconaMagicBus.jpg" />
-    <Content Include="userfiles\image\IconaMagicBus_40.jpg" />
-    <Content Include="userfiles\image\IconaMagicBus_48.jpg" />
-    <Content Include="userfiles\image\Icona_sisteminterattivi.jpg" />
-    <Content Include="userfiles\image\Icona_sisteminterattivi_40.jpg" />
-    <Content Include="userfiles\image\Icona_sisteminterattivi_48.jpg" />
-    <Content Include="userfiles\image\italia_flag.png" />
-    <Content Include="userfiles\image\lin.png" />
-    <Content Include="userfiles\image\LogoRossoBianco_s.svg" />
-    <Content Include="userfiles\image\MarchioCompatto.png" />
-    <Content Include="userfiles\image\mb.png" />
-    <Content Include="userfiles\image\MKGandhi.jpg" />
-    <Content Include="userfiles\image\Orwell_01.jpg" />
-    <Content Include="userfiles\image\sisteminterattivi.jpg" />
-    <Content Include="userfiles\image\tweeter.png" />
-    <Content Include="userfiles\image\Ungaretti.jpg" />
-    <Content Include="userfiles\image\vimeo.png" />
-    <Content Include="userfiles\image\youtube.png" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -1430,8 +1500,12 @@
     <Compile Include="Admin\Ajax\EditUserProfile.ashx.cs">
       <DependentUpon>EditUserProfile.ashx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Ajax\Localize.cs" />
     <Compile Include="Admin\Ajax\PopulateMagicIndex.ashx.cs">
       <DependentUpon>PopulateMagicIndex.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Ajax\PreviewPost.ashx.cs">
+      <DependentUpon>PreviewPost.ashx</DependentUpon>
     </Compile>
     <Compile Include="Admin\CustomCss.aspx.cs">
       <DependentUpon>CustomCss.aspx</DependentUpon>
@@ -1448,6 +1522,9 @@
     </Compile>
     <Compile Include="Admin\CustomCss\Save.ashx.cs">
       <DependentUpon>Save.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Session\SessionRefresh.ashx.cs">
+      <DependentUpon>SessionRefresh.ashx</DependentUpon>
     </Compile>
     <Compile Include="AjaxSendMail_JSON.ashx.cs">
       <DependentUpon>AjaxSendMail_JSON.ashx</DependentUpon>
@@ -1870,6 +1947,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="ico\" />
+    <Folder Include="userfiles\files\" />
     <Folder Include="userfiles\flash\" />
     <Folder Include="userfiles\media\" />
   </ItemGroup>

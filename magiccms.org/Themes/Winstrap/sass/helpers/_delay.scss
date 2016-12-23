@@ -1,0 +1,33 @@
+.in .animated {
+  @include animate-prefixer (animation-delay, 0.5s);
+  &.delay500 {
+    @include animate-prefixer (animation-delay, 1s);
+  }  
+  &.delay1, &.delay1000 {
+    @include animate-prefixer (animation-delay, 1.5s);
+  }  
+  &.delay1500 {
+    @include animate-prefixer (animation-delay, 2s);
+  }
+  &.delay2,&.delay2000 {
+    @include animate-prefixer (animation-delay, 2.5s);
+  }
+  &.delay2500 {
+    @include animate-prefixer (animation-delay, 3s);
+  }  
+  &.delay3,&.delay3000 {
+    @include animate-prefixer (animation-delay, 3.5s);
+  }
+  &.delay3500 {
+    @include animate-prefixer (animation-delay, 4s);
+  }  
+  &.delay4, &.delay4000 {
+    @include animate-prefixer (animation-delay, 4.5s);
+  }
+  &.delay4500 {
+    @include animate-prefixer (animation-delay, 5s);
+  }  
+  &.delay5, &delay5000 {
+    @include animate-prefixer (animation-delay, 5.5s);
+  }
+}

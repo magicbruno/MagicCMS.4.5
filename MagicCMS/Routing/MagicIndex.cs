@@ -197,7 +197,7 @@ namespace MagicCMS.Routing
 		/// Saves MagicIndex Entry.
 		/// </summary>
 		/// <returns>Pk of record inserted or updated (Success if != 0).</returns>
-		public int Save(out string errorMessage)
+		public int  Save(out string errorMessage)
 		{
 			// If table not exists and table creation failed return unsaved record
 			if (!CreateMagicIndex(out errorMessage))
@@ -287,6 +287,82 @@ namespace MagicCMS.Routing
 		#endregion
 
 		#region Static Public Methods
+		/// <summary>
+		/// Deletes a post title and its translations from the titles table.
+		/// </summary>
+		/// <param name="mp">The Magic Post.</param>
+		/// <param name="message">Returned message.</param>
+		/// <returns><c>true</c> if success, <c>false</c> otherwise.</returns>
+		public static bool DeletePostTitle(MagicPost mp, out string message)
+		{
+			bool success = true;
+			message = "Elementi eliminati con successo.";
+
+			string cmdString =	" BEGIN TRY " +
+								" 	BEGIN TRANSACTION " +
+								" 		DELETE REL_MagicTitle WHERE RMT_Contenuti_Id = @PostPk " +
+								" 	COMMIT TRANSACTION " +
+								" 	SELECT N'OK'; " +
+								" END TRY " +
+								" BEGIN CATCH " +
+								" 	SELECT ERROR_MESSAGE(); " +
+								"    " +
+								"   	IF XACT_STATE() <> 0 BEGIN " +
+								" 		ROLLBACK TRANSACTION " +
+								"   	END " +
+								" END CATCH; ";
+			SqlConnection conn = null;
+			SqlCommand cmd = null;
+			List<MagicIndex> titles = new List<MagicIndex>();
+			string feedBack = null;
+			try
+			{
+				string cmdText = cmdString;
+
+				conn = new SqlConnection(MagicUtils.MagicConnectionString);
+				conn.Open();
+				cmd = new SqlCommand(cmdText, conn);
+				feedBack = cmd.ExecuteScalar().ToString();
+				if (feedBack != "OK")
+				{
+					success = false;
+					message = feedBack;
+				}
+
+			}
+			catch (Exception e)
+			{
+				MagicLog log = new MagicLog("REL_MagicTitle", 0, LogAction.Delete, e);
+				log.Insert();
+				success = false;
+			}
+			return success;
+		}
+
+		/// <summary>
+		/// Updates or insert  a post title and its translations in the titles table.
+		/// </summary>
+		/// <param name="mp">The Magic Post.</param>
+		/// <param name="message">Returned message.</param>
+		/// <returns><c>true</c> if success, <c>false</c> otherwise.</returns>
+		public static bool UpdatePostTitle(MagicPost mp, out string message)
+		{
+			bool success = true;
+			message = "Elemento aggiornato con successo";
+			
+			MagicIndex mi = new MagicIndex(mp);
+			if (mi.Save(out message) <= 0)
+			{
+				success = false;
+				foreach (MagicTranslation mt in mp.Translations)
+				{
+					MagicIndex mit = new MagicIndex(mt.PostPk, mt.TranslatedTitle, mt.LangId);
+					if (mit.Save(out message) <= 0)
+						success = false;
+				} 
+			}
+			return success;
+		}
 
 		/// <summary>
 		/// Return all titles indexed for a Post. (one for every active language)
@@ -615,14 +691,15 @@ namespace MagicCMS.Routing
 							processed++;
 						else
 							success = false;
-					}
-					foreach (MagicTranslation mt in traduzioni)
-					{
-						MagicIndex mi = new MagicIndex(mt.PostPk, mt.TranslatedTitle, mt.LangId);
-						if (mi.Save(out errorMessage) > 0)
-							processed++;
-						else
-							success = false;
+						foreach (MagicTranslation mt in mp.Translations)
+						{
+							MagicIndex mit = new MagicIndex(mt.PostPk, mt.TranslatedTitle, mt.LangId);
+							if (mit.Save(out errorMessage) > 0)
+								processed++;
+							else
+								success = false;
+
+						}
 					}
 					if (success)
 					{

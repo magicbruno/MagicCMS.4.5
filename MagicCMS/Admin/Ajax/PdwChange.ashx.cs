@@ -23,7 +23,7 @@ namespace MagicCMS.Admin.Ajax
             {
                 data = "",
                 exitcode = 0,
-                msg = "Password modificata con sucesso.",
+				msg = Localize.Translate("Password modificata con successo."),
                 pk = 0,
                 success = true
             };
@@ -38,28 +38,28 @@ namespace MagicCMS.Admin.Ajax
             {
                 response.success = false;
                 response.exitcode = 1;
-                response.msg = "Sessione scaduta.";
+                response.msg = Localize.Translate("Sessione scaduta.");
             }
             // Vecchia password sbagliata
             else if (currentUser.Password != oldpwd)
             {
                 response.success = false;
                 response.exitcode = 2;
-                response.msg = "Vecchia password errata.";
+                response.msg = Localize.Translate("Vecchia password errata.");
             }
             // Fallito controllo
             else if (pwd != checkpwd)
             {
                 response.success = false;
                 response.exitcode = 3;
-                response.msg = "La nuova password inserita non corrisponde a quella inserita per controllo.";
+                response.msg = Localize.Translate("La nuova password inserita non corrisponde a quella inserita per controllo.");
             }
             // Formato sbagliato
             else if (!pwdPattern.IsMatch(pwd))
             {
                 response.success = false;
                 response.exitcode = 4;
-                response.msg = "Formato password: tra 6 e 20 caratteri, nessun spazio, lettere, numeri e #_%&";
+                response.msg = Localize.Translate("Formato password: tra 6 e 20 caratteri, nessun spazio, lettere, numeri e #_%&");
             }
             else
             {
