@@ -1,11 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/MasterAdmin.master" AutoEventWireup="true"
 	CodeBehind="editcontents.aspx.cs" Inherits="MagicCMS.Admin.editcontents" ValidateRequest="false"
 	Culture="it-IT" UICulture="it" %>
-
+<%@ MasterType TypeName="MagicCMS.Admin.MasterAdmin" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="HeaderContent" runat="server">
-	<h1><i class="fa fa-edit"></i>Modifica Container e Content</h1>
+	<h1><i class="fa fa-edit"></i><%= Master.Translate("Modifica i contenuti del sito") %></h1>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
 	<div class="row">
@@ -13,32 +13,32 @@
 		<div class="col-xs-12">
 			<asp:Panel runat="server" ID="Panel_contents" CssClass="box box-primary" data-id="Panel_contents">
 				<div class="box-header">
-					<h3 class="box-title">Struttura del sito</h3>
+					<h3 class="box-title"><%= Master.Translate("Struttura del sito") %></h3>
 					<div class="box-tools pull-left dropdown">
 						<button data-action="add-element" type="button" class="btn btn-sm btn-success hidden" data-toggle="dropdown" data-taget="#">
-							<i class="fa fa-plus"></i>aggiungi
+							<i class="fa fa-plus"></i><%= Master.Translate("aggiungi elemento figlio") %>
 						</button>
 						<ul id="dd-preferred" class="dropdown-menu"><li>dummy</li></ul>
 					</div>
 					<div class="box-tools pull-right">
 						<button type="button" data-action="back" class="btn btn-sm btn-success btn-icon"
-							title="Back">
+							title="<%= Master.Translate("Back") %>">
 							<i class="fa fa-arrow-left"></i>
 						</button>
 						<button type="button" data-action="home" class="btn btn-sm btn-success btn-icon"
-							title="Root">
+							title="<%= Master.Translate("Root") %>">
 							<i class="fa fa-home"></i>
 						</button>
 						<button type="button" data-action="forward" class="btn btn-sm btn-success btn-icon"
-							title="Forward">
+							title="<%= Master.Translate("Forward") %>">
 							<i class="fa fa-arrow-right"></i>
 						</button>
 						<button type="button" data-action="full" class="btn btn-sm btn-success btn-icon"
-							title="Mostra tutti gli elementi">
+							title="<%= Master.Translate("Mostra la lista di tutte le componenti del sito") %>">
 							<i class="fa fa-bars"></i>
 						</button>
 						<button type="button" data-action="inbasket" class="btn btn-sm btn-danger btn-icon"
-							title="Mostra gli elementi cncellati">
+							title="<%= Master.Translate("Mostra gli elementi nel cestino") %>">
 							<i class="fa fa-trash-o"></i>
 						</button>
 						<button type="button" class="btn btn-primary btn-sm" data-widget="collapse">
@@ -48,17 +48,16 @@
 				</div>
 				<div class="table-responsive">
 					<div class="box-body">
-						<table id="table_contenuti" cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered"
-							cellspacing="0" width="100%">
+						<table id="table_contenuti"  class="table table-striped table-bordered" >
 							<thead>
 								<tr>
 									<th>Id</th>
-									<th>Titolo</th>
-									<th title="Immagine"><i class="fa fa-image"></th>
-									<th title="Pubblicato il..."><i class="fa fa-newspaper-o text-info"></th>
-									<th title="Data di scadenza"><i class="fa fa-ban text-red"></th>
-									<th title="Modificato il..."><i class="fa fa-edit text-red"></th>
-									<th title="Ordinamento"><i class="fa fa-sort-numeric-asc"></i></th>
+									<th><%= Master.Translate("Titolo") %></th>
+									<th title="<%= Master.Translate("Immagine") %>"><i class="fa fa-image"></th>
+									<th title="<%= Master.Translate("Pubblicato il") %>..."><i class="fa fa-newspaper-o text-info"></th>
+									<th title="<%= Master.Translate("Data di scadenza") %>"><i class="fa fa-ban text-red"></th>
+									<th title="<%= Master.Translate("Modificato il") %>..."><i class="fa fa-edit text-red"></th>
+									<th title="<%= Master.Translate("Ordinamento") %>"><i class="fa fa-sort-numeric-asc"></i></th>
 									<th><i class="fa fa-edit"></i></th>
 									<th><i class="fa fa-trash-o"></i></th>
 								</tr>
@@ -90,9 +89,9 @@
 					<div class="nav-tabs-custom tabs-edit">
 						<ul class="nav nav-tabs">
 							<li class="active"><a href="#main-data" data-toggle="tab"><i class="text-danger fa fa-flash hidden">
-							</i>Dati</a></li>
+							</i><%= Master.Translate("Dati") %></a></li>
 							<%--<li><a href="#parents-modal" data-toggle="modal">Parents</a></li>--%>
-							<li><a href="#parents" data-toggle="tab">Parents</a></li>
+							<li><a href="#parents" data-toggle="tab"><%= Master.Translate("Parents") %></a></li>
 							<asp:Repeater ID="Repeter_Tabs" runat="server">
 								<ItemTemplate>
 									<li>
@@ -127,7 +126,7 @@
 													<input type="text" class="form-control" id="ExtraInfo" value="<% = ThePostEnc.ExtraInfo %>" />
 													<span class="input-group-btn">
 														<button class="btn btn-icon btn-success btn-flat" type="button" data-source="#ExtraInfo"
-															title="Calcola geolocazione" data-target="#map-dialog" data-toggle="modal">
+															title="Calcola geolocazione<%= Master.Translate("Calcola geolocazione") %>" data-target="#map-dialog" data-toggle="modal">
 															<i class="fa fa-map-marker"></i>
 														</button>
 													</span>
@@ -166,10 +165,10 @@
 													<input type="text" class="form-control" id="Url" value="<% = ThePostEnc.Url %>" />
 													<span class="input-group-btn">
 														<button class="btn btn-primary btn-flat <% = FlagCercaServer %>" type="button" data-callback="getUrl"
-															title="Sfoglia il server"
+															title="<%= Master.Translate("Cerca file sul server") %>"
 															data-target="#FileBrowserModal" data-toggle="fb-window">
-															<i class="fa fa-search"></i>Sfoglia...</button>
-														<button class="btn btn-info btn-flat btn-icon" type="button" data-source="#Url" title="Guarda il file"
+															<i class="fa fa-search"></i><%= Master.Translate("Sfoglia") %>...</button>
+														<button class="btn btn-info btn-flat btn-icon" type="button" data-source="#Url" title="<%= Master.Translate("Guarda il file") %>"
 															data-target="#LightBox" data-toggle="modal">
 															<i class="fa fa-search-plus"></i>
 														</button>
@@ -184,11 +183,11 @@
 													<input type="text" class="form-control" id="Url2" value="<% = ThePostEnc.Url2  %>" />
 													<span class="input-group-btn">
 														<button class="btn btn-primary btn-flat <% = FlagCercaServer %>" type="button" data-callback="getUrl2"
-															title="Sfoglia il server"
+															title="<%= Master.Translate("Cerca file sul server") %>"
 															data-target="#FileBrowserModal" data-toggle="fb-window">
-															<i class="fa fa-search"></i>Sfoglia...</button>
+															<i class="fa fa-search"></i><%= Master.Translate("Sfoglia") %>...</button>
 														<button class="btn btn-info btn-flat btn-icon" type="button" data-source="#Url2"
-															title="Guarda il file"
+															title="<%= Master.Translate("Guarda il file") %>"
 															data-target="#LightBox" data-toggle="modal">
 															<i class="fa fa-search-plus"></i>
 														</button>
@@ -197,7 +196,7 @@
 											</div>
 										</div>
 										<div class="form-group" id="fg-data-dimensioni">
-											<label for="Ordinamento" class="col-sm-2 control-label">Rilevanza</label>
+											<label for="Ordinamento" class="col-sm-2 control-label"><%= Master.Translate("Ordine") %></label>
 											<div class="col-lg-2 col-sm-4">
 												<input type="text" class="form-control" id="Ordinamento" value="<% = ThePost.Ordinamento.ToString() %>" />
 											</div>
@@ -210,7 +209,7 @@
 											<div class="col-lg-2 col-sm-4  <% = FlagAltezza %>">
 												<input type="text" class="form-control" id="Altezza" value="<% = ThePost.Altezza.ToString() %>" />
 											</div>
-											<label for="DataPubblicazione" class="col-sm-2 control-label">Data pubblicazione</label>
+											<label for="DataPubblicazione" class="col-sm-2 control-label"><%= Master.Translate("Data pubblicazione") %></label>
 											<div class="col-lg-2 col-sm-4 ">
 												<div class="input-group date">
 													<input type="text" data-dateiso="<% = DataPubblicazioneStr %>" class="form-control datepicker" id="DataPubblicazione" value="" />
@@ -256,7 +255,7 @@
 												<!-- tools box -->
 												<div class="pull-right box-tools">
 													<button class="btn btn-info btn-sm" data-widget='collapse' data-toggle="tooltip"
-														title="Comprimi" type="button">
+														title="<%= Master.Translate("Comprimi") %>" type="button">
 														<i class="fa fa-minus"></i>
 													</button>
 												</div>
@@ -268,7 +267,7 @@
 											</div>
 										</div>
 										<div class="form-group <% = FlagTags %>" id="fg-tags">
-											<label for="ProcessParoleChiaveo_PK" class="col-sm-2 control-label">Tags</label>
+											<label for="ProcessParoleChiaveo_PK" class="col-sm-2 control-label"><%= Master.Translate("Parole chiave") %></label>
 											<div class="col-sm-10">
 												<input type="hidden" class="form-control" id="Tags" value="<% = ThePostEnc.Tags %>" />
 											</div>
@@ -342,11 +341,11 @@
 										</div>
 										<div class="form-group">
 											<div class="col-sm-12 text-center">
-												<button type="button" class="btn btn-warning" data-action="duplicate">Crea duplicato</button>
-												<button data-target="#preview-modal" data-toggle="modal" type="button" class="btn btn-info" data-action="show-record">Anteprima</button>
+												<button type="button" class="btn btn-warning" data-action="duplicate"><%= Master.Translate("Crea duplicato") %></button>
+												<button data-target="#preview-modal" data-toggle="modal" type="button" class="btn btn-info" data-action="show-record"><%= Master.Translate("Anteprima") %></button>
 												<%--<button data-target="#preview-modal"  data-toggle="modal" type="button" class="btn btn-info" data-action="show-in-parent">Mostra nel contenitore</button>--%>
 												<button type="button" class="btn btn-primary" data-action="submit">
-													Pubblica</button>
+													<%= Master.Translate("Salva e pubblica") %></button>
 											</div>
 										</div>
 										<%--<div class="alert"></div>--%>
@@ -372,7 +371,7 @@
 												<input type="hidden" name="PostPk" value="<% = Pk.ToString() %>" />
 												<div class="form-group">
 													<label for="Titolo-<%# DataBinder.Eval(Container, "DataItem.LangId") %>" class="col-sm-2 control-label">
-														Titolo</label>
+														<%= TypeInfo.LabelExtraInfo1 %></label>
 													<div class="col-sm-10">
 														<textarea rows="2" class="form-control" id="Titolo<%# DataBinder.Eval(Container, "DataItem.LangId") %>"
 															name="TranslatedTitle"><%# DataBinder.Eval(Container, "DataItem.TranslatedTitle") %></textarea>
@@ -380,20 +379,20 @@
 												</div>
 												<div class="form-group <% = FlagBreve %>">
 													<label for="TestoBreve-<%# DataBinder.Eval(Container, "DataItem.LangId") %>" class="col-sm-2 control-label">
-														Testo breve</label>
+														<%# TypeInfo.LabelTestoBreve %></label>
 													<div class="col-xs-10">
 														<textarea name="TranslatedTestoBreve" rows="10" class="ckeditor_mcms <% = FlagBreve %>"><%# System.Web.HttpUtility.HtmlEncode(DataBinder.Eval(Container, "DataItem.TranslatedTestoBreve").ToString()) %></textarea>
 													</div>
 												</div>
 												<div class="form-group <% = FlagFull %>">
 													<label for="TestoLungo-<%# DataBinder.Eval(Container, "DataItem.LangId") %>" class="col-sm-2 control-label">
-														Testo lungo</label>
+														<%# TypeInfo.LabelTestoLungo %></label>
 													<div class="col-xs-10">
 														<textarea name="TranslatedTestoLungo" rows="10" class="ckeditor_mcms <% = FlagFull %>"><%# System.Web.HttpUtility.HtmlEncode(DataBinder.Eval(Container, "DataItem.TranslatedTestoLungo").ToString()) %></textarea>
 													</div>
 												</div>
 												<div class="form-group <% = FlagTags %>" id="fg-tags">
-													<label for="" class="col-sm-2 control-label">Tags</label>
+													<label for="" class="col-sm-2 control-label"><%= Master.Translate("Parole chiave") %></label>
 													<div class="col-sm-10">
 														<input type="hidden" class="form-control" name="TranslatedTags" value="<%# DataBinder.Eval(Container, "DataItem.TranslatedTags")%>" />
 													</div>
@@ -401,12 +400,12 @@
 												<div class="form-group">
 													<div class="col-sm-12 text-center">
 														<button type="button" class="btn btn-primary btn-sm" data-action="submit">
-															Salva traduzione</button>
+															Salva traduzione<% = TypeInfo.LabelTestoBreve %></button>
 														<button type="button" <%# !CmsConfig.TransAuto ? "disabled" : ""  %> class="btn btn-info btn-sm"
 															data-action="translate">
-															Traduci con Bing</button>
+															Traduci con Bing<% = TypeInfo.LabelTestoBreve %></button>
 														<button type="button" class="btn btn-danger btn-sm" data-action="delete-translation">
-															Elimina traduzione</button>
+															Elimina traduzione<% = TypeInfo.LabelTestoBreve %></button>
 													</div>
 												</div>
 											</fieldset>
@@ -592,7 +591,7 @@
 				 .on('xhr.dt', function (e, settings, json) {
 					 var xhr = settings.jqXHR;
 					 if (xhr.status == 403) {
-						 bootbox.alert('Sessione scaduta. È necessario ripetere il login.', function () {
+					 	bootbox.alert('Sessione scaduta. È necessario ripetere il login<%= Master.Translate("Inizio") %>.', function () {
 							 window.location.href = "login.aspx";
 						 });
 					 }
@@ -604,29 +603,29 @@
 						 "type": "POST"
 					 },
 					 "language": {
-						 "sEmptyTable": "Nessun dato presente nella tabella",
-						 "sInfo": "Vista da _START_ a _END_ di _TOTAL_ elementi",
-						 "sInfoEmpty": "Vista da 0 a 0 di 0 elementi",
-						 "sInfoFiltered": "(filtrati da _MAX_ elementi totali)",
-						 "sInfoPostFix": "",
-						 "sInfoThousands": ",",
-						 "sLengthMenu": "Visualizza _MENU_ elementi",
-						 "sLoadingRecords": "Caricamento...",
-						 "sProcessing": "Elaborazione...",
-						 "sSearch": "Cerca:",
-						 "sZeroRecords": "La ricerca non ha portato alcun risultato.",
-						 "oPaginate": {
-							 "sFirst": "Inizio",
-							 "sPrevious": "Precedente",
-							 "sNext": "Successivo",
-							 "sLast": "Fine"
-						 },
-						 "oAria": {
-							 "sSortAscending": ": attiva per ordinare la colonna in ordine crescente",
-							 "sSortDescending": ": attiva per ordinare la colonna in ordine decrescente"
-						 }
-					 },
-					 "columnDefs": [
+						"sEmptyTable": "<%= Master.Translate("Nessun dato presente nella tabella") %>",
+						"sInfo": "<%= Master.Translate("Vista da _START_ a _END_ di _TOTAL_ elementi") %>",
+						"sInfoEmpty": "<%= Master.Translate("Vista da 0 a 0 di 0 elementi") %>",
+						"sInfoFiltered": "<%= Master.Translate("(filtrati da _MAX_ elementi totali)") %>",
+						"sInfoPostFix": "",
+						"sInfoThousands": ",",
+						"sLengthMenu": "<%= Master.Translate("Visualizza _MENU_ elementi") %>",
+						"sLoadingRecords": "<%= Master.Translate("Caricamento") %>...",
+						"sProcessing": "<%= Master.Translate("Elaborazione") %>...",
+						"sSearch": "<%= Master.Translate("Cerca") %>:",
+						"sZeroRecords": "<%= Master.Translate("La ricerca non ha portato alcun risultato") %>.",
+						"oPaginate": {
+							"sFirst": "<%= Master.Translate("Inizio") %>",
+							"sPrevious": "<%= Master.Translate("Precedente") %>",
+							"sNext": "<%= Master.Translate("Successivo") %>",
+							"sLast": "<%= Master.Translate("Fine") %>"
+						},
+						"oAria": {
+							"sSortAscending": ": <%= Master.Translate("attiva per ordinare la colonna in ordine crescente") %>",
+							"sSortDescending": ": <%= Master.Translate("attiva per ordinare la colonna in ordine decrescente") %>"
+						}
+					},
+					"columnDefs": [
 						 {
 							 "targets": 0,
 							 "data": "Pk",
@@ -752,7 +751,7 @@
 										 .attr('data-action', 'undelete')
 										 .attr('type', 'button')
 										 .attr('title', 'recupera')
-										 .html('<i class="fa fa-external-link-square"></i><span class="hidden-sm hidden-xs">recupera</span>');
+										 .html('<i class="fa fa-external-link-square"></i><span class="hidden-sm hidden-xs"><%= Master.Translate("recupera") %></span>');
 								 } else {
 									 btn = $('<a />')
 										 .addClass('btn btn-primary btn-xs')
@@ -760,7 +759,7 @@
 										 .attr('data-action', 'edit')
 										 .attr('title', 'modifica')
 										 .attr('href', 'editcontents.aspx?pk=' + full.Pk)
-										 .html('<i class="fa fa-edit"></i><span class="hidden-sm hidden-xs">modifica</span>');
+										 .html('<i class="fa fa-edit"></i><span class="hidden-sm hidden-xs"><%= Master.Translate("modifica") %></span>');
 								 }
 
 
@@ -782,7 +781,7 @@
 										 .attr('data-action', 'erase')
 										 .attr('title', 'elimina')
 										 .attr('type', 'button')
-										 .html('<i class="fa fa-eraser"></i><span class="hidden-sm hidden-xs">elimina</span>');
+										 .html('<i class="fa fa-eraser"></i><span class="hidden-sm hidden-xs"><%= Master.Translate("elimina") %></span>');
 								 } else {
 									 btn = $('<button />')
 										 .addClass('btn btn-danger btn-xs')
@@ -790,7 +789,7 @@
 										 .attr('data-action', 'delete')
 										 .attr('title', 'cestino')
 										 .attr('type', 'button')
-										 .html('<i class="fa fa-trash"></i><span class="hidden-sm hidden-xs">cestino</span>');
+										 .html('<i class="fa fa-trash"></i><span class="hidden-sm hidden-xs"><%= Master.Translate("cestino") %></span>');
 								 }
 								 return $('<div />').append(btn).html();
 							 }
@@ -840,7 +839,7 @@
 								} else {
 									$.growl({
 										icon: 'fa fa-warning',
-										title: 'Si è verificato un errore: ',
+										title: '<%= Master.Translate("Si è verificato un errore") %>: ',
 										message: data.msg
 									},
 									{
@@ -849,7 +848,7 @@
 								}
 							})
 							.fail(function (jqxhr, textStatus, error) {
-								bootbox.alert('Si è verificaro un errore: ' + textStatus + "," + error);
+								bootbox.alert('<%= Master.Translate("Si è verificato un errore") %>: ' + textStatus + "," + error);
 							})
 							.always(function () {
 								$('[data-id="Panel_contents"]').spin(false);
@@ -859,9 +858,9 @@
 						case 'erase':
 							var msg;
 							if (action == "erase")
-								msg = 'L\'elemento verrà eliminato definitivamente. Sei sicuro di voler continuare?';
+								msg = "<%= Master.Translate("L'elemento verrà eliminato definitivamente. Sei sicuro di voler continuare") %>?";
 							else
-								msg = 'Stai spostando l\'elemento nel cestino. Ser sicuro di voler continuare?';
+								msg = "<%= Master.Translate("Stai spostando l'elemento nel cestino. Ser sicuro di voler continuare") %>?";
 
 							bootbox.confirm(msg, function (result) {
 								if (result) {
@@ -891,7 +890,7 @@
 										} else {
 											$.growl({
 												icon: 'fa fa-warning',
-												title: 'Si è verificato un errore: ',
+												title: '<%= Master.Translate("Si è verificato un errore") %>: ',
 												message: data.msg
 											},
 											{
@@ -959,7 +958,7 @@
 			$.getJSON('Ajax/Keys.ashx', { lang: "default" })
 				.fail(function (jqxhr, textStatus, error) {
 					$alert
-						.text('Si è verificaro un errore: ' + textStatus + "," + error)
+						.text('<%= Master.Translate("Si è verificaro un errore") %>: ' + textStatus + "," + error)
 						.removeClass('alert-success')
 						.addClass('alert-danger')
 						.show();
@@ -979,13 +978,13 @@
 										}
 										callback(s2Arr);
 									},
-									placeholder: 'Parole chiave',
+									placeholder: '<%= Master.Translate("Parole chiave") %>',
 									multiple: true
 								});
 					} else {
 						$.growl({
 							icon: 'fa fa-warning',
-							title: 'Si è verificato un errore: ',
+							title: '<%= Master.Translate("Si è verificato un errore") %>: ',
 							message: data.msg
 						},
 						{
@@ -1005,7 +1004,7 @@
 				$.getJSON('Ajax/Keys.ashx', { lang: lang })
 					.fail(function (jqxhr, textStatus, error) {
 						$alert
-							.text('Si è verificaro un errore: ' + textStatus + "," + error)
+							.text('<%= Master.Translate("Si è verificato un errore") %>: ' + textStatus + "," + error)
 							.removeClass('alert-success')
 							.addClass('alert-danger')
 							.show();
@@ -1025,13 +1024,13 @@
 											}
 											callback(s2Arr);
 										},
-										placeholder: 'Parole chiave',
+										placeholder: '<%= Master.Translate("Parole chiave") %>',
 										multiple: true
 									});
 						} else {
 							$.growl({
 								icon: 'fa fa-warning',
-								title: 'Si è verificato un errore: ',
+								title: '<%= Master.Translate("Si è verificato un errore") %>: ',
 								message: data.msg
 							},
 							{
@@ -1075,7 +1074,7 @@
 								default:
 									$boxTitle.html('<i class="fa ' + obj.icon + '"></i>' + obj.name);
 									$addElementBtn
-										.attr('data-title', 'Aggiungi un elemento a &quot;' + obj.name + '&quot;')
+										.attr('data-title', '<%= Master.Translate("Aggiungi un elemento a") %> &quot;' + obj.name + '&quot;')
 										.attr('data-parent', obj.parent)
 										.removeClass('hidden');
 									break;
@@ -1145,7 +1144,7 @@
 				var $this = $(this);
 				$this
 					.find('.dropdown-menu')
-					.html('<li>&nbsp;Sto caricando...</li>')
+					.html('<li>&nbsp;<%= Master.Translate("Caricando") %>...</li>')
 					.load('Ajax/GetContainerrPreferred.ashx ul>li', 'parent=' + $this.find('[data-toggle="dropdown"]').attr('data-parent'), function () {
 					parent.spin(false);
 				});
@@ -1246,7 +1245,7 @@
 			******************** Translations ******************
 			*/
 			var fillForm = function (form, data) {
-				bootbox.confirm('Attenzione! Il Contenuto dei campi verrà ostituito dalla traduzione automatica. Continuare?', function (result) {
+				bootbox.confirm('<%= Master.Translate("Attenzione! I testi presenti nei campi saranno sostituiti dalla traduzione automatica. Continuare") %>?', function (result) {
 					if (!result)
 						return;
 					for (var prop in data) {
@@ -1314,7 +1313,7 @@
 							} else {
 								$.growl({
 									icon: 'fa fa-warning',
-									title: 'Si è verificato un errore: ',
+									title: '<%= Master.Translate("Si è verificato un errore") %>: ',
 									message: data.msg
 								},
 								{
@@ -1340,7 +1339,7 @@
 						Pk: pk,
 						table: 'ANA_TRANSLATION'
 					};
-					bootbox.confirm('Confermi l\'eliminazione della traduzione?', function (result) {
+					bootbox.confirm("<%= Master.Translate("Confermi l'eliminazione della traduzione") %>?", function (result) {
 						if (!result) return;
 						$.ajax('Ajax/Delete.ashx',
 							{
@@ -1366,7 +1365,7 @@
 								} else {
 									$.growl({
 										icon: 'fa fa-warning',
-										title: 'Si è verificato un errore: ',
+										title: '<%= Master.Translate("Si è verificato un errore") %>: ',
 										message: data.msg
 									},
 									{
@@ -1400,7 +1399,7 @@
 					$table_contenuti.ajax.reload(null, false);
 					$.growl({
 						icon: 'fa fa-thumbs-o-up',
-						title: 'Salvataggio dati',
+						title: '<%= Master.Translate("Salvataggio dati") %>',
 						message: data.msg
 					},
 					{
@@ -1411,7 +1410,7 @@
 				} else {
 					$.growl({
 						icon: 'fa fa-warning',
-						title: 'Si è verificato un errore: ',
+						title: '<%= Master.Translate("Si è verificato un errore") %>: ',
 						message: data.msg
 					},
 					{
@@ -1432,7 +1431,7 @@
 				if (data.success) {
 					$.growl({
 						icon: 'fa fa-thumbs-o-up',
-						title: 'Salvataggio dati',
+						title: '<%= Master.Translate("Salvataggio dati") %>',
 						message: data.msg
 					},
 					{
@@ -1441,7 +1440,7 @@
 				} else {
 					$.growl({
 						icon: 'fa fa-warning',
-						title: 'Si è verificato un errore: ',
+						title: '<%= Master.Translate("Si è verificato un errore") %>: ',
 						message: data.msg
 					},
 					{
@@ -1468,7 +1467,7 @@
 						ch = true;
 				});
 				if (ch)
-					return 'Attenzione sono state rilevate modifiche non salvate.';
+					return '<%= Master.Translate("Attenzione sono state rilevate modifiche non salvate") %>.';
 			});
 
 			/*
@@ -1494,10 +1493,10 @@
 						type: 'POST'
 					})
 					.fail(function (jqxhr, textStatus, error) {
-						bootbox.alert('Si è verificaro un errore: ' + textStatus + "," + error);
+						bootbox.alert('Si è verificaro un errore<%= Master.Translate("Inizio") %>: ' + textStatus + "," + error);
 					})
 					.done(function (data) {
-						$title.html("Preview: <strong>" + $('#Titolo').val() + "</strong>");
+						$title.html("<%= Master.Translate("Anteprima") %>: <strong>" + $('#Titolo').val() + "</strong>");
 						if (data.success) {
 							url = '/preview';
 							$body.html('');

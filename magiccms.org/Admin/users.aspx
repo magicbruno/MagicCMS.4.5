@@ -6,17 +6,17 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="HeaderContent" runat="server">
-    <h1><i class="fa fa-users"></i>Gestione utenti</h1>
+    <h1><i class="fa fa-users"></i><%= Master.Translate("Gestione utenti") %></h1>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <div class="row">
         <div class="col-md-12">
             <div class="box box-primary" data-ride="mb-panel">
                 <div class="box-header">
-                    <h3 class="box-title">Elenco utenti</h3>
+                    <h3 class="box-title"><%= Master.Translate("Elenco utenti") %></h3>
                     <div class="box-tools pull-right">
                         <a href="#modal-edit-user" data-toggle="modal" data-rowpk="0" class="btn btn-sm bg-olive">
-                            <i class="fa fa-user"></i>nuovo utente</a>
+                            <i class="fa fa-user"></i><%= Master.Translate("nuovo utente") %></a>
                         <button type="button" class="btn btn-primary btn-sm" data-widget="collapse">
                             <i class="fa fa-minus"></i>
                         </button>
@@ -27,9 +27,9 @@
                         <thead>
                             <tr>
                                 <th>Email</th>
-                                <th>Nome</th>
-                                <th>Prerogative</th>
-                                <th>Attivato</th>
+                                <th><%= Master.Translate("Nome") %></th>
+                                <th><%= Master.Translate("Prerogative") %></th>
+                                <%--<th>Attivato<%= Master.Translate("") %></th>--%>
                                 <th><i class="fa fa-edit"></i></th>
                                 <th><i class="fa fa-eraser"></i></th>
                             </tr>
@@ -42,7 +42,7 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modal-edit-user" tabindex="-1" role="dialog" aria-labelledby="Modifica i dati di un utente"
+    <div class="modal fade" id="modal-edit-user" tabindex="-1" role="dialog" aria-labelledby="<%= Master.Translate("Modifica i dati di un utente") %>"
         aria-hidden="true" data-backdrop="static">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -50,7 +50,7 @@
                     <button type="button" class="close" data-dismiss="modal">
                         <span aria-hidden="true">&times;</span><span
                             class="sr-only">Chiudi</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Modifica</h4>
+                    <h4 class="modal-title" id="myModalLabel"><%= Master.Translate("Modifica i dati di un utente") %></h4>
                 </div>
                 <div class="modal-body">
                     <div class="form-horizontal" role="form" data-action="Ajax/Edit.ashx" data-ride="mb-form">
@@ -63,13 +63,13 @@
                             </div>
                         </div>
                         <div class="form-group" id="fg-name">
-                            <label for="user_name" class="col-sm-2 control-label">Nome</label>
+                            <label for="user_name" class="col-sm-2 control-label"><%= Master.Translate("Nome") %></label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="Name" placeholder="Nome e Cognome" />
+                                <input type="text" class="form-control" id="Name" placeholder="<%= Master.Translate("Nome e Cognome") %>" />
                             </div>
                         </div>
                         <div class="form-group" id="fg-level">
-                            <label for="user_name" class="col-sm-2 control-label">Prerogative</label>
+                            <label for="user_name" class="col-sm-2 control-label"><%= Master.Translate("Prerogative") %></label>
                             <div class="col-sm-10">
                                 <input id="Level" class="form-control user_prerogatives" type="text" />
                             </div>
@@ -79,15 +79,15 @@
                                 <div class="checkbox">
                                     <label>
                                         <input type="checkbox" id="sendmail" class="" />
-                                        invia automaticamente una e-mail all'utente dopo la registrazione
+                                        <%= Master.Translate("invia automaticamente una e-mail all'utente dopo la registrazione") %>
                                     </label>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
-                                <button type="button" class="btn btn-primary" data-action="submit">Salva</button>
-                                <button type="button" class="btn btn-danger" data-dismiss="modal">Chiudi</button>
+                                <button type="button" class="btn btn-primary" data-action="submit"><%= Master.Translate("Salva") %></button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal"><%= Master.Translate("Chiudi") %></button>
                             </div>
                         </div>
                         <div class="alert"></div>
@@ -111,7 +111,7 @@
                 .on('xhr.dt', function (e, settings, json) {
                     var xhr = settings.jqXHR;
                     if (xhr.status == 403) {
-                        bootbox.alert('Sessione scaduta. È necessario ripetere il login.', function () {
+                    	bootbox.alert('<%= Master.Translate("Sessione scaduta. È necessario ripetere il login") %>.', function () {
                             window.location.href = "/login.aspx";
                         });
                     }
@@ -125,29 +125,29 @@
                         "type": "POST"
                     },
                     "language": {
-                        "sEmptyTable": "Nessun dato presente nella tabella",
-                        "sInfo": "Vista da _START_ a _END_ di _TOTAL_ elementi",
-                        "sInfoEmpty": "Vista da 0 a 0 di 0 elementi",
-                        "sInfoFiltered": "(filtrati da _MAX_ elementi totali)",
-                        "sInfoPostFix": "",
-                        "sInfoThousands": ",",
-                        "sLengthMenu": "Visualizza _MENU_ elementi",
-                        "sLoadingRecords": "Caricamento...",
-                        "sProcessing": "Elaborazione...",
-                        "sSearch": "Cerca:",
-                        "sZeroRecords": "La ricerca non ha portato alcun risultato.",
-                        "oPaginate": {
-                            "sFirst": "Inizio",
-                            "sPrevious": "Precedente",
-                            "sNext": "Successivo",
-                            "sLast": "Fine"
+                    	"sEmptyTable": "<%= Master.Translate("Nessun dato presente nella tabella") %>",
+                    	"sInfo": "<%= Master.Translate("Vista da _START_ a _END_ di _TOTAL_ elementi") %>",
+                    	"sInfoEmpty": "<%= Master.Translate("Vista da 0 a 0 di 0 elementi") %>",
+                    	"sInfoFiltered": "<%= Master.Translate("(filtrati da _MAX_ elementi totali)") %>",
+                    	"sInfoPostFix": "",
+                    	"sInfoThousands": ",",
+                    	"sLengthMenu": "<%= Master.Translate("Visualizza _MENU_ elementi") %>",
+                        "sLoadingRecords": "<%= Master.Translate("Caricamento") %>...",
+                    	"sProcessing": "<%= Master.Translate("Elaborazione") %>...",
+                    	"sSearch": "<%= Master.Translate("Cerca") %>:",
+                    	"sZeroRecords": "<%= Master.Translate("La ricerca non ha portato alcun risultato") %>.",
+                    	"oPaginate": {
+                    		"sFirst": "<%= Master.Translate("Inizio") %>",
+                        	"sPrevious": "<%= Master.Translate("Precedente") %>",
+                        	"sNext": "<%= Master.Translate("Successivo") %>",
+                        	"sLast": "<%= Master.Translate("Fine") %>"
                         },
-                        "oAria": {
-                            "sSortAscending": ": attiva per ordinare la colonna in ordine crescente",
-                            "sSortDescending": ": attiva per ordinare la colonna in ordine decrescente"
+                    	"oAria": {
+                    		"sSortAscending": ": <%= Master.Translate("attiva per ordinare la colonna in ordine crescente") %>",
+                        	"sSortDescending": ": <%= Master.Translate("attiva per ordinare la colonna in ordine decrescente") %>"
                         }
                     },
-                    "columnDefs": [
+                	"columnDefs": [
                         {
                             "targets": 0,
                             "data": "Email",
@@ -167,22 +167,22 @@
                             "data": "LevelDescription",
                             "width": "16%"
                         },
+                        //{
+                        //    "targets": 3,
+                        //    "searchable": false,
+                        //    "orderable": false,
+                        //    "data": "Activated",
+                        //    "width": "12%",
+                        //    "className": "text-center",
+                        //    "render": function (data, type, full, meta) {
+                        //        if (data)
+                        //            return '<i class="fa fa-check"></i> ';
+                        //        else
+                        //            return '<i class="fa fa-times"></i> ';
+                        //    }
+                        //},
                         {
                             "targets": 3,
-                            "searchable": false,
-                            "orderable": false,
-                            "data": "Activated",
-                            "width": "12%",
-                            "className": "text-center",
-                            "render": function (data, type, full, meta) {
-                                if (data)
-                                    return '<i class="fa fa-check"></i> ';
-                                else
-                                    return '<i class="fa fa-times"></i> ';
-                            }
-                        },
-                        {
-                            "targets": 4,
                             "data": "Pk",
                             "searchable": false,
                             "orderable": false,
@@ -194,12 +194,12 @@
                                     .attr('data-toggle', 'modal')
                                     .attr('data-target', '#modal-edit-user')
                                     .attr('type', 'button')
-                                    .html('<i class="fa fa-edit"></i>modifica');
+                                    .html('<i class="fa fa-edit"></i><%= Master.Translate("modifica") %>');
                                 return $('<div />').append(btn).html();
                             }
                         },
                         {
-                            "targets": 5,
+                            "targets": 4,
                             "data": "Pk",
                             "searchable": false,
                             "orderable": false,
@@ -210,7 +210,7 @@
                                     .attr('data-rowpk', data)
                                     .attr('data-action', 'delete')
                                     .attr('type', 'button')
-                                    .html('<i class="fa fa-times"></i>elimina');
+                                    .html('<i class="fa fa-times"></i><%= Master.Translate("elimina") %>');
                                 return $('<div />').append(btn).html();
                             }
                         }
@@ -227,7 +227,7 @@
                 $('#pk').val($this.attr('data-rowpk'));
                 // Delete record
             } else if ($this.is('[data-action="delete"]')) {
-                bootbox.confirm('L\'utente verrà eliminato definitivamente. Ser sicuro di voler continuare?', function (result) {
+            	bootbox.confirm("<%= Master.Translate("L'utente verrà eliminato definitivamente. Ser sicuro di voler continuare") %>?", function (result) {
                     if (result) {
                         $('#utenti').spin();
                         $.ajax({
@@ -243,11 +243,11 @@
                             if (data.success) {
                                 $tableUtenti.ajax.reload();
                             } else {
-                                bootbox.alert('Si è verificato un errore: ' + data.msg);
+                            	bootbox.alert('<%= Master.Translate("Si è verificato un errore") %>: ' + data.msg);
                             }
                         })
                         .fail(function (jqxhr, textStatus, error) {
-                            bootbox.alert('Si è verificaro un errore: ' + textStatus + "," + error);
+                        	bootbox.alert('<%= Master.Translate("Si è verificato un errore") %>: ' + textStatus + "," + error);
                         })
                         .always(function () {
                             $('#utenti').spin(false);
@@ -273,12 +273,12 @@
             // Se insert rendo visibile la checkbox manda mail
             if ($('#pk').val() == 0) {
                 $('#fg-sendmail').show().find(':checkbox').removeAttr('checked');
-                $modal.find('.modal-title').text('Inserisci nuovo utente');
+                $modal.find('.modal-title').text('<%= Master.Translate("Inserisci nuovo utente") %>');
             }
                 // Altrimenti la nascondo
             else {
                 $('#fg-sendmail').hide().find(':checkbox').removeAttr('checked');
-                $modal.find('.modal-title').text('Modifica utente');
+                $modal.find('.modal-title').text('<%= Master.Translate("Modifica utente") %>');
             }
             $modal.find('.alert').hide();
         });
@@ -311,7 +311,7 @@
                 $.getJSON('Ajax/GetRecord.ashx', { pk: $('#pk').val(), table: "ANA_USR" })
                     .fail(function (jqxhr, textStatus, error) {
                         $('.alert', $modal)
-                            .text('Si è verificaro un errore: ' + textStatus + "," + error)
+                            .text('e<%= Master.Translate("Si è verificato un errore") %>: ' + textStatus + "," + error)
                             .removeClass('alert-success')
                             .addClass('alert-danger')
                             .show();

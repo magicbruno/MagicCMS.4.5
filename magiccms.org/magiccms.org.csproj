@@ -51,7 +51,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="MagicCMS, Version=1.0.25.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\MagicCMS\packages\MB.MagicCMS.4.5.1.0.25\lib\Net45\MagicCMS.dll</HintPath>
+      <HintPath>packages\MB.MagicCMS.4.5.1.0.25\lib\Net45\MagicCMS.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />

@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/MasterAdmin.master" AutoEventWireup="true" CodeBehind="CustomCss.aspx.cs" Inherits="MagicCMS.Admin.CustomCss" %>
+<%@ MasterType TypeName="MagicCMS.Admin.MasterAdmin" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 	<link href="Scripts/plugins/CodeMirror/css-edit/code-mirror-css-bundle.min.css" rel="stylesheet" />
@@ -24,45 +25,45 @@
 	</style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="HeaderContent" runat="server">
-	<h1><i class="fa fa-css3"></i>CSS Personalizzato <small>Ridefinisci qui le regole di stile che vuoi cambiare</small></h1>
+	<h1><i class="fa fa-css3"></i><%= Master.Translate("CSS Personalizzato") %></h1>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
 	<div class="row">
 		<div class="col-md-12">
 			<div class="box box-primary">
 				<div class="box-header">
-					<h3 class="box-title">Editor css</h3>
+					<h3 class="box-title"><%= Master.Translate("Editor css") %></h3>
 					<div class="box-tools pull-right">
 						<button type="button" data-action="color-scheme" class="btn btn-sm btn-info btn-icon"
-							title="Cambia schema colore">
-							<i class="fa fa-refresh"></i>Temi 
+							title="<%= Master.Translate("Cambia schema colore") %>">
+							<i class="fa fa-refresh"></i><%= Master.Translate("Temi") %> 
 						</button>
 						<button type="button" data-action="smaller-char" class="btn btn-sm btn-primary btn-icon"
-							title="Riduci corpo carattere">
+							title="<%= Master.Translate("Riduci corpo carattere") %>">
 							<span class="small">A</span> <i class="fa fa-long-arrow-down"></i>
 						</button>
 						<button type="button" data-action="larger-char" class="btn btn-sm btn-primary btn-icon"
-							title="Aumento corpo carattere">
+							title="<%= Master.Translate("Aumento corpo carattere") %>">
 							<span class="">A</span> <i class="fa fa-long-arrow-up"></i>
 						</button>
 						<button type="button" data-action="save" class="btn btn-sm btn-success btn-icon"
-							title="Salva">
+							title="<%= Master.Translate("Salva") %>">
 							<i class="fa fa-save"></i>
 						</button>
 												
 						<button type="button" data-action="save-copy" class="btn btn-sm btn-success btn-icon"
-							title="Archivia una copia del foglio di stile corrente">
+							title="<%= Master.Translate("Archivia una copia del foglio di stile corrente") %>">
 							<i class="fa fa-archive"></i>
 						</button>
 						
 						<button type="button" class="btn btn-sm btn-info btn-icon"
-							title="Help" data-toggle="modal" data-target="#editor-help">
+							title="<%= Master.Translate("Help") %>" data-toggle="modal" data-target="#editor-help">
 							<i class="fa fa-question"></i>
 						</button>
 						<div class="btn-group">
 							<button type="button" class="btn btn-sm btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<i class="fa fa-archive"></i> 
-								Archivio versioni <span class="caret"></span>
+								<%= Master.Translate("Archivio fogli di stile") %> <span class="caret"></span>
 							</button>
 							<ul class="dropdown-menu dropdown-menu-right" id="versioni">
 								<li><a href="#">&nbsp;</a></li>
@@ -89,13 +90,13 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="editor-help-label">Combinazioni tasti attive</h4>
+					<h4 class="modal-title" id="editor-help-label">Combinazioni tasti attive<%= Master.Translate("Combinazioni tasti attive") %></h4>
 				</div>
 				<div class="modal-body">
 					
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary" data-dismiss="modal"><%= Master.Translate("Chiudi") %></button>
 				</div>
 			</div>
 		</div>
@@ -105,15 +106,15 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="css-preview-label">Foglio di stile da inserire</h4>
+					<h4 class="modal-title" id="css-preview-label"><%= Master.Translate("Foglio di stile da inserire") %></h4>
 				</div>
 				<div class="modal-body" id="css-preview-viewport">
 					
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-warning" data-action="replace" data-dismiss="modal">Sostituisci</button>
-					<button type="button" class="btn btn-success" data-action="insert" data-dismiss="modal">Accoda al testo</button>
-					<button type="button" class="btn btn-danger" data-dismiss="modal">Annulla</button>
+					<button type="button" class="btn btn-warning" data-action="replace" data-dismiss="modal"><%= Master.Translate("Sostituisci") %></button>
+					<button type="button" class="btn btn-success" data-action="insert" data-dismiss="modal"><%= Master.Translate("Accoda al testo") %></button>
+					<button type="button" class="btn btn-danger" data-dismiss="modal"><%= Master.Translate("Annulla") %></button>
 				</div>
 			</div>
 		</div>
@@ -126,7 +127,7 @@
 
 		// Compose theme button label
 		function updateThemeBtnLabel(theme) {
-			$('[data-action="color-scheme"]').html('<i class="fa fa-refresh"></i>&nbsp;&nbsp;Tema: ' + theme);
+			$('[data-action="color-scheme"]').html('<i class="fa fa-refresh"></i>&nbsp;&nbsp;<%= Master.Translate("Tema") %>: ' + theme);
 
 		}
 

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+	<metadata>
+		<id>MB.MagicCMS.4.5</id>
+		<version>$version$</version>
+		<authors>Bruno Migliaretti</authors>
+		<owners>Bruno Migliaretti</owners>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>Content Management System framework for Visual studio</description>
+		<releaseNotes>First release for .NET 4.5</releaseNotes>
+		<copyright>Copyright 2016</copyright>
+		<dependencies>
+			<dependency id="Facebook" version="7.0.6" />
+			<dependency id="jQuery" version="2.2.4"  />
+			<dependency id="jQuery1" version="1.12.3" />
+			<dependency id="json2" version="1.0.2" />
+			<dependency id="MB.FileBrowser" version="1.1.8" />
+			<dependency id="Respond" version="1.4.2" />
+		</dependencies>
+	</metadata>
+	<files>
+
+		<file src="bin/MagicCMS.dll" target="lib/Net45/"/>
+		<file src="bin/MagicCMS.pdb" target="lib/Net45/"/>
+		<file src="*.cs" target="src/" exclude="Global.*;*.designer.cs" />
+		<file src="*\**.cs" target="src/" exclude="*\**.designer.cs" />
+	</files>
+</package>

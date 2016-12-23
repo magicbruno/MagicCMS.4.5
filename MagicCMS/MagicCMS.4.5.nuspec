@@ -36,8 +36,5 @@
 		<file src="Global.asax.cs.pp" target="content\"/>
 		<file src="web.config.transform" target="content\"/>
 		<file src="bin/MagicCMS.dll" target="lib/Net45/"/>
-		<file src="bin/MagicCMS.pdb" target="lib/Net45/"/>
-		<file src="*.cs" target="src/" exclude="Global.*;*.designer.cs" />
-		<file src="*\**.cs" target="src/" exclude="*\**.designer.cs" />
 	</files>
 </package>
