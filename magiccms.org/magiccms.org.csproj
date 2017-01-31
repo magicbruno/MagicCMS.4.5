@@ -50,8 +50,8 @@
       <HintPath>..\MagicCMS\packages\MB.FileBrowser.1.1.8\lib\net35\IZ.WebFileManager.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MagicCMS, Version=1.0.25.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\MB.MagicCMS.4.5.1.0.25\lib\Net45\MagicCMS.dll</HintPath>
+    <Reference Include="MagicCMS, Version=1.0.33.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\MagicCMS\packages\MB.MagicCMS.4.5.1.0.33\lib\Net45\MagicCMS.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
@@ -1008,11 +1008,40 @@
     <Content Include="Themes\Default\metro-bootstrap\animate.less-master\source\_notes\dwsync.xml" />
     <Content Include="Themes\Default\metro-bootstrap\animate.less-master\_notes\dwsync.xml" />
     <Content Include="Themes\Default\Temp.aspx" />
+    <Content Include="Themes\Winstrap\js\mbslider\images\bx_loader.gif" />
+    <Content Include="Themes\Winstrap\js\mbslider\images\controls.png" />
+    <Content Include="Themes\Winstrap\js\mbslider\jquery.mbSlider.css" />
+    <Content Include="Themes\Winstrap\js\mbslider\jquery.mbSlider.js" />
+    <Content Include="Themes\Winstrap\js\mbslider\jquery.mbSlider.min.css" />
+    <Content Include="Themes\Winstrap\js\mbslider\jquery.mbSlider.min.js" />
+    <Content Include="Themes\Winstrap\js\mbslider\vendor\jquery.easing.1.3.js" />
+    <Content Include="Themes\Winstrap\js\mbslider\vendor\jquery.fitvids.js" />
+    <Content Include="Themes\Winstrap\js\mb-comingsoon\css\mb-comingsoon-iceberg.css" />
+    <Content Include="Themes\Winstrap\js\mb-comingsoon\css\mb-comingsoon-iceberg.min.css" />
+    <Content Include="Themes\Winstrap\js\mb-comingsoon\css\mb-comingsoon.css" />
+    <Content Include="Themes\Winstrap\js\mb-comingsoon\css\mb-comingsoon.min.css" />
+    <Content Include="Themes\Winstrap\js\mb-comingsoon\css\style.css" />
+    <Content Include="Themes\Winstrap\js\mb-comingsoon\css\style.min.css" />
+    <Content Include="Themes\Winstrap\js\mb-comingsoon\js\jquery.mb-comingsoon.js" />
+    <Content Include="Themes\Winstrap\js\mb-comingsoon\js\jquery.mb-comingsoon.min.js" />
+    <Content Include="Themes\Winstrap\js\mb-comingsoon\js\lib\jquery-1.11.0.min.js" />
     <Content Include="userfiles\image\fb-manifest.png" />
+    <Content Include="userfiles\image\gb.png" />
+    <Content Include="userfiles\image\ico\apple-114x114-precomposed.png" />
+    <Content Include="userfiles\image\ico\apple-144x144-precomposed.png" />
+    <Content Include="userfiles\image\ico\apple-180x180-precomposed.png" />
+    <Content Include="userfiles\image\ico\apple-57x57-precomposed.png" />
+    <Content Include="userfiles\image\ico\apple-72x72-precomposed.png" />
+    <Content Include="userfiles\image\ico\favicon.png" />
+    <Content Include="userfiles\image\ico\fb.png" />
+    <Content Include="userfiles\image\italia_flag.png" />
+    <Content Include="userfiles\image\SQLCMD.png" />
+    <Content Include="userfiles\image\SQLCMD_2.png" />
     <Content Include="Winstrap.nuspec" />
     <Content Include="Min.ashx" />
     <Content Include="errors\ErrorPage.master" />
     <Content Include="AjaxSendMail_JSON.ashx" />
+    <Content Include="Admin\Session\SessionRefresh.ashx" />
     <Content Include="Admin\Session\SessionHandler.ashx" />
     <Content Include="Admin\Scripts\plugins\plugins.min.js.map" />
     <Content Include="Admin\Scripts\plugins\plugins.js.bundle" />
@@ -1249,6 +1278,7 @@
     <Content Include="Admin\Ajax\ConvertTag.ashx" />
     <Content Include="Admin\Ajax\ContentsPaginated.ashx" />
     <Content Include="Admin\Ajax\BingTranslation.ashx" />
+    <None Include="Properties\PublishProfiles\MagicCMS.pubxml" />
     <None Include="Scripts\jquery-1.12.3.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.3.js" />
     <Content Include="Scripts\jquery-1.12.3.min.js" />
@@ -1347,12 +1377,6 @@
     <Content Include="Themes\Winstrap\js\bootstrap\tab.js" />
     <Content Include="Themes\Winstrap\js\bootstrap\tooltip.js" />
     <Content Include="Themes\Winstrap\js\bootstrap\transition.js" />
-    <Content Include="Themes\Winstrap\js\bxslider\images\bx_loader.gif" />
-    <Content Include="Themes\Winstrap\js\bxslider\images\controls.png" />
-    <Content Include="Themes\Winstrap\js\bxslider\jquery.bxslider.css" />
-    <Content Include="Themes\Winstrap\js\bxslider\jquery.bxslider.js" />
-    <Content Include="Themes\Winstrap\js\bxslider\jquery.bxslider.min.css" />
-    <Content Include="Themes\Winstrap\js\bxslider\jquery.bxslider.min.js" />
     <Content Include="Themes\Winstrap\js\carousel.js" />
     <Content Include="Themes\Winstrap\js\custom.js">
       <DependentUpon>custom.js.bundle</DependentUpon>
@@ -1581,6 +1605,13 @@
     <Compile Include="Themes\Winstrap\BlogDocs.master.designer.cs">
       <DependentUpon>BlogDocs.master</DependentUpon>
     </Compile>
+    <Compile Include="Themes\Winstrap\ComingSoon.master.cs">
+      <DependentUpon>ComingSoon.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Themes\Winstrap\ComingSoon.master.designer.cs">
+      <DependentUpon>ComingSoon.master</DependentUpon>
+    </Compile>
     <Compile Include="Themes\Winstrap\IFramePage.master.cs">
       <DependentUpon>IFramePage.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1594,6 +1625,13 @@
     </Compile>
     <Compile Include="Themes\Winstrap\MasterTheme.master.designer.cs">
       <DependentUpon>MasterTheme.master</DependentUpon>
+    </Compile>
+    <Compile Include="Themes\Winstrap\SingleSlideTest.master.cs">
+      <DependentUpon>SingleSlideTest.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Themes\Winstrap\SingleSlideTest.master.designer.cs">
+      <DependentUpon>SingleSlideTest.master</DependentUpon>
     </Compile>
     <Compile Include="Themes\Winstrap\SlideShow.master.cs">
       <DependentUpon>SlideShow.master</DependentUpon>
@@ -1654,6 +1692,7 @@
     <Content Include="Themes\Winstrap\fonts\font-awesome\FontAwesome.otf" />
     <Content Include="Themes\Winstrap\IFramePage.master" />
     <Content Include="Themes\Winstrap\BlogDocs.master" />
+    <Content Include="Themes\Winstrap\ComingSoon.master" />
     <Content Include="Themes\Default\ThemeMaster.master" />
     <Content Include="Themes\Default\StandardPage.master" />
     <Content Include="Themes\Default\metro-bootstrap\variables.less" />
@@ -1943,6 +1982,10 @@
     <Content Include="Themes\Winstrap\sass\custom\_tags.scss" />
     <Content Include="Themes\Winstrap\sass\custom\_blog.scss" />
     <Content Include="Themes\Winstrap\sass\custom\_code-snippets.scss" />
+    <Content Include="Themes\Winstrap\js\mb-comingsoon\js\jquery.mb-comingsoon.min.js.map" />
+    <Content Include="Themes\Winstrap\SingleSlideTest.master" />
+    <Content Include="Themes\Winstrap\js\mbslider\LICENSE.md" />
+    <Content Include="Themes\Winstrap\js\mbslider\README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -4,21 +4,21 @@
 	<link href="/Themes/Winstrap/js/bxslider/jquery.bxslider.min.css" rel="stylesheet" />
 	<link href="/Themes/Winstrap/css/font-awesome.min.css" rel="stylesheet" />
 	<link href="/Themes/Winstrap/css/animate_custom.css" rel="stylesheet" />
-	<link href="/Themes/Winstrap/css/winstrap-optional.css" rel="stylesheet" />
 	<link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/9.8.0/styles/vs.min.css" />
 	<script src="//cdn.jsdelivr.net/highlight.js/9.8.0/highlight.min.js"></script>
+	<link href="/Themes/Winstrap/css/winstrap-optional.css" rel="stylesheet" />
 	<script>hljs.initHighlightingOnLoad();</script>
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
+	<asp:ContentPlaceHolder ID="head" runat="server">
+	</asp:ContentPlaceHolder>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Main" runat="server">
-    <!-- begin accesibility skip to nav skip content -->
-    <ul class="sr-only" id="top">
-        <li><a href="#nav" title="Skip to navigation" accesskey="n" class="sr-only-focusable">Skip to navigation</a>
-        </li>
-        <li><a href="#page" title="Skip to content" accesskey="c" class="sr-only-focusable">Skip to content</a></li>
-    </ul>
-	<nav class="navbar navbar-default navbar-fixed-top ">
+	<!-- begin accesibility skip to nav skip content -->
+	<ul class="sr-only" id="top">
+		<li><a href="#nav" title="Skip to navigation" accesskey="n" class="sr-only-focusable">Skip to navigation</a>
+		</li>
+		<li><a href="#page" title="Skip to content" accesskey="c" class="sr-only-focusable">Skip to content</a></li>
+	</ul>
+	<nav class="navbar navbar-default navbar-fixed-top " runat="server" id="HeaderNavbar" clientidmode="static" >
 			<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-global theme-dark color-accent">
 			<div class="<%= ContainerClass %>">
@@ -34,13 +34,13 @@
 
 		</div>
 	</nav>
-    <div id="page" class="clearfix">
-        <asp:ContentPlaceHolder ID="PageHeader" runat="server">
+	<div id="page" class="clearfix">
+		<asp:ContentPlaceHolder ID="PageHeader" runat="server">
 
-        </asp:ContentPlaceHolder>
-        <div class="<%= ContainerClass %>" id="main-content">
-            <asp:ContentPlaceHolder ID="Main_Content" runat="server"></asp:ContentPlaceHolder>
-				<footer>
+		</asp:ContentPlaceHolder>
+		<div class="<%= ContainerClass %>" id="main-content">
+			<asp:ContentPlaceHolder ID="Main_Content" runat="server"></asp:ContentPlaceHolder>
+				<footer runat="server" clientidmode="static" id="FooterNavbar">
 					<nav class="navbar navbar-default navbar-fixed-bottom">
 						<div class="navbar-footer navbar-global theme-dark color-accent">
 							<div class="<%= ContainerClass %>">
@@ -56,8 +56,8 @@
 						</div>
 					</nav>
 				</footer>
-        </div>
-    </div>
+		</div>
+	</div>
 	<a href="#top" class="back-to-top affix no-outline">
 		<i class="glyph glyph-up"></i>
 		<span class="sr-only">Torna all'inizio</span>
@@ -66,7 +66,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="PreScripts" runat="server">
 	<!-- Load prettyfy -->
 	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css"></script>
-    <asp:ContentPlaceHolder ID="PreScripts" runat="server"></asp:ContentPlaceHolder>
+	<asp:ContentPlaceHolder ID="PreScripts" runat="server"></asp:ContentPlaceHolder>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Scripts" runat="server">
 	<%--<script src="/Themes/Winstrap/js/bootstrap-custom.min.js"></script>--%>
@@ -74,5 +74,5 @@
 	<script src="/Themes/Winstrap/js/bxslider/jquery.bxslider.min.js"></script>
 	<%--<script src="/Themes/Winstrap/js/owlcarousel2/owl.carousel.js"></script>--%>
 	<script src="/Themes/Winstrap/js/custom.js"></script>
-    <asp:ContentPlaceHolder runat="server" ID="Scripts"></asp:ContentPlaceHolder>
+	<asp:ContentPlaceHolder runat="server" ID="Scripts"></asp:ContentPlaceHolder>
 </asp:Content>

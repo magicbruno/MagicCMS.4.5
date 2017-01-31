@@ -15,6 +15,7 @@ namespace $rootnamespace$.Themes.Winstrap
 		new protected void Page_Load(object sender, EventArgs e)
 		{
 			base.Page_Load(sender, e);
+			PlaceHolderVideo.DataBind();
 			int BlogPk = 0;
 			BlogPk = MagicPost.GetSpecialItem(MagicPostTypeInfo.Blog);
 			if (BlogPk > 0)

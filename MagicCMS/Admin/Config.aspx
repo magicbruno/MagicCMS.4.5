@@ -19,7 +19,7 @@
                     </div>
                 </div>
                 <div class="box-body">
-                    <table id="table-lang" class="table table-striped table-bordered">
+                    <table id="table-lang" class="table table-striped table-bordered"  style="width:100%" width="100%">
                         <thead>
                             <tr>
                                 <th>Id</th>

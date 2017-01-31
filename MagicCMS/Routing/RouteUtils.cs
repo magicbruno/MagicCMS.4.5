@@ -142,9 +142,9 @@ namespace MagicCMS.Routing
 		public static string GetVirtualPath(int postPk, string parentName)
 		{
 			string lang = "";
-			if (MagicLanguage.IsMultilanguage())
-				lang = (MagicSession.Current.CurrentLanguage == "default") ? "/" + MagicSession.Current.Config.TransSourceLangId : "/" + MagicSession.Current.CurrentLanguage;
-			return GetVirtualPath(postPk, parentName, lang);
+			//if (MagicLanguage.IsMultilanguage())
+			//	lang = (MagicSession.Current.CurrentLanguage == "default") ? "/" + MagicSession.Current.Config.TransSourceLangId : "/" + MagicSession.Current.CurrentLanguage;
+			return GetVirtualPath(postPk, parentName, "");
 		}
 
 		/// <summary>
@@ -164,8 +164,8 @@ namespace MagicCMS.Routing
 			//else
 			//	vp = lang + (String.IsNullOrEmpty(parentName) ? "" : "/" + parentName) + "/" + MagicIndex.GetTitle(postPk, MagicSession.Current.CurrentLanguage);
 			//return vp;
-			string title = MagicIndex.GetTitle(postPk, MagicSession.Current.CurrentLanguage);
-			return ComposePath(title, parentName, "");
+			string title = MagicIndex.GetTitle(postPk, lang);
+			return ComposePath(title, parentName, "",lang);
 		}
 
 		/// <summary>
@@ -177,9 +177,28 @@ namespace MagicCMS.Routing
 		/// <returns>System.String.</returns>
 		public static string ComposePath(string title, string parentName, string granParentName)
 		{
+			return ComposePath(title, parentName, granParentName, "");
+		}
+
+		/// <summary>
+		/// Composes the path.
+		/// </summary>
+		/// <param name="title">The title.</param>
+		/// <param name="parentName">Name of the parent.</param>
+		/// <param name="granParentName">Name of the gran parent.</param>
+		/// <param name="lang">The language.</param>
+		/// <returns>System.String.</returns>
+		public static string ComposePath(string title, string parentName, string granParentName, string lang)
+		{
 			string url = "";
+
+			if (String.IsNullOrEmpty(lang))
+			{
+				lang = (MagicSession.Current.CurrentLanguage == "default") ? MagicSession.Current.Config.TransSourceLangId : MagicSession.Current.CurrentLanguage;
+			}
 			if (MagicLanguage.IsMultilanguage())
-				url = (MagicSession.Current.CurrentLanguage == "default") ? "/" + MagicSession.Current.Config.TransSourceLangId : "/" + MagicSession.Current.CurrentLanguage;
+				url = "/" + lang;
+
 			url += String.IsNullOrEmpty(granParentName) ? "" : "/" + granParentName;
 			url += String.IsNullOrEmpty(parentName) ? "" : "/" + parentName;
 			url += "/" + title + "/";

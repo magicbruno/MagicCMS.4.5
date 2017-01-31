@@ -21,7 +21,7 @@
 					</div>
 				</div>
 				<div class="box-body">
-					<table id="log" class="table table-striped table-bordered table-hover dataTable" >
+					<table id="log" class="table table-striped table-bordered table-hover dataTable"  style="width:100%" width="100%">
 						<thead>
 							<tr>
 								<th><%= Master.Translate("Data") %></th>

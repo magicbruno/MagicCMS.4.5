@@ -179,7 +179,7 @@ namespace MagicCMS.Core
         {
             get
             {
-                return _transAuto && !(String.IsNullOrEmpty(TransClientId) || String.IsNullOrEmpty(TransSecretKey));
+                return _transAuto && !(/*String.IsNullOrEmpty(TransClientId) || */String.IsNullOrEmpty(TransSecretKey));
             }
             set
             {

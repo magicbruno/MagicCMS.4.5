@@ -22,6 +22,15 @@ namespace $rootnamespace$.Themes.Winstrap {
         protected global::System.Web.UI.WebControls.Repeater Repeater_tags;
         
         /// <summary>
+        /// Controllo PlaceHolderVideo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolderVideo;
+        
+        /// <summary>
         /// Controllo Repeater_related.
         /// </summary>
         /// <remarks>

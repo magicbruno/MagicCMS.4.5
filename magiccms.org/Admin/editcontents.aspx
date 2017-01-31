@@ -48,7 +48,7 @@
 				</div>
 				<div class="table-responsive">
 					<div class="box-body">
-						<table id="table_contenuti"  class="table table-striped table-bordered" >
+						<table id="table_contenuti"  class="table table-striped table-bordered" width="w100%" >
 							<thead>
 								<tr>
 									<th>Id</th>
@@ -400,12 +400,12 @@
 												<div class="form-group">
 													<div class="col-sm-12 text-center">
 														<button type="button" class="btn btn-primary btn-sm" data-action="submit">
-															Salva traduzione<% = TypeInfo.LabelTestoBreve %></button>
+															<% = Master.Translate("Salva traduzione") %></button>
 														<button type="button" <%# !CmsConfig.TransAuto ? "disabled" : ""  %> class="btn btn-info btn-sm"
 															data-action="translate">
-															Traduci con Bing<% = TypeInfo.LabelTestoBreve %></button>
+															<% = Master.Translate("Traduci con Bing")  %></button>
 														<button type="button" class="btn btn-danger btn-sm" data-action="delete-translation">
-															Elimina traduzione<% = TypeInfo.LabelTestoBreve %></button>
+															<% = Master.Translate("Elimina traduzione")  %></button>
 													</div>
 												</div>
 											</fieldset>

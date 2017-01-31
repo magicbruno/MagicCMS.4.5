@@ -27,16 +27,9 @@ namespace magiccms.org.Themes.Winstrap
 			{
 				MainNav.Controls.Add(navs);
 			}
+			// ContainerClass property define if the page layout is full width (page containing full width iframe) or not 
 			ContainerClass = ThePost.Tipo == MagicPostTypeInfo.CustomPage2 ? "container-fluid" : "container";
 
-			//MagicPost footerMenu = new MagicPost(CmsConfig.FooterMenu);
-			//if (footerMenu.Pk > 0) 
-			//{
-			//	MenuInfoCollection footerMenuIfos = new MenuInfoCollection(footerMenu, ThePost.Pk);
-			//	RepeaterLegals.DataSource = footerMenuIfos;
-			//	RepeaterLegals.DataBind();
-			
-			//}
 			int footerMenuId = CmsConfig.FooterMenu;
 			HtmlGenericControl footerNav = null;
 			if (footerMenuId > 0)

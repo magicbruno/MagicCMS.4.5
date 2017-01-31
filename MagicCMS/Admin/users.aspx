@@ -23,7 +23,7 @@
                     </div>
                 </div>
                 <div class="box-body">
-                    <table id="utenti" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                    <table id="utenti" class="table table-striped table-bordered"  style="width:100%" width="100%"">
                         <thead>
                             <tr>
                                 <th>Email</th>

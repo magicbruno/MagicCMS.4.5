@@ -228,6 +228,36 @@ namespace MagicCMS.Core
         }
 
 		/// <summary>
+		/// Gets the facebook application identifier.
+		/// </summary>
+		/// <value>The facebook application identifier.</value>
+		/// <remarks>If you want use Facebook API, you must provide an Application ID and a Secret Key.</remarks>
+		[ConfigurationProperty("FacebookApplicationID", DefaultValue = "", IsRequired = false)]
+		public string FacebookApplicationID
+		{
+			get
+			{
+				return this["FacebookApplicationID"] as string;
+			}
+		}
+
+		/// <summary>
+		/// Gets the Facebook secret key.
+		/// </summary>
+		/// <value>The Facebook secret key.</value>
+		/// <remarks>If you want use Facebook API, you must provide an Application ID and a Secret Key.</remarks>
+		[ConfigurationProperty("FacebookSecretKey", DefaultValue = "", IsRequired = false)]
+		public string FacebookSecretKey
+		{
+			get
+			{
+				return this["FacebookSecretKey"] as string;
+			}
+		}
+
+
+
+		/// <summary>
 		/// Gets the ckeditor CDN url.
 		/// </summary>
 		/// <value>The ckeditor CDN url.</value>

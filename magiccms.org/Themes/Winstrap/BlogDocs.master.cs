@@ -36,11 +36,13 @@ namespace magiccms.org.Themes.Winstrap
 				Repeater_Articles.DataBind();
 			}
 
-			MagicPost theHome = new MagicPost(CmsConfig.StartPage);
-			if (theHome.Pk > 0)
+			string fbAppID = MagicCMSConfiguration.GetConfig().FacebookApplicationID;
+			string fbSecret = MagicCMSConfiguration.GetConfig().FacebookSecretKey;
+			string fbAccessKey = "";
+			string fbPageName = ThePost.ExtraInfo2;
+			if (!(String.IsNullOrEmpty(fbAppID) || String.IsNullOrEmpty(fbSecret) || String.IsNullOrEmpty(fbPageName)))
 			{
-				string fbAccessKey = theHome.ExtraInfo;
-				string fbPageName = theHome.ExtraInfo2;
+				fbAccessKey = fbAppID + "|" + fbSecret;
 				try
 				{
 					FacebookPostCollection news = new FacebookPostCollection(fbAccessKey, fbPageName, 12);

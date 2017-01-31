@@ -44,6 +44,8 @@ namespace MagicCMS.Admin.Ajax
 
             AdmAuthentication admAut;
             AdmAccessToken token;
+			AzureAuthToken azureToken;
+
             int pk;
             string langid;
             string title, testoBreve, testoLungo, tags;
@@ -60,57 +62,85 @@ namespace MagicCMS.Admin.Ajax
             tags = context.Request["Tags"];
             translation = new MagicTranslation(pk, langid);
             term = context.Request["term"];
+			string authToken = "";
 
-            if (String.IsNullOrEmpty(myConfig.TransClientId) || String.IsNullOrEmpty(myConfig.TransSecretKey))
+            if (String.IsNullOrEmpty(myConfig.TransSecretKey))
             {
                 response.exitcode = 1;
                 response.success = false;
                 response.msg =  Localize.Translate("Necessario configurare una 'Client Secret Key' per utilizzare il motore di traduzione");
             }
-            else if (!String.IsNullOrEmpty(term))
-            {
-                try
-                {
-                    admAut = new AdmAuthentication(myConfig.TransClientId, myConfig.TransSecretKey);
-                    token = admAut.GetAccessToken();
-                    string headerValue = "Bearer " + token.access_token;
-                    // Translations
-                    response.data = TranslateMethod(headerValue, myConfig.TransSourceLangId, langid, term, "text/plain");
-                }
-                catch (Exception e)
-                {
-                    response.exitcode = 100;
-                    response.success = false;
-                    response.msg = e.Message;
-                }
-            }
-            else if (pk == 0 || String.IsNullOrEmpty(langid))
-            {
-                response.exitcode = 2;
-                response.success = false;
-                response.msg = Localize.Translate("Dati incoerenti. Per creare una traduzione bisogna prima salvare il post originale.");
-            }
-            else
-            {
-                try
-                {
-                    admAut = new AdmAuthentication(myConfig.TransClientId, myConfig.TransSecretKey);
-                    token = admAut.GetAccessToken();
-                    string headerValue = "Bearer " + token.access_token;
-                    // Translations
-                    translation.TranslatedTitle = TranslateMethod(headerValue, myConfig.TransSourceLangId, langid, title, "text/plain");
-                    translation.TranslatedTestoBreve = TranslateMethod(headerValue, myConfig.TransSourceLangId, langid, testoBreve, "text/html");
-                    translation.TranslatedTestoLungo = TranslateMethod(headerValue, myConfig.TransSourceLangId, langid, testoLungo, "text/html");
-                    translation.TranslatedTags = TranslateMethod(headerValue,myConfig.TransSourceLangId, langid, tags, "text/plain");
-                    response.data = translation;
-                }
-                catch (Exception e)
-                {
-                    response.exitcode = 100;
-                    response.success = false;
-                    response.msg = e.Message;
-                }
-            }
+			else if (String.IsNullOrEmpty(myConfig.TransClientId))
+			{
+				try
+				{
+					azureToken = new AzureAuthToken(myConfig.TransSecretKey);
+					authToken = azureToken.GetAccessToken();
+
+				}
+				catch (Exception e)
+				{
+					response.exitcode = 2;
+					response.success = false;
+					response.msg = e.Message;
+				}
+			}
+			else 
+			{
+				try
+				{
+					admAut = new AdmAuthentication(myConfig.TransClientId, myConfig.TransSecretKey);
+					token = admAut.GetAccessToken();
+					authToken = "Bearer " + token.access_token;
+				}
+				catch (Exception e)
+				{
+					response.exitcode = 2;
+					response.success = false;
+					response.msg = e.Message;
+				}
+			}
+			if (!String.IsNullOrEmpty(authToken))
+			{
+				if (!String.IsNullOrEmpty(term))
+				{
+					try
+					{
+						// Translations
+						response.data = TranslateMethod(authToken, myConfig.TransSourceLangId, langid, term, "text/plain");
+					}
+					catch (Exception e)
+					{
+						response.exitcode = 3;
+						response.success = false;
+						response.msg = e.Message;
+					}
+				}
+				else if (pk == 0 || String.IsNullOrEmpty(langid))
+				{
+					response.exitcode = 4;
+					response.success = false;
+					response.msg = Localize.Translate("Dati incoerenti. Per creare una traduzione bisogna prima salvare il post originale.");
+				}
+				else
+				{
+					try
+					{
+						// Translations
+						translation.TranslatedTitle = TranslateMethod(authToken, myConfig.TransSourceLangId, langid, title, "text/plain");
+						translation.TranslatedTestoBreve = TranslateMethod(authToken, myConfig.TransSourceLangId, langid, testoBreve, "text/html");
+						translation.TranslatedTestoLungo = TranslateMethod(authToken, myConfig.TransSourceLangId, langid, testoLungo, "text/html");
+						translation.TranslatedTags = TranslateMethod(authToken, myConfig.TransSourceLangId, langid, tags, "text/plain");
+						response.data = translation;
+					}
+					catch (Exception e)
+					{
+						response.exitcode = 100;
+						response.success = false;
+						response.msg = e.Message;
+					}
+				}
+			}
  
 
             System.Web.Script.Serialization.JavaScriptSerializer serializer = new System.Web.Script.Serialization.JavaScriptSerializer();

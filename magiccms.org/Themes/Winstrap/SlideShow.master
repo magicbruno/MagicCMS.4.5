@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <asp:Repeater ID="RepeaterSequenza" runat="server" ItemType="MagicCMS.Core.MagicPost">
                 <HeaderTemplate>
-                    <ul class="bxSlider fade">
+                    <ul class="mbslider fade">
                 </HeaderTemplate>
                 <ItemTemplate>
                     <li id='slide_<%# Item.Pk %>' class="out">

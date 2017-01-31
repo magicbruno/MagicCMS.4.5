@@ -1,9 +1,8 @@
 ﻿<%@ Master Language="C#" MasterPageFile="~/SiteMaster.Master" AutoEventWireup="true" CodeBehind="MasterTheme.master.cs" Inherits="magiccms.org.Themes.Winstrap.MasterTheme" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-	<link href="/Themes/Winstrap/js/bxslider/jquery.bxslider.min.css" rel="stylesheet" />
+	<link href="/Themes/Winstrap/js/mbslider/jquery.mbSlider.min.css" rel="stylesheet" />
 	<link href="/Themes/Winstrap/css/font-awesome.min.css" rel="stylesheet" />
-	<link href="/Themes/Winstrap/css/animate_custom.css" rel="stylesheet" />
 	<link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/9.8.0/styles/vs.min.css" />
 	<script src="//cdn.jsdelivr.net/highlight.js/9.8.0/highlight.min.js"></script>
 	<link href="/Themes/Winstrap/css/winstrap-optional.css" rel="stylesheet" />
@@ -18,7 +17,7 @@
 		</li>
 		<li><a href="#page" title="Skip to content" accesskey="c" class="sr-only-focusable">Skip to content</a></li>
 	</ul>
-	<nav class="navbar navbar-default navbar-fixed-top ">
+	<nav class="navbar navbar-default navbar-fixed-top " runat="server" id="HeaderNavbar" clientidmode="static" >
 			<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-global theme-dark color-accent">
 			<div class="<%= ContainerClass %>">
@@ -40,7 +39,7 @@
 		</asp:ContentPlaceHolder>
 		<div class="<%= ContainerClass %>" id="main-content">
 			<asp:ContentPlaceHolder ID="Main_Content" runat="server"></asp:ContentPlaceHolder>
-				<footer>
+				<footer runat="server" clientidmode="static" id="FooterNavbar">
 					<nav class="navbar navbar-default navbar-fixed-bottom">
 						<div class="navbar-footer navbar-global theme-dark color-accent">
 							<div class="<%= ContainerClass %>">
@@ -71,7 +70,7 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="Scripts" runat="server">
 	<%--<script src="/Themes/Winstrap/js/bootstrap-custom.min.js"></script>--%>
 	<script src="/Themes/Winstrap/js/bootstrap.min.js"></script>
-	<script src="/Themes/Winstrap/js/bxslider/jquery.bxslider.min.js"></script>
+	<script src="/Themes/Winstrap/js/mbslider/jquery.mbSlider.min.js"></script>
 	<%--<script src="/Themes/Winstrap/js/owlcarousel2/owl.carousel.js"></script>--%>
 	<script src="/Themes/Winstrap/js/custom.js"></script>
 	<asp:ContentPlaceHolder runat="server" ID="Scripts"></asp:ContentPlaceHolder>

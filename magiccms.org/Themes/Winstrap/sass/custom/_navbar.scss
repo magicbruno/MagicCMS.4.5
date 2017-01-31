@@ -8,6 +8,17 @@ body {
   min-height: $navbar-footer-height;
 }
 
+.dropdown-toggle::after {
+    content: " ";
+    height: 0;
+    position: absolute;
+    width: 0;
+    border: 4px solid transparent;
+    border-top-color: #fff;
+    margin-left: 6px;
+    margin-top: 9px;
+}
+
 .navbar-footer {
   height: $navbar-footer-height;
   padding: 0;

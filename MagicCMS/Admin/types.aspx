@@ -29,7 +29,7 @@
                 </div>
                 <div class="box-body">
                     <div class="table-responsive">
-                        <table id="tipi" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                        <table id="tipi" class="table table-striped table-bordered" style="width:100%" width="100%">
                             <thead>
                                 <tr>
                                     <th>Id</th>

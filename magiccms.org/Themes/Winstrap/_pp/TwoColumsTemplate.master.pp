@@ -1,0 +1,39 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Themes/Winstrap/MasterTheme.master" AutoEventWireup="true" CodeBehind="TwoColumsTemplate.master.cs" Inherits="$rootnamespace$.Themes.Winstrap.TwoColumsTemplate" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+	<asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="PageHeader" runat="server">
+	<asp:ContentPlaceHolder ID="PageHeader" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="Main_Content" runat="server">
+	<div class="row">
+		<div class="col-md-16">
+			<asp:ContentPlaceHolder ID="Main_Content" runat="server"></asp:ContentPlaceHolder>
+		</div>
+		<aside class="col-md-7 col-md-offset-1">
+			<div class="tags">
+				<asp:Repeater ID="Repeater_tags" runat="server" ItemType="System.String">
+					<HeaderTemplate>
+						<h3>Tags</h3>
+						<ul class="list-inline">
+					</HeaderTemplate>
+					<ItemTemplate>
+						<li>
+							<a href="<%# !String.IsNullOrEmpty(TagSearchUrl) ? TagSearchUrl + "q=" + Item + "/" : "#" %>" class="label label-info"><%# Item %></a>
+						</li>
+					</ItemTemplate>
+					<FooterTemplate>
+						</ul>
+					</FooterTemplate>
+				</asp:Repeater>
+			</div>
+			<asp:ContentPlaceHolder ID="Aside_content" runat="server"></asp:ContentPlaceHolder>
+		</aside>
+	</div>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="PreScripts" runat="server">
+	<asp:ContentPlaceHolder ID="PreScripts" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content5" ContentPlaceHolderID="Scripts" runat="server">
+	<asp:ContentPlaceHolder ID="Scripts" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>

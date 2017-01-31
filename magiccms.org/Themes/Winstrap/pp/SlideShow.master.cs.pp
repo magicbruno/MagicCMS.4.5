@@ -19,30 +19,21 @@ namespace $rootnamespace$.Themes.Winstrap
 			RepeaterSequenza.DataSource = slides;
 			RepeaterSequenza.DataBind();
 
-			FacebookClient client = new FacebookClient(ThePost.ExtraInfo);
+			string FbPage = ThePost.ExtraInfo2;
+			string FbAppID = MagicCMSConfiguration.GetConfig().FacebookApplicationID;
+			string FbSecret = MagicCMSConfiguration.GetConfig().FacebookSecretKey;
+			string FbAccessToken = FbAppID + "|" + FbSecret;
 
-			Facebook.JsonObject postList = client.Get(ThePost.ExtraInfo2 + "/feed?fields=id,from,name,message,created_time,story,description,link,permalink_url,picture,object_id") as JsonObject;
-			string strJson = postList.ToString();
-
-			if (postList.ContainsKey("data"))
+			if (!(String.IsNullOrEmpty(FbAppID) || String.IsNullOrEmpty(FbSecret) || String.IsNullOrEmpty(FbPage)))
 			{
-				int maxPost = 0; 
-				JsonArray data = postList["data"] as JsonArray;
-				FacebookPostCollection fpc = new FacebookPostCollection();
-
-				for (int i = 0; i < data.Count && maxPost < 7; i++)
-				{
-					FacebookPost fp = new FacebookPost(data[i] as JsonObject);
-					fpc.Add(fp);
-					maxPost++;
-
-				}
+				FacebookPostCollection fpc = new FacebookPostCollection(FbAccessToken, FbPage,7);
 				if (fpc.Count > 0)
 				{
 					Repeater_fb.DataSource = fpc;
 					Repeater_fb.DataBind();
 				}
 			}
+
 		}
 	}
 }

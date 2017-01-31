@@ -1,9 +1,9 @@
-.bx-wrapper {
+.mb-wrapper {
   @include box-shadow (none);
   background-color: transparent;
   border-color: transparent;
 }
-.bx-viewport {
+.mb-viewport {
   //height: auto !important;
   box-sizing: content-box;
   padding: 20px 0;

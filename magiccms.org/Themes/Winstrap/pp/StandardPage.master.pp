@@ -26,7 +26,7 @@
 	</div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="Main_Content" runat="server">
-	<asp:PlaceHolder ID="PlaceHolderVideo" Visible=<%= ThePost.Tipo == MagicCMS.Core.MagicPostTypeInfo.PageWithVideo %> runat="server">
+	<asp:PlaceHolder ID="PlaceHolderVideo" Visible="<%# ThePost.Tipo == MagicCMS.Core.MagicPostTypeInfo.PageWithVideo %>" runat="server">
 		<div class="embed-responsive  <%= String.IsNullOrEmpty(ThePost.ExtraInfo2) ? "embed-responsive-16by9" : ThePost.ExtraInfo2 %>">
 			<%# ThePost.ExtraInfo %>
 		</div>
