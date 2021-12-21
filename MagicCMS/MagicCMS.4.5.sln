@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicCMS.4.5", "MagicCMS.4.5.csproj", "{5C3DDDCD-F8FD-4D8F-93B3-EB8A74F686A9}"
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Help", "..\Help\", "{B0B146FF-8AE5-4D2F-A89B-B87278FB03ED}"
 	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv3.5"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
 		Debug.AspNetCompiler.VirtualPath = "/Help"
 		Debug.AspNetCompiler.PhysicalPath = "..\Help\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Help\"
@@ -21,6 +23,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Help", "..\Help\", "{B0B146
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "60731"
+		SlnRelativePath = "..\Help\"
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "magiccms.org", "..\magiccms.org\magiccms.org.csproj", "{18A9C99A-ED71-443E-97FD-6143670DA1E8}"
@@ -46,5 +49,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {66D9D832-E79D-44E6-96A2-C70050F0A82B}
 	EndGlobalSection
 EndGlobal

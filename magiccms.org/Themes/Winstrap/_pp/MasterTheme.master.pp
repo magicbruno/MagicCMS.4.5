@@ -1,9 +1,8 @@
 ﻿<%@ Master Language="C#" MasterPageFile="~/SiteMaster.Master" AutoEventWireup="true" CodeBehind="MasterTheme.master.cs" Inherits="$rootnamespace$.Themes.Winstrap.MasterTheme" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-	<link href="/Themes/Winstrap/js/bxslider/jquery.bxslider.min.css" rel="stylesheet" />
+	<link href="/Themes/Winstrap/js/mbslider/jquery.mbSlider.min.css" rel="stylesheet" />
 	<link href="/Themes/Winstrap/css/font-awesome.min.css" rel="stylesheet" />
-	<link href="/Themes/Winstrap/css/animate_custom.css" rel="stylesheet" />
 	<link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/9.8.0/styles/vs.min.css" />
 	<script src="//cdn.jsdelivr.net/highlight.js/9.8.0/highlight.min.js"></script>
 	<link href="/Themes/Winstrap/css/winstrap-optional.css" rel="stylesheet" />
@@ -71,7 +70,7 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="Scripts" runat="server">
 	<%--<script src="/Themes/Winstrap/js/bootstrap-custom.min.js"></script>--%>
 	<script src="/Themes/Winstrap/js/bootstrap.min.js"></script>
-	<script src="/Themes/Winstrap/js/bxslider/jquery.bxslider.min.js"></script>
+	<script src="/Themes/Winstrap/js/mbslider/jquery.mbSlider.min.js"></script>
 	<%--<script src="/Themes/Winstrap/js/owlcarousel2/owl.carousel.js"></script>--%>
 	<script src="/Themes/Winstrap/js/custom.js"></script>
 	<asp:ContentPlaceHolder runat="server" ID="Scripts"></asp:ContentPlaceHolder>

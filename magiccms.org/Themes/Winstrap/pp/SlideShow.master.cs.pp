@@ -12,6 +12,7 @@ namespace $rootnamespace$.Themes.Winstrap
 {
 	public partial class SlideShow : MagicCMS.PageBase.MasterTheme
 	{
+		public bool FbColumn { get; set; }
 		new protected void Page_Load(object sender, EventArgs e)
 		{
 			base.Page_Load(sender, e);
@@ -23,12 +24,13 @@ namespace $rootnamespace$.Themes.Winstrap
 			string FbAppID = MagicCMSConfiguration.GetConfig().FacebookApplicationID;
 			string FbSecret = MagicCMSConfiguration.GetConfig().FacebookSecretKey;
 			string FbAccessToken = FbAppID + "|" + FbSecret;
-
+			FbColumn = false;
 			if (!(String.IsNullOrEmpty(FbAppID) || String.IsNullOrEmpty(FbSecret) || String.IsNullOrEmpty(FbPage)))
 			{
 				FacebookPostCollection fpc = new FacebookPostCollection(FbAccessToken, FbPage,7);
 				if (fpc.Count > 0)
 				{
+					FbColumn = true;
 					Repeater_fb.DataSource = fpc;
 					Repeater_fb.DataBind();
 				}

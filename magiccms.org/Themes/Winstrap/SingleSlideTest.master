@@ -5,8 +5,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="PageHeader" runat="server">
 	<div class="jumbotron theme-alt">
 		<div class="container-fluid">
-			<ul class="bxSlider fade">
-				<li id='slide_<%= ThePost.Pk %>' class="out">
+			<ul class="mbslider fade">
+				<li id='slide_<%= ThePost.Pk %>' class="out" <%= ThePost.Altezza > 0 ? "data-pauseafterin=" + ThePost.Altezza.ToString() : "" %> 
+						<%= ThePost.Larghezza > 0 ? "data-pausebeforeout=" + ThePost.Larghezza.ToString() : "" %>>
 					<%= ThePost.TestoBreve_RT%>
 				</li>
 			</ul>
@@ -23,7 +24,7 @@
 			$(window).on('load', function () {
 				var $slideElement = $('#slide_<%= ThePost.Pk %>');
 				setTimeout(function () {
-					$('.bxSlider').removeClass('fade');
+					$('.mbslider').removeClass('fade');
 				}, 1500);
 				$slideElement
 					.removeClass('out')

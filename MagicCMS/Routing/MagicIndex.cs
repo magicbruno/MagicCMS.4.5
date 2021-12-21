@@ -192,7 +192,11 @@ namespace MagicCMS.Routing
 		#endregion
 
 		#region Public Methods
-
+		/*
+		 ================= TO DO ==================
+		 Controllare che gli elementi salvati non 
+		 appartengano ai tipi esclusi dall'indicizzazione
+		*/
 		/// <summary>
 		/// Saves MagicIndex Entry.
 		/// </summary>
