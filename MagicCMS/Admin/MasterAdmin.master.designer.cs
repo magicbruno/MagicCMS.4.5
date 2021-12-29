@@ -1,17 +1,19 @@
 ﻿//------------------------------------------------------------------------------
 // <generato automaticamente>
-//     Codice generato da uno strumento.
+//     Questo codice è stato generato da uno strumento.
 //
 //     Le modifiche a questo file possono causare un comportamento non corretto e verranno perse se
 //     il codice viene rigenerato. 
 // </generato automaticamente>
 //------------------------------------------------------------------------------
 
-namespace MagicCMS.Admin {
-    
-    
-    public partial class MasterAdmin {
-        
+namespace MagicCMS.Admin
+{
+
+
+    public partial class MasterAdmin
+    {
+
         /// <summary>
         /// Controllo head.
         /// </summary>
@@ -20,7 +22,7 @@ namespace MagicCMS.Admin {
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
-        
+
         /// <summary>
         /// Controllo sitename.
         /// </summary>
@@ -29,7 +31,7 @@ namespace MagicCMS.Admin {
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl sitename;
-        
+
         /// <summary>
         /// Controllo LinkButton_allowedTypes.
         /// </summary>
@@ -38,7 +40,7 @@ namespace MagicCMS.Admin {
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton LinkButton_allowedTypes;
-        
+
         /// <summary>
         /// Controllo LinkButton_logout.
         /// </summary>
@@ -47,7 +49,7 @@ namespace MagicCMS.Admin {
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton LinkButton_logout;
-        
+
         /// <summary>
         /// Controllo BL_containers.
         /// </summary>
@@ -56,7 +58,7 @@ namespace MagicCMS.Admin {
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl BL_containers;
-        
+
         /// <summary>
         /// Controllo BL_content.
         /// </summary>
@@ -65,7 +67,7 @@ namespace MagicCMS.Admin {
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl BL_content;
-        
+
         /// <summary>
         /// Controllo HeaderContent.
         /// </summary>
@@ -74,7 +76,7 @@ namespace MagicCMS.Admin {
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder HeaderContent;
-        
+
         /// <summary>
         /// Controllo MainContent.
         /// </summary>
@@ -83,7 +85,7 @@ namespace MagicCMS.Admin {
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
-        
+
         /// <summary>
         /// Controllo recaptchaVerify.
         /// </summary>
@@ -92,7 +94,7 @@ namespace MagicCMS.Admin {
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl recaptchaVerify;
-        
+
         /// <summary>
         /// Controllo Scripts.
         /// </summary>

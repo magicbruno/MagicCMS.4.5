@@ -1,0 +1,26 @@
+[
+  {
+    "outputFileName": "Admin/Scripts/app.min.js",
+    "inputFiles": [
+      "Admin/Scripts/app.js"
+    ]
+  },
+  {
+    "outputFileName": "Admin/Scripts/app.js",
+    "inputFiles": [
+      "Admin/Scripts/admin/application.js",
+      "Admin/Scripts/admin/checkboxed-types.js",
+      "Admin/Scripts/admin/checkSession.js",
+      "Admin/Scripts/admin/filebrowser.js",
+      "Admin/Scripts/admin/filebrowser_win.js",
+      "Admin/Scripts/admin/geolocation.js",
+      "Admin/Scripts/admin/jstree.mb.selectnode.js",
+      "Admin/Scripts/admin/light-box.js",
+      "Admin/Scripts/admin/magiccms.js",
+      "Admin/Scripts/admin/modal.shift.fix.js",
+      "Admin/Scripts/admin/PupulateMagicIndex.js",
+      "Admin/Scripts/admin/pwd.js",
+      "Admin/Scripts/admin/ResetPassword.js"
+    ]
+  }
+]

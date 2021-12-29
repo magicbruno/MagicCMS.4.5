@@ -146,6 +146,7 @@
 			<!-- Main content -->
 			<section class="content">
 				<asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+				<input type="text" style="height:0; width:0; position: relative; left: -1000px;" value="username" />
 			</section>
 			<!-- /.content -->
 			<div class="loading"></div>
@@ -199,6 +200,7 @@
 					<h4 class="modal-title" id="myModalLabel"><%= Translate("Cambia password") %></h4>
 				</div>
 				<div class="modal-body">
+					
 					<div class="form-horizontal" role="form">
 						<div class="form-group">
 							<div class="col-md-12">

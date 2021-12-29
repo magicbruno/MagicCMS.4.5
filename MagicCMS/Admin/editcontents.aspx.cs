@@ -37,14 +37,22 @@ namespace MagicCMS.Admin
         {
             get
             {
-                return (ThePost.DataPubblicazione.HasValue ? ThePost.DataPubblicazione.Value.ToString("o") : "");
+                if(ThePost.DataPubblicazione.HasValue)
+                {
+                    ThePost.DataPubblicazione = ThePost.DataPubblicazione.Value.AddHours(12 - ThePost.DataPubblicazione.Value.Hour);
+                }
+                return (ThePost.DataPubblicazione.HasValue ? ThePost.DataPubblicazione.Value.ToString("yyyy-MM-ddTHH:mm:ss.fffffffK") : "");
             }
         }
         public string DataScadenzaStr
         {
             get
             {
-                return (ThePost.DataScadenza.HasValue ? ThePost.DataScadenza.Value.ToString("o") : "");
+                if (ThePost.DataScadenza.HasValue)
+                {
+                    ThePost.DataScadenza = ThePost.DataScadenza.Value.AddHours(12 - ThePost.DataScadenza.Value.Hour);
+                }
+                return (ThePost.DataScadenza.HasValue ? ThePost.DataScadenza.Value.ToString("yyyy-MM-ddTHH:mm:ss.fffffffK") : "");
             }
         }
         public string PostEditTitle { get; set; }

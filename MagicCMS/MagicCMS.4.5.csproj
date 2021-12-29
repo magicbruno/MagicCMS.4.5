@@ -21,6 +21,7 @@
     <IISExpressUseClassicPipelineMode />
     <TargetFrameworkProfile />
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -98,6 +99,17 @@
     <Content Include="Admin\Ajax\TransDictionaryPaginated.ashx" />
     <Content Include="Admin\Ajax\EditUserProfile.ashx" />
     <Content Include="Admin\Ajax\PopulateMagicIndex.ashx" />
+    <Content Include="Admin\assets-2022\css\AdminLTE.css" />
+    <Content Include="Admin\less\magiccms.css">
+      <DependentUpon>magiccms.less</DependentUpon>
+    </Content>
+    <Content Include="Admin\less\magiccms.min.css">
+      <DependentUpon>magiccms.css</DependentUpon>
+    </Content>
+    <Content Include="Admin\Scripts\app.js" />
+    <Content Include="Admin\Scripts\app.min.js">
+      <DependentUpon>app.js</DependentUpon>
+    </Content>
     <Content Include="userfiles\image\fb-manifest.png" />
     <Content Include="Admin\Ajax\PreviewPost.ashx" />
     <Content Include="..\..\..\..\..\visual studio 2017\Projects\Cabianca\Cabianca\Themes\cabianca\HomeMaster.master">
@@ -253,12 +265,6 @@
     <None Include="Admin\Scripts\admin\light-box.js" />
     <Content Include="Admin\Scripts\admin\PupulateMagicIndex.js" />
     <Content Include="Admin\Scripts\admin\pwd.js" />
-    <Content Include="Admin\Scripts\app.js">
-      <DependentUpon>app.js.bundle</DependentUpon>
-    </Content>
-    <Content Include="Admin\Scripts\app.min.js">
-      <DependentUpon>app.js.bundle</DependentUpon>
-    </Content>
     <None Include="Admin\Scripts\admin\application.js" />
     <None Include="Admin\Scripts\admin\filebrowser.js" />
     <Content Include="Admin\Scripts\admin\jstree.mb.selectnode.js" />
@@ -678,12 +684,6 @@
     <Content Include="Admin\Scripts\plugins\CodeMirror\theme\yeti.css" />
     <Content Include="Admin\Scripts\plugins\CodeMirror\theme\zenburn.css" />
     <Content Include="Admin\Scripts\plugins\custom\jquery.sidebar.tree.js" />
-    <None Include="Admin\Scripts\app.js.bundle">
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="Admin\Scripts\app.min.js.map">
-      <DependentUpon>app.js.bundle</DependentUpon>
-    </Content>
     <Content Include="Admin\Scripts\plugins\ckeditor\plugins\fontawesome\font-awesome\fonts\fontawesome-webfont.eot" />
     <Content Include="Admin\Scripts\plugins\ckeditor\plugins\fontawesome\font-awesome\fonts\fontawesome-webfont.ttf" />
     <Content Include="Admin\Scripts\plugins\ckeditor\plugins\fontawesome\font-awesome\fonts\fontawesome-webfont.woff" />
@@ -1357,6 +1357,11 @@
     <Content Include="Admin\fonts\weblysleekuisl-webfont.woff2" />
     <Content Include="MagicCMS.4.5.nuspec" />
     <Content Include="Admin\Session\SessionRefresh.ashx" />
+    <None Include="bundleconfig.json" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
     <None Include="Properties\PublishProfiles\IngegneriRiuniti.pubxml" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
