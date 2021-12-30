@@ -100,21 +100,176 @@
     <Content Include="Admin\Ajax\EditUserProfile.ashx" />
     <Content Include="Admin\Ajax\PopulateMagicIndex.ashx" />
     <Content Include="Admin\assets-2022\css\AdminLTE.css" />
+    <Content Include="Admin\assets-2022\css\bootstrap\bootstrap-grid.css" />
+    <Content Include="Admin\assets-2022\css\bootstrap\bootstrap-grid.min.css" />
+    <Content Include="Admin\assets-2022\css\bootstrap\bootstrap-reboot.css" />
+    <Content Include="Admin\assets-2022\css\bootstrap\bootstrap-reboot.min.css" />
+    <Content Include="Admin\assets-2022\css\bootstrap\bootstrap.css" />
+    <Content Include="Admin\assets-2022\css\bootstrap\bootstrap.min.css" />
+    <Content Include="Admin\assets-2022\css\font-awesome.css" />
+    <Content Include="Admin\assets-2022\css\font-awesome.min.css">
+      <DependentUpon>font-awesome.css</DependentUpon>
+    </Content>
+    <Content Include="Admin\assets-2022\css\iCheck\all.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\flat\_all.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\flat\aero.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\flat\aero%402x.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\flat\aero.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\flat\blue.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\flat\blue%402x.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\flat\blue.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\flat\flat.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\flat\flat%402x.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\flat\flat.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\flat\green.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\flat\green%402x.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\flat\green.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\flat\grey.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\flat\grey%402x.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\flat\grey.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\flat\orange%402x.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\flat\orange.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\flat\orange.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\flat\pink.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\flat\pink%402x.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\flat\pink.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\flat\purple.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\flat\purple%402x.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\flat\purple.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\flat\red.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\flat\red%402x.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\flat\red.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\flat\yellow.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\flat\yellow%402x.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\flat\yellow.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\futurico\futurico.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\futurico\futurico.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\futurico\futurico%402x.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\line\_all.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\line\aero.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\line\blue.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\line\green.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\line\grey.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\line\line.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\line\line.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\line\line%402x.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\line\orange.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\line\pink.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\line\purple.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\line\red.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\line\yellow.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\minimal\aero%402x.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\minimal\aero.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\minimal\aero.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\minimal\blue%402x.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\minimal\blue.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\minimal\blue.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\minimal\green%402x.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\minimal\green.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\minimal\green.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\minimal\grey%402x.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\minimal\grey.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\minimal\grey.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\minimal\minimal%402x.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\minimal\minimal.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\minimal\minimal.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\minimal\orange%402x.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\minimal\orange.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\minimal\orange.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\minimal\pink%402x.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\minimal\pink.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\minimal\pink.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\minimal\purple%402x.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\minimal\purple.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\minimal\purple.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\minimal\red%402x.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\minimal\red.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\minimal\red.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\minimal\yellow%402x.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\minimal\yellow.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\minimal\yellow.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\minimal\_all.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\polaris\polaris.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\polaris\polaris.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\polaris\polaris%402x.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\square\_all.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\square\aero.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\square\aero.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\square\aero%402x.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\square\blue.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\square\blue.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\square\blue%402x.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\square\green.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\square\green.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\square\green%402x.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\square\grey.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\square\grey.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\square\grey%402x.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\square\orange.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\square\orange.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\square\orange%402x.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\square\pink.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\square\pink.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\square\pink%402x.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\square\purple.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\square\purple.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\square\purple%402x.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\square\red.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\square\red.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\square\red%402x.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\square\square.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\square\square.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\square\square%402x.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\square\yellow.css" />
+    <Content Include="Admin\assets-2022\css\iCheck\square\yellow.png" />
+    <Content Include="Admin\assets-2022\css\iCheck\square\yellow%402x.png" />
+    <Content Include="Admin\assets-2022\css\magiccms.css" />
+    <Content Include="Admin\assets-2022\css\magiccms.min.css">
+      <DependentUpon>magiccms.css</DependentUpon>
+    </Content>
+    <Content Include="Admin\assets-2022\css\main-new.css" />
+    <Content Include="Admin\assets-2022\css\main-new.min.css">
+      <DependentUpon>main-new.css</DependentUpon>
+    </Content>
+    <Content Include="Admin\assets-2022\css\main.css" />
+    <Content Include="Admin\assets-2022\css\main.min.css">
+      <DependentUpon>main.css</DependentUpon>
+    </Content>
+    <Content Include="Admin\assets-2022\datatables.net\datatables.css" />
+    <Content Include="Admin\assets-2022\datatables.net\datatables.js" />
+    <Content Include="Admin\assets-2022\datatables.net\datatables.min.css" />
+    <Content Include="Admin\assets-2022\datatables.net\datatables.min.js" />
+    <Content Include="Admin\css\main.min.css">
+      <DependentUpon>main.css</DependentUpon>
+    </Content>
     <Content Include="Admin\less\magiccms.css">
       <DependentUpon>magiccms.less</DependentUpon>
     </Content>
     <Content Include="Admin\less\magiccms.min.css">
       <DependentUpon>magiccms.css</DependentUpon>
     </Content>
+    <Content Include="Admin\less\main-new.css">
+      <DependentUpon>main-new.less</DependentUpon>
+    </Content>
+    <Content Include="Admin\less\main-new.min.css">
+      <DependentUpon>main-new.css</DependentUpon>
+    </Content>
     <Content Include="Admin\Scripts\app.js" />
     <Content Include="Admin\Scripts\app.min.js">
       <DependentUpon>app.js</DependentUpon>
     </Content>
+    <Content Include="Admin\Scripts\jquery\dist\jquery.js" />
+    <Content Include="Admin\Scripts\jquery\dist\jquery.min.js" />
+    <Content Include="Admin\Scripts\jquery\dist\jquery.slim.js" />
+    <Content Include="Admin\Scripts\jquery\dist\jquery.slim.min.js" />
     <Content Include="userfiles\image\fb-manifest.png" />
     <Content Include="Admin\Ajax\PreviewPost.ashx" />
     <Content Include="..\..\..\..\..\visual studio 2017\Projects\Cabianca\Cabianca\Themes\cabianca\HomeMaster.master">
       <Link>HomeMaster.master</Link>
     </Content>
+    <Content Include="Admin\assets-2022\css\bootstrap\bootstrap-grid.min.map" />
+    <Content Include="Admin\assets-2022\css\bootstrap\bootstrap-reboot.min.map" />
+    <Content Include="Admin\assets-2022\css\bootstrap\bootstrap.min.map" />
     <None Include="Admin\css\datatable\datatable_bundle.css.bundle" />
     <Content Include="Admin\Config.aspx" />
     <None Include="Admin\css\iCheck\all.css" />
@@ -258,6 +413,8 @@
     <None Include="Admin\less\magiccms.less" />
     <Content Include="Admin\log.aspx" />
     <Content Include="Admin\MasterAdmin.master" />
+    <Content Include="Admin\less\main-new.less" />
+    <Content Include="Admin\less\main.less" />
     <None Include="Admin\Scripts\admin\checkboxed-types.js" />
     <None Include="Admin\Scripts\admin\checkSession.js" />
     <Content Include="Admin\Scripts\admin\filebrowser_win.js" />
@@ -271,6 +428,8 @@
     <None Include="Admin\Scripts\admin\magiccms.js" />
     <Content Include="Admin\Scripts\admin\modal.shift.fix.js" />
     <None Include="Admin\Scripts\admin\ResetPassword.js" />
+    <Content Include="Admin\Scripts\jquery\dist\jquery.min.map" />
+    <Content Include="Admin\Scripts\jquery\dist\jquery.slim.min.map" />
     <None Include="Admin\Scripts\plugins\bootstrap-growl\bootstrap-growl.js" />
     <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codemirror\css\codemirror.min.css" />
     <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codemirror\css\show-hint.css" />
@@ -745,8 +904,6 @@
     <None Include="Admin\Scripts\plugins\bootstrap\tooltip.js" />
     <None Include="Admin\Scripts\plugins\bootstrap\transition.js" />
     <Content Include="Admin\css\datatable\bootstrap\3\dataTables.bootstrap.css" />
-    <None Include="Admin\Scripts\plugins\datatable\dataTables.bootstrap.js" />
-    <None Include="Admin\Scripts\plugins\datatable\dataTables.bootstrap.min.js" />
     <Content Include="Admin\css\datatable\bootstrap\images\sort_asc.png" />
     <Content Include="Admin\css\datatable\bootstrap\images\sort_asc_disabled.png" />
     <Content Include="Admin\css\datatable\bootstrap\images\sort_both.png" />
@@ -870,75 +1027,13 @@
     <None Include="Admin\less\fontawesome\spinning.less" />
     <None Include="Admin\less\fontawesome\stacked.less" />
     <None Include="Admin\less\fontawesome\variables.less" />
-    <None Include="Admin\less\main.less" />
     <None Include="Admin\Scripts\plugins\bootbox\bootbox.js" />
     <Content Include="Admin\Scripts\plugins\ckeditor\adapters\jquery.js" />
     <Content Include="Admin\Scripts\plugins\ckeditor\ckeditor.js" />
     <Content Include="Admin\Scripts\plugins\ckeditor\config.js" />
     <Content Include="Admin\Scripts\plugins\ckeditor\contents.css" />
     <Content Include="Admin\Scripts\plugins\ckeditor\styles.js" />
-    <None Include="Admin\Scripts\plugins\datatable\jquery.dataTables.js" />
-    <None Include="Admin\Scripts\plugins\datatable\jquery.dataTables.min.js" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Afrikaans.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Albanian.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Arabic.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Azerbaijan.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Bangla.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Belarusian.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Bulgarian.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Catalan.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Chinese-traditional.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Chinese.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Croatian.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Czech.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Danish.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Dutch.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\English.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Estonian.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Filipino.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Finnish.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\French.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Galician.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Georgian.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\German.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Greek.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Gujarati.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Hebrew.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Hindi.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Hungarian.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Icelandic.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Indonesian-Alternative.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Indonesian.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Irish.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Italian.lang.js" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Japanese.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Korean.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Latvian.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Lithuanian.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Macedonian.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Malay.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Norwegian.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Persian.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Polish.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Portuguese-Brasil.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Portuguese.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Romanian.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Russian.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Serbian.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Slovak.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Slovenian.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Spanish.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Swahili.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Swedish.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Tamil.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Thai.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Turkish.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Ukranian.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Urdu.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Uzbek.lang" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\Vietnamese.lang" />
     <None Include="Admin\Scripts\plugins\datepicker\bootstrap-datepicker.js" />
-    <Content Include="Admin\Scripts\plugins\datatable\lang\index.html" />
     <Content Include="Admin\Scripts\plugins\datepicker\locales\bootstrap-datepicker.ar.js" />
     <Content Include="Admin\Scripts\plugins\datepicker\locales\bootstrap-datepicker.az.js" />
     <Content Include="Admin\Scripts\plugins\datepicker\locales\bootstrap-datepicker.bg.js" />
@@ -1362,6 +1457,7 @@
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
+    <Content Include="libman.json" />
     <None Include="Properties\PublishProfiles\IngegneriRiuniti.pubxml" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -1657,6 +1753,7 @@
     <Compile Include="reCAPTCHA\GoogleReCaptcha.cs" />
     <Compile Include="reCAPTCHA\NoCheckPolicy.cs" />
     <Compile Include="Routing\MagicIndex.cs" />
+    <Compile Include="Routing\Permalink.cs" />
     <Compile Include="Routing\Register.cs" />
     <Compile Include="Routing\RouteUtils.cs" />
     <Compile Include="Service References\BingTranslator\Reference.cs">
@@ -2277,6 +2374,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\BingTranslator\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
