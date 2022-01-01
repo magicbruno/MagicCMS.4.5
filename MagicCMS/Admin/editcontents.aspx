@@ -10,7 +10,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
 	<div class="row">
 
-		<div class="col-xs-12">
+		<div class="col">
 			<asp:Panel runat="server" ID="Panel_contents" CssClass="box box-primary" data-id="Panel_contents">
 				<div class="box-header">
 					<h3 class="box-title"><%= Master.Translate("Struttura del sito") %></h3>
@@ -69,8 +69,9 @@
 				</div>
 			</asp:Panel>
 		</div>
-
-		<div class="col-xs-12">
+		</div>
+		<div class="row">
+		<div class="col">
 			<asp:Panel runat="server" ID="Panel_edit" CssClass="box box-warning">
 				<div class="box-header">
 					<h3 class="box-title"><i class="fa <% = ThePost.TypeInfo.Icon %>"></i><% = PostEditTitle %>
@@ -195,22 +196,23 @@
 												</div>
 											</div>
 										</div>
+										<hr />
 										<div class="form-group" id="fg-data-dimensioni">
-											<label for="Ordinamento" class="col-sm-2 control-label"><%= Master.Translate("Ordine") %></label>
-											<div class="col-lg-2 col-sm-4">
+											<label for="Ordinamento" class="col-sm-auto control-label"><%= Master.Translate("Ordine") %></label>
+											<div class="col-lg col-md-4">
 												<input type="text" class="form-control" id="Ordinamento" value="<% = ThePost.Ordinamento.ToString() %>" />
 											</div>
-											<label for="Larghezza" class="col-sm-2 control-label <% = FlagLarghezza %>">
+											<label for="Larghezza" class="col-sm-auto control-label <% = FlagLarghezza %>">
 												<% = TypeInfo.LabelLarghezza %></label>
-											<div class="col-lg-2 col-sm-4  <% = FlagLarghezza %>">
+											<div class="col-lg col-md-4  <% = FlagLarghezza %>">
 												<input type="text" class="form-control" id="Larghezza" value="<% = ThePost.Larghezza.ToString() %>" />
 											</div>
-											<label for="Larghezza" class="col-sm-2 control-label <% = FlagAltezza %>"><% = TypeInfo.LabelAltezza %></label>
-											<div class="col-lg-2 col-sm-4  <% = FlagAltezza %>">
+											<label for="Larghezza" class="col-sm-auto control-label <% = FlagAltezza %>"><% = TypeInfo.LabelAltezza %></label>
+											<div class="col-lg col-md-4  <% = FlagAltezza %>">
 												<input type="text" class="form-control" id="Altezza" value="<% = ThePost.Altezza.ToString() %>" />
 											</div>
-											<label for="DataPubblicazione" class="col-sm-2 control-label"><%= Master.Translate("Data pubblicazione") %></label>
-											<div class="col-lg-2 col-sm-4 ">
+											<label for="DataPubblicazione" class="col-sm-auto control-label"><%= Master.Translate("Data pubblicazione") %></label>
+											<div class="col-lg col-md-4 ">
 												<div class="input-group date">
 													<input type="text" data-dateiso="<% = DataPubblicazioneStr %>" class="form-control datepicker" id="DataPubblicazione" value="" />
 													<span class="input-group-btn">
@@ -220,8 +222,8 @@
 													</span>
 												</div>
 											</div>
-											<label for="DataScadenza" class="col-sm-2 control-label <% = FlagScadenza %>"><% = TypeInfo.LabelScadenza %></label>
-											<div class="col-lg-2 col-sm-4 <% = FlagScadenza %>">
+											<label for="DataScadenza" class="col-sm-auto control-label <% = FlagScadenza %>"><% = TypeInfo.LabelScadenza %></label>
+											<div class="col-lg col-md-4 <% = FlagScadenza %>">
 												<div class="input-group date">
 													<input type="text" data-dateiso="<% = DataScadenzaStr %>" class="form-control datepicker" id="DataScadenza" value="" />
 													<span class="input-group-btn">
@@ -370,35 +372,35 @@
 												<input type="hidden" name="table" value="ANA_TRANSLATION" />
 												<input type="hidden" name="PostPk" value="<% = Pk.ToString() %>" />
 												<div class="form-group">
-													<label for="Titolo-<%# DataBinder.Eval(Container, "DataItem.LangId") %>" class="col-sm-2 control-label">
+													<label for="Titolo-<%# DataBinder.Eval(Container, "DataItem.LangId") %>" class="col-md-2 control-label">
 														<%= TypeInfo.LabelExtraInfo1 %></label>
-													<div class="col-sm-10">
+													<div class="col-md">
 														<textarea rows="2" class="form-control" id="Titolo<%# DataBinder.Eval(Container, "DataItem.LangId") %>"
 															name="TranslatedTitle"><%# DataBinder.Eval(Container, "DataItem.TranslatedTitle") %></textarea>
 													</div>
 												</div>
 												<div class="form-group <% = FlagBreve %>">
-													<label for="TestoBreve-<%# DataBinder.Eval(Container, "DataItem.LangId") %>" class="col-sm-2 control-label">
+													<label for="TestoBreve-<%# DataBinder.Eval(Container, "DataItem.LangId") %>" class="col-md-2 control-label">
 														<%# TypeInfo.LabelTestoBreve %></label>
-													<div class="col-xs-10">
+													<div class="col-md">
 														<textarea name="TranslatedTestoBreve" rows="10" class="ckeditor_mcms <% = FlagBreve %>"><%# System.Web.HttpUtility.HtmlEncode(DataBinder.Eval(Container, "DataItem.TranslatedTestoBreve").ToString()) %></textarea>
 													</div>
 												</div>
 												<div class="form-group <% = FlagFull %>">
-													<label for="TestoLungo-<%# DataBinder.Eval(Container, "DataItem.LangId") %>" class="col-sm-2 control-label">
+													<label for="TestoLungo-<%# DataBinder.Eval(Container, "DataItem.LangId") %>" class="col-md-2 control-label">
 														<%# TypeInfo.LabelTestoLungo %></label>
-													<div class="col-xs-10">
+													<div class="col-md">
 														<textarea name="TranslatedTestoLungo" rows="10" class="ckeditor_mcms <% = FlagFull %>"><%# System.Web.HttpUtility.HtmlEncode(DataBinder.Eval(Container, "DataItem.TranslatedTestoLungo").ToString()) %></textarea>
 													</div>
 												</div>
 												<div class="form-group <% = FlagTags %>" id="fg-tags">
-													<label for="" class="col-sm-2 control-label"><%= Master.Translate("Parole chiave") %></label>
-													<div class="col-sm-10">
+													<label for="" class="col-md-2 control-label"><%= Master.Translate("Parole chiave") %></label>
+													<div class="col-md">
 														<input type="hidden" class="form-control" name="TranslatedTags" value="<%# DataBinder.Eval(Container, "DataItem.TranslatedTags")%>" />
 													</div>
 												</div>
 												<div class="form-group">
-													<div class="col-sm-12 text-center">
+													<div class="col-12 text-center">
 														<button type="button" class="btn btn-primary btn-sm" data-action="submit">
 															<% = Master.Translate("Salva traduzione") %></button>
 														<button type="button" <%# !CmsConfig.TransAuto ? "disabled" : ""  %> class="btn btn-info btn-sm"

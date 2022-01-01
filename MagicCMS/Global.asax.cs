@@ -15,6 +15,7 @@ namespace MagicCMS
 		protected void Application_Start(object sender, EventArgs e)
 		{
 			MagicCMS.Routing.Register.RegisterRoutes(RouteTable.Routes);
+
 		}
 
 		protected void Session_Start(object sender, EventArgs e)

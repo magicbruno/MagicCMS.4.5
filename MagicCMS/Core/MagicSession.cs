@@ -69,53 +69,78 @@ namespace MagicCMS.Core
         {
             get
             {
-                if (HttpContext.Current.Session["__MagicSession__"] == null)
-                    HttpContext.Current.Session["__MagicSession__"] = new MagicSession();
-                //if (session == null)
-                //{
-                //    session = new MagicSession();
-                //    HttpContext.Current.Session["__MagicSession__"] = session;
-                //}
-                return HttpContext.Current.Session["__MagicSession__"] as MagicSession;
+                if (HttpContext.Current.Session != null)
+                {
+                    if (HttpContext.Current.Session["__MagicSession__"] == null)
+                        HttpContext.Current.Session["__MagicSession__"] = new MagicSession();
+                    //if (session == null)
+                    //{
+                    //    session = new MagicSession();
+                    //    HttpContext.Current.Session["__MagicSession__"] = session;
+                    //}
+                    return HttpContext.Current.Session["__MagicSession__"] as MagicSession; 
+                }
+                else
+                {
+                    return new MagicSession();
+                }
             }
         }
 
         // -------- CMS Authoring access ------------------------------------------------------
-		/// <exclude />
+        /// <exclude />
+        /// 
+        private int u_id = -1;
         public int Admin_id
         {
             get
             {
-                int u_id = -1;
-                if (HttpContext.Current.Session["User_id"] != null)
+
+                if (HttpContext.Current.Session != null)
                 {
-                    int.TryParse(HttpContext.Current.Session["User_id"].ToString(), out u_id);
+                    if (HttpContext.Current.Session["User_id"] != null)
+                    {
+                        int.TryParse(HttpContext.Current.Session["User_id"].ToString(), out u_id);
+                    } 
                 }
                 return u_id;
             }
 
             set
             {
-                HttpContext.Current.Session["User_id"] = value;
+                if (HttpContext.Current.Session != null)
+                {
+                    HttpContext.Current.Session["User_id"] = value; 
+                }
+                u_id = value;
             }
         }
 
 		/// <exclude />
+        /// 
+        private int u_level = -1;
         public int Admin_level
         {
             get
             {
-                int u_level = -1;
-                if (HttpContext.Current.Session["User_level"] != null)
+
+                if (HttpContext.Current.Session != null)
                 {
-                    int.TryParse(HttpContext.Current.Session["User_level"].ToString(), out u_level);
+                    if (HttpContext.Current.Session["User_level"] != null)
+                    {
+                        int.TryParse(HttpContext.Current.Session["User_level"].ToString(), out u_level);
+                    } 
                 }
                 return u_level;
             }
 
             set
             {
-                HttpContext.Current.Session["User_level"] = value;
+                if (HttpContext.Current.Session != null)
+                {
+                    HttpContext.Current.Session["User_level"] = value; 
+                }
+                u_level = value;
             }
         }
 
@@ -159,24 +184,33 @@ namespace MagicCMS.Core
             }
         }
 
-		/// <summary>
-		/// Gets or sets the preview flag.
-		/// </summary>
-		/// <value>The preview.</value>
+        /// <summary>
+        /// Gets or sets the preview flag.
+        /// </summary>
+        /// <value>The preview.</value>
+        /// 
+        private Boolean _preview = false;
         public Boolean Preview
         {
             get
             {
-                Boolean _preview = false;
-                if (HttpContext.Current.Session["Preview"] != null)
+
+                if (HttpContext.Current.Session != null)
                 {
-                    _preview = Convert.ToBoolean(HttpContext.Current.Session["Preview"]);
+                    if (HttpContext.Current.Session["Preview"] != null)
+                    {
+                        _preview = Convert.ToBoolean(HttpContext.Current.Session["Preview"]);
+                    } 
                 }
                 return _preview;
             }
             set
             {
-                HttpContext.Current.Session["Preview"] = value;
+                if (HttpContext.Current.Session != null)
+                {
+                    HttpContext.Current.Session["Preview"] = value; 
+                }
+                _preview = value;
             }
         }
 

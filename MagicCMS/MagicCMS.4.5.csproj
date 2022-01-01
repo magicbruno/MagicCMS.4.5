@@ -55,10 +55,16 @@
       <HintPath>..\..\..\BluSole\BluSole\packages\MB.FileBrowser.1.1.8\lib\net35\IZ.WebFileManager.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Web" />
@@ -66,6 +72,12 @@
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -262,6 +274,7 @@
     <Content Include="Admin\Scripts\jquery\dist\jquery.min.js" />
     <Content Include="Admin\Scripts\jquery\dist\jquery.slim.js" />
     <Content Include="Admin\Scripts\jquery\dist\jquery.slim.min.js" />
+    <Content Include="Content\Site.css" />
     <Content Include="userfiles\image\fb-manifest.png" />
     <Content Include="Admin\Ajax\PreviewPost.ashx" />
     <Content Include="..\..\..\..\..\visual studio 2017\Projects\Cabianca\Cabianca\Themes\cabianca\HomeMaster.master">
@@ -1633,6 +1646,9 @@
     <Compile Include="AjaxSendMail_JSON.ashx.cs">
       <DependentUpon>AjaxSendMail_JSON.ashx</DependentUpon>
     </Compile>
+    <Compile Include="Api_Controllers\CheckTokenController.cs" />
+    <Compile Include="Api_Controllers\MagicPostController.cs" />
+    <Compile Include="Api_Controllers\ProvaController.cs" />
     <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.cs.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1725,6 +1741,7 @@
     <Compile Include="Core\MenuInfo.cs" />
     <Compile Include="Core\MenuInfoCollection.cs" />
     <Compile Include="Core\MiniaturaInfo.cs" />
+    <Compile Include="Core\UserToken.cs" />
     <Compile Include="CustomCss\MagicCss.cs" />
     <Compile Include="error.aspx.cs">
       <DependentUpon>error.aspx</DependentUpon>
@@ -2051,10 +2068,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Data\" />
     <Folder Include="ico\" />
     <Folder Include="userfiles\files\" />
     <Folder Include="userfiles\flash\" />
     <Folder Include="userfiles\media\" />
+    <Folder Include="Views\CheckToken\" />
+    <Folder Include="Views\Prova\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="errors\ErrorPage.master" />
@@ -2257,6 +2278,10 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="Service References\BingTranslator\SoapService.wsdl" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\web.config" />
     <None Include="web.config.install.xdt">
       <SubType>Designer</SubType>
     </None>

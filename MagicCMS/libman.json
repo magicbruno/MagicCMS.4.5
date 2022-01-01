@@ -1,0 +1,31 @@
+{
+  "version": "1.0",
+  "defaultProvider": "jsdelivr",
+  "libraries": [
+    {
+      "library": "jquery@3.6.0",
+      "destination": "Admin/Scripts/jquery/",
+      "files": [
+        "dist/jquery.js",
+        "dist/jquery.min.js",
+        "dist/jquery.min.map",
+        "dist/jquery.slim.js",
+        "dist/jquery.slim.min.js",
+        "dist/jquery.slim.min.map"
+      ]
+    },
+    {
+      "provider": "cdnjs",
+      "library": "datatable@2.0.2",
+      "destination": "Admin/Scripts/plugins/datatable/"
+    },
+    {
+      "library": "datatables.net@1.11.3",
+      "destination": "Admin/Scripts/plugins/datatables.net/"
+    },
+    {
+      "library": "datatables.net-bs@1.11.3",
+      "destination": "Admin/Scripts/plugins/datatables.net-bs/"
+    }
+  ]
+}

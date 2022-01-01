@@ -1,0 +1,18 @@
+﻿[
+  {
+    "outputFile": "Admin/assets-2022/css/magiccms.css",
+    "inputFile": "Admin/less/magiccms.less"
+  },
+  {
+    "outputFile": "Admin/assets-2022/css/font-awesome.css",
+    "inputFile": "Admin/less/fontawesome/font-awesome.less"
+  },
+  {
+    "outputFile": "Admin/css/main.css",
+    "inputFile": "Admin/less/main.less"
+  },
+  {
+    "outputFile": "Admin/assets-2022/css/main-new.css",
+    "inputFile": "Admin/less/main-new.less"
+  }
+]

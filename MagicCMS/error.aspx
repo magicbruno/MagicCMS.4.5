@@ -7,6 +7,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width; initial-scale=1" />
 	<title>Error <%= ErrorNo %></title>
+    <link href="Admin/assets-2022/css/bootstrap/bootstrap-grid.min.css" rel="stylesheet" />
 	<link href="Admin/css/main.css" rel="stylesheet" />
 	<style>
 		body, html {
@@ -25,8 +26,8 @@
 				<h3 class="text-center"><%= ShortMessage %></h3></div>
 			<p class="text-center"><%= LongMessage %></p>
 		</div>
-		<div class="row">
-			<div class="col-md-2 col-sm-3 col-xs-6 col-md-offset-4 col-sm-offset-3"><a href="/" class="btn btn-block btn-primary">home</a></div>
+		<div class="row justify-content-center">
+			<div class="col-md-2 col-sm-3 col-xs-6"><a href="/" class="btn btn-block btn-primary">home</a></div>
 			<div class="col-md-2 col-sm-3 col-xs-6"><a href="/Admin" class="btn btn-block btn-success">login</a></div>
 		</div>
 	</form>

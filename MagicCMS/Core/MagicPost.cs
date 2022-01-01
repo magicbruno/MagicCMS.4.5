@@ -38,11 +38,32 @@ namespace MagicCMS.Core
 		{
 			Pk = 0;
 			Active = true;
+			ExtraInfo = "";
 			ExtraInfo1 = "";
 			ExtraInfo2 = "";
 			ExtraInfo3 = "";
 			ExtraInfo4 = "";
+			ExtraInfo5 = "";
+			ExtraInfo6 = "";
+			ExtraInfo7 = "";
+			ExtraInfo8 = ""; 
 			Active = false;
+			ExtraInfoNumber1 = 0;
+			ExtraInfoNumber2 = 0;
+			ExtraInfoNumber3 = 0;
+			ExtraInfoNumber4 = 0;
+			ExtraInfoNumber5 = 0;
+			ExtraInfoNumber6 = 0;
+			ExtraInfoNumber7 = 0;
+			ExtraInfoNumber8 = 0;
+			Larghezza = 0;
+			Ordinamento = 0;
+			Parents = new List<int>();
+			Tags = "";
+			TestoBreve = "";
+			TestoLungo = "";
+			Url = "";
+			Url2 = "";
 			Translations = new MagicTranslationCollection();
 		}
 
@@ -98,43 +119,55 @@ namespace MagicCMS.Core
 
 			#region cmdString
 
-			string cmdString = " SELECT " +
-								" 	mc.Id, " +
-								" 	mc.Titolo, " +
-								" 	mc.Sottotitolo AS Url2, " +
-								" 	mc.Abstract AS TestoLungo, " +
-								" 	mc.Autore AS ExtraInfo, " +
-								" 	mc.Banner AS TestoBreve, " +
-								" 	mc.Link AS Url, " +
-								" 	mc.Larghezza, " +
-								" 	mc.Altezza, " +
-								" 	mc.Tipo, " +
-								" 	mc.Contenuto_parent AS Ordinamento, " +
-								" 	mc.DataPubblicazione, " +
-								" 	mc.DataScadenza, " +
-								" 	mc.DataUltimaModifica, " +
-								" 	mc.Flag_Attivo, " +
-								" 	mc.ExtraInfo1, " +
-								" 	mc.ExtraInfo4, " +
-								" 	mc.ExtraInfo3, " +
-								" 	mc.ExtraInfo2, " +
-								" 	mc.ExtraInfo5, " +
-								" 	mc.ExtraInfo6, " +
-								" 	mc.ExtraInfo7, " +
-								" 	mc.ExtraInfo8, " +
-								" 	mc.ExtraInfoNumber1, " +
-								" 	mc.ExtraInfoNumber2, " +
-								" 	mc.ExtraInfoNumber3, " +
-								" 	mc.ExtraInfoNumber4, " +
-								" 	mc.ExtraInfoNumber5, " +
-								" 	mc.ExtraInfoNumber6, " +
-								" 	mc.ExtraInfoNumber7, " +
-								" 	mc.ExtraInfoNumber8, " +
-								" 	mc.Tags, " +
-								" 	mc.Propietario AS Owner, " +
-								" 	mc.Flag_Cancellazione " +
-								" FROM MB_contenuti mc " +
-								" WHERE mc.Id = @Pk ";
+			string cmdString = @" SELECT DISTINCT
+									mc.Id
+								   ,mc.Titolo
+								   ,mc.Sottotitolo AS Url2
+								   ,mc.Abstract AS TestoLungo
+								   ,mc.Autore AS ExtraInfo
+								   ,mc.Banner AS TestoBreve
+								   ,mc.Link AS Url
+								   ,mc.Larghezza
+								   ,mc.Altezza
+								   ,mc.Tipo
+								   ,mc.Contenuto_parent AS Ordinamento
+								   ,mc.DataPubblicazione
+								   ,mc.DataScadenza
+								   ,mc.DataUltimaModifica
+								   ,mc.Flag_Attivo
+								   ,mc.ExtraInfo1
+								   ,mc.ExtraInfo4
+								   ,mc.ExtraInfo3
+								   ,mc.ExtraInfo2
+								   ,mc.ExtraInfo5
+								   ,mc.ExtraInfo6
+								   ,mc.ExtraInfo7
+								   ,mc.ExtraInfo8
+								   ,mc.ExtraInfoNumber1
+								   ,mc.ExtraInfoNumber2
+								   ,mc.ExtraInfoNumber3
+								   ,mc.ExtraInfoNumber4
+								   ,mc.ExtraInfoNumber5
+								   ,mc.ExtraInfoNumber6
+								   ,mc.ExtraInfoNumber7
+								   ,mc.ExtraInfoNumber8
+								   ,mc.Tags
+								   ,mc.Propietario AS Owner
+								   ,mc.Flag_Cancellazione
+								   ,STUFF((SELECT
+											',' + CONVERT(VARCHAR(10), rca.Id_Argomenti)
+										FROM REL_contenuti_Argomenti rca
+										WHERE rca.Id_Contenuti = mc.Id
+										FOR XML PATH (''))
+									, 1, 1, '') AS Parents
+								   ,rmt.RMT_Title AS PermaLinkTitle
+								   ,rmt.RMT_LangId AS TitleLang
+								FROM MB_contenuti mc
+								LEFT JOIN REL_MagicTitle rmt
+									ON rmt.RMT_Contenuti_Id = mc.Id
+										AND rmt.RMT_LangId = (SELECT TOP 1
+												c.CON_TRANS_SourceLangId
+												FROM CONFIG c)";
 			#endregion
 			try
 			{
@@ -266,8 +299,11 @@ namespace MagicCMS.Core
 			//NomeExtraInfo = Convert.ToString(myRecord.GetValue(7));
 			//Contenitore = Convert.ToBoolean(myRecord.GetValue(15));
 			Owner = !myRecord.IsDBNull(32) ? Convert.ToInt32(myRecord.GetValue(32)) : 0;
-			Parents = ParentsIds();
 			FlagCancellazione = !myRecord.IsDBNull(33) ? Convert.ToBoolean(myRecord.GetValue(33)) : false;
+			string parents = !myRecord.IsDBNull(34) ? Convert.ToString(myRecord.GetValue(34)) : "";
+			Parents = StringToListint(parents);
+			PermalinkTitle = !myRecord.IsDBNull(35) ? myRecord.GetString(35) : "";
+
 			Translations = new MagicTranslationCollection(Pk);
 		}
 
@@ -879,11 +915,13 @@ namespace MagicCMS.Core
 			}
 		}
 
-		/// <summary>
-		/// Gets or sets the pk (Unique id of the post).
-		/// </summary>
-		/// <value>The pk.</value>
-		public int Pk { get; set; }
+        public string PermalinkTitle { get; private set; }
+
+        /// <summary>
+        /// Gets or sets the pk (Unique id of the post).
+        /// </summary>
+        /// <value>The pk.</value>
+        public int Pk { get; set; }
 
 		/// <summary>
 		/// Gets the preferred id list.
@@ -1427,6 +1465,7 @@ namespace MagicCMS.Core
 					ConnectTo(Parents.ToArray());
 					MagicKeyword.Update(Pk, Tags);
 					MagicIndex mi = new MagicIndex(this);
+					mi.Title = PermalinkTitle;
 					string errorMessage;
 					if (mi.Save(out errorMessage) == 0)
 					{
@@ -1565,6 +1604,7 @@ namespace MagicCMS.Core
 					ConnectTo(Parents.ToArray());
 					MagicKeyword.Update(Pk, Tags);
 					MagicIndex mi = new MagicIndex(this);
+					mi.Title = PermalinkTitle;
 					string errorMessage;
 					if (mi.Save(out errorMessage) == 0)
 					{
@@ -2231,47 +2271,59 @@ namespace MagicCMS.Core
 			try
 			{
 				conn.Open();
-				cmd.CommandText = "SELECT DISTINCT " + topClause +
-									" 	mc.Id, " +
-									" 	mc.Titolo, " +
-									" 	mc.Sottotitolo AS Url2, " +
-									" 	mc.Abstract AS TestoLungo, " +
-									" 	mc.Autore AS ExtraInfo, " +
-									" 	mc.Banner AS TestoBreve, " +
-									" 	mc.Link AS Url, " +
-									" 	mc.Larghezza, " +
-									" 	mc.Altezza, " +
-									" 	mc.Tipo, " +
-									" 	mc.Contenuto_parent AS Ordinamento, " +
-									" 	mc.DataPubblicazione, " +
-									" 	mc.DataScadenza, " +
-									" 	mc.DataUltimaModifica, " +
-									" 	mc.Flag_Attivo, " +
-									" 	mc.ExtraInfo1, " +
-									" 	mc.ExtraInfo4, " +
-									" 	mc.ExtraInfo3, " +
-									" 	mc.ExtraInfo2, " +
-									" 	mc.ExtraInfo5, " +
-									" 	mc.ExtraInfo6, " +
-									" 	mc.ExtraInfo7, " +
-									" 	mc.ExtraInfo8, " +
-									" 	mc.ExtraInfoNumber1, " +
-									" 	mc.ExtraInfoNumber2, " +
-									" 	mc.ExtraInfoNumber3, " +
-									" 	mc.ExtraInfoNumber4, " +
-									" 	mc.ExtraInfoNumber5, " +
-									" 	mc.ExtraInfoNumber6, " +
-									" 	mc.ExtraInfoNumber7, " +
-									" 	mc.ExtraInfoNumber8, " +
-									" 	mc.Tags, " +
-									" 	mc.Propietario AS Owner, " +
-									"   RIGHT(RTRIM(mc.Titolo), CHARINDEX(' ', REVERSE(' ' + RTRIM(mc.Titolo))) - 1) AS COGNOME " +
-									"FROM " +
-									"	MB_contenuti mc " +
-									"	INNER JOIN MB_tipi_contenuto mtc " +
-									"		ON Tipo = mtc.id " +
-									"	INNER JOIN REL_MESSAGE_REPL_MESSAGE RMRM  " +
-									"		ON REL_REPL_MESSAGE_REPLTO_PK = mc.Id " +
+				cmd.CommandText = "	SELECT DISTINCT " + topClause +
+									@"  mc.Id
+									   ,mc.Titolo
+									   ,mc.Sottotitolo AS Url2
+									   ,mc.Abstract AS TestoLungo
+									   ,mc.Autore AS ExtraInfo
+									   ,mc.Banner AS TestoBreve
+									   ,mc.Link AS Url
+									   ,mc.Larghezza
+									   ,mc.Altezza
+									   ,mc.Tipo
+									   ,mc.Contenuto_parent AS Ordinamento
+									   ,mc.DataPubblicazione
+									   ,mc.DataScadenza
+									   ,mc.DataUltimaModifica
+									   ,mc.Flag_Attivo
+									   ,mc.ExtraInfo1
+									   ,mc.ExtraInfo4
+									   ,mc.ExtraInfo3
+									   ,mc.ExtraInfo2
+									   ,mc.ExtraInfo5
+									   ,mc.ExtraInfo6
+									   ,mc.ExtraInfo7
+									   ,mc.ExtraInfo8
+									   ,mc.ExtraInfoNumber1
+									   ,mc.ExtraInfoNumber2
+									   ,mc.ExtraInfoNumber3
+									   ,mc.ExtraInfoNumber4
+									   ,mc.ExtraInfoNumber5
+									   ,mc.ExtraInfoNumber6
+									   ,mc.ExtraInfoNumber7
+									   ,mc.ExtraInfoNumber8
+									   ,mc.Tags
+									   ,mc.Propietario AS Owner
+									   ,mc.Flag_Cancellazione
+									   ,STUFF((SELECT
+												',' + CONVERT(VARCHAR(10), rca.Id_Argomenti)
+											FROM REL_contenuti_Argomenti rca
+											WHERE rca.Id_Contenuti = mc.Id
+											FOR XML PATH (''))
+										, 1, 1, '') AS Parents
+									   ,rmt.RMT_Title AS PermaLinkTitle
+									   ,rmt.RMT_LangId AS TitleLang
+									FROM MB_contenuti mc
+									INNER JOIN vw_ANA_CONT_TYPE_ACTIVE vacta 
+										ON Tipo = vacta.TYP_PK
+									INNER JOIN REL_MESSAGE_REPL_MESSAGE RMRM
+										ON REL_REPL_MESSAGE_REPLTO_PK = mc.Id
+									LEFT JOIN REL_MagicTitle rmt
+										ON rmt.RMT_Contenuti_Id = mc.Id
+											AND rmt.RMT_LangId = (SELECT TOP 1
+													c.CON_TRANS_SourceLangId
+												FROM CONFIG c)" +
 									"WHERE " +
 									checkScadenza +
 									"	mc.Flag_Cancellazione = 0 " +
@@ -2651,50 +2703,63 @@ namespace MagicCMS.Core
 			{
 				conn.Open();
 				cmd.CommandText = "  SELECT DISTINCT " + topClause +
-									" 	vmca.Id, " +
-									" 	vmca.Titolo, " +
-									" 	vmca.Sottotitolo AS Url2, " +
-									" 	vmca.Abstract AS TestoLungo, " +
-									" 	vmca.Autore AS ExtraInfo, " +
-									" 	vmca.Banner AS TestoBreve, " +
-									" 	vmca.Link AS Url, " +
-									" 	vmca.Larghezza, " +
-									" 	vmca.Altezza, " +
-									" 	vmca.Tipo, " +
-									" 	vmca.Contenuto_parent AS Ordinamento, " +
-									" 	vmca.DataPubblicazione, " +
-									" 	vmca.DataScadenza, " +
-									" 	vmca.DataUltimaModifica, " +
-									" 	vmca.Flag_Attivo, " +
-									" 	vmca.ExtraInfo1, " +
-									" 	vmca.ExtraInfo4, " +
-									" 	vmca.ExtraInfo3, " +
-									" 	vmca.ExtraInfo2, " +
-									" 	vmca.ExtraInfo5, " +
-									" 	vmca.ExtraInfo6, " +
-									" 	vmca.ExtraInfo7, " +
-									" 	vmca.ExtraInfo8, " +
-									" 	vmca.ExtraInfoNumber1, " +
-									" 	vmca.ExtraInfoNumber2, " +
-									" 	vmca.ExtraInfoNumber3, " +
-									" 	vmca.ExtraInfoNumber4, " +
-									" 	vmca.ExtraInfoNumber5, " +
-									" 	vmca.ExtraInfoNumber6, " +
-									" 	vmca.ExtraInfoNumber7, " +
-									" 	vmca.ExtraInfoNumber8, " +
-									" 	vmca.Tags, " +
-									" 	vmca.Propietario AS Owner, " +
-									" 	vmca.Flag_Cancellazione, " +
-									"   RIGHT(RTRIM(vmca.Titolo), CHARINDEX(' ', REVERSE(' ' + RTRIM(vmca.Titolo))) - 1) AS COGNOME " +
-									"   FROM MB_contenuti vmca  " +
-									"  	INNER JOIN ANA_CONT_TYPE mtc  " +
-									"  		ON vmca.Tipo = mtc.TYP_PK  " +
-									"  	INNER JOIN REL_contenuti_Argomenti parents_rel  " +
-									"  		ON vmca.Id = parents_rel.Id_Contenuti  " +
-									"  	INNER JOIN REL_contenuti_Argomenti granpa_rel  " +
-									"  		ON parents_rel.Id_Argomenti = granpa_rel.Id_Contenuti " +
-									"   LEFT JOIN ANA_TRANSLATION " +
-									"       ON vmca.ID = TRAN_MB_contenuti_Id " +
+									@" 	vmca.Id
+									   ,vmca.Titolo
+									   ,vmca.Sottotitolo AS Url2
+									   ,vmca.Abstract AS TestoLungo
+									   ,vmca.Autore AS ExtraInfo
+									   ,vmca.Banner AS TestoBreve
+									   ,vmca.Link AS Url
+									   ,vmca.Larghezza
+									   ,vmca.Altezza
+									   ,vmca.Tipo
+									   ,vmca.Contenuto_parent AS Ordinamento
+									   ,vmca.DataPubblicazione
+									   ,vmca.DataScadenza
+									   ,vmca.DataUltimaModifica
+									   ,vmca.Flag_Attivo
+									   ,vmca.ExtraInfo1
+									   ,vmca.ExtraInfo4
+									   ,vmca.ExtraInfo3
+									   ,vmca.ExtraInfo2
+									   ,vmca.ExtraInfo5
+									   ,vmca.ExtraInfo6
+									   ,vmca.ExtraInfo7
+									   ,vmca.ExtraInfo8
+									   ,vmca.ExtraInfoNumber1
+									   ,vmca.ExtraInfoNumber2
+									   ,vmca.ExtraInfoNumber3
+									   ,vmca.ExtraInfoNumber4
+									   ,vmca.ExtraInfoNumber5
+									   ,vmca.ExtraInfoNumber6
+									   ,vmca.ExtraInfoNumber7
+									   ,vmca.ExtraInfoNumber8
+									   ,vmca.Tags
+									   ,vmca.Propietario AS Owner
+									   ,vmca.Flag_Cancellazione
+										  ,STUFF((SELECT
+												',' + CONVERT(VARCHAR(10), rca.Id_Argomenti)
+											FROM REL_contenuti_Argomenti rca
+											WHERE rca.Id_Contenuti = vmca.Id
+											FOR XML PATH (''))
+										, 1, 1, '') AS Parents
+									   ,rmt.RMT_Title AS PermaLinkTitle
+									   ,rmt.RMT_LangId AS TitleLang
+									   ,RIGHT(RTRIM(vmca.Titolo), CHARINDEX(' ', REVERSE(' ' + RTRIM(vmca.Titolo))) - 1) AS COGNOME
+									FROM MB_contenuti vmca
+									INNER JOIN ANA_CONT_TYPE mtc
+										ON vmca.Tipo = mtc.TYP_PK
+									INNER JOIN REL_contenuti_Argomenti parents_rel
+										ON vmca.Id = parents_rel.Id_Contenuti
+									INNER JOIN REL_contenuti_Argomenti granpa_rel
+										ON parents_rel.Id_Argomenti = granpa_rel.Id_Contenuti
+									LEFT JOIN ANA_TRANSLATION
+										ON vmca.Id = TRAN_MB_contenuti_Id 
+										LEFT JOIN REL_MagicTitle rmt
+										ON rmt.RMT_Contenuti_Id = vmca.Id
+											AND rmt.RMT_LangId = (SELECT TOP 1
+													c.CON_TRANS_SourceLangId
+												FROM CONFIG c)	" +
 									"  WHERE vmca.Flag_Cancellazione = 0  " + checkScadenza +
 									idClause +
 									filter +
@@ -2923,50 +2988,64 @@ namespace MagicCMS.Core
 			try
 			{
 				conn.Open();
-				cmd.CommandText = "SELECT DISTINCT " +
-									" 	vmca.Id, " +
-									" 	vmca.Titolo, " +
-									" 	vmca.Sottotitolo AS Url2, " +
-									" 	vmca.Abstract AS TestoLungo, " +
-									" 	vmca.Autore AS ExtraInfo, " +
-									" 	vmca.Banner AS TestoBreve, " +
-									" 	vmca.Link AS Url, " +
-									" 	vmca.Larghezza, " +
-									" 	vmca.Altezza, " +
-									" 	vmca.Tipo, " +
-									" 	vmca.Contenuto_parent AS Ordinamento, " +
-									" 	vmca.DataPubblicazione, " +
-									" 	vmca.DataScadenza, " +
-									" 	vmca.DataUltimaModifica, " +
-									" 	vmca.Flag_Attivo, " +
-									" 	vmca.ExtraInfo1, " +
-									" 	vmca.ExtraInfo4, " +
-									" 	vmca.ExtraInfo3, " +
-									" 	vmca.ExtraInfo2, " +
-									" 	vmca.ExtraInfo5, " +
-									" 	vmca.ExtraInfo6, " +
-									" 	vmca.ExtraInfo7, " +
-									" 	vmca.ExtraInfo8, " +
-									" 	vmca.ExtraInfoNumber1, " +
-									" 	vmca.ExtraInfoNumber2, " +
-									" 	vmca.ExtraInfoNumber3, " +
-									" 	vmca.ExtraInfoNumber4, " +
-									" 	vmca.ExtraInfoNumber5, " +
-									" 	vmca.ExtraInfoNumber6, " +
-									" 	vmca.ExtraInfoNumber7, " +
-									" 	vmca.ExtraInfoNumber8, " +
-									" 	vmca.Tags, " +
-									" 	vmca.Propietario AS Owner, " +
-									" 	vmca.Flag_Cancellazione, " +
-									"   RIGHT(RTRIM(Titolo), CHARINDEX(' ', REVERSE(' ' + RTRIM(Titolo))) - 1) AS COGNOME " +
-									" FROM " +
-									"	REL_contenuti_Argomenti rca " +
-									"	INNER JOIN VW_MB_contenuti_attivi vmca " +
-									"		ON rca.Id_Argomenti = vmca.Id  " +
-									"	INNER JOIN ANA_CONT_TYPE act  " +
-									"		ON act.TYP_PK = Tipo " +
-									"   LEFT JOIN ANA_TRANSLATION " +
-									"       ON vmca.ID = TRAN_MB_contenuti_Id " +
+				cmd.CommandText = @" SELECT DISTINCT
+										vmca.Id
+									   ,vmca.Titolo
+									   ,vmca.Sottotitolo AS Url2
+									   ,vmca.Abstract AS TestoLungo
+									   ,vmca.Autore AS ExtraInfo
+									   ,vmca.Banner AS TestoBreve
+									   ,vmca.Link AS Url
+									   ,vmca.Larghezza
+									   ,vmca.Altezza
+									   ,vmca.Tipo
+									   ,vmca.Contenuto_parent AS Ordinamento
+									   ,vmca.DataPubblicazione
+									   ,vmca.DataScadenza
+									   ,vmca.DataUltimaModifica
+									   ,vmca.Flag_Attivo
+									   ,vmca.ExtraInfo1
+									   ,vmca.ExtraInfo4
+									   ,vmca.ExtraInfo3
+									   ,vmca.ExtraInfo2
+									   ,vmca.ExtraInfo5
+									   ,vmca.ExtraInfo6
+									   ,vmca.ExtraInfo7
+									   ,vmca.ExtraInfo8
+									   ,vmca.ExtraInfoNumber1
+									   ,vmca.ExtraInfoNumber2
+									   ,vmca.ExtraInfoNumber3
+									   ,vmca.ExtraInfoNumber4
+									   ,vmca.ExtraInfoNumber5
+									   ,vmca.ExtraInfoNumber6
+									   ,vmca.ExtraInfoNumber7
+									   ,vmca.ExtraInfoNumber8
+									   ,vmca.Tags
+									   ,vmca.Propietario AS Owner
+									   ,vmca.Flag_Cancellazione
+										  ,vmca.Propietario AS Owner
+									   ,vmca.Flag_Cancellazione
+										  ,STUFF((SELECT
+												',' + CONVERT(VARCHAR(10), rca.Id_Argomenti)
+											FROM REL_contenuti_Argomenti rca
+											WHERE rca.Id_Contenuti = vmca.Id
+											FOR XML PATH (''))
+										, 1, 1, '') AS Parents
+									   ,rmt.RMT_Title AS PermaLinkTitle
+									   ,rmt.RMT_LangId AS TitleLang
+									   ,RIGHT(RTRIM(Titolo), CHARINDEX(' ', REVERSE(' ' + RTRIM(Titolo))) - 1) AS COGNOME
+									FROM REL_contenuti_Argomenti rca
+									INNER JOIN VW_MB_contenuti_attivi vmca
+										ON rca.Id_Argomenti = vmca.Id
+									INNER JOIN ANA_CONT_TYPE act
+										ON act.TYP_PK = Tipo
+									LEFT JOIN ANA_TRANSLATION
+										ON vmca.Id = TRAN_MB_contenuti_Id 
+									LEFT JOIN REL_MagicTitle rmt
+										ON rmt.RMT_Contenuti_Id = vmca.Id
+											AND rmt.RMT_LangId = (SELECT TOP 1
+													c.CON_TRANS_SourceLangId
+												FROM CONFIG c)" +
 									" WHERE " +
 									"	rca.Id_Contenuti = " + Pk.ToString() + " " +
 									filter + " ORDER BY " + orderClause;
@@ -3047,53 +3126,66 @@ namespace MagicCMS.Core
 			try
 			{
 				conn.Open();
-				cmd.CommandText =   " SELECT DISTINCT " +
-									" 	vmca.Id, " +
-									" 	vmca.Titolo, " +
-									" 	vmca.Sottotitolo AS Url2, " +
-									" 	vmca.Abstract AS TestoLungo, " +
-									" 	vmca.Autore AS ExtraInfo, " +
-									" 	vmca.Banner AS TestoBreve, " +
-									" 	vmca.Link AS Url, " +
-									" 	vmca.Larghezza, " +
-									" 	vmca.Altezza, " +
-									" 	vmca.Tipo, " +
-									" 	vmca.Contenuto_parent AS Ordinamento, " +
-									" 	vmca.DataPubblicazione, " +
-									" 	vmca.DataScadenza, " +
-									" 	vmca.DataUltimaModifica, " +
-									" 	vmca.Flag_Attivo, " +
-									" 	vmca.ExtraInfo1, " +
-									" 	vmca.ExtraInfo4, " +
-									" 	vmca.ExtraInfo3, " +
-									" 	vmca.ExtraInfo2, " +
-									" 	vmca.ExtraInfo5, " +
-									" 	vmca.ExtraInfo6, " +
-									" 	vmca.ExtraInfo7, " +
-									" 	vmca.ExtraInfo8, " +
-									" 	vmca.ExtraInfoNumber1, " +
-									" 	vmca.ExtraInfoNumber2, " +
-									" 	vmca.ExtraInfoNumber3, " +
-									" 	vmca.ExtraInfoNumber4, " +
-									" 	vmca.ExtraInfoNumber5, " +
-									" 	vmca.ExtraInfoNumber6, " +
-									" 	vmca.ExtraInfoNumber7, " +
-									" 	vmca.ExtraInfoNumber8, " +
-									" 	vmca.Tags, " +
-									" 	vmca.Propietario AS Owner, " +
-									" 	vmca.Flag_Cancellazione, " +
-									" 	RIGHT(RTRIM(vmca.Titolo), CHARINDEX(' ', REVERSE(' ' + RTRIM(vmca.Titolo))) - 1) AS COGNOME " +
-									" FROM REL_contenuti_Argomenti rca " +
-									" INNER JOIN VW_MB_contenuti_attivi vmca " +
-									" 	ON rca.Id_Contenuti = vmca.Id " +
-									" INNER JOIN REL_contenuti_Argomenti rca1 " +
-									" 	ON rca1.Id_Argomenti = rca.Id_Argomenti " +
-									" INNER JOIN MB_contenuti mc " +
-									" 	ON rca1.Id_Argomenti = mc.Id " +
-									" INNER JOIN ANA_CONT_TYPE act " +
-									" 	ON act.TYP_PK = vmca.Tipo " +
-									" LEFT JOIN ANA_TRANSLATION " +
-									" 	ON vmca.Id = TRAN_MB_contenuti_Id " +
+				cmd.CommandText = @" SELECT DISTINCT
+										vmca.Id
+									   ,vmca.Titolo
+									   ,vmca.Sottotitolo AS Url2
+									   ,vmca.Abstract AS TestoLungo
+									   ,vmca.Autore AS ExtraInfo
+									   ,vmca.Banner AS TestoBreve
+									   ,vmca.Link AS Url
+									   ,vmca.Larghezza
+									   ,vmca.Altezza
+									   ,vmca.Tipo
+									   ,vmca.Contenuto_parent AS Ordinamento
+									   ,vmca.DataPubblicazione
+									   ,vmca.DataScadenza
+									   ,vmca.DataUltimaModifica
+									   ,vmca.Flag_Attivo
+									   ,vmca.ExtraInfo1
+									   ,vmca.ExtraInfo4
+									   ,vmca.ExtraInfo3
+									   ,vmca.ExtraInfo2
+									   ,vmca.ExtraInfo5
+									   ,vmca.ExtraInfo6
+									   ,vmca.ExtraInfo7
+									   ,vmca.ExtraInfo8
+									   ,vmca.ExtraInfoNumber1
+									   ,vmca.ExtraInfoNumber2
+									   ,vmca.ExtraInfoNumber3
+									   ,vmca.ExtraInfoNumber4
+									   ,vmca.ExtraInfoNumber5
+									   ,vmca.ExtraInfoNumber6
+									   ,vmca.ExtraInfoNumber7
+									   ,vmca.ExtraInfoNumber8
+									   ,vmca.Tags
+									   ,vmca.Propietario AS Owner
+									   ,vmca.Flag_Cancellazione
+											 ,STUFF((SELECT
+												',' + CONVERT(VARCHAR(10), rca.Id_Argomenti)
+											FROM REL_contenuti_Argomenti rca
+											WHERE rca.Id_Contenuti = vmca.Id
+											FOR XML PATH (''))
+										, 1, 1, '') AS Parents
+									   ,rmt.RMT_Title AS PermaLinkTitle
+									   ,rmt.RMT_LangId AS TitleLang
+									   ,RIGHT(RTRIM(vmca.Titolo), CHARINDEX(' ', REVERSE(' ' + RTRIM(vmca.Titolo))) - 1) AS COGNOME
+									FROM REL_contenuti_Argomenti rca
+									INNER JOIN VW_MB_contenuti_attivi vmca
+										ON rca.Id_Contenuti = vmca.Id
+									INNER JOIN REL_contenuti_Argomenti rca1
+										ON rca1.Id_Argomenti = rca.Id_Argomenti
+									INNER JOIN MB_contenuti mc
+										ON rca1.Id_Argomenti = mc.Id
+									INNER JOIN ANA_CONT_TYPE act
+										ON act.TYP_PK = vmca.Tipo
+									LEFT JOIN ANA_TRANSLATION
+										ON vmca.Id = TRAN_MB_contenuti_Id 
+									LEFT JOIN REL_MagicTitle rmt
+										ON rmt.RMT_Contenuti_Id = vmca.Id
+											AND rmt.RMT_LangId = (SELECT TOP 1
+													c.CON_TRANS_SourceLangId
+												FROM CONFIG c)" +
 									" WHERE rca1.Id_Contenuti = @pk " +
 									" AND rca.Id_Contenuti <> @pk  " +
 									parentClauseTypes +
@@ -3198,7 +3290,7 @@ namespace MagicCMS.Core
 		}
 
 		/// <summary>
-		/// Determines whether the post is part of a monopage site (chile of an Home page Section).
+		/// Determines whether the post is part of a monopage site (child of an Home page Section).
 		/// </summary>
 		/// <returns><c>true</c> if [is local link]; otherwise, <c>false</c>.</returns>
 		public bool IsLocalLink()

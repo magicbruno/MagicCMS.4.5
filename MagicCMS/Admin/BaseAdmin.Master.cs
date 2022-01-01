@@ -18,6 +18,16 @@ namespace MagicCMS.Admin
             set { _ckeditorCdn = value; }
         }
 
+        public string JQueryVersion
+        {
+            get
+            {
+                if (!String.IsNullOrEmpty(MagicCMS.Core.MagicCMSConfiguration.GetConfig().jQueryHigh))
+                    return MagicCMS.Core.MagicCMSConfiguration.GetConfig().jQueryHigh;
+                return "3.6.0";
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!String.IsNullOrEmpty(MagicCMS.Core.MagicCMSConfiguration.GetConfig().CkeditorCdn))

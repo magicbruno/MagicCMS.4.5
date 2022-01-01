@@ -90,53 +90,66 @@ namespace MagicCMS.Core
             try
             {
                 conn.Open();
-                cmd.CommandText = "SELECT DISTINCT " + topClause +
-                                    " 	vmca.Id, " +
-                                    " 	vmca.Titolo, " +
-                                    " 	vmca.Sottotitolo AS Url2, " +
-                                    " 	vmca.Abstract AS TestoLungo, " +
-                                    " 	vmca.Autore AS ExtraInfo, " +
-                                    " 	vmca.Banner AS TestoBreve, " +
-                                    " 	vmca.Link AS Url, " +
-                                    " 	vmca.Larghezza, " +
-                                    " 	vmca.Altezza, " +
-                                    " 	vmca.Tipo, " +
-                                    " 	vmca.Contenuto_parent AS Ordinamento, " +
-                                    " 	vmca.DataPubblicazione, " +
-                                    " 	vmca.DataScadenza, " +
-                                    " 	vmca.DataUltimaModifica, " +
-                                    " 	vmca.Flag_Attivo, " +
-                                    " 	vmca.ExtraInfo1, " +
-                                    " 	vmca.ExtraInfo4, " +
-                                    " 	vmca.ExtraInfo3, " +
-                                    " 	vmca.ExtraInfo2, " +
-                                    " 	vmca.ExtraInfo5, " +
-                                    " 	vmca.ExtraInfo6, " +
-                                    " 	vmca.ExtraInfo7, " +
-                                    " 	vmca.ExtraInfo8, " +
-                                    " 	vmca.ExtraInfoNumber1, " +
-                                    " 	vmca.ExtraInfoNumber2, " +
-                                    " 	vmca.ExtraInfoNumber3, " +
-                                    " 	vmca.ExtraInfoNumber4, " +
-                                    " 	vmca.ExtraInfoNumber5, " +
-                                    " 	vmca.ExtraInfoNumber6, " +
-                                    " 	vmca.ExtraInfoNumber7, " +
-                                    " 	vmca.ExtraInfoNumber8, " +
-                                    " 	vmca.Tags, " +
-                                    " 	vmca.Propietario AS Owner, " +
-                                    " 	vmca.Flag_Cancellazione, " +
-                                    " 	RIGHT(RTRIM(vmca.Titolo), CHARINDEX(' ', REVERSE(' ' + RTRIM(vmca.Titolo))) - 1) AS COGNOME " +
-                                    " FROM MB_contenuti vmca " +
-                                    " 	INNER JOIN ANA_CONT_TYPE act " +
-                                    " 		ON vmca.Tipo = act.TYP_PK " +
-                                    " 	LEFT JOIN REL_contenuti_Argomenti rca " +
-                                    " 		ON vmca.Id = rca.Id_Contenuti " +
-                                    " 	LEFT JOIN MB_contenuti mc " +
-                                    " 		ON mc.Id = rca.Id_Argomenti " +
-                                    "   LEFT JOIN ANA_TRANSLATION " +
-                                    "       ON vmca.ID = TRAN_MB_contenuti_Id " +
-                                    "   LEFT JOIN REL_KEYWORDS rk " +
-                                    "	    ON vmca.Id = rk.key_content_PK " +
+                cmd.CommandText = " SELECT DISTINCT " + topClause +
+                                    @" 		vmca.Id
+                                           ,vmca.Titolo
+                                           ,vmca.Sottotitolo AS Url2
+                                           ,vmca.Abstract AS TestoLungo
+                                           ,vmca.Autore AS ExtraInfo
+                                           ,vmca.Banner AS TestoBreve
+                                           ,vmca.Link AS Url
+                                           ,vmca.Larghezza
+                                           ,vmca.Altezza
+                                           ,vmca.Tipo
+                                           ,vmca.Contenuto_parent AS Ordinamento
+                                           ,vmca.DataPubblicazione
+                                           ,vmca.DataScadenza
+                                           ,vmca.DataUltimaModifica
+                                           ,vmca.Flag_Attivo
+                                           ,vmca.ExtraInfo1
+                                           ,vmca.ExtraInfo4
+                                           ,vmca.ExtraInfo3
+                                           ,vmca.ExtraInfo2
+                                           ,vmca.ExtraInfo5
+                                           ,vmca.ExtraInfo6
+                                           ,vmca.ExtraInfo7
+                                           ,vmca.ExtraInfo8
+                                           ,vmca.ExtraInfoNumber1
+                                           ,vmca.ExtraInfoNumber2
+                                           ,vmca.ExtraInfoNumber3
+                                           ,vmca.ExtraInfoNumber4
+                                           ,vmca.ExtraInfoNumber5
+                                           ,vmca.ExtraInfoNumber6
+                                           ,vmca.ExtraInfoNumber7
+                                           ,vmca.ExtraInfoNumber8
+                                           ,vmca.Tags
+                                           ,vmca.Propietario AS Owner
+                                           ,vmca.Flag_Cancellazione
+                                           ,STUFF((SELECT
+			                                        ',' + CONVERT(VARCHAR(10), rca.Id_Argomenti)
+		                                        FROM REL_contenuti_Argomenti rca
+		                                        WHERE rca.Id_Contenuti = vmca.Id
+		                                        FOR XML PATH (''))
+	                                        , 1, 1, '') AS Parents
+                                           ,rmt.RMT_Title AS PermaLinkTitle
+                                           ,rmt.RMT_LangId AS TitleLang
+                                           ,RIGHT(RTRIM(vmca.Titolo), CHARINDEX(' ', REVERSE(' ' + RTRIM(vmca.Titolo))) - 1) AS COGNOME
+                                        FROM MB_contenuti vmca
+                                        INNER JOIN ANA_CONT_TYPE act
+	                                        ON vmca.Tipo = act.TYP_PK
+                                        LEFT JOIN REL_contenuti_Argomenti rca
+	                                        ON vmca.Id = rca.Id_Contenuti
+                                        LEFT JOIN MB_contenuti mc
+	                                        ON mc.Id = rca.Id_Argomenti
+                                        LEFT JOIN ANA_TRANSLATION
+	                                        ON vmca.Id = TRAN_MB_contenuti_Id
+                                        LEFT JOIN REL_KEYWORDS rk
+	                                        ON vmca.Id = rk.key_content_PK 
+                                        LEFT JOIN REL_MagicTitle rmt
+	                                        ON rmt.RMT_Contenuti_Id = vmca.Id
+		                                        AND rmt.RMT_LangId = (SELECT TOP 1
+				                                        c.CON_TRANS_SourceLangId
+			                                            FROM CONFIG c)" +
                                     filter + orderClause;
 
 

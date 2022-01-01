@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Routing;
+using System.Web.Http; 
 
 namespace MagicCMS.Routing
 {
@@ -39,6 +40,7 @@ namespace MagicCMS.Routing
 				  {"params", paramMatch}
 			};
 
+			routes.MapHttpRoute(name: "DefaultApi", routeTemplate: "api/{controller}/{id}", defaults: new { id = System.Web.Http.RouteParameter.Optional });
 			routes.Ignore("Admin/");
 			routes.Ignore("Admin/Ajax/");
 			routes.Ignore("Admin/Session/");
@@ -71,6 +73,7 @@ namespace MagicCMS.Routing
 			});
 			routes.MapPageRoute("full", "{type}/{subType}/{pageId}", "~/Contenuti.aspx", true, new RouteValueDictionary { { "type", "" } });
 			routes.MapPageRoute("short", "{type}/{pageId}", "~/Contenuti.aspx", true, new RouteValueDictionary { { "type", "" } });
+            
 		}
 
 	}
