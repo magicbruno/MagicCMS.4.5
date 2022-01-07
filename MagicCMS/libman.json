@@ -26,6 +26,35 @@
     {
       "library": "datatables.net-bs@1.11.3",
       "destination": "Admin/Scripts/plugins/datatables.net-bs/"
+    },
+    {
+      "provider": "cdnjs",
+      "library": "bootstrap-select@1.13.18",
+      "destination": "Admin/assets-2022/bootstrap-select/",
+      "files": [
+        "js/bootstrap-select.min.js",
+        "js/bootstrap-select.js.map",
+        "js/bootstrap-select.js",
+        "js/bootstrap-select.min.js.map",
+        "js/i18n/defaults-it_IT.js",
+        "js/i18n/defaults-it_IT.js.map",
+        "js/i18n/defaults-it_IT.min.js",
+        "css/bootstrap-select.css",
+        "css/bootstrap-select.css.map",
+        "css/bootstrap-select.min.css"
+      ]
+    },
+    {
+      "library": "sweetalert2@11.3.3",
+      "destination": "Admin/assets-2022/sweetalert2/",
+      "files": [
+        "dist/sweetalert2.all.js",
+        "dist/sweetalert2.all.min.js",
+        "dist/sweetalert2.css",
+        "dist/sweetalert2.js",
+        "dist/sweetalert2.min.css",
+        "dist/sweetalert2.min.js"
+      ]
     }
   ]
 }

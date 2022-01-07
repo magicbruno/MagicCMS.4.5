@@ -167,7 +167,8 @@ namespace MagicCMS.Core
 									ON rmt.RMT_Contenuti_Id = mc.Id
 										AND rmt.RMT_LangId = (SELECT TOP 1
 												c.CON_TRANS_SourceLangId
-												FROM CONFIG c)";
+												FROM CONFIG c) 
+								WHERE mc.Id = @Pk ";
 			#endregion
 			try
 			{

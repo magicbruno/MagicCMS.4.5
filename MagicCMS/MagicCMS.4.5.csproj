@@ -111,6 +111,12 @@
     <Content Include="Admin\Ajax\TransDictionaryPaginated.ashx" />
     <Content Include="Admin\Ajax\EditUserProfile.ashx" />
     <Content Include="Admin\Ajax\PopulateMagicIndex.ashx" />
+    <Content Include="Admin\assets-2022\bootstrap-select\css\bootstrap-select.css" />
+    <Content Include="Admin\assets-2022\bootstrap-select\css\bootstrap-select.min.css" />
+    <Content Include="Admin\assets-2022\bootstrap-select\js\bootstrap-select.js" />
+    <Content Include="Admin\assets-2022\bootstrap-select\js\bootstrap-select.min.js" />
+    <Content Include="Admin\assets-2022\bootstrap-select\js\i18n\defaults-it_IT.js" />
+    <Content Include="Admin\assets-2022\bootstrap-select\js\i18n\defaults-it_IT.min.js" />
     <Content Include="Admin\assets-2022\css\AdminLTE.css" />
     <Content Include="Admin\assets-2022\css\bootstrap\bootstrap-grid.css" />
     <Content Include="Admin\assets-2022\css\bootstrap\bootstrap-grid.min.css" />
@@ -251,6 +257,12 @@
     <Content Include="Admin\assets-2022\datatables.net\datatables.js" />
     <Content Include="Admin\assets-2022\datatables.net\datatables.min.css" />
     <Content Include="Admin\assets-2022\datatables.net\datatables.min.js" />
+    <Content Include="Admin\assets-2022\sweetalert2\dist\sweetalert2.all.js" />
+    <Content Include="Admin\assets-2022\sweetalert2\dist\sweetalert2.all.min.js" />
+    <Content Include="Admin\assets-2022\sweetalert2\dist\sweetalert2.css" />
+    <Content Include="Admin\assets-2022\sweetalert2\dist\sweetalert2.js" />
+    <Content Include="Admin\assets-2022\sweetalert2\dist\sweetalert2.min.css" />
+    <Content Include="Admin\assets-2022\sweetalert2\dist\sweetalert2.min.js" />
     <Content Include="Admin\css\main.min.css">
       <DependentUpon>main.css</DependentUpon>
     </Content>
@@ -274,6 +286,31 @@
     <Content Include="Admin\Scripts\jquery\dist\jquery.min.js" />
     <Content Include="Admin\Scripts\jquery\dist\jquery.slim.js" />
     <Content Include="Admin\Scripts\jquery\dist\jquery.slim.min.js" />
+    <Content Include="Admin\Scripts\plugins\datatables.net-bs\css\dataTables.bootstrap.css" />
+    <Content Include="Admin\Scripts\plugins\datatables.net-bs\css\dataTables.bootstrap.min.css" />
+    <Content Include="Admin\Scripts\plugins\datatables.net-bs\images\favicon.ico" />
+    <Content Include="Admin\Scripts\plugins\datatables.net-bs\images\sort_asc.png" />
+    <Content Include="Admin\Scripts\plugins\datatables.net-bs\images\sort_asc_disabled.png" />
+    <Content Include="Admin\Scripts\plugins\datatables.net-bs\images\sort_both.png" />
+    <Content Include="Admin\Scripts\plugins\datatables.net-bs\images\sort_desc.png" />
+    <Content Include="Admin\Scripts\plugins\datatables.net-bs\images\sort_desc_disabled.png" />
+    <Content Include="Admin\Scripts\plugins\datatables.net-bs\js\dataTables.bootstrap.js" />
+    <Content Include="Admin\Scripts\plugins\datatables.net-bs\js\dataTables.bootstrap.min.js" />
+    <Content Include="Admin\Scripts\plugins\datatables.net-bs\License.txt" />
+    <Content Include="Admin\Scripts\plugins\datatables.net\js\jquery.dataTables.js" />
+    <Content Include="Admin\Scripts\plugins\datatables.net\js\jquery.dataTables.min.js" />
+    <Content Include="Admin\Scripts\plugins\datatables.net\License.txt" />
+    <Content Include="Admin\Scripts\plugins\datatable\css\datatable-bootstrap.css" />
+    <Content Include="Admin\Scripts\plugins\datatable\css\datatable-bootstrap.min.css" />
+    <Content Include="Admin\Scripts\plugins\datatable\css\datatable.css" />
+    <Content Include="Admin\Scripts\plugins\datatable\css\datatable.min.css" />
+    <Content Include="Admin\Scripts\plugins\datatable\img\sort_asc.png" />
+    <Content Include="Admin\Scripts\plugins\datatable\img\sort_both.png" />
+    <Content Include="Admin\Scripts\plugins\datatable\img\sort_desc.png" />
+    <Content Include="Admin\Scripts\plugins\datatable\js\datatable.jquery.js" />
+    <Content Include="Admin\Scripts\plugins\datatable\js\datatable.jquery.min.js" />
+    <Content Include="Admin\Scripts\plugins\datatable\js\datatable.js" />
+    <Content Include="Admin\Scripts\plugins\datatable\js\datatable.min.js" />
     <Content Include="Content\Site.css" />
     <Content Include="userfiles\image\fb-manifest.png" />
     <Content Include="Admin\Ajax\PreviewPost.ashx" />
@@ -283,6 +320,11 @@
     <Content Include="Admin\assets-2022\css\bootstrap\bootstrap-grid.min.map" />
     <Content Include="Admin\assets-2022\css\bootstrap\bootstrap-reboot.min.map" />
     <Content Include="Admin\assets-2022\css\bootstrap\bootstrap.min.map" />
+    <Content Include="Admin\Ajax\ContentsPaginatedAsync.ashx" />
+    <Content Include="Admin\assets-2022\bootstrap-select\css\bootstrap-select.css.map" />
+    <Content Include="Admin\assets-2022\bootstrap-select\js\bootstrap-select.js.map" />
+    <Content Include="Admin\assets-2022\bootstrap-select\js\bootstrap-select.min.js.map" />
+    <Content Include="Admin\assets-2022\bootstrap-select\js\i18n\defaults-it_IT.js.map" />
     <None Include="Admin\css\datatable\datatable_bundle.css.bundle" />
     <Content Include="Admin\Config.aspx" />
     <None Include="Admin\css\iCheck\all.css" />
@@ -883,6 +925,10 @@
     <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\LICENSE" />
     <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\README.md" />
     <Content Include="Admin\Scripts\plugins\ckeditor\plugins\codesnippet\lib\highlight\README.ru.md" />
+    <Content Include="Admin\Scripts\plugins\datatables.net\package.json" />
+    <Content Include="Admin\Scripts\plugins\datatables.net\Readme.md" />
+    <Content Include="Admin\Scripts\plugins\datatables.net-bs\package.json" />
+    <Content Include="Admin\Scripts\plugins\datatables.net-bs\Readme.md" />
     <None Include="Admin\Scripts\plugins\plugins.js.bundle" />
     <Content Include="Admin\css\datepicker\datepicker3.css" />
     <Content Include="Admin\css\main.css" />
@@ -1614,6 +1660,9 @@
     <Compile Include="AccessToken\AdmAccessToken.cs" />
     <Compile Include="AccessToken\AdmAuthentication.cs" />
     <Compile Include="AccessToken\AzureAuthToken.cs" />
+    <Compile Include="Admin\Ajax\ContentsPaginatedAsync.ashx.cs">
+      <DependentUpon>ContentsPaginatedAsync.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Ajax\EditUserProfile.ashx.cs">
       <DependentUpon>EditUserProfile.ashx</DependentUpon>
     </Compile>
@@ -1646,9 +1695,13 @@
     <Compile Include="AjaxSendMail_JSON.ashx.cs">
       <DependentUpon>AjaxSendMail_JSON.ashx</DependentUpon>
     </Compile>
+    <Compile Include="Api_Controllers\CheckPermalinkController.cs" />
     <Compile Include="Api_Controllers\CheckTokenController.cs" />
+    <Compile Include="Api_Controllers\GetParentsTreeController.cs" />
     <Compile Include="Api_Controllers\MagicPostController.cs" />
+    <Compile Include="Api_Controllers\PostTypeVisibilityController.cs" />
     <Compile Include="Api_Controllers\ProvaController.cs" />
+    <Compile Include="Api_Controllers\ContentsPaginatedController.cs" />
     <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.cs.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1735,6 +1788,8 @@
       <DependentUpon>IZWebFileManagerResource.zh-CN.resx</DependentUpon>
     </Compile>
     <Compile Include="Core\ControlExtensions.cs" />
+    <Compile Include="Core\JTreeInfoList.cs" />
+    <Compile Include="Core\JTreeNodeCollection.cs" />
     <Compile Include="Core\MagicGmap3Marker.cs" />
     <Compile Include="Core\MagicPostWhichUrl.cs" />
     <Compile Include="Core\MenuIcon.cs" />
@@ -1743,6 +1798,8 @@
     <Compile Include="Core\MiniaturaInfo.cs" />
     <Compile Include="Core\UserToken.cs" />
     <Compile Include="CustomCss\MagicCss.cs" />
+    <Compile Include="DataTable\MpForTable.cs" />
+    <Compile Include="DataTable\MpFotTableCollection.cs" />
     <Compile Include="error.aspx.cs">
       <DependentUpon>error.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2402,6 +2459,10 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Admin\Scripts\plugins\datatables.net-bs\types\dataTables.bootstrap.d.ts" />
+    <TypeScriptCompile Include="Admin\Scripts\plugins\datatables.net\types\types.d.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
