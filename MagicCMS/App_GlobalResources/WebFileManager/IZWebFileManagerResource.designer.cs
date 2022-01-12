@@ -13,13 +13,13 @@ namespace Resources {
     
     
     /// <summary>
-    ///   Classe di risorse fortemente tipizzata per la ricerca di stringhe localizzate e così via.
+    ///    Classe di risorse fortemente tipizzata per la ricerca di stringhe localizzate e così via.
     /// </summary>
     // Questa classe è stata generata automaticamente dalla classe StronglyTypedResourceBuilder
     // tramite uno strumento quale ResGen o Visual Studio.
-    // Per aggiungere o rimuovere un membro, modificare il file con estensione ResX, quindi eseguire nuovamente ResGen
+    // Per aggiungere o rimuovere un membro, modificare il file con estensione ResX ed eseguire nuovamente ResGen
     // con l'opzione /str oppure ricompilare il progetto Visual Studio.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Web.Application.StronglyTypedResourceProxyBuilder", "11.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Web.Application.StronglyTypedResourceProxyBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class IZWebFileManagerResource {
@@ -33,7 +33,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Restituisce l'istanza di ResourceManager nella cache utilizzata da questa classe.
+        ///    Restituisce l'istanza di ResourceManager memorizzata nella cache e usata da questa classe.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         internal static global::System.Resources.ResourceManager ResourceManager {
@@ -47,8 +47,8 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Esegue l'override della proprietà CurrentUICulture del thread corrente per tutte
-        ///   le ricerche di risorse che utilizzano questa classe di risorse fortemente tipizzata.
+        ///    Esegue l'override della proprietà CurrentUICulture del thread corrente per tutte
+        ///    le ricerche di risorse che utilizzano questa classe di risorse fortemente tipizzata.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         internal static global::System.Globalization.CultureInfo Culture {
@@ -61,7 +61,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Arrange Icons By.
+        ///    Cerca una stringa localizzata simile a Arrange Icons By.
         /// </summary>
         internal static string Arrange_Icons_By {
             get {
@@ -70,7 +70,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Cannot Complete Operation..
+        ///    Cerca una stringa localizzata simile a Cannot Complete Operation..
         /// </summary>
         internal static string CannotCompleteOperation {
             get {
@@ -79,7 +79,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Cannot find file, Make sure the path is correct..
+        ///    Cerca una stringa localizzata simile a Cannot find file, Make sure the path is correct..
         /// </summary>
         internal static string CannotFindFile {
             get {
@@ -88,7 +88,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Cannot rename file: A file with the name you specified already exists. Specify a different file name..
+        ///    Cerca una stringa localizzata simile a Cannot rename file: A file with the name you specified already exists. Specify a different file name..
         /// </summary>
         internal static string CannotRenameFile {
             get {
@@ -97,7 +97,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Copy.
+        ///    Cerca una stringa localizzata simile a Copy.
         /// </summary>
         internal static string Copy {
             get {
@@ -106,7 +106,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a New.
+        ///    Cerca una stringa localizzata simile a New.
         /// </summary>
         internal static string Create {
             get {
@@ -115,7 +115,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a New Folder.
+        ///    Cerca una stringa localizzata simile a New Folder.
         /// </summary>
         internal static string Create_New_Folder {
             get {
@@ -124,7 +124,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Date Modified.
+        ///    Cerca una stringa localizzata simile a Date Modified.
         /// </summary>
         internal static string Date_Modified {
             get {
@@ -133,7 +133,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Delete.
+        ///    Cerca una stringa localizzata simile a Delete.
         /// </summary>
         internal static string Delete {
             get {
@@ -142,7 +142,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Are you sure you want to delete selected items?.
+        ///    Cerca una stringa localizzata simile a Are you sure you want to delete selected items?.
         /// </summary>
         internal static string DeleteConfirm {
             get {
@@ -151,7 +151,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a The destination folder is a subfolder of the source folder..
+        ///    Cerca una stringa localizzata simile a The destination folder is a subfolder of the source folder..
         /// </summary>
         internal static string DestinationFolderIsSubfolder {
             get {
@@ -160,7 +160,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Details.
+        ///    Cerca una stringa localizzata simile a Details.
         /// </summary>
         internal static string Details {
             get {
@@ -169,7 +169,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Download.
+        ///    Cerca una stringa localizzata simile a Download.
         /// </summary>
         internal static string Download {
             get {
@@ -178,7 +178,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a File Folder.
+        ///    Cerca una stringa localizzata simile a File Folder.
         /// </summary>
         internal static string File_Folder {
             get {
@@ -187,7 +187,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Folder Path.
+        ///    Cerca una stringa localizzata simile a Folder Path.
         /// </summary>
         internal static string Folder_Path {
             get {
@@ -196,7 +196,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Icons.
+        ///    Cerca una stringa localizzata simile a Icons.
         /// </summary>
         internal static string Icons {
             get {
@@ -205,7 +205,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Insufficient user privileges to complete the operation.
+        ///    Cerca una stringa localizzata simile a Insufficient user privileges to complete the operation.
         /// </summary>
         internal static string Insufficient_privileges {
             get {
@@ -214,7 +214,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Move.
+        ///    Cerca una stringa localizzata simile a Move.
         /// </summary>
         internal static string Move {
             get {
@@ -223,7 +223,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a You must type a file name..
+        ///    Cerca una stringa localizzata simile a You must type a file name..
         /// </summary>
         internal static string MustTypeFileName {
             get {
@@ -232,7 +232,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Name.
+        ///    Cerca una stringa localizzata simile a Name.
         /// </summary>
         internal static string Name {
             get {
@@ -241,7 +241,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Folder.
+        ///    Cerca una stringa localizzata simile a Folder.
         /// </summary>
         internal static string New_Folder {
             get {
@@ -250,7 +250,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a New Folder.
+        ///    Cerca una stringa localizzata simile a New Folder.
         /// </summary>
         internal static string New_Folder_Name {
             get {
@@ -259,7 +259,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a A file name cannot contain any of the following characters: \/:*?&quot;&lt;&gt;|.
+        ///    Cerca una stringa localizzata simile a A file name cannot contain any of the following characters: \/:*?&quot;&lt;&gt;|.
         /// </summary>
         internal static string NotAllowedCharacters {
             get {
@@ -268,7 +268,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a DoubleClick to open a folder. DoubleClick to download a file..
+        ///    Cerca una stringa localizzata simile a DoubleClick to open a folder. DoubleClick to download a file..
         /// </summary>
         internal static string No_Command_Help {
             get {
@@ -277,7 +277,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Select.
+        ///    Cerca una stringa localizzata simile a Select.
         /// </summary>
         internal static string Open {
             get {
@@ -286,7 +286,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Refresh.
+        ///    Cerca una stringa localizzata simile a Refresh.
         /// </summary>
         internal static string Refresh {
             get {
@@ -295,7 +295,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Rename.
+        ///    Cerca una stringa localizzata simile a Rename.
         /// </summary>
         internal static string Rename {
             get {
@@ -304,7 +304,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Files.
+        ///    Cerca una stringa localizzata simile a Files.
         /// </summary>
         internal static string Root_File {
             get {
@@ -313,7 +313,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Flash Movies.
+        ///    Cerca una stringa localizzata simile a Flash Movies.
         /// </summary>
         internal static string Root_Flash {
             get {
@@ -322,7 +322,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Images.
+        ///    Cerca una stringa localizzata simile a Images.
         /// </summary>
         internal static string Root_Image {
             get {
@@ -331,7 +331,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Media.
+        ///    Cerca una stringa localizzata simile a Media.
         /// </summary>
         internal static string Root_Media {
             get {
@@ -340,7 +340,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Search.
+        ///    Cerca una stringa localizzata simile a Search.
         /// </summary>
         internal static string SearchWatermark {
             get {
@@ -349,7 +349,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Select destination directory.
+        ///    Cerca una stringa localizzata simile a Select destination directory.
         /// </summary>
         internal static string SelectDestination {
             get {
@@ -358,7 +358,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Size.
+        ///    Cerca una stringa localizzata simile a Size.
         /// </summary>
         internal static string Size {
             get {
@@ -367,7 +367,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Submit.
+        ///    Cerca una stringa localizzata simile a Submit.
         /// </summary>
         internal static string Submit {
             get {
@@ -376,7 +376,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Thumbnails.
+        ///    Cerca una stringa localizzata simile a Thumbnails.
         /// </summary>
         internal static string Thumbnails {
             get {
@@ -385,7 +385,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Type.
+        ///    Cerca una stringa localizzata simile a Type.
         /// </summary>
         internal static string Type {
             get {
@@ -394,7 +394,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Up.
+        ///    Cerca una stringa localizzata simile a Up.
         /// </summary>
         internal static string Up {
             get {
@@ -403,7 +403,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Upload Another File.
+        ///    Cerca una stringa localizzata simile a Upload Another File.
         /// </summary>
         internal static string Upload_Another_File {
             get {
@@ -412,7 +412,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Or drag &apos;nd drop one or more files on the above area.
+        ///    Cerca una stringa localizzata simile a Or drag &apos;nd drop one or more files on the above area.
         /// </summary>
         internal static string Upload_dnd {
             get {
@@ -421,7 +421,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a File exceeds maximum size allowed ({0} mb).
+        ///    Cerca una stringa localizzata simile a File exceeds maximum size allowed ({0} mb).
         /// </summary>
         internal static string Upload_Error_1 {
             get {
@@ -430,7 +430,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a File type not allowed or not supported..
+        ///    Cerca una stringa localizzata simile a File type not allowed or not supported..
         /// </summary>
         internal static string Upload_Error_2 {
             get {
@@ -439,7 +439,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a User does not have sufficient privileges..
+        ///    Cerca una stringa localizzata simile a User does not have sufficient privileges..
         /// </summary>
         internal static string Upload_Error_3 {
             get {
@@ -448,7 +448,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Upload File.
+        ///    Cerca una stringa localizzata simile a Upload File.
         /// </summary>
         internal static string Upload_File {
             get {
@@ -457,7 +457,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Click here to upload a file.
+        ///    Cerca una stringa localizzata simile a Click here to upload a file.
         /// </summary>
         internal static string Upload_File_click {
             get {
@@ -466,7 +466,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Remove.
+        ///    Cerca una stringa localizzata simile a Remove.
         /// </summary>
         internal static string Upload_File_Remove {
             get {
@@ -475,7 +475,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a File type not allowed or not supported..
+        ///    Cerca una stringa localizzata simile a File type not allowed or not supported..
         /// </summary>
         internal static string Upload_not_allowed {
             get {
@@ -484,7 +484,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a File &quot;{0}&quot; was successfully uploaded.
+        ///    Cerca una stringa localizzata simile a File &quot;{0}&quot; was successfully uploaded.
         /// </summary>
         internal static string Upload_success {
             get {
@@ -493,7 +493,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a View.
+        ///    Cerca una stringa localizzata simile a View.
         /// </summary>
         internal static string View {
             get {
@@ -502,7 +502,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a File view.
+        ///    Cerca una stringa localizzata simile a File view.
         /// </summary>
         internal static string View_file {
             get {

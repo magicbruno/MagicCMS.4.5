@@ -48,7 +48,7 @@ $(function () {
 					});
 				} else {
 					// Allerta: La sessione sta per scadere
-					$('#sessionExpiresIn').text(addZero(h) + ':' + addZero(m) + ':' + addZero(s));
+					$('#sessionExpiresIn').text(data.data);
 					if (data.exitcode != 0) {
 						$('#RinnovaSessione').modal('show');
 					}

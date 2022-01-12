@@ -383,7 +383,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-xs-12">
+                                <div class="col-12">
                                     <div class="center-block text-center">
                                         <button type="button" class="btn btn-primary" data-action="submit">
                                             <%= Master.Translate("Salva modifiche") %></button>
@@ -430,10 +430,26 @@
                     .on('xhr.dt', function (e, settings, json) {
                         var xhr = settings.jqXHR;
                         if (xhr.status == 403) {
-                        	bootbox.alert('<%= Master.Translate("Sessione scaduta. È necessario ripetere il login") %>.', function () {
-                                window.location.href = "login.aspx";
+
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Errore',
+                                text: '<%= Master.Translate("Sessione scaduta. È necessario ripetere il login") %>.'
+                            }).then(() => {
+                                window.location.href = "/Admin/Login.aspx";
+                            });
+
+                        }
+                        else if (xhr.status != 200) {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Errore',
+                                text: 'Si è verificaro un errore: ' + xhr.status + ", " + xhr.statusText
+                            }).then(() => {
+                                window.location.href = "/Admin/Login.aspx";
                             });
                         }
+                        return true;
                     })
                     .DataTable({
                         "serverSide": true,
@@ -936,5 +952,5 @@
                 	return '<%= Master.Translate("Attenzione sono state rilevate modifiche non salvate") %>.';
             });
         })
-	</script>
+    </script>
 </asp:Content>

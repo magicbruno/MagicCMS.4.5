@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/MasterAdmin.master" AutoEventWireup="true" CodeBehind="Dictionary.aspx.cs" Inherits="MagicCMS.Admin.Dictionary" %>
+
 <%@ MasterType TypeName="MagicCMS.Admin.MasterAdmin" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -20,7 +21,7 @@
                     </div>
                 </div>
                 <div class="box-body">
-                    <table id="table_dictionary" class="table table-striped table-bordered" style="width:100%" width="100%" >
+                    <table id="table_dictionary" class="table table-striped table-bordered" style="width: 100%" width="100%">
                         <thead>
                             <tr>
                                 <th><%= Master.Translate("Termine") %></th>
@@ -55,8 +56,8 @@
                         <div class="form-group" id="fg-Source">
                             <label for="Source" class="col-sm-3 control-label"><%= Master.Translate("Termine o frase") %></label>
                             <div class="col-sm-9">
-                               <%-- <input type="email" class="form-control" id="Source" placeholder="Termine o frase" />--%>
-								<textarea rows="4" class="form-control"  id="Source" placeholder="<%= Master.Translate("Termine o frase") %>" maxlength="1000"></textarea>
+                                <%-- <input type="email" class="form-control" id="Source" placeholder="Termine o frase" />--%>
+                                <textarea rows="4" class="form-control" id="Source" placeholder="<%= Master.Translate("Termine o frase") %>" maxlength="1000"></textarea>
                             </div>
                         </div>
                         <div class="form-group" id="fg-LangId">
@@ -69,7 +70,7 @@
                             <label for="Translation" class="col-sm-3 control-label"><%= Master.Translate("Traduzione") %></label>
                             <div class="col-sm-9">
                                 <%--<input type="text" class="form-control" id="Translation" placeholder="Traduzione" />--%>
-								<textarea rows="4" class="form-control" id="Translation" placeholder="<%= Master.Translate("Traduzione") %>" maxlength="1000"></textarea>
+                                <textarea rows="4" class="form-control" id="Translation" placeholder="<%= Master.Translate("Traduzione") %>" maxlength="1000"></textarea>
                             </div>
                         </div>
                         <div class="form-group">
@@ -99,13 +100,29 @@
             $('#table_dictionary')
                 .on('xhr.dt', function (e, settings, json) {
                     var xhr = settings.jqXHR;
+
                     if (xhr.status == 403) {
-                    	bootbox.alert('<%= Master.Translate("Sessione scaduta. È necessario ripetere il login") %>.', function () {
-                            window.location.href = "/login.aspx";
+
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Errore',
+                            text: '<%= Master.Translate("Sessione scaduta. È necessario ripetere il login") %>.'
+                        }).then(() => {
+                            window.location.href = "/Admin/Login.aspx";
+                        });
+
+                    }
+                    else if (xhr.status != 200) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Errore',
+                            text: 'Si è verificaro un errore: ' + xhr.status + ", " + xhr.statusText
+                        }).then(() => {
+                            window.location.href = "/Admin/Login.aspx";
                         });
                     }
-                    //else if (xhr.status != 200)
-                    //    bootbox.alert('Si è verificaro un errore: ' + xhr.status + ", " + xhr.statusText);
+                    return true;
+
                 })
                 .DataTable({
                     "serverSide": true,
@@ -114,26 +131,26 @@
                         "type": "POST"
                     },
                     "language": {
-                    	"sEmptyTable": "<%= Master.Translate("Nessun dato presente nella tabella") %>",
-                    	"sInfo": "<%= Master.Translate("Vista da _START_ a _END_ di _TOTAL_ elementi") %>",
-                    	"sInfoEmpty": "<%= Master.Translate("Vista da 0 a 0 di 0 elementi") %>",
-                    	"sInfoFiltered": "<%= Master.Translate("(filtrati da _MAX_ elementi totali)") %>",
+                        "sEmptyTable": "<%= Master.Translate("Nessun dato presente nella tabella") %>",
+                        "sInfo": "<%= Master.Translate("Vista da _START_ a _END_ di _TOTAL_ elementi") %>",
+                        "sInfoEmpty": "<%= Master.Translate("Vista da 0 a 0 di 0 elementi") %>",
+                        "sInfoFiltered": "<%= Master.Translate("(filtrati da _MAX_ elementi totali)") %>",
                         "sInfoPostFix": "",
                         "sInfoThousands": ",",
                         "sLengthMenu": "<%= Master.Translate("Visualizza _MENU_ elementi") %>",
-                    	"sLoadingRecords": "<%= Master.Translate("Caricamento") %>...",
-                    	"sProcessing": "<%= Master.Translate("Elaborazione") %>...",
-                    	"sSearch": "<%= Master.Translate("Cerca") %>:",
-                    	"sZeroRecords": "<%= Master.Translate("La ricerca non ha portato alcun risultato") %>.",
+                        "sLoadingRecords": "<%= Master.Translate("Caricamento") %>...",
+                        "sProcessing": "<%= Master.Translate("Elaborazione") %>...",
+                        "sSearch": "<%= Master.Translate("Cerca") %>:",
+                        "sZeroRecords": "<%= Master.Translate("La ricerca non ha portato alcun risultato") %>.",
                         "oPaginate": {
-                        	"sFirst": "<%= Master.Translate("Inizio") %>",
-                        	"sPrevious": "<%= Master.Translate("Precedente") %>",
-                        	"sNext": "<%= Master.Translate("Successivo") %>",
-                        	"sLast": "<%= Master.Translate("Fine") %>"
+                            "sFirst": "<%= Master.Translate("Inizio") %>",
+                            "sPrevious": "<%= Master.Translate("Precedente") %>",
+                            "sNext": "<%= Master.Translate("Successivo") %>",
+                            "sLast": "<%= Master.Translate("Fine") %>"
                         },
                         "oAria": {
-                        	"sSortAscending": ": <%= Master.Translate("attiva per ordinare la colonna in ordine crescente") %>",
-                        	"sSortDescending": ": <%= Master.Translate("attiva per ordinare la colonna in ordine decrescente") %>"
+                            "sSortAscending": ": <%= Master.Translate("attiva per ordinare la colonna in ordine crescente") %>",
+                            "sSortDescending": ": <%= Master.Translate("attiva per ordinare la colonna in ordine decrescente") %>"
                         }
                     },
                     "columnDefs": [
@@ -201,8 +218,16 @@
                 $('#pk').val($this.attr('data-rowpk'));
                 // Delete record
             } else if ($this.is('[data-action="delete"]')) {
-            	bootbox.confirm('<%= Master.Translate("Il termine verrà eliminato definitivamente. Ser sicuro di voler continuare") %>?', function (result) {
-                    if (result) {
+                Swal.fire({
+                    title: '<%= Master.Translate("Avvertenza") %>' + '!',
+                    text: '<%= Master.Translate("Il termine verrà eliminato definitivamente. Ser sicuro di voler continuare") %>?',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Ok!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
                         $('#table_dictionary').spin();
                         $.ajax({
                             type: "POST",
@@ -213,19 +238,28 @@
                             },
                             dataType: "json"
                         })
-                        .done(function (data) {
-                            if (data.success) {
-                                $tabledictionary.ajax.reload(false, false);
-                            } else {
-                            	bootbox.alert('<%= Master.Translate("Si è verificato un errore") %>: ' + data.msg);
-                            }
-                        })
-                        .fail(function (jqxhr, textStatus, error) {
-                        	bootbox.alert('<%= Master.Translate("Si è verificato un errore") %>: ' + textStatus + "," + error);
-                        })
-                        .always(function () {
-                            $('#table_dictionary').spin(false);
-                        });
+                            .done(function (data) {
+                                if (data.success) {
+                                    $tabledictionary.ajax.reload(false, false);
+                                } else {
+                                    Swal.fire({
+                                        icon: "error",
+                                        title: 'Errore',
+                                        text: '<%= Master.Translate("Si è verificato un errore") %>: ' + data.msg
+                                    });
+
+                                }
+                            })
+                            .fail(function (jqxhr, textStatus, error) {
+                                Swal.fire({
+                                    icon: "error",
+                                    title: 'Errore',
+                                    text: '<%= Master.Translate("Si è verificato un errore") %>: ' + textStatus + "," + error
+                                });
+                            })
+                            .always(function () {
+                                $('#table_dictionary').spin(false);
+                            });
                     }
                 })
             }
@@ -248,124 +282,124 @@
 
         // Dopo che la modal è stata mostrata
         $("#modal-edit-term").on('shown.bs.modal', function (e) {
-        	var $modal = $(this);
-        	$modal.find('.modal-dialog').spin();
-        	if ($('#pk').val() == 0) {
+            var $modal = $(this);
+            $modal.find('.modal-dialog').spin();
+            if ($('#pk').val() == 0) {
 
-        		//Imposto selezione linguaggio e carico dati
+                //Imposto selezione linguaggio e carico dati
 
-        		// Inserimento nuovo record: campi vuoti e linguaggio
-        		$('#LangId').select2(
+                // Inserimento nuovo record: campi vuoti e linguaggio
+                $('#LangId').select2(
                     {
-                    	ajax: {
-                    		url: 'Ajax/liste.ashx?idField=ANA_LANGUAGE',
-                    		results: function (data) {
-                    			return { results: data };
-                    		}
-                    	},
-                    	initSelection: function (element, callback) {
-                    		callback({ id: 'en', text: 'en' });
-                    		$(element).val('en');
-                    	}
+                        ajax: {
+                            url: 'Ajax/liste.ashx?idField=ANA_LANGUAGE',
+                            results: function (data) {
+                                return { results: data };
+                            }
+                        },
+                        initSelection: function (element, callback) {
+                            callback({ id: 'en', text: 'en' });
+                            $(element).val('en');
+                        }
                     });
-        		$modal.find('.modal-dialog').spin(false);
+                $modal.find('.modal-dialog').spin(false);
 
-        	} else {
-        		// Modifica record: carico i dati
-        		$.getJSON('Ajax/GetRecord.ashx', { pk: $('#pk').val(), table: "ANA_Dictionary" })
+            } else {
+                // Modifica record: carico i dati
+                $.getJSON('Ajax/GetRecord.ashx', { pk: $('#pk').val(), table: "ANA_Dictionary" })
                     .fail(function (jqxhr, textStatus, error) {
-                    	$('.alert', $modal)
+                        $('.alert', $modal)
                             .text('Si è verificaro un errore: ' + textStatus + "," + error)
                             .removeClass('alert-success')
                             .addClass('alert-danger')
                             .show();
                     })
                     .done(function (data) {
-                    	if (data.success) {
-                    		var record = data.data;
-                    		$('#Source').val(record.Source);
-                    		$('#Translation').val(record.Translation);
-                    		$('#LangId').select2({
-                    			ajax: {
-                    				url: 'Ajax/liste.ashx?idField=ANA_LANGUAGE',
-                    				results: function (data) {
-                    					return { results: data };
-                    				}
-                    			},
-                    			initSelection: function (element, callback) {
-                    				$(element).val(record.LangId);
-                    				callback({ id: record.LangId, text: record.LangId });
-                    			}
-                    		});
-                    	} else {
-                    		$('.alert', $modal)
+                        if (data.success) {
+                            var record = data.data;
+                            $('#Source').val(record.Source);
+                            $('#Translation').val(record.Translation);
+                            $('#LangId').select2({
+                                ajax: {
+                                    url: 'Ajax/liste.ashx?idField=ANA_LANGUAGE',
+                                    results: function (data) {
+                                        return { results: data };
+                                    }
+                                },
+                                initSelection: function (element, callback) {
+                                    $(element).val(record.LangId);
+                                    callback({ id: record.LangId, text: record.LangId });
+                                }
+                            });
+                        } else {
+                            $('.alert', $modal)
                                 .text(data.msg)
                                 .removeClass('alert-success')
                                 .addClass('alert-danger')
                                 .show();
-                    	}
+                        }
                     })
                     .always(function () {
-                    	$modal.find('.modal-dialog').spin(false);
+                        $modal.find('.modal-dialog').spin(false);
                     })
-        	}
+            }
 
 
 
         })
         // Dopo l'invio dello pseudoform
         $('[data-action="submit"]').on('submitted.mb.form', function (e, data) {
-        	$tabledictionary.ajax.reload(null, false);
-        	if ($('#pk').val() == 0 && data.success)
-        		$("#modal-edit-term").modal('hide');
+            $tabledictionary.ajax.reload(null, false);
+            if ($('#pk').val() == 0 && data.success)
+                $("#modal-edit-term").modal('hide');
         })
 
         $('#btn-translate').on('click', function (e) {
-        	e.preventDefault();
-        	var $me = $(this);
-        	var $form = $me.parents('[role="form"]');
-        	var $alert = $form.find('.alert');
-        	var langid = $('#LangId').val();
-        	var source = $("#Source").val();
-        	var params = {
-        		LangId: langid,
-        		term: source
-        	};
-        	$form.spin();
-        	$alert.hide();
-        	$.ajax('Ajax/BingTranslation.ashx',
-				{
-					data: params,
-					dataType: 'json',
-					type: 'POST'
-				})
-				.done(function (data) {
-					if (data.success) {
-						$alert
-							.text(data.msg)
-							.removeClass('alert-danger')
-							.addClass('alert-success')
-							.show();
-						$('#Translation').val(data.data);
-					} else {
-						$('.alert', $modal)
-							.text(data.msg)
-							.removeClass('alert-success')
-							.addClass('alert-danger')
-							.show();
-					}
-				})
-				.fail(function (jqxhr, textStatus, error) {
-					$('.alert', $modal)
-						.text(textStatus)
-						.removeClass('alert-success')
-						.addClass('alert-danger')
-						.show();
-				})
-				.always(function () {
-					$form.spin(false);
-				});
+            e.preventDefault();
+            var $me = $(this);
+            var $form = $me.parents('[role="form"]');
+            var $alert = $form.find('.alert');
+            var langid = $('#LangId').val();
+            var source = $("#Source").val();
+            var params = {
+                LangId: langid,
+                term: source
+            };
+            $form.spin();
+            $alert.hide();
+            $.ajax('Ajax/BingTranslation.ashx',
+                {
+                    data: params,
+                    dataType: 'json',
+                    type: 'POST'
+                })
+                .done(function (data) {
+                    if (data.success) {
+                        $alert
+                            .text(data.msg)
+                            .removeClass('alert-danger')
+                            .addClass('alert-success')
+                            .show();
+                        $('#Translation').val(data.data);
+                    } else {
+                        $('.alert', $modal)
+                            .text(data.msg)
+                            .removeClass('alert-success')
+                            .addClass('alert-danger')
+                            .show();
+                    }
+                })
+                .fail(function (jqxhr, textStatus, error) {
+                    $('.alert', $modal)
+                        .text(textStatus)
+                        .removeClass('alert-success')
+                        .addClass('alert-danger')
+                        .show();
+                })
+                .always(function () {
+                    $form.spin(false);
+                });
         });
 
-	</script>
+    </script>
 </asp:Content>

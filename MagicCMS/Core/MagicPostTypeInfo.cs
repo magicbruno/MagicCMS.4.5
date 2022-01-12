@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MagicCMS.Routing;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -1097,6 +1098,196 @@ namespace MagicCMS.Core
 		/// </summary>
 		/// <value>The pk.</value>
 		public int Pk { get; private set; }
+
+		public string VisibilityStyles
+        {
+			get
+            {
+				List<string> _list = new List<string>();
+
+
+				if (!FlagAltezza)
+				{
+					_list.Add("." + ("FlagAltezza"));
+				}
+
+				if (!FlagBreve)
+				{
+					_list.Add("." + ("FlagBreve"));
+				}
+				if (!FlagBreve && !FlagFull)
+				{
+					_list.Add("." + ("FlagTesti"));
+				}
+
+				if (!FlagBtnGeolog)
+				{
+					_list.Add("." + ("FlagBtnGeolog"));
+				}
+
+				if (!FlagCercaServer)
+				{
+					_list.Add("." + ("FlagCercaServer"));
+				}
+
+				if (!FlagAltezza)
+				{
+					_list.Add("." + ("FlagAltezza"));
+				}
+
+				if (!FlagLarghezza)
+				{
+					_list.Add("." + ("FlagLarghezza"));
+				}
+
+				if (!FlagAltezza && !FlagLarghezza)
+				{
+					_list.Add("." + ("FlagDimensioni"));
+				}
+
+				if (!FlagExtraInfo)
+				{
+					_list.Add("." + ("FlagExtraInfo"));
+				}
+
+				if (!FlagExtrInfo1)
+				{
+					_list.Add("." + ("FlagExtraInfo1"));
+				}
+
+				if (String.IsNullOrEmpty(LabelExtraInfo2))
+				{
+					_list.Add("." + ("FlagExtraInfo2"));
+				}
+
+				if (String.IsNullOrEmpty(LabelExtraInfo3))
+				{
+					_list.Add("." + ("FlagExtraInfo3"));
+				}
+
+				if (String.IsNullOrEmpty(LabelExtraInfo4))
+				{
+					_list.Add("." + ("FlagExtraInfo4"));
+				}
+
+				if (!FlagFull)
+				{
+					_list.Add("." + ("FlagFull"));
+				}
+
+
+				if (!FlagScadenza)
+				{
+					_list.Add("." + ("FlagScadenza"));
+				}
+
+				if (!FlagTags)
+				{
+					_list.Add("." + ("FlagTags"));
+				}
+
+				if (!FlagUrl)
+				{
+					_list.Add("." + ("FlagUrl"));
+				}
+
+				if (!FlagUrlSecondaria)
+				{
+					_list.Add("." + ("FlagUrlSecondaria"));
+				}
+
+				if (String.IsNullOrEmpty(LabelExtraInfo_5))
+				{
+					_list.Add("." + ("FlagExtraInfo5"));
+				}
+
+				if (String.IsNullOrEmpty(LabelExtraInfo_6))
+				{
+					_list.Add("." + ("FlagExtraInfo6"));
+				}
+
+
+				if (String.IsNullOrEmpty(LabelExtraInfo_7))
+				{
+					_list.Add("." + ("FlagExtraInfo7"));
+				}
+
+
+				if (String.IsNullOrEmpty(LabelExtraInfo_8))
+				{
+					_list.Add("." + ("FlagExtraInfo8"));
+				}
+
+
+				if (String.IsNullOrEmpty(LabelExtraInfoNumber_1))
+				{
+					_list.Add("." + ("FlagExtraInfoNumber_1"));
+				}
+
+
+				if (String.IsNullOrEmpty(LabelExtraInfoNumber_2))
+				{
+					_list.Add("." + ("FlagExtraInfoNumber_2"));
+				}
+
+
+				if (String.IsNullOrEmpty(LabelExtraInfoNumber_3))
+				{
+					_list.Add("." + ("FlagExtraInfoNumber_3"));
+				}
+
+
+				if (String.IsNullOrEmpty(LabelExtraInfoNumber_4))
+				{
+					_list.Add("." + ("FlagExtraInfoNumber_4"));
+				}
+
+
+				if (String.IsNullOrEmpty(LabelExtraInfoNumber_5))
+				{
+					_list.Add("." + ("FlagExtraInfoNumber_5"));
+				}
+
+
+				if (String.IsNullOrEmpty(LabelExtraInfoNumber_6))
+				{
+					_list.Add("." + ("FlagExtraInfoNumber_6"));
+				}
+
+
+				if (String.IsNullOrEmpty(LabelExtraInfoNumber_7))
+				{
+					_list.Add("." + ("FlagExtraInfoNumber_7"));
+				}
+
+
+				if (String.IsNullOrEmpty(LabelExtraInfoNumber_8))
+				{
+					_list.Add("." + ("FlagExtraInfoNumber_8"));
+				}
+
+				if (String.IsNullOrEmpty(LabelExtraInfoNumber_1 + LabelExtraInfoNumber_2 + LabelExtraInfoNumber_3 + LabelExtraInfoNumber_4
+					+ LabelExtraInfoNumber_5 + LabelExtraInfoNumber_6 + LabelExtraInfoNumber_7 + LabelExtraInfoNumber_8))
+				{
+					_list.Add("." + ("FlagExtraInfoNumberAll"));
+				}
+
+
+				if (MagicIndex.TipiEsclusi.Contains(Pk))
+				{
+					_list.Add("." + ("Permalink"));
+				}
+
+				string template = @"{0} 
+                                {{
+                                    display: none!important;
+                                }}";
+
+
+				return string.Format(template, string.Join(",", _list));
+
+			}
+        }
 
 		#endregion
 

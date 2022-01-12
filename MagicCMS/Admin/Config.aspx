@@ -211,7 +211,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-xs-12">
+                                <div class="col-12">
                                     <div class="center-block text-center">
                                         <button type="button" class="btn btn-primary" data-action="submit">
                                             <%= Master.Translate("Salva configurazione") %></button>
@@ -229,6 +229,7 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Scripts" runat="server">
     <script>
+
         function getImageUrl(url) {
             $('#DefaultImage').val(url);
             $('#FileBrowserModal').modal('hide');
@@ -239,12 +240,27 @@
                 .on('xhr.dt', function (e, settings, json) {
                     var xhr = settings.jqXHR;
                     if (xhr.status == 403) {
-                        bootbox.alert('Sessione scaduta. È necessario ripetere il login.', function () {
+
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Errore',
+                            text: 'Sessione scaduta. È necessario ripetere il login.'
+                        }).then(() => {
+                            window.location.href = "/Admin/Login.aspx";
+                        });
+
+                        
+                    }
+                    else if (xhr.status != 200) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Errore',
+                            text: 'Si è verificaro un errore: ' + xhr.status + ", " + xhr.statusText
+                        }).then(() => {
                             window.location.href = "/Admin/Login.aspx";
                         });
                     }
-                    //else if (xhr.status != 200)
-                    //    bootbox.alert('Si è verificaro un errore: ' + xhr.status + ", " + xhr.statusText);
+                    return true;
                 })
                 .DataTable({
                     "ajax": {
@@ -296,7 +312,12 @@
 
                                 $.getJSON('Ajax/LangActivate.ashx', param)
                                     .fail(function (jqxhr, textStatus, error) {
-                                        bootbox.alert('Si è verificaro un errore: ' + textStatus + ", " + error);
+                                        
+                                        Swal.fire({
+                                            icon: "error",
+                                            title: 'Errore',
+                                            text: 'Si è verificaro un errore: ' + textStatus + ", " + error
+                                        })
                                     })
                                     .done(function (data) {
                                         if (!data.success) {

@@ -33,17 +33,18 @@ namespace MagicCMS.Admin.Session
 			}
 			else
 			{
-				int expiretime = Convert.ToInt32((DateTime.Now - MagicSession.Current.SessionStart).TotalSeconds);
-				if (expiretime > 5400)
+				UserToken userToken = new UserToken(MagicSession.Current.LoggedUser);
+				TimeSpan expiretime = DateTime.Now - MagicSession.Current.SessionStart;
+				if (expiretime.TotalSeconds > 5400 && userToken.IsExpired)
 				{
 					response.success = false;
 					response.msg = "Sessione scaduta. È necessario ripetere il login";
 					response.exitcode = -1;
 					MagicSession.Current.LoggedUser = new MagicUser();
 				}
-				else if (expiretime > 5280)
+				else if (expiretime.TotalSeconds > 5280 && userToken.DaysToExpiration <= 1)
 				{
-					int remaining = 5400 - expiretime;
+					int remaining = Convert.ToInt32( 5400 - expiretime.TotalSeconds);
 					response.data = remaining;
 					response.success = true;
 					response.msg = "Attenzione: " + (remaining / 60).ToString() + " minuti e " + (remaining % 60).ToString() + " secondi alla fine della sessione. Salva il lavoro e preparati a ripetere il login";
@@ -51,7 +52,7 @@ namespace MagicCMS.Admin.Session
 				}
 				else
 				{
-					response.data = 5400 - expiretime;
+					response.data = "Sessione attiva";
 				}
 			}
 

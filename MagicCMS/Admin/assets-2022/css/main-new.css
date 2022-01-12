@@ -8449,7 +8449,7 @@ table.table-hover tbody tr.odd:hover td {
   bottom: 0;
   z-index: 3;
   background-color: #000;
-  background-image: url(../../less/squares.gif);
+  background-image: url(/Admin/css/squares.gif);
   background-position: center 50%;
   background-repeat: no-repeat;
   opacity: 0.7;
@@ -8484,4 +8484,7 @@ table.table-hover tbody tr.odd:hover td {
 .form-horizontal .form-group > [class*="col-"] {
   padding-right: 7px;
   padding-left: 7px;
+}
+.input-group {
+  width: 100%;
 }

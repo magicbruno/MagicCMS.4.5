@@ -129,13 +129,27 @@
 				$('#log')
 					.on('xhr.dt', function (e, settings, json) {
 						var xhr = settings.jqXHR;
-						if (xhr.status == 403) {
-							bootbox.alert('<%= Master.Translate("Sessione scaduta. È necessario ripetere il login") %>.', function () {
-								window.location.href = "/login.aspx";
-							});
-						}
-						//else if (xhr.status != 200)
-						//    bootbox.alert('Si è verificaro un errore: ' + xhr.status + ", " + xhr.statusText);
+                        if (xhr.status == 403) {
+
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Errore',
+                                text: '<%= Master.Translate("Sessione scaduta. È necessario ripetere il login") %>.'
+                        }).then(() => {
+                            window.location.href = "/Admin/Login.aspx";
+                        });
+
+                        }
+                        else if (xhr.status != 200) {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Errore',
+                                text: 'Si è verificaro un errore: ' + xhr.status + ", " + xhr.statusText
+                            }).then(() => {
+                                window.location.href = "/Admin/Login.aspx";
+                            });
+                        }
+                        return true;
 					})
 					.DataTable({
 						"serverSide": true,
@@ -295,5 +309,5 @@
 		});
 
 
-	</script>
+    </script>
 </asp:Content>

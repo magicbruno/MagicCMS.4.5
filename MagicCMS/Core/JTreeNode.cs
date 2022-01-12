@@ -12,7 +12,8 @@ namespace MagicCMS.Core
         public string text { get; set; }
         public string icon { get; set; }
         public JTreeNodeState state { get; set; }
-        public List<JTreeNode> children { get; set; }
+        //public List<JTreeNode> children { get; set; }
+        public JTreeNodeCollection children { get; set; }
         public Dictionary<string,string> li_attr { get; set; }
         public Dictionary<string, string> a_attr { get; set; }
     }

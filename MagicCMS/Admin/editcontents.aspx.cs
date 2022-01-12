@@ -1,10 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using MagicCMS.Core;
+using MagicCMS.MagicTranslator;
+using Newtonsoft.Json;
+using RestSharp;
 
 namespace MagicCMS.Admin
 {
@@ -88,6 +93,18 @@ namespace MagicCMS.Admin
                     return "";
                 }
                 return "hidden";
+            }
+        }
+
+        public string FlagTesti
+        {
+            get
+            {
+                if (TypeInfo.FlagBreve || TypeInfo.FlagFull)
+                    return "";
+                else 
+                    return "hidden";
+
             }
         }
 
@@ -417,8 +434,8 @@ namespace MagicCMS.Admin
         {
             get
             {
-                if (String.IsNullOrEmpty(FlagExtraInfoNumber_1 + FlagExtraInfoNumber_2 + FlagExtraInfoNumber_3 + FlagExtraInfoNumber_4 +
-                    FlagExtraInfoNumber_5 + FlagExtraInfoNumber_6 + FlagExtraInfoNumber_7 + FlagExtraInfoNumber_8))
+                if ((FlagExtraInfoNumber_1 + FlagExtraInfoNumber_2 + FlagExtraInfoNumber_3 + FlagExtraInfoNumber_4 +
+                    FlagExtraInfoNumber_5 + FlagExtraInfoNumber_6 + FlagExtraInfoNumber_7 + FlagExtraInfoNumber_8).Length >= 48)
                 {
                     return "hidden";
                 }
@@ -436,6 +453,18 @@ namespace MagicCMS.Admin
             }
         }
 
+        public string PermalinkPrefix
+        {
+            get
+            {
+                if(MagicLanguage.IsMultilanguage())
+                {
+                    return "/" + MagicSession.Current.Config.TransSourceLangId + "/[contenitore/]";
+                }
+                return "/contenitore/";
+            }
+        }
+
         #endregion
 
         #endregion
@@ -443,6 +472,7 @@ namespace MagicCMS.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             int pk = 0, type = 0, parent = 0;
             int.TryParse(Request["pk"], out pk);
             int.TryParse(Request["type"], out type);
@@ -496,7 +526,47 @@ namespace MagicCMS.Admin
 				RepeaterLanguages.DataBind();
 				Repeter_Tabs.DataSource = Languages;
 				Repeter_Tabs.DataBind();
-			}
+
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+                List<ListItem> data = new List<ListItem>();
+                var client = new RestClient("https://api.cognitive.microsofttranslator.com/languages?api-version=3.0&scope=translation");
+                client.Timeout = -1;
+                var request = new RestRequest(Method.GET);
+                IRestResponse r = client.Execute(request);
+                BingLanguageList langs = JsonConvert.DeserializeObject<BingLanguageList>(r.Content);
+                Newtonsoft.Json.Linq.JObject list = langs.translation as Newtonsoft.Json.Linq.JObject;
+                foreach (var item in list)
+                {
+                    var obj = item.Value.First();
+                    data.Add(new ListItem(obj.First.ToString(), item.Key));
+                }
+                data.Sort(CompareByText);
+
+                RepeaterFrom.DataSource = data;
+                RepeaterFrom.DataBind();
+                RepeaterTo.DataSource = data;
+                RepeaterTo.DataBind();
+
+            }
+            if (TypeInfo != null)
+            {
+                HtmlGenericControl style = new HtmlGenericControl("style");
+                style.ID = "VisibilityStyles";
+                style.ClientIDMode = ClientIDMode.Static;
+                style.InnerText = TypeInfo.VisibilityStyles;
+                Page.Header.Controls.Add(style);
+
+                MagicPostTypeInfoCollection infoCollection = new MagicPostTypeInfoCollection(true, MagicPostTypeInfoOrder.InsertionOrder);
+                RepeaterElencoTipi.DataSource = infoCollection;
+                RepeaterElencoTipi.DataBind();
+            }
+
+
+        }
+
+        private static int CompareByText(ListItem x, ListItem y)
+        {
+            return x.Text.CompareTo(y.Text);
         }
     }
 }

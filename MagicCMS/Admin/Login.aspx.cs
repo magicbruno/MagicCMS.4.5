@@ -16,6 +16,26 @@ namespace MagicCMS.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (IsPostBack)
+            {
+                if (!string.IsNullOrWhiteSpace(HF_AuthToken.Value))
+                {
+                    UserToken userToken = new UserToken(HF_AuthToken.Value);
+                    MagicSession.Current.LoggedUser = new MagicUser(userToken.UserPk);
+                    MagicSession.Current.SessionStart = DateTime.Now;
+                    HttpCookie cookie = new HttpCookie("MB_AuthToken", HF_AuthToken.Value);
+                    cookie.Secure = true;
+                    cookie.Expires = DateTime.Now.AddDays(30);
+
+                    Response.Cookies.Set(cookie);
+
+                    if (!String.IsNullOrEmpty(MagicSession.Current.LastAccessTry))
+                        Response.Redirect(MagicSession.Current.LastAccessTry);
+                    else
+                        Response.Redirect("/Admin");
+                } 
+            }
+
             Captcha = !(String.IsNullOrEmpty(MagicCMSConfiguration.GetConfig().GoogleCaptchaSite) || 
                 String.IsNullOrEmpty(MagicCMSConfiguration.GetConfig().GoogleCaptchaSecret));
             if (Captcha)
@@ -42,6 +62,17 @@ namespace MagicCMS.Admin
             {
                 MagicSession.Current.LoggedUser = user;
                 MagicSession.Current.SessionStart = DateTime.Now;
+
+                UserToken userToken = new UserToken(user);
+                string error = "";
+                if (userToken.DaysToExpiration <= 1)
+                    userToken.RefreshToken(out error);
+                HttpCookie cookie = new HttpCookie("MB_AuthToken", userToken.Token);
+                cookie.Secure = true;
+                cookie.Expires = DateTime.Now.AddDays(30);
+
+                Response.Cookies.Set(cookie);
+                
                 if (!String.IsNullOrEmpty(MagicSession.Current.LastAccessTry))
                     Response.Redirect(MagicSession.Current.LastAccessTry);
                 else

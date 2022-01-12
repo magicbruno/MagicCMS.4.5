@@ -7,8 +7,8 @@
 		<owners>Bruno Migliaretti</owners>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>Content Management System framework for Visual studio</description>
-		<releaseNotes>First release for .NET 4.5</releaseNotes>
-		<copyright>Copyright 2016</copyright>
+		<releaseNotes>Release for .NET 4.7.x</releaseNotes>
+		<copyright>Copyright 2016-2022</copyright>
 		<dependencies>
 			<dependency id="Facebook" version="7.0.6" />
 			<dependency id="jQuery" version="2.2.4"  />
@@ -16,6 +16,8 @@
 			<dependency id="json2" version="1.0.2" />
 			<dependency id="MB.FileBrowser" version="1.1.8" />
 			<dependency id="Respond" version="1.4.2" />
+			<dependency id="Microsoft.AspNet.WebApi" version="5.2.7" />
+			<dependency id="RestSharp" version="106.15.0" />
 		</dependencies>
 	</metadata>
 	<files>

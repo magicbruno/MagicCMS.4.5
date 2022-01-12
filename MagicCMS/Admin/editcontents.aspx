@@ -1,10 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/MasterAdmin.master" AutoEventWireup="true"
     CodeBehind="editcontents.aspx.cs" Inherits="MagicCMS.Admin.editcontents" ValidateRequest="false"
     Culture="it-IT" UICulture="it" %>
+
 <%@ MasterType TypeName="MagicCMS.Admin.MasterAdmin" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-   
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="HeaderContent" runat="server">
     <h1><i class="fa fa-edit"></i><%= Master.Translate("Modifica i contenuti del sito") %></h1>
@@ -107,6 +107,7 @@
                             </asp:Repeater>
                             <li class="pull-right"><a href="#help" data-toggle="tab" class="text-muted"><i class="fa fa-question-circle"></i>Help</a>
                             </li>
+                            <li class="<%= !CmsConfig.TransAuto ? "d-none" : ""  %> pull-right"><a href="#text-translator" data-toggle="tab">Bing Translator</a></li>
                         </ul>
                         <div class="tab-content">
                             <!-- Main data -->
@@ -119,13 +120,25 @@
                                         <input type="hidden" id="Parents" name="Parents" value="<% = PostParents %>" />
                                         <input type="hidden" id="table" name="table" value="MB_contenuti" />
                                         <input type="hidden" id="reload-post" value="0" />
+                                        <input type="hidden" id="open-post-in-window" value="0" />
+                                        <input type="hidden" id="default-lang-id" value="<%= CmsConfig.TransSourceLangId %>" />
+                                        <input type="hidden" id="TestoBreve" value="<%= ThePostEnc.TestoBreve %>" />
+                                        <input type="hidden" id="TestoLungo" value="<%= ThePostEnc.TestoLungo %>" />
+
                                         <div class="form-group align-items-center Permalink" id="fg-permalink">
                                             <label for="PermalinkTitle" class="col-sm-2 control-label py-0">Permalink</label>
                                             <div class="col-auto pr-1">
                                                 <%= PermalinkPrefix %>
                                             </div>
                                             <div class="col pl-0">
-                                                <input type="text" class="form-control" id="PermalinkTitle" value="<% = ThePost.PermalinkTitle %>" />
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="PermalinkTitle" value="<% = ThePost.PermalinkTitle %>" />
+                                                    <span class="input-group-btn">
+                                                        <button class="btn btn-icon btn-info btn-flat" type="button" data-action="open-post">
+                                                            <i class="fa fa-external-link"></i>
+                                                        </button>
+                                                    </span>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="form-group" id="fg-titolo">
@@ -373,6 +386,7 @@
                                 </div>
                             </div>
                             <!-- /main-data -->
+
                             <!-- Testi post -->
                             <div class="tab-pane" id="main-testi">
                                 <div class='box box-success <% = FlagBreve %>'>
@@ -389,7 +403,7 @@
                                     </div>
                                     <!-- /.box-header -->
                                     <div class='box-body pad'>
-                                        <textarea id="TestoBreve" name="TestoBreve" rows="10" class="ckeditor_mcms <% = FlagBreve %>"><% = ThePostEnc.TestoBreve %></textarea>
+                                        <textarea id="TestoBreve-ck" name="TestoBreve" rows="10" class="ckeditor_mcms <% = FlagBreve %>"><% = ThePostEnc.TestoBreve %></textarea>
                                     </div>
                                 </div>
                                 <div class='box box-info <% = FlagFull %>'>
@@ -406,13 +420,14 @@
                                     </div>
                                     <!-- /.box-header -->
                                     <div class='box-body pad'>
-                                        <textarea id="TestoLungo" name="TestoLungo" rows="10" class="ckeditor_mcms <% = FlagFull %>"><% = ThePostEnc.TestoLungo %></textarea>
+                                        <textarea id="TestoLungo-ck" name="TestoLungo" rows="10" class="ckeditor_mcms <% = FlagFull %>"><% = ThePostEnc.TestoLungo %></textarea>
                                     </div>
                                 </div>
 
                             </div>
 
                             <!-- /Testi post -->
+
                             <!-- Parents -->
                             <div class="tab-pane" id="parents">
                                 <div class="parents-tree" id="parents-tree">
@@ -420,17 +435,93 @@
                             </div>
                             <!-- /Parents -->
 
-                            <asp:Repeater ID="RepeaterLanguages" runat="server">
+                            <!-- Text translator -->
+                            <div class="tab-pane" id="text-translator">
+                                <div class='box box-success <% = FlagBreve %>'>
+                                    <div class='box-header d-flex align-items-center py-1'>
+                                        <h3 class='box-title'>form </h3>
+                                        <select id="select-from-lang" class="form-control selectpicker" data-live-search="true">
+                                            <asp:Repeater ID="RepeaterFrom" runat="server" ItemType="ListItem">
+                                                <ItemTemplate>
+                                                    <option <%# Item.Value == CmsConfig.TransSourceLangId ? "selected" : "" %> value="<%# Item.Value %>">
+                                                        <%# Item.Text %>
+                                                    </option>
+                                                </ItemTemplate>
+                                            </asp:Repeater>
+                                        </select>
+                                        <!-- tools box -->
+                                        <div class="pull-right box-tools">
+                                            <button class="btn btn-success btn-sm" data-widget='collapse' data-toggle="tooltip"
+                                                title="Comprimi" type="button">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                        </div>
+                                        <!-- /. tools -->
+                                    </div>
+                                    <!-- /.box-header -->
+                                    <div class='box-body pad'>
+                                        <textarea id="text-translator-from" name="TestoBreve" rows="10" class="ckeditor_mcms"></textarea>
+                                    </div>
+                                </div>
+                                <div class='box box-info'>
+                                    <div class='box-header d-flex align-items-center py-1'>
+                                        <h3 class='box-title'>to </h3>
+                                        <select id="select-to-lang" class="form-control selectpicker" data-live-search="true">
+                                            <asp:Repeater ID="RepeaterTo" runat="server" ItemType="ListItem">
+                                                <ItemTemplate>
+                                                    <option <%# Item.Value == CmsConfig.TransSourceLangId ? "selected" : "" %> value="<%# Item.Value %>"><%# Item.Text %></option>
+                                                </ItemTemplate>
+                                            </asp:Repeater>
+                                        </select>
+                                        <!-- tools box -->
+                                        <div class="pull-right box-tools">
+                                            <button class="btn btn-info btn-sm" data-widget='collapse' data-toggle="tooltip"
+                                                title="<%= Master.Translate("Comprimi") %>" type="button">
+                                                <i class="fa fa-minus"></i>
+                                            </button>
+                                        </div>
+                                        <!-- /. tools -->
+                                    </div>
+                                    <!-- /.box-header -->
+                                    <div class='box-body pad'>
+                                        <textarea id="text-translator-to" name="text-translator-to" rows="10" class="ckeditor_mcms"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-12 text-center">
+                                        <button type="button" <%# !CmsConfig.TransAuto ? "disabled" : ""  %> class="btn btn-info btn-sm"
+                                            data-action="translate-text">
+                                            <% = Master.Translate("Traduci")  %></button>
+                                        <button type="button" class="btn btn-danger btn-sm" data-action="clear-translation">
+                                            <% = Master.Translate("Svuota testo")  %></button>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- /Testi post -->
+
+                            <asp:Repeater ID="RepeaterLanguages" runat="server" ItemType="MagicCMS.Core.MagicTranslation">
                                 <ItemTemplate>
-                                    <div class="tab-pane" id="lang-<%# DataBinder.Eval(Container, "DataItem.LangId") %>">
+                                    <div class="tab-pane" id="lang-<%# Item.LangId %>">
                                         <div class="form-horizontal" role="form" data-ride="mb-form" data-action="Ajax/Edit.ashx"
-                                            id="edit-lang-<%# DataBinder.Eval(Container, "DataItem.LangId") %>">
+                                            id="edit-lang-<%# Item.LangId %>">
                                             <fieldset>
-                                                <input type="hidden" name="LangId" value="<%# DataBinder.Eval(Container, "DataItem.LangId") %>" />
+                                                <input type="hidden" name="LangId" value="<%# Item.LangId %>" />
                                                 <input type="hidden" name="table" value="ANA_TRANSLATION" />
                                                 <input type="hidden" name="PostPk" value="<% = Pk.ToString() %>" />
+                                                <div class="form-group align-items-center Permalink" id="fg-permalink">
+                                                    <label for="PermalinkTitle" class="col-sm-2 control-label py-0">Permalink</label>
+                                                    <div class="col-auto pr-1">
+                                                        <%# "/" + Item.LangId + "/[contenitore/]"  %>
+                                                    </div>
+                                                    <div class="col pl-0">
+                                                        <input type="text" class="form-control" name="PermalinkTitle" id="PermalinkTitle-<%# Item.LangId %>"
+                                                            value="<%# Item.PermalinkTitle %>" />
+                                                    </div>
+                                                </div>
                                                 <div class="form-group">
-                                                    <label for="Titolo-<%# DataBinder.Eval(Container, "DataItem.LangId") %>" class="col-md-2 control-label">
+                                                    <label for="Titolo-<%# Item.LangId %>" class="col-md-2 control-label">
                                                         <%= TypeInfo.LabelExtraInfo1 %></label>
                                                     <div class="col-md">
                                                         <textarea rows="2" class="form-control" id="Titolo<%# DataBinder.Eval(Container, "DataItem.LangId") %>"
@@ -438,14 +529,14 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group <% = FlagBreve %>">
-                                                    <label for="TestoBreve-<%# DataBinder.Eval(Container, "DataItem.LangId") %>" class="col-md-2 control-label">
+                                                    <label for="TestoBreve-<%# Item.LangId %>" class="col-md-2 control-label">
                                                         <%# TypeInfo.LabelTestoBreve %></label>
                                                     <div class="col-md">
                                                         <textarea name="TranslatedTestoBreve" rows="10" class="ckeditor_mcms <% = FlagBreve %>"><%# System.Web.HttpUtility.HtmlEncode(DataBinder.Eval(Container, "DataItem.TranslatedTestoBreve").ToString()) %></textarea>
                                                     </div>
                                                 </div>
                                                 <div class="form-group <% = FlagFull %>">
-                                                    <label for="TestoLungo-<%# DataBinder.Eval(Container, "DataItem.LangId") %>" class="col-md-2 control-label">
+                                                    <label for="TestoLungo-<%# Item.LangId %>" class="col-md-2 control-label">
                                                         <%# TypeInfo.LabelTestoLungo %></label>
                                                     <div class="col-md">
                                                         <textarea name="TranslatedTestoLungo" rows="10" class="ckeditor_mcms <% = FlagFull %>"><%# System.Web.HttpUtility.HtmlEncode(DataBinder.Eval(Container, "DataItem.TranslatedTestoLungo").ToString()) %></textarea>
@@ -454,7 +545,7 @@
                                                 <div class="form-group <% = FlagTags %>" id="fg-tags">
                                                     <label for="" class="col-md-2 control-label"><%= Master.Translate("Parole chiave") %></label>
                                                     <div class="col-md">
-                                                        <input type="hidden" class="form-control" name="TranslatedTags" value="<%# DataBinder.Eval(Container, "DataItem.TranslatedTags")%>" />
+                                                        <input type="hidden" class="form-control" name="TranslatedTags" value="<%# Item.TranslatedTags%>" />
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -484,7 +575,7 @@
     </div>
     <!-- Parents Modal  -->
     <div class="modal fade" id="cambia-tipo-modal" tabindex="-1" role="dialog" aria-labelledby="Types"
-        aria-hidden="true"  data-source="">
+        aria-hidden="true" data-source="">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -495,13 +586,15 @@
                 </div>
                 <div class="modal-body">
                     <h3>Avvertenze</h3>
-                    <p>Cambiare tipo può nascondere informazioni inserite in precedenza. Le informazione non vengono eliminate. 
-                        Per recuperarle basta ripristinare il veccio tipo. </p>
+                    <p>
+                        Cambiare tipo può nascondere informazioni inserite in precedenza. Le informazione non vengono eliminate. 
+                        Per recuperarle basta ripristinare il veccio tipo.
+                    </p>
                     <p class="mb-4">Per completare l'operazione è necessarrio salvare e ricaricare i contenuti della pagina.</p>
-                    <select class="form-control selectpicker mb-4" id="select-elenco-tipi" >
+                    <select class="form-control selectpicker mb-4" id="select-elenco-tipi">
                         <asp:Repeater ID="RepeaterElencoTipi" runat="server" ItemType="MagicCMS.Core.MagicPostTypeInfo">
                             <ItemTemplate>
-                                <option data-icon="<%# Item.Icon %>" value="<%# Item.Pk %>" <%# Item.Pk == ThePost.Tipo ? "selected" : "" %> ><%# Item.Nome %></option>
+                                <option data-icon="<%# Item.Icon %>" value="<%# Item.Pk %>" <%# Item.Pk == ThePost.Tipo ? "selected" : "" %>><%# Item.Nome %></option>
                             </ItemTemplate>
                         </asp:Repeater>
                     </select>
@@ -694,11 +787,14 @@
                     .DataTable({
                         "serverSide": true,
                         "ajax": {
-                            "url": "api/ContentsPaginated/?parent_id=0&k=" + Cookies.get('MB_AuthToken'),
+                            "url": "api/ContentsPaginated/?parent_id=0",
+                            "headers": {
+                                "Content-Type": "application/x-www-form-urlencoded",
+                                "Authorization": "Bearer " + Cookies.get('MB_AuthToken')
+                            },
                             "dataSrc": function (json) {
                                 if (json) return json.data;
                                 return [];
-
                             },
                             "type": "POST"
                         },
@@ -1066,7 +1162,16 @@
 
             // Loading tags from database
             $('#Tags').parent().spin();
-            $.getJSON('Ajax/Keys.ashx', { lang: "default" })
+            var settings = {
+                "url": "/api/Keywords",
+                "data": { "lang": "default", "k": "" },
+                "method": "GET",
+                "timeout": 0,
+                "headers": {
+                    "Authorization": "Bearer " + Cookies.get('MB_AuthToken')
+                },
+            };
+            $.ajax(settings)
                 .fail(function (jqxhr, textStatus, error) {
                     $alert
                         .text('<%= Master.Translate("Si è verificaro un errore") %>: ' + textStatus + "," + error)
@@ -1112,7 +1217,17 @@
                 var $tags = $(this);
                 var lang = $tags.parents('.form-horizontal').find('[name="LangId"]').val();
                 $tags.parent().spin();
-                $.getJSON('Ajax/Keys.ashx', { lang: lang })
+                var settings = {
+                    "url": "/api/Keywords",
+                    "data": { "lang": lang, "k": "" },
+                    "method": "GET",
+                    "timeout": 0,
+                    "headers": {
+                        "Authorization": "Bearer " + Cookies.get('MB_AuthToken')
+                    },
+                };
+
+                $.ajax(settings)
                     .fail(function (jqxhr, textStatus, error) {
                         $alert
                             .text('<%= Master.Translate("Si è verificato un errore") %>: ' + textStatus + "," + error)
@@ -1166,7 +1281,7 @@
                     var $panel = $('[data-id="Panel_contents"]');
                     $panel.spin();
                     if ($table_contenuti.ajax) {
-                        $table_contenuti.ajax.url('/api/ContentsPaginated/?parent_id=' + obj.parent + '&k=' + Cookies.get('MB_AuthToken')).load(function () {
+                        $table_contenuti.ajax.url('/api/ContentsPaginated/?parent_id=' + obj.parent).load(function () {
                             var $boxTitle = $('[data-id="Panel_contents"]').find('.box-title');
                             var $addElementBtn = $('[data-action="add-element"]');
                             switch (obj.parent) {
@@ -1323,6 +1438,59 @@
                         modal.spin();
                         $('#edit-content [data-action=submit]').click();
                         break;
+                    case "open-post":
+                        openPost();
+                        break;
+                    case "translate-text":
+                        $('#text-translator-from').parents('.tab-pane').spin();
+                        var data = {
+                            "Text": $('#text-translator-from').val(),
+                            "To": $('#select-to-lang').val(),
+                            "From": $('#select-from-lang').val(),
+                            "TextType": "html"
+                        };
+                        var settings = {
+                            "url": "/api/TextTranslator",
+                            "method": "POST",
+                            "timeout": 0,
+                            "headers": {
+                                "Content-Type": "application/json",
+                                "Authorization": "Bearer " + Cookies.get('MB_AuthToken')
+                            },
+                            "data": JSON.stringify(data)
+                        };
+                        $.ajax(settings)
+                            .done(function (response) {
+                                if (response.success) {
+                                    $('#text-translator-to').val(response.data);
+                                } else if (response.exitcode == -1) {
+                                    Swal.fire({
+                                        icon: "warning",
+                                        title: 'Attenzione',
+                                        text: response.msg
+                                    });
+                                    $('#text-translator-to').val(response.data);
+                                } else {
+                                    Swal.fire({
+                                        icon: "error",
+                                        title: 'Errore',
+                                        text: 'Si è verificaro un errore: ' + response.msg
+                                    });
+                                }
+                            })
+                            .fail(function (jqxhr, textStatus, error) {
+                                Swal.fire({
+                                    icon: "error",
+                                    title: 'Errore',
+                                    text: 'Si è verificaro un errore: ' + textStatus + ", " + error
+                                });
+                            })
+                            .always(function () {
+                                $('#text-translator-from').parents('.tab-pane').spin(false);
+                            });
+                        break;
+                    case "clear-translation":
+                        break;
                     default:
 
                 }
@@ -1341,13 +1509,17 @@
                     }, --%>
                     'data': function (obj, callback) {
                         var settings = {
-                            "url": "/api/GetParentsTree?pk=<% = Pk %>&parent=<%= TheParent %>&k=" + Cookies.get('MB_AuthToken'),
+                            "url": "/api/GetParentsTree?pk=<% = Pk %>&parent=<%= TheParent %>",
                             "method": "GET",
                             "timeout": 0,
+                            "headers": {
+                                "Authorization": "Bearer " + Cookies.get('MB_AuthToken')
+                            },
                         };
 
                         $.ajax(settings).done(function (response) {
-                            callback.call(this, response);                        })
+                            callback.call(this, response);
+                        })
 
                     }
                 },
@@ -1429,56 +1601,70 @@
                 var titolo = $("#ExtraInfo1").val();
                 if (!titolo)
                     titolo = $("#Titolo").val();
+                var fromLangId = $('#default-lang-id').val();
                 var testoBreve = $('#TestoBreve').val();
                 var testoLungo = $('#TestoLungo').val();
                 var tags = $('#Tags').val();
                 var param = {};
                 if (action == 'translate') {
-                    params = {
-                        LangId: langid,
-                        Pk: pk,
-                        Titolo: titolo,
+                    var data = {
+                        To: langid,
+                        From: fromLangId,
+                        Title: titolo,
                         TestoBreve: testoBreve,
                         TestoLungo: testoLungo,
                         Tags: tags
                     };
                     $form.spin();
-                    $.ajax('Ajax/BingTranslation.ashx',
-                        {
-                            data: params,
-                            dataType: 'json',
-                            type: 'POST'
-                        })
+                    var settings = {
+                        "url": "/api/PostTranslator",
+                        "method": "POST",
+                        "timeout": 0,
+                        "headers": {
+                            "Content-Type": "application/json",
+                            "Authorization": "Bearer " + Cookies.get('MB_AuthToken')
+                        },
+                        data: JSON.stringify(data)
+                    };
+                    $.ajax(settings)
                         .done(function (data) {
-                            if (data.success) {
-                                $.growl({
-                                    icon: 'fa fa-thumbs-o-up',
-                                    title: '',
-                                    message: data.msg
-                                },
-                                    {
-                                        type: 'success'
-                                    });
-                                fillForm($form, data.data);
+                            if (data.Success) {
+                                Swal.fire({
+                                    title: 'Traduzione del post completata',
+                                    html: data.Error,
+                                    showDenyButton: true,
+                                    showCancelButton: true,
+                                    confirmButtonText: 'Sostituisci il testo',
+                                    denyButtonText: `Accoda al testo`,
+                                    cancelButtonText: "Annulla"
+                                }).then((result) => {
+                                    /* Read more about isConfirmed, isDenied below */
+                                    if (result.isConfirmed) {
+                                        $form.find('[name="TranslatedTitle"]').val(data.Title.Translation);
+                                        $form.find('[name="TranslatedTestoBreve"]').val(data.TestoBreve.Translation);
+                                        $form.find('[name="TranslatedTestoLungo"]').val(data.TestoLungo.Translation);
+                                        $form.find('[name="TranslatedTags"]').select2("val", data.Tags.Translation.split(','));
+                                    } else if (result.isDenied) {
+                                        $form.find('[name="TranslatedTitle"]').val(data.Title.Translation);
+                                        $form.find('[name="TranslatedTestoBreve"]').val($form.find('[name="TranslatedTestoBreve"]').val() + data.TestoBreve.Translation);
+                                        $form.find('[name="TranslatedTestoLungo"]').val($form.find('[name="TranslatedTestoLungo"]').val() + data.TestoLungo.Translation);
+                                        $form.find('[name="TranslatedTags"]').select2("val", data.Tags.Translation.split(','));
+                                    }
+                                })
                             } else {
-                                $.growl({
-                                    icon: 'fa fa-warning',
-                                    title: '<%= Master.Translate("Si è verificato un errore") %>: ',
-                                    message: data.msg
-                                },
-                                    {
-                                        type: 'danger'
-                                    })
+                                Swal.fire({
+                                    icon: "error",
+                                    title: 'Errore',
+                                    text: 'Si è verificaro un errore: ' + data.Error
+                                });
                             }
                         })
                         .fail(function (jqxhr, textStatus, error) {
-                            $.growl({
-                                icon: 'fa fa-warning',
-                                message: textStatus
-                            },
-                                {
-                                    type: 'danger'
-                                })
+                            Swal.fire({
+                                icon: "error",
+                                title: 'Errore',
+                                text: 'Si è verificaro un errore: ' + textStatus + ", " + error
+                            });
                         })
                         .always(function () {
                             $form.spin(false);
@@ -1525,25 +1711,25 @@
                                         $.growl({
                                             icon: 'fa fa-warning',
                                             title: '<%= Master.Translate("Si è verificato un errore") %>: ',
-                                        message: data.msg
+                                            message: data.msg
+                                        },
+                                            {
+                                                type: 'danger'
+                                            })
+                                    }
+                                })
+                                .fail(function (jqxhr, textStatus, error) {
+                                    $.growl({
+                                        icon: 'fa fa-warning',
+                                        message: textStatus
                                     },
                                         {
                                             type: 'danger'
                                         })
-                                }
-                            })
-                            .fail(function (jqxhr, textStatus, error) {
-                                $.growl({
-                                    icon: 'fa fa-warning',
-                                    message: textStatus
-                                },
-                                    {
-                                        type: 'danger'
-                                    })
-                            })
-                            .always(function () {
-                                $form.spin(false);
-                            });
+                                })
+                                .always(function () {
+                                    $form.spin(false);
+                                });
                         }
                     })
                 }
@@ -1551,6 +1737,15 @@
             });
 
             //End Translations
+
+            /////  Correzione per creazione tab autonomo per i CKEditor
+
+            $('#TestoBreve-ck, #TestoLungo-ck').on('change', function () {
+                $('#TestoBreve').val($('#TestoBreve-ck').val());
+                $('#TestoLungo').val($('#TestoLungo-ck').val());
+                // Innesto l'evento 'change' per lo pseudo-fprm
+                $('#Titolo').trigger('change');
+            })
 
             //eventi form contenuti
             $form_contents.on('submitted.mb.form', function (e, data) {
@@ -1567,6 +1762,7 @@
                         });
                     // Post Id hidden fields updated !!
                     $('[name="Pk"], [name="PostPk"]').val(data.pk);
+                    $('#PermalinkTitle').parents('.form-group').removeClass('has-success has-error');
                     if ($('#reload-post').val() == 1) {
                         window.location.reload();
                     }
@@ -1722,36 +1918,39 @@
             *********** Controllo Permalink *****************
             */
 
-            const $permalink = $('#PermalinkTitle');
-            const $title = $('#ExtraInfo1');
+            const $permalink = $('#PermalinkTitle, [name="PermalinkTitle"');
+            const $title = $('#ExtraInfo1, [name=""]');
 
             $permalink.on('change', function () {
-
+                const self = $(this);
+                var $form = self.parents('[role="form"]');
+                var langid = $form.find('[name="LangId"]').val();
                 var settings = {
                     "url": "/api/CheckPermalink",
                     "method": "POST",
                     "timeout": 0,
                     "headers": {
-                        "Content-Type": "application/x-www-form-urlencoded"
+                        "Content-Type": "application/x-www-form-urlencoded",
+                        "Authorization": "Bearer " + Cookies.get('MB_AuthToken')
                     },
                     "data": {
                         "pk": $('#Pk').val(),
-                        "k": Cookies.get('MB_AuthToken'),
-                        "title": $permalink.val()
+                        "title": self.val(),
+                        "lang": langid
                     }
                 };
 
                 $.ajax(settings)
                     .done(function (response) {
-                        $permalink.parents('.form-group').removeClass('has-success has-error');
+                        self.parents('.form-group').removeClass('has-success has-error');
                         if (response.success) {
-                            $permalink.parents('.form-group').addClass('has-success');
+                            self.parents('.form-group').addClass('has-success');
                         }
                         else {
-                            $permalink.parents('.form-group').addClass('has-error');
+                            self.parents('.form-group').addClass('has-error');
                         }
                         if (response.data)
-                            $permalink.val(response.data);
+                            self.val(response.data);
                     });
             });
 
@@ -1762,11 +1961,11 @@
                     "method": "POST",
                     "timeout": 0,
                     "headers": {
-                        "Content-Type": "application/x-www-form-urlencoded"
+                        "Content-Type": "application/x-www-form-urlencoded",
+                        "Authorization": "Bearer " + Cookies.get('MB_AuthToken')
                     },
                     "data": {
                         "pk": $('#Pk').val(),
-                        "k": Cookies.get('MB_AuthToken'),
                         "title": $title.val()
                     }
                 };
@@ -1781,6 +1980,21 @@
                         }
                     });
             });
+
+            // Open permalink in new window
+
+            function openPost() {
+                var ch = $form_contents.mb_submit('pendingChanges');
+                if (ch) {
+
+                }
+                else
+                    openInWindow("/anteprima/" + $permalink.val());
+            }
+
+            const openInWindow = function (url) {
+                window.open(url, "postNewWindow", "width=1200;height=800", true);
+            }
 
             // Fine controllo permalink
 

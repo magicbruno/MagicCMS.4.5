@@ -1,17 +1,19 @@
 ﻿//------------------------------------------------------------------------------
 // <generato automaticamente>
-//     Codice generato da uno strumento.
+//     Questo codice è stato generato da uno strumento.
 //
 //     Le modifiche a questo file possono causare un comportamento non corretto e verranno perse se
 //     il codice viene rigenerato. 
 // </generato automaticamente>
 //------------------------------------------------------------------------------
 
-namespace MagicCMS {
-    
-    
-    public partial class SiteMaster {
-        
+namespace MagicCMS
+{
+
+
+    public partial class SiteMaster
+    {
+
         /// <summary>
         /// Controllo theDocument.
         /// </summary>
@@ -20,7 +22,7 @@ namespace MagicCMS {
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlElement theDocument;
-        
+
         /// <summary>
         /// Controllo head.
         /// </summary>
@@ -29,7 +31,7 @@ namespace MagicCMS {
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
-        
+
         /// <summary>
         /// Controllo LiteralLoadRespond.
         /// </summary>
@@ -38,7 +40,7 @@ namespace MagicCMS {
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal LiteralLoadRespond;
-        
+
         /// <summary>
         /// Controllo AspForm.
         /// </summary>
@@ -47,7 +49,7 @@ namespace MagicCMS {
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm AspForm;
-        
+
         /// <summary>
         /// Controllo Main.
         /// </summary>
@@ -56,7 +58,7 @@ namespace MagicCMS {
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder Main;
-        
+
         /// <summary>
         /// Controllo PreScripts.
         /// </summary>
@@ -65,7 +67,16 @@ namespace MagicCMS {
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder PreScripts;
-        
+
+        /// <summary>
+        /// Controllo JqueryLoad.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder JqueryLoad;
+
         /// <summary>
         /// Controllo Scripts.
         /// </summary>

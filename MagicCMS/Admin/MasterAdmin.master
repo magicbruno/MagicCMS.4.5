@@ -60,8 +60,8 @@
 				<div class="user-panel">
 					<div class="pull-left info">
 						<h4 class="text-center"><% = UserName %></h4>
-						<small><% = UserRole %> (<span id="sessionExpiresIn" title="Session expiry">00:00:00</span>)</small>
-						<a href="#RinnovaSessione" data-toggle="modal" title="Refresh session"><i class="fa fa-refresh"></i></a>
+						<small><% = UserRole %> (<span id="sessionExpiresIn" title="Session expiry"></span>)</small>
+						<%--<a href="#RinnovaSessione" data-toggle="modal" title="Refresh session"><i class="fa fa-refresh"></i></a>--%>
 					</div>
 				</div>
 				<!-- sidebar menu: : style can be found in sidebar.less -->
@@ -400,9 +400,9 @@
 			});
 		});
 		$(function () {
-			$(window).on('load', function () {
-				$('.loading').fadeOut();
-			});
+			//$(window).on('load', function () {
+			//	$('.loading').fadeOut();
+			//});
 			$('.ckeditor_mcms').not('.hidden')
 				.spin()
 				.ckeditor(function (textarea) {
@@ -413,7 +413,10 @@
 					language: "<%= MagicCMS.Core.MagicCMSConfiguration.GetConfig().BackEndLang %>"
 				});
 		});
+		window.addEventListener('load', function () {
+			$('.loading').fadeOut();
+		});
 
-	</script>
+    </script>
 	<asp:ContentPlaceHolder ID="Scripts" runat="server"></asp:ContentPlaceHolder>
 </asp:Content>

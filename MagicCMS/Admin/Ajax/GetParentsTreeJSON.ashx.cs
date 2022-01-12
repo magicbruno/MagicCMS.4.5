@@ -28,7 +28,7 @@ namespace MagicCMS.Admin.Ajax
             int.TryParse(context.Request["parent"], out defaultParent);
 
             System.Web.Script.Serialization.JavaScriptSerializer serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
-            List<JTreeNode> output = AddNodeList(0, pk, 0, defaultParent);
+             JTreeNodeCollection output = AddNodeList(0, pk, 0, defaultParent);
             string json = serializer.Serialize(output);
 
             context.Response.ContentType = "application/json";
@@ -36,10 +36,10 @@ namespace MagicCMS.Admin.Ajax
             context.Response.Write(json);
         }
 
-        private List<JTreeNode> AddNodeList(int parent_id, int id_articolo, int level, int defaultParent)
+        private  JTreeNodeCollection AddNodeList(int parent_id, int id_articolo, int level, int defaultParent)
         {
 
-            List<JTreeNode> theList = new List<JTreeNode>();
+             JTreeNodeCollection theList = new JTreeNodeCollection();
             if (parent_id == id_articolo && parent_id != 0)  
                 return theList;
             MagicTag mp_parent = new MagicTag(parent_id);
@@ -76,7 +76,7 @@ namespace MagicCMS.Admin.Ajax
                             loadChildren = false;
                         }
                     }
-                    List<JTreeNode> subitems;
+                     JTreeNodeCollection subitems;
                     if (level < 10 && loadChildren && (!tag.SpecialTag))
                     {
                         int l = level + 1;

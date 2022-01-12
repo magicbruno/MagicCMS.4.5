@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 
 namespace MagicCMS.Core
@@ -161,12 +162,82 @@ namespace MagicCMS.Core
             }
             return c;
         }
-		/// <summary>
-		/// Updates the specified Post keywords.
-		/// </summary>
-		/// <param name="contentPk">The id of related post.</param>
-		/// <param name="keywords">Comma separated list of keywords.</param>
-		/// <returns>Boolean.</returns>
+
+        public static async Task<int> RecordCountAsync()
+        {
+            int c = 0;
+            SqlConnection conn = null;
+            SqlCommand cmd = null;
+
+            try
+            {
+                string cmdText = "SELECT COUNT(*) FROM REL_KEYWORDS ";
+
+                conn = new SqlConnection(MagicUtils.MagicConnectionString);
+                await conn.OpenAsync();
+                cmd = new SqlCommand(cmdText, conn);
+                c = Convert.ToInt32(await cmd.ExecuteScalarAsync());
+            }
+            catch (Exception e)
+            {
+                MagicLog log = new MagicLog("REL_KEYWORDS", 0, LogAction.Read, e);
+                log.Insert();
+            }
+            finally
+            {
+                if (conn != null)
+                    conn.Dispose();
+                if (cmd != null)
+                    cmd.Dispose();
+            }
+            return c;
+        }
+
+        public static async Task<bool> IsPopulated()
+        {
+            int result = 1;
+            SqlConnection conn = null;
+            SqlCommand cmd = null;
+
+            try
+            {
+                string cmdText = @" IF EXISTS(
+	                                    SELECT 1
+	                                    FROM MB_contenuti mc WHERE ISNULL(mc.Tags, '') <> ''
+                                    ) AND NOT EXISTS( SELECT 1 FROM REL_MagicTitle rmt)
+                                    BEGIN
+	                                    SELECT 0
+                                    END 
+                                    ELSE
+	                                    SELECT 1 ";
+
+                conn = new SqlConnection(MagicUtils.MagicConnectionString);
+                await conn.OpenAsync();
+                cmd = new SqlCommand(cmdText, conn);
+                result = Convert.ToInt32(await cmd.ExecuteScalarAsync());
+            }
+            catch (Exception e)
+            {
+                MagicLog log = new MagicLog("REL_KEYWORDS", 0, LogAction.Read, e);
+                log.Insert();
+            }
+            finally
+            {
+                if (conn != null)
+                    conn.Dispose();
+                if (cmd != null)
+                    cmd.Dispose();
+            }
+            return (result == 1);
+        }
+
+
+        /// <summary>
+        /// Updates the specified Post keywords.
+        /// </summary>
+        /// <param name="contentPk">The id of related post.</param>
+        /// <param name="keywords">Comma separated list of keywords.</param>
+        /// <returns>Boolean.</returns>
         public static Boolean Update(int contentPk, string keywords)
         {
             return Update(contentPk, keywords, new CMS_Config().TransSourceLangId);
@@ -336,10 +407,84 @@ namespace MagicCMS.Core
             return result;
         }
 
-		/// <summary>
-		/// Gets the keywords.
-		/// </summary>
-		/// <returns>List&lt;System.String&gt;.</returns>
+        public static async Task<Boolean> PopulateAsync()
+        {
+            var result = true;
+            SqlConnection conn = null;
+            SqlCommand cmd = null;
+
+            try
+            {
+                string cmdText = " SELECT DISTINCT " +
+                                    "         mc.Id, " +
+                                    "         mc.Tags, " +
+                                    "         at.TRAN_Tags,  " +
+                                    "         at.TRAN_LANG_Id " +
+                                    " FROM MB_contenuti mc " +
+                                    "         LEFT JOIN ANA_TRANSLATION at " +
+                                    "                 ON at.TRAN_MB_contenuti_Id = mc.Id " +
+                                    " WHERE ISNULL(mc.Tags, '') <> '' " +
+                                    " AND mc.Flag_Cancellazione = 0 ";
+
+                conn = new SqlConnection(MagicUtils.MagicConnectionString);
+                await conn.OpenAsync();
+                cmd = new SqlCommand(cmdText, conn);
+                SqlDataReader reader = await cmd.ExecuteReaderAsync();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        // Tags in default language
+                        int pk = reader.GetInt32(0);
+                        string tagsField = reader.GetString(1);
+                        string tagsTranslated = reader.GetString(2);
+                        string langId = reader.GetString(3);
+                        string[] keywords = tagsField.Split(',');
+                        for (int i = 0; i < keywords.Length; i++)
+                        {
+                            string keyword = keywords[i].Trim();
+                            if (!String.IsNullOrEmpty(keyword))
+                            {
+                                MagicKeyword key = new MagicKeyword(pk, keyword);
+                                key.Insert();
+                            }
+                        }
+                        // Translated tags
+                        if (!(String.IsNullOrEmpty(tagsTranslated) || String.IsNullOrEmpty(langId)))
+                        {
+                            string[] trKeywords = tagsTranslated.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                            for (int i = 0; i < trKeywords.Length; i++)
+                            {
+                                MagicKeyword trKey = new MagicKeyword(pk, trKeywords[i].Trim(), langId);
+                                trKey.Insert();
+                            }
+                        }
+
+                    }
+
+
+                }
+            }
+            catch (Exception e)
+            {
+                MagicLog log = new MagicLog("REL_KEYWORDS", 0, LogAction.Read, e);
+                log.Insert();
+                result = false;
+            }
+            finally
+            {
+                if (conn != null)
+                    conn.Dispose();
+                if (cmd != null)
+                    cmd.Dispose();
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// Gets the keywords.
+        /// </summary>
+        /// <returns>List&lt;System.String&gt;.</returns>
         public static List<string> GetKeywords()
         {
             return GetKeywords("", new CMS_Config().TransSourceLangId);
@@ -413,9 +558,61 @@ namespace MagicCMS.Core
             return lista;
         }
 
+        public static async Task<List<string>> GetKeywordsAsync(string key, string langId)
+        {
+            List<string> lista = new List<string>();
+            bool pop = await IsPopulated();
+            if (!pop )
+            {
+                if (! await PopulateAsync())
+                    return lista;
+            }
+
+            SqlConnection conn = null;
+            SqlCommand cmd = null;
+            key = key.Trim();
+            key = "%" + key + "%";
+            try
+            {
+                string cmdText = " SELECT DISTINCT " +
+                                    " 	rk.key_keyword FROM REL_KEYWORDS rk " +
+                                    " WHERE (rk.key_keyword LIKE @p) AND (rk.key_langId = @langId) " +
+                                    " ORDER BY  rk.key_keyword ";
+
+                conn = new SqlConnection(MagicUtils.MagicConnectionString);
+                await conn.OpenAsync();
+                cmd = new SqlCommand(cmdText, conn);
+                cmd.Parameters.AddWithValue("@p", key);
+                cmd.Parameters.AddWithValue("@langId", langId);
+                SqlDataReader reader = await cmd.ExecuteReaderAsync();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        string parola = reader.GetString(0);
+                        lista.Add(parola);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                MagicLog log = new MagicLog("REL_KEYWORDS", 0, LogAction.Read, e);
+                log.Insert();
+            }
+            finally
+            {
+                if (conn != null)
+                    conn.Dispose();
+                if (cmd != null)
+                    cmd.Dispose();
+            }
 
 
-        
+            return lista;
+        }
+
+
+
         #endregion
     }
 }

@@ -1,17 +1,28 @@
 ﻿//------------------------------------------------------------------------------
 // <generato automaticamente>
-//     Codice generato da uno strumento.
+//     Questo codice è stato generato da uno strumento.
 //
 //     Le modifiche a questo file possono causare un comportamento non corretto e verranno perse se
 //     il codice viene rigenerato. 
 // </generato automaticamente>
 //------------------------------------------------------------------------------
 
-namespace MagicCMS.Admin {
-    
-    
-    public partial class Login {
-        
+namespace MagicCMS.Admin
+{
+
+
+    public partial class Login
+    {
+
+        /// <summary>
+        /// Controllo HF_AuthToken.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField HF_AuthToken;
+
         /// <summary>
         /// Controllo email.
         /// </summary>
@@ -20,7 +31,7 @@ namespace MagicCMS.Admin {
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox email;
-        
+
         /// <summary>
         /// Controllo password.
         /// </summary>
@@ -29,7 +40,7 @@ namespace MagicCMS.Admin {
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox password;
-        
+
         /// <summary>
         /// Controllo recaptchaVerify.
         /// </summary>
@@ -38,7 +49,7 @@ namespace MagicCMS.Admin {
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl recaptchaVerify;
-        
+
         /// <summary>
         /// Controllo Button1.
         /// </summary>

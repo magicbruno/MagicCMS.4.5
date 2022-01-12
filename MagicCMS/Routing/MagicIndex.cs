@@ -5,6 +5,7 @@ using System.Web;
 using System.Text.RegularExpressions;
 using System.Data.SqlClient;
 using MagicCMS.Core;
+using System.Threading.Tasks;
 
 /// <summary>
 /// The Routing namespace.
@@ -39,15 +40,38 @@ namespace MagicCMS.Routing
 		/// </summary>
 		/// <value>The language identifier.</value>
 		public string LangId { get; set; }
-		#endregion
 
-		#region Constructor
+        public static int[] TipiEsclusi
+        {
+            get
+            {
+                return new int[] {
+                         MagicPostTypeInfo.ButtonLanguage,
+                         MagicPostTypeInfo.Calendario,
+                         MagicPostTypeInfo.Cartella,
+                         MagicPostTypeInfo.CollegamentoInternet,
+                         MagicPostTypeInfo.CollegamentoInterno,
+                         MagicPostTypeInfo.DocumentoScaricabile,
+                         MagicPostTypeInfo.FakeLink,
+                         MagicPostTypeInfo.FilmatoFlash,
+                         MagicPostTypeInfo.Geolocazione,
+                         MagicPostTypeInfo.ListaDiDistribuzione,
+                         MagicPostTypeInfo.Menu,
+                         MagicPostTypeInfo.Plugin,
+                         MagicPostTypeInfo.Preferiti,
+                         MagicPostTypeInfo.ShareButton,
+                         MagicPostTypeInfo.Section };
+            }
+        }
+        #endregion
 
-		/// <summary>
-		/// Initializes a new instance of the <see cref="MagicIndex"/> class.
-		/// </summary>
-		/// <param name="record">SqlDataReader object from database query</param>
-		public MagicIndex(SqlDataReader record)
+        #region Constructor
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MagicIndex"/> class.
+        /// </summary>
+        /// <param name="record">SqlDataReader object from database query</param>
+        public MagicIndex(SqlDataReader record)
 		{
 			Init(record);
 		}
@@ -302,23 +326,22 @@ namespace MagicCMS.Routing
 			bool success = true;
 			message = "Elementi eliminati con successo.";
 
-			string cmdString =	" BEGIN TRY " +
-								" 	BEGIN TRANSACTION " +
-								" 		DELETE REL_MagicTitle WHERE RMT_Contenuti_Id = @PostPk " +
-								" 	COMMIT TRANSACTION " +
-								" 	SELECT N'OK'; " +
-								" END TRY " +
-								" BEGIN CATCH " +
-								" 	SELECT ERROR_MESSAGE(); " +
-								"    " +
-								"   	IF XACT_STATE() <> 0 BEGIN " +
-								" 		ROLLBACK TRANSACTION " +
-								"   	END " +
-								" END CATCH; ";
+			string cmdString = @"	BEGIN TRY
+										BEGIN TRANSACTION
+										DELETE REL_MagicTitle
+										WHERE RMT_Contenuti_Id = @PostPk
+										COMMIT TRANSACTION
+									END TRY
+									BEGIN CATCH
+
+										IF XACT_STATE() <> 0
+										BEGIN
+											ROLLBACK TRANSACTION
+										END;
+										THROW;
+									END CATCH; ";
 			SqlConnection conn = null;
 			SqlCommand cmd = null;
-			List<MagicIndex> titles = new List<MagicIndex>();
-			string feedBack = null;
 			try
 			{
 				string cmdText = cmdString;
@@ -326,12 +349,8 @@ namespace MagicCMS.Routing
 				conn = new SqlConnection(MagicUtils.MagicConnectionString);
 				conn.Open();
 				cmd = new SqlCommand(cmdText, conn);
-				feedBack = cmd.ExecuteScalar().ToString();
-				if (feedBack != "OK")
-				{
-					success = false;
-					message = feedBack;
-				}
+				cmd.Parameters.AddWithValue("@PostPk", mp.Pk);
+				cmd.ExecuteNonQuery();
 
 			}
 			catch (Exception e)
@@ -665,28 +684,28 @@ namespace MagicCMS.Routing
 
 			bool success = true;
 
-			int[] tipiEsclusi = new int[] {
-						 MagicPostTypeInfo.ButtonLanguage,
-						 MagicPostTypeInfo.Calendario,
-						 MagicPostTypeInfo.Cartella,
-						 MagicPostTypeInfo.CollegamentoInternet,
-						 MagicPostTypeInfo.CollegamentoInterno,
-						 MagicPostTypeInfo.DocumentoScaricabile,
-						 MagicPostTypeInfo.FakeLink,
-						 MagicPostTypeInfo.FilmatoFlash,
-						 MagicPostTypeInfo.Geolocazione,
-						 MagicPostTypeInfo.ListaDiDistribuzione,
-						 MagicPostTypeInfo.Menu,
-						 MagicPostTypeInfo.Plugin,
-						 MagicPostTypeInfo.Preferiti,
-						 MagicPostTypeInfo.ShareButton,
-						 MagicPostTypeInfo.Section
-			};
+			//int[] tipiEsclusi = new int[] {
+			//			 MagicPostTypeInfo.ButtonLanguage,
+			//			 MagicPostTypeInfo.Calendario,
+			//			 MagicPostTypeInfo.Cartella,
+			//			 MagicPostTypeInfo.CollegamentoInternet,
+			//			 MagicPostTypeInfo.CollegamentoInterno,
+			//			 MagicPostTypeInfo.DocumentoScaricabile,
+			//			 MagicPostTypeInfo.FakeLink,
+			//			 MagicPostTypeInfo.FilmatoFlash,
+			//			 MagicPostTypeInfo.Geolocazione,
+			//			 MagicPostTypeInfo.ListaDiDistribuzione,
+			//			 MagicPostTypeInfo.Menu,
+			//			 MagicPostTypeInfo.Plugin,
+			//			 MagicPostTypeInfo.Preferiti,
+			//			 MagicPostTypeInfo.ShareButton,
+			//			 MagicPostTypeInfo.Section
+			//};
 			if (CreateMagicIndex(out errorMessage))
 			{
 				try
 				{
-					MagicPostCollection tutteLePagine = MagicPost.GetByType(tipiEsclusi, MagicOrdinamento.Asc, false, -1);
+					MagicPostCollection tutteLePagine = MagicPost.GetByType(TipiEsclusi, MagicOrdinamento.Asc, false, -1);
 					MagicTranslationCollection traduzioni = new MagicTranslationCollection(MagicTranslationCollection.AllRecords);
 					foreach (MagicPost mp in tutteLePagine)
 					{
@@ -736,6 +755,63 @@ namespace MagicCMS.Routing
 			ot = Regex.Replace(ot, @"(---*)", "-"); 
 			ot = Regex.Replace(ot, @"(-$)", "");
 			return ot;
+		}
+
+		static public async Task<AjaxJsonResponse> CheckTitle(string title, int pk, string lang = "")
+        {
+			AjaxJsonResponse response = new AjaxJsonResponse()
+            {
+				success = true,
+				pk = pk,
+				exitcode = 0,
+				msg = "Ok",
+				data = null
+            };
+			string newTitle = EncodeTitle(title);
+			
+
+			string cmdString = @"	SELECT
+										COUNT(*)
+									FROM REL_MagicTitle rmt
+									WHERE rmt.RMT_Title = @title
+									AND rmt.RMT_Contenuti_Id <> @pk
+									AND rmt.RMT_LangId = @lang";
+
+			SqlConnection conn = null;
+			SqlCommand cmd = null;
+			try
+			{
+
+				conn = new SqlConnection(MagicUtils.MagicConnectionString);
+				await conn.OpenAsync();
+				cmd = new SqlCommand(cmdString, conn);
+				cmd.Parameters.AddWithValue("@title", newTitle);
+				cmd.Parameters.AddWithValue("@pk", pk);
+				cmd.Parameters.AddWithValue("@lang", (string.IsNullOrEmpty(lang) ? new CMS_Config().TransSourceLangId : lang));
+				int result = Convert.ToInt32(cmd.ExecuteScalar());
+				if (result > 0)
+                {
+					response.data = newTitle + "-" + pk.ToString();
+					throw new Exception("Permalink esistente!");
+                }
+				else if (newTitle != title)
+                {
+					response.data = newTitle;
+					throw new Exception("Permalink non correttamente formattato!");
+				}
+				else
+                {
+					response.data = title;
+                }
+			}
+			catch (Exception e)
+			{
+				MagicLog log = new MagicLog("REL_MagicTitle", 0, LogAction.Delete, e);
+				log.Insert();
+				response.success = false;
+				response.msg = e.Message;
+			}
+			return response;
 		}
 		#endregion
 	}

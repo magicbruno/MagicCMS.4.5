@@ -87,13 +87,14 @@ namespace MagicCMS.Core
 		/// </summary>
 		/// <value>The translated tags.</value>
 		public string TranslatedTags { get; set; }
+        public string PermalinkTitle { get; private set; }
 
-		/// <summary>
-		/// Gets or sets the property with the specified property name.
-		/// </summary>
-		/// <param name="propertyName">Name of the property.</param>
-		/// <returns>The value of property with provided property name</returns>
-		public object this[string propertyName]
+        /// <summary>
+        /// Gets or sets the property with the specified property name.
+        /// </summary>
+        /// <param name="propertyName">Name of the property.</param>
+        /// <returns>The value of property with provided property name</returns>
+        public object this[string propertyName]
 		{
 			get
 			{
@@ -138,22 +139,27 @@ namespace MagicCMS.Core
 			TranslatedTestoBreve = "";
 			TranslatedTestoLungo = "";
 			TranslatedTags = "";
+			PermalinkTitle = "";
 
 			SqlConnection conn = new SqlConnection(MagicUtils.MagicConnectionString);
 			SqlCommand cmd = new SqlCommand();
 
-			string commandString =  " SELECT " +
-									"     vat.TRAN_Pk, " +
-									"     vat.TRAN_Title, " +
-									"     vat.TRAN_TestoBreve, " +
-									"     vat.TRAN_TestoLungo, " +
-									"     vat.TRAN_Tags, " +
-									"     vat.TRAN_MB_contenuti_Id, " +
-									"     vat.LANG_Id, " +
-									"     vat.LANG_Name " +
-									" FROM VW_ANA_TRANSLATION vat " +
-									" WHERE vat.TRAN_MB_contenuti_Id = @postPk " +
-									" AND vat.LANG_Id = @langId "; 
+			string commandString = @"	SELECT
+											vat.TRAN_Pk
+										   ,vat.TRAN_Title
+										   ,vat.TRAN_TestoBreve
+										   ,vat.TRAN_TestoLungo
+										   ,vat.TRAN_Tags
+										   ,vat.TRAN_MB_contenuti_Id
+										   ,vat.LANG_Id
+										   ,vat.LANG_Name 
+										   ,rmt.RMT_Title
+										FROM VW_ANA_TRANSLATION vat
+										LEFT JOIN REL_MagicTitle rmt
+											ON rmt.RMT_LangId = vat.LANG_Id 
+											AND rmt.RMT_Contenuti_Id = vat.TRAN_MB_contenuti_Id
+										WHERE vat.TRAN_MB_contenuti_Id = @postPk
+										AND vat.LANG_Id = @langId  "; 
 
 			try
 			{
@@ -208,6 +214,7 @@ namespace MagicCMS.Core
 			PostPk = (!record.IsDBNull(5) ? Convert.ToInt32(record.GetValue(5)) : 0);
 			LangId = (!record.IsDBNull(6) ? Convert.ToString(record.GetValue(6)) : "");
 			LangName = (!record.IsDBNull(7) ? Convert.ToString(record.GetValue(7)) : "");
+			PermalinkTitle = (!record.IsDBNull(8) ? Convert.ToString(record.GetValue(8)) : "");
 		}
 
 		#endregion
@@ -310,7 +317,10 @@ namespace MagicCMS.Core
 				}
 				if (res)
 				{
-					MagicIndex mi = new MagicIndex(PostPk, TranslatedTitle, LangId);
+					if (String.IsNullOrWhiteSpace(PermalinkTitle))
+						PermalinkTitle = MagicIndex.EncodeTitle(TranslatedTitle);
+
+					MagicIndex mi = new MagicIndex(PostPk, PermalinkTitle, LangId);
 					string errorMessage = "";
 					if (mi.Save(out errorMessage) == 0)
 					{

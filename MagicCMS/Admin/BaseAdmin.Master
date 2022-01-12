@@ -19,6 +19,7 @@
     <link href="css/datepicker/datepicker3.css" rel="stylesheet" />
     <link href="css/animate-mb.css" rel="stylesheet" />
     <link href="css/iCheck/flat/orange.css" rel="stylesheet" />
+    <link href="assets-2022/flag-icon-css/css/flag-icons.min.css" rel="stylesheet" />
 
     <%--<link href="css/datatable/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet" />--%>
 <%--    <link href="Scripts/plugins/datatable/css/datatable.min.css" rel="stylesheet" />
@@ -59,7 +60,7 @@
     </form>
     <script src="<%= CkeditorCdn %>"></script>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/<% = JQueryVersion %>/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/<% = JQueryVersion %>/jquery.min.js"></script>
     <script> window.jQuery || document.write('<script src="Scripts/jquery/dist/jquery.min.js"><\/script>')</script>
 
     

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net.Http.Formatting;
 using System.Web;
 
 namespace MagicCMS.DataTable
@@ -98,6 +99,63 @@ namespace MagicCMS.DataTable
             search = new Search_dt();
             TableName = tableName;
             PkName = pkName;
+        }
+
+        public InputParams_dt(FormDataCollection form)
+        {
+            int d, st, len, orderColumn;
+
+            columns = new List<Column_dt>();
+            order = new List<Order_dt>();
+
+            TableName = "";
+            PkName = "";
+            JoinTables = "";
+
+            int.TryParse(form["draw"], out d);
+            draw = d;
+
+            int.TryParse(form["start"], out st);
+            start = st;
+
+            int.TryParse(form["length"], out len);
+            length = len;
+
+            search = new Search_dt();
+            if (!String.IsNullOrEmpty(form["search[value]"]))
+                search.value = form["search[value]"];
+
+            if (!String.IsNullOrEmpty(form["search[regex]"]))
+                search.regex = Convert.ToBoolean(form["search[regex]"]);
+
+            Order_dt odt = new Order_dt();
+            int.TryParse(form["order[0][column]"], out orderColumn);
+            odt.column = orderColumn;
+
+            if (!String.IsNullOrEmpty(form["order[0][dir]"]))
+                odt.dir = form["order[0][dir]"];
+
+            order.Add(odt);
+
+            string colonna = "columns[0]";
+            int i = 0;
+            while (!String.IsNullOrEmpty(form[colonna + "[data]"]))
+            {
+                Column_dt col = new Column_dt(form[colonna + "[data]"], form[colonna + "[search][value]"]);
+                if (!String.IsNullOrEmpty(form[colonna + "[name]"]))
+                    col.name = form[colonna + "[name]"];
+                if (!String.IsNullOrEmpty(form[colonna + "[searchable]"]))
+                    col.searchable = Convert.ToBoolean(form[colonna + "[searchable]"]);
+
+                if (!String.IsNullOrEmpty(form[colonna + "[orderable]"]))
+                    col.orderable = Convert.ToBoolean(form[colonna + "[orderable]"]);
+
+                if (!String.IsNullOrEmpty(form[colonna + "[search][regex]"]))
+                    col.search.regex = Convert.ToBoolean(form[colonna + "[search][regex]"]);
+                columns.Add(col);
+                i++;
+                colonna = "columns[" + i.ToString() + "]";
+            }
         }
 
 		/// <summary>

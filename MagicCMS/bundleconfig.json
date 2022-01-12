@@ -22,5 +22,57 @@
       "Admin/Scripts/admin/pwd.js",
       "Admin/Scripts/admin/ResetPassword.js"
     ]
+  },
+  {
+    "outputFileName": "/Themes/Default/js/plugins.js",
+    "inputFiles": [
+      "/Themes/Default/js/plugins/spin/spin.js",
+      "/Themes/Default/js/plugins/spin/jquery.spin.js",
+      "/Themes/Default/js/plugins/bootstrap/affix.js",
+      "/Themes/Default/js/plugins/bootstrap/collapse.js",
+      "/Themes/Default/js/plugins/bootstrap/dropdown.js",
+      "/Themes/Default/js/plugins/bootstrap/modal.js",
+      "/Themes/Default/js/plugins/bootstrap/tooltip.js",
+      "/Themes/Default/js/plugins/bootstrap/popover.js",
+      "/Themes/Default/js/plugins/bootstrap/scrollspy.js",
+      "/Themes/Default/js/plugins/bootstrap/tab.js",
+      "/Themes/Default/js/plugins/bootstrap/transition.js",
+      "/Themes/Default/js/plugins/bootstrap/carousel.js",
+      "/Themes/Default/js/plugins/slick/slick.js",
+      "/Themes/Default/js/plugins/bootbox.js",
+      "/Themes/Default/js/plugins/jquery.prettySocial.js",
+      "/Themes/Default/js/plugins/gmap3/gmap3.js",
+      "/Themes/Default/js/plugins/jquery.mb-waitspinner.js",
+      "/Themes/Default/js/plugins/SmoothAnchors.js"
+    ]
+  },
+  {
+    "outputFileName": "/Themes/Default/js/plugins.min.js",
+    "inputFiles": [
+      "/Themes/Default/js/plugins.js"
+    ]
+  },
+  {
+    "outputFileName": "Themes/Default/js/plugins/plugins.js",
+    "inputFiles": [
+      "Themes/Default/js/plugins/spin/spin.js",
+      "Themes/Default/js/plugins/spin/jquery.spin.js",
+      "Themes/Default/js/plugins/bootstrap/affix.js",
+      "Themes/Default/js/plugins/bootstrap/collapse.js",
+      "Themes/Default/js/plugins/bootstrap/modal.js",
+      "Themes/Default/js/plugins/bootstrap/dropdown.js",
+      "Themes/Default/js/plugins/bootstrap/tooltip.js",
+      "Themes/Default/js/plugins/bootstrap/popover.js",
+      "Themes/Default/js/plugins/bootstrap/scrollspy.js",
+      "Themes/Default/js/plugins/bootstrap/tab.js",
+      "Themes/Default/js/plugins/bootstrap/transition.js",
+      "Themes/Default/js/plugins/bootstrap/carousel.js",
+      "Themes/Default/js/plugins/slick/slick.js",
+      "Themes/Default/js/plugins/bootbox.js",
+      "Themes/Default/js/plugins/jquery.prettySocial.js",
+      "Themes/Default/js/plugins/gmap3/gmap3.js",
+      "Themes/Default/js/plugins/jquery.mb-waitspinner.js",
+      "Themes/Default/js/plugins/SmoothAnchors.js"
+    ]
   }
 ]

@@ -42,6 +42,24 @@ namespace MagicCMS.Admin
         protected global::System.Web.UI.WebControls.Repeater Repeter_Tabs;
 
         /// <summary>
+        /// Controllo RepeaterFrom.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater RepeaterFrom;
+
+        /// <summary>
+        /// Controllo RepeaterTo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater RepeaterTo;
+
+        /// <summary>
         /// Controllo RepeaterLanguages.
         /// </summary>
         /// <remarks>

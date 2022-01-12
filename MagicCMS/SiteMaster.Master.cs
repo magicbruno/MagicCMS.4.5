@@ -187,7 +187,7 @@ namespace MagicCMS
 				style.InnerText = customCss.CssText;
 				head.Controls.Add(style);
 			}
-
+			JqueryLoad.DataBind();
 		}
 	}
 }

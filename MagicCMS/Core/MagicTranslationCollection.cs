@@ -66,16 +66,20 @@ namespace MagicCMS.Core
             SqlConnection conn = new SqlConnection(MagicUtils.MagicConnectionString);
             SqlCommand cmd = new SqlCommand();
 
-            string commandString = " SELECT " +
-                                    "     vat.TRAN_Pk, " +
-                                    "     vat.TRAN_Title, " +
-                                    "     vat.TRAN_TestoBreve, " +
-                                    "     vat.TRAN_TestoLungo, " +
-                                    "     vat.TRAN_Tags, " +
-                                    "     vat.TRAN_MB_contenuti_Id, " +
-                                    "     vat.LANG_Id, " +
-                                    "     vat.LANG_Name " +
-                                    " FROM VW_ANA_TRANSLATION vat " +
+            string commandString = @"	SELECT
+											vat.TRAN_Pk
+										   ,vat.TRAN_Title
+										   ,vat.TRAN_TestoBreve
+										   ,vat.TRAN_TestoLungo
+										   ,vat.TRAN_Tags
+										   ,vat.TRAN_MB_contenuti_Id
+										   ,vat.LANG_Id
+										   ,vat.LANG_Name 
+										   ,rmt.RMT_Title
+										FROM VW_ANA_TRANSLATION vat
+										LEFT JOIN REL_MagicTitle rmt
+											ON rmt.RMT_LangId = vat.LANG_Id 
+											AND rmt.RMT_Contenuti_Id = vat.TRAN_MB_contenuti_Id " +
                                     (!String.IsNullOrEmpty(whereClause) ? "WHERE " + whereClause : "");
 
             try
