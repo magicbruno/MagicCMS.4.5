@@ -98,6 +98,7 @@
     <script src="assets-2022/bootstrap-select/js/bootstrap-select.min.js"></script>
     <script src="assets-2022/bootstrap-select/js/i18n/defaults-it_IT.min.js"></script>
     <script src="assets-2022/sweetalert2/dist/sweetalert2.min.js"></script>
+    <script src="assets-2022/mustache/mustache.min.js"></script>
 
     <script>$.fn.selectpicker.Constructor.DEFAULTS.iconBase = 'fa';</script>
     <script>

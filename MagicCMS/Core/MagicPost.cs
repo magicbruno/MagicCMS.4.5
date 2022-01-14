@@ -3024,17 +3024,15 @@ namespace MagicCMS.Core
 									   ,vmca.Tags
 									   ,vmca.Propietario AS Owner
 									   ,vmca.Flag_Cancellazione
-										  ,vmca.Propietario AS Owner
-									   ,vmca.Flag_Cancellazione
-										  ,STUFF((SELECT
-												',' + CONVERT(VARCHAR(10), rca.Id_Argomenti)
-											FROM REL_contenuti_Argomenti rca
-											WHERE rca.Id_Contenuti = vmca.Id
-											FOR XML PATH (''))
+										,STUFF((SELECT
+											',' + CONVERT(VARCHAR(10), rca.Id_Argomenti)
+										FROM REL_contenuti_Argomenti rca
+										WHERE rca.Id_Contenuti = vmca.Id
+										FOR XML PATH (''))
 										, 1, 1, '') AS Parents
-									   ,rmt.RMT_Title AS PermaLinkTitle
-									   ,rmt.RMT_LangId AS TitleLang
-									   ,RIGHT(RTRIM(Titolo), CHARINDEX(' ', REVERSE(' ' + RTRIM(Titolo))) - 1) AS COGNOME
+										,rmt.RMT_Title AS PermaLinkTitle
+										,rmt.RMT_LangId AS TitleLang
+										,RIGHT(RTRIM(Titolo), CHARINDEX(' ', REVERSE(' ' + RTRIM(Titolo))) - 1) AS COGNOME
 									FROM REL_contenuti_Argomenti rca
 									INNER JOIN VW_MB_contenuti_attivi vmca
 										ON rca.Id_Argomenti = vmca.Id

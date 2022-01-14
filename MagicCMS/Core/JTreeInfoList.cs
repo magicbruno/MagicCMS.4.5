@@ -86,22 +86,18 @@ namespace MagicCMS.Core
             try
             {
                 string cmdText = @" SELECT DISTINCT
-	                                    mc.Id
+	                                    mc.ID
                                        ,mc.Titolo
                                        ,act.TYP_Icon AS Icon
-                                       ,ISNULL(rca1.Id_Argomenti, 0) AS parent 
+                                       ,ISNULL(rca1.Id_Argomenti, 0) AS parent
                                        ,act.TYP_NAME AS NomeTipo
-                                    FROM REL_contenuti_Argomenti rca
-                                    INNER JOIN MB_contenuti mc
-	                                    ON mc.Id = rca.Id_Argomenti
+                                    FROM  MB_contenuti mc
                                     INNER JOIN ANA_CONT_TYPE act
 	                                    ON act.TYP_PK = mc.Tipo
-                                    INNER JOIN MB_contenuti mc1
-	                                    ON mc1.Id = rca.Id_Contenuti
                                     LEFT JOIN REL_contenuti_Argomenti rca1
-	                                    ON mc.Id = rca1.Id_Contenuti
-                                    WHERE mc.Flag_Cancellazione = 0
-                                    ORDER BY parent, Titolo ";
+	                                    ON mc.ID = rca1.Id_Contenuti
+                                    WHERE mc.Flag_Cancellazione = 0 AND act.TYP_FlagContenitore = 1
+                                    ORDER BY parent, Titolo";
 
                 conn = new SqlConnection(MagicUtils.MagicConnectionString);
                 await conn.OpenAsync();

@@ -633,6 +633,21 @@
 
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Scripts" runat="server">
+    <script id="table-cont-parent" type="x-tmpl-mustache">
+        <div class="row no-gutters title">
+            <div class="col-auto px-2"><i class="fa {{Icon}} text-primary"></i></div>
+            <div class="col"><a href="#" data-action="goto" data-rowpk="{{Pk}}" data-order="{{ExtraInfo}}" data-icon="{{Icon}}" title="{{Titolo}} ({{NomeTipo}})">{{Titolo}}</a>
+            <br /><small>{{NomeTipo}}</small></div>
+        </div>
+    </script>
+
+    <script id="table-cont-child" type="x-tmpl-mustache">
+        <div class="row no-gutters title">
+            <div class="col-auto px-2"><i class="fa {{Icon}}" ></i></div>
+            <div class="col"><span data-rowpk="{{Pk}}" title="{{Titolo}} ({{NomeTipo}})">{{Titolo}}</span>
+            <br /><small>{{NomeTipo}}</small></div>
+        </div>
+    </script>
     <script>
         /// <reference path="../../../Scripts/_references.js" />
 
@@ -833,25 +848,17 @@
                                 "targets": 1,
                                 "data": "Titolo",
                                 "name": "Titolo",
-                                "width": "20%",
+                                "width": "100%",
                                 render: function (data, type, full, meta) {
+                                    full.ExtraInfo = full.ExtraInfo || 'ASC';
+                                    var template;
                                     if (full.FlagContainer) {
-                                        var btn = $('<button />')
-                                            .addClass('btn btn-link ellipses')
-                                            .attr('data-rowpk', full.Pk)
-                                            .attr('data-rowtitle', full.Titolo)
-                                            .attr('data-action', 'goto')
-                                            .attr('data-order', full.ExtraInfo)
-                                            .attr('data-icon', full.Icon)
-                                            .attr('type', 'button')
-                                            .attr('title', data + " (" + full.NomeTipo + ")")
-                                            .html('<i class="fa ' + full.Icon + '"></i>' + data);
-                                        var div = $('<div class="title" />').append(btn).append($('<span>' + " <br /> <small>" + full.NomeTipo + "</small>" + '</span>'));
-                                        return $('<div />').append(div).html();
+                                        template = document.getElementById('table-cont-parent').innerHTML;
+
                                     }
                                     else
-                                        return '<div class="title"><span title="' + data + " (" + full.NomeTipo + ")" + '"><i class="fa ' +
-                                            full.Icon + '"></i>' + data + "<br /> <small>" + full.NomeTipo + "</small>" + '</span></div>';
+                                        template = document.getElementById('table-cont-child').innerHTML;
+                                    return Mustache.render(template, full);
                                 }
                             },
                             {
@@ -860,7 +867,8 @@
                                 "searchable": false,
                                 "orderable": false,
                                 "data": "NomeTipo",
-                                "width": "5%",
+                                "width": "10%",
+                                "className": "text-center",
                                 "render": function (data, type, full, meta) {
                                     var miniature = full.Miniature_pk;
                                     if (miniature == 0)
@@ -874,7 +882,7 @@
                                             .attr('data-target', '#LightBox')
                                             .attr('data-toggle', 'modal')
                                             .attr('title', data)
-                                            .html('<img class="img-responsive" src="/Min.ashx?pk=' + miniature + '"></img>');
+                                            .html('<img style="min-width:52px" class="img-responsive" src="/Min.ashx?pk=' + miniature + '"></img>');
 
                                         var div = $('<div />').append(btn);
                                         return $('<div />').append(div).html();
@@ -890,9 +898,8 @@
                                 "width": "10%",
                                 "className": "text-right",
                                 "render": function (data, type, full, meta) {
-                                    if (data == null) return "Mancante";
-                                    var d = new Date(parseInt(data.substr(6)));
-                                    return d.getDate() + '/' + ('0' + (d.getMonth() + 1)).substr(-2) + "/" + d.getFullYear().toString().substr(-2);
+                                    if (!data) return "Mancante";
+                                    return new Date(data).toLocaleDateString('it-it');
                                 }
                             },
                             {
@@ -905,8 +912,7 @@
                                 "className": "text-right",
                                 "render": function (data, type, full, meta) {
                                     if (data == null) return "Nessuna";
-                                    var d = new Date(parseInt(data.substr(6)));
-                                    return d.getDate() + '/' + ('0' + (d.getMonth() + 1)).substr(-2) + "/" + d.getFullYear().toString().substr(-2);
+                                    return new Date(data).toLocaleDateString('it-it');
                                 }
                             },
                             {
@@ -919,8 +925,7 @@
                                 "className": "text-right",
                                 "render": function (data, type, full, meta) {
                                     if (data == null) return "Mancante";
-                                    var d = new Date(parseInt(data.substr(6)));
-                                    return d.getDate() + '/' + ('0' + (d.getMonth() + 1)).substr(-2) + "/" + d.getFullYear().toString().substr(-2);
+                                    return new Date(data).toLocaleDateString('it-it');
                                 }
                             },
                             {
@@ -1002,7 +1007,7 @@
                     $('td > div.ellipsis.title').width(w * 0.25);
                     $('td > div.ellipsis.type').width(w * 0.18);
                 })
-                .on('click', 'button', function (e) {
+                .on('click', 'button, a', function (e) {
                     var $button = $(this);
                     var action = $button.attr('data-action');
                     var pk = $button.attr('data-rowpk');

@@ -363,6 +363,8 @@ namespace MagicCMS.DataTable
                 };
 
                 ordinamento = string.Format(" ORDER BY {0} {1} ", columnNames[inputParams.order[0].column], inputParams.order[0].dir);
+                if (columnNames[inputParams.order[0].column] != "mc.Id")
+                    ordinamento += ", mc.Id DESC ";
 
                 string pagination = string.Format(" OFFSET {0} ROWS FETCH NEXT {1} ROWS ONLY ", inputParams.start, inputParams.length);
 

@@ -74,5 +74,11 @@
       "Themes/Default/js/plugins/jquery.mb-waitspinner.js",
       "Themes/Default/js/plugins/SmoothAnchors.js"
     ]
+  },
+  {
+    "outputFileName": "Admin/assets-2022/mustache.js/mustache.min.js",
+    "inputFiles": [
+      "Admin/assets-2022/mustache.js/mustache.js"
+    ]
   }
 ]

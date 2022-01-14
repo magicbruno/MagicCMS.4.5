@@ -820,6 +820,8 @@
     <Content Include="Admin\assets-2022\flag-icon-css\flags\4x3\za.svg" />
     <Content Include="Admin\assets-2022\flag-icon-css\flags\4x3\zm.svg" />
     <Content Include="Admin\assets-2022\flag-icon-css\flags\4x3\zw.svg" />
+    <Content Include="Admin\assets-2022\mustache\mustache.js" />
+    <Content Include="Admin\assets-2022\mustache\mustache.min.js" />
     <Content Include="Admin\assets-2022\sweetalert2\dist\sweetalert2.all.js" />
     <Content Include="Admin\assets-2022\sweetalert2\dist\sweetalert2.all.min.js" />
     <Content Include="Admin\assets-2022\sweetalert2\dist\sweetalert2.css" />
@@ -895,6 +897,22 @@
     <Content Include="\Themes\Default\js\plugins.js">
       <Link>plugins.js</Link>
     </Content>
+    <Content Include="Admin\assets-2022\mustache\bin\mustache" />
+    <Content Include="Admin\assets-2022\mustache\CHANGELOG.md" />
+    <Content Include="Admin\assets-2022\mustache\LICENSE" />
+    <Content Include="Admin\assets-2022\mustache\mustache.mjs" />
+    <Content Include="Admin\assets-2022\mustache\package.json" />
+    <Content Include="Admin\assets-2022\mustache\README.md" />
+    <Content Include="Admin\assets-2022\mustache\wrappers\dojo\mustache.js.post" />
+    <Content Include="Admin\assets-2022\mustache\wrappers\dojo\mustache.js.pre" />
+    <Content Include="Admin\assets-2022\mustache\wrappers\jquery\mustache.js.post" />
+    <Content Include="Admin\assets-2022\mustache\wrappers\jquery\mustache.js.pre" />
+    <Content Include="Admin\assets-2022\mustache\wrappers\mootools\mustache.js.post" />
+    <Content Include="Admin\assets-2022\mustache\wrappers\mootools\mustache.js.pre" />
+    <Content Include="Admin\assets-2022\mustache\wrappers\qooxdoo\mustache.js.post" />
+    <Content Include="Admin\assets-2022\mustache\wrappers\qooxdoo\mustache.js.pre" />
+    <Content Include="Admin\assets-2022\mustache\wrappers\yui3\mustache.js.post" />
+    <Content Include="Admin\assets-2022\mustache\wrappers\yui3\mustache.js.pre" />
     <None Include="Admin\css\datatable\datatable_bundle.css.bundle" />
     <Content Include="Admin\Config.aspx" />
     <None Include="Admin\css\iCheck\all.css" />
