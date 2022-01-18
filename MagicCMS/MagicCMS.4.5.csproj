@@ -1058,6 +1058,7 @@
     <Content Include="Admin\MasterAdmin.master" />
     <Content Include="Admin\less\main-new.less" />
     <Content Include="Admin\less\main.less" />
+    <Content Include="Admin\less\switch.less" />
     <None Include="Admin\Scripts\admin\checkboxed-types.js" />
     <None Include="Admin\Scripts\admin\checkSession.js" />
     <Content Include="Admin\Scripts\admin\filebrowser_win.js" />
@@ -2281,6 +2282,7 @@
     <Compile Include="Api_Controllers\CheckTokenController.cs" />
     <Compile Include="Api_Controllers\GetParentsTreeController.cs" />
     <Compile Include="Api_Controllers\KeywordsController.cs" />
+    <Compile Include="Api_Controllers\LogPaginatedAsyncController.cs" />
     <Compile Include="Api_Controllers\MagicPostController.cs" />
     <Compile Include="Api_Controllers\PostTranslatorController.cs" />
     <Compile Include="Api_Controllers\PostTypeVisibilityController.cs" />
@@ -2288,6 +2290,7 @@
     <Compile Include="Api_Controllers\ContentsPaginatedController.cs" />
     <Compile Include="Api_Controllers\TextTranslatorController.cs" />
     <Compile Include="Api_Controllers\TranslationLanguagesController.cs" />
+    <Compile Include="Api_Controllers\UserCsvAsyncController.cs" />
     <Compile Include="App_GlobalResources\WebFileManager\IZWebFileManagerResource.cs.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

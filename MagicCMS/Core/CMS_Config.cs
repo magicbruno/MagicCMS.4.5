@@ -448,57 +448,52 @@ namespace MagicCMS.Core
             SqlConnection conn = null;
             SqlCommand cmd = null;
             #region cmdString
-            string cmdString = " BEGIN TRY " +
-                                "     BEGIN TRANSACTION " +
-                                "         IF EXISTS (SELECT " +
-                                "                 c.CON_PK " +
-                                "             FROM CONFIG c " +
-                                "             WHERE c.CON_PK = 0) " +
-                                "         BEGIN " +
-                                "             UPDATE CONFIG " +
-                                "             SET CON_SinglePage = @CON_SinglePage, " +
-                                "                 CON_MultiPage = @CON_MultiPage, " +
-                                "                 CON_TRANS_Auto = @CON_TRANS_Auto, " +
-                                "                 CON_TRANS_Id = @CON_TRANS_Id, " +
-                                "                 CON_TRANS_SecretKey = @CON_TRANS_SecretKey, " +
-                                "                 CON_TRANS_SourceLangId = @CON_TRANS_SourceLangId,  " +
-                                "                 CON_TransSourceLangName = @CON_TransSourceLangName,  " +
-                                "                 CON_SMTP_Server = @CON_SMTP_Server, " +
-                                "                 CON_SMTP_Username = @CON_SMTP_Username, " +
-                                "                 CON_SMTP_Password = @CON_SMTP_Password, " +
-                                "                 CON_SMTP_DefaultFromMail = @CON_SMTP_DefaultFromMail, " +
-                                "                 CON_SMTP_AdminMail =@CON_SMTP_AdminMail, " +
-                                "                 CON_ThemePath = @CON_ThemePath, " +
-                                "                 CON_ImagesPath = @CON_ImagesPath, " +
-                                "                 CON_DefaultImage = @CON_DefaultImage, " +
-                                "                 CON_ga_Property_ID = @CON_ga_Property_ID, " +
-                                "                 CON_DefaultContentMaster = @CON_DefaultContentMaster, " +
-                                "                 CON_NAV_StartPage = @CON_NAV_StartPage, " +
-                                "                 CON_NAV_MainMenu = @CON_NAV_MainMenu, " +
-                                "                 CON_NAV_SecondaryMenu = @CON_NAV_SecondaryMenu, " +
-                                "                 CON_NAV_FooterMenu = @CON_NAV_FooterMenu, " +
-                                "                 CON_SiteName = @CON_SiteName " +
-                                "             WHERE CON_PK = 0 " +
-                                "         END " +
-                                "         ELSE " +
-                                "         BEGIN " +
-                                "             INSERT CONFIG (CON_PK, CON_SinglePage, CON_MultiPage, CON_TRANS_Auto, CON_TRANS_Id, CON_TRANS_SecretKey, CON_TRANS_SourceLangId, CON_TransSourceLangName, CON_ThemePath, CON_ImagesPath, CON_SMTP_Server, CON_SMTP_Username, CON_SMTP_Password, CON_SMTP_DefaultFromMail, CON_SMTP_AdminMail, CON_DefaultImage, CON_ga_Property_ID, CON_DefaultContentMaster, CON_NAV_StartPage, CON_NAV_MainMenu, CON_NAV_SecondaryMenu, CON_NAV_FooterMenu, CON_SiteName) " +
-                                "                 VALUES (0, @CON_SinglePage, @CON_MultiPage, @CON_TRANS_Auto, @CON_TRANS_Id, @CON_TRANS_SecretKey, @CON_TRANS_SourceLangId, @CON_TransSourceLangName,  @CON_ThemePath, @CON_ImagesPath, @CON_SMTP_Server, @CON_SMTP_Username, @CON_SMTP_Password, @CON_SMTP_DefaultFromMail, @CON_SMTP_AdminMail, @CON_DefaultImage, @CON_ga_Property_ID, @CON_DefaultContentMaster, @CON_NAV_StartPage, @CON_NAV_MainMenu, @CON_NAV_SecondaryMenu, @CON_NAV_FooterMenu, @CON_SiteName); " +
-                                "         END " +
-                                "     COMMIT TRANSACTION " +
-                                "     SELECT " +
-                                "         @@error " +
-                                " END TRY " +
-                                " BEGIN CATCH " +
-                                "  " +
-                                "     SELECT " +
-                                "         ERROR_MESSAGE(); " +
-                                "  " +
-                                "     IF XACT_STATE() <> 0 " +
-                                "     BEGIN " +
-                                "         ROLLBACK TRANSACTION " +
-                                "     END " +
-                                " END CATCH; ";
+            string cmdString = @"  BEGIN TRY 
+                                     BEGIN TRANSACTION 
+                                         IF EXISTS (SELECT 
+                                                 c.CON_PK 
+                                             FROM CONFIG c 
+                                             WHERE c.CON_PK = 0) 
+                                         BEGIN 
+                                             UPDATE CONFIG 
+                                             SET CON_SinglePage = @CON_SinglePage, 
+                                                 CON_MultiPage = @CON_MultiPage, 
+                                                 CON_TRANS_Auto = @CON_TRANS_Auto, 
+                                                 CON_TRANS_Id = @CON_TRANS_Id, 
+                                                 CON_TRANS_SecretKey = @CON_TRANS_SecretKey, 
+                                                 CON_TRANS_SourceLangId = @CON_TRANS_SourceLangId,  
+                                                 CON_TransSourceLangName = @CON_TransSourceLangName,  
+                                                 CON_SMTP_Server = @CON_SMTP_Server, 
+                                                 CON_SMTP_Username = @CON_SMTP_Username, 
+                                                 CON_SMTP_Password = @CON_SMTP_Password, 
+                                                 CON_SMTP_DefaultFromMail = @CON_SMTP_DefaultFromMail, 
+                                                 CON_SMTP_AdminMail =@CON_SMTP_AdminMail, 
+                                                 CON_ThemePath = @CON_ThemePath, 
+                                                 CON_ImagesPath = @CON_ImagesPath, 
+                                                 CON_DefaultImage = @CON_DefaultImage, 
+                                                 CON_ga_Property_ID = @CON_ga_Property_ID, 
+                                                 CON_DefaultContentMaster = @CON_DefaultContentMaster, 
+                                                 CON_NAV_StartPage = @CON_NAV_StartPage, 
+                                                 CON_NAV_MainMenu = @CON_NAV_MainMenu, 
+                                                 CON_NAV_SecondaryMenu = @CON_NAV_SecondaryMenu, 
+                                                 CON_NAV_FooterMenu = @CON_NAV_FooterMenu, 
+                                                 CON_SiteName = @CON_SiteName 
+                                             WHERE CON_PK = 0 
+                                         END 
+                                         ELSE 
+                                         BEGIN 
+                                             INSERT CONFIG (CON_PK, CON_SinglePage, CON_MultiPage, CON_TRANS_Auto, CON_TRANS_Id, CON_TRANS_SecretKey, CON_TRANS_SourceLangId, CON_TransSourceLangName, CON_ThemePath, CON_ImagesPath, CON_SMTP_Server, CON_SMTP_Username, CON_SMTP_Password, CON_SMTP_DefaultFromMail, CON_SMTP_AdminMail, CON_DefaultImage, CON_ga_Property_ID, CON_DefaultContentMaster, CON_NAV_StartPage, CON_NAV_MainMenu, CON_NAV_SecondaryMenu, CON_NAV_FooterMenu, CON_SiteName) 
+                                                 VALUES (0, @CON_SinglePage, @CON_MultiPage, @CON_TRANS_Auto, @CON_TRANS_Id, @CON_TRANS_SecretKey, @CON_TRANS_SourceLangId, @CON_TransSourceLangName,  @CON_ThemePath, @CON_ImagesPath, @CON_SMTP_Server, @CON_SMTP_Username, @CON_SMTP_Password, @CON_SMTP_DefaultFromMail, @CON_SMTP_AdminMail, @CON_DefaultImage, @CON_ga_Property_ID, @CON_DefaultContentMaster, @CON_NAV_StartPage, @CON_NAV_MainMenu, @CON_NAV_SecondaryMenu, @CON_NAV_FooterMenu, @CON_SiteName); 
+                                         END 
+                                     COMMIT TRANSACTION 
+                                 END TRY 
+                                 BEGIN CATCH 
+                                     IF XACT_STATE() <> 0 
+                                     BEGIN 
+                                         ROLLBACK TRANSACTION 
+                                     END;
+                                     THROW;
+                                 END CATCH; ";
             #endregion
             try
             {
@@ -530,29 +525,18 @@ namespace MagicCMS.Core
                 cmd.Parameters.AddWithValue("@CON_NAV_FooterMenu", FooterMenu);
                 cmd.Parameters.AddWithValue("@CON_SiteName", SiteName);
 
-                string result = cmd.ExecuteScalar().ToString();
-                int error;
-                if (int.TryParse(result, out error))
+                int result = cmd.ExecuteNonQuery();
+
+                if (result > 0)
                 {
-                    if (error == 0)
-                    {
-                        MagicLog log = new MagicLog("CONFIG", 0, LogAction.Insert, "", "");
-                        log.Error = "Success";
-                        log.Insert();
-
-                    }
-                    else
-                    {
-                        MagicLog log = new MagicLog("CONFIG", 0, LogAction.Insert, "", "");
-                        log.Error = "SQL Error n. " + result;
-                        log.Insert();
-
-                    }
+                    MagicLog log = new MagicLog("CONFIG", 0, LogAction.Insert, "", "");
+                    log.Error = "SUCCESS";
+                    log.Insert();
                 }
                 else
                 {
                     MagicLog log = new MagicLog("CONFIG", 0, LogAction.Insert, "", "");
-                    log.Error = result;
+                    log.Error = "Record non aggiornato";
                     log.Insert();
                 }
             }

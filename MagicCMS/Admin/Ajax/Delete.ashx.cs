@@ -132,36 +132,35 @@ namespace MagicCMS.Admin.Ajax
 			SqlCommand cmd = null;
 			try
 			{
-				string cmdText = " BEGIN TRY " +
-									" 	BEGIN TRANSACTION " +
-									" 		DELETE " + table + " " +
-									" 			WHERE " + pkName + " = @pk " +
-									" 	COMMIT TRANSACTION " +
-									" 	SELECT @Pk " +
-									" END TRY " +
-									" BEGIN CATCH " +
-									"   	IF XACT_STATE() <> 0 BEGIN " +
-									" 		    ROLLBACK TRANSACTION " +
-									"   	END " +
-									" 	SELECT ERROR_MESSAGE(); " +
-									" END CATCH; ";
+				string cmdText = String.Format(@" BEGIN TRY 
+										BEGIN TRANSACTION 
+											DELETE  {0} 
+												WHERE  {1} = @pk 
+										COMMIT TRANSACTION 
+
+									END TRY 
+									BEGIN CATCH 
+										IF XACT_STATE() <> 0 BEGIN 
+												ROLLBACK TRANSACTION 
+										END;
+										THROW;
+									END CATCH;", table, pkName) ;
 
 				conn = new SqlConnection(MagicUtils.MagicConnectionString);
 				conn.Open();
 				cmd = new SqlCommand(cmdText, conn);
 				cmd.Parameters.AddWithValue("@pk", pk);
 
-				int r;
-				string result = Convert.ToString(cmd.ExecuteScalar());
+				int r = cmd.ExecuteNonQuery();
 
 
-				if (!int.TryParse(result, out r))
+				if (r == 0)
 				{
 					MagicLog log = new MagicLog(table, pk, LogAction.Delete, "", "");
-					log.Error = result;
+					log.Error = "Nessun record cancellato";
 					log.Insert();
 					response.exitcode = 5;
-					response.msg = "Errore SQL: " + result;
+					response.msg = "Nessun record cancellato";
 					response.success = false;
 				}
 			}
@@ -169,7 +168,7 @@ namespace MagicCMS.Admin.Ajax
 			{
 				MagicLog log = new MagicLog(table, pk, LogAction.Delete, e);
 				log.Insert();
-				response.exitcode = 5;
+				response.exitcode = e.HResult;
 				response.msg = e.Message;
 				response.success = false;
 			}

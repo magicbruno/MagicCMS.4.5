@@ -70,30 +70,27 @@ namespace MagicCMS.Core
             SqlCommand cmd = null;
             try
             {
-                string cmdText =    " BEGIN TRY " +
-                                    "         BEGIN TRANSACTION " +
-                                    "                 IF NOT EXISTS (SELECT " +
-                                    "                                 key_content_PK " +
-                                    "                         FROM REL_KEYWORDS rk " +
-                                    "                         WHERE rk.key_content_PK = @key_content_PK " +
-                                    "                         AND rk.key_keyword = @key_keyword " +
-                                    "                         AND rk.key_langId = @key_langId) " +
-                                    "                 BEGIN " +
-                                    "                         INSERT REL_KEYWORDS (key_content_PK, key_keyword, key_langId) " +
-                                    "                                 VALUES (@key_content_PK, @key_keyword, @key_langId); " +
-                                    "                 END " +
-                                    "         COMMIT TRANSACTION " +
-                                    "         SELECT " +
-                                    "                 @@ERROR " +
-                                    " END TRY " +
-                                    " BEGIN CATCH " +
-                                    "         IF XACT_STATE() <> 0 " +
-                                    "         BEGIN " +
-                                    "                 ROLLBACK TRANSACTION " +
-                                    "         END " +
-                                    "         SELECT " +
-                                    "                 ERROR_MESSAGE() " +
-                                    " END CATCH; ";
+                string cmdText = @" BEGIN TRY 
+                                             BEGIN TRANSACTION 
+                                                     IF NOT EXISTS (SELECT 
+                                                                     key_content_PK 
+                                                             FROM REL_KEYWORDS rk 
+                                                             WHERE rk.key_content_PK = @key_content_PK 
+                                                             AND rk.key_keyword = @key_keyword 
+                                                             AND rk.key_langId = @key_langId) 
+                                                     BEGIN 
+                                                             INSERT REL_KEYWORDS (key_content_PK, key_keyword, key_langId) 
+                                                                     VALUES (@key_content_PK, @key_keyword, @key_langId); 
+                                                     END 
+                                             COMMIT TRANSACTION 
+                                     END TRY 
+                                     BEGIN CATCH 
+                                             IF XACT_STATE() <> 0 
+                                             BEGIN 
+                                                     ROLLBACK TRANSACTION 
+                                             END;
+                                             THROW;
+                                     END CATCH; ";
 
                 conn = new SqlConnection(MagicUtils.MagicConnectionString);
                 conn.Open();
@@ -101,14 +98,8 @@ namespace MagicCMS.Core
                 cmd.Parameters.AddWithValue("@key_content_PK", ContentPk);
                 cmd.Parameters.AddWithValue("@key_keyword", Keyword.Trim());
                 cmd.Parameters.AddWithValue("@key_langId", LangId);
+                cmd.ExecuteNonQuery();
 
-                string r = Convert.ToString(cmd.ExecuteScalar());
-                if (r != "0")
-                {
-                    MagicLog log = new MagicLog("REL_KEYWORDS", 0, LogAction.Insert, "", "");
-                    log.Error = r;
-                    log.Insert();
-                }
             }
             catch (Exception e)
             {
@@ -278,22 +269,22 @@ namespace MagicCMS.Core
                     values += ";";
                 }
 
-                string cmdText = " BEGIN TRY " +
-                                "     BEGIN TRANSACTION " +
-                                "         DELETE REL_KEYWORDS " +
-                                "         WHERE (key_content_PK = @pk) AND (key_langId = @langId) ; " +
-                                values +
-                                "     COMMIT TRANSACTION " +
-                                "     SELECT @@ERROR " +
-                                " END TRY " +
-                                " BEGIN CATCH " +
-                                "     SELECT " +
-                                "         ERROR_MESSAGE()" +
-                                "     IF XACT_STATE() <> 0 " +
-                                "     BEGIN " +
-                                "         ROLLBACK TRANSACTION " +
-                                "     END " +
-                                " END CATCH; ";
+                string cmdText = String.Format(@"BEGIN TRY 
+                                                     BEGIN TRANSACTION 
+                                                         DELETE REL_KEYWORDS 
+                                                         WHERE (key_content_PK = @pk) AND (key_langId = @langId) ; 
+                                                     {0}
+                                                     COMMIT TRANSACTION 
+
+                                                 END TRY 
+                                                 BEGIN CATCH 
+
+                                                     IF XACT_STATE() <> 0 
+                                                     BEGIN 
+                                                         ROLLBACK TRANSACTION 
+                                                     END;
+                                                     THROW; 
+                                                 END CATCH; ", values);
 
                 conn = new SqlConnection(MagicUtils.MagicConnectionString);
                 conn.Open();
@@ -301,17 +292,9 @@ namespace MagicCMS.Core
                 cmd.Parameters.AddWithValue("@pk", contentPk);
                 cmd.Parameters.AddWithValue("@langId", langId);
 
-                string r = Convert.ToString(cmd.ExecuteScalar());
-                if (r == "0")
-                {
-                    MagicLog log = new MagicLog("REL_KEYWORDS", contentPk, LogAction.Update, "", "");
-                    log.Insert();
-                }
-                else
-                {
-                    MagicLog log = new MagicLog("REL_KEYWORDS", contentPk, LogAction.Update, "", "");
-                }
-                result = (r == "0");
+                cmd.ExecuteNonQuery();
+
+                result = true;
             }
             catch (Exception e)
             {

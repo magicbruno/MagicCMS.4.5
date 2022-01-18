@@ -84,7 +84,7 @@ namespace MagicCMS.Core
 
         private void Init()
         {
-            Init(null);
+            //Init(null);
         }
 
 

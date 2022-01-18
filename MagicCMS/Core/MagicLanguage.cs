@@ -137,38 +137,35 @@ namespace MagicCMS.Core
 			SqlConnection conn = null;
 			SqlCommand cmd = null;
 			#region cmdString
-			string cmdString =  " BEGIN TRY " +
-								"     BEGIN TRANSACTION " +
-								"         IF EXISTS (SELECT " +
-								"                 al.LANG_Id " +
-								"                     FROM ANA_LANGUAGE al " +
-								"                     WHERE al.LANG_Id = @LANG_Id) " +
-								"         BEGIN " +
-								"             UPDATE ANA_LANGUAGE " +
-								"             SET LANG_Name = @LANG_Name, " +
-								"                 LANG_Active = @LANG_Active, " +
-								"                 LANG_AutoHide = @LANG_AutoHide " +
-								"             WHERE LANG_Id = @LANG_Id " +
-								"         END " +
-								"         ELSE " +
-								"         BEGIN " +
-								"             INSERT ANA_LANGUAGE (LANG_Id, LANG_Name, LANG_Active, LANG_AutoHide) " +
-								"                 VALUES (@LANG_Id, @LANG_Name, @LANG_Active, @LANG_AutoHide); " +
-								"         END " +
-								"     COMMIT TRANSACTION " +
-								"     SELECT " +
-								"         @@error " +
-								" END TRY " +
-								" BEGIN CATCH " +
-								"  " +
-								"     SELECT " +
-								"         ERROR_MESSAGE(); " +
-								"  " +
-								"     IF XACT_STATE() <> 0 " +
-								"     BEGIN " +
-								"         ROLLBACK TRANSACTION " +
-								"     END " +
-								" END CATCH; "; 
+			string cmdString = @" BEGIN TRY 
+								     BEGIN TRANSACTION 
+								         IF EXISTS (SELECT 
+								                 al.LANG_Id 
+								                     FROM ANA_LANGUAGE al 
+								                     WHERE al.LANG_Id = @LANG_Id) 
+								         BEGIN 
+								             UPDATE ANA_LANGUAGE 
+								             SET LANG_Name = @LANG_Name, 
+								                 LANG_Active = @LANG_Active, 
+								                 LANG_AutoHide = @LANG_AutoHide 
+								             WHERE LANG_Id = @LANG_Id 
+								         END 
+								         ELSE 
+								         BEGIN 
+								             INSERT ANA_LANGUAGE (LANG_Id, LANG_Name, LANG_Active, LANG_AutoHide) 
+								                 VALUES (@LANG_Id, @LANG_Name, @LANG_Active, @LANG_AutoHide); 
+								         END 
+								     COMMIT TRANSACTION 
+
+								 END TRY 
+								 BEGIN CATCH 
+								  
+								     IF XACT_STATE() <> 0 
+								     BEGIN 
+								         ROLLBACK TRANSACTION 
+								     END;
+                                     THROW;
+								 END CATCH; "; 
 			#endregion
 			try
 			{
@@ -182,38 +179,24 @@ namespace MagicCMS.Core
 				cmd.Parameters.AddWithValue("@LANG_Active", Active);
 				cmd.Parameters.AddWithValue("@LANG_AutoHide", AutoHide);
 
-				string result = cmd.ExecuteScalar().ToString();
-				int error;
-				if (int.TryParse(result, out error))
-				{
-					if (error == 0)
-					{
-						MagicLog log = new MagicLog("ANA_LANGUAGE", 0, LogAction.Insert, "", "");
-						log.Error = "Success";
-						log.Insert();
-						Reset();
-					}
-					else
-					{
-						MagicLog log = new MagicLog("ANA_LANGUAGE", 0, LogAction.Insert, "", "");
-						log.Error = "SQL Error n. " + result;
-						log.Insert();
-						message = log.Error;
-					}
-				}
-				else
+				int result = cmd.ExecuteNonQuery();
+				if (result > 0)
 				{
 					MagicLog log = new MagicLog("ANA_LANGUAGE", 0, LogAction.Insert, "", "");
-					log.Error = result;
+					log.Error = "Success";
 					log.Insert();
-					message = log.Error;
+					Reset();
 				}
+				else
+					throw new Exception("Nessun record inserito");
+
+
 			}
 			catch (Exception e)
 			{
 				MagicLog log = new MagicLog("ANA_LANGUAGE", 0, LogAction.Insert, e);
 				log.Insert();
-				message = log.Error;
+				message = e.Message;
 			}
 			finally
 			{

@@ -15,6 +15,9 @@
                 <div class="box-header">
                     <h3 class="box-title"><%= Master.Translate("Elenco utenti") %></h3>
                     <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-success btn-sm btn-icon" data-action="download-csv">
+                            <i class="fa fa-file-excel-o"></i>
+                        </button>
                         <a href="#modal-edit-user" data-toggle="modal" data-rowpk="0" class="btn btn-sm bg-olive">
                             <i class="fa fa-user"></i><%= Master.Translate("nuovo utente") %></a>
                         <button type="button" class="btn btn-primary btn-sm" data-widget="collapse">
@@ -23,7 +26,7 @@
                     </div>
                 </div>
                 <div class="box-body">
-                    <table id="utenti" class="table table-striped table-bordered"  style="width:100%" width="100%"">
+                    <table id="utenti" class="table table-striped table-bordered"  style="width:100%" width="100%">
                         <thead>
                             <tr>
                                 <th>Email</th>
@@ -111,7 +114,7 @@
                 .on('xhr.dt', function (e, settings, json) {
                     var xhr = settings.jqXHR;
                     if (xhr.status == 403) {
-                    	bootbox.alert('<%= Master.Translate("Sessione scaduta. È necessario ripetere il login") %>.', function () {
+                        bootbox.alert('<%= Master.Translate("Sessione scaduta. È necessario ripetere il login") %>.', function () {
                             window.location.href = "/login.aspx";
                         });
                     }
@@ -125,29 +128,29 @@
                         "type": "POST"
                     },
                     "language": {
-                    	"sEmptyTable": "<%= Master.Translate("Nessun dato presente nella tabella") %>",
-                    	"sInfo": "<%= Master.Translate("Vista da _START_ a _END_ di _TOTAL_ elementi") %>",
-                    	"sInfoEmpty": "<%= Master.Translate("Vista da 0 a 0 di 0 elementi") %>",
-                    	"sInfoFiltered": "<%= Master.Translate("(filtrati da _MAX_ elementi totali)") %>",
-                    	"sInfoPostFix": "",
-                    	"sInfoThousands": ",",
-                    	"sLengthMenu": "<%= Master.Translate("Visualizza _MENU_ elementi") %>",
+                        "sEmptyTable": "<%= Master.Translate("Nessun dato presente nella tabella") %>",
+                        "sInfo": "<%= Master.Translate("Vista da _START_ a _END_ di _TOTAL_ elementi") %>",
+                        "sInfoEmpty": "<%= Master.Translate("Vista da 0 a 0 di 0 elementi") %>",
+                        "sInfoFiltered": "<%= Master.Translate("(filtrati da _MAX_ elementi totali)") %>",
+                        "sInfoPostFix": "",
+                        "sInfoThousands": ",",
+                        "sLengthMenu": "<%= Master.Translate("Visualizza _MENU_ elementi") %>",
                         "sLoadingRecords": "<%= Master.Translate("Caricamento") %>...",
-                    	"sProcessing": "<%= Master.Translate("Elaborazione") %>...",
-                    	"sSearch": "<%= Master.Translate("Cerca") %>:",
-                    	"sZeroRecords": "<%= Master.Translate("La ricerca non ha portato alcun risultato") %>.",
-                    	"oPaginate": {
-                    		"sFirst": "<%= Master.Translate("Inizio") %>",
-                        	"sPrevious": "<%= Master.Translate("Precedente") %>",
-                        	"sNext": "<%= Master.Translate("Successivo") %>",
-                        	"sLast": "<%= Master.Translate("Fine") %>"
+                        "sProcessing": "<%= Master.Translate("Elaborazione") %>...",
+                        "sSearch": "<%= Master.Translate("Cerca") %>:",
+                        "sZeroRecords": "<%= Master.Translate("La ricerca non ha portato alcun risultato") %>.",
+                        "oPaginate": {
+                            "sFirst": "<%= Master.Translate("Inizio") %>",
+                            "sPrevious": "<%= Master.Translate("Precedente") %>",
+                            "sNext": "<%= Master.Translate("Successivo") %>",
+                            "sLast": "<%= Master.Translate("Fine") %>"
                         },
-                    	"oAria": {
-                    		"sSortAscending": ": <%= Master.Translate("attiva per ordinare la colonna in ordine crescente") %>",
-                        	"sSortDescending": ": <%= Master.Translate("attiva per ordinare la colonna in ordine decrescente") %>"
+                        "oAria": {
+                            "sSortAscending": ": <%= Master.Translate("attiva per ordinare la colonna in ordine crescente") %>",
+                            "sSortDescending": ": <%= Master.Translate("attiva per ordinare la colonna in ordine decrescente") %>"
                         }
                     },
-                	"columnDefs": [
+                    "columnDefs": [
                         {
                             "targets": 0,
                             "data": "Email",
@@ -227,7 +230,7 @@
                 $('#pk').val($this.attr('data-rowpk'));
                 // Delete record
             } else if ($this.is('[data-action="delete"]')) {
-            	bootbox.confirm("<%= Master.Translate("L'utente verrà eliminato definitivamente. Ser sicuro di voler continuare") %>?", function (result) {
+                bootbox.confirm("<%= Master.Translate("L'utente verrà eliminato definitivamente. Ser sicuro di voler continuare") %>?", function (result) {
                     if (result) {
                         $('#utenti').spin();
                         $.ajax({
@@ -239,19 +242,19 @@
                             },
                             dataType: "json"
                         })
-                        .done(function (data) {
-                            if (data.success) {
-                                $tableUtenti.ajax.reload();
-                            } else {
-                            	bootbox.alert('<%= Master.Translate("Si è verificato un errore") %>: ' + data.msg);
+                            .done(function (data) {
+                                if (data.success) {
+                                    $tableUtenti.ajax.reload();
+                                } else {
+                                    bootbox.alert('<%= Master.Translate("Si è verificato un errore") %>: ' + data.msg);
                             }
                         })
-                        .fail(function (jqxhr, textStatus, error) {
-                        	bootbox.alert('<%= Master.Translate("Si è verificato un errore") %>: ' + textStatus + "," + error);
+                            .fail(function (jqxhr, textStatus, error) {
+                                bootbox.alert('<%= Master.Translate("Si è verificato un errore") %>: ' + textStatus + "," + error);
                         })
-                        .always(function () {
-                            $('#utenti').spin(false);
-                        });
+                            .always(function () {
+                                $('#utenti').spin(false);
+                            });
                     }
                 })
             }
@@ -275,7 +278,7 @@
                 $('#fg-sendmail').show().find(':checkbox').removeAttr('checked');
                 $modal.find('.modal-title').text('<%= Master.Translate("Inserisci nuovo utente") %>');
             }
-                // Altrimenti la nascondo
+            // Altrimenti la nascondo
             else {
                 $('#fg-sendmail').hide().find(':checkbox').removeAttr('checked');
                 $modal.find('.modal-title').text('<%= Master.Translate("Modifica utente") %>');
@@ -351,6 +354,22 @@
                 if ($('#pk').val() == 0 && data.success)
                     $("#modal-edit-user").modal('hide');
             })
+        })
+
+        $('[data-action="download-csv"]').on('click', function () {
+            var settings = {
+                "url": "/api/UserCsvAsync",
+                "method": "GET",
+                "timeout": 0,
+                "headers": {
+                    "Authorization": "Bearer " + Cookies.get("MB_AuthToken")
+                },
+            };
+            location.href = "/api/UserCsvAsync/?k=" + Cookies.get("MB_AuthToken");
+
+            //$.ajax(settings).done(function (response) {
+            //    console.log(response);
+            //});
         })
 
     </script>

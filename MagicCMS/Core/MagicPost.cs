@@ -1395,8 +1395,8 @@ namespace MagicCMS.Core
 						" BEGIN CATCH " +
 						"   	IF XACT_STATE() <> 0 BEGIN " +
 						" 		ROLLBACK TRANSACTION " +
-						"   	END " +
-						" 	SELECT ERROR_MESSAGE(); " +
+						"   	END; " +
+						" 	THROW; " +
 						" END CATCH; ";
 			#endregion
 
@@ -1445,21 +1445,14 @@ namespace MagicCMS.Core
 				cmd.Parameters.AddWithValue("@Tags", Tags);
 				cmd.Parameters.AddWithValue("@Propietario", Owner);
 
-				string result = cmd.ExecuteScalar().ToString();
-				int pk;
-				if (int.TryParse(result, out pk))
-				{
-					MagicLog log = new MagicLog("MB_contenuti", pk, LogAction.Insert, "", "");
-					log.Error = "Success";
-					log.Insert();
-				}
-				else
-				{
-					MagicLog log = new MagicLog("MB_contenuti", pk, LogAction.Insert, "", "");
-					log.Error = result;
-					log.Insert();
-				}
-				Pk = pk;
+                //string result = cmd.ExecuteScalar().ToString();
+                int pk = Convert.ToInt32(cmd.ExecuteScalar());
+
+                MagicLog log = new MagicLog("MB_contenuti", pk, LogAction.Insert, "", "");
+                log.Error = "SUCCESS";
+                log.Insert();
+
+                Pk = pk;
 				if (Pk > 0)
 				{
 					//Updating links with parent elements an tags/keyword table
@@ -1470,7 +1463,7 @@ namespace MagicCMS.Core
 					string errorMessage;
 					if (mi.Save(out errorMessage) == 0)
 					{
-						MagicLog log = new MagicLog("MB_Contenuti", Pk, LogAction.Insert, MagicSession.Current.LoggedUser.Pk, DateTime.Now, "MagicPost", "Insert - MagicIndex", errorMessage);
+						log = new MagicLog("MB_Contenuti", Pk, LogAction.Insert, MagicSession.Current.LoggedUser.Pk, DateTime.Now, "MagicPost", "Insert - MagicIndex", errorMessage);
 						log.Insert();
 					}
 				}
@@ -1537,13 +1530,13 @@ namespace MagicCMS.Core
 						" 			Tags = @Tags " +
 						" 		WHERE [Id] = @Pk " +
 						" 	COMMIT TRANSACTION " +
-						" 	SELECT @Pk " +
+						" 	 " +
 						" END TRY " +
 						" BEGIN CATCH " +
 						"   	IF XACT_STATE() <> 0 BEGIN " +
 						" 		ROLLBACK TRANSACTION " +
-						"   	END " +
-						" 	SELECT ERROR_MESSAGE(); " +
+						"   	END; " +
+						" 	THROW; " +
 						" END CATCH; ";
 
 			#endregion
@@ -1595,11 +1588,11 @@ namespace MagicCMS.Core
 				cmd.Parameters.AddWithValue("@Flag_Attivo", Active);
 				cmd.Parameters.AddWithValue("@Pk", Pk);
 
-				string result = cmd.ExecuteScalar().ToString();
-				if (int.TryParse(result, out pk))
+				int result = cmd.ExecuteNonQuery();
+				if (result > 0)
 				{
 					MagicLog log = new MagicLog("MB_contenuti", pk, LogAction.Update, "", "");
-					log.Error = "Success";
+					log.Error = "SUCCESS";
 					log.Insert();
 					//Updating links with parent elements an tags/keyword table
 					ConnectTo(Parents.ToArray());
@@ -1615,9 +1608,7 @@ namespace MagicCMS.Core
 				}
 				else
 				{
-					MagicLog log = new MagicLog("MB_contenuti", pk, LogAction.Update, "", "");
-					log.Error = result;
-					log.Insert();
+					throw new Exception("Impossibile aggiornare il record.");
 				}
 
 			}
@@ -1632,7 +1623,7 @@ namespace MagicCMS.Core
 				//conn.Dispose();
 				cmd.Dispose();
 			}
-			return pk;
+			return Pk;
 		}
 
 		/// <summary>

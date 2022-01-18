@@ -75,7 +75,7 @@ namespace MagicCMS.Core
 
         private void Init()
         {
-            Init(null);
+            //Init(null);
         }
 
 		/// <summary>
@@ -83,8 +83,9 @@ namespace MagicCMS.Core
 		/// </summary>
         public MagicUserCollection()
         {
-            Init();
+            //Init();
         }
+
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="MagicUserCollection"/> class containing signed Users . 

@@ -636,7 +636,7 @@
     <script id="table-cont-parent" type="x-tmpl-mustache">
         <div class="row no-gutters title">
             <div class="col-auto px-2"><i class="fa {{Icon}} text-primary"></i></div>
-            <div class="col"><a href="#" data-action="goto" data-rowpk="{{Pk}}" data-order="{{ExtraInfo}}" data-icon="{{Icon}}" title="{{Titolo}} ({{NomeTipo}})">{{Titolo}}</a>
+            <div class="col"><a href="#" data-action="goto" data-rowtitle="{{Titolo}}" data-rowpk="{{Pk}}" data-order="{{ExtraInfo}}" data-icon="{{Icon}}" title="{{Titolo}} ({{NomeTipo}})">{{Titolo}}</a>
             <br /><small>{{NomeTipo}}</small></div>
         </div>
     </script>
@@ -1924,12 +1924,13 @@
             */
 
             const $permalink = $('#PermalinkTitle, [name="PermalinkTitle"');
-            const $title = $('#ExtraInfo1, [name=""]');
+            const $title = $('#ExtraInfo1, [name="TranslatedTitle"]');
 
             $permalink.on('change', function () {
                 const self = $(this);
                 var $form = self.parents('[role="form"]');
                 var langid = $form.find('[name="LangId"]').val();
+                var $tit = $form.find('#ExtraInfo1, [name="TranslatedTitle"]');
                 var settings = {
                     "url": "/api/CheckPermalink",
                     "method": "POST",
@@ -1940,7 +1941,7 @@
                     },
                     "data": {
                         "pk": $('#Pk').val(),
-                        "title": self.val(),
+                        "title": self.val() || $tit.val(),
                         "lang": langid
                     }
                 };

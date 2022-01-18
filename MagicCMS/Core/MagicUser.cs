@@ -9,7 +9,7 @@ using System.Data;
 using System.Data.SqlClient;
 //using MagicCMS.Core;
 using System.Net.Mail;
-
+using System.Threading.Tasks;
 
 namespace MagicCMS.Core
 {
@@ -750,8 +750,68 @@ namespace MagicCMS.Core
             }
             return cipherText;
         }
-        
+
+        public static async Task<MagicUserCollection> GetUsersAsync()
+        {
+            MagicUserCollection users = new MagicUserCollection();
+
+            SqlConnection conn = null;
+            SqlCommand cmd = null;
+            try
+            {
+                string cmdStr = " SELECT " +
+                                    " 	au.usr_PK, " +
+                                    " 	au.usr_EMAIL, " +
+                                    " 	au.usr_NAME, " +
+                                    " 	au.usr_PASSWORD, " +
+                                    " 	au.usr_LEVEL, " +
+                                    " 	au.usr_LAST_MODIFIED, " +
+                                    " 	au.usr_PROFILE_PK, " +
+                                    " 	au.usr_ACTIVE " +
+                                    " FROM ANA_USR au ";
+
+                conn = new SqlConnection(MagicUtils.MagicConnectionString);
+                await conn.OpenAsync();
+                cmd = new SqlCommand(cmdStr, conn);
+                SqlDataReader reader = await cmd.ExecuteReaderAsync();
+                while (reader.Read())
+                {
+                    MagicUser user = new MagicUser()
+                    {
+                        Pk = Convert.ToInt32(reader.GetValue(0)),
+                        Email = Convert.ToString(reader.GetValue(1)),
+
+                            Name = (!reader.IsDBNull(2) ? Convert.ToString(reader.GetValue(2)) : ""),
+                            Password = Convert.ToString(reader.GetValue(3)),
+                        Level = Convert.ToInt32(reader.GetValue(4)),
+                            LastModify = (!reader.IsDBNull(5) ? Convert.ToDateTime(reader.GetValue(5)) : DateTime.Today),
+                        Profile_PK = Convert.ToInt32(reader.GetValue(6)),
+                        Active = Convert.ToBoolean(reader.GetValue(7))
+                    }
+;
+                    if (user.Active)
+                        user.LoginResult = MbUserLoginResult.Success;
+                    else
+                        user.LoginResult = MbUserLoginResult.NotActivated;
+                    users.Add(user);
+                }
+            }
+            catch (Exception e)
+            {
+                MagicLog log = new MagicLog("ANA_USR", 0, LogAction.Read, e);
+                log.Insert();
+            }
+            finally
+            {
+                if (conn != null)
+                    conn.Dispose();
+                if (cmd != null)
+                    cmd.Dispose();
+            }
+            return users;
+        }
+
         #endregion
-	}
+    }
 
 }

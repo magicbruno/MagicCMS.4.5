@@ -43,7 +43,9 @@ namespace MagicCMS.Admin
 
         protected void LinkButton_logout_Click(object sender, EventArgs e)
         {
+            UserToken.Delete(MagicSession.Current.LoggedUser.Pk);
             MagicSession.Current.LoggedUser = new MagicUser();
+            Response.Cookies.Remove("MB_AuthToken");
             Response.Redirect("/Admin");
         }
 

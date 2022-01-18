@@ -6,6 +6,9 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.Diagnostics;
+using MagicCMS.DataTable;
+using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace MagicCMS.Core
 {
@@ -153,6 +156,16 @@ namespace MagicCMS.Core
 		/// </summary>
 		/// <value>The user email.</value>
 		public string Useremail { get; set; }
+
+		public bool IsError
+        {
+			get
+            {
+				Regex regex = new Regex(@"success",RegexOptions.IgnoreCase);
+				return !regex.IsMatch(Error);
+            }
+        }
+
 		#endregion
 
 		#region Constructor
@@ -235,19 +248,21 @@ namespace MagicCMS.Core
 
 			try
 			{
-				string cmdText = " SELECT " +
-									" 	vlr.reg_PK, " +
-									" 	vlr.reg_TABELLA, " +
-									" 	vlr.reg_RECORD_PK, " +
-									" 	vlr.reg_act_PK, " +
-									" 	vlr.reg_user_PK, " +
-									" 	vlr.reg_ERROR, " +
-									" 	vlr.reg_TIMESTAMP, " +
-									" 	vlr.usr_EMAIL, " +
-									" 	vlr.reg_fileName, " +
-									" 	vlr.reg_methodName " +
-									" FROM VW_LOG_REGISTRY vlr " +
-									" WHERE vlr.reg_PK = @Pk ";
+				string cmdText = @"	SELECT
+										lr.reg_PK,
+										lr.reg_TABELLA,
+										lr.reg_RECORD_PK,
+										lr.reg_act_PK,
+										lr.reg_user_PK,
+										lr.reg_ERROR,
+										lr.reg_TIMESTAMP,
+										lr.reg_fileName,
+										lr.reg_methodName,
+										au.usr_EMAIL AS usr_EMAIL
+									FROM _LOG_REGISTRY lr
+										LEFT JOIN ANA_USR au
+											ON lr.reg_user_PK = au.usr_PK 
+									WHERE lr.reg_PK = @Pk  ";
 
 				conn = new SqlConnection(MagicUtils.MagicConnectionString);
 				conn.Open();
@@ -272,6 +287,7 @@ namespace MagicCMS.Core
 
 		private void Init(SqlDataReader reader)
 		{
+			Useremail = "Sconosciuto";
 			Pk = Convert.ToInt32(reader.GetValue(0));
 			if (!reader.IsDBNull(1))
 			{
@@ -297,19 +313,20 @@ namespace MagicCMS.Core
 			{
 				Timestamp = Convert.ToDateTime(reader.GetValue(6));
 			}
+
 			if (!reader.IsDBNull(7))
 			{
-				Useremail = Convert.ToString(reader.GetValue(7));
+				FileName = Convert.ToString(reader.GetValue(7));
 			}
 
 			if (!reader.IsDBNull(8))
 			{
-				FileName = Convert.ToString(reader.GetValue(8));
+				MethodName = Convert.ToString(reader.GetValue(8));
 			}
 
 			if (!reader.IsDBNull(9))
 			{
-				MethodName = Convert.ToString(reader.GetValue(9));
+				Useremail = Convert.ToString(reader.GetValue(9));
 			}
 			if (Record > 0)
 			{
@@ -324,6 +341,7 @@ namespace MagicCMS.Core
 						RecordName = ti.Nome;
 						break;
 					default:
+						RecordName = "";
 						break;
 				}
 			}
@@ -368,12 +386,23 @@ namespace MagicCMS.Core
 		private void Init(string tabella, int record, LogAction action, Exception e)
 		{
 			string filename = "", methodname = "";
+			List<string> filenames = new List<string>();
+			List<string> methods = new List<string>(); 
 			StackTrace st = new StackTrace(e);
-			StackFrame frame = st.GetFrame(st.FrameCount - 1);
-			if (!String.IsNullOrEmpty(frame.GetFileName()))
-				filename = frame.GetFileName();
+			//StackFrame frame = st.GetFrame(st.FrameCount - 1);
+			int maxlen = Math.Min(5, st.FrameCount);
+			int first = st.FrameCount - maxlen;
+            for (int i = st.FrameCount - 1; i >= first; i--)
+            {
+				StackFrame frame = st.GetFrame(i);
+				string fname = frame.GetFileName();
+                if (string.IsNullOrEmpty(fname))
+                    filenames.Add(string.Format("{0}:, linea:{1}, col:{2}", frame.GetFileName(), frame.GetFileLineNumber(), frame.GetFileColumnNumber()));
+                methods.Add(frame.GetMethod().ToString());
+			}
+			filename = string.Join(";<br />", filenames);
 
-			methodname = frame.GetMethod().ToString();
+			methodname = string.Join(";<br />", methods);
 
 			Init(tabella, record, action, MagicSession.Current.LoggedUser.Pk, DateTime.Now, filename, methodname, e.Message);
 		}
@@ -451,6 +480,113 @@ namespace MagicCMS.Core
 			}
 			return Pk;
 		}
+
+		async public static Task<OutputParams_dt> GetTablesRowsAsync(bool onlyErrors, InputParams_dt inputParams)
+		{
+			MagicLogCollection logs = new MagicLogCollection();
+			OutputParams_dt outputParams = new OutputParams_dt();
+
+			SqlConnection conn = null;
+			SqlCommand cmd = null;
+			string whereClause = "", filter = "", ordinamento = "";
+
+            try
+            {
+
+
+                whereClause = onlyErrors ? " WHERE (lr.reg_ERROR <> 'SUCCESS' AND lr.reg_ERROR  NOT LIKE '% SUCCESSO%') " : "";
+
+                if (!string.IsNullOrWhiteSpace(inputParams.search.value))
+                {
+					filter = String.Format(@"	(lr.reg_TABELLA LIKE '%{0}%' OR 
+												CONVERT(VARCHAR(20), lr.reg_TIMESTAMP) LIKE '%{0}%' OR 
+												au.usr_EMAIL LIKE '%{0}%' OR 
+												CONVERT(VARCHAR(10), lr.reg_RECORD_PK) = '{0}' OR
+												lr.reg_ERROR LIKE '%{0}%')", inputParams.search.value);
+
+					if (string.IsNullOrWhiteSpace(whereClause))
+						filter = " WHERE " + filter;
+					else
+						filter = " AND " + filter;
+                }
+
+				List<string> columnNames = new List<string>();
+
+                foreach (var column in inputParams.columns)
+                {
+					columnNames.Add(column.name);
+                }
+
+
+                ordinamento = string.Format(" ORDER BY {0} {1} ", columnNames[inputParams.order[0].column], inputParams.order[0].dir);
+
+
+                string pagination = string.Format(" OFFSET {0} ROWS FETCH NEXT {1} ROWS ONLY ", inputParams.start, inputParams.length);
+
+                string cmdText = @" DECLARE @unfiltered INT, @filtered INT
+                                    
+                                    SELECT
+										@unfiltered = COUNT(*)
+									FROM _LOG_REGISTRY lr
+									LEFT JOIN ANA_USR au
+										ON lr.reg_user_PK = au.usr_PK " +
+                                whereClause + ";" +
+
+								@"  SELECT
+										@filtered = COUNT(*)
+									FROM _LOG_REGISTRY lr
+									LEFT JOIN ANA_USR au
+										ON lr.reg_user_PK = au.usr_PK " +
+                                whereClause + filter + ";" +
+
+								@"  SELECT
+										lr.reg_PK
+									   ,lr.reg_TABELLA
+									   ,lr.reg_RECORD_PK
+									   ,lr.reg_act_PK
+									   ,lr.reg_user_PK
+									   ,lr.reg_ERROR
+									   ,lr.reg_TIMESTAMP
+									   ,lr.reg_fileName
+									   ,lr.reg_methodName
+									   ,au.usr_EMAIL AS usr_EMAIL 
+									   ,@unfiltered
+									   ,@filtered
+									FROM _LOG_REGISTRY lr
+									LEFT JOIN ANA_USR au
+										ON lr.reg_user_PK = au.usr_PK  " +
+                                whereClause + filter + ordinamento + pagination;
+
+                conn = new SqlConnection(MagicUtils.MagicConnectionString);
+                await conn.OpenAsync();
+                cmd = new SqlCommand(cmdText, conn);
+                SqlDataReader reader = await cmd.ExecuteReaderAsync();
+                while (reader.Read())
+                {
+                    logs.Add(new MagicLog(reader));
+                    outputParams.recordsTotal = reader.GetInt32(10);
+                    outputParams.recordsFiltered = reader.GetInt32(11);
+                }
+            }
+            catch (Exception e)
+            {
+                MagicLog log = new MagicLog("MagicLogs", 0, LogAction.Read, e);
+                log.Insert();
+                throw e;
+            }
+            finally
+            {
+                if (conn != null)
+                    conn.Dispose();
+                if (cmd != null)
+                    cmd.Dispose();
+            }
+            outputParams.draw = inputParams.draw;
+            outputParams.data = logs;
+
+            return outputParams;
+		}
+
 		#endregion
 	}
 }

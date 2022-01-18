@@ -246,6 +246,8 @@ namespace MagicCMS.Core
             return success;
         }
 
+
+
         public bool Delete()
         {
             return Delete(UserPk);

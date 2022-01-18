@@ -26,6 +26,8 @@ namespace MagicCMS.Api_Controllers
 
                 MagicPost mp = new MagicPost(pk);
                 JTreeInfoList jtree = await JTreeInfoList.CreateAsync();
+                if (mp.Pk == 0)
+                    mp.Parents.Add(parent);
                 nodes.AddNodeList(jtree, 0, pk, mp.Parents);
 
             }
