@@ -154,3 +154,36 @@ table.table-hover tbody tr.odd:hover td {
 .input-group {
   width: 100%;
 }
+.rounded-0 {
+  border-radius: 0 !important;
+}
+.border-0 {
+  border: 0 !important;
+}
+.primo-piano {
+  z-index: 10000 !important;
+}
+.top-0 {
+  top: 0 !important;
+}
+.text-white {
+  color: white !important;
+}
+a.text-white {
+  color: white !important;
+}
+a.text-white:hover {
+  opacity: 0.6 !important;
+}
+.vh-75 {
+  height: 75vh !important;
+}
+.vh-50 {
+  height: 50vh !important;
+}
+.vh-25 {
+  height: 25vh !important;
+}
+.autoscroll {
+  overflow-y: auto;
+}

@@ -5,14 +5,14 @@
 @import url('vars.less');
 form > div > .header {
 	position: relative;
-	max-height: 100px;   
+	max-height: 100px;
 	z-index: 1030;
+
 	.navbar {
 		height: 50px;
-		margin-bottom: 0;        
+		margin-bottom: 0;
 		margin-left: @left-side-width;
 	}
-
 	//Navbar toggle button
 	.navbar .sidebar-toggle {
 		float: left;
@@ -27,37 +27,35 @@ form > div > .header {
 		.border-radius(0)!important;
 	}
 
-	.navbar .sidebar-toggle:hover .icon-bar{
+	.navbar .sidebar-toggle:hover .icon-bar {
 		background: #f6f6f6;
 	}
+
 	.navbar .sidebar-toggle .icon-bar {
 		display: block;
 		width: 22px;
 		height: 2px;
-
 		.border-radius(4px);
-
 	}
 
 	.navbar .sidebar-toggle .icon-bar + .icon-bar {
 		margin-top: 4px;
 	}
-
 	//User image in navbar
 	.navbar .nav > li.user > a {
 		font-weight: bold;
 	}
+
 	.navbar .nav > li.user > a > .fa,
 	.navbar .nav > li.user > a > .glyphicon,
 	.navbar .nav > li.user > a > .ion {
 		margin-right: 5px;
 	}
-
 	//Labels in navbar
 	.navbar .nav > li > a > .label {
 		.border-radius(50%);
 		position: absolute;
-		top:7px;
+		top: 7px;
 		right: 2px;
 		font-size: 10px;
 		font-weight: normal;
@@ -67,10 +65,14 @@ form > div > .header {
 		text-align: center;
 		padding: 2px;
 	}
+
 	.navbar .nav > li > a:hover > .label {
 		top: 3px;
 	}
 
+	}
+
+	form > div > .header, form > div .sidebar-offcanvas {
 	//Logo bar - leftside
 	.logo {
 		float: left;
@@ -86,20 +88,24 @@ form > div > .header {
 			width: auto;
 			display: block;
 			float: left;
-		}        
-        .sitename {
-            font-size: 11px;
-            .sitename {
-                position: absolute;
-            }
-        }
-        .h3, h3 {
-            font-size: 20px;
-            line-height: 1.2;
-        }
-	}
+		}
 
+		.sitename {
+			font-size: 11px;
+
+			.sitename {
+				position: absolute;
+			}
+		}
+
+		.h3, h3 {
+			font-size: 20px;
+			line-height: 1.2;
+		}
+	}
 }
+
+
 
 // Content Header 
 .right-side > .content-header {

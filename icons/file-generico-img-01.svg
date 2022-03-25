@@ -1,0 +1,50 @@
+<svg id='Livello_1' data-name='Livello 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'>
+    <defs>
+        <style>
+            .cls-1,
+            .cls-4 {
+                fill: #fff;
+            }
+
+            .cls-2 {
+                fill: #979593;
+            }
+
+            .cls-3 {
+                fill: #ff9810;
+            }
+
+            .cls-4 {
+                isolation: isolate;
+                font-size: 24.57px;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-weight: 800;
+                text-anchor: middle;
+            }
+
+            .cls-5,
+            .cls-6 {
+                fill: none;
+                stroke-miterlimit: 10;
+                stroke-width: 1.6px;
+            }
+
+            .cls-5 {
+                stroke: #a6ccc3;
+            }
+
+            .cls-6 {
+                stroke: #ff9810;
+            }
+        </style>
+    </defs>
+    <path class='cls-1'
+        d='M103.27,31.65H59.56a1.3,1.3,0,0,0-1.3,1.3h0v79.3a1.3,1.3,0,0,0,1.3,1.3h61.11a1.3,1.3,0,0,0,1.3-1.3h0V50.35a3,3,0,0,0-.89-2.15L105.41,32.54A3,3,0,0,0,103.27,31.65Z' />
+    <path class='cls-2'
+        d='M121.86,48.75,103.61,30.5a3,3,0,0,0-2.17-.9H60.31a3.09,3.09,0,0,0-3.07,3.07v79.86a3.09,3.09,0,0,0,3.07,3.07h59.38a3.09,3.09,0,0,0,3.07-3.07V50.92A3,3,0,0,0,121.86,48.75ZM102.29,32.07l18,18h-17a1,1,0,0,1-1-1Zm17.4,81.48H60.31a1,1,0,0,1-1-1V32.67a1,1,0,0,1,1-1h39.93v17.4a3.06,3.06,0,0,0,3.07,3.07h17.4v60.41a1,1,0,0,1-1,1Z' />
+    <rect class='cls-3' x='52.33' y='77.5' width='76.1' height='24.3' />
+    <text class='cls-4' transform='translate(90.5 98.14)'>{0}</text>
+    <path class='cls-5'
+        d='M81.83,56.19a1.61,1.61,0,0,0-2.24.34L70.34,69.07A1.58,1.58,0,0,0,70,70a1.61,1.61,0,0,0,1.6,1.61h36.75A1.61,1.61,0,0,0,109.64,69L97.26,53.23A1.44,1.44,0,0,0,97,53a1.61,1.61,0,0,0-2.25.27l-7.08,9a.75.75,0,0,1-.15.16.81.81,0,0,1-1.12-.16l-4.22-5.72A1.52,1.52,0,0,0,81.83,56.19Z' />
+    <circle class='cls-6' cx='74.82' cy='48.81' r='4.8' />
+</svg>

@@ -347,6 +347,30 @@
         "dist/locale/zh-tw.js",
         "dist/locale/zh-tw.min.js"
       ]
+    },
+    {
+      "library": "bootstrap@5.1.3",
+      "destination": "Admin/assets-2022/css/bootstrap/bootstrap/",
+      "files": [
+        "dist/css/bootstrap-utilities.min.css",
+        "dist/css/bootstrap-utilities.css.map",
+        "dist/css/bootstrap-utilities.css"
+      ]
+    },
+    {
+      "library": "font-awesome@4.7.0",
+      "destination": "Admin/assets-2022/font-awesome/",
+      "files": [
+        "css/font-awesome.css",
+        "css/font-awesome.css.map",
+        "css/font-awesome.min.css",
+        "fonts/fontawesome-webfont.eot",
+        "fonts/fontawesome-webfont.svg",
+        "fonts/fontawesome-webfont.ttf",
+        "fonts/fontawesome-webfont.woff",
+        "fonts/fontawesome-webfont.woff2",
+        "fonts/FontAwesome.otf"
+      ]
     }
   ]
 }

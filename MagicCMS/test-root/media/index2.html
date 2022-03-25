@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="/MagicCMS/Admin/assets-2022/css/file-man.css">
+    <link rel="stylesheet" href="/MagicCMS/Admin/css/main.min.css">
+    <link rel="stylesheet" href="/MagicCMS/Admin/assets-2022/css/bootstrap/bootstrap-grid.css">
+    <link rel="stylesheet" href="/MagicCMS/Admin/assets-2022/css/bootstrap/bootstrap/dist/css/bootstrap-utilities.css">
+    <style>
+        .fm-miniature-list {
+            background-size: 120%;
+            background-position-y: 28%;
+            background-position-x: center;
+        }
+        .table td, .table th {
+            vertical-align: middle !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fm-row-cols mb-5">
+        <a href="#" class="fm-col" data-url="">
+            <div class="ratio ratio-1x1">
+                <div class="d-flex flex-column justify-content-end image fm-miniature"
+                    style="background-image: url('https://localhost:44367/api/FileManMiniatures?filename=/test-root/image/img_news/calderara01.jpg');">
+                    <div class="etichetta flex-column">
+                        <div>calderara01.jpb</div>
+                        <span class="small">22/11/2021</span>
+                    </div>
+                    <input type="checkbox">
+                </div>
+            </div>
+        </a>
+        <a href="#" class="fm-col" data-url="" data-type="image">
+            <div class="ratio ratio-1x1">
+                <div class="d-flex flex-column justify-content-end image fm-miniature"
+                    style="background-image: url('https://localhost:44367/api/FileManMiniatures?filename=/test-root/image/img_news/calderara02.jpg');">
+                    <div class="etichetta flex-column">
+                        <div>calderara02.jpb</div>
+                        <span class="small">22/11/2021</span>
+                    </div>
+                    <input type="checkbox">
+                </div>
+            </div>
+        </a>
+        <a href="#" class="fm-col" data-url="" data-type="folder">
+            <div class="ratio ratio-1x1">
+                <div class="d-flex flex-column justify-content-end fm-miniature"
+                    style="background-image: url('https://localhost:44367/api/FileManMiniatures?filename=/test-root/image/img_news/');">
+                    <div class="etichetta flex-column text-dark">
+                        <div>calderara01.jpb</div>
+                        <span class="small">22/11/2021</span>
+                    </div>
+                    <input type="checkbox">
+                </div>
+            </div>
+        </a>
+        <a href="#" class="fm-col" data-url="" data-type="file">
+            <div class="ratio ratio-1x1">
+                <div class="d-flex flex-column justify-content-end fm-miniature"
+                    style="background-image: url('https://localhost:44367/api/FileManMiniatures?filename=/test-root/image/img_news/calderara02.mp4');">
+                    <div class="etichetta flex-column">
+                        <div>calderara02.jpb</div>
+                        <span class="small">22/11/2021</span>
+                    </div>
+                    <input type="checkbox">
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="text-center" style="width:50px"><input type="checkbox"></th>
+                <th class="text-center"  style="width:65px"><i class="fa fa-image" aria-hidden="true"></i></th>
+                <th >Nome</th>
+                <th class="text-center" title="Ultima modifica" style="width:80px"><i class="fa fa-edit" aria-hidden="true"></i></th>
+                <th class="text-center" title="Ultimo accesso" style="width:80px"><i class="fa fa-eye" aria-hidden="true"></i></th>
+                <th class="text-center" title="Creazione" style="width:80px"><i class="fa fa-camera" aria-hidden="true"></i></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr >
+                <td class="text-center" >
+                    <input type="checkbox">
+                </td>
+                <td scope="row">
+                    <div class="ratio ratio-4x3">
+                        <div class="fm-miniature-list"
+                            style="background-image: url('https://localhost:44367/api/FileManMiniatures?filename=/test-root/image/img_news/calderara02.mp4');">
+                        </div>
+                </td>
+                <td><a href="#">calderara02.mp4</a></td>
+                <td>21/02/2020</td>
+                <td>21/02/2020</td>
+                <td>21/02/2020</td>
+            </tr>
+            <tr>
+                <td class="text-center" >
+                    <input type="checkbox">
+                </td>
+                <td scope="row">
+                    <div class="ratio ratio-4x3">
+                        <div class="fm-miniature-list"
+                            style="background-image: url('https://localhost:44367/api/FileManMiniatures?filename=/test-root/image/img_news/');">
+                        </div>
+                </td>
+                <td>calderara02.mp4</td>
+                <td>21/02/2020</td>
+                <td>21/02/2020</td>
+                <td>21/02/2020</td>
+            </tr>
+            <tr>
+                <td class="text-center" >
+                    <input type="checkbox">
+                </td>
+                <td scope="row">
+                    <div class="ratio ratio-4x3">
+                        <div class="fm-miniature-list"
+                            style="background-image: url('https://localhost:44367/api/FileManMiniatures?filename=/test-root/image/img_news/calderara01.jpg');">
+                        </div>
+                </td>
+                <td>calderara02.mp4</td>
+                <td>21/02/2020</td>
+                <td>21/02/2020</td>
+                <td>21/02/2020</td>
+            </tr>
+            <tr>
+                <td class="text-center" >
+                    <input type="checkbox">
+                </td>
+                <td scope="row">
+                    <div class="ratio ratio-4x3">
+                        <div class="fm-miniature-list"
+                            style="background-image: url('https://localhost:44367/api/FileManMiniatures?filename=/test-root/image/img_news/calderara02.jpg');">
+                        </div>
+                </td>
+                <td>calderara02.mp4</td>
+                <td>21/02/2020</td>
+                <td>21/02/2020</td>
+                <td>21/02/2020</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="" async defer></script>
+</body>
+
+</html>

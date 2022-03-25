@@ -13,7 +13,8 @@
     <link href="Scripts/plugins/ckeditor/plugins/codesnippet/lib/highlight/styles/monokai_sublime.css" rel="stylesheet" />
     <link href="assets-2022/css/bootstrap/bootstrap-grid.min.css" rel="stylesheet" />
     <link href="assets-2022/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" />
-    <link href="css/main.css?v=5" rel="stylesheet" />
+    <link href="css/main.css?v=21" rel="stylesheet" />
+    <link href="assets-2022/css/bootstrap/bootstrap/dist/css/bootstrap-utilities.min.css" rel="stylesheet" />
     <link href="Scripts/plugins/jsTree/themes/default/style.min.css" rel="stylesheet" />
     <link href="Scripts/plugins/jsTree/themes/default-dark/style.min.css" rel="stylesheet" />
     <link href="css/datepicker/datepicker3.css" rel="stylesheet" />
@@ -52,7 +53,7 @@
     </style>
 </head>
 <body class="skin-black fixed">
-    <form id="form1" runat="server">
+    <form id="aspnetForm" runat="server" name="aspnetForm">
         <div>
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>

@@ -234,14 +234,19 @@ namespace MagicCMS.Core
             return Update(contentPk, keywords, new CMS_Config().TransSourceLangId);
         }
 
-		/// <summary>
-		/// Updates the specified Post keywords.
-		/// </summary>
-		/// <param name="contentPk">The id of related post.</param>
-		/// <param name="keywords">Comma separated list of keywords.</param>
-		/// <param name="langId">The language identifier.</param>
-		/// <returns>Boolean.</returns>
-		public static Boolean Update(int contentPk, string keywords, string langId)
+        public static async Task<Boolean> UpdateAsync(int contentPk, string keywords)
+        {
+            return await UpdateAsync(contentPk, keywords, new CMS_Config().TransSourceLangId);
+        }
+
+        /// <summary>
+        /// Updates the specified Post keywords.
+        /// </summary>
+        /// <param name="contentPk">The id of related post.</param>
+        /// <param name="keywords">Comma separated list of keywords.</param>
+        /// <param name="langId">The language identifier.</param>
+        /// <returns>Boolean.</returns>
+        public static Boolean Update(int contentPk, string keywords, string langId)
         {
             var result = true;
             SqlConnection conn = null;
@@ -312,10 +317,81 @@ namespace MagicCMS.Core
             return result;
         }
 
-		/// <summary>
-		/// Populates tags table.
-		/// </summary>
-		/// <returns>Boolean.</returns>
+        public static async Task<Boolean> UpdateAsync(int contentPk, string keywords, string langId)
+        {
+            var result = true;
+            SqlConnection conn = null;
+            SqlCommand cmd = null;
+
+            try
+            {
+                string[] keyList = keywords.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                Boolean first = true;
+                string values = "";
+
+                if (keyList.Length > 0)
+                {
+                    values = "         INSERT REL_KEYWORDS (key_content_PK, key_keyword, key_langId) " +
+                             "             VALUES  ";
+                    for (int i = 0; i < keyList.Length; i++)
+                    {
+                        if (!first)
+                        {
+                            values += ",";
+                        }
+                        first = false;
+                        values += " (@pk, '" + keyList[i].Trim().Replace("'", "''") + "', @langId) ";
+                    }
+                    values += ";";
+                }
+
+                string cmdText = String.Format(@"BEGIN TRY 
+                                                     BEGIN TRANSACTION 
+                                                         DELETE REL_KEYWORDS 
+                                                         WHERE (key_content_PK = @pk) AND (key_langId = @langId) ; 
+                                                     {0}
+                                                     COMMIT TRANSACTION 
+
+                                                 END TRY 
+                                                 BEGIN CATCH 
+
+                                                     IF XACT_STATE() <> 0 
+                                                     BEGIN 
+                                                         ROLLBACK TRANSACTION 
+                                                     END;
+                                                     THROW; 
+                                                 END CATCH; ", values);
+
+                conn = new SqlConnection(MagicUtils.MagicConnectionString);
+                await conn.OpenAsync();
+                cmd = new SqlCommand(cmdText, conn);
+                cmd.Parameters.AddWithValue("@pk", contentPk);
+                cmd.Parameters.AddWithValue("@langId", langId);
+
+                await cmd.ExecuteNonQueryAsync();
+
+                result = true;
+            }
+            catch (Exception e)
+            {
+                MagicLog log = new MagicLog("REL_KEYWORDS", contentPk, LogAction.Update, e);
+                await log.InsertAsync();
+                result = false;
+            }
+            finally
+            {
+                if (conn != null)
+                    conn.Dispose();
+                if (cmd != null)
+                    cmd.Dispose();
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// Populates tags table.
+        /// </summary>
+        /// <returns>Boolean.</returns>
         public static Boolean Populate()
         {
             var result = true;

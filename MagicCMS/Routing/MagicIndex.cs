@@ -321,7 +321,7 @@ namespace MagicCMS.Routing
 		/// <param name="mp">The Magic Post.</param>
 		/// <param name="message">Returned message.</param>
 		/// <returns><c>true</c> if success, <c>false</c> otherwise.</returns>
-		public static bool DeletePostTitle(MagicPost mp, out string message)
+		public static bool DeletePostTitle(int pk, out string message)
 		{
 			bool success = true;
 			message = "Elementi eliminati con successo.";
@@ -349,7 +349,7 @@ namespace MagicCMS.Routing
 				conn = new SqlConnection(MagicUtils.MagicConnectionString);
 				conn.Open();
 				cmd = new SqlCommand(cmdText, conn);
-				cmd.Parameters.AddWithValue("@PostPk", mp.Pk);
+				cmd.Parameters.AddWithValue("@PostPk", pk);
 				cmd.ExecuteNonQuery();
 
 			}
@@ -361,6 +361,12 @@ namespace MagicCMS.Routing
 			}
 			return success;
 		}
+
+		public static bool DeletePostTitle(MagicPost mp, out string message)
+        {
+			return DeletePostTitle(mp.Pk, out message);
+        }
+
 
 		/// <summary>
 		/// Updates or insert  a post title and its translations in the titles table.

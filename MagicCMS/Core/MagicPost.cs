@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.IO;
 using System.Reflection;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.UI.HtmlControls;
 
@@ -1638,6 +1639,8 @@ namespace MagicCMS.Core
 		/// </remarks>
 		public Boolean Delete(out string message)
 		{
+			return Delete(Pk, out message);
+
 			message = "Record cancellato con successo.";
 
 			string cmdstring;
@@ -2072,6 +2075,161 @@ namespace MagicCMS.Core
 
 			return result;
 		}
+
+		public static Boolean Delete(int postPk,out string message)
+        {
+			message = "Record cancellato con successo.";
+			int result = 0;
+
+			string cmdstring = @"	BEGIN TRY
+										BEGIN TRANSACTION
+										DELETE MB_contenuti
+										WHERE Id = @postPk
+											AND Flag_Cancellazione = 1
+										IF @@rowcount = 0
+										BEGIN
+											UPDATE MB_contenuti
+											SET Flag_Cancellazione = 1
+											WHERE Id = @postPk
+										END
+										DELETE REL_contenuti_Argomenti
+										WHERE Id_Contenuti = @postPk
+											OR Id_Argomenti = @postPk
+										COMMIT TRANSACTION
+									END TRY
+									BEGIN CATCH
+
+										IF XACT_STATE() <> 0
+										BEGIN
+											ROLLBACK TRANSACTION
+										END;
+										THROW;
+									END CATCH;";
+			SqlCommand cmd = null;
+			SqlConnection conn = null;
+			
+			try
+			{
+				conn = new SqlConnection(MagicUtils.MagicConnectionString);
+				conn.Open();
+				cmd = new SqlCommand(cmdstring, conn);
+				cmd.Parameters.AddWithValue("@postPk", postPk);
+				result = cmd.ExecuteNonQuery();
+
+				if (result > 0)
+				{
+					string e;
+					MagicKeyword.Update(postPk, "");
+					MagicLog log = new MagicLog("MB_contenuti", postPk, LogAction.Delete, "", "");
+					log.Error = "Success";
+					if (!MagicIndex.DeletePostTitle(postPk, out e))
+					{
+						log.Error = e;
+					}
+					log.Insert();
+
+				}
+				else
+				{
+					MagicLog log = new MagicLog("MB_contenuti", postPk, LogAction.Delete, "", "");
+					log.Error = "Il post non esiste!";
+					log.Insert();
+					message = log.Error;
+				}
+
+			}
+			catch (Exception e)
+			{
+				MagicLog log = new MagicLog("MB_contenuti", postPk, LogAction.Delete, e);
+				log.Insert();
+				message = e.Message;
+			}
+			finally
+			{
+				conn.Close();
+				//conn.Dispose();
+				cmd.Dispose();
+			}
+			return (result > 0);
+		}
+
+		public static async Task<string> DeleteAsync(int postPk)
+		{
+			string message = "";
+			int result = 0;
+
+			string cmdstring = @"	BEGIN TRY
+										BEGIN TRANSACTION
+										DELETE MB_contenuti
+										WHERE Id = @postPk
+											AND Flag_Cancellazione = 1
+										IF @@rowcount = 0
+										BEGIN
+											UPDATE MB_contenuti
+											SET Flag_Cancellazione = 1
+											WHERE Id = @postPk
+										END
+										DELETE REL_contenuti_Argomenti
+										WHERE Id_Contenuti = @postPk
+											OR Id_Argomenti = @postPk
+										COMMIT TRANSACTION
+									END TRY
+									BEGIN CATCH
+
+										IF XACT_STATE() <> 0
+										BEGIN
+											ROLLBACK TRANSACTION
+										END;
+										THROW;
+									END CATCH;";
+			SqlCommand cmd = null;
+			SqlConnection conn = null;
+
+			try
+			{
+				conn = new SqlConnection(MagicUtils.MagicConnectionString);
+				await conn.OpenAsync();
+				cmd = new SqlCommand(cmdstring, conn);
+				cmd.Parameters.AddWithValue("@postPk", postPk);
+				result = await cmd.ExecuteNonQueryAsync();
+
+				if (result > 0)
+				{
+					string e;
+					await MagicKeyword.UpdateAsync(postPk, "");
+					MagicLog log = new MagicLog("MB_contenuti", postPk, LogAction.Delete, "", "");
+					log.Error = "Success";
+					if (!MagicIndex.DeletePostTitle(postPk, out e))
+					{
+						log.Error = e;
+					}
+					await log.InsertAsync();
+
+				}
+				else
+				{
+					MagicLog log = new MagicLog("MB_contenuti", postPk, LogAction.Delete, "", "");
+					log.Error = "Il post non esiste!";
+					await log.InsertAsync();
+					message = log.Error;
+				}
+
+			}
+			catch (Exception e)
+			{
+				MagicLog log = new MagicLog("MB_contenuti", postPk, LogAction.Delete, e);
+				await log.InsertAsync();
+				message = e.Message;
+			}
+			finally
+			{
+				conn.Close();
+				//conn.Dispose();
+				cmd.Dispose();
+			}
+			return message;
+		}
+
 
 		#endregion
 

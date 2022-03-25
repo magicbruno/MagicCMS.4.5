@@ -14,10 +14,10 @@
 			<dependency id="jQuery" version="2.2.4"  />
 			<dependency id="jQuery1" version="1.12.3" />
 			<dependency id="json2" version="1.0.2" />
-			<dependency id="MB.FileBrowser" version="1.1.8" />
 			<dependency id="Respond" version="1.4.2" />
 			<dependency id="Microsoft.AspNet.WebApi" version="5.2.7" />
 			<dependency id="RestSharp" version="106.15.0" />
+			<dependency id="MimeTypesMap" version="1.0.8" />		
 		</dependencies>
 	</metadata>
 	<files>
@@ -37,6 +37,7 @@
 		<file src="Global.asax.pp" target="content\"/>
 		<file src="Global.asax.cs.pp" target="content\"/>
 		<file src="web.config.install.xdt" target="content\"/>
-		<file src="bin/MagicCMS.dll" target="lib/Net45/"/>
+		<file src="bin\MagicCMS.dll" target="lib\Net45\"/>
+		<file src="bin\MagicCMS.pdb" target="lib\Net45\"/>
 	</files>
 </package>

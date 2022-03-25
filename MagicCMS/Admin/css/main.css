@@ -269,7 +269,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: 'WeblySleek UI Semilight', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 14px;
   line-height: 20/14;
   color: #333333;
@@ -366,7 +366,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: inherit;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 100;
   line-height: 1.1;
   color: inherit;
@@ -4477,7 +4477,7 @@ button.close {
   z-index: 1070;
   display: block;
   visibility: visible;
-  font-family: 'WeblySleek UI Semilight', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 12px;
   font-weight: normal;
   line-height: 1.4;
@@ -4584,7 +4584,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: 'WeblySleek UI Semilight', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 14px;
   font-weight: normal;
   line-height: 20/14;
@@ -5185,7 +5185,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: 'WeblySleek UI Light', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 /* Page Header */
 .page-header {
@@ -5595,28 +5595,34 @@ form > div > .header .navbar .nav > li > a > .label {
 form > div > .header .navbar .nav > li > a:hover > .label {
   top: 3px;
 }
-form > div > .header .logo {
+form > div > .header .logo,
+form > div .sidebar-offcanvas .logo {
   float: left;
   padding: 5px 10px;
   width: 260px;
   height: 50px;
   display: block;
 }
-form > div > .header .logo .icon {
+form > div > .header .logo .icon,
+form > div .sidebar-offcanvas .logo .icon {
   margin-right: 10px;
   max-height: 100%;
   width: auto;
   display: block;
   float: left;
 }
-form > div > .header .logo .sitename {
+form > div > .header .logo .sitename,
+form > div .sidebar-offcanvas .logo .sitename {
   font-size: 11px;
 }
-form > div > .header .logo .sitename .sitename {
+form > div > .header .logo .sitename .sitename,
+form > div .sidebar-offcanvas .logo .sitename .sitename {
   position: absolute;
 }
 form > div > .header .logo .h3,
-form > div > .header .logo h3 {
+form > div .sidebar-offcanvas .logo .h3,
+form > div > .header .logo h3,
+form > div .sidebar-offcanvas .logo h3 {
   font-size: 20px;
   line-height: 1.2;
 }
@@ -8023,31 +8029,43 @@ Component: timeline
     --------
 */
 /* skin-black navbar */
-.skin-black .navbar {
+.skin-black .navbar,
+.skin-black .header {
   background-color: #333;
 }
-.skin-black .navbar .nav a {
+.skin-black .navbar .nav a,
+.skin-black .header .nav a {
   color: #eaeaec;
 }
 .skin-black .navbar .nav > li > a:hover,
+.skin-black .header .nav > li > a:hover,
 .skin-black .navbar .nav > li > a:active,
+.skin-black .header .nav > li > a:active,
 .skin-black .navbar .nav > li > a:focus,
+.skin-black .header .nav > li > a:focus,
 .skin-black .navbar .nav .open > a,
+.skin-black .header .nav .open > a,
 .skin-black .navbar .nav .open > a:hover,
-.skin-black .navbar .nav .open > a:focus {
+.skin-black .header .nav .open > a:hover,
+.skin-black .navbar .nav .open > a:focus,
+.skin-black .header .nav .open > a:focus {
   background: #333;
   color: #fff;
 }
-.skin-black .navbar .navbar-right > .nav {
+.skin-black .navbar .navbar-right > .nav,
+.skin-black .header .navbar-right > .nav {
   margin-right: 10px;
 }
-.skin-black .navbar .sidebar-toggle .icon-bar {
+.skin-black .navbar .sidebar-toggle .icon-bar,
+.skin-black .header .sidebar-toggle .icon-bar {
   background: #eaeaec;
 }
-.skin-black .navbar .sidebar-toggle:hover .icon-bar {
+.skin-black .navbar .sidebar-toggle:hover .icon-bar,
+.skin-black .header .sidebar-toggle:hover .icon-bar {
   background: #fff !important;
 }
-.skin-black .navbar .dropdown-menu > li > a {
+.skin-black .navbar .dropdown-menu > li > a,
+.skin-black .header .dropdown-menu > li > a {
   color: #333;
 }
 /* skin-black logo */
@@ -11701,6 +11719,39 @@ table.table-hover tbody tr.odd:hover td {
 }
 .input-group {
   width: 100%;
+}
+.rounded-0 {
+  border-radius: 0 !important;
+}
+.border-0 {
+  border: 0 !important;
+}
+.primo-piano {
+  z-index: 10000 !important;
+}
+.top-0 {
+  top: 0 !important;
+}
+.text-white {
+  color: white !important;
+}
+a.text-white {
+  color: white !important;
+}
+a.text-white:hover {
+  opacity: 0.6 !important;
+}
+.vh-75 {
+  height: 75vh !important;
+}
+.vh-50 {
+  height: 50vh !important;
+}
+.vh-25 {
+  height: 25vh !important;
+}
+.autoscroll {
+  overflow-y: auto;
 }
 .switch input[type="checkbox"] {
   display: none;

@@ -548,6 +548,7 @@ namespace MagicCMS.Admin
                 RepeaterTo.DataBind();
 
             }
+            MagicPostTypeInfoCollection infoCollection = new MagicPostTypeInfoCollection(true, MagicPostTypeInfoOrder.Alpha);
             if (TypeInfo != null)
             {
                 HtmlGenericControl style = new HtmlGenericControl("style");
@@ -556,11 +557,12 @@ namespace MagicCMS.Admin
                 style.InnerText = TypeInfo.VisibilityStyles;
                 Page.Header.Controls.Add(style);
 
-                MagicPostTypeInfoCollection infoCollection = new MagicPostTypeInfoCollection(true, MagicPostTypeInfoOrder.InsertionOrder);
+                
                 RepeaterElencoTipi.DataSource = infoCollection;
                 RepeaterElencoTipi.DataBind();
             }
-
+            RepeaterSearchTipi.DataSource = infoCollection;
+            RepeaterSearchTipi.DataBind();
 
         }
 

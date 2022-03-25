@@ -481,6 +481,72 @@ namespace MagicCMS.Core
 			return Pk;
 		}
 
+		public async Task<int> InsertAsync()
+		{
+			// Se il record di log è già esistente enon lo inserisco
+			if (Pk > 0) return Pk;
+
+
+			SqlConnection conn = null;
+			SqlCommand cmd = null;
+			try
+			{
+				string cmdText = " SET NOCOUNT ON " +
+									" SET XACT_ABORT ON " +
+									"  " +
+									" BEGIN TRY " +
+									" 	BEGIN TRANSACTION " +
+									" 		INSERT _LOG_REGISTRY (reg_TABELLA " +
+									" 		, reg_RECORD_PK " +
+									" 		, reg_act_PK " +
+									" 		, reg_user_PK " +
+									" 		, reg_ERROR " +
+									" 		, reg_TIMESTAMP " +
+									" 		, reg_fileName " +
+									" 		, reg_methodName) " +
+									" 			VALUES (@reg_TABELLA, @reg_RECORD_PK, @reg_act_PK, @reg_user_PK, @reg_ERROR, @reg_TIMESTAMP, @reg_fileName, @reg_methodName); " +
+									" 	COMMIT TRANSACTION " +
+									" 	SELECT " +
+									" 		SCOPE_IDENTITY() " +
+									" END TRY " +
+									" BEGIN CATCH " +
+									"  " +
+									" 	IF XACT_STATE() <> 0 " +
+									" 	BEGIN " +
+									" 		ROLLBACK TRANSACTION " +
+									" 	END " +
+									" 	SELECT " +
+									" 		-1 * ERROR_NUMBER() " +
+									" END CATCH ";
+
+				conn = new SqlConnection(MagicUtils.MagicConnectionString);
+				await conn.OpenAsync();
+				cmd = new SqlCommand(cmdText, conn);
+				cmd.Parameters.AddWithValue("@reg_TABELLA", Tabella);
+				cmd.Parameters.AddWithValue("@reg_RECORD_PK", Record);
+				cmd.Parameters.AddWithValue("@reg_act_PK", (int)Action);
+				cmd.Parameters.AddWithValue("@reg_user_PK", User);
+				cmd.Parameters.AddWithValue("@reg_ERROR", Error);
+				cmd.Parameters.AddWithValue("@reg_TIMESTAMP", Timestamp);
+				cmd.Parameters.AddWithValue("@reg_fileName", FileName);
+				cmd.Parameters.AddWithValue("@reg_methodName", MethodName);
+
+				Pk = Convert.ToInt32(await cmd.ExecuteScalarAsync());
+			}
+			catch (Exception)
+			{
+				throw;
+			}
+			finally
+			{
+				if (conn != null)
+					conn.Dispose();
+				if (cmd != null)
+					cmd.Dispose();
+			}
+			return Pk;
+		}
+
 		async public static Task<OutputParams_dt> GetTablesRowsAsync(bool onlyErrors, InputParams_dt inputParams)
 		{
 			MagicLogCollection logs = new MagicLogCollection();

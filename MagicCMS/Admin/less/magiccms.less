@@ -4,10 +4,8 @@
 @import url('AdimLTE/vars.less');
 
 
-#FileBrowserModal
-{
-    iframe
-    {
+#FileBrowserModal {
+    iframe {
         display: block;
         top: 0;
         bottom: 0;
@@ -18,72 +16,62 @@
         border: 0;
     }
 
-    .modal-body
-    {
+    .modal-body {
         padding: 0 2px 3px;
     }
 }
 // Tpography
-h1, h2, h3, h4
-{
-    > .fa
-    {
+h1, h2, h3, h4 {
+    > .fa {
         padding-right: @padding-large-horizontal;
     }
 }
 
 td {
-	span {
-		small {
-			font-size: 70%;
-		}
-		.fa
-		{
-			padding-right: @padding-small-horizontal;
-		}
-	}
-	.title {
-		line-height: 1.2;
-		.btn.btn-link {
-			line-height: 1.2;
-		}
-	}
+    span {
+        small {
+            font-size: 70%;
+        }
+
+        .fa {
+            padding-right: @padding-small-horizontal;
+        }
+    }
+
+    .title {
+        line-height: 1.2;
+
+        .btn.btn-link {
+            line-height: 1.2;
+        }
+    }
 }
+
 body {
-	.ellipsis
-	{
-		.text-overflow();
+    .ellipsis {
+        .text-overflow();
 
-		&:hover
-		{
-			white-space: normal;
-		}
-	}
-
+        &:hover {
+            white-space: normal;
+        }
+    }
 }
 
-.map-canvas .gm-style
-{
-    img
-    {
+.map-canvas .gm-style {
+    img {
         max-width: none !important;
     }
 }
 
-.popover
-{
-    .popover-content
-    {
-        ul
-        {
+.popover {
+    .popover-content {
+        ul {
             padding: 0;
 
-            > li
-            {
+            > li {
                 list-style: none;
 
-                > a
-                {
+                > a {
                     display: block;
                     padding: 3px 20px;
                     clear: both;
@@ -92,8 +80,7 @@ body {
                     color: @dropdown-link-color;
                     white-space: nowrap; // prevent links from randomly breaking onto new lines
                     &:hover,
-                    &:focus
-                    {
+                    &:focus {
                         text-decoration: none;
                         color: @dropdown-link-hover-color;
                         background-color: @dropdown-link-hover-bg;
@@ -104,111 +91,105 @@ body {
     }
 }
 
-.checkbox-list
-{
-    > ul
-    {
+.checkbox-list {
+    > ul {
         padding: 0;
 
-        > li
-        {
+        > li {
             list-style: none;
 
-            input[type="checkbox"]
-            {
+            input[type="checkbox"] {
                 margin-right: 4px;
             }
         }
     }
 }
 
-table
-{
-    &.table-hover
-    {
-        tbody
-        {
-            tr
-            {
+table {
+    &.table-hover {
+        tbody {
+            tr {
                 cursor: pointer;
             }
 
-                tr:hover td, tr.odd:hover td
-                {
-                    background-color: @alert-danger-bg !important;
-                }
+            tr:hover td, tr.odd:hover td {
+                background-color: @alert-danger-bg !important;
+            }
         }
     }
 }
 
 
 // iCheck correction
-.icheckbox_minimal, .iradio_minimal
-{
+.icheckbox_minimal, .iradio_minimal {
     height: 19px;
     width: 19px;
 }
 // Modal xl
-@media (min-width: @screen-md-min)
-{
-    .modal-xl
-    {
+@media (min-width: @screen-md-min) {
+    .modal-xl {
         width: 95%;
         max-width: 1900px;
-		.modal-content {
-			min-height: ~"calc(100vh - 100px)";
-		}
+
+        .modal-content {
+            min-height: ~"calc(100vh - 100px)";
+        }
     }
 }
 
-@media (min-width: @screen-md-min) {;
-	
-	.table-responsive {
-		overflow: hidden;
-	}
+@media (min-width: @screen-md-min) {
+    ;
+
+    .table-responsive {
+        overflow: hidden;
+    }
 }
 
 @media (max-width: @screen-sm-max) {
-	.btn .fa {
-		margin-right: 0 !important;
-	}
+    .btn .fa {
+        margin-right: 0 !important;
+    }
 }
 
 .loading {
-	position: fixed;
-	top:0;
-	left: 0;
-	right:0;
-	bottom: 0;
-	z-index: 3;
-	//height: calc(~"100vh - 50px");
-	background-color: #000;
-	background-image:url(/Admin/css/squares.gif);
-	background-position: center 50%;
-	background-repeat: no-repeat;
-	opacity: 0.7;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    //height: calc(~"100vh - 50px");
+    background-color: #000;
+    background-image: url(/Admin/css/squares.gif);
+    background-position: center 50%;
+    background-repeat: no-repeat;
+    opacity: 0.7;
 }
 
 .right-side {
-	min-height: ~"calc(100vh - 50px)"; 
+    min-height: ~"calc(100vh - 50px)";
 }
 
 .left-side {
-	z-index: 4;
+    z-index: 4;
 }
-.tab-pane#parents, 
+
+.tab-pane#parents,
 .tab-pane#help {
-	border: 1px solid #ccc;
-	padding: 10px 15px;
+    border: 1px solid #ccc;
+    padding: 10px 15px;
 }
+
 .tab-pane#parents {
-	background-color: #eee;
+    background-color: #eee;
 }
+
 .g-recaptcha > div {
-	margin: 0 auto;
+    margin: 0 auto;
 }
+
 .modal-sm {
-	min-width: 334px;
+    min-width: 334px;
 }
 
 // Modifiche per grid bootstrap 4
@@ -226,4 +207,51 @@ table
 
 .input-group {
     width: 100%;
+}
+
+// Rounded
+.rounded-0 {
+    border-radius: 0 !important;
+}
+
+// Border
+.border-0 {
+    border: 0 !important;
+}
+
+.primo-piano {
+    z-index: 10000 !important;
+}
+
+.top-0 {
+    top: 0 !important;
+}
+
+// Text
+.text-white {
+    color: white !important;
+}
+
+a.text-white {
+    color: white !important;
+
+    &:hover {
+        opacity: .6 !important;
+    }
+}
+
+.vh-75 {
+    height: 75vh !important;
+}
+
+.vh-50 {
+    height: 50vh !important;
+}
+
+.vh-25 {
+    height: 25vh !important;
+}
+
+.autoscroll{
+    overflow-y: auto;
 }

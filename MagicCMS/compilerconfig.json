@@ -14,5 +14,9 @@
   {
     "outputFile": "Admin/assets-2022/css/main-new.css",
     "inputFile": "Admin/less/main-new.less"
+  },
+  {
+    "outputFile": "Admin/assets-2022/css/file-man.css",
+    "inputFile": "Admin/assets-2022/sass/file-man.scss"
   }
 ]

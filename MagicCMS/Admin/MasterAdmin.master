@@ -122,7 +122,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="#" data-toggle="fb-window">
+						<a href="#" data-toggle="fb-window" data-fm-url="FileManager.aspx">
 							<i class="fa fa-cloud-upload"></i><span><%= Translate("Gestione file") %></span>
 						</a>
 					</li>
@@ -389,9 +389,10 @@
 		CKEDITOR.plugins.addExternal('widget', '/Admin/Scripts/plugins/ckeditor/plugins/widget/');
 		CKEDITOR.plugins.addExternal('lineutils', '/Admin/Scripts/plugins/ckeditor/plugins/lineutils/');
 		CKEDITOR.plugins.addExternal('onchange', '/Admin/Scripts/plugins/ckeditor/plugins/onchange/');
-		CKEDITOR.plugins.addExternal('fontawesome', '/Admin/Scripts/plugins/ckeditor/plugins/fontawesome/');
+		//CKEDITOR.plugins.addExternal('fontawesome', '/Admin/Scripts/plugins/ckeditor/plugins/fontawesome/');
 		CKEDITOR.plugins.addExternal('codemirror', '/Admin/Scripts/plugins/ckeditor/plugins/codemirror/');
-		CKEDITOR.plugins.addExternal('codesnippet', '/Admin/Scripts/plugins/ckeditor/plugins/codesnippet/');
+        CKEDITOR.plugins.addExternal('codesnippet', '/Admin/Scripts/plugins/ckeditor/plugins/codesnippet/');
+        CKEDITOR.plugins.addExternal('ckeditorfa', '/Admin/Scripts/plugins/ckeditor/plugins/ckeditorfa/');
 
 		//redirect change evento to relating textarea
 		CKEDITOR.on('instanceCreated', function (e) {
@@ -409,8 +410,10 @@
 					$(textarea).spin(false);
 				}, {
 					customConfig: configPath,
-					extraPlugins: "widget,lineutils,fontawesome,codemirror,codesnippet",
-					language: "<%= MagicCMS.Core.MagicCMSConfiguration.GetConfig().BackEndLang %>"
+                    extraPlugins: "widget,lineutils,codemirror,codesnippet,ckeditorfa",
+					language: "<%= MagicCMS.Core.MagicCMSConfiguration.GetConfig().BackEndLang %>",
+                    filebrowserUploadUrl: '/api/CK_FileUpload?token=' + Cookies.get('MB_AuthToken'),
+                    //filebrowserUploadMethod: 'xhr'
 				});
 		});
 		window.addEventListener('load', function () {

@@ -5,13 +5,15 @@
 <%@ MasterType TypeName="MagicCMS.Admin.MasterAdmin" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="assets-2022/css/file-man.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="HeaderContent" runat="server">
     <h1><i class="fa fa-edit"></i><%= Master.Translate("Modifica i contenuti del sito") %></h1>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="row">
+    <!-- START Tabella contenuti con navigazione -->
 
+    <div class="row">
         <div class="col">
             <asp:Panel runat="server" ID="Panel_contents" CssClass="box box-primary" data-id="Panel_contents">
                 <div class="box-header">
@@ -41,9 +43,23 @@
                             title="<%= Master.Translate("Mostra la lista di tutte le componenti del sito") %>">
                             <i class="fa fa-bars"></i>
                         </button>
-                        <button type="button" data-action="inbasket" class="btn btn-sm btn-danger btn-icon"
+                        <button type="button" data-action="inbasket" class="btn btn-sm btn-link btn-icon"
                             title="<%= Master.Translate("Mostra gli elementi nel cestino") %>">
+                            <span class="fa-stack fa-lg" <%--style="font-size: 65%;"--%>>
+                                <i class="fa fa-file-o fa-stack-2x text-success"></i>
+                                <i class="fa text-info fa-recycle fa-stack" <%--style="font-size: .7em"--%>></i>
+                            </span>
+                        </button>                        
+                        <button type="button" data-action="trash-multi" class="btn btn-sm btn-danger btn-icon"
+                            title="<%= Master.Translate("Elimina pagine selezionate") %>">
                             <i class="fa fa-trash-o"></i>
+                        </button>
+                        <button type="button" data-action="erase-multi" class="btn btn-sm btn-link btn-icon"
+                            title="<%= Master.Translate("Elimina definitivamente pagine selezionate") %>">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-trash-o fa-stack text-danger"></i>
+                                <i class="fa fa-ban fa-stack-2x text-warning" <%--style="font-size: .7em"--%>></i>
+                            </span>
                         </button>
                         <button type="button" class="btn btn-primary btn-sm" data-widget="collapse">
                             <i class="fa fa-minus"></i>
@@ -55,7 +71,8 @@
                         <table id="table_contenuti" class="table table-striped table-bordered" style="width: 100%" width="100%">
                             <thead>
                                 <tr>
-                                    <th>Id</th>
+                                    <th>
+                                        <input class="small" type="checkbox" id="th-checkbox" value="" data-action="check-all" /></th>
                                     <th><%= Master.Translate("Titolo") %></th>
                                     <th title="<%= Master.Translate("Immagine") %>"><i class="fa fa-image"></th>
                                     <th title="<%= Master.Translate("Pubblicato il") %>..."><i class="fa fa-newspaper-o text-info"></th>
@@ -74,6 +91,12 @@
             </asp:Panel>
         </div>
     </div>
+
+    <!-- END Tabella contenuti con navigazione -->
+
+
+    <!-- START Pannello di editing -->
+
     <div class="row">
         <div class="col">
             <asp:Panel runat="server" ID="Panel_edit" CssClass="box box-warning">
@@ -190,15 +213,20 @@
                                             <label for="Url" class="col-sm-2 control-label"><% = TypeInfo.LabelUrl %></label>
                                             <div class="col-sm-10">
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control" id="Url" value="<% = ThePostEnc.Url %>" />
+                                                    <input type="text" class="form-control" data-droptarget id="Url" value="<% = ThePostEnc.Url %>" />
                                                     <span class="input-group-btn">
-                                                        <button class="btn btn-primary btn-flat FlagCercaServer" type="button" data-callback="getUrl"
+                                                        <button class="btn btn-danger btn-flat FlagCercaServer" type="button" data-target="#Url"
+                                                            title="<%= Master.Translate("Cerca il file sul tuo disco") %>" data-action="upload">
+                                                            <i class="fa fa-folder-open-o"></i>Sfoglia...
+                                                        </button>
+                                                        <button class="btn btn-warning btn-flat btn-icon FlagCercaServer" type="button" data-callback="getUrl"
                                                             title="<%= Master.Translate("Cerca file sul server") %>"
-                                                            data-target="#FileBrowserModal" data-toggle="fb-window">
-                                                            <i class="fa fa-search"></i><%= Master.Translate("Sfoglia") %>...</button>
-                                                        <button class="btn btn-info btn-flat btn-icon" type="button" data-source="#Url" title="<%= Master.Translate("Guarda il file") %>"
-                                                            data-target="#LightBox" data-toggle="modal">
-                                                            <i class="fa fa-search-plus"></i>
+                                                            data-target="#Url" data-toggle="fb-window" data-fm-url="FileManager.aspx">
+                                                            <i class="fa fa-fw fa-database"></i>
+                                                        </button>
+                                                        <button class="btn btn-success btn-flat btn-icon" type="button" data-source="#Url"
+                                                            title="<%= Master.Translate("Guarda il file") %>" data-action="viewer">
+                                                            <i class="fa fa-eye"></i>
                                                         </button>
                                                     </span>
                                                 </div>
@@ -208,16 +236,20 @@
                                             <label for="Url2" class="col-sm-2 control-label"><% = TypeInfo.LabelUrlSecondaria %></label>
                                             <div class="col-sm-10">
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control" id="Url2" value="<% = ThePostEnc.Url2  %>" />
+                                                    <input type="text" class="form-control" data-droptarget id="Url2" value="<% = ThePostEnc.Url2  %>" />
                                                     <span class="input-group-btn">
-                                                        <button class="btn btn-primary btn-flat FlagCercaServer" type="button" data-callback="getUrl2"
+                                                        <button class="btn btn-danger btn-flat FlagCercaServer" type="button" data-target="#Url2"
+                                                            title="<%= Master.Translate("Cerca il file sul tuo disco") %>" data-action="upload">
+                                                            <i class="fa fa-folder-open-o"></i>Sfoglia...
+                                                        </button>
+                                                        <button class="btn btn-warning btn-flat btn-icon FlagCercaServer" type="button" data-callback="getUrl2"
                                                             title="<%= Master.Translate("Cerca file sul server") %>"
-                                                            data-target="#FileBrowserModal" data-toggle="fb-window">
-                                                            <i class="fa fa-search"></i><%= Master.Translate("Sfoglia") %>...</button>
-                                                        <button class="btn btn-info btn-flat btn-icon" type="button" data-source="#Url2"
-                                                            title="<%= Master.Translate("Guarda il file") %>"
-                                                            data-target="#LightBox" data-toggle="modal">
-                                                            <i class="fa fa-search-plus"></i>
+                                                            data-target="#Url2" data-toggle="fb-window" data-fm-url="FileManager.aspx">
+                                                            <i class="fa fa-fw fa-database"></i>
+                                                        </button>
+                                                        <button class="btn btn-success btn-flat btn-icon" type="button" data-source="#Url2"
+                                                            title="<%= Master.Translate("Guarda il file") %>" data-action="viewer">
+                                                            <i class="fa fa-eye"></i>
                                                         </button>
                                                     </span>
                                                 </div>
@@ -573,6 +605,24 @@
             </asp:Panel>
         </div>
     </div>
+
+    <!-- Select per ricerca per tipo -->
+    <div class="d-none">
+        <div class="d-flex align-items-center mb-4 mb-md-0" id="select-tipo-container">
+            <label class="mr-3 mb-0">Tipo:</label>
+            <select class="form-control selectpicker" data-container="body" id="select-search-tipi">
+                <option data-icon="" value="">Tutti</option>
+                <asp:Repeater ID="RepeaterSearchTipi" runat="server" ItemType="MagicCMS.Core.MagicPostTypeInfo">
+                    <ItemTemplate>
+                        <option data-icon="<%# Item.Icon %>" value="<%# Item.Nome %>"><%# Item.Nome %></option>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </select>
+        </div>
+    </div>
+
+    <!-- Fine ricerca per tipo -->
+
     <!-- Parents Modal  -->
     <div class="modal fade" id="cambia-tipo-modal" tabindex="-1" role="dialog" aria-labelledby="Types"
         aria-hidden="true" data-source="">
@@ -630,9 +680,58 @@
         </div>
     </div>
 
+    <!-- Viewer -->
+
+    <!-- FILE MANAGER VIEWER -->
+    <div class="fm-viewer off-screen" id="theViewer">
+
+        <nav class="navbar fm-navbar bg-transparent position-absolute d-flex align-items-center border-0 pl-4 px top-0" role="navigation">
+            <!-- Sidebar toggle button-->
+            <span class="align-self-start h3 text-white my-auto viewer-title"></span>
+            <div class="navbar-right d-flex justify-content-end ml-auto mr-0 ">
+
+                <ul class="nav navbar-nav d-flex align-items-center mr-1">
+
+                    <li class="">
+                        <button type="button" data-action="download-file" title="Scarica" class="btn btn-icon btn-lg btn-dark px-3 rounded-0">
+                            <i class="fa fa-fw  fa-download "></i>
+                        </button>
+                    </li>
+                    <li class="">
+                        <button type="button" data-action="toggle-fullscreen" title="Fullscreen on/off" class="btn btn-icon btn-lg btn-dark px-3 rounded-0  ml-1">
+                            <i class="fa fa-fw  fa-arrows-alt"></i>
+                        </button>
+                    </li>
+                    <li class="">
+                        <button type="button" data-action="close-viewer" title="Chiudi" class="btn btn-icon btn-lg btn-dark px-3 rounded-0  ml-1">
+                            <i class="fa fa-fw  fa-times"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <!-- fine vewer -->
+
+    <!-- END Pannello di editing -->
+
 
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Scripts" runat="server">
+    <!-- START script Pannello di editing  blocco 1 Viewer e Upload-->
+    <script src="assets-2022/mb/FM_Viewer.js"></script>
+    <script src="assets-2022/mb/MB_FileUpload.js"></script>
+    <script>
+        (function (win, $) {
+            win.TheViewer = new FM_Viewer('#theViewer');
+            win.TheUploader = new MB_FileUpload('/api/FileUpload');
+        })(window, jQuery);
+    </script>
+    <!-- END script Pannello di editing  blocco 1-->
+
+    <!-- START script Tablella  blocco 1 -->
+
     <script id="table-cont-parent" type="x-tmpl-mustache">
         <div class="row no-gutters title">
             <div class="col-auto px-2"><i class="fa {{Icon}} text-primary"></i></div>
@@ -648,13 +747,8 @@
             <br /><small>{{NomeTipo}}</small></div>
         </div>
     </script>
+
     <script>
-        /// <reference path="../../../Scripts/_references.js" />
-
-        // Handle checking if some change was made
-
-        // Global variables
-
         var tableContentHistory;
         $form_contents = $('#edit-content');
         /** 
@@ -730,10 +824,6 @@
             }
         };
 
-
-        var $parentstree;
-
-
         /**
         ************** Hndlers for Filebrowser ********************
         **/
@@ -746,7 +836,13 @@
             $('#Url2').val(url).change();
             $('#FileBrowserModal').modal('hide');
         }
+    </script>
 
+
+    <script>
+
+
+        var $parentstree;
 
 
         $(function () {
@@ -754,15 +850,13 @@
             /*
             Parents modal
             */
-            $('#parents-modal').on('show.bs.modal', function () {
-                var $modalbody = $(this).find('.modal-body');
-                var $modalContent = $('#parents');
-                if (!$modalbody.children().length)
-                    $modalbody.append($modalContent);
+            //$('#parents-modal').on('show.bs.modal', function () {
+            //    var $modalbody = $(this).find('.modal-body');
+            //    var $modalContent = $('#parents');
+            //    if (!$modalbody.children().length)
+            //        $modalbody.append($modalContent);
 
-            })
-
-
+            //})
 
             /*
             ** Contents navigation table
@@ -801,6 +895,9 @@
                     })
                     .DataTable({
                         "serverSide": true,
+                        "dom": "<'row'<'col-sm-12 col-md'l><'col-md col-xl-2'<'search-tipo'>><'col-sm-12 col-md'f>>" +
+                            "<'row'<'col-sm-12'tr>>" +
+                            "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
                         "ajax": {
                             "url": "api/ContentsPaginated/?parent_id=0",
                             "headers": {
@@ -842,7 +939,14 @@
                                 "data": "Pk",
                                 "searchable": false,
                                 "name": "Id",
-                                "className": "text-right"
+                                "orderable": true,
+                                "className": "text-right",
+                                render: function (data, type, ful, meta) {
+                                    return `<div class="d-flex align-items-center justify-content-end">
+                                                <label class="m-0">${data}</label> 
+                                                <input class="my-0 ml-2" type="checkbox" data-id="${data}" />
+                                            </div>`;
+                                }
                             },
                             {
                                 "targets": 1,
@@ -997,17 +1101,24 @@
                             }
                         ]
                     });
+            $('div.search-tipo').append($('#select-tipo-container'));
 
-
+            $('#select-tipo-container select').on('change', function () {
+                //$('#table_contenuti_filter input').val($('#select-tipo-container select').val());
+                $table_contenuti.search($('#select-tipo-container select').val()).draw();
+            })
 
             //DataTable events
             $table_contenuti
+                .on('search.dt', function (e, setting) {
+                    $('#select-tipo-container select').selectpicker('val', $('#table_contenuti_filter input').val());
+                })
                 .on('draw.dt column-sizing.dt ', function () {
                     var w = $(this).parents('.box-body').width();
                     $('td > div.ellipsis.title').width(w * 0.25);
                     $('td > div.ellipsis.type').width(w * 0.18);
                 })
-                .on('click', 'button, a', function (e) {
+                .on('click', 'button, a, input', function (e) {
                     var $button = $(this);
                     var action = $button.attr('data-action');
                     var pk = $button.attr('data-rowpk');
@@ -1159,6 +1270,11 @@
                         tableContentHistory.setCurrent(obj);
                     }
                 });
+            $('#table_contenuti').on('change', '#th-checkbox', function (e) {
+                let check = this.checked;
+                //e.stopPropagation();
+                $('#table_contenuti').find(':checkbox[data-id]').each(function () { this.checked = check });
+            })
 
             window.tableContenuti = $table_contenuti;
             /*
@@ -1294,16 +1410,24 @@
                                     $boxTitle.html('<i class="fa fa-home"></i>' + obj.name);
                                     $addElementBtn.addClass('hidden');
                                     break;
+                                    $('[data-action="trash-multi"]').removeClass('d-none');
+                                    $('[data-action="erase-multi"]').addClass('d-none');
                                 case -1:
                                     $boxTitle.html('<i class="fa fa-bars"></i>' + obj.name);
                                     $addElementBtn.addClass('hidden');
+                                    $('[data-action="trash-multi"]').removeClass('d-none');
+                                    $('[data-action="erase-multi"]').addClass('d-none');
                                     break;
                                 case -2:
                                     $boxTitle.html('<i class="fa fa-trash-o"></i>' + obj.name);
                                     $addElementBtn.addClass('hidden');
+                                    $('[data-action="trash-multi"]').addClass('d-none');
+                                    $('[data-action="erase-multi"]').removeClass('d-none');
                                     break;
                                 default:
                                     $boxTitle.html('<i class="fa ' + obj.icon + '"></i>' + obj.name);
+                                    $('[data-action="trash-multi"]').removeClass('d-none');
+                                    $('[data-action="erase-multi"]').addClass('d-none');
                                     $addElementBtn
                                         .attr('data-title', '<%= Master.Translate("Aggiungi un elemento a") %> &quot;' + obj.name + '&quot;')
                                         .attr('data-parent', obj.parent)
@@ -1415,6 +1539,7 @@
                             var $titolo = $('#Titolo');
                             $titolo.val($titolo.val() + '(duplicato)');
                             $('[name="PostPk"]').val(0);
+                            $('#PermalinkTitle').val('');
                         };
                         if ($('#Parents').parents('[role="form"]').mb_submit('pendingChanges')) {
 
@@ -1496,10 +1621,120 @@
                         break;
                     case "clear-translation":
                         break;
+                    case "viewer":
+                        let sourceSelector = $this.data('source');
+                        if ($(sourceSelector).val())
+                            TheViewer.show($(sourceSelector).val());
+                        break;
+                    case "upload":
+                        let targetSelector = $this.data('target');
+                        TheUploader.getFileSingle().then(url => { if (url) $(targetSelector).val(url); });
+                        break;
+                    case "trash-multi":
+                        deletePost(true);
+                        break;
+                    case "erase-multi":
+                        deletePost(false);
+                        break;
                     default:
 
                 }
             });
+
+            /**
+             *  CESTINO E CANCELLAZIONE DEFINITIVA POST SELEZIONATI
+             * */
+
+            function deletePost(basket) {
+                var selected = [];
+                $('#table_contenuti :checkbox[data-id]').each(function () {
+                    if (this.checked)
+                        selected.push(parseInt($(this).data('id')));
+                })
+                if (selected.length == 0)
+                    Swal.fire({
+                        icon: 'info',
+                        title: 'Nessun post selezionato'
+                    });
+                else {
+                    let message;
+                    if (basket) {
+                        message = `Stai per inviare ${selected.length} post al cestino. I post potranno essere recuperati 
+                                    ma i collegamenti ai post figli e ai post genitori andranno persi. Confermi?`
+                    } else {
+                        message = `Stai per eliminare definitivamente ${selected.length} post. I post non potranno essere
+                                    recuperati. Confermi?`
+                    }
+                    Swal.fire({
+                        icon: 'info',
+                        title: 'Attenzione!',
+                        text: message,
+                        showCancelButton: true,
+                        confirmButtonText: 'Continua',
+                        cancelButtonText: `Annulla`,
+                    }).then((result) => {
+                        /* Read more about isConfirmed, isDenied below */
+                        if (result.isConfirmed) {
+                            Swal.fire({
+                                icon: 'warning',
+                                title: `Confermi l'eliminazione di ${selected.length} post?`,
+                                showCancelButton: true,
+                                confirmButtonText: 'Sì',
+                                cancelButtonText: `No`
+                            }).then(result => {
+                                if (result.isConfirmed) {
+                                    var myHeaders = new Headers();
+                                    myHeaders.append("Content-Type", "application/json");
+                                    myHeaders.append("Authorization", "Bearer " + Cookies.get('MB_AuthToken'));
+
+                                    var raw = JSON.stringify({
+                                        "OperationStr": "Delete",
+                                        "PkList": selected
+                                    });
+
+                                    var requestOptions = {
+                                        method: 'POST',
+                                        headers: myHeaders,
+                                        body: raw,
+                                        redirect: 'follow'
+                                    };
+
+                                    fetch("/api/MagicPost", requestOptions)
+                                        .then(response => response.json())
+                                        .then(result => {
+                                            if (!result.success) {
+                                                Swal.fire({
+                                                    icon: 'error',
+                                                    title: 'Errore',
+                                                    text: result.msg
+                                                })
+                                            }
+                                            tableContentHistory.reload();
+                                        })
+                                        .catch(error => Swal.fire({
+                                            icon: 'error',
+                                            title: 'Errore',
+                                            text: error
+                                        }).then(() => tableContentHistory.reload()));
+                                }                                    
+                            });
+                        }
+                    })
+                }
+            }
+
+
+            $(document).on('dragover drop', event => event.preventDefault());
+            $('[data-droptarget]').on('drop', event => {
+                event.preventDefault();
+                const evt = event.originalEvent;
+                const $this = $(event.currentTarget);
+                if (evt.dataTransfer.files.length == 1) {
+                    TheUploader.uploadSingle(evt.dataTransfer.files[0]).then(url => $this.val(url));
+                };
+            });
+
+
 
             // Parents tree
             $parentstree = $("#parents-tree").jstree({

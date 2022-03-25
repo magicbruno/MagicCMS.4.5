@@ -1,1 +1,0 @@
-﻿<%@ WebHandler Language="C#" Class="IZ.WebFileManager.ThumbnailHandler, IZ.WebFileManager" %>

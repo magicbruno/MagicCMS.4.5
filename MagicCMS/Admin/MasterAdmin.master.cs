@@ -114,8 +114,8 @@ namespace MagicCMS.Admin
             }
 
             // FileBrowser prerogatives
-            MB.FileBrowser.MagicSession.Current.AllowedFileTypes = MagicCMSConfiguration.GetConfig().AllowedFileTypes;
-            MB.FileBrowser.MagicSession.Current.FileBrowserAccessMode = IZ.WebFileManager.AccessMode.Delete;
+            //MB.FileBrowser.MagicSession.Current.AllowedFileTypes = MagicCMSConfiguration.GetConfig().AllowedFileTypes;
+            //MB.FileBrowser.MagicSession.Current.FileBrowserAccessMode = IZ.WebFileManager.AccessMode.Delete;
 			
 
             //CheckPrerogatives(this);

@@ -355,11 +355,11 @@ namespace MagicCMS.DataTable
                 filter = "";
 
                 if (!string.IsNullOrWhiteSpace(inputParams.search.value))
-                    filter += String.Format(" AND ( CONVERT(VARCHAR(10), mc.Id) = '{0}' OR mc.Titolo LIKE '%{0}%') ", inputParams.search.value);
+                    filter += String.Format(" AND ( CONVERT(VARCHAR(10), mc.Id) = '{0}' OR mc.Titolo LIKE '%{0}%' OR act.TYP_NAME = '{0}') ", inputParams.search.value);
 
                 string[] columnNames = new string[]
                 {
-                    "mc.Id", "mc.Titolo","NomeTipo","DataPubblicazione","DataScadenza","DataUltimaModifica","Ordinamento"
+                    "mc.Id", "mc.Titolo","act.TYP_NAME","DataPubblicazione","DataScadenza","DataUltimaModifica","Ordinamento"
                 };
 
                 ordinamento = string.Format(" ORDER BY {0} {1} ", columnNames[inputParams.order[0].column], inputParams.order[0].dir);
@@ -370,7 +370,7 @@ namespace MagicCMS.DataTable
 
                 string cmdText = @" DECLARE @unfiltered INT, @filtered INT
                                     
-                                    SELECT
+                                    SELECT DISTINCT
 	                                    @unfiltered = COUNT(*)
                                     FROM MB_contenuti mc
                                     INNER JOIN ANA_CONT_TYPE act
@@ -379,7 +379,7 @@ namespace MagicCMS.DataTable
 	                                    ON mc.Id = rca.Id_Contenuti" +
                                 whereClause + ";" +
 
-                                @"  SELECT
+                                @"  SELECT DISTINCT
 	                                    @filtered = COUNT(*)
                                     FROM MB_contenuti mc
                                     INNER JOIN ANA_CONT_TYPE act
@@ -388,7 +388,7 @@ namespace MagicCMS.DataTable
 	                                    ON mc.Id = rca.Id_Contenuti" +
                                 whereClause + filter + ";" +
 
-                                @"  SELECT
+                                @"  SELECT DISTINCT
 	                                    mc.Id
                                         ,mc.Titolo 
                                         ,act.TYP_NAME AS NomeTipo

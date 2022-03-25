@@ -69,6 +69,15 @@ namespace MagicCMS.Admin
         protected global::System.Web.UI.WebControls.Repeater RepeaterLanguages;
 
         /// <summary>
+        /// Controllo RepeaterSearchTipi.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater RepeaterSearchTipi;
+
+        /// <summary>
         /// Controllo RepeaterElencoTipi.
         /// </summary>
         /// <remarks>

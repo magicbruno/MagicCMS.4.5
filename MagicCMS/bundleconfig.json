@@ -80,5 +80,11 @@
     "inputFiles": [
       "Admin/assets-2022/mustache.js/mustache.js"
     ]
+  },
+  {
+    "outputFileName": "Admin/assets-2022/css/bootstrap/bootstrap/dist/css/bootstrap-utilities.min.css",
+    "inputFiles": [
+      "Admin/assets-2022/css/bootstrap/bootstrap/dist/css/bootstrap-utilities.css"
+    ]
   }
 ]

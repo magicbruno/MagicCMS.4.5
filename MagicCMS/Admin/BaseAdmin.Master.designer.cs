@@ -42,13 +42,13 @@ namespace MagicCMS.Admin
         protected global::System.Web.UI.WebControls.Literal LiteralLoadRespond;
 
         /// <summary>
-        /// Controllo form1.
+        /// Controllo aspnetForm.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm aspnetForm;
 
         /// <summary>
         /// Controllo MainContent.
