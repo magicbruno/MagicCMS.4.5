@@ -933,6 +933,7 @@
                                 "sSortDescending": ": <%= Master.Translate("attiva per ordinare la colonna in ordine decrescente") %>"
                             }
                         },
+                        "stateSave": true,
                         "columnDefs": [
                             {
                                 "targets": 0,
@@ -1259,7 +1260,7 @@
                     var info = $table_contenuti.page.info();
                     var obj = tableContentHistory.getCurrent();
                     obj.page = info.page;
-                    //obj.search = $table_contenuti.search();
+                    obj.search = $table_contenuti.search();
                     tableContentHistory.setCurrent(obj);
                 }).on('click', '.sorting, .sorting_asc', function (e, settings) {
                     var info = $table_contenuti.order();

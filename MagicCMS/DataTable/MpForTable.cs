@@ -370,8 +370,8 @@ namespace MagicCMS.DataTable
 
                 string cmdText = @" DECLARE @unfiltered INT, @filtered INT
                                     
-                                    SELECT DISTINCT
-	                                    @unfiltered = COUNT(*)
+                                    SELECT 
+	                                    @unfiltered = COUNT(DISTINCT mc.ID)
                                     FROM MB_contenuti mc
                                     INNER JOIN ANA_CONT_TYPE act
 	                                    ON act.TYP_PK = mc.Tipo
@@ -379,8 +379,8 @@ namespace MagicCMS.DataTable
 	                                    ON mc.Id = rca.Id_Contenuti" +
                                 whereClause + ";" +
 
-                                @"  SELECT DISTINCT
-	                                    @filtered = COUNT(*)
+                                @"  SELECT 
+	                                    @filtered = COUNT(DISTINCT mc.ID)
                                     FROM MB_contenuti mc
                                     INNER JOIN ANA_CONT_TYPE act
 	                                    ON act.TYP_PK = mc.Tipo
