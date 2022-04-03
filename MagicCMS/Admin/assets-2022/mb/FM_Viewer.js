@@ -223,6 +223,11 @@ class FM_Viewer {
 
             img.addEventListener('load', () => {
                 self.element.appendChild(img);
+                let title = self.element.querySelector('.viewer-title');
+                if (title) {
+                    let html = title.innerHTML;
+                    title.innerHTML = html + ` (${img.naturalWidth}x${img.naturalHeight})`;
+                }
                 //img.classList.remove('fade-in');
                 $(self.element).spin(false);
                 setTimeout(() => {
