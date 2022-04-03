@@ -99,7 +99,7 @@ namespace MagicCMS.PageBase
 			Config = new CMS_Config();
 
 			// Home page?
-			if (rd_pageId == "home" || rd_type == "home")
+			if (rd_pageId == "home" /*|| rd_type == "home"*/)
 			{
 				p = (Config.StartPage > 0 ? Config.StartPage : MagicPost.GetSpecialItem(MagicPostTypeInfo.HomePage));
 			}
@@ -122,16 +122,13 @@ namespace MagicCMS.PageBase
 				p = MagicIndex.GetPostId(rd_pageId);
 			}
 
-            // If main page is called with no par load home page
-            if (p <= 0)
+			ThePost = new MagicPost(p);
+			// If main page is called with no par load home page
+			if (ThePost.Pk <= 0)
             {
-				//if (Path.GetFileName(Request.Url.LocalPath) == "Contenuti.aspx" || Path.GetFileName(Request.Url.LocalPath) == "")
-				//	p = (Config.StartPage > 0 ? Config.StartPage : MagicPost.GetSpecialItem(MagicPostTypeInfo.HomePage));
 				Response.Redirect("/error/404");
             }
-			else
-				// Create post object
-				ThePost = new MagicPost(p);
+				
 
 
             if (ThePost.Pk != 0) {

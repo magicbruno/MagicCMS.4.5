@@ -73,7 +73,7 @@ namespace MagicCMS.Routing
 			});
 			routes.MapPageRoute("full", "{type}/{subType}/{pageId}", "~/Contenuti.aspx", true, new RouteValueDictionary { { "type", "" } });
 			routes.MapPageRoute("short", "{type}/{pageId}", "~/Contenuti.aspx", true, new RouteValueDictionary { { "type", "" } });
-            
+			routes.MapPageRoute("veryshort", "{pageId}", "~/Contenuti.aspx", true, new RouteValueDictionary { { "pageId", "home" } });
 		}
 
 	}
