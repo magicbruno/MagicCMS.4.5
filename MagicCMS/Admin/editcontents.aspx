@@ -720,7 +720,7 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Scripts" runat="server">
     <!-- START script Pannello di editing  blocco 1 Viewer e Upload-->
-    <script src="assets-2022/mb/FM_Viewer.js"></script>
+    <script src="assets-2022/mb/FM_Viewer.js?v=2"></script>
     <script src="assets-2022/mb/MB_FileUpload.js"></script>
     <script>
         (function (win, $) {

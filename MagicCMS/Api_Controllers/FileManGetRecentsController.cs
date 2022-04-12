@@ -21,7 +21,7 @@ namespace MagicCMS.Api_Controllers
             DirectoryInfo dirInfo = new DirectoryInfo(physicalRoot);
             List<FileInfo> files;
             files = dirInfo.EnumerateFiles("*.*", SearchOption.AllDirectories)
-                .OrderByDescending(f => f.LastAccessTime)
+                .OrderByDescending(f => f.LastWriteTime)
                 .Take(max)
                 .ToList();
 

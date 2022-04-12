@@ -371,6 +371,17 @@
         "fonts/fontawesome-webfont.woff2",
         "fonts/FontAwesome.otf"
       ]
+    },
+    {
+      "provider": "cdnjs",
+      "library": "cropperjs@1.5.12",
+      "destination": "Admin/assets-2022/cropperjs/",
+      "files": [
+        "cropper.min.js",
+        "cropper.css",
+        "cropper.js",
+        "cropper.min.css"
+      ]
     }
   ]
 }

@@ -33,27 +33,28 @@ namespace MagicCMS.Admin.Session
 			}
 			else
 			{
-				UserToken userToken = new UserToken(MagicSession.Current.LoggedUser);
-				TimeSpan expiretime = DateTime.Now - MagicSession.Current.SessionStart;
-				if (expiretime.TotalSeconds > 5400 && userToken.IsExpired)
-				{
-					response.success = false;
-					response.msg = "Sessione scaduta. È necessario ripetere il login";
-					response.exitcode = -1;
-					MagicSession.Current.LoggedUser = new MagicUser();
-				}
-				else if (expiretime.TotalSeconds > 5280 && userToken.DaysToExpiration <= 1)
-				{
-					int remaining = Convert.ToInt32( 5400 - expiretime.TotalSeconds);
-					response.data = remaining;
-					response.success = true;
-					response.msg = "Attenzione: " + (remaining / 60).ToString() + " minuti e " + (remaining % 60).ToString() + " secondi alla fine della sessione. Salva il lavoro e preparati a ripetere il login";
-					response.exitcode = 1;
-				}
-				else
-				{
-					response.data = "Sessione attiva";
-				}
+				//UserToken userToken = new UserToken(MagicSession.Current.LoggedUser);
+				//TimeSpan expiretime = DateTime.Now - MagicSession.Current.SessionStart;
+				//if (expiretime.TotalSeconds > 5400 && userToken.IsExpired)
+				//{
+				//	response.success = false;
+				//	response.msg = "Sessione scaduta. È necessario ripetere il login";
+				//	response.exitcode = -1;
+				//	MagicSession.Current.LoggedUser = new MagicUser();
+				//}
+				//else if (expiretime.TotalSeconds > 5280 && userToken.DaysToExpiration <= 1)
+				//{
+				//	int remaining = Convert.ToInt32( 5400 - expiretime.TotalSeconds);
+				//	response.data = remaining;
+				//	response.success = true;
+				//	response.msg = "Attenzione: " + (remaining / 60).ToString() + " minuti e " + (remaining % 60).ToString() + " secondi alla fine della sessione. Salva il lavoro e preparati a ripetere il login";
+				//	response.exitcode = 1;
+				//}
+				//else
+				//{
+				//	response.data = "Sessione attiva";
+				//}
+				response.data = "Sessione attiva";
 			}
 
 

@@ -249,7 +249,7 @@ body.fixed {
 .fm-context-menu {
     position:fixed;
     top: -1000px;
-    z-index: 10000;
+    z-index: 1058;
     // Disabilita select quando l'oggeto è una cartella
     &[data-type="Folder"] [data-action="select-file"] {
         opacity: 0.3;
@@ -264,7 +264,7 @@ body.fixed {
     left: 0;
     height: 100%;
     width: 100%;
-    z-index: 10000;
+    z-index: 1059;
     transition: all 0.5s;
     display: flex;
     justify-content: center;

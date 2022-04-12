@@ -3,8 +3,8 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
-        body {
-            background-color: #222;
+        body, html {
+            background-color: #222 !important;
         }
     </style>
     <% = Captcha ? "<script src='https://www.google.com/recaptcha/api.js'></script>" : "" %>

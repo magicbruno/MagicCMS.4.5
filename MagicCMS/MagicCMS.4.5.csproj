@@ -143,6 +143,10 @@
     <Content Include="Admin\assets-2022\bootstrap-select\js\bootstrap-select.min.js" />
     <Content Include="Admin\assets-2022\bootstrap-select\js\i18n\defaults-it_IT.js" />
     <Content Include="Admin\assets-2022\bootstrap-select\js\i18n\defaults-it_IT.min.js" />
+    <Content Include="Admin\assets-2022\cropperjs\cropper.css" />
+    <Content Include="Admin\assets-2022\cropperjs\cropper.js" />
+    <Content Include="Admin\assets-2022\cropperjs\cropper.min.css" />
+    <Content Include="Admin\assets-2022\cropperjs\cropper.min.js" />
     <Content Include="Admin\assets-2022\css\AdminLTE.css" />
     <Content Include="Admin\assets-2022\css\bootstrap\bootstrap-grid.css" />
     <Content Include="Admin\assets-2022\css\bootstrap\bootstrap-grid.min.css" />
@@ -4215,6 +4219,8 @@
     <Compile Include="Api_Controllers\ContentsPaginatedController.cs" />
     <Compile Include="Api_Controllers\TextTranslatorController.cs" />
     <Compile Include="Api_Controllers\TranslationLanguagesController.cs" />
+    <Compile Include="Api_Controllers\UploadBase64Controller.cs" />
+    <Compile Include="Api_Models\UploadBase64Model.cs" />
     <Compile Include="Api_Controllers\UserCsvAsyncController.cs" />
     <Compile Include="Api_Models\CK_UploadResponse.cs" />
     <Compile Include="Api_Models\FileManComparerByDate.cs" />
@@ -4927,6 +4933,7 @@
     <Content Include="test-root\image\img_prodotti\viatabacchi\vista 1.pdf" />
     <Content Include="test-root\image\img_soci\Thumbs.db" />
     <Content Include="test-root\image\Thumbs.db" />
+    <Content Include="tsconfig.json" />
     <None Include="web.config.install.xdt">
       <SubType>Designer</SubType>
     </None>
@@ -4949,6 +4956,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="Admin\Scripts\plugins\datatables.net-bs\types\dataTables.bootstrap.d.ts" />
     <TypeScriptCompile Include="Admin\Scripts\plugins\datatables.net\types\types.d.ts" />
+    <TypeScriptCompile Include="empty.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

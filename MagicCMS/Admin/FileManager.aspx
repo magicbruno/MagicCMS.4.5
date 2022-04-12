@@ -2,6 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="assets-2022/css/file-man.css" rel="stylesheet" />
+    <link href="assets-2022/cropperjs/cropper.min.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -279,13 +280,17 @@
     <!-- FILE MANAGER VIEWER -->
     <div class="fm-viewer off-screen" id="theViewer">
 
-        <nav class="navbar fm-navbar bg-transparent position-absolute d-flex align-items-center border-0 pl-4 px top-0" role="navigation">
+        <nav class="navbar fm-navbar bg-transparent position-absolute d-flex align-items-center border-0 pl-4 px top-0 viewer-navbar" role="navigation">
             <!-- Sidebar toggle button-->
             <span class="align-self-start h3 text-white my-auto viewer-title"></span>
             <div class="navbar-right d-flex justify-content-end ml-auto mr-0 ">
 
                 <ul class="nav navbar-nav d-flex align-items-center mr-1">
-
+                    <li class="">
+                        <button type="button" data-action="crop-file" title="Rifila e ridimensione l'immagine" class="btn btn-icon btn-lg btn-dark px-3 rounded-0">
+                            <i class="fa fa-fw fa-crop"></i>
+                        </button>
+                    </li>
                     <li class="">
                         <button type="button" data-action="select-file" title="Scegli questo file" class="btn btn-icon btn-lg btn-dark px-3 rounded-0">
                             <i class="fa fa-fw  fa-check-square"></i>
@@ -313,6 +318,87 @@
                     </li>
                     <li class="">
                         <button type="button" data-action="close-viewer" title="Chiudi" class="btn btn-icon btn-lg btn-dark px-3 rounded-0  ml-1">
+                            <i class="fa fa-fw  fa-times"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <nav class="navbar fm-navbar navbar-dark fixed-top d-flex align-items-center border-0 pl-4 px top-0 d-none cropper-navbar" role="navigation">
+            <div class="d-flex justify-content-between ml-auto mr-0 w-100">
+                <ul class="nav navbar-nav d-flex align-items-center ml-1">
+                    <li class="dropdown">
+                        <button type="button" title="Impostazioni" data-toggle="dropdown" class="btn btn-icon btn-lg btn-dark px-3 rounded-0 dropdown-toggle">
+                            <i class="fa fa-fw fa-cog mr-2"></i>
+                            <span class="d-none d-md-inline">Impostazioni</span> <i class="caret ml-1"></i>
+                        </button>
+                        <ul class="dropdown-menu position-absolute bg-black px-4 py-3 keep-open" style="min-width: 230px">
+                            <li class="form-group">
+                                <label class="text-white" title="Aspect ratio dell'immagine ritagliata">Proporzioni ritaglio</label>
+                                <select class="form-control input-sm" data-action="cropper-aspectratio">
+                                    <option value="default" selected>Immagine</option>
+                                    <option value="1.778">16x9</option>
+                                    <option value="1.333">4x3</option>
+                                    <option value="1">1x1</option>
+                                    <option value="0.75">3x4</option>
+                                    <option value="0.667">2x3</option>
+                                    <option value="">Libere</option>
+                                </select>
+                            </li>
+                            <li class="form-group">
+                                <label class="text-white" title="Larghezza immagine ridimensionata">Largezza ritaglio (px)</label>
+                                <input type="text" list="predefinedWidths" class="form-control input-sm" title="Larghezza immagine ridimensionata"
+                                    data-action="cropper-width" />
+                                <datalist id="predefinedWidths">
+                                    <option>95</option>
+                                    <option>190</option>
+                                    <option>285</option>
+                                    <option>380</option>
+                                    <option>475</option>
+                                    <option>570</option>
+                                    <option>665</option>
+                                    <option>760</option>
+                                    <option>855</option>
+                                    <option>950</option>
+                                    <option>1140</option>
+                                </datalist>
+                            </li>
+                            <li class="form-group">
+                                <label class="text-white" title="Qualità dell'immagine (se jpeg)">Qualità jpeg</label>
+                                <input type="number" max="10" min="1" step="1" class="form-control input-sm" title="Qualità dell'immagine (se jpeg)"
+                                    data-action="cropper-quality" value="8" />
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <button type="button" title="Anteprima ritaglio e ridimensionamento" data-action="cropper-preview"
+                            class="btn btn-icon btn-lg btn-dark px-3 rounded-0">
+                            <i class="fa fa-fw fa-eye mr-2"></i>
+                            <span class="d-none d-md-inline">Anteprima</span>
+                        </button>
+                    </li>
+                    <li class="dropdown">
+                        <button type="button" title="Salva l'immagine sul server remoto" data-toggle="dropdown"
+                            class="btn btn-icon btn-lg btn-dark px-3 rounded-0 dropdown-toggle">
+                            <i class="fa fa-fw fa-save mr-2"></i>
+                            <span class="d-none d-md-inline">Salva</span>
+                        </button>
+                        <ul class="dropdown-menu position-absolute bg-black text-white">
+                            <li>
+                                <a class="dropdown-item text-white" data-action="cropper-savecopy" href="#">Salva una copia</a>
+
+                            </li>
+                            <li>
+                                <a class="dropdown-item text-white" data-action="cropper-save" href="#">Salva e sostituisci</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav d-flex align-items-center mr-1">
+
+                    <li>
+                        <button type="button" title="Annulla" data-action="close-cropper" class="btn btn-icon btn-lg btn-dark px-3 rounded-0  ml-1">
                             <i class="fa fa-fw  fa-times"></i>
                         </button>
                     </li>
@@ -395,8 +481,9 @@
             <td>{{CreationTimeStr}}</td>
         </tr>
     </script>
+    <script src="assets-2022/cropperjs/cropper.min.js"></script>
     <!-- Classe FM_Viewer che gestisce la visualizzazione di file nel File Manager -->
-    <script src="assets-2022/mb/FM_Viewer.js?v=1"></script>
+    <script src="assets-2022/mb/FM_Viewer.js?v=2"></script>
     <!-- Classe MB_FileUpload che gestisce l'interfaccia con il controller FileUpload -->
     <script src="assets-2022/mb/MB_FileUpload.js"></script>
 
@@ -431,6 +518,9 @@
             });
 
             $('.active [data-toggle="tab"]').trigger('show.bs.tab');
+
+            // Mantiene aperto dropdown al click
+            $('.dropdown-menu.keep-open').on('click', event => event.stopPropagation());
         });
 
         (function (win, $) {
@@ -1084,6 +1174,7 @@
                     this.images = new FM_Image(root, this.$container.find('[data-fm-tab="images"]'));
                     this.recents = new FM_Recents(80, this.$container.find('[data-fm-tab="recents"]'))
                     this.viewer = new FM_Viewer(viewerSelector);
+                    this.viewer.fileManager = this;
                     this.fileUpload = new MB_FileUpload("/api/FileUpload");
                     this.contextMenu = this.$container.find('.fm-context-menu');
                     this.modalDirTree = this.$container.find('.modal-dir-tree');
@@ -1452,7 +1543,9 @@
 
                 }
 
+
                 newFolder() {
+
                     const self = this;
                     this.getNewName({
                         Type: 'Folder',
@@ -1819,6 +1912,13 @@
                 }
 
                 getNewName(fileInfo, title) {
+                    const isValidFilename = fname => {
+                        var rg1 = /^[^\\/:\*\?"<>\|]+$/; // forbidden characters \ / : * ? " < > |
+                        var rg2 = /^\./; // cannot start with dot (.)
+                        var rg3 = /^(nul|prn|con|lpt[0-9]|com[0-9])(\.|$)/i; // forbidden file names
+
+                        return rg1.test(fname) && !rg2.test(fname) && !rg3.test(fname);
+                    }
                     let t = title || 'Rinomina file';
                     this.modalRename.modal('show');
                     this.modalRename.find('.modal-title').html(title);
@@ -1830,12 +1930,8 @@
                             if (self.modalRename.attr('data-ok')) {
                                 self.modalRename.removeAttr('data-ok');
                                 nome = self.modalRename.find('input').val();
-                                var regex;
-                                if (fileInfo.Type == 'Folder')
-                                    regex = /^[\w,\s-]+[\.]{0,1}[A-Za-z]*$/g;
-                                else
-                                    regex = /^[\w,\s-]+[\.][A-Za-z]+$/g;
-                                if (!regex.test(nome))
+
+                                if (!isValidFilename(nome))
                                     reject('Nome di file o directory non valido!');
                                 else
                                     resolve(nome);
