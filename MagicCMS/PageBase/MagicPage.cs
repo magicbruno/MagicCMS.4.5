@@ -217,7 +217,7 @@ namespace MagicCMS.PageBase
 			if (ThePost == null)
 				return;
 
-			if (ThePost.Pk == PreviewPk)
+			if (ThePost.Pk == PreviewPk && PreviewPk > 0)
 			{
 				ThePost.FlagCancellazione = true;
 				string message;

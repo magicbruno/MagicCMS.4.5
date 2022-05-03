@@ -61,13 +61,13 @@ namespace MagicCMS.Api_Controllers
                         if((origin.Attributes & FileAttributes.Directory) != FileAttributes.Directory)
                             destination = Path.Combine(destination, origin.Name);
                         destinfo = new FileInfo(destination);
-                      break;
+                        break;
                     case FileManOperation.Rename:
                         destination = Path.Combine(origin.Directory.FullName, par.Destination);
                         destinfo = new FileInfo(destination);
                         break;
                     case FileManOperation.Create:
-                        destination = Path.Combine(origin.FullName, par.Destination);
+                        destination = Path.Combine(origin.DirectoryName, par.Destination);
                         //destinfo = new FileInfo(destination);
                         Directory.CreateDirectory(destination);
                         break;

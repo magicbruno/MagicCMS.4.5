@@ -1800,7 +1800,7 @@
                         if (result.isConfirmed) {
                             self.move(fileinfo)
                                 .then(() => self.reload())
-                                .catch(error => Swall.fire({
+                                .catch(error => Swal.fire({
                                     icon: 'error',
                                     title: 'Errore!',
                                     text: error

@@ -86,7 +86,14 @@ namespace MagicCMS.Api_Controllers
 
                 if (!string.IsNullOrEmpty(provider.FormData["destination"]))
                 {
-                    fullname = HttpContext.Current.Server.MapPath(provider.FormData["destination"]) + @"\" + filedata.Headers.ContentDisposition.FileName.Replace("\"", "");
+                    FileInfo fi = new FileInfo(HttpContext.Current.Server.MapPath(provider.FormData["destination"]));
+                    string name = "";
+                    if (fi.Attributes.HasFlag(FileAttributes.Directory))
+                        name = fi.FullName;
+                    else
+                        name = fi.DirectoryName;
+                   
+                    fullname = name + @"\" + filedata.Headers.ContentDisposition.FileName.Replace("\"", "");
                 }                 
                 else
                 {
