@@ -67,8 +67,10 @@ namespace MagicCMS.Api_Controllers
                         destinfo = new FileInfo(destination);
                         break;
                     case FileManOperation.Create:
-                        destination = Path.Combine(origin.DirectoryName, par.Destination);
-                        //destinfo = new FileInfo(destination);
+                        if(origin.Attributes.HasFlag(FileAttributes.Directory))
+                            destination = Path.Combine(origin.FullName, par.Destination);
+                        else
+                            destination = Path.Combine(origin.DirectoryName, par.Destination);
                         Directory.CreateDirectory(destination);
                         break;
                     default:

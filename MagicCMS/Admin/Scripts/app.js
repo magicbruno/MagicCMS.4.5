@@ -141,6 +141,7 @@ $(function () {
     });
 
 });
+
 var test = true;
 function fix_sidebar() {
     //Make sure the body tag has the .fixed class

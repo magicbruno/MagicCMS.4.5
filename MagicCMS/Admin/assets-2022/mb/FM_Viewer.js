@@ -22,7 +22,7 @@ class MB_File {
         let extpos = this.Url.lastIndexOf('.');
         let ext = '';
         if (extpos > -1) {
-            ext = this.Url.substr(extpos);
+            ext = this.Url.substr(extpos).toLowerCase();
         }
         const images = ('.jpg,.jpeg,.svg,.gif,.png').split(',');
         const otherHandled = ('.mov,.mpeg,.mp3,.mp4,.wav,.pdf').split(',');

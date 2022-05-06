@@ -377,7 +377,7 @@
     </div>
 </asp:Content>
 <asp:Content ID="Script" ContentPlaceHolderID="Script" runat="server">
-    <script src="Scripts/app.min.js"></script>
+    <script src="Scripts/app.min.js?v=1"></script>
     <script>
         // ckeditor config.file /config.js) may be defined by the theme (Page Property CKE_Config contains the url 
         // of the file
