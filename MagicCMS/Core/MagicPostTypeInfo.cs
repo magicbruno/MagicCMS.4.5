@@ -1273,7 +1273,7 @@ namespace MagicCMS.Core
 				}
 
 
-				if (MagicIndex.TipiEsclusi.Contains(Pk))
+				if (MagicIndex.TipiEsclusi.Contains(Pk) && String.IsNullOrWhiteSpace(MasterPageFile))
 				{
 					_list.Add("." + ("Permalink"));
 				}

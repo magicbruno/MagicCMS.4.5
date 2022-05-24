@@ -579,7 +579,7 @@ class FM_Viewer {
         else {
             let viewerNavbar = this.element.querySelector('.viewer-navbar');
             let cropperNavbar = this.element.querySelector('.cropper-navbar');
-            let cropperOption = cropperNavbar.querySelector('.dropdown-toggle');
+            let cropperOption = cropperNavbar.querySelector('.dropdown-menu');
             viewerNavbar.classList.add('d-none');
             cropperNavbar.classList.remove('d-none');
             let image = this.element.querySelector('.viewer-content');
@@ -587,6 +587,9 @@ class FM_Viewer {
             this.cropper.crop(image, myFile.Type).then(() => {
                 self.inputCropperWidth.value = self.cropper.width;
                 self.inputCropperQuality.value = Math.round(self.cropper.quality * 10);
+                let select = cropperOption.querySelector('select');
+                if(select)
+                    select.value = 'default';
                 cropperOption.click();
             });
             
@@ -664,6 +667,7 @@ class FM_Viewer {
                 .then(() => {
                     icon.classList.remove('fa-arrows-alt');
                     icon.classList.add('fa-compress');
+                    self.btnCropFile.classList.add('disabled');
                 })
                 .catch(err => {
                     Swal.fire({
@@ -675,6 +679,7 @@ class FM_Viewer {
             document.exitFullscreen();
             icon.classList.add('fa-arrows-alt');
             icon.classList.remove('fa-compress');
+            self.btnCropFile.classList.remove('disabled');
         }
     }
 

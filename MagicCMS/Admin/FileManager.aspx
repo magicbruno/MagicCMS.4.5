@@ -483,7 +483,7 @@
     </script>
     <script src="assets-2022/cropperjs/cropper.min.js"></script>
     <!-- Classe FM_Viewer che gestisce la visualizzazione di file nel File Manager -->
-    <script src="assets-2022/mb/FM_Viewer.js?v=2"></script>
+    <script src="assets-2022/mb/FM_Viewer.js?v=5"></script>
     <!-- Classe MB_FileUpload che gestisce l'interfaccia con il controller FileUpload -->
     <script src="assets-2022/mb/MB_FileUpload.js"></script>
 

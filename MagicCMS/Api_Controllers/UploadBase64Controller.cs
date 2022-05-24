@@ -56,7 +56,8 @@ namespace MagicCMS.Api_Controllers
                 {
                     originalFull = Path.Combine(Path.GetDirectoryName(originalFull), newName);
                 }
-                originalFull = Path.Combine(Path.GetDirectoryName(originalFull), Path.GetFileNameWithoutExtension(originalFull) + extension);
+                else if (!inputData.Overwrite.Value)
+                    originalFull = Path.Combine(Path.GetDirectoryName(originalFull), Path.GetFileNameWithoutExtension(originalFull) + extension);
                 
                 FileInfo info = new FileInfo(originalFull);
                 if(inputData.Overwrite.Value && info.Exists)

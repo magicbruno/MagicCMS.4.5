@@ -651,7 +651,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-success btn-sm" data-action="save-and-reload">
-                        Sarva e ricarica</button>
+                        Salva e ricarica</button>
                     <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">
                         Annulla</button>
                 </div>
