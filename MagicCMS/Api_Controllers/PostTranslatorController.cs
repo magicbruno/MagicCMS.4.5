@@ -51,7 +51,11 @@ namespace MagicCMS.Api_Controllers
                     text = StringHtmlExtensions.TruncateWords(text, 1000);
                     response.Title.Error = "Il titolo da tradurre supera i 1000 caratteri: la traduzione verrà troncata!";
                     response.Title.Success = false;
-                }              
+                }
+                else if (string.IsNullOrWhiteSpace(text))
+                {
+                    throw new Exception("È necessario impostare il campo Titolo mostarto per ottenere la traduzione del record.");
+                }
                 response.Title.TranslatedLength = text.Length;
 
                 BingTranslatorResponse translations = await MagicTranslator.BingTranslator.TranslateAsync(text, daTradurre.To, daTradurre.From, "plain");

@@ -18,7 +18,7 @@ class MB_FileUpload {
             this.maxLength = options.maxLength
     }
 
-    allowedFileTypes = ('.jpg,.jpeg,.doc,.docx,.svg,.zip,.gif,.png,.pdf,.rar,.svg,.svgz,.xls,.xlsx,.ppt,.pps,.pptx,.mov,.mpeg,.mp3,.mp4,.wav').split(',');
+    allowedFileTypes = ('.jpg,.jpeg,.doc,.docx,.svg,.zip,.gif,.png,.pdf,.rar,.svg,.svgz,.xls,.xlsx,.ppt,.pps,.pptx,.mov,.mpeg,.mp3,.mp4,.wav,.vtt,.srt').split(',');
     endPoint = '';
     input = null;
     maxLength = 50 * 1024 * 1024;

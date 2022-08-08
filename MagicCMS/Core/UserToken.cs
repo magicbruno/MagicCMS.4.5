@@ -38,9 +38,9 @@ namespace MagicCMS.Core
         #endregion
 
         #region constructor
-        public UserToken(int pk)
+        public UserToken(int userPk)
         {
-            Init();
+            Init(userPk);
         }
         public UserToken(string token)
         {

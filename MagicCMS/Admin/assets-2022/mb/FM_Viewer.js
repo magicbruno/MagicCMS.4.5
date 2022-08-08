@@ -167,6 +167,7 @@ class FM_Cropper {
 
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
+
         myHeaders.append("Authorization", "Bearer " + Cookies.get('MB_AuthToken'));
         var requestOptions = {
             method: 'POST',

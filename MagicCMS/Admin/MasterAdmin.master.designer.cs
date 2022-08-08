@@ -24,6 +24,15 @@ namespace MagicCMS.Admin
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
 
         /// <summary>
+        /// Controllo MB_AuthToken.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField MB_AuthToken;
+
+        /// <summary>
         /// Controllo sitename.
         /// </summary>
         /// <remarks>

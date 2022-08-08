@@ -25,7 +25,7 @@
 	 editorsMail=""
 	 defaultImage="/Themes/Default/ico/fb.png"
 	 imagesPath="/Themes/Default/ico/"
-	 allowedFileTypes="jpg,jpeg,doc,docx,zip,gif,png,pdf,rar,svg,svgz,xls,xlsx,ppt,pps,pptx"
+	 allowedFileTypes="jpg,jpeg,doc,docx,zip,gif,png,pdf,rar,svg,svgz,xls,xlsx,ppt,pps,pptx,vtt,srt"
 	 testoBreveDefLength="300"
 	 GoogleCaptchaSecret=""
 	 GoogleCaptchaSite=""
@@ -168,6 +168,10 @@
 			<mimeMap fileExtension=".webp" mimeType="image/webp"/>
 			<remove fileExtension=".htc"/>
 			<mimeMap fileExtension=".htc" mimeType="text/x-component"/>
+			<remove fileExtension=".vtt" />
+			<mimeMap fileExtension=".vtt" mimeType="text/vtt" />
+			<remove fileExtension=".srt" />
+			<mimeMap fileExtension=".srt" mimeType="text/plain" />
 			<remove fileExtension=".vcf"/>
 			<mimeMap fileExtension=".vcf" mimeType="text/x-vcard"/>
 			<remove fileExtension=".torrent"/>

@@ -1284,6 +1284,7 @@
 
             // Loading tags from database
             $('#Tags').parent().spin();
+
             var settings = {
                 "url": "/api/Keywords",
                 "data": { "lang": "default", "k": "" },
@@ -1339,6 +1340,7 @@
                 var $tags = $(this);
                 var lang = $tags.parents('.form-horizontal').find('[name="LangId"]').val();
                 $tags.parent().spin();
+
                 var settings = {
                     "url": "/api/Keywords",
                     "data": { "lang": lang, "k": "" },
@@ -1580,6 +1582,7 @@
                             "From": $('#select-from-lang').val(),
                             "TextType": "html"
                         };
+
                         var settings = {
                             "url": "/api/TextTranslator",
                             "method": "POST",
@@ -1684,6 +1687,7 @@
                                 cancelButtonText: `No`
                             }).then(result => {
                                 if (result.isConfirmed) {
+
                                     var myHeaders = new Headers();
                                     myHeaders.append("Content-Type", "application/json");
                                     myHeaders.append("Authorization", "Bearer " + Cookies.get('MB_AuthToken'));
@@ -1847,6 +1851,7 @@
                 var testoLungo = $('#TestoLungo').val();
                 var tags = $('#Tags').val();
                 var param = {};
+
                 if (action == 'translate') {
                     var data = {
                         To: langid,
@@ -1885,11 +1890,13 @@
                                         $form.find('[name="TranslatedTestoBreve"]').val(data.TestoBreve.Translation);
                                         $form.find('[name="TranslatedTestoLungo"]').val(data.TestoLungo.Translation);
                                         $form.find('[name="TranslatedTags"]').select2("val", data.Tags.Translation.split(','));
+                                        $form.find('[name="PermalinkTitle"]').val(data.Title.Translation).trigger('change');
                                     } else if (result.isDenied) {
                                         $form.find('[name="TranslatedTitle"]').val(data.Title.Translation);
                                         $form.find('[name="TranslatedTestoBreve"]').val($form.find('[name="TranslatedTestoBreve"]').val() + data.TestoBreve.Translation);
                                         $form.find('[name="TranslatedTestoLungo"]').val($form.find('[name="TranslatedTestoLungo"]').val() + data.TestoLungo.Translation);
                                         $form.find('[name="TranslatedTags"]').select2("val", data.Tags.Translation.split(','));
+                                        $form.find('[name="PermalinkTitle"]').val(data.Title.Translation).trigger('change');
                                     }
                                 })
                             } else {
@@ -2197,7 +2204,6 @@
             });
 
             $title.on('change', function () {
-
                 var settings = {
                     "url": "/api/CheckPermalink",
                     "method": "POST",

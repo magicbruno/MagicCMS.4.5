@@ -6,6 +6,7 @@
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
 </asp:Content>
 <asp:Content ID="TheContent" ContentPlaceHolderID="MainContent" runat="server">
+    <asp:HiddenField ID="MB_AuthToken" runat="server" />
     <header class="header">
         <!-- Header Navbar: style can be found in header.less -->
         <a href="/Admin/" class="logo">
@@ -378,6 +379,15 @@
 </asp:Content>
 <asp:Content ID="Script" ContentPlaceHolderID="Script" runat="server">
     <script src="Scripts/app.min.js?v=1"></script>
+    <script>
+        if (!Cookies.get('MB_AuthToken')) {
+            let url = location.href;
+            if (url.indexOf('https:') == -1) {
+                url = url.replace('http', 'https');
+                location.href = url;
+            };
+        }
+    </script>
     <script>
         // ckeditor config.file /config.js) may be defined by the theme (Page Property CKE_Config contains the url 
         // of the file

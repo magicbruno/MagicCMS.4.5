@@ -90,6 +90,12 @@ namespace MagicCMS.Admin
             {
                 MagicSession.Current.LastAccessTry = Request.Url.PathAndQuery;
                 Response.Redirect("login.aspx");
+            } 
+            else
+            {
+                UserToken userToken = new UserToken(MagicSession.Current.LoggedUser.Pk);
+                //if (!userToken.IsExpired)
+                MB_AuthToken.Value = userToken.Token;
             }
 
             // Usern name and role 
