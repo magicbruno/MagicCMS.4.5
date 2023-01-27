@@ -221,48 +221,48 @@ $(function () {
 ---------------------------------------------*/
 $(function () {
 
-	$("#map_canvas").gmap3({
-		//map: {
-		//    address: mapaddress,
-		//    options: {
-		//        zoom: mapzoom,		//initial zoom defined above
-		//        scrollwheel: false  //No mousewheel zomm-> set to true to activate
-		//    },
-		//    events: {
-		//        // Close infowindow when click outside
-		//        click: function () {
-		//            var map = $(this).gmap3("get"),
-		//			  infowindow = $(this).gmap3({ get: { name: "infowindow" } });
-		//            if (infowindow)
-		//                infowindow.close();
-		//        }
-		//    }
-		//},
-		//marker: {
-		//    values: markervalues,		// Marker define above
-		//    options: {
-		//        draggable: false		// You can't drag markers!
-		//    },
-		//    events: {
-		//        // Open infowindow on marker click
-		//        click: function (marker, event, context) {
-		//            var map = $(this).gmap3("get"),
-		//			  infowindow = $(this).gmap3({ get: { name: "infowindow" } });
-		//            if (infowindow) {
-		//                infowindow.open(map, marker);
-		//                infowindow.setContent(context.data);
-		//            } else {
-		//                $(this).gmap3({
-		//                    infowindow: {
-		//                        anchor: marker,		// Infowindow is over the clicked marker
-		//                        options: { content: context.data }  // HTML content of infowoindow (as defined above)
-		//                    }
-		//                });
-		//            }
-		//        }
-		//    }
-		//}
-	});
+	//$("#map_canvas").gmap3({
+	//	//map: {
+	//	//    address: mapaddress,
+	//	//    options: {
+	//	//        zoom: mapzoom,		//initial zoom defined above
+	//	//        scrollwheel: false  //No mousewheel zomm-> set to true to activate
+	//	//    },
+	//	//    events: {
+	//	//        // Close infowindow when click outside
+	//	//        click: function () {
+	//	//            var map = $(this).gmap3("get"),
+	//	//			  infowindow = $(this).gmap3({ get: { name: "infowindow" } });
+	//	//            if (infowindow)
+	//	//                infowindow.close();
+	//	//        }
+	//	//    }
+	//	//},
+	//	//marker: {
+	//	//    values: markervalues,		// Marker define above
+	//	//    options: {
+	//	//        draggable: false		// You can't drag markers!
+	//	//    },
+	//	//    events: {
+	//	//        // Open infowindow on marker click
+	//	//        click: function (marker, event, context) {
+	//	//            var map = $(this).gmap3("get"),
+	//	//			  infowindow = $(this).gmap3({ get: { name: "infowindow" } });
+	//	//            if (infowindow) {
+	//	//                infowindow.open(map, marker);
+	//	//                infowindow.setContent(context.data);
+	//	//            } else {
+	//	//                $(this).gmap3({
+	//	//                    infowindow: {
+	//	//                        anchor: marker,		// Infowindow is over the clicked marker
+	//	//                        options: { content: context.data }  // HTML content of infowoindow (as defined above)
+	//	//                    }
+	//	//                });
+	//	//            }
+	//	//        }
+	//	//    }
+	//	//}
+	//});
 	$(window).on("load resize", function () {
 		var $target = $('.addresses .img-responsive').css("max-height", 10000 + 'px');
 		var $target2 = $('addresses > div').css("height", "auto");

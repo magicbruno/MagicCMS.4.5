@@ -67,7 +67,7 @@ namespace MagicCMS
                             notificaUser.Subject = "R: Richiesta di informazioni";
                             notificaUser.IsBodyHtml = true;
                             notificaUser.Body = "<p>Egr. signora/signor, <br />" +
-                                            "La sua richiesta di infromazioni è arrivata allo staff di " + config.SiteName + ".</p>" +
+                                            "La sua richiesta di informazioni è arrivata allo staff di " + config.SiteName + ".</p>" +
                                             "<p>Verrà contattata/o al più presto.</p>" +
                                             "<p>Cordiali Saluti</p>";
                             smtp.Send(notificaUser);

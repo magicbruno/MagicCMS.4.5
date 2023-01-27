@@ -3,12 +3,11 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
-        body {
+        body, html {
             background-color: #222;
         }
     </style>
     <% = Captcha ? "<script src='https://www.google.com/recaptcha/api.js'></script>" : "" %>
-
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <section id="login-container" style="overflow: hidden">
@@ -37,26 +36,44 @@
                 var usr_email = $('#email').val();
                 var googleRecaptcha, param;
                 if ($('#g-recaptcha-response').length) {
-                	googleRecaptcha = $('#g-recaptcha-response').val();
-                	if (!googleRecaptcha) {
-                		e.preventDefault();
-                		bootbox.alert("<%= Translate("È necessario eseguire la verifica reCaptcha") %>!");
-						return;
-                	}
-                	param = { email: usr_email, "g-recaptcha-response": googleRecaptcha };
+                    googleRecaptcha = $('#g-recaptcha-response').val();
+                    if (!googleRecaptcha) {
+                        e.preventDefault();
+                        Swal.fire({
+                            icon: "error",
+                            title: 'Errore',
+                            text: "<%= Translate("È necessario eseguire la verifica reCaptcha") %>!"
+                        });
+
+                        return;
+                    }
+                    param = { email: usr_email, "g-recaptcha-response": googleRecaptcha };
                 } else {
-                	param = { email: usr_email };
+                    param = { email: usr_email };
                 };
-                
+
                 $.post('Ajax/PwdRequest.ashx', param, 'JSON')
                     .fail(function (jqxhr, textStatus, error) {
-                    	bootbox.alert('<%= Translate("Si è verificaro un errore") %>: ' + textStatus + "," + error);
+                        Swal.fire({
+                            icon: "error",
+                            title: 'Errore',
+                            text: 'Si è verificaro un errore: ' + textStatus + ", " + error
+                        });
                     })
                     .done(function (data) {
                         if (data.success) {
-                        	bootbox.alert('<%= Translate("La tua password è stata inviata con successo alla tua casella di posta") %>.')
+                            Swal.fire({
+                                icon: "success",
+                                title: 'Ok!',
+                                text: '<%= Translate("La tua password è stata inviata con successo alla tua casella di posta") %>.'
+                            });
                         } else {
-                        	bootbox.alert("<%= Translate("Errore") %>: " + data.msg);
+
+                            Swal.fire({
+                                icon: "error",
+                                title: '<%= Translate("Errore") %>',
+                                text: data.msg
+                            });
                         }
                     })
             })

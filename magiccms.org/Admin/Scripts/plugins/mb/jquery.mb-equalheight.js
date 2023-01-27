@@ -1,4 +1,4 @@
-﻿/// <reference path="../vendor/jquery-1.11.0.js" />
+﻿
 
 ; (function (defaults, $, window, document, undefined) {
 

@@ -64,7 +64,7 @@
 			if(index == 0) {
 				ws = new MbWaitSpinner(options);
 				ws.show();
-				$(window).load(function () {
+				$(window).on('load', function () {
 					if ($.isFunction(ws.callback)) {
 						if (ws.callback(ws))
 							ws.hide();

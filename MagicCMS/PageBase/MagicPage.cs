@@ -123,8 +123,10 @@ namespace MagicCMS.PageBase
 			}
 
 			ThePost = new MagicPost(p);
-			// If main page is called with no par load home page
-			if (ThePost.Pk <= 0)
+			if (ThePost.FlagCancellazione)
+                Response.Redirect("/error/404");
+            // If main page is called with no par load home page
+            if (ThePost.Pk <= 0)
             {
 				Response.Redirect("/error/404");
             }

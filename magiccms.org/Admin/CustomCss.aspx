@@ -269,13 +269,26 @@
 						param.insert = (action == 'save') ? 0 : 1;
 						$.post('CustomCss/Save.ashx', param,	"json")
 							.fail(function (jqxhr, textStatus, error) {
-								bootbox.alert('Si è verificaro un errore: ' + textStatus + "," + error);
+                                Swal.fire({
+                                    icon: "error",
+                                    title: 'Errore',
+                                    text: 'Si è verificaro un errore: ' + textStatus + ", " + error
+                                })
 							})
 							.done(function (data) {
 								if (data.success) {
-									bootbox.alert(data.msg);
+									Swal.fire({
+										icon: "success",
+										title: 'Ok!',
+										text: data.msg
+									});
 								} else {
-									bootbox.alert("Errore: " + data.msg);
+
+									Swal.fire({
+										icon: "error",
+										title: 'Errore',
+										text: "Errore: " + data.msg
+									});
 								}
 							})
 							.always(function () {
@@ -324,7 +337,11 @@
 					.spin();
 				$.getJSON('CustomCss/GetSavedCss.ashx')
 					.fail(function (jqxhr, textStatus, error) {
-						bootbox.alert('Si è verificaro un errore: ' + textStatus + "," + error);
+                        Swal.fire({
+                            icon: "error",
+                            title: 'Errore',
+                            text: 'Si è verificaro un errore: ' + textStatus + ", " + error
+                        });
 						$dropdownToggle.dropdown('toggle');
 					})
 					.done(function (data) {
@@ -350,7 +367,11 @@
 								$('<li />').text('Nessuna versione salvata').appendTo($dropdownMenu);
 							}
 						} else {
-							bootbox.alert("Errore: " + data.msg);
+                            Swal.fire({
+                                icon: "error",
+                                title: 'Errore',
+                                text: "Errore: " + data.msg
+                            });
 						}
 					})
 					.always(function () {
@@ -365,13 +386,21 @@
 					myCssPreview.setValue('');
 					$.getJSON('CustomCss/GetRecord.ashx',{pk: p})
 						.fail(function (jqxhr, textStatus, error) {
-							bootbox.alert('Si è verificaro un errore: ' + textStatus + "," + error);
+                            Swal.fire({
+                                icon: "error",
+                                title: 'Errore',
+                                text: 'Si è verificaro un errore: ' + textStatus + ", " + error
+                            });
 						})
 						.done(function (data) {
 							if (data.success) {
 								myCssPreview.setValue(data.data);
 							} else {
-								bootbox.alert("Errore: " + data.msg);
+                                Swal.fire({
+                                    icon: "error",
+                                    title: 'Errore',
+                                    text: "Errore: " + data.msg
+                                });
 							}
 						})
 						.always(function () {
@@ -400,5 +429,5 @@
 				}
 			});
 		});
-	</script>
+    </script>
 </asp:Content>

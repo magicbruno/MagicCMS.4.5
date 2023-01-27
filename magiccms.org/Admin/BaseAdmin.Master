@@ -10,18 +10,29 @@
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'
         name='viewport'>
     <title runat="server" id="PageTitle"></title>
-	<link href="Scripts/plugins/ckeditor/plugins/codesnippet/lib/highlight/styles/monokai_sublime.css" rel="stylesheet" />
-    <link href="css/main.css" rel="stylesheet" />
+    <link href="Scripts/plugins/ckeditor/plugins/codesnippet/lib/highlight/styles/monokai_sublime.css" rel="stylesheet" />
+    <link href="assets-2022/css/bootstrap/bootstrap-grid.min.css" rel="stylesheet" />
+    <link href="assets-2022/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" />
+    <link href="assets-2022/css/bootstrap/bootstrap/dist/css/bootstrap-utilities.min.css" rel="stylesheet" />
+    <link href="css/main.css?v=21" rel="stylesheet" />
     <link href="Scripts/plugins/jsTree/themes/default/style.min.css" rel="stylesheet" />
     <link href="Scripts/plugins/jsTree/themes/default-dark/style.min.css" rel="stylesheet" />
     <link href="css/datepicker/datepicker3.css" rel="stylesheet" />
     <link href="css/animate-mb.css" rel="stylesheet" />
     <link href="css/iCheck/flat/orange.css" rel="stylesheet" />
-    <link href="css/datatable/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet" />
+    <link href="assets-2022/flag-icon-css/css/flag-icons.min.css" rel="stylesheet" />
+
+    <%--<link href="css/datatable/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet" />--%>
+<%--    <link href="Scripts/plugins/datatable/css/datatable.min.css" rel="stylesheet" />
+    <link href="Scripts/plugins/datatable/css/datatable-bootstrap.min.css" rel="stylesheet" />--%>
+<%--    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.11.3/datatables.min.css"/>--%>
+    <link href="assets-2022/datatables.net/datatables.min.css" rel="stylesheet" />
+    <link href="assets-2022/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet" />
+
     <link href="css/select2/select2-combined.min.css" rel="stylesheet" />
     <link href="Scripts/plugins/ckeditor/plugins/fontawesome/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <!-- Google Gmap API 3.0 -->
-<%--    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;language=it"></script>--%>
+    <%--    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;language=it"></script>--%>
 
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
@@ -29,46 +40,80 @@
     <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
     <link rel="shortcut icon" href="ico/favicon.png">
 
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-	<script src="/Scripts/modernizr/modernizr.js"></script>
+    <script src="/Scripts/modernizr/modernizr.js"></script>
     <asp:Literal ID="LiteralLoadRespond" Visible="false" runat="server"></asp:Literal>
-	<style>
-		.pac-container {
-			z-index: 1200;
-		}
-	</style>
+    <style>
+        .pac-container {
+            z-index: 1200;
+        }
+    </style>
 </head>
 <body class="skin-black fixed">
-    <form id="form1" runat="server">
+    <form id="aspnetForm" runat="server" name="aspnetForm">
         <div>
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
         </div>
     </form>
     <script src="<%= CkeditorCdn %>"></script>
-    <!--[if lt IE 9]>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="/Script/jquery-1.11.1.min.js">\x3C/script>')</script>
-    <![endif]-->
-    <!--[if gte IE 9]><!-->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/Script/jquery-2.1.1.min.js">\x3C/script>')</script>
-    <!--<![endif]-->
-    <script src="Scripts/plugins/plugins.js"></script>
-	<script>
-		$.gmap3({
-			language: "<%= MagicCMS.Core.MagicCMSConfiguration.GetConfig().BackEndLang %>",
-			key: "<% = MagicCMS.Core.MagicCMSConfiguration.GetConfig().GoogleMapApiKey %>",
-			libraries: "places"
-		});
-	</script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/<% = JQueryVersion %>/jquery.min.js"></script>
+    <script> window.jQuery || document.write('<script src="Scripts/jquery/dist/jquery.min.js"><\/script>')</script>
+
+    
+
+    <%--<script src="Scripts/plugins/plugins.js"></script>--%>
+    <script src="/Admin/Scripts/plugins/bootbox/bootbox.js"></script>
+    <script src="/Admin/Scripts/plugins/bootstrap/alert.js"></script>
+    <script src="/Admin/Scripts/plugins/bootstrap/button.js"></script>
+    <script src="/Admin/Scripts/plugins/bootstrap/collapse.js"></script>
+    <script src="/Admin/Scripts/plugins/bootstrap/dropdown.js"></script>
+    <script src="/Admin/Scripts/plugins/bootstrap/modal.js"></script>
+    <script src="/Admin/Scripts/plugins/bootstrap/tab.js"></script>
+    <script src="/Admin/Scripts/plugins/bootstrap/tooltip.js"></script>
+    <script src="/Admin/Scripts/plugins/bootstrap/transition.js"></script>
+    <script src="/Admin/Scripts/plugins/bootstrap/popover.js"></script>
+    <script src="assets-2022/datatables.net/datatables.min.js"></script>
+    <%--<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.11.3/datatables.min.js"></script>--%>
+<%--    <script src="/Admin/Scripts/plugins/datatable/jquery.dataTables.js"></script>
+    <script src="/Admin/Scripts/plugins/datatable/dataTables.bootstrap.js"></script>--%>
+    <script src="/Admin/Scripts/plugins/datepicker/bootstrap-datepicker.js"></script>
+    <script src="/Admin/Scripts/plugins/gmap3/gmap3.js"></script>
+    <script src="/Admin/Scripts/plugins/iCheck/icheck.js"></script>
+    <script src="/Admin/Scripts/plugins/jsTree/jstree.js"></script>
+    <script src="/Admin/Scripts/plugins/spin/spin.js"></script>
+    <script src="/Admin/Scripts/plugins/spin/jquery.spin.js"></script>
+    <script src="/Admin/Scripts/plugins/spin/jquery.mb-waitspinner.js"></script>
+    <script src="/Admin/Scripts/plugins/custom/jquery.sidebar.tree.js"></script>
+    <script src="/Admin/Scripts/plugins/slimScroll/jquery.slimscroll.js"></script>
+    <script src="/Admin/Scripts/plugins/select2/select2.js"></script>
+    <script src="/Admin/Scripts/plugins/select2/select2_locale_it.js"></script>
+    <script src="/Admin/Scripts/plugins/mb/jquery.mb-submit.js"></script>
+    <script src="/Admin/Scripts/plugins/mb/mb-history.js"></script>
+    <script src="/Admin/Scripts/plugins/numeric/jquery.numeric.js"></script>
+    <script src="/Admin/Scripts/plugins/bootstrap-growl/bootstrap-growl.js"></script>
+    <script src="assets-2022/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <script src="assets-2022/bootstrap-select/js/i18n/defaults-it_IT.min.js"></script>
+    <script src="assets-2022/sweetalert2/dist/sweetalert2.min.js"></script>
+    <script src="assets-2022/mustache/mustache.min.js"></script>
+
+    <script>$.fn.selectpicker.Constructor.DEFAULTS.iconBase = 'fa';</script>
+    <script>
+        $.gmap3({
+            language: "<%= MagicCMS.Core.MagicCMSConfiguration.GetConfig().BackEndLang %>",
+            key: "<% = MagicCMS.Core.MagicCMSConfiguration.GetConfig().GoogleMapApiKey %>",
+            libraries: "places"
+        });
+    </script>
     <script src="Scripts/plugins/datepicker/locales/bootstrap-datepicker.it.js"></script>
     <script src="Scripts/plugins/ckeditor/adapters/jquery.js"></script>
     <script>
         if ($('.form-box').length) {
-            $('body, html').addClass('bg-black');
+            //$('body, html').addClass('bg-black');
         }
     </script>
     <asp:ContentPlaceHolder ID="Script" runat="server"></asp:ContentPlaceHolder>

@@ -15,6 +15,18 @@ namespace magiccms.org.Themes.Winstrap
 		public MagicPost MainMenu { get; set; }
 		new protected void Page_Load(object sender, EventArgs e)
 		{
+			string originalUrl = Request.Url.ToString();
+			string newUrl = Request.Url.ToString();
+			if (newUrl.Contains("//www."))
+				newUrl = newUrl.Replace("www.", "");
+			if(!Request.IsSecureConnection)
+			{
+				newUrl = newUrl.Replace("http", "https");
+			}
+
+			if (newUrl != originalUrl)
+				Response.Redirect(newUrl);
+
 			base.Page_Load(sender, e);
 			int mainMenuId = CmsConfig.MainMenu;
 			MainMenu = new MagicPost(mainMenuId);

@@ -3,14 +3,15 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
-        body {
-            background-color: #222;
+        body, html {
+            background-color: #222 !important;
         }
     </style>
     <% = Captcha ? "<script src='https://www.google.com/recaptcha/api.js'></script>" : "" %>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <section id="login-container" style="overflow: hidden">
+        <asp:HiddenField ID="HF_AuthToken" runat="server" ClientIDMode="Static" />
         <div class="form-box bounce in animated veryfast" id="login-box">
             <div class="header"><%= Translate("Accesso") %></div>
             <div class="body bg-gray">
@@ -35,13 +36,40 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="Script" runat="server">
     <script>
+
         $("#aspnetForm").on('submit', function (e) {
-            if ($('#g-recaptcha-response').length) {
+            if ($('#g-recaptcha-response').length && !$('#HF_AuthToken').val()) {
                 if (!$('#g-recaptcha-response').val()) {
                     e.preventDefault();
-                    bootbox.alert("<%= Translate("È necessario eseguire la verifica reCaptcha") %>!");
+
+                    Swal.fire({
+                        icon: "error",
+                        title: 'Errore',
+                        text: "<%= Translate("È necessario eseguire la verifica reCaptcha") %>!"
+                    });
                 }
             }
         });
+
+        let token = Cookies.get('MB_AuthToken');
+        if (token) {
+            var settings = {
+                "url": "/api/CheckToken/",
+                "data": {"token": token},
+                "method": "GET",
+                "timeout": 0,
+            };
+
+            $.ajax(settings).done(function (response) {
+                if (response.success) {
+                    $('#HF_AuthToken').val(response.data);
+                    $("#aspnetForm").submit();
+                } else {
+                    console.log('Errore: ' + response.msg);
+                }
+                
+            });
+        }
+
     </script>
 </asp:Content>

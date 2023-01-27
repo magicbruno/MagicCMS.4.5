@@ -2,9 +2,9 @@
 
 <!DOCTYPE html>
 
-<html xmlns:og="https://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml"  prefix="og: https://ogp.me/ns#" ID="theDocument" runat="server">
+<html xmlns="https://www.w3.org/1999/xhtml" xmlns:og="https://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml" prefix="og: https://ogp.me/ns#" id="theDocument" runat="server">
 <head runat="server">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title><% = System.HtmlRemoval.StripTagsRegexCompiled(TheTitle) %></title>
     <meta http-equiv="x-ua-compatible" content="IE=Edge" />
     <meta charset="utf-8" />
@@ -12,20 +12,20 @@
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-	<script src="/Scripts/modernizr/modernizr.js"></script>
+    <script src="/Scripts/modernizr/modernizr.js"></script>
     <asp:Literal ID="LiteralLoadRespond" Visible="false" runat="server"></asp:Literal>
 </head>
 <body>
     <form id="AspForm" runat="server">
         <asp:ContentPlaceHolder ID="Main" runat="server">
-        
         </asp:ContentPlaceHolder>
     </form>
-    <%--<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false&amp;language=it"></script>--%>
     <asp:ContentPlaceHolder runat="server" ID="PreScripts">
     </asp:ContentPlaceHolder>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/<% =jQueryVersion %>/jquery.min.js"></script>
-    <script>    window.jQuery || document.write('<script src="/Scrpts//jquery-<% =jQueryVersion %>.js"><\/script>')</script>
+    <asp:PlaceHolder ID="JqueryLoad" runat="server" Visible="<%# !string.IsNullOrEmpty(jQueryVersion) %>">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/<% =jQueryVersion %>/jquery.min.js"></script>
+        <script>    window.jQuery || document.write('<script src="/Scripts//jquery-<% =jQueryVersion %>.js"><\/script>')</script>
+    </asp:PlaceHolder>
     <asp:ContentPlaceHolder runat="server" ID="Scripts">
     </asp:ContentPlaceHolder>
 

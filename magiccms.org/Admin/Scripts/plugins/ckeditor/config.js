@@ -38,10 +38,10 @@ CKEDITOR.editorConfig = function( config ) {
 	// Simplify the dialog windows.
 	//config.removeDialogTabs = 'image:advanced;link:advanced';
 	config.contentsCss = '/Admin/Scripts/plugins/ckeditor/contents.css';
-	config.filebrowserBrowseUrl = '/FileBrowser/FileBrowser.aspx?type=files';
-	config.filebrowserFlashBrowseUrl = '/FileBrowser/FileBrowser.aspx?type=Flash';
-	config.filebrowserImageBrowseUrl = '/FileBrowser/FileBrowser.aspx?type=image';
-	config.filebrowserImageBrowseLinkUrl = '/FileBrowser/FileBrowser.aspx';
+	config.filebrowserBrowseUrl = '/Admin/FileManager.aspx';
+	config.filebrowserFlashBrowseUrl = '/Admin/FileManager.aspx';
+	config.filebrowserImageBrowseUrl = '/Admin/FileManager.aspx?type=image';
+	config.filebrowserImageBrowseLinkUrl = '/Admin/FileManager.aspx';
 	config.filebrowserWindowHeight = '70%';
 	config.filebrowserWindowWidth = '70%';
 	config.allowedContent = true;

@@ -17,9 +17,9 @@ namespace Resources {
     /// </summary>
     // Questa classe è stata generata automaticamente dalla classe StronglyTypedResourceBuilder
     // tramite uno strumento quale ResGen o Visual Studio.
-    // Per aggiungere o rimuovere un membro, modificare il file con estensione ResX, quindi eseguire nuovamente ResGen
+    // Per aggiungere o rimuovere un membro, modificare il file con estensione ResX ed eseguire nuovamente ResGen
     // con l'opzione /str oppure ricompilare il progetto Visual Studio.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Web.Application.StronglyTypedResourceProxyBuilder", "11.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Web.Application.StronglyTypedResourceProxyBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class IZWebFileManagerResource {
@@ -33,7 +33,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Restituisce l'istanza di ResourceManager nella cache utilizzata da questa classe.
+        ///   Restituisce l'istanza di ResourceManager nella cache usata da questa classe.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         internal static global::System.Resources.ResourceManager ResourceManager {
@@ -47,8 +47,8 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Esegue l'override della proprietà CurrentUICulture del thread corrente per tutte
-        ///   le ricerche di risorse che utilizzano questa classe di risorse fortemente tipizzata.
+        ///   Esegue l'override della proprietà CurrentUICulture del thread corrente per tutte le
+        ///   ricerche di risorse eseguite con questa classe di risorse fortemente tipizzata.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         internal static global::System.Globalization.CultureInfo Culture {

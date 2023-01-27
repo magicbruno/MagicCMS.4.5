@@ -14,13 +14,13 @@ if (!Date.prototype.toISOString) {
         }
 
         Date.prototype.toISOString = function () {
-            return this.getUTCFullYear() +
-              '-' + pad(this.getUTCMonth() + 1) +
-              '-' + pad(this.getUTCDate()) +
-              'T' + pad(this.getUTCHours()) +
-              ':' + pad(this.getUTCMinutes()) +
-              ':' + pad(this.getUTCSeconds()) +
-              '.' + (this.getUTCMilliseconds() / 1000).toFixed(3).slice(2, 5) +
+            return this.getFullYear() +
+              '-' + pad(this.getMonth() + 1) +
+              '-' + pad(this.getDate()) +
+              'T' + pad(this.getHours()) +
+              ':' + pad(this.getMinutes()) +
+              ':' + pad(this.getSeconds()) +
+              '.' + (this.getMilliseconds() / 1000).toFixed(3).slice(2, 5) +
               'Z';
         };
 
