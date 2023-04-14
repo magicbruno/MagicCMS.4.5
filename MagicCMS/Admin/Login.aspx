@@ -51,25 +51,25 @@
             }
         });
 
-        let token = Cookies.get('MB_AuthToken');
-        if (token) {
-            var settings = {
-                "url": "/api/CheckToken/",
-                "data": {"token": token},
-                "method": "GET",
-                "timeout": 0,
-            };
+        //let token = Cookies.get('MB_AuthToken');
+        //if (token) {
+        //    var settings = {
+        //        "url": "/api/CheckToken/",
+        //        "data": {"token": token},
+        //        "method": "GET",
+        //        "timeout": 0,
+        //    };
 
-            $.ajax(settings).done(function (response) {
-                if (response.success) {
-                    $('#HF_AuthToken').val(response.data);
-                    $("#aspnetForm").submit();
-                } else {
-                    console.log('Errore: ' + response.msg);
-                }
+        //    $.ajax(settings).done(function (response) {
+        //        if (response.success) {
+        //            $('#HF_AuthToken').val(response.data);
+        //            $("#aspnetForm").submit();
+        //        } else {
+        //            console.log('Errore: ' + response.msg);
+        //        }
                 
-            });
-        }
+        //    });
+        //}
 
     </script>
 </asp:Content>

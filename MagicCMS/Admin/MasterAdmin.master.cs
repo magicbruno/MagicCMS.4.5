@@ -8,6 +8,7 @@ using MagicCMS.Core;
 using System.Web.UI.HtmlControls;
 using System.IO;
 using MagicCMS.Utils;
+using System.Configuration;
 
 namespace MagicCMS.Admin
 {
@@ -51,6 +52,20 @@ namespace MagicCMS.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (!Request.IsSecureConnection)
+            {
+                bool allowInsecure = false;
+                if (!string.IsNullOrEmpty(ConfigurationManager.AppSettings["AllowInsecureConnection"]))
+                {
+                    allowInsecure = ConfigurationManager.AppSettings["AllowInsecureConnection"] == "true";
+                }
+                if (!allowInsecure) 
+                {
+                    string myurl = Request.Url.AbsoluteUri.Replace("http:","https:");
+                    Response.Redirect(myurl);
+                }
+            }
 			BackEndLanguage = MagicCMSConfiguration.GetConfig().BackEndLang;
 
 			// Check if Google recaptcha Site id and Secret Key are define. If not hide recaptcha field.

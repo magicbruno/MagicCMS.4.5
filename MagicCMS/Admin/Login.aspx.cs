@@ -1,11 +1,13 @@
 ﻿using MagicCMS.Core;
 using MagicCMS.reCAPTCHA;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using HttpCookie = System.Web.HttpCookie;
 
 namespace MagicCMS.Admin
 {
@@ -16,28 +18,33 @@ namespace MagicCMS.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (IsPostBack)
+            if (true)
             {
-                if (!string.IsNullOrWhiteSpace(HF_AuthToken.Value))
+                System.Web.HttpCookie auth = Request.Cookies["MB_AuthToken"];
+                if (auth != null)
                 {
-                    UserToken userToken = new UserToken(HF_AuthToken.Value);
-                    MagicSession.Current.LoggedUser = new MagicUser(userToken.UserPk);
-                    MagicSession.Current.SessionStart = DateTime.Now;
-                    HttpCookie cookie = new HttpCookie("MB_AuthToken", HF_AuthToken.Value);
-                    cookie.Secure = true;
-                    cookie.Expires = DateTime.Now.AddDays(30);
+                    UserToken userToken = new UserToken(auth.Value);
+                    MagicUser user = new MagicUser(userToken.UserPk);
+                    if (user.Level > 2)
+                    {
+                        MagicSession.Current.LoggedUser = user;
+                        MagicSession.Current.SessionStart = DateTime.Now;
 
-                    Response.Cookies.Set(cookie);
+                        auth.Secure = true;
+                        auth.Expires = DateTime.Now.AddDays(30);
+                        Response.Cookies.Set(auth);
 
-                    if (!String.IsNullOrEmpty(MagicSession.Current.LastAccessTry))
-                        Response.Redirect(MagicSession.Current.LastAccessTry);
-                    else
-                        Response.Redirect("/Admin");
+                        if (!String.IsNullOrEmpty(MagicSession.Current.LastAccessTry))
+                            Response.Redirect(MagicSession.Current.LastAccessTry);
+                        else
+                            Response.Redirect("/Admin");
+                    }
                 } 
             }
 
             Captcha = !(String.IsNullOrEmpty(MagicCMSConfiguration.GetConfig().GoogleCaptchaSite) || 
                 String.IsNullOrEmpty(MagicCMSConfiguration.GetConfig().GoogleCaptchaSecret));
+
             if (Captcha)
             {
                 recaptchaVerify.Attributes.Add("data-sitekey", MagicCMSConfiguration.GetConfig().GoogleCaptchaSite);
