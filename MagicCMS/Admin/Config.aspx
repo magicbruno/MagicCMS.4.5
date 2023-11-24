@@ -1,7 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/MasterAdmin.master" AutoEventWireup="true"
     CodeBehind="Config.aspx.cs" Inherits="MagicCMS.Admin.Config" %>
+
 <%@ MasterType TypeName="MagicCMS.Admin.MasterAdmin" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="assets-2022/css/file-man.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="HeaderContent" runat="server">
     <h1><i class="fa fa-cogs"></i><%= Master.Translate("Configurazione Sito") %></h1>
@@ -19,7 +21,7 @@
                     </div>
                 </div>
                 <div class="box-body">
-                    <table id="table-lang" class="table table-striped table-bordered"  style="width:100%" width="100%">
+                    <table id="table-lang" class="table table-striped table-bordered" style="width: 100%" width="100%">
                         <thead>
                             <tr>
                                 <th>Id</th>
@@ -112,7 +114,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group" id="fg-testo-breve">
+
+                            <div class="form-group d-none" id="fg-testo-breve">
                                 <label for="TransClientId" class="col-sm-2 control-label"><%= Master.Translate("Client Id per Bing Translator") %></label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="TransClientId" value="<% = CMS_config.TransClientId %>" />
@@ -160,14 +163,18 @@
                                     <div class="input-group">
                                         <input type="text" class="form-control" id="DefaultImage" value="<% = CMS_config.DefaultImage  %>" />
                                         <span class="input-group-btn">
-                                            <button class="btn btn-primary btn-flat " type="button" data-callback="getImageUrl"
-                                                title="Sfoglia il server"
-                                                data-target="#FileBrowserModal" data-toggle="fb-window">
-                                                <i class="fa fa-search"></i><%= Master.Translate("Sfoglia") %>...</button>
-                                            <button class="btn btn-info btn-flat btn-icon" type="button" data-source="#DefaultImage"
-                                                title="<%= Master.Translate("Mostra") %>"
-                                                data-target="#LightBox" data-toggle="modal">
-                                                <i class="fa fa-search-plus"></i>
+                                            <button class="btn btn-danger btn-flat FlagCercaServer" type="button" data-target="#DefaultImage"
+                                                title="" data-action="upload" data-original-title="Cerca il file sul tuo disco">
+                                                <i class="fa fa-folder-open-o"></i>Sfoglia...
+                                            </button>
+                                            <button class="btn btn-warning btn-flat btn-icon FlagCercaServer" type="button"
+                                                data-callback="getImageUrl" title="" data-target="#DefaultImage" data-toggle="fb-window"
+                                                data-fm-url="FileManager.aspx" data-original-title="Cerca file sul server">
+                                                <i class="fa fa-fw fa-database"></i>
+                                            </button>
+                                            <button class="btn btn-success btn-flat btn-icon" type="button" data-source="#DefaultImage" title=""
+                                                data-action="viewer" data-original-title="Guarda il file">
+                                                <i class="fa fa-eye"></i>
                                             </button>
                                         </span>
                                     </div>
@@ -226,9 +233,68 @@
             </div>
         </div>
     </div>
+
+    <!-- FILE MANAGER VIEWER -->
+    <div class="fm-viewer off-screen" id="theViewer">
+
+        <nav class="navbar fm-navbar bg-transparent position-absolute d-flex align-items-center border-0 pl-4 px top-0" role="navigation">
+            <!-- Sidebar toggle button-->
+            <span class="align-self-start h3 text-white my-auto viewer-title"></span>
+            <div class="navbar-right d-flex justify-content-end ml-auto mr-0 ">
+
+                <ul class="nav navbar-nav d-flex align-items-center mr-1">
+
+                    <li class="">
+                        <button type="button" data-action="download-file" title="Scarica" class="btn btn-icon btn-lg btn-dark px-3 rounded-0">
+                            <i class="fa fa-fw  fa-download "></i>
+                        </button>
+                    </li>
+                    <li class="">
+                        <button type="button" data-action="toggle-fullscreen" title="Fullscreen on/off" class="btn btn-icon btn-lg btn-dark px-3 rounded-0  ml-1">
+                            <i class="fa fa-fw  fa-arrows-alt"></i>
+                        </button>
+                    </li>
+                    <li class="">
+                        <button type="button" data-action="close-viewer" title="Chiudi" class="btn btn-icon btn-lg btn-dark px-3 rounded-0  ml-1">
+                            <i class="fa fa-fw  fa-times"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <!-- fine vewer -->
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Scripts" runat="server">
+    <script src="assets-2022/mb/FM_Viewer.js?v=3"></script>
+    <script src="assets-2022/mb/MB_FileUpload.js"></script>
     <script>
+        (function (win, $) {
+            win.TheViewer = new FM_Viewer('#theViewer');
+            win.TheUploader = new MB_FileUpload('/api/FileUpload');
+        })(window, jQuery);
+    </script>
+    <script>
+
+        document.querySelectorAll('[data-action]').forEach(element => {
+            const action = element.dataset.action;
+            element.addEventListener('click', () => {
+                switch (action) {
+                    case "viewer":
+                        let sourceSelector = element.dataset.source;
+                        const source = document.querySelector(sourceSelector);
+                        if (source.value)
+                            TheViewer.show(source.value);
+                        break;
+                    case "upload":
+                        let targetSelector = $(element).data('target');
+                        TheUploader.getFileSingle().then(url => { if (url) $(targetSelector).val(url); });
+                        break;
+                    default:
+                }
+            })
+        })
 
         function getImageUrl(url) {
             $('#DefaultImage').val(url);
@@ -249,7 +315,7 @@
                             window.location.href = "/Admin/Login.aspx";
                         });
 
-                        
+
                     }
                     else if (xhr.status != 200) {
                         Swal.fire({
@@ -312,7 +378,7 @@
 
                                 $.getJSON('Ajax/LangActivate.ashx', param)
                                     .fail(function (jqxhr, textStatus, error) {
-                                        
+
                                         Swal.fire({
                                             icon: "error",
                                             title: 'Errore',
@@ -326,9 +392,9 @@
                                                 title: 'Si è verificato un errore ',
                                                 message: data.msg
                                             },
-                                            {
-                                                type: 'danger'
-                                            })
+                                                {
+                                                    type: 'danger'
+                                                })
                                         }
                                     })
                                     .always(function () {
@@ -395,35 +461,35 @@
                 .each(function (index) {
                     var $this = $(this);
                     $this.select2(
-                    {
-                        ajax: {
-                            url: 'Ajax/Liste.ashx',
-                            dataType: 'json',
-                            quietMillis: 200,
-                            data: function (term, page) {
-                                return { k: term, idField: "CONTENUTI", idList: $this.attr('data-types') };
+                        {
+                            ajax: {
+                                url: 'Ajax/Liste.ashx',
+                                dataType: 'json',
+                                quietMillis: 200,
+                                data: function (term, page) {
+                                    return { k: term, idField: "CONTENUTI", idList: $this.attr('data-types') };
+                                },
+                                results: function (data, page, query) {
+                                    return { results: data };
+                                }
                             },
-                            results: function (data, page, query) {
-                                return { results: data };
-                            }
-                        },
-                        initSelection: function (element, callback) {
-                            var pk = $(element).val();
-                            $.getJSON('Ajax/GetRecord.ashx', { pk: pk, table: 'MB_contenuti_title' }).done(function (data) {
-                                if (pk != 0)
-                                    callback({ id: pk, text: data.data });
+                            initSelection: function (element, callback) {
+                                var pk = $(element).val();
+                                $.getJSON('Ajax/GetRecord.ashx', { pk: pk, table: 'MB_contenuti_title' }).done(function (data) {
+                                    if (pk != 0)
+                                        callback({ id: pk, text: data.data });
 
-                            });
-                        },
-                        allowClear: true
-                    }).parent().tooltip({
-                        container: 'body',
-                        delay: { show: 500, hide: 300 },
-                        title: $(this).attr('data-placeholder'),
-                        trigger: 'hover'
-                    }).on('click', function () {
-                        $this.tooltip('hide');
-                    });
+                                });
+                            },
+                            allowClear: true
+                        }).parent().tooltip({
+                            container: 'body',
+                            delay: { show: 500, hide: 300 },
+                            title: $(this).attr('data-placeholder'),
+                            trigger: 'hover'
+                        }).on('click', function () {
+                            $this.tooltip('hide');
+                        });
                 });
 
             // When pseudo-form is submitted
@@ -435,9 +501,9 @@
                         title: 'Salvataggio dati',
                         message: data.msg
                     },
-                    {
-                        type: 'success'
-                    });
+                        {
+                            type: 'success'
+                        });
                     // Post Id hidden fields updated !!
                     //$('[name="Pk"], [name="PostPk"]').val(data.pk);
                 } else {
@@ -446,9 +512,9 @@
                         title: 'Si è verificato un errore: ',
                         message: data.msg
                     },
-                    {
-                        type: 'danger'
-                    })
+                        {
+                            type: 'danger'
+                        })
                 }
             });
 

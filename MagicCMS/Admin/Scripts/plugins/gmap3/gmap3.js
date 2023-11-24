@@ -151,12 +151,13 @@
   function gmElement(name) {
     var cls = gm[name];
 
-    function F(args) {
-      return cls.apply(this, args);
-    }
-    F.prototype = cls.prototype;
+    // function F(args) {
+    //   return cls.apply(this, args);
+    // }
+    // F.prototype = cls.prototype;
 
-    return new F(slice(arguments, 1));
+    // return new F(slice(arguments, 1));
+    return new cls(slice(arguments, 1));
   }
 
   /**

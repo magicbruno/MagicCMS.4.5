@@ -28,20 +28,31 @@ namespace MagicCMS.Api_Controllers
 
             try
             {
-                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-                List<KeyValuePair<string, string>> data = new List<KeyValuePair<string, string>>();
-                var client = new RestClient("https://api.cognitive.microsofttranslator.com/languages?api-version=3.0&scope=translation");
-                client.Timeout = -1;
-                var request = new RestRequest(Method.GET);
-                IRestResponse r = await client.ExecuteAsync(request);
-                BingLanguageList langs = JsonConvert.DeserializeObject<BingLanguageList>(r.Content);
-                Newtonsoft.Json.Linq.JObject list = langs.translation as Newtonsoft.Json.Linq.JObject;
-                foreach (var item in list)
+                ServicePointManager.Expect100Continue = true;
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.SystemDefault;
+                //List<KeyValuePair<string, string>> data = new List<KeyValuePair<string, string>>();
+                //var client = new RestClient("https://api.cognitive.microsofttranslator.com/languages?api-version=3.0&scope=translation");
+                //client.Timeout = -1;
+                //var request = new RestRequest(Method.GET);
+                //IRestResponse r = await client.ExecuteAsync(request);
+                //response.data = r;
+                //BingLanguageList langs = JsonConvert.DeserializeObject<BingLanguageList>(r.Content);
+                //Newtonsoft.Json.Linq.JObject list = langs.translation as Newtonsoft.Json.Linq.JObject;
+                //foreach (var item in list)
+                //{
+                //    var obj = item.Value.First();
+                //    data.Add(new KeyValuePair<string, string>(item.Key, obj.First.ToString()));
+                //}
+                 RestClientOptions options = new RestClientOptions("https://api.cognitive.microsofttranslator.com")
                 {
-                    var obj = item.Value.First();
-                    data.Add(new KeyValuePair<string, string>(item.Key, obj.First.ToString()));
-                }
-                response.data = data;
+                    MaxTimeout = -1,
+                };
+                var client = new RestClient(options);
+                var request = new RestRequest("/languages?api-version=3.0&scope=translation", Method.Get);
+                RestResponse r = await client.ExecuteAsync(request);
+                //Console.WriteLine(r.Content);
+
+                response.data = r;
                 //Type type = list.GetType();
                 //PropertyInfo[] properties = type.GetProperties();
                 //foreach (PropertyInfo property in properties)

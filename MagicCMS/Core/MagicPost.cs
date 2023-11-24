@@ -1592,7 +1592,7 @@ namespace MagicCMS.Core
 				int result = cmd.ExecuteNonQuery();
 				if (result > 0)
 				{
-					MagicLog log = new MagicLog("MB_contenuti", pk, LogAction.Update, "", "");
+					MagicLog log = new MagicLog("MB_contenuti", Pk, LogAction.Update, "", "");
 					log.Error = "SUCCESS";
 					log.Insert();
 					//Updating links with parent elements an tags/keyword table
@@ -1845,10 +1845,19 @@ namespace MagicCMS.Core
 			string cmdstring = " BEGIN TRY " +
 								" 	BEGIN TRANSACTION " +
 								" 		DELETE REL_contenuti_Argomenti WHERE Id_Contenuti = @Pk; ";
-			for (int i = 0; i < parents.Length; i++)
+
+			List<int> uniqueParents = new List<int>();
+
+            for (int i = 0; i < parents.Length; i++)
+            {
+                if (!uniqueParents.Contains(parents[i]))
+					uniqueParents.Add(parents[i]);
+            }
+
+            foreach (int parent in uniqueParents)
 			{
 				cmdstring += String.Format(" INSERT REL_contenuti_Argomenti (Id_Contenuti, Id_Argomenti) " +
-											" VALUES (@Pk, {0} ); ", parents[i]);
+											" VALUES (@Pk, {0} ); ", parent);
 			}
 
 			cmdstring += " 	COMMIT TRANSACTION " +
@@ -2250,14 +2259,14 @@ namespace MagicCMS.Core
 			{
 				conn.Open();
 				cmd.Connection = conn;
-				cmd.CommandText = "	IF NOT EXISTS (SELECT  " +
-									"			* " +
-									"		FROM REL_contenuti_Argomenti rca " +
-									"		WHERE rca.Id_Contenuti = @PK AND rca.Id_Argomenti = @ID_ARG) " +
-									"	BEGIN " +
-									"		INSERT INTO REL_contenuti_Argomenti (Id_Contenuti, Id_Argomenti) " +
-									"			VALUES (@PK, @ID_ARG) " +
-									"	END ";
+				cmd.CommandText =	@"	IF NOT EXISTS (SELECT  
+											* 
+											FROM REL_contenuti_Argomenti rca 
+									 		WHERE rca.Id_Contenuti = @PK AND rca.Id_Argomenti = @ID_ARG) 
+										BEGIN 
+											INSERT INTO REL_contenuti_Argomenti (Id_Contenuti, Id_Argomenti) 
+												VALUES (@PK, @ID_ARG) 
+										END ";
 				cmd.Parameters.AddWithValue("@PK", childId);
 				cmd.Parameters.AddWithValue("@ID_ARG", Pk);
 				cmd.ExecuteNonQuery();

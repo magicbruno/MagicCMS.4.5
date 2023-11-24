@@ -3,6 +3,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <% = Captcha ? "<script src='https://www.google.com/recaptcha/api.js'></script>" : "" %>
+
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
 </asp:Content>
 <asp:Content ID="TheContent" ContentPlaceHolderID="MainContent" runat="server">
@@ -258,9 +259,10 @@
                         <div class="form-group">
                             <div class="col-sm-10">
                                 <div class="input-group">
-                                    <input type="hidden" value="" id="geolocLatLng" />
+                                    <input type="hidden" value="" id="geolocLatLng" data-map="lat-lng"/>
                                     <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
-                                    <input type="text" class="form-control" id="geolocAddress" placeholder="<%= Translate("Inserisci un indirizzo") %>">
+                                    <input type="text" class="form-control" id="geolocAddress" data-map="google-autocomplete"
+                                        placeholder="<%= Translate("Inserisci un indirizzo") %>">
                                     <span class="input-group-btn">
                                         <button type="button" class="btn btn-primary btn-flat"
                                             data-action="geo-search" data-source="#geolocAddress">
@@ -278,6 +280,7 @@
             </div>
         </div>
     </div>
+
     <!-- Checkbox type list  -->
     <div class="modal fade" id="checkboxed-types-modal" tabindex="-1" role="dialog" aria-labelledby="Types"
         aria-hidden="true" data-backdrop="static" data-source="">
@@ -378,7 +381,15 @@
     </div>
 </asp:Content>
 <asp:Content ID="Script" ContentPlaceHolderID="Script" runat="server">
-    <script src="Scripts/app.min.js?v=1"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=<% = MagicCMS.Core.MagicCMSConfiguration.GetConfig().GoogleMapApiKey %>&libraries=places&callback=initMap"></script>
+    <script src="assets-2022/js/GestioneMappa.js?v=1.9"></script>
+    <script>
+        function initMap() {
+            console.log('GMap Installed');
+            window.TheMap = new GestioneMappa('#map-dialog');
+        }
+    </script>
+    <script src="Scripts/app.js?v=1.1"></script>
     <script>
         if (!Cookies.get('MB_AuthToken')) {
             let url = location.href;

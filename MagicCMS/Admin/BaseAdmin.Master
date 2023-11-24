@@ -14,7 +14,7 @@
     <link href="assets-2022/css/bootstrap/bootstrap-grid.min.css" rel="stylesheet" />
     <link href="assets-2022/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" />
     <link href="assets-2022/css/bootstrap/bootstrap/dist/css/bootstrap-utilities.min.css" rel="stylesheet" />
-    <link href="css/main.css?v=21" rel="stylesheet" />
+    <link href="css/main.css?v=22" rel="stylesheet" />
     <link href="Scripts/plugins/jsTree/themes/default/style.min.css" rel="stylesheet" />
     <link href="Scripts/plugins/jsTree/themes/default-dark/style.min.css" rel="stylesheet" />
     <link href="css/datepicker/datepicker3.css" rel="stylesheet" />
@@ -82,7 +82,7 @@
 <%--    <script src="/Admin/Scripts/plugins/datatable/jquery.dataTables.js"></script>
     <script src="/Admin/Scripts/plugins/datatable/dataTables.bootstrap.js"></script>--%>
     <script src="/Admin/Scripts/plugins/datepicker/bootstrap-datepicker.js"></script>
-    <script src="/Admin/Scripts/plugins/gmap3/gmap3.js"></script>
+    <%--<script src="/Admin/Scripts/plugins/gmap3/gmap3.js"></script>--%>
     <script src="/Admin/Scripts/plugins/iCheck/icheck.js"></script>
     <script src="/Admin/Scripts/plugins/jsTree/jstree.js"></script>
     <script src="/Admin/Scripts/plugins/spin/spin.js"></script>
@@ -103,11 +103,11 @@
 
     <script>$.fn.selectpicker.Constructor.DEFAULTS.iconBase = 'fa';</script>
     <script>
-        $.gmap3({
+<%--        $.gmap3({
             language: "<%= MagicCMS.Core.MagicCMSConfiguration.GetConfig().BackEndLang %>",
             key: "<% = MagicCMS.Core.MagicCMSConfiguration.GetConfig().GoogleMapApiKey %>",
             libraries: "places"
-        });
+        });--%>
     </script>
     <script src="Scripts/plugins/datepicker/locales/bootstrap-datepicker.it.js"></script>
     <script src="Scripts/plugins/ckeditor/adapters/jquery.js"></script>

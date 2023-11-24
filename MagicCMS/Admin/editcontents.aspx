@@ -1901,7 +1901,7 @@
                                 })
                             } else {
                                 Swal.fire({
-                                    icon: "error",
+                                    icon: "error", 
                                     title: 'Errore',
                                     text: 'Si è verificaro un errore: ' + data.Error
                                 });
@@ -1911,7 +1911,7 @@
                             Swal.fire({
                                 icon: "error",
                                 title: 'Errore',
-                                text: 'Si è verificaro un errore: ' + textStatus + ", " + error
+                                text: `Traduzione non disponibile. Causa: ${textStatus} (${error}) `
                             });
                         })
                         .always(function () {

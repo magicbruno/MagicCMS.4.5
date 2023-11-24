@@ -529,16 +529,28 @@ namespace MagicCMS.Admin
 
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
                 List<ListItem> data = new List<ListItem>();
-                var client = new RestClient("https://api.cognitive.microsofttranslator.com/languages?api-version=3.0&scope=translation");
-                client.Timeout = -1;
-                var request = new RestRequest(Method.GET);
-                IRestResponse r = client.Execute(request);
-                BingLanguageList langs = JsonConvert.DeserializeObject<BingLanguageList>(r.Content);
-                Newtonsoft.Json.Linq.JObject list = langs.translation as Newtonsoft.Json.Linq.JObject;
-                foreach (var item in list)
+                try
                 {
-                    var obj = item.Value.First();
-                    data.Add(new ListItem(obj.First.ToString(), item.Key));
+                    var options = new RestClientOptions("https://traduci.magiccms.org")
+                    {
+                        MaxTimeout = -1,
+                    };
+                    var client = new RestClient(options);
+                    var request = new RestRequest("/api/Translate", Method.Get);
+                    //request.AddHeader("Content-Type", "application/json");
+                    RestResponse r = client.Execute(request);
+                    BingLanguageList langs = JsonConvert.DeserializeObject<BingLanguageList>(r.Content);
+                    Newtonsoft.Json.Linq.JObject list = langs.translation as Newtonsoft.Json.Linq.JObject;
+                    foreach (var item in list)
+                    {
+                        var obj = item.Value.First();
+                        data.Add(new ListItem(obj.First.ToString(), item.Key));
+                    }
+                }
+                catch (Exception)
+                {
+
+                    //throw;
                 }
                 data.Sort(CompareByText);
 
