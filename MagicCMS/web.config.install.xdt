@@ -9,6 +9,7 @@
 	<configSections xdt:Transform="RemoveAll" xdt:Locator="Condition(count(*)=0)" />
 	<appSettings  xdt:Transform="InsertIfMissing">
 		<add key="FileManagerRoot" value="/userfiles/" xdt:Transform="InsertIfMissing" />
+		<add key="MaintenanceMode" value="false" xdt:Transform="InsertIfMissing"/>
 	</appSettings>
 
 	<MagicCMSConfigSection

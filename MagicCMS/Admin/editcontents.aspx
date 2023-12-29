@@ -49,7 +49,7 @@
                                 <i class="fa fa-file-o fa-stack-2x text-success"></i>
                                 <i class="fa text-info fa-recycle fa-stack" <%--style="font-size: .7em"--%>></i>
                             </span>
-                        </button>                        
+                        </button>
                         <button type="button" data-action="trash-multi" class="btn btn-sm btn-danger btn-icon"
                             title="<%= Master.Translate("Elimina pagine selezionate") %>">
                             <i class="fa fa-trash-o"></i>
@@ -108,6 +108,9 @@
                         <button type="button" class="btn btn-success btn-sm btn-icon" title="Save" onclick="$('#edit-content [data-action=submit]').click();">
                             <i class="fa fa-save"></i>
                         </button>
+                        <button class="btn btn-icon btn-info btn-flat btn-sm" type="button" data-action="open-post" title="Apri la pagina nel browser">
+                            <i class="fa fa-external-link"></i>
+                        </button>
                         <button type="button" class="btn btn-primary btn-sm" data-widget="collapse">
                             <i class="fa fa-minus"></i>
                         </button>
@@ -157,8 +160,9 @@
                                                 <div class="input-group">
                                                     <input type="text" class="form-control" id="PermalinkTitle" value="<% = ThePost.PermalinkTitle %>" />
                                                     <span class="input-group-btn">
-                                                        <button class="btn btn-icon btn-info btn-flat" type="button" data-action="open-post">
-                                                            <i class="fa fa-external-link"></i>
+                                                        <button class="btn btn-icon btn-danger btn-flat" type="button" data-action="crea-permalink" 
+                                                            title="Rigenera il permalink">
+                                                            <i class="fa fa-repeat"></i>
                                                         </button>
                                                     </span>
                                                 </div>
@@ -1640,6 +1644,9 @@
                     case "erase-multi":
                         deletePost(false);
                         break;
+                    case 'crea-permalink':
+                        $('#PermalinkTitle').val('').trigger('change')
+                        break
                     default:
 
                 }
@@ -1721,7 +1728,7 @@
                                             title: 'Errore',
                                             text: error
                                         }).then(() => tableContentHistory.reload()));
-                                }                                    
+                                }
                             });
                         }
                     })
@@ -1901,7 +1908,7 @@
                                 })
                             } else {
                                 Swal.fire({
-                                    icon: "error", 
+                                    icon: "error",
                                     title: 'Errore',
                                     text: 'Si è verificaro un errore: ' + data.Error
                                 });
@@ -2174,6 +2181,7 @@
                 var $form = self.parents('[role="form"]');
                 var langid = $form.find('[name="LangId"]').val();
                 var $tit = $form.find('#ExtraInfo1, [name="TranslatedTitle"]');
+                var $nome = $('#Titolo');
                 var settings = {
                     "url": "/api/CheckPermalink",
                     "method": "POST",
@@ -2184,7 +2192,7 @@
                     },
                     "data": {
                         "pk": $('#Pk').val(),
-                        "title": self.val() || $tit.val(),
+                        "title": self.val() || $tit.val() || $nome.val(),
                         "lang": langid
                     }
                 };

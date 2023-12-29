@@ -773,50 +773,58 @@ namespace MagicCMS.Routing
 				msg = "Ok",
 				data = null
             };
-			string newTitle = EncodeTitle(title);
-			
 
-			string cmdString = @"	SELECT
+            if (string.IsNullOrWhiteSpace(title))
+            {
+                response.data = pk.ToString();
+          
+            }
+            else
+            {
+                string newTitle = EncodeTitle(title);
+                string cmdString = @"	SELECT
 										COUNT(*)
 									FROM REL_MagicTitle rmt
 									WHERE rmt.RMT_Title = @title
 									AND rmt.RMT_Contenuti_Id <> @pk
 									AND rmt.RMT_LangId = @lang";
 
-			SqlConnection conn = null;
-			SqlCommand cmd = null;
-			try
-			{
+                SqlConnection conn = null;
+                SqlCommand cmd = null;
+                try
+                {
 
-				conn = new SqlConnection(MagicUtils.MagicConnectionString);
-				await conn.OpenAsync();
-				cmd = new SqlCommand(cmdString, conn);
-				cmd.Parameters.AddWithValue("@title", newTitle);
-				cmd.Parameters.AddWithValue("@pk", pk);
-				cmd.Parameters.AddWithValue("@lang", (string.IsNullOrEmpty(lang) ? new CMS_Config().TransSourceLangId : lang));
-				int result = Convert.ToInt32(cmd.ExecuteScalar());
-				if (result > 0)
-                {
-					response.data = newTitle + "-" + pk.ToString();
-					throw new Exception("Permalink esistente!");
+                    conn = new SqlConnection(MagicUtils.MagicConnectionString);
+                    await conn.OpenAsync();
+                    cmd = new SqlCommand(cmdString, conn);
+                    cmd.Parameters.AddWithValue("@title", newTitle);
+                    cmd.Parameters.AddWithValue("@pk", pk);
+                    cmd.Parameters.AddWithValue("@lang", (string.IsNullOrEmpty(lang) ? new CMS_Config().TransSourceLangId : lang));
+                    int result = Convert.ToInt32(cmd.ExecuteScalar());
+                    if (result > 0)
+                    {
+                        response.data = newTitle + "-" + pk.ToString();
+                        throw new Exception("Permalink esistente!");
+                    }
+                    else if (newTitle != title)
+                    {
+                        response.data = newTitle;
+                        throw new Exception("Permalink non correttamente formattato!");
+                    }
+                    else
+                    {
+                        response.data = title;
+                    }
                 }
-				else if (newTitle != title)
+                catch (Exception e)
                 {
-					response.data = newTitle;
-					throw new Exception("Permalink non correttamente formattato!");
-				}
-				else
-                {
-					response.data = title;
+                    MagicLog log = new MagicLog("REL_MagicTitle", 0, LogAction.Delete, e);
+                    log.Insert();
+                    response.success = false;
+                    response.msg = e.Message;
                 }
-			}
-			catch (Exception e)
-			{
-				MagicLog log = new MagicLog("REL_MagicTitle", 0, LogAction.Delete, e);
-				log.Insert();
-				response.success = false;
-				response.msg = e.Message;
-			}
+
+            }
 			return response;
 		}
 		#endregion

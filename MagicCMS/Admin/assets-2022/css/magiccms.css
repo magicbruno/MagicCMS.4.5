@@ -190,3 +190,29 @@ a.text-white:hover {
 .autoscroll {
   overflow-y: auto;
 }
+.maintenance-mode {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000;
+}
+.maintenance-mode a:hover,
+.maintenance-mode a:focus {
+  color: wheat;
+}
+@media only screen and (max-width: 992px) {
+  .maintenance-mode .h3 {
+    font-size: 1.1em;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .maintenance-mode {
+    left: auto;
+    right: 40px;
+    transform: none;
+  }
+  .maintenance-mode .h3 {
+    font-size: 0.9em;
+  }
+}

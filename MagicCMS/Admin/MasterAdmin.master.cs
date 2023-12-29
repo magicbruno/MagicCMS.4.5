@@ -36,6 +36,15 @@ namespace MagicCMS.Admin
         
         public string CKE_Config { get; set; }
 
+        public bool MaintenanceMode
+        {
+            get
+            {
+                string mm = ConfigurationManager.AppSettings["MaintenanceMode"];
+                return mm == "true";
+            }
+        }
+
         protected void LinkButton_allowedTypes_Click(object sender, EventArgs e)
         {
             MagicSession.Current.ShowInactiveTypes = !MagicSession.Current.ShowInactiveTypes;
@@ -180,7 +189,7 @@ namespace MagicCMS.Admin
             if(File.Exists(Server.MapPath(ckeConfigPasth)))
                 CKE_Config = url;
 
-
+            DataBindChildren();
         }
 
         /// <summary>

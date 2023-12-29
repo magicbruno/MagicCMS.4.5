@@ -8,6 +8,28 @@
 </asp:Content>
 <asp:Content ID="TheContent" ContentPlaceHolderID="MainContent" runat="server">
     <asp:HiddenField ID="MB_AuthToken" runat="server" />
+    <asp:Panel ID="PanelMaintenance" ClientIDMode="Static" runat="server" CssClass="maintenance-mode py-3 px-4 btn-danger" 
+        Visible="<%# MaintenanceMode %>">
+        <a id="btnManutenzione" class="h3 fw-bold text-decoration-none" href="#"> MODO MANUTENZIONE</a>
+        <script>
+            (function (doc) {
+                doc.addEventListener('DOMContentLoaded', () => {
+                    const btn = document.getElementById('btnManutenzione');
+                    btn.addEventListener('click', () => {
+                        Swal.fire({
+                            title: 'ATTENZIONE',
+                            text: `Questo sito è in modo manutenzione. Il sito è attivo e navigabile, ma le eventuali modifiche 
+                           effettuate veranno perdute quanto verrà ripristinata la modalità normale. Di norma la modalità
+                           manutenzione dura dalle 6 alle 12 ore.` ,
+                            icon: 'warning'
+                        });
+                    });
+                    setTimeout(() => { btn.click(); }, 1000);
+                })
+            })(document);
+
+        </script>
+    </asp:Panel>
     <header class="header">
         <!-- Header Navbar: style can be found in header.less -->
         <a href="/Admin/" class="logo">
