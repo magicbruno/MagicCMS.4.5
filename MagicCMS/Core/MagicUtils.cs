@@ -358,13 +358,17 @@ namespace MagicCMS.Core
             "yyyyMMddTHHZ",
             "yyyy-MM-ddTHHzzz",
             "yyyy-MM-ddTHHzz",
-            "yyyy-MM-ddTHHZ"
+            "yyyy-MM-ddTHHZ",
+            "yyyy-MM-ddTHH:mm:ss.fffffff",
+            "yyyy-MM-ddTHH:mm:ss"
         };
 
         public static DateTime ParseISO8601String(string str)
         {
+            if (str.Length > 19)
+                str = str.Substring(0, 19);
             return DateTime.ParseExact(str, formats,
-                CultureInfo.InvariantCulture, DateTimeStyles.None).ToLocalTime();
+                CultureInfo.InvariantCulture, DateTimeStyles.None);
         }
 
 		/// <summary>

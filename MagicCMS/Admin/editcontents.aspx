@@ -382,32 +382,46 @@
                                             <div class="col-lg col-md-4  FlagAltezza">
                                                 <input type="text" class="form-control" id="Altezza" value="<% = ThePost.Altezza.ToString() %>" />
                                             </div>
-                                            <label for="DataPubblicazione" class="col-sm-auto control-label"><%= Master.Translate("Data pubblicazione") %></label>
-                                            <div class="col-lg col-md-4 ">
-                                                <div class="input-group date">
-                                                    <input type="text" data-dateiso="<% = DataPubblicazioneStr %>" class="form-control datepicker" id="DataPubblicazione" value="" />
-                                                    <span class="input-group-btn">
-                                                        <button class="btn btn-flat btn-primary btn-icon" type="button">
-                                                            <i class="fa fa-calendar"></i>
-                                                        </button>
-                                                    </span>
+                                        </div>
+                                        <div class="form-group" id="fg-data-pubblicazione">
+
+                                            <div class="col-12 col-xl">
+                                                <div class="form-group">
+                                                    <label for="DataPubblicazione" class="col-sm-2 col-xl-auto control-label">
+                                                        <%= Master.Translate("Data pubblicazione") %></label>
+                                                    <div class="col-sm">
+                                                        <div class="input-group date">
+                                                            <input type="date" data-dateiso="<% = DataPubblicazioneStr %>"
+                                                                class="form-control datepicker" id="DataPubblicazione" value=""
+                                                                data-time="#DataPubblicazioneOra" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm">
+                                                        <input type="time" class="form-control" id="DataPubblicazioneOra" />
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <label for="DataScadenza" class="col-sm-auto control-label FlagScadenza"><% = TypeInfo.LabelScadenza %></label>
-                                            <div class="col-lg col-md-4 FlagScadenza">
-                                                <div class="input-group date">
-                                                    <input type="text" data-dateiso="<% = DataScadenzaStr %>" class="form-control datepicker" id="DataScadenza" value="" />
-                                                    <span class="input-group-btn">
-                                                        <button class="btn btn-flat btn-primary btn-icon" type="button">
-                                                            <i class="fa fa-calendar"></i>
-                                                        </button>
-                                                    </span>
+
+                                            <div class="col-12 col-xl FlagScadenza">
+                                                <div class="form-group">
+                                                    <label for="DataScadenza" class="col-sm-2 col-xl-auto control-label FlagScadenza">
+                                                        <% = TypeInfo.LabelScadenza %></label>
+                                                    <div class="col-sm FlagScadenza">
+                                                        <div class="input-group date">
+                                                            <input type="date" data-dateiso="<% = DataScadenzaStr %>"
+                                                                class="form-control datepicker" id="DataScadenza" value=""
+                                                                data-time="#DataScadenzaOra" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm">
+                                                        <input type="time" class="form-control" id="DataScadenzaOra" />
+                                                    </div>
                                                 </div>
                                             </div>
+
                                         </div>
                                         <hr />
                                         <!-- /Dimensioni date e ordinamento -->
-
                                         <div class="form-group">
                                             <div class="col-sm-12 text-center">
                                                 <button type="button" class="btn btn-warning" data-action="duplicate"><%= Master.Translate("Crea duplicato") %></button>
@@ -417,7 +431,7 @@
                                                     <%= Master.Translate("Salva e pubblica") %></button>
                                             </div>
                                         </div>
-                                        <%--<div class="alert"></div>--%>
+
                                     </fieldset>
                                 </div>
                             </div>

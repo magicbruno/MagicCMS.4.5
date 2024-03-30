@@ -411,7 +411,7 @@
             window.TheMap = new GestioneMappa('#map-dialog');
         }
     </script>
-    <script src="Scripts/app.js?v=1.1"></script>
+    <script src="Scripts/app.js?v=1.3"></script>
     <script>
         if (!Cookies.get('MB_AuthToken')) {
             let url = location.href;

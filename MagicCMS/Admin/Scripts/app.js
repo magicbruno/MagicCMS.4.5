@@ -385,27 +385,32 @@ $(document).ready(function () {
 
     //datepicker
     $(document).off('.datepicker.data-api');
-
-    $('.datepicker').datepicker({
-        autoclose: 'true',
-        language: 'it',
-        todayBtn: true,
-        todayHighlight: true,
-        weekStart: 1,
-        format: "dd/mm/yyyy"
-    }).on('changeDate', function (e) {
-        var $this = $(this);
-        $this.attr('data-dateiso', $this.datepicker('getUTCDate').toISOString());
-    }).each(function () {
-        var $me = $(this);
-        try {
-            var d = Date.parse($me.attr('data-dateiso'));
-            if (d)
-                $me.datepicker('setUTCDate', new Date(d));
-        } catch (e) {
-
-        }
+    window.datepickers = [];
+    document.querySelectorAll('.datepicker').forEach(el => {
+        window.datepickers.push(new MbDateTimePicker(el));
     })
+
+
+    //$('.datepicker').datepicker({
+    //    autoclose: 'true',
+    //    language: 'it',
+    //    todayBtn: true,
+    //    todayHighlight: true,
+    //    weekStart: 1,
+    //    format: "dd/mm/yyyy"
+    //}).on('changeDate', function (e) {
+    //    var $this = $(this);
+    //    $this.attr('data-dateiso', $this.datepicker('getUTCDate').toISOString());
+    //}).each(function () {
+    //    var $me = $(this);
+    //    try {
+    //        var d = Date.parse($me.attr('data-dateiso'));
+    //        if (d)
+    //            $me.datepicker('setUTCDate', new Date(d));
+    //    } catch (e) {
+
+    //    }
+    //})
 
     //bootstrap-growl
     $.growl(false,

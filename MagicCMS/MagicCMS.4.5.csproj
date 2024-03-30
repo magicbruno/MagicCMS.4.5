@@ -1685,6 +1685,7 @@
     <Content Include="Admin\Scripts\plugins\mb\jquery.mb-submit.js" />
     <Content Include="Admin\Scripts\plugins\mb\mb-faGetFileIconClass.js" />
     <Content Include="Admin\Scripts\plugins\mb\mb-history.js" />
+    <Content Include="Admin\Scripts\plugins\mb\MbDateTimePicker.js" />
     <Content Include="Admin\Scripts\plugins\mb\mb_queryBulder.js" />
     <Content Include="Admin\Scripts\plugins\numeric\jquery.numeric.js" />
     <Content Include="Admin\Scripts\plugins\plugins.js">

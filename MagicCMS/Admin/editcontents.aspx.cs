@@ -42,10 +42,10 @@ namespace MagicCMS.Admin
         {
             get
             {
-                if(ThePost.DataPubblicazione.HasValue)
-                {
-                    ThePost.DataPubblicazione = ThePost.DataPubblicazione.Value.AddHours(12 - ThePost.DataPubblicazione.Value.Hour);
-                }
+                //if(ThePost.DataPubblicazione.HasValue)
+                //{
+                //    ThePost.DataPubblicazione = ThePost.DataPubblicazione.Value.AddHours(12 - ThePost.DataPubblicazione.Value.Hour);
+                //}
                 return (ThePost.DataPubblicazione.HasValue ? ThePost.DataPubblicazione.Value.ToString("yyyy-MM-ddTHH:mm:ss.fffffffK") : "");
             }
         }
@@ -53,10 +53,10 @@ namespace MagicCMS.Admin
         {
             get
             {
-                if (ThePost.DataScadenza.HasValue)
-                {
-                    ThePost.DataScadenza = ThePost.DataScadenza.Value.AddHours(12 - ThePost.DataScadenza.Value.Hour);
-                }
+                //if (ThePost.DataScadenza.HasValue)
+                //{
+                //    ThePost.DataScadenza = ThePost.DataScadenza.Value.AddHours(12 - ThePost.DataScadenza.Value.Hour);
+                //}
                 return (ThePost.DataScadenza.HasValue ? ThePost.DataScadenza.Value.ToString("yyyy-MM-ddTHH:mm:ss.fffffffK") : "");
             }
         }

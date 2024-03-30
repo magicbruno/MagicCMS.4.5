@@ -48,7 +48,7 @@
                     }
                     if ($me.data('datepicker')) {
                         var theDate = $me.data('datepicker').getDate();
-                        var dateStr ='';
+                        var dateStr = '';
                         if (!isNaN(theDate.getTime()))
                             dateStr = theDate.toISOString();
                         if ($me.attr('name'))
@@ -63,6 +63,11 @@
                             values[$me.attr('id')] = $me.is(':checkbox:checked') ? true : false;
                     } else if ($me.is(':radio:checked')) {
                         values[$me.attr('name')] = $me.val();
+                    } else if ($me.is('[type="date"]')) {
+                        if ($me.attr('name'))
+                            values[$me.attr('name')] = ($me[0].dataset.dateiso || $me.val());
+                        else
+                            values[$me.attr('id')] = ($me[0].dataset.dateiso || $me.val());
                     } else {
                         if ($me.attr('name'))
                             values[$me.attr('name')] = ($me.val() || '');

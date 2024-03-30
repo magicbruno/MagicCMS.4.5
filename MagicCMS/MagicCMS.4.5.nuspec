@@ -11,12 +11,11 @@
 		<copyright>Copyright 2016-2022</copyright>
 		<dependencies>
 			<dependency id="Facebook" version="7.0.6" />
-			<dependency id="jQuery" version="2.2.4"  />
-			<dependency id="jQuery1" version="1.12.3" />
+			<dependency id="jQuery" version="3.7.1"  />
 			<dependency id="json2" version="1.0.2" />
 			<dependency id="Respond" version="1.4.2" />
 			<dependency id="Microsoft.AspNet.WebApi" version="5.2.7" />
-			<dependency id="RestSharp" version="106.15.0" />
+			<dependency id="RestSharp" version="110.2.0" />
 			<dependency id="MimeTypesMap" version="1.0.8" />		
 		</dependencies>
 	</metadata>
@@ -27,7 +26,7 @@
 		<file src="Scripts\modernizr\**" target="content\Scripts\modernizr\"/>
 		<file src="Service References\**" target="content\Service References\" exclude="Service References\**.cs;Service References\**.xsd"/>
 		<file src="Themes\**" target="content\Themes\" exclude="Themes\**.cs" />
-		<file src="userfiles\**" target="content\userfiles"/>
+		<file src="userfiles\**" target="content\userfiles" exclude="uploads\**"/>
 		<file src="AjaxSendMail_JSON.ashx" target="content\"/>
 		<file src="Contenuti.aspx" target="content\"/>
 		<file src="Default.aspx" target="content\"/>
